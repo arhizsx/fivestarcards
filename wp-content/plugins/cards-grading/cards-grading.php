@@ -41,6 +41,13 @@
 
     public function plugin_menu()
     {
+
+        wp_enqueue_scripts('prefix_bootstrap');
+        wp_register_script('prefix_bootstrap', '//cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js');
+        
+        wp_enqueue_style('prefix_bootstrap');
+        wp_register_style('prefix_bootstrap', '/cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+        
         add_menu_page(
             'Cards Grading',
             'Cards Grading',
