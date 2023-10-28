@@ -11,6 +11,10 @@ $(document).ready(function(){
 
 $(document).on("click", ".5star_btn", function(e){
 
+    e.preventDefault();
+
+    alert("test");
+
     if($(this).hasClass("add_card")){			
 
         switch( jQuery(this).data("type") ){
