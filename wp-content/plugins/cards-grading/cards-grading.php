@@ -41,7 +41,7 @@
     {
         $args = array(
             'public' => true,
-            'has_archive' => false,
+            'has_archive' => true,
             'supports' => array('title'),
             'exclude_from_search' => true,
             'publicly_queryable' => false,
