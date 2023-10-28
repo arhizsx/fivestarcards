@@ -5,6 +5,7 @@ function showAddCardModal( what_type ){
     
 }
 
+alert("test");
 
 
 jQuery(document).on("click", ".5star_btn", function(e){
