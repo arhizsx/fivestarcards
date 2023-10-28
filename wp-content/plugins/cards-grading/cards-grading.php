@@ -44,7 +44,7 @@
         add_menu_page(
             'Cards Grading',
             'Cards Grading',
-            'manage_options',
+            'edit_posts',
             'cards-grading',
             'plugin_main_page',
             'dashicons-media-spreadsheet',
