@@ -29,9 +29,6 @@
         // Add Plugin Menu
         add_action('admin_menu', array($this, 'plugin_menu'));
 
-        // Add Bootstrap to Admin
-        add_action('wp_admin_enqueue_scripts', array($this, 'admin_acripts'));
-
         // Create Custom Post Type
         add_action('init', array($this, 'create_custom_post_type') );        
 
@@ -57,14 +54,6 @@
             'dashicons-media-spreadsheet'
         );
     }
-
-    public function admin_scripts(){
-
-        wp_admin_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css' );
-        wp_admin_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' );
-
-    }
-
 
 
     public function create_custom_post_type()
