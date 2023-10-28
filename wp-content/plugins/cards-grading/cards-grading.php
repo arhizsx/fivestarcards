@@ -26,9 +26,6 @@
 
     public function __construct() 
     {
-        // Add Plugin Menu
-        // add_action('admin_menu', array($this, 'plugin_menu'));
-
         // Create Custom Post Type
         add_action('init', array($this, 'create_custom_post_type') );        
 
@@ -40,8 +37,6 @@
         // Add Shortcodes
         add_shortcode('cards-grading', array( $this, 'cards_grading_shortcodes' ));
 
-        // Load Javascript
-        add_action('wp_footer', array($this, 'load_scripts'));
     }
 
     public function create_custom_post_type()
