@@ -52,11 +52,11 @@
 
         add_submenu_page(
             'cards-grading',
-            'Orders',
-            'Orders',
+            'Grading Types',
+            'Grading Types',
             'manage_options',
-            'cards-grading-orders',
-            array($this, 'plugin_orders_page'),
+            'cards-grading-types',
+            array($this, 'plugin_grading_types_page'),
             'dashicons-media-spreadsheet'
         );
 
@@ -64,12 +64,12 @@
 
     public function plugin_main_page()
     {
-        echo '<H1>Card Grading Plugin</H1>';
+        echo '<H1>Cards Grading</H1>';
     }
 
     public function plugin_orders_page()
     {
-        echo "<H1>Card Grading Orders</H1>";
+        echo "<H1>Card Grading Types</H1>";
     }
 
     
