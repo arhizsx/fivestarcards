@@ -80,7 +80,7 @@
 
         wp_enqueue_style(
             'cards-grading.css',
-            plugin_dir_url(__FILE__) . '/css/cards-grading.css',
+            plugin_dir_url(__FILE__) . 'css/cards-grading.css',
             array(),
             1,
             'all'
@@ -88,7 +88,7 @@
 
         wp_enqueue_script(
             'cards-grading.js',
-            plugin_dir_url(__FILE__) . '/js/cards-grading.js',
+            plugin_dir_url(__FILE__) . 'js/cards-grading.js',
             array('jquery'),
             1,
             true
