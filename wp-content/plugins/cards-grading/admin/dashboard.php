@@ -1,4 +1,4 @@
-<H1>Cards Grading</H1>
+<H1>Cards Grading - Five Star Cards</H1>
 
 <div class="row">
     <div class="col">
