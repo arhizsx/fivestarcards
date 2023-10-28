@@ -30,7 +30,7 @@
         add_action('admin_menu', array($this, 'plugin_menu'));
 
         // Create Custom Post Type
-        add_action('init', array($this, 'create_custom_post_type') );        
+        // add_action('init', array($this, 'create_custom_post_type') );        
 
         // Add Assets
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
