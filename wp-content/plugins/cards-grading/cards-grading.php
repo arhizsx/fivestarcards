@@ -64,7 +64,7 @@
 
     public function plugin_main_page()
     {
-        include(  plugin_dir_url(__FILE__) . '/admin/dashboard.php' );
+        include(  plugin_dir_path(__DIR__) . 'admin/dashboard.php' );
         
     }
 
