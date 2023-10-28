@@ -64,8 +64,7 @@
 
     public function plugin_main_page()
     {
-        include(  plugin_dir_path(__DIR__) . 'admin/dashboard.php' );
-        
+        include( plugin_dir_path( __FILE__ ) . 'admin/dashboard.php');        
     }
 
     public function plugin_grading_types_page()
