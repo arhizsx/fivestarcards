@@ -41,14 +41,14 @@
 
     public function plugin_menu()
     {
-        add_menu_page(
-            'Cards Grading',
-            'Cards Grading',
-            'manage_options',
-            'cards-grading',
-            array($this, 'plugin_main_page'),
-            'dashicons-media-spreadsheet'
-        );
+        // add_menu_page(
+        //     'Cards Grading',
+        //     'Cards Grading',
+        //     'manage_options',
+        //     'cards-grading',
+        //     array($this, 'plugin_main_page'),
+        //     'dashicons-media-spreadsheet'
+        // );
 
         add_submenu_page(
             'cards-grading',
