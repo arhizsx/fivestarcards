@@ -34,8 +34,6 @@
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
         // add_action( 'init', array( $this, 'register_plugin_styles' ) ); // front and admin
 
-        // Add Shortcodes
-        add_shortcode('cards-grading', array( $this, 'cards_grading_shortcodes' ));
 
     }
 
@@ -59,29 +57,11 @@
 
     }
 
-    // public function plugin_menu()
-    // {
-    //     add_menu_page(
-    //         'Cards Grading',
-    //         'Cards Grading',
-    //         'manage_options',
-    //         plugin_dir_path( __FILE__ ) . 'admin/dashboard.php',
-    //         null,
-    //         'dashicons-media-spreadsheet'
-    //     );
-    // }
-
-
-
-    // public function register_assets(){
-	// 	wp_register_style( 'cards-grading', plugin_dir_url(__FILE__) . 'css/cards-grading.css' );        
-	// 	wp_register_script( 'cards-grading', plugin_dir_url(__FILE__) . 'js/cards-grading.js' );        
-    // }
 
     public function load_assets() {
 
         wp_enqueue_style(
-            'cards-grading.css',
+            'cards-grading',
             plugin_dir_url(__FILE__) . 'css/cards-grading.css',
             array(),
             1,
@@ -89,7 +69,7 @@
         );
 
         wp_enqueue_script(
-            'cards-grading.js',
+            'cards-grading',
             plugin_dir_url(__FILE__) . 'js/cards-grading.js',
             array('jquery'),
             1,
@@ -97,26 +77,6 @@
         );
 
     }
-
-    function cards_grading_shortcodes() 
-    { ?>
-
-        <!-- include( plugin_dir_path( __FILE__ ) . 'admin/modal.php' ); -->
-
-        Its Working
-
-    <?php }
-
-    public function load_scripts()
-    { ?>
-    
-    <script>
-
-        alert('test');
-
-    </script>
-
-    <?php }
 
 
  }
