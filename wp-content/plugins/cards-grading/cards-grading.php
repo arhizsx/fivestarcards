@@ -27,7 +27,7 @@
     public function __construct() 
     {
         // Add Plugin Menu
-        add_action('admin_menu', array($this, 'plugin_menu'));
+        add_action('admin_menu', 'plugin_menu');
 
         // Create Custom Post Type
         // add_action('init', array($this, 'create_custom_post_type') );        
