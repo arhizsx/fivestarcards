@@ -42,8 +42,8 @@
     public function plugin_menu()
     {
         add_menu_page(
-            'Cards Grading Plugin',
-            'Cards Grading Plugin',
+            'Cards Grading',
+            'Cards Grading',
             'edit_posts',
             'cards_grading',
             'callback',
