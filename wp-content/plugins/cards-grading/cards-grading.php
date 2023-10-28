@@ -29,8 +29,13 @@
         // Add Plugin Menu
         add_action('admin_menu', array($this, 'plugin_menu'));
 
+        // Add Bootstrap to Admin
+        add_action('wp_admin_enqueue_scripts', array($this, 'admin_acripts'));
+
         // Create Custom Post Type
         add_action('init', array($this, 'create_custom_post_type') );        
+
+
 
         // Add Assets
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
@@ -44,13 +49,6 @@
 
     public function plugin_menu()
     {
-
-        wp_enqueue_scripts('prefix_bootstrap');
-        wp_register_script('prefix_bootstrap', '//cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js');
-        
-        wp_enqueue_style('prefix_bootstrap');
-        wp_register_style('prefix_bootstrap', '//cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css');
-        
         add_menu_page(
             'Cards Grading',
             'Cards Grading',
@@ -59,8 +57,15 @@
             null,
             'dashicons-media-spreadsheet'
         );
+    }
+
+    public function admin_scripts(){
+
+        wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css' );
 
     }
+
+
 
     public function create_custom_post_type()
     {
