@@ -1,17 +1,17 @@
 function showAddCardModal( what_type ){
 		
-    jQuery(document).find(".dxmodal").modal("show");
-    jQuery(document).find(".dxmodal").find("input[name='grading']").val(what_type);
+    $(document).find(".dxmodal").modal("show");
+    $(document).find(".dxmodal").find("input[name='grading']").val(what_type);
     
 }
 
-jQuery(document).ready(function(){
+$(document).ready(function(){
     alert("test");
 });
 
-jQuery(document).on("click", ".5star_btn", function(e){
+$(document).on("click", ".5star_btn", function(e){
 
-    if(jQuery(this).hasClass("add_card")){			
+    if($(this).hasClass("add_card")){			
 
         switch( jQuery(this).data("type") ){
 
