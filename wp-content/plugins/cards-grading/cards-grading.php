@@ -37,6 +37,9 @@
 
         // Add Shortcodes
         add_shortcode('cards-grading-list', array( $this, 'cards_grading_list' ));
+
+        // Load Javascript
+        add_action('wp_footer', array($this, 'load_scripts'));
     }
 
     public function plugin_menu()
@@ -99,12 +102,21 @@
         
     }
 
-    public function cards_grading_list() {
+    public function cards_grading_list() 
+    {
 
         return 'test shortcode';
         
     }
 
+    public function load_javascript()
+    { ?>
+
+        <script>
+            alert('Plugin');
+        </script>
+
+    <?php }
 
 
  }
