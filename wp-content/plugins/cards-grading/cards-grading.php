@@ -44,18 +44,17 @@
         add_menu_page(
             'Cards Grading',
             'Cards Grading',
-            'edit_posts',
-            'cards_grading',
+            'manage_options',
+            'cards-grading',
             'plugin_main_page',
-            'dashicons-media-spreadsheet' 
+            'dashicons-media-spreadsheet',
+            1 
         );
     }
 
     public function plugin_main_page()
     {
-        echo '<H1>Cards Grading Plugin</H1>';
     }
-    
 
     
 
