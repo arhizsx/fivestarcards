@@ -43,7 +43,7 @@
     {
         add_menu_page(
             'Cards Grading Plugin',
-            'Cards Grading',
+            'Cards Grading Plugin',
             'edit_posts',
             'cards_grading',
             'callback',
