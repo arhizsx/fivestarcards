@@ -40,7 +40,7 @@
             'capability' => 'manage_options',
             'labels' => array(
                 'name' => 'Cards Grading',
-                'singular_name' => 'Card Grading Entry'
+                'singular_name' => 'Card Grading'
             ),
             'menu_icon' => 'dashicons-media-text'
         );
