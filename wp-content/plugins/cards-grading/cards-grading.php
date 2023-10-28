@@ -31,7 +31,6 @@
 
         // Add Assets
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
-        // add_action( 'init', array( $this, 'register_plugin_styles' ) ); // front and admin
 
         // Add Shortcodes
         add_shortcode('cards-grading', array( $this, 'cards_grading_shortcodes' ));
