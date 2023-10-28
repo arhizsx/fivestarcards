@@ -14,7 +14,7 @@ $(document).on("click", ".5star_btn", function(e){
 
     if($(this).hasClass("add_card")){			
 
-        switch( jQuery(this).data("type") ){
+        switch( $(this).data("type") ){
 
             case "psa-value_bulk":
                 showAddCardModal("psa-value_bulk");
