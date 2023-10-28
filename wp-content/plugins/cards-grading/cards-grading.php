@@ -42,7 +42,7 @@
     public function plugin_menu()
     {
         add_menu_page(
-            'Index',
+            'Cards Grading',
             'Cards Grading',
             'manage_options',
             'cards-grading',
@@ -67,7 +67,7 @@
         echo '<H1>Cards Grading</H1>';
     }
 
-    public function plugin_orders_page()
+    public function plugin_grading_types_page()
     {
         echo "<H1>Card Grading Types</H1>";
     }
