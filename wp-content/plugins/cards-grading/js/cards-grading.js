@@ -5,15 +5,12 @@ function showAddCardModal( what_type ){
     
 }
 
-jQuery(document).ready(function(){
-    alert("Document Loaded");
-});
 
 $(document).on("click", ".5star_btn", function(e){
 
     e.preventDefault();
 
-    alert("test");
+    alert("Test Click");
 
     if($(this).hasClass("add_card")){			
 
