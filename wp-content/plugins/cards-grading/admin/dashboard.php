@@ -1,3 +1,3 @@
 <?php
-
-echo '<H1>Cards Grading</H1>';
+?>
+<H1>Cards Grading</H1>
