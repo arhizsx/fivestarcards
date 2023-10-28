@@ -69,7 +69,7 @@
 
     public function plugin_grading_types_page()
     {
-        echo "<H1>Card Grading Types</H1>";
+        include( plugin_dir_path( __FILE__ ) . 'admin/dashboard.php');        
     }
 
     
