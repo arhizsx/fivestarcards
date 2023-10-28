@@ -26,8 +26,32 @@
 
     public function __construct() 
     {
-        add_action('init', array($this, 'create_custom_post_type') );
+        // Add Plugin Menu
+        add_action('admin_menu', array($this, 'plugin_menu'));
+
+        // Create Custom Post Type
+        add_action('init', array($this, 'create_custom_post_type') );        
+
+        // Add Assets
+        add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
+
+        // Add Shortcodes
+        add_shortcode('cards-grading-list', array( $this, 'cards_grading_list' ));
     }
+
+    public function plugin_menu()
+    {
+        add_menu_page(
+            'Cards Grading',
+            'Cards Grading',
+            'edit_posts',
+            'cards_grading',
+            'callback',
+            'dashicons-media-spreadsheet' 
+        );
+
+    }
+
 
     public function create_custom_post_type()
     {
@@ -48,6 +72,34 @@
         register_post_type("cards-grading", $args);
 
     }
+
+    public function load_assets() {
+
+        wp_enqueue_style(
+            'cards-grading.css',
+            plugin_dir_url(__FILE__) . '/css/cards-grading.css',
+            array(),
+            1,
+            'all'
+        );
+
+        wp_enqueue_script(
+            'cards-grading.js',
+            plugin_dir_url(__FILE__) . '/js/cards-grading.js',
+            array('jquery'),
+            1,
+            true
+        );
+        
+    }
+
+    public function cards_grading_list() {
+
+        return 'test shortcode';
+        
+    }
+
+
 
  }
 
