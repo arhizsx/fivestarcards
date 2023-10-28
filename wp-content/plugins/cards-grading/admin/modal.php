@@ -52,3 +52,6 @@ $user_id = get_current_user_id();
 	</div>
 </div>
 
+<script>
+    alert("Test");
+</script>
