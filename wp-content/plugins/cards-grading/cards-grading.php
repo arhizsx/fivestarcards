@@ -43,10 +43,10 @@
     {
         add_menu_page(
             'Cards Grading',
-            'Dashboard',
+            'Cards Grading',
             'manage_options',
-            'cards-grading',
-            array($this, 'plugin_main_page'),
+            plugin_dir_path( __FILE__ ) . 'admin/dashboard.php',
+            null,
             'dashicons-media-spreadsheet'
         );
 
@@ -55,21 +55,11 @@
             'Grading Types',
             'Grading Types',
             'manage_options',
-            'cards-grading-types',
+            plugin_dir_path( __FILE__ ) . 'admin/types.php',
             array($this, 'plugin_grading_types_page'),
             'dashicons-media-spreadsheet'
         );
 
-    }
-
-    public function plugin_main_page()
-    {
-        include( plugin_dir_path( __FILE__ ) . 'admin/dashboard.php');        
-    }
-
-    public function plugin_grading_types_page()
-    {
-        include( plugin_dir_path( __FILE__ ) . 'admin/dashboard.php');        
     }
 
     
