@@ -43,7 +43,7 @@
     {
         add_menu_page(
             'Cards Grading',
-            'Cards Grading',
+            'Dashboard',
             'manage_options',
             'cards-grading',
             array($this, 'plugin_main_page'),
