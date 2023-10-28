@@ -35,6 +35,7 @@
 
         // Add Assets
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
+        add_action( 'init', array( $this, 'register_plugin_styles' ) ); // front and admin
 
         // Add Shortcodes
         add_shortcode('cards-grading', array( $this, 'cards_grading_shortcodes' ));
@@ -76,8 +77,12 @@
 
     }
 
-    public function load_assets() {
 
+    public function register_assets(){
+		wp_register_style( 'cards-grading', plugin_dir_url(__FILE__) . 'css/cards-grading.css' );        
+		wp_register_script( 'cards-grading', plugin_dir_url(__FILE__) . 'js/cards-grading.js' );        
+    }
+    public function load_assets() {
 
         wp_enqueue_style(
             'cards-grading.css',
