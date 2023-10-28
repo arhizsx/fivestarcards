@@ -104,11 +104,13 @@
     }
 
     function cards_grading_shortcodes() 
-    {
+    { ?>
 
-        include( plugin_dir_path( __FILE__ ) . 'admin/modal.php' );
+        <!-- include( plugin_dir_path( __FILE__ ) . 'admin/modal.php' ); -->
 
-    }
+        Its Working
+
+    <?php }
 
     public function load_scripts()
     { ?>
