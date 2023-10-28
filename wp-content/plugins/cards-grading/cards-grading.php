@@ -36,12 +36,11 @@
         add_action('init', array($this, 'create_custom_post_type') );        
 
 
-
         // Add Assets
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
 
         // Add Shortcodes
-        add_shortcode('cards-grading-list', array( $this, 'cards_grading_list' ));
+        add_shortcode('cards-grading', array( $this, 'cards_grading_shortcodes' ));
 
         // Load Javascript
         add_action('wp_footer', array($this, 'load_scripts'));
@@ -61,7 +60,8 @@
 
     public function admin_scripts(){
 
-        wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css' );
+        wp_admin_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css' );
+        wp_admin_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js' );
 
     }
 
@@ -107,11 +107,40 @@
         
     }
 
-    public function cards_grading_list() 
-    {
 
-        return 'test shortcode';
-        
+    function cards_grading_shortcodes( $atts = [], $content = null, $tag = '' ) {
+
+        // normalize attribute keys, lowercase
+        $atts = array_change_key_case( (array) $atts, CASE_LOWER );
+    
+        // override default attributes with user attributes
+        $card_grading_atts = shortcode_atts(
+            array(
+                'title' => 'WordPress.org',
+            ), $atts, $tag
+        );
+    
+        // start box
+        $o = '<div class="card-grading-box">';
+    
+        // title
+        $o .= '<h2>' . esc_html( $card_grading_atts['title'] ) . '</h2>';
+    
+        if ( ! is_null( $content ) ) {
+            // $content here holds everything in between the opening and the closing tags of your shortcode. eg.g [my-shortcode]content[/my-shortcode].
+            // Depending on what your shortcode supports, you will parse and append the content to your output in different ways.
+            // In this example, we just secure output by executing the_content filter hook on $content.
+
+
+
+            $o .= apply_filters( 'the_content', $content );
+        }
+    
+        // end box
+        $o .= '</div>';
+    
+        // return output
+        return $o;
     }
 
     public function load_scripts()
