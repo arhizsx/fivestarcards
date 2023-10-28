@@ -42,8 +42,8 @@
     public function plugin_menu()
     {
         add_menu_page(
-            'Cards Grading',
             'Index',
+            'Cards Grading',
             'manage_options',
             'cards-grading',
             array($this, 'plugin_main_page'),
