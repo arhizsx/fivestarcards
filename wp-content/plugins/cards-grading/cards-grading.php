@@ -39,13 +39,13 @@
             'publicly_queryable' => false,
             'capability' => 'manage_options',
             'labels' => array(
-                'name' => 'Orders',
-                'singular_name' => 'Order'
+                'name' => 'Cards Grading',
+                'singular_name' => 'Card Grading'
             ),
             'menu_icon' => 'dashicons-media-text'
         );
 
-        register_post_type("cards-grading-order", $args);
+        register_post_type("cards-grading", $args);
 
     }
 
