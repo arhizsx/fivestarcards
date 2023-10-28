@@ -46,12 +46,18 @@
             'Cards Grading',
             'edit_posts',
             'cards_grading',
-            'callback',
+            'plugin_main_page',
             'dashicons-media-spreadsheet' 
         );
-
     }
 
+    public function plugin_main_page()
+    {?>
+        <H1>Cards Grading Plugin</H1>
+    <?}
+    
+
+    
 
     public function create_custom_post_type()
     {
