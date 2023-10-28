@@ -10,7 +10,6 @@ jQuery(document).ready(function(){
 });
 
 jQuery(document).on("click", ".5star_btn", function(e){
-    e.preventDefault();
 
     if(jQuery(this).hasClass("add_card")){			
 
