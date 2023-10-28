@@ -5,7 +5,7 @@ function showAddCardModal( what_type ){
     
 }
 
-$(document).ready(function(){
+jQuery(document).ready(function(){
     alert("test");
 });
 
