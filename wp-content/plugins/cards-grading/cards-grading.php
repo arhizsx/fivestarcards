@@ -1,7 +1,7 @@
 <?php 
 
-/*
- * Plugin Name:       Cards Grading
+/** 
+* Plugin Name:       Cards Grading
  * Plugin URI:        https://www.techteam.ph/wordpress/plugins/cards-grading
  * Description:       Card Grading Plugin.
  * Version:           1.0.0
