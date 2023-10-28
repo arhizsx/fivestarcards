@@ -109,7 +109,7 @@
         
     }
 
-    public function load_javascript()
+    public function load_scripts()
     { ?>
 
         <script>
