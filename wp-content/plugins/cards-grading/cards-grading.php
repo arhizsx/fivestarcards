@@ -47,13 +47,13 @@
             'manage_options',
             'cards-grading',
             array($this, 'plugin_main_page'),
-            'dashicons-media-spreadsheet',
-            1 
+            'dashicons-media-spreadsheet'
         );
     }
 
     public function plugin_main_page()
     {
+        echo "<H1>Card Grading Plugin</H1>";
     }
 
     
