@@ -49,8 +49,8 @@
             null,
             'dashicons-media-spreadsheet'
         );
-        add_menu_page(
-            'Dashboard',
+        add_submenu_page(
+            'cards-grading',
             'Dashboard',
             'manage_options',
             '#',
