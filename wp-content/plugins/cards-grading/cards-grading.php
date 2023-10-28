@@ -152,7 +152,6 @@
     { ?>
 
         <script>
-            alert('Plugin');
         </script>
 
     <?php }
