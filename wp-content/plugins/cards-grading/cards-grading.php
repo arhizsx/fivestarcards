@@ -63,9 +63,9 @@
     }
 
     public function plugin_main_page()
-    {
-        echo "<H1>Card Grading Plugin</H1>";
-    }
+    {?>
+        <H1>Card Grading Plugin</H1>
+    <?}
 
     public function plugin_orders_page()
     {
