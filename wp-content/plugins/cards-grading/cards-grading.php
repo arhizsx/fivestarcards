@@ -49,6 +49,14 @@
             null,
             'dashicons-media-spreadsheet'
         );
+        add_menu_page(
+            'Dashboard',
+            'Dashboard',
+            'manage_options',
+            '#',
+            null,
+            'dashicons-media-spreadsheet'
+        );
 
     }
 
