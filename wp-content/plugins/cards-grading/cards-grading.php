@@ -79,10 +79,6 @@
     public function load_assets() {
 
 
-        wp_enqueue_style('bootstrap5', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"');
-        wp_enqueue_script( 'boot1','https://code.jquery.com/jquery-3.3.1.slim.min.js', array( 'jquery' ),'',true );
-        wp_enqueue_script( 'bootstrap','https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js', array( 'jquery' ),'',true );
-        
         wp_enqueue_style(
             'cards-grading.css',
             plugin_dir_url(__FILE__) . 'css/cards-grading.css',
@@ -110,15 +106,17 @@
 
     public function load_scripts()
     { ?>
-    
+
     <script>
+
+        alert("test");
+
         function showAddCardModal( what_type ){
                 
             $(document).find(".dxmodal").modal("show");
             $(document).find(".dxmodal").find("input[name='grading']").val(what_type);
             
         }
-
 
 
         $(document).on("click", ".5star_btn", function(e){
