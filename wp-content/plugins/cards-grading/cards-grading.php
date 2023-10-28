@@ -45,7 +45,7 @@
             'Cards Grading',
             'Cards Grading',
             'manage_options',
-            null,
+            '#',
             null,
             'dashicons-media-spreadsheet'
         );
