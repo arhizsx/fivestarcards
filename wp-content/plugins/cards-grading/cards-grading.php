@@ -44,7 +44,7 @@
         add_menu_page(
             'Cards Grading',
             'Cards Grading',
-            'card_grading',
+            'manage_options',
             'cards-grading',
             array($this, 'plugin_main_page'),
             'dashicons-media-spreadsheet'
@@ -54,7 +54,7 @@
             'cards-grading',
             'Orders',
             'Orders',
-            'card_grading',
+            'manage_options',
             'cards-grading-orders',
             array($this, 'plugin_orders_page'),
             'dashicons-media-spreadsheet'
@@ -77,12 +77,12 @@
     public function create_custom_post_type()
     {
         $args = array(
-            'public' => true,
-            'has_archive' => true,
+            'public' => false,
+            'has_archive' => false,
             'supports' => array('title'),
             'exclude_from_search' => true,
             'publicly_queryable' => false,
-            'capability' => 'card_grading',
+            'capability' => 'manage_options',
             'labels' => array(
                 'name' => 'Cards Grading',
                 'singular_name' => 'Card Grading'
