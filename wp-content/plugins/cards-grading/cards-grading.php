@@ -42,7 +42,7 @@
     public function plugin_menu()
     {
         add_menu_page(
-            'Cards Grading',
+            'Cards Grading Plugin',
             'Cards Grading',
             'edit_posts',
             'cards_grading',
