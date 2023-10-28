@@ -45,21 +45,12 @@
             'Cards Grading',
             'Cards Grading',
             'manage_options',
-            '#',
-            null,
-            'dashicons-media-spreadsheet'
-        );
-        add_submenu_page(
-            'cards-grading',
-            'Dashboard',
-            'manage_options',
-            '#',
+            plugin_dir_path( __FILE__ ) . 'admin/dashboard.php',
             null,
             'dashicons-media-spreadsheet'
         );
 
     }
-
 
     public function create_custom_post_type()
     {
