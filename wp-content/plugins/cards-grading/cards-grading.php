@@ -27,7 +27,7 @@
     public function __construct() 
     {
         // Add Plugin Menu
-        add_action('admin_menu', 'plugin_menu');
+        add_action('admin_menu', array($this, 'plugin_menu'));
 
         // Create Custom Post Type
         // add_action('init', array($this, 'create_custom_post_type') );        
@@ -44,9 +44,9 @@
         add_menu_page(
             'Cards Grading',
             'Cards Grading',
-            'edit_posts',
+            'manage_options',
             'cards-grading',
-            'plugin_main_page',
+            array($this, 'plugin_main_page'),
             'dashicons-media-spreadsheet',
             1 
         );
