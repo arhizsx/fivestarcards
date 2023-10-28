@@ -30,7 +30,7 @@
         add_action('admin_menu', array($this, 'plugin_menu'));
 
         // Create Custom Post Type
-        // add_action('init', array($this, 'create_custom_post_type') );        
+        add_action('init', array($this, 'create_custom_post_type') );        
 
         // Add Assets
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
@@ -44,7 +44,7 @@
         add_menu_page(
             'Cards Grading',
             'Cards Grading',
-            'manage_options',
+            'card_grading',
             'cards-grading',
             array($this, 'plugin_main_page'),
             'dashicons-media-spreadsheet'
@@ -54,7 +54,7 @@
             'cards-grading',
             'Orders',
             'Orders',
-            'manage_options',
+            'card_grading',
             'cards-grading-orders',
             array($this, 'plugin_orders_page'),
             'dashicons-media-spreadsheet'
@@ -82,7 +82,7 @@
             'supports' => array('title'),
             'exclude_from_search' => true,
             'publicly_queryable' => false,
-            'capability' => 'manage_options',
+            'capability' => 'card_grading',
             'labels' => array(
                 'name' => 'Cards Grading',
                 'singular_name' => 'Card Grading'
