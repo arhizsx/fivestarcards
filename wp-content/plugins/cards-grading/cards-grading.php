@@ -52,9 +52,9 @@
     }
 
     public function plugin_main_page()
-    {?>
-        <H1>Cards Grading Plugin</H1>
-    <?}
+    {
+        echo '<H1>Cards Grading Plugin</H1>';
+    }
     
 
     
