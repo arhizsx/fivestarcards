@@ -112,6 +112,8 @@
     { ?>
     
     <script>
+
+        alert('test');
         function showAddCardModal( what_type ){
                 
             $(document).find(".dxmodal").modal("show");
