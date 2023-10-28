@@ -50,16 +50,6 @@
             'dashicons-media-spreadsheet'
         );
 
-        add_submenu_page(
-            'cards-grading',
-            'Grading Types',
-            'Grading Types',
-            'manage_options',
-            plugin_dir_path( __FILE__ ) . 'admin/types.php',
-            array($this, 'plugin_grading_types_page'),
-            'dashicons-media-spreadsheet'
-        );
-
     }
 
     
