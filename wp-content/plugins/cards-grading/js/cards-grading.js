@@ -10,9 +10,6 @@ function showAddCardModal( what_type, per_card, max_dv ){
 
 function addCardToTable(card){
 
-    
-    console.log(card);
-
     if( $(document).find(".5star_logged_cards tbody tr td:first-child").text() == "Empty"){
         $(document).find(".5star_logged_cards tbody").empty();
     }
@@ -35,10 +32,14 @@ function addCardToTable(card){
         "</tr>"
     );
 
-
-
+    clearModalForm()
 }
 
+function clearModalForm(){
+    $(document).find(".dxmodal").find('#add_card_form *').filter(':input:visible:enabled').each(function(k, v){
+        $(v).val("");
+    });    
+}
 
 $(document).on("click", ".5star_btn", function(e){
 
