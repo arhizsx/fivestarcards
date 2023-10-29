@@ -159,14 +159,8 @@
             'post_status' => 'publish'
         ]);
 
-        foreach( $params as $label => $value ){
-            add_post_meta($post_id, $label, $value);
-        }
-
-        foreach( $params as $label => $value ){
-            add_post_meta($post_id, $label, $value);
-        }
-
+        add_post_meta($post_id, "card", $params);
+        
     }
 
  }
