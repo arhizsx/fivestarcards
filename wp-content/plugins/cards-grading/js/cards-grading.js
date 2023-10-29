@@ -88,12 +88,14 @@ $(document).on("click", ".5star_btn", function(e){
             $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(k, v){
 
                 if( $(v).val().length > 0 ){
+                    
+                    var val = $(v).val();
 
-                    if( $(v).attr("type") == "number" && $(v).val().isNumeric() == false  ){
+                    if( $(v).attr("type") == "number" && val.isNumeric() == false  ){
                         $(v).focus();
                         error_cnt = error_cnt + 1;
                         return false;                            
-                    }
+                    } 
 
                     card[ $(v).attr("name") ] = $(v).val();
 
