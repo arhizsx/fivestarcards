@@ -89,10 +89,10 @@ $(document).on("click", ".5star_btn", function(e){
 
                 if( $(v).val().length > 0 ){
 
+                    console.log(  $(v).val() );
 
                     if( $(v).attr("type") == "number"){
 
-                        console.log(  $(v).val() );
                     } 
 
                     card[ $(v).attr("name") ] = $(v).val();
