@@ -130,7 +130,7 @@ $posts = get_posts($args);
         <tr>
             <td>
                 <?php                     
-                print_r($meta);
+                print_r($meta['user_id']);
                 ?>
             </td>
         </tr>
