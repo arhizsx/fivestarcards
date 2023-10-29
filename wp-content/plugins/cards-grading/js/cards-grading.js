@@ -29,7 +29,7 @@ function addCardToTable(card){
             "<td>" + card["player"] + "</td>" +
             "<td>" + card["attribute"] + "</td>" +
             "<td>" + card["dv"] + "</td>" +
-            "<td>$" + total_dv.toFixed() + "</td>" +
+            "<td>$" + total_dv.toFixed(2) + "</td>" +
             "<td>$" + total_charge.toFixed(2) + "</td>" +
         "</tr>"
     );
