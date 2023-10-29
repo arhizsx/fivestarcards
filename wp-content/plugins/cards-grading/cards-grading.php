@@ -76,8 +76,22 @@
 
     }
 
-    function cards_grading_shortcodes() 
+    function subscribe_link_att($atts) {
+        $default = array(
+            'link' => '#',
+        );
+        $a = shortcode_atts($default, $atts);
+        return 'Follow us on '.$a['link'];
+    }    
+    function cards_grading_shortcodes($atts) 
     {
+
+        $default = array(
+            'title' => 'Grading Title',
+            'type' => 'grading-tyoe'
+        );
+        
+        $att = shortcode_atts($default, $atts);
 
         include( plugin_dir_path( __FILE__ ) . 'admin/modal.php' );
 
