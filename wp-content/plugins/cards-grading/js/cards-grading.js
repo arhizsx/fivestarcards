@@ -15,7 +15,7 @@ function addCardToTable(card){
     }
 
     console.log(card );
-    
+
     var total_charge = parseFloat(card["quantity"]) * parseFloat(card["per_card"]);
     var total_dv = parseFloat(card["quantity"]) * parseFloat(card["dv"]);
 
@@ -27,7 +27,7 @@ function addCardToTable(card){
             "<td>" + card["card_number"] + "</td>" +
             "<td>" + card["player"] + "</td>" +
             "<td>" + card["attribute"] + "</td>" +
-            "<td>" + card["dv"] + "</td>" +
+            "<td>$" + card["dv"].toFixed(2) + "</td>" +
             "<td>$" + total_dv.toFixed(2) + "</td>" +
             "<td>$" + total_charge.toFixed(2) + "</td>" +
             "<td>Remove</td>" +
