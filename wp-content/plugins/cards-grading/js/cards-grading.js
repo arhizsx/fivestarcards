@@ -91,7 +91,12 @@ $(document).on("click", ".5star_btn", function(e){
 
 
                     if( $(v).attr("type") == "number"){
-                        console.log("Number");
+
+                        if( $(v).val().isNumeric() ){
+                            console.log("Number");
+                        } else {
+                            console.log("Not Number");
+                        }
                     } 
 
                     card[ $(v).attr("name") ] = $(v).val();
