@@ -47,7 +47,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "confirm_add" :
 
-            console.log( $(document).find("#add_card_form").serialize() );
+            console.log( $(document).find("#add_card_form").html() );
 
             break;
 
