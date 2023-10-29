@@ -124,10 +124,11 @@ $posts = get_posts($args);
         <?php 
             if( $posts ){
                 foreach($posts as $post){
-                    print( $post->id);
         ?>
         <tr>
-            <td>Remove</td>
+            <td>
+            <?php print( $post->id); ?>            
+            </td>
         </tr>
         <?php          
                 }
