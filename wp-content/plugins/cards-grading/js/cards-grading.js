@@ -47,7 +47,7 @@ $(document).on("click", ".5star_btn", function(e){
 
 
             $(document).find(".dxmodal").find('#new_user_form *').filter(':input').each(function(){
-                console.log($(this).val());
+                console.log($(this));
             });
 
             break;
