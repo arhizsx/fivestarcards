@@ -27,11 +27,11 @@ $user_id = get_current_user_id();
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <label for="quantity">Qty</label>
-                                <input type="number" name="quantity" class="form-control mb-2"/>
+                                <input type="number" name="quantity" value="1" class="form-control mb-2"/>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <label for="year">Year</label>
-                                <input type="number" name="year" class="form-control mb-2"/>
+                                <input type="number" name="year" value="2020"  class="form-control mb-2"/>
                             </div>
                             <div class="col-xl-12">
                                 <label for="brand">Brand</label>
