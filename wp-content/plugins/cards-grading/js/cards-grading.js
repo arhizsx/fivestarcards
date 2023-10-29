@@ -35,7 +35,8 @@ function addCardToTable(card){
             "</tr>"
         );
     
-        clearModalForm();    
+        clearModalForm();  
+        setTotals(card_total_dv, card_total_charge)  
 
     } else {
 
@@ -47,6 +48,14 @@ function addCardToTable(card){
 }
 
 function setTotals( total_dv, total_charge ){
+
+    current_dv = parseFloat($(document).find("#total_dv").text());
+    current_charge = parseFloat($(document).find("#total_charge").text());
+    new_total_dv = total_dv + current_dv;
+    new_total_charge = total_charge + current_charge;
+
+    $(document).find("#total_dv").text( new_total_dv );
+    $(document).find("#total_charge").text( new_total_charge );
 
 }
 
