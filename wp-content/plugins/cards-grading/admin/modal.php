@@ -123,14 +123,22 @@ $posts = get_posts($args);
     <tbody>
         <?php 
             if( $posts ){
-                foreach($posts as $post){
-                    $metas = get_post_meta($post->ID);
-                    print_r($metas);
+                foreach($posts as $post)
+                {
+                    $meta = get_post_meta($post->ID);
+                    $card = json_decode($meta["card"], $true);
         ?>
         <tr>
-            <td>
-                ss
-            </td>
+            <td><?php echo $card["quantity"]; ?></td>
+            <td><?php echo $card["year"]; ?></td>
+            <td><?php echo $card["brand"]; ?></td>
+            <td><?php echo $card["card_number"]; ?></td>
+            <td><?php echo $card["player"]; ?></td>
+            <td><?php echo $card["attribute"]; ?></td>
+            <td><?php echo $card["dv"]; ?></td>
+            <td><?php echo $card["dv"]; ?></td>
+            <td><?php echo $card["dv"]; ?></td>
+            <td><?php echo $card["dv"]; ?></td>
         </tr>
         <?php          
                 }
