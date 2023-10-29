@@ -9,7 +9,7 @@ $user_id = get_current_user_id();
 		<div class="modal-content modal-ajax">
 			<div class="modal-header bg-dark text-white">
 				<h5 class="modal-title">
-					Add Card
+					Log Card
 				</h5>
     			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
 					X
@@ -68,7 +68,7 @@ $user_id = get_current_user_id();
     <H1 style="color: black !important;"><?php echo $params['title'] ?></H1>
     <div class='5star_btn_box_top'>
     <button class='5star_btn btn btn-success mb-3' data-type="<?php echo $params['type'] ?>" data-action="add_card">
-        Add Card
+        Log Card
     </button>
     </div>
 
