@@ -13,9 +13,13 @@ $(document).on("click", ".5star_btn", function(e){
 
     console.log("button pressed");
 
-    switch($(this).data("action")){		
+    switch( $(this).data("action") ){		
+
         
         case "add_card" :
+
+            console.log($(this).data("action"));
+
 
             switch( $(this).data("type") ){
 
@@ -46,6 +50,8 @@ $(document).on("click", ".5star_btn", function(e){
             break;
 
         case "confirm_add":
+
+            console.log($(this).data("action"));
 
 
             $(document).find(".dxmodal").find('#new_user_form *').filter(':input').each(function(){
