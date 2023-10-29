@@ -35,6 +35,9 @@
         // Add Shortcodes
         add_shortcode('cards-grading', array( $this, 'cards_grading_shortcodes' ));
 
+        // Add JS
+        add_action('wp_footer', array( $this, 'load_scripts' ));
+
         // Add Endpoint
         add_action("rest_api_ini", array($this, 'register_endpoint'));
     }
@@ -100,6 +103,14 @@
         include( plugin_dir_path( __FILE__ ) . 'admin/modal.php' );
 
     }
+
+    public function load_scripts() 
+    { ?>
+        <script>
+        alert("test");
+        </script>
+    <?php }
+
 
     public function register_endpoint(){
         
