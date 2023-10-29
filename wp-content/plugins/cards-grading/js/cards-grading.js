@@ -12,7 +12,7 @@ function addCardToTable(card){
 
     
     console.log(card);
-    console.log( $(document).find("table.5star_logged_cards").find("tbody row").html() );
+    console.log( $(document).find("table.5star_logged_cards tbody:first-child").html() );
 
 
 
