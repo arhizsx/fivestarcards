@@ -144,7 +144,7 @@
                     $.ajax({
                         method: 'post',
                         url: url,
-                        headers: {'X-WP-Nonce': nonce },
+                        headers: {'X-WP-Nonce', nonce },
                         data: card
                     });
 
@@ -248,8 +248,7 @@
             array(
                 'methods' => 'POST',
                 'callback' => array($this, 'handle_add_card')
-            )    
-                    
+            )                        
         );
     }
 
