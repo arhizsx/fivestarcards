@@ -10,31 +10,63 @@ function showAddCardModal( what_type, per_card, max_dv ){
 
 function addCardToTable(card){
 
-    if( $(document).find(".5star_logged_cards tbody tr td:first-child").text() == "Empty"){
-        $(document).find(".5star_logged_cards tbody").empty();
+    if( checkIfAddIsStillValid() )
+    {
+        if( $(document).find(".5star_logged_cards tbody tr td:first-child").text() == "Empty"){
+            $(document).find(".5star_logged_cards tbody").empty();
+        }
+    
+        var total_charge = parseFloat(card["quantity"]) * parseFloat(card["per_card"]);
+        var total_dv = parseFloat(card["quantity"]) * parseFloat(card["dv"]);
+
+        var current_dv = 300;
+
+
+        if( current_dv + total_dv <=  card["max_dv"] ){
+
+            $(document).find(".5star_logged_cards tbody").append(
+                "<tr>" +
+                    "<td>" + card["quantity"] + "</td>" +
+                    "<td>" + card["year"] + "</td>" +
+                    "<td>" + card["brand"] + "</td>" +
+                    "<td>" + card["card_number"] + "</td>" +
+                    "<td>" + card["player"] + "</td>" +
+                    "<td>" + card["attribute"] + "</td>" +
+                    "<td><span class='dollar'>" + parseFloat(card["dv"]).toFixed(2) + "</span></td>" +
+                    "<td><span class='dollar'>" + total_dv.toFixed(2) + "</span></td>" +
+                    "<td><span class='dollar'>" + total_charge.toFixed(2) + "</span></td>" +
+                    "<td>Remove</td>" +
+                "</tr>"
+            );
+        
+            clearModalForm();
+    
+        } else {
+
+            console.log( "Max DV Reached" );
+
+        }
+
+    }
+    
+
+}
+
+function setTotals( total_dv, total_charge ){
+
+}
+
+function checkIfAddIsStillValid(){
+
+    var total_dv = parseFloat( $(document).find("#total_dv").text() );
+    var max_dv = 499;
+
+    if( total_dv < max_dv ) {
+        return true;
+    } else {
+        return false;
     }
 
-    console.log(card );
-
-    var total_charge = parseFloat(card["quantity"]) * parseFloat(card["per_card"]);
-    var total_dv = parseFloat(card["quantity"]) * parseFloat(card["dv"]);
-
-    $(document).find(".5star_logged_cards tbody").append(
-        "<tr>" +
-            "<td>" + card["quantity"] + "</td>" +
-            "<td>" + card["year"] + "</td>" +
-            "<td>" + card["brand"] + "</td>" +
-            "<td>" + card["card_number"] + "</td>" +
-            "<td>" + card["player"] + "</td>" +
-            "<td>" + card["attribute"] + "</td>" +
-            "<td><span class='dollar'>" + parseFloat(card["dv"]).toFixed(2) + "</span></td>" +
-            "<td><span class='dollar'>" + total_dv.toFixed(2) + "</span></td>" +
-            "<td><span class='dollar'>" + total_charge.toFixed(2) + "</span></td>" +
-            "<td>Remove</td>" +
-        "</tr>"
-    );
-
-    clearModalForm()
 }
 
 function clearModalForm(){
