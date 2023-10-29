@@ -54,8 +54,8 @@ function setTotals( total_dv, total_charge ){
     new_total_dv = total_dv + current_dv;
     new_total_charge = total_charge + current_charge;
 
-    $(document).find("#total_dv").text( new_total_dv );
-    $(document).find("#total_charge").text( new_total_charge );
+    $(document).find("#total_dv").text( new_total_dv.toFixed(2) );
+    $(document).find("#total_charge").text( new_total_charge.toFixed(2) );
 
 }
 
