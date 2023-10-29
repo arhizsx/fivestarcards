@@ -12,9 +12,6 @@ function addCardToTable(card){
 
     if( checkIfAddIsStillValid() )
     {
-        if( $(document).find(".5star_logged_cards tbody tr td:first-child").text() == "Empty"){
-            $(document).find(".5star_logged_cards tbody").empty();
-        }
     
         var total_charge = parseFloat(card["quantity"]) * parseFloat(card["per_card"]);
         var total_dv = parseFloat(card["quantity"]) * parseFloat(card["dv"]);
@@ -24,6 +21,10 @@ function addCardToTable(card){
 
         if( current_dv + total_dv <=  card["max_dv"] ){
 
+            if( $(document).find(".5star_logged_cards tbody tr td:first-child").text() == "Empty"){
+                $(document).find(".5star_logged_cards tbody").empty();
+            }
+            
             $(document).find(".5star_logged_cards tbody").append(
                 "<tr>" +
                     "<td>" + card["quantity"] + "</td>" +
