@@ -124,10 +124,11 @@ $posts = get_posts($args);
         <?php 
             if( $posts ){
                 foreach($posts as $post){
+                    print_r($post);
         ?>
         <tr>
             <td>
-            <?php print( $post); ?>            
+                ss
             </td>
         </tr>
         <?php          
