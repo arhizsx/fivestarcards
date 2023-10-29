@@ -1,5 +1,9 @@
 function showAddCardModal( what_type, per_card, max_dv ){
-		
+
+    
+    
+    $(document).find(".dxmodal").find("div#add_card_form_box").removeClass("d-none");
+    $(document).find(".dxmodal").find("div#maxed-out").addClass("d-none");
     $(document).find(".dxmodal").modal("show");
     $(document).find(".dxmodal").find("input[name='grading']").val(what_type);
     $(document).find(".dxmodal").find("input[name='per_card']").val(per_card);
