@@ -50,15 +50,14 @@ $(document).on("click", ".5star_btn", function(e){
 
             $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(){
 
-                console.log($(this).length());
+                console.log($(this).length);
 
-                // if( $(this).length === 0 ){
+                if( $(this).length > 0 ){
+                    console.log( $(this).attr("name") + ": " + $(this).val() );
+                } else {
 
-                // } else {
 
-                //     console.log( $(this).attr("name") + ": " + $(this).val() );
-
-                // }
+                }
 
             });
 
