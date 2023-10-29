@@ -31,6 +31,7 @@ function addCardToTable(card){
             "<td>" + card["dv"] + "</td>" +
             "<td>$" + total_dv.toFixed(2) + "</td>" +
             "<td>$" + total_charge.toFixed(2) + "</td>" +
+            "<td>Remove</td>" +
         "</tr>"
     );
 
