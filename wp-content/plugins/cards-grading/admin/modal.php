@@ -24,8 +24,6 @@ $args = array(
 
 $posts = get_posts($args);
 
-print_r($posts);
-
 
 ?>
 
@@ -126,6 +124,7 @@ print_r($posts);
         <?php 
             if( $posts ){
                 foreach($posts as $post){
+                    print_r($post["WP_Post Object"]);
         ?>
         <tr>
             <td>Remove</td>
