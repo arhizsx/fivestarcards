@@ -49,6 +49,8 @@ $(document).on("click", ".5star_btn", function(e){
 
             console.log($("#add_card_form").serialize());
 
+            console.log($("#add_card_form").html());
+
             $("#add_card_form").submit( function(e){
 
                 e.preventDefault();
