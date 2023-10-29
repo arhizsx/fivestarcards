@@ -65,7 +65,7 @@ $user_id = get_current_user_id();
 	</div>
 </div>
 <div class="pt-5 px-5 pb-0">
-    <H1><?php echo $params['title'] ?></H1>
+    <H1 style="color: black !important;"><?php echo $params['title'] ?></H1>
     <div class='5star_btn_box_top'>
     <button class='5star_btn btn btn-success mb-3' data-type="<?php echo $params['type'] ?>" data-action="add_card">
         Add Card
