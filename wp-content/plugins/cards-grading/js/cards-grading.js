@@ -49,7 +49,15 @@ $(document).on("click", ".5star_btn", function(e){
         case "confirm_add":
 
             $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(){
-                console.log( $(this).attr("name") + ": " + $(this).val() );
+
+                if( $(this).val() == "" ){
+
+                } else {
+
+                    console.log( $(this).attr("name") + ": " + $(this).val() );
+
+                }
+
             });
 
             break;
