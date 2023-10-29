@@ -91,10 +91,6 @@ $(document).on("click", ".5star_btn", function(e){
 
                 if( $(v).val().length > 0 ){
 
-
-                    if( $(v).attr("type") == "number"){
-                    } 
-
                     card[ $(v).attr("name") ] = $(v).val();
 
                 } else {
