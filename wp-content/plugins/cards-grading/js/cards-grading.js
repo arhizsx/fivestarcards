@@ -87,11 +87,12 @@ $(document).on("click", ".5star_btn", function(e){
 
             $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(k, v){
 
+                console.log( $(v) );
+
                 if( $(v).val().length > 0 ){
 
 
                     if( $(v).attr("type") == "number"){
-                        console.log( $(v) );
                     } 
 
                     card[ $(v).attr("name") ] = $(v).val();
