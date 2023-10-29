@@ -24,11 +24,11 @@ $user_id = get_current_user_id();
 				<input type="hidden" name="per_card" value=''/>
 				<input type="hidden" name="max_dv" value=''/>
 				<div class="row">
-					<div class="col-xl-6 col-lg-6">
+					<div class="col-xl-6 col-lg-6 col-md-6">
 						<label for="quantity">Qty</label>
 						<input type="number" name="quantity" class="form-control mb-2"/>
 					</div>
-					<div class="col-xl-6 col-lg-6">
+					<div class="col-xl-6 col-lg-6 col-md-6">
 						<label for="quantity">Year</label>
 						<input type="number" name="year" class="form-control mb-2"/>
 					</div>
