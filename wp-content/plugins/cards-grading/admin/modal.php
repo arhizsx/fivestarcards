@@ -58,11 +58,6 @@ $user_id = get_current_user_id();
                                 <input type="number" name="dv" value="" class="form-control mb-2"/>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-12 mt-4 text-end fw-bold">
-                                Total: $ <span class="add_total">0.00</span>
-                            </div>
-                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
