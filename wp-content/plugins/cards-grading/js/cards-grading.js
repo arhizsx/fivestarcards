@@ -98,7 +98,7 @@ $(document).on("click", ".5star_btn", function(e){
                     showAddCardModal("psa-value_bulk", 19, 499);
                     break;
 
-                case "psa-value_bulk":
+                case "psa-value_plus":
                     showAddCardModal("psa-value_plus", 40, 499);
                     break;
 
