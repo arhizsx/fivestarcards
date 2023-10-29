@@ -43,6 +43,14 @@ $(document).on("click", ".5star_btn", function(e){
 
             break;
 
+        case "confirm_add":
+
+            console.log( $(document).find(".dxmodal").find("input[name='quantity']").val() );
+            console.log( $(document).find(".dxmodal").find("input[name='year']").val() );
+
+
+            break;
+
         case "clear_table" :
 
             console.log("Clear Table");

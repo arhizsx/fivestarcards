@@ -18,7 +18,7 @@ $user_id = get_current_user_id();
 					X
 				</button>
 			</div>
-            <forn class="form" id="add_card_form" method="POST" action="/">
+            <forn id="add_card_form">
                 <div class="modal-body py-2 px-3">
                     <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
                     <input type="hidden" name="grading" value=''/>
@@ -62,7 +62,7 @@ $user_id = get_current_user_id();
                 </div>
                 <div class="modal-footer">
                     <button class="btn border btn-secondary" data-bs-dismiss="modal" >Cancel</button>
-                    <input type="submit" class="btn border btn-success" data-action='confirm_add' data-type='' />
+                    <input type="submit" class="btn border btn-success 5star_btn btn_confirm" data-action='confirm_add' data-type='' />
                 </div>
             </form>
 		</div>
