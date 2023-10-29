@@ -124,7 +124,7 @@ $posts = get_posts($args);
         <?php 
             if( $posts ){
                 foreach($posts as $post){
-                    $card = json_decode($post["card"], true);
+                    print_r($posts);
         ?>
         <tr>
             <td>Remove</td>
