@@ -49,13 +49,16 @@ function addCardToTable(card){
 
 function setTotals( total_dv, total_charge ){
 
-    current_dv = parseFloat($(document).find("#total_dv").text());
-    current_charge = parseFloat($(document).find("#total_charge").text());
+    current_dv = parseFloat( $(document).find("#total_dv").text().replace("$",""));
+    current_charge = parseFloat($(document).find("#total_charge").text().replace("$",""));
+
     new_total_dv = total_dv + current_dv;
     new_total_charge = total_charge + current_charge;
+    new_grand_total = new_total_dv + new_total_charge;
 
-    $(document).find("#total_dv").text( new_total_dv.toFixed(2) );
-    $(document).find("#total_charge").text( new_total_charge.toFixed(2) );
+    $(document).find("#total_dv").text( "$" + new_total_dv.toFixed(2) );
+    $(document).find("#total_charge").text( "$" + new_total_charge.toFixed(2) );
+    $(document).find("#grand_total").text( "$" + new_grand_total.toFixed(2) );
 
 }
 
