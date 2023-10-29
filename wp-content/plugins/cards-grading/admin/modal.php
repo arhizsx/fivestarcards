@@ -67,7 +67,7 @@ $user_id = get_current_user_id();
 		</div>
 	</div>
 </div>
-<div class="p-5">
+<div class="pt-5 px-5 pb-0">
     <H1>PSA - Value Bulk</H1>
     <div class='5star_btn_box_top'>
     <button class='5star_btn btn btn-success mb-3' data-type="psa-value_bulk" data-action="add_card">
