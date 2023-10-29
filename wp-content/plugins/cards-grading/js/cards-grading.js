@@ -12,6 +12,7 @@ $(document).on("click", ".5star_btn", function(e){
 
     console.log("Clicked")
 
+    if($(this).data("action")== "add_card" ){			
 
         switch( $(this).data("type") ){
 
@@ -38,5 +39,6 @@ $(document).on("click", ".5star_btn", function(e){
             default:
 
         }
+    }
 
 });
