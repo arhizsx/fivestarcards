@@ -24,7 +24,6 @@ $args = array(
 
 $posts = get_posts($args);
 
-print_r($posts);
 
 ?>
 
@@ -122,9 +121,23 @@ print_r($posts);
         </tr>
     </thead>
     <tbody>
+        <?php 
+            if( $posts ){
+                foreach($posts as $post){
+        ?>
         <tr>
-        <td class="text-center" colspan="10">Empty</td>
+            <td class="text-center" colspan="10">POST</td>
         </tr>
+        <?php          
+                }
+            } else {
+        ?>
+        <tr>
+            <td class="text-center" colspan="10">Empty</td>
+        </tr>
+        <?php          
+            }
+        ?>
     </tbody>
     </table>
     </div>
