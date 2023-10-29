@@ -87,7 +87,7 @@ $(document).on("click", ".5star_btn", function(e){
 
             $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(k, v){
 
-                console.log( $(v) );
+                console.log( $(v).val() );
 
                 if( $(v).val().length > 0 ){
 
