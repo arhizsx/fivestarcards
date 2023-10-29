@@ -20,6 +20,10 @@ function addCardToTable(card){
     $(document).find(".5star_logged_cards tbody").append(
         "<tr>" +
             "<td>" + card["quantity"] + "</td>" +
+            "<td>" + card["year"] + "</td>" +
+            "<td>" + card["brand"] + "</td>" +
+            "<td>" + card["attribute"] + "</td>" +
+            "<td>" + card["player"] + "</td>" +
         "</tr>"
     );
 

@@ -39,6 +39,10 @@ $user_id = get_current_user_id();
                                 <input type="text" name="brand" value="" class="form-control mb-2"/>
                             </div>
                             <div class="col-xl-12">
+                                <label for="brand">Card Number</label>
+                                <input type="text" name="card_number" value="" class="form-control mb-2"/>
+                            </div>
+                            <div class="col-xl-12">
                                 <label for="player">Player Name</label>
                                 <input type="text" name="player" value="" class="form-control mb-2"/>
                             </div>
