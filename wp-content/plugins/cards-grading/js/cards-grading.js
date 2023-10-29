@@ -95,6 +95,7 @@ $(document).on("click", ".5star_btn", function(e){
 
                 } else {
                     $(v).focus();
+                    $(v).val('');
                     error_cnt = error_cnt + 1;
                     return false;
                 }
