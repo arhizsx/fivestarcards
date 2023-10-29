@@ -124,6 +124,7 @@ $posts = get_posts($args);
         <?php 
             if( $posts ){
                 foreach($posts as $post){
+                    print( $post->title);
         ?>
         <tr>
             <td>Remove</td>
