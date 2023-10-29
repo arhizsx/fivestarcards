@@ -127,7 +127,7 @@ $posts = get_posts($args);
         ?>
         <tr>
             <td>
-            <?php print( $post->id); ?>            
+            <?php print( $post); ?>            
             </td>
         </tr>
         <?php          
