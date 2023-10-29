@@ -126,9 +126,7 @@ $posts = get_posts($args);
                 foreach($posts as $post)
                 {
                     $meta = get_post_meta($post->ID);
-                    $card = json_decode($meta["card"], $true);
-
-                    print_r($card);
+                    print_r($meta->card);
         ?>
         <tr>
         </tr>
