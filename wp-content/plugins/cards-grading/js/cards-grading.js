@@ -48,12 +48,10 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "confirm_add":
 
-            $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(){
+            $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(k, v){
 
-                console.log($(this).val().length);
-
-                if( $(this).val().length > 0 ){
-                    console.log( $(this).attr("name") + ": " + $(this).val() );
+                if( v.val().length > 0 ){
+                    console.log( v.attr("name") + ": " + v.val() + " - " + v.val().length);
                 } else {
 
 
