@@ -63,7 +63,6 @@ $(document).on("click", ".5star_btn", function(e){
 
 $(document).find("#add_card_form").submit( function(e){
 
-    e.preventDefault();
     var form = $(this).serialize();
     
     console.log(form);
