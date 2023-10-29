@@ -144,7 +144,7 @@
                     $.ajax({
                         method: 'post',
                         url: url,
-                        headers: {'X-WP-Nonce', nonce },
+                        headers: {'X-WP-Nonce': nonce },
                         data: card
                     });
 
