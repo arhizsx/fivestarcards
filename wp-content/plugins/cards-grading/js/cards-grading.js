@@ -18,6 +18,7 @@ function addCardToTable(card){
     }
 
     var total_charge = parseFloat(card["quantity"]) * parseFloat(card["per_card"]);
+    var total_dv = parseFloat(card["quantity"]) * parseFloat(card["dv"]);
 
     $(document).find(".5star_logged_cards tbody").append(
         "<tr>" +
@@ -28,7 +29,8 @@ function addCardToTable(card){
             "<td>" + card["player"] + "</td>" +
             "<td>" + card["attribute"] + "</td>" +
             "<td>" + card["dv"] + "</td>" +
-            "<td class='text-end text-right'>$" + total_charge.toFixed(2) + "</td>" +
+            "<td>$" + total_dv.toFixed() + "</td>" +
+            "<td>$" + total_charge.toFixed(2) + "</td>" +
         "</tr>"
     );
 
