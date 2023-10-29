@@ -60,7 +60,7 @@ $user_id = get_current_user_id();
                     </div>
                     <div class="d-none text-center p-5" id="maxed-out">
                         <i class="fa-solid fa-hand fa-6x"></i>
-                        <div class="message"></div>
+                        <div class="message py-3"></div>
                     </div>
                 </div>
                 <div class="modal-footer">
