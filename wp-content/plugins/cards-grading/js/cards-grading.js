@@ -116,6 +116,27 @@ $(document).on("click", ".5star_btn", function(e){
                     showAddCardModal("psa-super_express", 330, 4999);
                     break;
 
+                case "sgc-bulk":
+                    showAddCardModal("sgc-bulk", 15, 1500);
+                    break;
+
+
+                case "cgc-bulk":
+                    showAddCardModal("cgc-bulk", 15, 100);
+                    break;
+
+                case "cgc-economy":
+                    showAddCardModal("cgc-economy", 25, 400);
+                    break;
+
+                case "cgc-standard":
+                    showAddCardModal("cgc-standard", 35, 1000);
+                    break;
+
+                case "cgc-express":
+                    showAddCardModal("cgc-express", 65, 10000);
+                    break;
+
                 default:
 
             }
