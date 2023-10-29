@@ -34,6 +34,9 @@
 
         // Add Shortcodes
         add_shortcode('cards-grading', array( $this, 'cards_grading_shortcodes' ));
+
+        // Add Endpoint
+        add_action("rest_api_ini", array($this, 'register_endpoint'));
     }
 
     public function create_custom_post_type()
@@ -76,14 +79,15 @@
 
     }
 
-    function subscribe_link_att($atts) {
+    public function subscribe_link_att($atts) {
         $default = array(
             'link' => '#',
         );
         $a = shortcode_atts($default, $atts);
         return 'Follow us on '.$a['link'];
     }    
-    function cards_grading_shortcodes($atts) 
+
+    public function cards_grading_shortcodes($atts) 
     {
 
         $default = array(
@@ -97,7 +101,21 @@
 
     }
 
+    public function register_endpoint(){
+        
+        register_rest_route(
+            "cards-grading/v1",
+            "add-card",
+            array(
+                'methods' => 'POST',
+                'callback' => array($his, 'handle_add_card')
+            )            
+        );
+    }
 
+    public function handle_add_card(){
+        echo 'Test Endpoint Good';
+    }
 
  }
 
