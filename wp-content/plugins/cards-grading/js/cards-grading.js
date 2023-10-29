@@ -53,10 +53,8 @@ $(document).on("click", ".5star_btn", function(e){
 
             console.log($(this).data("action"));
 
-            console.log($(document).find(".dxmodal").find('#add_card_form').serialize());
-
             $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(){
-                console.log( $(this).val() );
+                console.log( $(this).attr("name") + ": " + $(this).val() );
             });
 
             break;
