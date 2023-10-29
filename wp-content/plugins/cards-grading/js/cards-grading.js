@@ -92,6 +92,8 @@ $(document).on("click", ".5star_btn", function(e){
         
         case "add_card" :
 
+            console.log( $(this).data("type") );
+
             switch( $(this).data("type") ){
 
                 case "psa-value_bulk":
@@ -100,7 +102,6 @@ $(document).on("click", ".5star_btn", function(e){
 
                 case "psa-value_plus":
                     showAddCardModal("psa-value_plus", 40, 499);
-                    console.log("Value Plus");
                     break;
 
                 case "psa-regular":
