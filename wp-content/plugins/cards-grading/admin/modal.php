@@ -59,7 +59,7 @@ $posts = get_posts($args);
                                         <input type="text" name="brand" value="" class="form-control mb-2"/>
                                     </div>
                                     <div class="col-xl-12">
-                                        <label for="brand">Card Number</label>
+                                        <label for="card_number">Card Number</label>
                                         <input type="text" name="card_number" value="" class="form-control mb-2"/>
                                     </div>
                                     <div class="col-xl-12">
@@ -124,9 +124,19 @@ $posts = get_posts($args);
         <?php 
             if( $posts ){
                 foreach($posts as $post){
+                    $card = json_decode($post["card"], true);
         ?>
         <tr>
-            <td class="text-center" colspan="10">POST</td>
+            <td><?php echo $card["quantity"] ?></td>
+            <td><?php echo $card["year"] ?></td>
+            <td><?php echo $card["brand"] ?></td>
+            <td><?php echo $card["card_number"] ?></td>
+            <td><?php echo $card["player"] ?></td>
+            <td><?php echo $card["attribute"] ?></td>
+            <td><?php echo $card["dv"] ?></td>
+            <td><?php echo $card["dv"] * $card["quantity"] ?></td>
+            <td><?php echo $card["per_card"] * $card["quantity"] ?></td>
+            <td>Remove</td>
         </tr>
         <?php          
                 }
