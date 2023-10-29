@@ -62,7 +62,7 @@ $user_id = get_current_user_id();
                 </div>
                 <div class="modal-footer">
                     <button class="btn border btn-secondary" data-bs-dismiss="modal" >Cancel</button>
-                    <input type="submit" class="btn border btn-success 5star_btn btn_confirm" data-action='confirm_add' data-type='' />
+                    <input type="submit" class="btn border btn-success 5star_btn" data-action='confirm_add' data-type='' />
                 </div>
             </form>
 		</div>
