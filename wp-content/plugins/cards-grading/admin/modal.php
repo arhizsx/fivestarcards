@@ -124,7 +124,8 @@ $posts = get_posts($args);
         <?php 
             if( $posts ){
                 foreach($posts as $post){
-                    print_r($post->ID);
+                    $metas = get_post_meta($post->ID);
+                    print_r($metas);
         ?>
         <tr>
             <td>
