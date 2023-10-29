@@ -11,8 +11,6 @@ function showAddCardModal( what_type, per_card, max_dv ){
 
 $(document).on("click", ".5star_btn", function(e){
 
-    e.preventDefault();
-
     switch($(this).data("action")){		
         
         case "add_card" :
