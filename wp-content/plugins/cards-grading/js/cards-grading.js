@@ -12,10 +12,16 @@ function addCardToTable(card){
 
     
     console.log(card);
-    
+
     if( $(document).find(".5star_logged_cards tbody tr td:first-child").text() == "Empty"){
         $(document).find(".5star_logged_cards tbody").empty();
     }
+
+    $(document).find(".5star_logged_cards tbody").append(
+        "<tr>" +
+            "<td>" + card["quantity"] + "</td>" +
+        "</tr>"
+    );
 
 
 
