@@ -105,7 +105,7 @@ $posts = get_posts($args);
 
     <div class="table-responsive">
     
-    <table class='table 5star_logged_cards' data-grading_type="<?php echo $params['type'] ?>" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
+    <table class='table 5star_logged_cards table-bordered table-striped' data-grading_type="<?php echo $params['type'] ?>" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
     <thead>
         <tr>
         <th>Qty</th>
@@ -126,9 +126,13 @@ $posts = get_posts($args);
                 foreach($posts as $post)
                 {
                     $meta = get_post_meta($post->ID);
-                    print_r($meta);
         ?>
         <tr>
+            <td>
+                <?php                     
+                print_r($meta);
+                ?>
+            </td>
         </tr>
         <?php          
                 }
