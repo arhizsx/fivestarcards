@@ -48,6 +48,8 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "confirm_add":
 
+            console.log($(document).find(".dxmodal").find('#add_card_form').serialize());
+
             $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(k, v){
 
                 if( $(v).val().length > 0 ){
