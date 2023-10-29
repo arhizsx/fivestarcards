@@ -26,6 +26,7 @@ function addCardToTable(card){
             "<td>" + card["player"] + "</td>" +
             "<td>" + card["attribute"] + "</td>" +
             "<td>" + card["dv"] + "</td>" +
+            "<td>" + parseFloat(card["quantity"]) * parseFloat(card["dv"]) + "</td>" +
         "</tr>"
     );
 
