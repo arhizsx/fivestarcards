@@ -89,6 +89,12 @@ $(document).on("click", ".5star_btn", function(e){
 
                 if( $(v).val().length > 0 ){
 
+                    if( $(v).attr("type") == "number" && $(v).val().isNumeric() == false  ){
+                        $(v).focus();
+                        error_cnt = error_cnt + 1;
+                        return false;                            
+                    }
+
                     card[ $(v).attr("name") ] = $(v).val();
 
                 } else {
