@@ -22,8 +22,10 @@ function addCardToTable(card){
             "<td>" + card["quantity"] + "</td>" +
             "<td>" + card["year"] + "</td>" +
             "<td>" + card["brand"] + "</td>" +
-            "<td>" + card["attribute"] + "</td>" +
+            "<td>" + card["card_number"] + "</td>" +
             "<td>" + card["player"] + "</td>" +
+            "<td>" + card["attribute"] + "</td>" +
+            "<td>" + card["dv"] + "</td>" +
         "</tr>"
     );
 
