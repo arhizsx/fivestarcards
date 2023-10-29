@@ -67,3 +67,71 @@ $user_id = get_current_user_id();
 		</div>
 	</div>
 </div>
+
+<H1>PSA - Value Bulk</H1>
+<div class='5star_btn_box_top'>
+  <button class='5star_btn btn btn-success mb-3' data-type="psa-value_bulk" data-action="add_card">
+    Add Card
+  </button>
+</div>
+
+<div class="table-responsive">
+  
+<table class='table 5star_logged_cards' data-grading_type="psa-value_bulk">
+  <thead>
+     <tr>
+       <th>Qty</th>
+       <th>Year</th>
+       <th>Brand</th>
+       <th>Card #</th>
+       <th>Player Name</th>
+       <th>Attribute S/N</th>
+       <th>DV</th>
+       <th>Total DV</th>
+       <th>Total</th>
+       <th>Action</th>
+     </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="text-center" colspan="10">Empty</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class='5star_btn_box_bottom w-100'>
+  <div class="row">
+    <div class="col-lg-6 text-end pb-2 fw-bold cards_dv_total">
+    </div>
+		<div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
+      <div class="row mb-2">
+        <div class="col text-end">
+					Total DV          
+        </div>
+        <div class="col text-end" id="total_dv">
+        	$0.00   
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-end">
+					Grading Charge    
+        </div>
+        <div class="col text-end"  id="total_charges">
+        	$0.00   
+        </div>
+      </div>
+    </div>
+  </div>
+	<div class="row">
+    <div class="col-lg-12 text-end border-top pt-2">
+  <button class='5star_btn btn btn-danger' data-type="psa-value_bulk" data-action="clear_table">
+    Clear List
+  </button>
+      
+      <button class='5star_btn btn btn-primary' data-type="psa-value_bulk" data-action="checkout">
+        Checkout
+      </button>      
+    </div>
+  </div>
+  
+</div>
