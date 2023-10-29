@@ -51,14 +51,6 @@ $(document).on("click", ".5star_btn", function(e){
 
             console.log($("#add_card_form").html());
 
-            $("#add_card_form").submit( function(e){
-
-                e.preventDefault();
-                var form = $(this).serialize();
-                
-                console.log(form);
-
-            });
 
             break;
 
@@ -77,5 +69,14 @@ $(document).on("click", ".5star_btn", function(e){
         default:
             console.log("Button not configured");
     }
+
+});
+
+$("form#add_card_form").submit( function(e){
+
+    e.preventDefault();
+    var form = $(this).serialize();
+    
+    console.log(form);
 
 });
