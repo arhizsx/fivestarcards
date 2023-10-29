@@ -66,7 +66,7 @@ function checkIfAddIsStillValid( card ){
 
     var card_total_dv = parseFloat(card["quantity"]) * parseFloat(card["dv"]);
 
-    var current_total_dv = parseFloat( $(document).find("#total_dv").text() );
+    var current_total_dv = parseFloat( $(document).find("#total_dv").text().replace("$","") );
     var max_dv = card["max_dv"];
 
     if( current_total_dv + card_total_dv < max_dv ) {
