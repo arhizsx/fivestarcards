@@ -44,6 +44,22 @@
 
     public function create_custom_post_type()
     {
+        // $args = array(
+        //     'public' => true,
+        //     'has_archive' => false,
+        //     'supports' => array('title'),
+        //     'exclude_from_search' => true,
+        //     'publicly_queryable' => false,
+        //     'capability' => 'manage_options',
+        //     'labels' => array(
+        //         'name' => 'Cards Grading',
+        //         'singular_name' => 'Card Grading'
+        //     ),
+        //     'menu_icon' => 'dashicons-media-text'
+        // );
+
+        // register_post_type("cards-grading", $args);
+
         $args = array(
             'public' => true,
             'has_archive' => false,
@@ -52,14 +68,16 @@
             'publicly_queryable' => false,
             'capability' => 'manage_options',
             'labels' => array(
-                'name' => 'Cards Grading',
-                'singular_name' => 'Card Grading'
+                'name' => 'Cards',
+                'singular_name' => 'Card'
             ),
-            'menu_icon' => 'dashicons-media-text'
+            'menu_icon' => 'dashicons-media-text',
+            'supports' => ['custom-fields']
         );
 
-        register_post_type("cards-grading", $args);
+        register_post_type("cards-grading-card", $args);
 
+        
     }
 
     public function load_assets() {
@@ -136,7 +154,7 @@
         }
 
         $post_id = wp_insert_post([
-            'post_type' => 'cards-grading',
+            'post_type' => 'cards-grading-card',
             'post_title' => 'Card Grading',
             'post_status' => 'publish'
         ]);
