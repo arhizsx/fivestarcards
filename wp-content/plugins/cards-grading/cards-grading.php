@@ -138,7 +138,7 @@
                     clearModalForm();   
                     setTotals(card_total_dv, card_total_charge)  
 
-                    var nonce = "<?php echo wp_create_nonce("cards_grading"); ?>";
+                    var nonce = "<?php echo wp_create_nonce("wp_rest"); ?>";
                     var url = "<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>";
 
                     $.ajax({
