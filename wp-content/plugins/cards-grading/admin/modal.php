@@ -29,23 +29,27 @@ $user_id = get_current_user_id();
 						<input type="number" name="quantity" class="form-control mb-2"/>
 					</div>
 					<div class="col-xl-6 col-lg-6 col-md-6">
-						<label for="quantity">Year</label>
+						<label for="year">Year</label>
 						<input type="number" name="year" class="form-control mb-2"/>
 					</div>
 					<div class="col-xl-12">
-						<label for="quantity">Brand</label>
+						<label for="brand">Brand</label>
 						<input type="text" name="brand" class="form-control mb-2"/>
 					</div>
 					<div class="col-xl-12">
-						<label for="quantity">Player Name</label>
+						<label for="player">Player Name</label>
 						<input type="text" name="player" class="form-control mb-2"/>
 					</div>
 					<div class="col-xl-6">
-						<label for="quantity">Attribute S/N</label>
+						<label for="attribute">Attribute S/N</label>
 						<input type="text" name="attribute" class="form-control mb-2"/>
 					</div>
 					<div class="col-xl-6">
-						<label for="quantity">Declared Value</label>
+						<label for="per_card">Per Card</label>
+                        <input type="text" name="per_card" value='' disabled/>
+					</div>
+					<div class="col-xl-6">
+						<label for="dv">Declared Value</label>
 						<input type="text" name="dv" class="form-control mb-2"/>
 					</div>
 				</div>
