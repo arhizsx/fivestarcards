@@ -40,7 +40,7 @@ $user_id = get_current_user_id();
 						<label for="player">Player Name</label>
 						<input type="text" name="player" class="form-control mb-2"/>
 					</div>
-					<div class="col-xl-6">
+					<div class="col-xl-12">
 						<label for="attribute">Attribute S/N</label>
 						<input type="text" name="attribute" class="form-control mb-2"/>
 					</div>
