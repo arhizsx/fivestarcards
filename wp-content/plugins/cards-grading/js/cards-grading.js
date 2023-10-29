@@ -14,6 +14,8 @@ function addCardToTable(card){
         $(document).find(".5star_logged_cards tbody").empty();
     }
 
+    console.log(card );
+    
     var total_charge = parseFloat(card["quantity"]) * parseFloat(card["per_card"]);
     var total_dv = parseFloat(card["quantity"]) * parseFloat(card["dv"]);
 
