@@ -42,7 +42,7 @@ function addCardToTable(card){
         clearModalForm();  
         setTotals(card_total_dv, card_total_charge)  
 
-        var nonce = $(document).find(".5star_logged_cards").data("nonce");
+        var nonce = "<?php echo 'TEST'; ?>";
         var url = $(document).find(".5star_logged_cards").data("endpoint");
 
         $.ajax({
