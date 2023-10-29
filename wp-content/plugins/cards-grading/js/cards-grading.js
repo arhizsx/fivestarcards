@@ -45,6 +45,8 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "confirm_add" :
 
+            console.log("Add Confirmed");
+
             $("#add_card_form").submit( function(e){
 
                 e.preventDefault();
