@@ -56,6 +56,9 @@ $user_id = get_current_user_id();
                             </div>
                         </div>
                     </form>
+                    <div class="d-none" id="maxed-out">
+                        <i class="fa-solid fa-hand"></i>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>

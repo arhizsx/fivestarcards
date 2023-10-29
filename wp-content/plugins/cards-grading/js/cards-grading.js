@@ -40,6 +40,9 @@ function addCardToTable(card){
 
     } else {
 
+        $(document).find("#add_card_form").addClass("d-none");
+        $(document).find("#maxed-out").removeClass("d-none");
+
         console.log( "Max DV Reached" );
 
     }
