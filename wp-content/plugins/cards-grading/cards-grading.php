@@ -72,13 +72,13 @@
             'all'
         );
 
-        wp_enqueue_script(
-            'cards-grading',
-            plugin_dir_url(__FILE__) . 'js/cards-grading.js',
-            array('jquery'),
-            2,
-            true
-        );
+        // wp_enqueue_script(
+        //     'cards-grading',
+        //     plugin_dir_url(__FILE__) . 'js/cards-grading.js',
+        //     array('jquery'),
+        //     2,
+        //     true
+        // );
 
     }
 
@@ -107,7 +107,7 @@
     public function load_scripts() 
     { ?>
         <script>
-        alert("test");
+        <?php include( plugin_dir_path( __FILE__ ) . 'js/card-grading.js' ); ?>
         </script>
     <?php }
 
