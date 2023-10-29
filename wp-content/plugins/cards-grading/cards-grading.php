@@ -159,7 +159,7 @@
             'post_status' => 'publish'
         ]);
 
-        add_post_meta($post_id, "card", $params);
+        add_post_meta($post_id, "card", json_encode($params) );
         
     }
 
