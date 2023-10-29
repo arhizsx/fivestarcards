@@ -127,15 +127,6 @@ $posts = get_posts($args);
                     $card = json_decode($post["card"], true);
         ?>
         <tr>
-            <td><?php echo $card["quantity"] ?></td>
-            <td><?php echo $card["year"] ?></td>
-            <td><?php echo $card["brand"] ?></td>
-            <td><?php echo $card["card_number"] ?></td>
-            <td><?php echo $card["player"] ?></td>
-            <td><?php echo $card["attribute"] ?></td>
-            <td><?php echo $card["dv"] ?></td>
-            <td><?php echo $card["dv"] * $card["quantity"] ?></td>
-            <td><?php echo $card["per_card"] * $card["quantity"] ?></td>
             <td>Remove</td>
         </tr>
         <?php          
