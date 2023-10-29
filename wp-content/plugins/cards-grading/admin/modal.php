@@ -4,9 +4,18 @@ $user_id = get_current_user_id();
 
 $args = array(
     'meta_query' => array(
+        'relations' =>  'AND',    
         array(
             'key' => 'grading',
             'value' => $params['type']
+        ),
+        array(
+            'key' => 'user_id',
+            'value' => $user_id
+        ),
+        array(
+            'key' => 'status',
+            'value' => $pending
         )
     ),
     'post_type' => 'cards-grading-card',
