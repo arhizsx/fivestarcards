@@ -40,7 +40,7 @@ function addCardToTable(card){
 
     } else {
 
-        $(document).find("form#add_card_form").addClass("d-none");
+        $(document).find("div#add_card_form_box").addClass("d-none");
         $(document).find("div#maxed-out").removeClass("d-none");
 
         console.log( "Max DV Reached" );
