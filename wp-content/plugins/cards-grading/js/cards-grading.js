@@ -100,6 +100,7 @@ $(document).on("click", ".5star_btn", function(e){
 
                 case "psa-value_plus":
                     showAddCardModal("psa-value_plus", 40, 499);
+                    console.log("Value Plus");
                     break;
 
                 case "psa-regular":
