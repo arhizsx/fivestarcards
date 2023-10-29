@@ -93,7 +93,7 @@ $(document).on("click", ".5star_btn", function(e){
                     if( $(v).attr("type") == "number"){
 
                         if( $(v).val().isNumeric() ){
-                            console.log("Number");
+                            console.log(  $(v).val() );
                         } else {
                             console.log("Not Number");
                         }
