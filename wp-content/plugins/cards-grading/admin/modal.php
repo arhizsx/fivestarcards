@@ -18,7 +18,7 @@ $user_id = get_current_user_id();
 					X
 				</button>
 			</div>
-			<div class="modal-body p-2">
+			<div class="modal-body py-2 px-5">
 				<input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
 				<input type="hidden" name="grading" value=''/>
 				<input type="hidden" name="per_card" value=''/>
