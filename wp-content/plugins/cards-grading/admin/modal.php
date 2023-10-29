@@ -44,11 +44,11 @@ $user_id = get_current_user_id();
 						<label for="attribute">Attribute S/N</label>
 						<input type="text" name="attribute" class="form-control mb-2"/>
 					</div>
-					<div class="col-xl-6">
+					<div class="col-xl-6 col-lg-6 col-md-6">
 						<label for="per_card">Per Card</label>
                         <input type="text" name="per_card" value='' disabled/>
 					</div>
-					<div class="col-xl-6">
+					<div class="col-xl-6 col-lg-6 col-md-6">
 						<label for="dv">Declared Value</label>
 						<input type="text" name="dv" class="form-control mb-2"/>
 					</div>
