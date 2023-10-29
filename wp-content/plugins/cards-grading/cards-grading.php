@@ -247,8 +247,9 @@
             "add-card",
             array(
                 'methods' => 'POST',
-                'callback' => array($his, 'handle_add_card')
-            )            
+                'callback' => array($this, 'handle_add_card')
+            )    
+                    
         );
     }
 
