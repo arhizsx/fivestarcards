@@ -18,9 +18,6 @@ $(document).on("click", ".5star_btn", function(e){
         
         case "add_card" :
 
-            console.log($(this).data("action"));
-
-
             switch( $(this).data("type") ){
 
                 case "psa-value_bulk":
@@ -50,8 +47,6 @@ $(document).on("click", ".5star_btn", function(e){
             break;
 
         case "confirm_add":
-
-            console.log($(this).data("action"));
 
             $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(){
                 console.log( $(this).attr("name") + ": " + $(this).val() );
