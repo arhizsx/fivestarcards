@@ -77,7 +77,7 @@
 
         register_post_type("cards-grading-card", $args);
 
-        
+
     }
 
     public function load_assets() {
@@ -158,6 +158,11 @@
             'post_title' => 'Card Grading',
             'post_status' => 'publish'
         ]);
+
+        foreach( $params as $label => $value ){
+            add_post_meta($post_id, $label, $value);
+        }
+        
 
     }
 
