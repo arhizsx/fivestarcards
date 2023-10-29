@@ -42,7 +42,7 @@ function addCardToTable(card){
         clearModalForm();  
         setTotals(card_total_dv, card_total_charge)  
 
-        var nonce = "<?php echo 'TEST'; ?>";
+        var nonce = "<?php echo wp_create_nonce('cards_grading'); ?>";
         var url = $(document).find(".5star_logged_cards").data("endpoint");
 
         $.ajax({
