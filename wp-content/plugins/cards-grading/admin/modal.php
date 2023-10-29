@@ -127,18 +127,10 @@ $posts = get_posts($args);
                 {
                     $meta = get_post_meta($post->ID);
                     $card = json_decode($meta["card"], $true);
+
+                    print_r($card);
         ?>
         <tr>
-            <td><?php echo $card["quantity"]; ?></td>
-            <td><?php echo $card["year"]; ?></td>
-            <td><?php echo $card["brand"]; ?></td>
-            <td><?php echo $card["card_number"]; ?></td>
-            <td><?php echo $card["player"]; ?></td>
-            <td><?php echo $card["attribute"]; ?></td>
-            <td><?php echo $card["dv"]; ?></td>
-            <td><?php echo $card["dv"]; ?></td>
-            <td><?php echo $card["dv"]; ?></td>
-            <td><?php echo $card["dv"]; ?></td>
         </tr>
         <?php          
                 }
