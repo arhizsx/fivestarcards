@@ -28,7 +28,7 @@ function addCardToTable(card){
             "<td>" + card["player"] + "</td>" +
             "<td>" + card["attribute"] + "</td>" +
             "<td>" + card["dv"] + "</td>" +
-            "<td>$ " + total_charge.toFixed(2) + "</td>" +
+            "<td class='text-end'>$ " + total_charge.toFixed(2) + "</td>" +
         "</tr>"
     );
 
