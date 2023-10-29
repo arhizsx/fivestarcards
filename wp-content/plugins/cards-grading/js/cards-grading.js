@@ -47,10 +47,6 @@ $(document).on("click", ".5star_btn", function(e){
 
             console.log("Add Confirmed");
 
-            console.log($("form#add_card_form").serialize());
-
-            console.log($("#add_card_form").html());
-
 
             break;
 
