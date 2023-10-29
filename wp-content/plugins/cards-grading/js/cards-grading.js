@@ -4,7 +4,8 @@ function showAddCardModal( what_type, per_card, max_dv ){
     $(document).find(".dxmodal").find("input[name='grading']").val(what_type);
     $(document).find(".dxmodal").find("input[name='per_card']").val(per_card);
     $(document).find(".dxmodal").find("input[name='max_dv']").val(max_dv);
-    
+    $(document).find(".dxmodal").find(".btn_confirm']").data('data-type', what_type);
+
 }
 
 
