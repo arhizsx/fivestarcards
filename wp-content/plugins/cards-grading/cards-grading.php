@@ -35,9 +35,6 @@
         // Add Shortcodes
         add_shortcode('cards-grading', array( $this, 'cards_grading_shortcodes' ));
 
-        // Add JS
-        add_action('wp_footer', array( $this, 'load_scripts' ));
-
         // Add Endpoint
         add_action("rest_api_init", array($this, 'register_endpoint'));
     }
