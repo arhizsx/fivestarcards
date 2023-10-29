@@ -51,11 +51,11 @@ $user_id = get_current_user_id();
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <label for="per_card">Per Card</label>
-                                <input type="number" name="per_card" value="" value='' disabled/>
+                                <input type="number" name="per_card" value=""  class="form-control mb-2" disabled/>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <label for="dv">Declared Value</label>
-                                <input type="tenumberxt" name="dv" value="" class="form-control mb-2"/>
+                                <input type="number" name="dv" value="" class="form-control mb-2"/>
                             </div>
                         </div>
                         <div class="row">
