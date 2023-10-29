@@ -47,6 +47,7 @@ $(document).on("click", ".5star_btn", function(e){
             break;
 
         case "confirm_add":
+            var error_cnt = 0;
 
             $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(k, v){
 
@@ -56,13 +57,15 @@ $(document).on("click", ".5star_btn", function(e){
 
                 } else {
                     $(v).focus();
+                    error_cnt = error_cnt + 1;
                     return false;
                 }
 
             });
 
-
-            console.log( "Submit Form" );
+            if(error_cnt === 0){
+                console.log( "Submit Form" );
+            }
 
             break;
 
