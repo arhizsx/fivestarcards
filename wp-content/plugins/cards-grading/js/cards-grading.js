@@ -8,7 +8,9 @@ function showAddCardModal( what_type, per_card, max_dv ){
 
 }
 
-function addCardtoTable(){
+function addCardToTable(card){
+
+    console.log(card);
 
 }
 
@@ -70,7 +72,7 @@ $(document).on("click", ".5star_btn", function(e){
             });
 
             if(error_cnt === 0){
-                console.log( JSON.parse(JSON.stringify(card)));
+                addCardToTable( card );
             }
 
             break;
