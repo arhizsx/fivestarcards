@@ -8,6 +8,10 @@ function showAddCardModal( what_type, per_card, max_dv ){
 
 }
 
+function addCardtoTable(){
+
+}
+
 
 $(document).on("click", ".5star_btn", function(e){
 
@@ -47,13 +51,15 @@ $(document).on("click", ".5star_btn", function(e){
             break;
 
         case "confirm_add":
+
             var error_cnt = 0;
+            var card = {};
 
             $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(k, v){
 
                 if( $(v).val().length > 0 ){
-                    
-                    console.log( $(v).attr("name") + ": " + $(v).val() + " - " + $(v).val().length);
+
+                    card[ $(v).attr("name") ] = $(v).val();
 
                 } else {
                     $(v).focus();
@@ -64,7 +70,7 @@ $(document).on("click", ".5star_btn", function(e){
             });
 
             if(error_cnt === 0){
-                console.log( "Submit Form" );
+                console.log(card);
             }
 
             break;
