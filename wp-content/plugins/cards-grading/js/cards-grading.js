@@ -39,7 +39,7 @@ function addCardToTable(card){
             "</tr>"
         );
     
-        clearModalForm();  
+        clearModalForm();   
         setTotals(card_total_dv, card_total_charge)  
 
         var nonce = $(document).find(".5star_logged_cards").data("nonce");
