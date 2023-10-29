@@ -91,7 +91,7 @@
             'type' => 'grading-tyoe'
         );
         
-        $att = shortcode_atts($default, $atts);
+        $params = shortcode_atts($default, $atts);
 
         include( plugin_dir_path( __FILE__ ) . 'admin/modal.php' );
 

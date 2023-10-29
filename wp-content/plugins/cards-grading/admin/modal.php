@@ -68,16 +68,16 @@ $user_id = get_current_user_id();
 	</div>
 </div>
 <div class="pt-5 px-5 pb-0">
-    <H1><?php echo params['title'] ?></H1>
+    <H1><?php echo $params['title'] ?></H1>
     <div class='5star_btn_box_top'>
-    <button class='5star_btn btn btn-success mb-3' data-type="<?php echo params['type'] ?>" data-action="add_card">
+    <button class='5star_btn btn btn-success mb-3' data-type="<?php echo $params['type'] ?>" data-action="add_card">
         Add Card
     </button>
     </div>
 
     <div class="table-responsive">
     
-    <table class='table 5star_logged_cards' data-grading_type="<?php echo params['type'] ?>">
+    <table class='table 5star_logged_cards' data-grading_type="<?php echo $params['type'] ?>">
     <thead>
         <tr>
         <th>Qty</th>
@@ -124,11 +124,11 @@ $user_id = get_current_user_id();
     </div>
         <div class="row">
         <div class="col-lg-12 text-end border-top pt-2">
-    <button class='5star_btn btn btn-danger' data-type="<?php echo params['type'] ?>" data-action="clear_table">
+    <button class='5star_btn btn btn-danger' data-type="<?php echo $params['type'] ?>" data-action="clear_table">
         Clear List
     </button>
         
-        <button class='5star_btn btn btn-primary' data-type="<?php echo params['type'] ?>" data-action="checkout">
+        <button class='5star_btn btn btn-primary' data-type="<?php echo $params['type'] ?>" data-action="checkout">
             Checkout
         </button>      
         </div>
