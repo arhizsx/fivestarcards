@@ -51,10 +51,12 @@ $(document).on("click", ".5star_btn", function(e){
             $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(k, v){
 
                 if( $(v).val().length > 0 ){
+                    
                     console.log( $(v).attr("name") + ": " + $(v).val() + " - " + $(v).val().length);
+
                 } else {
-
-
+                    $(v).focus();
+                    return false;
                 }
 
             });
