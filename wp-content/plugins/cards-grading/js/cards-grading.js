@@ -47,7 +47,7 @@ function addCardToTable(card){
         $(document).find("div#add_card_form_box").addClass("d-none");
         $(document).find("div#maxed-out").removeClass("d-none");
         $(document).find("div#maxed-out").find(".message").html(
-            "<strong>Maximum allowed DV is only " + card["max_dv"] + "</strong>"
+            "<strong>Maximum allowed DV is only " + ( parseFloat(card["max_dv"]) - 1)  + "</strong>"
         );
 
         console.log( "Max DV Reached" );
