@@ -35,23 +35,23 @@ $user_id = get_current_user_id();
                         </div>
                         <div class="col-xl-12">
                             <label for="brand">Brand</label>
-                            <input type="text" name="brand" class="form-control mb-2"/>
+                            <input type="text" name="brand" value="" class="form-control mb-2"/>
                         </div>
                         <div class="col-xl-12">
                             <label for="player">Player Name</label>
-                            <input type="text" name="player" class="form-control mb-2"/>
+                            <input type="text" name="player" value="" class="form-control mb-2"/>
                         </div>
                         <div class="col-xl-12">
                             <label for="attribute">Attribute S/N</label>
-                            <input type="text" name="attribute" class="form-control mb-2"/>
+                            <input type="text" name="attribute" value="" class="form-control mb-2"/>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6">
                             <label for="per_card">Per Card</label>
-                            <input type="text" name="per_card" value='' disabled/>
+                            <input type="text" name="per_card" value="" value='' disabled/>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6">
                             <label for="dv">Declared Value</label>
-                            <input type="text" name="dv" class="form-control mb-2"/>
+                            <input type="text" name="dv" value="" class="form-control mb-2"/>
                         </div>
                     </div>
                     <div class="row">
