@@ -45,6 +45,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "confirm_add":
 
+            console.log($(document).find(".dxmodal").find("form").serialize());
             console.log( $(document).find(".dxmodal").find("input[name='quantity']").val() );
             console.log( $(document).find(".dxmodal").find("input[name='year']").val() );
 
