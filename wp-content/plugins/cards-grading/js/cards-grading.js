@@ -47,7 +47,7 @@ function addCardToTable(card){
 
         $.ajax({
             method: 'post',
-            url: '',
+            url: url,
             headers: {'X-WP-Nonce': nonce },
             data: card
         });
