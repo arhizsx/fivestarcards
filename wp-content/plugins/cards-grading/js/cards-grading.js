@@ -70,7 +70,7 @@ $(document).on("click", ".5star_btn", function(e){
             });
 
             if(error_cnt === 0){
-                console.log( JSON.stringify(card));
+                console.log( JSON.parse(JSON.stringify(card)));
             }
 
             break;
