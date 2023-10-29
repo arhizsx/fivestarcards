@@ -43,13 +43,6 @@ $(document).on("click", ".5star_btn", function(e){
 
             break;
 
-        case "confirm_add" :
-
-            console.log("Add Confirmed");
-
-
-            break;
-
         case "clear_table" :
 
             console.log("Clear Table");
@@ -68,7 +61,7 @@ $(document).on("click", ".5star_btn", function(e){
 
 });
 
-$("form#add_card_form").submit( function(e){
+$(document).find("#add_card_form").submit( function(e){
 
     e.preventDefault();
     var form = $(this).serialize();

@@ -20,45 +20,45 @@ $user_id = get_current_user_id();
 			</div>
             <forn id="add_card_form">
                 <div class="modal-body py-2 px-3">
-                        <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
-                        <input type="hidden" name="grading" value=''/>
-                        <input type="hidden" name="per_card" value=''/>
-                        <input type="hidden" name="max_dv" value=''/>
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <label for="quantity">Qty</label>
-                                <input type="number" name="quantity" value="1" class="form-control mb-2"/>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <label for="year">Year</label>
-                                <input type="number" name="year" value="2020"  class="form-control mb-2"/>
-                            </div>
-                            <div class="col-xl-12">
-                                <label for="brand">Brand</label>
-                                <input type="text" name="brand" class="form-control mb-2"/>
-                            </div>
-                            <div class="col-xl-12">
-                                <label for="player">Player Name</label>
-                                <input type="text" name="player" class="form-control mb-2"/>
-                            </div>
-                            <div class="col-xl-12">
-                                <label for="attribute">Attribute S/N</label>
-                                <input type="text" name="attribute" class="form-control mb-2"/>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <label for="per_card">Per Card</label>
-                                <input type="text" name="per_card" value='' disabled/>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6">
-                                <label for="dv">Declared Value</label>
-                                <input type="text" name="dv" class="form-control mb-2"/>
-                            </div>
+                    <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
+                    <input type="hidden" name="grading" value=''/>
+                    <input type="hidden" name="per_card" value=''/>
+                    <input type="hidden" name="max_dv" value=''/>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <label for="quantity">Qty</label>
+                            <input type="number" name="quantity" value="1" class="form-control mb-2"/>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-12 mt-4 text-end fw-bold">
-                                Total: $ <span class="add_total">0.00</span>
-                            </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <label for="year">Year</label>
+                            <input type="number" name="year" value="2020"  class="form-control mb-2"/>
                         </div>
+                        <div class="col-xl-12">
+                            <label for="brand">Brand</label>
+                            <input type="text" name="brand" class="form-control mb-2"/>
+                        </div>
+                        <div class="col-xl-12">
+                            <label for="player">Player Name</label>
+                            <input type="text" name="player" class="form-control mb-2"/>
+                        </div>
+                        <div class="col-xl-12">
+                            <label for="attribute">Attribute S/N</label>
+                            <input type="text" name="attribute" class="form-control mb-2"/>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <label for="per_card">Per Card</label>
+                            <input type="text" name="per_card" value='' disabled/>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <label for="dv">Declared Value</label>
+                            <input type="text" name="dv" class="form-control mb-2"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 mt-4 text-end fw-bold">
+                            Total: $ <span class="add_total">0.00</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button class="btn border btn-secondary" data-bs-dismiss="modal" >Cancel</button>
