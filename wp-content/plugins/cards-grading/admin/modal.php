@@ -82,7 +82,7 @@ $user_id = get_current_user_id();
 
     <div class="table-responsive">
     
-    <table class='table 5star_logged_cards' data-grading_type="<?php echo $params['type'] ?>">
+    <table class='table 5star_logged_cards' data-grading_type="<?php echo $params['type'] ?>" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-nonce="<?php echo wp_create_nonce("cards-grading"); ?>">
     <thead>
         <tr>
         <th>Qty</th>
