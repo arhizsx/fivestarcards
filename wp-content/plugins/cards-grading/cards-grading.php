@@ -159,6 +159,8 @@
             'post_status' => 'publish'
         ]);
 
+        add_post_meta($post_id, "user_id", $params["user_id"] );
+        add_post_meta($post_id, "grading", $params["grading"] );
         add_post_meta($post_id, "card", json_encode($params) );
         
     }
