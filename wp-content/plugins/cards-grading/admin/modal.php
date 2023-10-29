@@ -130,7 +130,7 @@ $posts = get_posts($args);
         <tr>
             <td>
                 <?php                     
-                print_r($meta['user_id']);
+                print_r($meta['card'][0]);
                 ?>
             </td>
         </tr>
