@@ -23,7 +23,6 @@ $user_id = get_current_user_id();
 
                         <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
                         <input type="hidden" name="grading" value=''/>
-                        <input type="hidden" name="per_card" value=''/>
                         <input type="hidden" name="max_dv" value=''/>
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6">
@@ -52,11 +51,11 @@ $user_id = get_current_user_id();
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <label for="per_card">Per Card</label>
-                                <input type="text" name="per_card" value="" value='' disabled/>
+                                <input type="number" name="per_card" value="" value='' disabled/>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <label for="dv">Declared Value</label>
-                                <input type="text" name="dv" value="" class="form-control mb-2"/>
+                                <input type="tenumberxt" name="dv" value="" class="form-control mb-2"/>
                             </div>
                         </div>
                         <div class="row">
