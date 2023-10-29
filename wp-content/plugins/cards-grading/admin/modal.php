@@ -2,6 +2,29 @@
 
 $user_id = get_current_user_id();
 
+$args = array(
+    'meta_query' => array(
+        array(
+            'key' => 'grading',
+            'value' => $params['type']
+        ),
+        array(
+            'key' => 'user_id',
+            'value' => $user_id
+        ),
+        array(
+            'key' => 'status',
+            'value' => $pending
+        ),
+    ),
+    'post_type' => 'cards-grading-card',
+    'posts_per_page' => -1
+);
+
+$posts = get_posts($args);
+
+print_r($posts);
+
 ?>
 
 <div class="modal fade dxmodal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
