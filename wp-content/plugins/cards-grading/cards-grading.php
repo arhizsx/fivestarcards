@@ -125,8 +125,22 @@
         );
     }
 
-    public function handle_add_card(){
-        echo 'Test Endpoint Good';
+    public function handle_add_card($data){
+
+        $headers = $data->get_headers();
+        $params = $data->get_params();
+        $nonce = $headers["x_wp_nonce"][0];
+
+        if( !wp_verify_nonce($nonce, 'wp_rest') ){
+            return new WP_REST_Response("Invalid Nonce", 422);
+        }
+
+        $post_id = wp_insert_post([
+            'post_type' => 'cards-grading',
+            'post_title' => 'Card Grading',
+            'post_status' => 'publish'
+        ]);
+
     }
 
  }
