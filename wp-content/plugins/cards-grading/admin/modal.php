@@ -24,6 +24,8 @@ $args = array(
 
 $posts = get_posts($args);
 
+print_r($posts);
+
 
 ?>
 
@@ -124,7 +126,6 @@ $posts = get_posts($args);
         <?php 
             if( $posts ){
                 foreach($posts as $post){
-                    print_r($posts["ID"]);
         ?>
         <tr>
             <td>Remove</td>
