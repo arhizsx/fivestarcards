@@ -91,6 +91,7 @@ $total_dv = 0;
                     <div class="modal-body py-2 px-3">
                         <i class="fa-solid fa-hand fa-6x"></i>
                         <div class="message py-3"></div>
+                        <button class="btn border btn-dark 5star_btn" data-action="confirm_max_dv">OK</button>
                     </div>
                 </div>
 		</div>
