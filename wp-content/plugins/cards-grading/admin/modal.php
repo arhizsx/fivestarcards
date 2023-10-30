@@ -127,6 +127,8 @@ $posts = get_posts($args);
                 {
                     $meta = get_post_meta($post->ID);
                     $card = json_decode($meta['card'][0], true);
+
+                    ;
         ?>
         <tr>
             <td><?php echo $card["quantity"]; ?></td>
@@ -135,9 +137,9 @@ $posts = get_posts($args);
             <td><?php echo $card["card_number"]; ?></td>
             <td><?php echo $card["player"]; ?></td>
             <td><?php echo $card["attribute"]; ?></td>
-            <td><?php echo $card["dv"]; ?></td>
-            <td><?php echo $card["dv"] * $card["quantity"]; ?></td>
-            <td><?php echo $card["per_card"] * $card["quantity"]; ?></td>
+            <td><?php echo number_format((float)$card["dv"], 2, '.', ''); ?></td>
+            <td><?php echo number_format((float)($card["dv"] * $card["quantity"]), 2, '.', ''); ?></td>
+            <td><?php echo number_format((float)($card["per_card"] * $card["quantity"]), 2, '.', ''); ?></td>
             <td>Remove</td>
         </tr>
         <?php          
