@@ -137,9 +137,9 @@ $posts = get_posts($args);
             <td><?php echo $card["card_number"]; ?></td>
             <td><?php echo $card["player"]; ?></td>
             <td><?php echo $card["attribute"]; ?></td>
-            <td><?php echo number_format((float)$card["dv"], 2, '.', ''); ?></td>
-            <td><?php echo number_format((float)($card["dv"] * $card["quantity"]), 2, '.', ''); ?></td>
-            <td><?php echo number_format((float)($card["per_card"] * $card["quantity"]), 2, '.', ''); ?></td>
+            <td><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
+            <td><?php echo "$" . number_format((float)($card["dv"] * $card["quantity"]), 2, '.', ''); ?></td>
+            <td><?php echo "$" . number_format((float)($card["per_card"] * $card["quantity"]), 2, '.', ''); ?></td>
             <td>Remove</td>
         </tr>
         <?php          
