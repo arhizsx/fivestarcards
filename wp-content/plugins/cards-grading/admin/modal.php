@@ -136,6 +136,7 @@ $posts = get_posts($args);
             <td><?php echo $card["player"]; ?></td>
             <td><?php echo $card["attribute"]; ?></td>
             <td><?php echo $card["dv"]; ?></td>
+            <td><?php echo $card["dv"] * $card["quantity"]; ?></td>
         </tr>
         <?php          
                 }
