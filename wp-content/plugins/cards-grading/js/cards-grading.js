@@ -8,7 +8,6 @@ function showAddCardModal( what_type, per_card, max_dv ){
     $(document).find(".dxmodal").find("input[name='grading']").val(what_type);
     $(document).find(".dxmodal").find("input[name='per_card']").val(per_card);
     $(document).find(".dxmodal").find("input[name='max_dv']").val(max_dv);
-    $(document).find(".dxmodal").find("button.btn_confirm").attr('data-type', what_type);
 
 }
 
@@ -103,6 +102,13 @@ function clearModalForm(){
     $(document).find(".dxmodal").find('#add_card_form *').filter(':input:visible:enabled').each(function(k, v){
         $(v).val("");
     });    
+}
+
+function showClearTableModal(what_type){
+
+    $(document).find(".clear_cards").find("div#clear_card_type_box").removeClass("d-none");
+    $(document).find(".clear_cards").appendTo('body').modal("show");
+
 }
 
 $(document).on("click", ".5star_btn", function(e){
@@ -206,7 +212,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "clear_table" :
 
-            console.log("Clear Table");
+            showClearTableModal( $(this).data("type"));
 
             break;
 
