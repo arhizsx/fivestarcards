@@ -123,12 +123,20 @@ $posts = get_posts($args);
     <tbody>
         <?php 
             if( $posts ){
+                $grading_charge = 0;
+                $total_dv = 0;
+
                 foreach($posts as $post)
                 {
                     $meta = get_post_meta($post->ID);
                     $card = json_decode($meta['card'][0], true);
 
-                    ;
+                    $card_total_dv = $card["dv"] * $card["quantity"];
+                    $card_grading_charge = $card["per_card"] * $card["quantity"];
+
+                    $grading_charge = $grading_charge + $card_grading_charge;
+                    $total_dv = $total_dv + $card_total_dv;
+
         ?>
         <tr class="card-row" data-post_id="<?php echo $post->ID; ?>">
             <td><?php echo $card["quantity"]; ?></td>
@@ -138,8 +146,8 @@ $posts = get_posts($args);
             <td><?php echo $card["player"]; ?></td>
             <td><?php echo $card["attribute"]; ?></td>
             <td><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
-            <td><?php echo "$" . number_format((float)($card["dv"] * $card["quantity"]), 2, '.', ''); ?></td>
-            <td><?php echo "$" . number_format((float)($card["per_card"] * $card["quantity"]), 2, '.', ''); ?></td>
+            <td><?php echo "$" . number_format((float) $card_total_dv, 2, '.', ''); ?></td>
+            <td><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
             <td>Remove</td>
         </tr>
         <?php          
@@ -165,15 +173,15 @@ $posts = get_posts($args);
                         Total DV          
             </div>
             <div class="col text-end" id="total_dv">
-                $0.00   
+                $<?php $total_dv ?>
             </div>
         </div>
         <div class="row">
             <div class="col text-end">
                         Grading Charge    
             </div>
-            <div class="col text-end"  id="total_charges">
-                $0.00   
+            <div class="col text-end"  id="grading_charges">
+                $<?php $grading_charge ?>
             </div>
         </div>
         </div>
