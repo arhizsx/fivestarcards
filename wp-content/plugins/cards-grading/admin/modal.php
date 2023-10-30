@@ -130,7 +130,7 @@ $posts = get_posts($args);
 
                     ;
         ?>
-        <tr>
+        <tr class="card-row" data-post_id="<?php echo $post->ID; ?>">
             <td><?php echo $card["quantity"]; ?></td>
             <td><?php echo $card["year"]; ?></td>
             <td><?php echo $card["brand"]; ?></td>
