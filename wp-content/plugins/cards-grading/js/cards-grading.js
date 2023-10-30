@@ -76,7 +76,7 @@ function setTotals( total_dv, grading_charge ){
 
     new_total_dv = total_dv + current_dv;
     new_grading_charge = grading_charge + current_charge;
-    new_grand_total = new_total_dv + new_total_charge;
+    new_grand_total = new_total_dv + new_grading_charge;
 
     $(document).find("#total_dv").text( "$" + new_total_dv.toFixed(2) );
     $(document).find("#grading_charges").text( "$" + new_grading_charge.toFixed(2) );
