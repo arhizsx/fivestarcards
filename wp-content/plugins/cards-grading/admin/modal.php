@@ -129,13 +129,13 @@ $posts = get_posts($args);
                     $card = json_decode($meta['card'][0], true);
         ?>
         <tr>
-            <td><?php $card["quantity"]; ?></td>
-            <td><?php $card["year"]; ?></td>
-            <td><?php $card["brand"]; ?></td>
-            <td><?php $card["card_number"]; ?></td>
-            <td><?php $card["player"]; ?></td>
-            <td><?php $card["attribute"]; ?></td>
-            <td><?php $card["dv"]; ?></td>
+            <td><?php echo $card["quantity"]; ?></td>
+            <td><?php echo $card["year"]; ?></td>
+            <td><?php echo $card["brand"]; ?></td>
+            <td><?php echo $card["card_number"]; ?></td>
+            <td><?php echo $card["player"]; ?></td>
+            <td><?php echo $card["attribute"]; ?></td>
+            <td><?php echo $card["dv"]; ?></td>
         </tr>
         <?php          
                 }
