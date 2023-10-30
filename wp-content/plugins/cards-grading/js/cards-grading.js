@@ -31,9 +31,9 @@ function addCardToTable(card){
                 "<td>" + card["card_number"] + "</td>" +
                 "<td>" + card["player"] + "</td>" +
                 "<td>" + card["attribute"] + "</td>" +
-                "<td><span class='dollar'>" + parseFloat(card["dv"]).toFixed(2) + "</span></td>" +
-                "<td><span class='dollar'>" + card_total_dv.toFixed(2) + "</span></td>" +
-                "<td><span class='dollar'>" + card_total_charge.toFixed(2) + "</span></td>" +
+                "<td class='text-end'><span class='dollar'>" + parseFloat(card["dv"]).toFixed(2) + "</span></td>" +
+                "<td class='text-end'><span class='dollar'>" + card_total_dv.toFixed(2) + "</span></td>" +
+                "<td class='text-end'><span class='dollar'>" + card_total_charge.toFixed(2) + "</span></td>" +
             "</tr>"
         );
     
