@@ -184,7 +184,7 @@ $(document).on("click", ".5star_btn", function(e){
                             $(v).val('');
                             error_cnt = error_cnt + 1;
                             return false;
-                            
+
                         }
                 }
 
@@ -194,6 +194,13 @@ $(document).on("click", ".5star_btn", function(e){
             if(error_cnt === 0){
                 addCardToTable( card );
             }
+
+            break;
+
+
+        case "confirm_max_dv":
+            $(document).find("#maxed-out").addClass("d-none");
+            $(document).find("#add_card_form_box").removeClass("d-none");
 
             break;
 
