@@ -33,8 +33,7 @@
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
 
         // Add Shortcodes
-        add_shortcode('cards-grading-modal', array( $this, 'cards_grading_modal_shortcode' ));
-        add_shortcode('cards-grading-table', array( $this, 'cards_grading_table_shortcode' ));
+        add_shortcode('cards-grading', array( $this, 'cards_grading_shortcode' ));
 
         // Add JS
         add_action('wp_footer', array( $this, 'load_scripts' ));
@@ -93,7 +92,7 @@
         return 'Follow us on '.$a['link'];
     }    
 
-    public function cards_grading_modal_shortcode($atts) 
+    public function cards_grading_shortcode($atts) 
     {
 
         $default = array(
