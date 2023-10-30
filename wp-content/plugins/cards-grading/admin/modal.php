@@ -130,7 +130,7 @@ $posts = get_posts($args);
         <tr>
             <td>
                 <?php                     
-                print_r($meta['card'][0]);
+                print_r( json_decode($meta['card'][0], true));
                 ?>
             </td>
         </tr>
