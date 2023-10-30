@@ -97,6 +97,8 @@ $total_dv = 0;
 		</div>
 	</div>
 </div>
+
+
 <div class="modal fade clear_cards" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
 	<div class="modal-dialog" id="clear_cards">
 		<div class="modal-content modal-ajax">
@@ -109,7 +111,7 @@ $total_dv = 0;
 				</button>
 			</div>
             <div class="" id="clear_card_type_box">
-                <div class="modal-body py-2 px-3">
+                <div class="modal-body text-center p-5">
                     Do you really want to clear your logged cards?
                 </div>
                 <div class="modal-footer">
@@ -120,6 +122,8 @@ $total_dv = 0;
 		</div>
 	</div>
 </div>
+
+
 <div class="pt-5 px-5 pb-0">
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-6" >
