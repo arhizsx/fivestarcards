@@ -84,7 +84,7 @@ function setTotals( total_dv, grading_charge ){
 
 function checkIfAddIsStillValid( card ){
 
-    var card_total_dv = parseFloat(card["quantity"]) * parseFloat(card["dv"]);
+    var card_total_dv =  parseFloat(card["dv"]);
 
     var max_dv = card["max_dv"];
 
