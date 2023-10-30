@@ -98,10 +98,10 @@ $total_dv = 0;
 </div>
 <div class="pt-5 px-5 pb-0">
     <div class="row">
-        <div class="col-xl-6">
+        <div class="col-xl-6 col-lg-6 col-md-6" >
             <H1 style="color: black !important;"><?php echo $params['title'] ?></H1>
         </div>
-        <div class="col-xl-6 text-end">
+        <div class="col-xl-6 col-lg-6 col-md-6 text-end">
             <button class='5star_btn btn btn-success mb-3' data-type="<?php echo $params['type'] ?>" data-action="add_card">
                 Log Card
             </button>
