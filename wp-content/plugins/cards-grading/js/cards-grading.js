@@ -35,7 +35,6 @@ function addCardToTable(card){
                 "<td><span class='dollar'>" + parseFloat(card["dv"]).toFixed(2) + "</span></td>" +
                 "<td><span class='dollar'>" + card_total_dv.toFixed(2) + "</span></td>" +
                 "<td><span class='dollar'>" + card_total_charge.toFixed(2) + "</span></td>" +
-                "<td>Remove</td>" +
             "</tr>"
         );
     
@@ -72,6 +71,8 @@ function setTotals( total_dv, grading_charge ){
 
     current_dv = parseFloat( $(document).find("#total_dv").text().replace("$",""));
     current_charge = parseFloat($(document).find("#grading_charges").text().replace("$",""));
+
+    alert(current_charge);
 
     new_total_dv = total_dv + current_dv;
     new_grading_charge = grading_charge + current_charge;
