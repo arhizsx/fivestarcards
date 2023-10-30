@@ -148,7 +148,7 @@ $total_dv = 0;
             <td><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
             <td><?php echo "$" . number_format((float) $card_total_dv, 2, '.', ''); ?></td>
             <td><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
-            <td><href="#" class="5star_btn" data-action="remove" data-post_id="<?php echo $post->ID; ?>">Remove</a> </td>
+            <td><a href="#" class="5star_btn" data-action="remove" data-post_id="<?php echo $post->ID; ?>">Remove</a> </td>
         </tr>
         <?php          
                 }
