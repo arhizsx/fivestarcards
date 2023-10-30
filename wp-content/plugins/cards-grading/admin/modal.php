@@ -23,6 +23,8 @@ $args = array(
 );
 
 $posts = get_posts($args);
+$grading_charge = 0;
+$total_dv = 0;
 
 
 ?>
@@ -123,8 +125,6 @@ $posts = get_posts($args);
     <tbody>
         <?php 
             if( $posts ){
-                $grading_charge = 0;
-                $total_dv = 0;
 
                 foreach($posts as $post)
                 {
