@@ -54,6 +54,9 @@ function addCardToTable(card){
 
     } else {
 
+
+        console.log(card);
+        
         $(document).find("div#add_card_form_box").addClass("d-none");
         $(document).find("div#maxed-out").removeClass("d-none");
         $(document).find("div#maxed-out").find(".message").html(
