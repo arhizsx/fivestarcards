@@ -28,6 +28,8 @@ function addCardToTable(card){
             attribute = "";
         }
 
+        console.log(card["attribute"]);
+
         $(document).find(".5star_logged_cards tbody").append(
             "<tr>" +
                 "<td>" + card["quantity"] + "</td>" +
