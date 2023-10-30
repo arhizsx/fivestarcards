@@ -45,22 +45,6 @@
 
     public function create_custom_post_type()
     {
-        // $args = array(
-        //     'public' => true,
-        //     'has_archive' => false,
-        //     'supports' => array('title'),
-        //     'exclude_from_search' => true,
-        //     'publicly_queryable' => false,
-        //     'capability' => 'manage_options',
-        //     'labels' => array(
-        //         'name' => 'Cards Grading',
-        //         'singular_name' => 'Card Grading'
-        //     ),
-        //     'menu_icon' => 'dashicons-media-text'
-        // );
-
-        // register_post_type("cards-grading", $args);
-
         $args = array(
             'public' => true,
             'has_archive' => false,
@@ -95,7 +79,7 @@
             'cards-grading',
             plugin_dir_url(__FILE__) . 'js/cards-grading.js',
             array('jquery'),
-            2,
+            3,
             true
         );
 
