@@ -33,7 +33,8 @@
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
 
         // Add Shortcodes
-        add_shortcode('cards-grading', array( $this, 'cards_grading_shortcodes' ));
+        add_shortcode('cards-grading-modal', array( $this, 'cards_grading_modal_shortcode' ));
+        add_shortcode('cards-grading-table', array( $this, 'cards_grading_table_shortcode' ));
 
         // Add JS
         add_action('wp_footer', array( $this, 'load_scripts' ));
@@ -108,7 +109,7 @@
         return 'Follow us on '.$a['link'];
     }    
 
-    public function cards_grading_shortcodes($atts) 
+    public function cards_grading_modal_shortcode($atts) 
     {
 
         $default = array(
@@ -126,6 +127,23 @@
         return $output ;
     }
 
+    public function cards_grading_table_shortcode($atts) 
+    {
+
+        $default = array(
+            'title' => 'Grading Title',
+            'type' => 'grading-tyoe'
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
+
+        include( plugin_dir_path( __FILE__ ) . 'admin/table.php' );
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
 
     public function load_scripts()
     { ?>
