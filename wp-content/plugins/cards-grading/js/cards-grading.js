@@ -23,6 +23,11 @@ function addCardToTable(card){
             $(document).find(".5star_logged_cards tbody").empty();
         }
 
+        var attribute = card["attribute"];
+        if(card["attribute"] === undefined){
+            attribute = "";
+        }
+
         $(document).find(".5star_logged_cards tbody").append(
             "<tr>" +
                 "<td>" + card["quantity"] + "</td>" +
@@ -30,7 +35,7 @@ function addCardToTable(card){
                 "<td>" + card["brand"] + "</td>" +
                 "<td>" + card["card_number"] + "</td>" +
                 "<td>" + card["player"] + "</td>" +
-                "<td>" + card["attribute"] + "</td>" +
+                "<td>" + attribute + "</td>" +
                 "<td class='text-end'><span class='dollar'>" + parseFloat(card["dv"]).toFixed(2) + "</span></td>" +
                 "<td class='text-end'><span class='dollar'>" + card_total_dv.toFixed(2) + "</span></td>" +
                 "<td class='text-end'><span class='dollar'>" + card_total_charge.toFixed(2) + "</span></td>" +
