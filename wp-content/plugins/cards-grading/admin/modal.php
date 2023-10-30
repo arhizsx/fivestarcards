@@ -97,13 +97,16 @@ $total_dv = 0;
 	</div>
 </div>
 <div class="pt-5 px-5 pb-0">
-    <H1 style="color: black !important;"><?php echo $params['title'] ?></H1>
-    <div class='5star_btn_box_top'>
-    <button class='5star_btn btn btn-success mb-3' data-type="<?php echo $params['type'] ?>" data-action="add_card">
-        Log Card
-    </button>
+    <div class="row">
+        <div class="col-xl-6">
+            <H1 style="color: black !important;"><?php echo $params['title'] ?></H1>
+        </div>
+        <div class="col-xl-6 text-end">
+            <button class='5star_btn btn btn-success mb-3' data-type="<?php echo $params['type'] ?>" data-action="add_card">
+                Log Card
+            </button>
+        </div>
     </div>
-
     <div class="table-responsive">
     
     <table class='table 5star_logged_cards table-bordered table-striped' data-grading_type="<?php echo $params['type'] ?>" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
