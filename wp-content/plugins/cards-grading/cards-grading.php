@@ -117,9 +117,13 @@
         );
         
         $params = shortcode_atts($default, $atts);
+        ob_start();
 
         include( plugin_dir_path( __FILE__ ) . 'admin/modal.php' );
-
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
     }
 
 
