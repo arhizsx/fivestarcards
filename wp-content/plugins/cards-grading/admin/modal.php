@@ -116,7 +116,7 @@ $posts = get_posts($args);
         <th>Attribute S/N</th>
         <th>DV</th>
         <th>Total DV</th>
-        <th>Total</th>
+        <th>Grading Total</th>
         <th>Action</th>
         </tr>
     </thead>
@@ -137,6 +137,8 @@ $posts = get_posts($args);
             <td><?php echo $card["attribute"]; ?></td>
             <td><?php echo $card["dv"]; ?></td>
             <td><?php echo $card["dv"] * $card["quantity"]; ?></td>
+            <td><?php echo $card["per_card"] * $card["quantity"]; ?></td>
+            <td>Remove</td>
         </tr>
         <?php          
                 }
