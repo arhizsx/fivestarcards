@@ -172,17 +172,20 @@ $(document).on("click", ".5star_btn", function(e){
 
             $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(k, v){
 
-                if($(v).data("field_check") == "required"){
                     if( $(v).val().length > 0 ){
 
                         card[ $(v).attr("name") ] = $(v).val();
 
                     } else {
-                        $(v).focus();
-                        $(v).val('');
-                        error_cnt = error_cnt + 1;
-                        return false;
-                    }
+
+                        if($(v).data("field_check") == "required"){
+
+                            $(v).focus();
+                            $(v).val('');
+                            error_cnt = error_cnt + 1;
+                            return false;
+                            
+                        }
                 }
 
 
