@@ -110,6 +110,19 @@
 
     public function setup_grading_types(){
 
+        $args = array(
+            'post_type' => 'cards-grading-type',
+            'posts_per_page' => -1
+        );
+        
+        $posts = get_posts($args);
+        
+        foreach($posts as $post)
+        {
+            wp_delete_post( $post->ID, true );
+        }
+
+
         $fivestar_grading_types = [
             [
                 "name" => "PSA - Value Bulk",
