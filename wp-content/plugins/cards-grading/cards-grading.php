@@ -176,10 +176,11 @@
 
     public function cards_grading_checkout_shortcode($atts) 
     {
+        $type = $_GET['type'];
 
         $default = array(
-            'title' => 'Grading Title',
-            'type' => 'grading-tyoe'
+            'title' => 'Checkout',
+            'type' => $type
         );
         
         $params = shortcode_atts($default, $atts);
