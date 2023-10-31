@@ -166,6 +166,8 @@ $total_dv = 0;
                                 <input type="hidden" name="grading" value=''/>
                                 <input type="hidden" name="max_dv" value=''/>
                                 <input type="hidden" name="post_id" value=''/>
+                                <input type="hidden" name="card" value=''/>
+                                
                                 <div class="row">
                                     <div class="col-xl-6 col-lg-6 col-md-6">
                                         <label for="quantity">Qty</label>

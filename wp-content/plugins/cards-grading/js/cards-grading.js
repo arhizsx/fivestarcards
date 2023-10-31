@@ -151,8 +151,6 @@ function tableAction(what_type, action){
 
 function updateCard(){
 
-    
-
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
     var url = $(document).find(".5star_logged_cards").data("table_action_endpoint");
 
@@ -328,6 +326,7 @@ $(document).on("click",".card-row", function(e){
     $(document).find("input[name='grading']").val($(this).data("card").grading);
     $(document).find("input[name='max_dv']").val($(this).data("card").max_dv);
     $(document).find("input[name='post_id']").val($(this).data("post_id"));
+    $(document).find("input[name='card']").val($(this).data("card"));
 
 
 });
