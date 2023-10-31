@@ -438,7 +438,7 @@
                 'meta_query' => array(
                     array(
                         'key' => 'type',
-                        'value' => $params["grading"]
+                        'value' => $params["type"]
                     )
                 ),
                 'post_type' => 'cards-grading-type',
@@ -447,7 +447,7 @@
             
             $grading_type = get_posts($args);
 
-            return $params;
+            return $grading_type;
 
             $checkout_post_id = wp_insert_post([
                 'post_type' => 'cards-grading-chk',
