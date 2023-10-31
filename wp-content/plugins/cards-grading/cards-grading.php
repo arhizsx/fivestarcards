@@ -159,45 +159,6 @@
         return $post_id;
     }
 
-    public function doClearTable( $params ){
-
-        $user_id = get_current_user_id();
-        
-
-        $args = array(
-            'meta_query' => array(
-                'relations' =>  'AND',    
-                array(
-                    'key' => 'grading',
-                    'value' => $params['type']
-                ),
-                array(
-                    'key' => 'user_id',
-                    'value' => $user_id
-                ),
-                array(
-                    'key' => 'status',
-                    'value' => 'pending'
-                )
-            ),
-            'post_type' => 'cards-grading-card',
-            'posts_per_page' => -1
-        );
-        
-        $posts = get_posts($args);
-
-
-        foreach($posts as $post)
-        {
-            wp_delete_post( $post->ID, true );
-        }
-
-        
-    }
-
-    public function doCheckout($params){
-
-    }
     public function handle_table_action($data){
 
         $headers = $data->get_headers();
@@ -217,7 +178,7 @@
         }
         elseif($params["action"] == "checkout"){
 
-            return "Checkout pending cards";
+            $this->doCheckout($params);
 
         }
 
@@ -225,7 +186,89 @@
 
     }
 
+    public function doClearTable( $params ){
 
+        try {
+
+            $user_id = get_current_user_id();        
+
+            $args = array(
+                'meta_query' => array(
+                    'relations' =>  'AND',    
+                    array(
+                        'key' => 'grading',
+                        'value' => $params['type']
+                    ),
+                    array(
+                        'key' => 'user_id',
+                        'value' => $user_id
+                    ),
+                    array(
+                        'key' => 'status',
+                        'value' => 'pending'
+                    )
+                ),
+                'post_type' => 'cards-grading-card',
+                'posts_per_page' => -1
+            );
+            
+            $posts = get_posts($args);
+    
+            foreach($posts as $post)
+            {
+                wp_delete_post( $post->ID, true );
+            }
+    
+            return true;
+    
+        }
+        catch (Exception $e) {
+            return $e;
+        }        
+        
+    }
+
+    public function doCheckout($params){
+
+        try {
+
+            $user_id = get_current_user_id();        
+
+            $args = array(
+                'meta_query' => array(
+                    'relations' =>  'AND',    
+                    array(
+                        'key' => 'grading',
+                        'value' => $params['type']
+                    ),
+                    array(
+                        'key' => 'user_id',
+                        'value' => $user_id
+                    ),
+                    array(
+                        'key' => 'status',
+                        'value' => 'pending'
+                    )
+                ),
+                'post_type' => 'cards-grading-card',
+                'posts_per_page' => -1
+            );
+            
+            $posts = get_posts($args);
+    
+            foreach($posts as $post)
+            {
+                update_post_meta($post->ID, 'status', 'checkout');                
+            }
+    
+            return true;
+    
+        }
+        catch (Exception $e) {
+            return $e;
+        }        
+
+    }
 
  }
 
