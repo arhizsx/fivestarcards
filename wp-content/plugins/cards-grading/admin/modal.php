@@ -123,6 +123,29 @@ $total_dv = 0;
 	</div>
 </div>
 
+<div class="modal fade checkout_cards" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+	<div class="modal-dialog" id="clear_cards">
+		<div class="modal-content modal-ajax">
+			<div class="modal-header bg-primary text-white">
+				<h5 class="modal-title">
+					Checkout Logged Cards
+				</h5>
+    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+					X
+				</button>
+			</div>
+            <div class="" id="clear_card_type_box">
+                <div class="modal-body text-center p-5">
+                    Do you really want to checkout your logged cards?
+                </div>
+                <div class="modal-footer">
+                    <button class="btn border btn-secondary" data-bs-dismiss="modal" >Cancel</button>
+                    <button class="btn border btn-primary 5star_btn" data-action='confirm_clear'  data-grading_type="<?php echo $params['type'] ?>">Checkout</button>
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
 
 <div class="pt-5 px-5 pb-0">
     <div class="row">
