@@ -146,7 +146,16 @@ function tableAction(what_type, action, what_modal){
         },
         success: function(resp){
 
-            $(document).find(what_modal).modal("hide");
+            if(resp == true){
+                if(what_type == "clear"){
+                    $(document).find(".5star_logged_cards tbody").empty();
+                    $(document).find(".5star_logged_cards tbody").append(
+                        '<tr><td class="text-center" colspan="10">Empty</td></tr>'
+                    );
+                }
+
+                $(document).find(what_modal).modal("hide");
+            }
             
         }
     });
