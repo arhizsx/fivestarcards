@@ -316,7 +316,7 @@ $(document).on("click",".card-row", function(e){
     $(document).find("input[name='grading']").val($(this).data("card").grading);
     $(document).find("input[name='max_dv']").val($(this).data("card").max_dv);
     $(document).find("input[name='post_id']").val($(this).data("post_id"));
-    $(document).find("input[name='card']").val($(this).data("card"));
+    $(document).find("input[name='card']").val( JSON.stringify($(this).data("card")) );
 
 
 });
