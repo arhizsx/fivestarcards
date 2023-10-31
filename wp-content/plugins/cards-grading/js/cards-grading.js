@@ -118,6 +118,21 @@ function showClearTableModal(what_type){
 
 }
 
+function clearTable(what_type){
+
+    var nonce = $(document).find(".5star_logged_cards").data("nonce");
+    var url = $(document).find(".5star_logged_cards").data("clear_endpoint");
+
+    $.ajax({
+        method: 'post',
+        url: url,
+        headers: {'X-WP-Nonce': nonce },
+        data: what_type
+    });
+
+
+}
+
 $(document).on("click", ".5star_btn", function(e){
 
     console.log("button pressed");
@@ -220,6 +235,12 @@ $(document).on("click", ".5star_btn", function(e){
         case "clear_table" :
 
             showClearTableModal( $(this).data("type"));
+
+            break;
+
+        case "confirm_clear":
+
+            clearTable( $(this).data("grading_type") );
 
             break;
 

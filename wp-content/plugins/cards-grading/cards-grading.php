@@ -64,7 +64,8 @@
 
     }
 
-    public function load_assets() {
+    public function load_assets() 
+    {
 
         wp_enqueue_style(
             'cards-grading',
@@ -84,14 +85,6 @@
 
     }
 
-    public function subscribe_link_att($atts) {
-        $default = array(
-            'link' => '#',
-        );
-        $a = shortcode_atts($default, $atts);
-        return 'Follow us on '.$a['link'];
-    }    
-
     public function cards_grading_shortcode($atts) 
     {
 
@@ -110,33 +103,18 @@
         return $output ;
     }
 
-    public function cards_grading_table_shortcode($atts) 
-    {
-
-        $default = array(
-            'title' => 'Grading Title',
-            'type' => 'grading-tyoe'
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/table.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-
     public function load_scripts()
-    { ?>
+    {   
+        ?>
         <script>
 
         </script>
-    <?php }
+        <?php 
+    }
 
 
-    public function register_endpoint(){
+    public function register_endpoint()
+    {
         
         register_rest_route(
             "cards-grading/v1",
@@ -144,6 +122,15 @@
             array(
                 'methods' => 'POST',
                 'callback' => array($this, 'handle_add_card')
+            )                        
+        );
+
+        register_rest_route(
+            "cards-grading/v1",
+            "clear-grading-type",
+            array(
+                'methods' => 'POST',
+                'callback' => array($this, 'handle_clear_grading_type')
             )                        
         );
     }
@@ -171,6 +158,18 @@
         
     }
 
+    public function handle_clear_grading_type($data){
+
+        $headers = $data->get_headers();
+        $nonce = $headers["x_wp_nonce"][0];
+
+        if( !wp_verify_nonce($nonce, 'wp_rest') ){
+            return new WP_REST_Response("Invalid Nonce", 422);
+        }
+
+        return $data;
+        
+    }
  }
 
  new CardsGrading;
