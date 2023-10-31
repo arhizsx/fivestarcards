@@ -332,7 +332,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "confirm_checkout":
 
-            tableAction( $(this).data("grading_type"), "checkout", ".checkout_cards" );
+            tableAction( $(this).data("type"), "checkout", ".checkout_cards" );
 
             break;
 
