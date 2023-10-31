@@ -44,7 +44,7 @@
 
         add_filter( 'manage_cards-grading-card_posts_columns', 'add_cards_grading_card_columns');
 
-    }
+    } 
 
 
     public function create_custom_post_type()
