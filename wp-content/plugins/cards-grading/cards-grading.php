@@ -85,9 +85,10 @@
     function custom_cards_grading_card_column( $column, $post_id ) {
         switch ( $column ) {
           case 'user_id':
-            $user = get_userdata( get_post_meta( $post_id , 'user_id' , true ) );
+            $user_id = get_post_meta( $post_id , 'user_id' , true );
+            $user = get_user_by( "id", $user_id );
 
-            echo "TEST";
+            echo $user->email;
 
             break;
           case 'grading':
