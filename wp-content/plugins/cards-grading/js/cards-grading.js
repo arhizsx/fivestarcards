@@ -279,5 +279,9 @@ $(document).on("click", ".5star_btn", function(e){
 });
 
 $(document).on("click",".card-row", function(e){
+
+    $(document).find(".view_card").find("div#view_card_form_box").removeClass("d-none");
+    $(document).find(".view_card").appendTo('body').modal("show");
+
     console.log( $(this).data("card") );
 });
