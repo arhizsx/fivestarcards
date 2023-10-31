@@ -256,11 +256,17 @@ $(document).on("click", ".5star_btn", function(e){
             break;
 
         case "checkout" :
-            
+
             showCheckoutModal();
 
             break;
 
+        case "confirm_checkout":
+
+            tableAction( $(this).data("grading_type"), "checkout" );
+
+            break;
+            
         default:
             console.log("Button not configured");
     }
