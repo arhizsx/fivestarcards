@@ -72,12 +72,14 @@
     }
 
     function add_cards_grading_card_columns($columns) {
-        return array_merge($columns,
+        return array_merge(
                   array(
                     'user_id' => __('User'),
                     'status' => __('Status'),
                     'grading' =>__( 'Grading')
-                ));
+                ),
+                $columns
+            );
     }
     
 
