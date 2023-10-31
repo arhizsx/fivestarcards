@@ -134,7 +134,7 @@ $total_dv = 0;
 					X
 				</button>
 			</div>
-            <div class="" id="clear_card_type_box">
+            <div class="" id="checkout_card_type_box">
                 <div class="modal-body text-center p-5">
                     Do you really want to checkout your logged cards?
                 </div>

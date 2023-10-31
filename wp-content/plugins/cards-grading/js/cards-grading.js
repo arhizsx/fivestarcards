@@ -111,12 +111,20 @@ function clearModalForm(){
     });    
 }
 
-function showClearTableModal(what_type){
+function showClearTableModal(w){
 
     $(document).find(".clear_cards").find("div#clear_card_type_box").removeClass("d-none");
     $(document).find(".clear_cards").appendTo('body').modal("show");
 
 }
+
+function showCheckoutModal(w){
+
+    $(document).find(".checkout_cards").find("div#checkout_card_type_box").removeClass("d-none");
+    $(document).find(".checkout_cards").appendTo('body').modal("show");
+
+}
+
 
 function tableAction(what_type, action){
 
@@ -237,7 +245,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "clear_table" :
 
-            showClearTableModal( $(this).data("type"));
+            showClearTableModal();
 
             break;
 
@@ -248,8 +256,8 @@ $(document).on("click", ".5star_btn", function(e){
             break;
 
         case "checkout" :
-
-            console.log("Checkout");
+            
+            showCheckoutModal();
 
             break;
 
