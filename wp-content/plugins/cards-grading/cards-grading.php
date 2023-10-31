@@ -33,8 +33,6 @@
         add_filter( 'manage_cards-grading-card_posts_columns', array($this, 'add_cards_grading_card_columns'));
         add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column'), 10, 2 );
 
-        // Create Checkout Post Type
-        add_action('init', array($this, 'create_checkout_post_type') );        
         
         // Add Assets
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
@@ -56,8 +54,8 @@
     public function create_custom_post_type()
     {
         $labels = array(
-            'name'               => _x( 'Cards Lists', 'mmd_list' ),
-            'singular_name'      => _x( 'Card', 'mmd_lists' ),
+            'name'               => _x( 'Cards Lists', 'cards-grading' ),
+            'singular_name'      => _x( 'Card', 'cards-grading' ),
             'add_new'            => _x( 'New Card', 'mmd_list' ),
             'add_new_item'       => __( 'Add New Card' ),
             'edit_item'          => __( 'Edit Card' ),
@@ -84,13 +82,17 @@
 
         register_post_type("cards-grading-card", $args);
 
-    }
+        add_submenu_page('edit.php?post_type=cards-grading-card',             // Parent Slug from add_menu_page 
+                     'Dashboard',                     // Title of page
+                     'Dashboard',                     // Menu title
+                     'manage_options',               // Minimum capability to view the menu.
+                     'cards-grading-settings',        // Unqiue Slug Name
+                     'mmd_maplist_DrawAdminPage' 
+        );
 
-    public function create_checkout_post_type()
-    {
         $labels = array(
-            'name'               => _x( 'Grading Checkouts', 'mmd_list' ),
-            'singular_name'      => _x( 'Grading Checkout', 'mmd_lists' ),
+            'name'               => _x( 'Grading Checkouts', 'cards-grading-checkout' ),
+            'singular_name'      => _x( 'Grading Checkout', 'cards-grading-checkout' ),
             'add_new'            => _x( 'New Grading Checkout', 'mmd_list' ),
             'add_new_item'       => __( 'Add New Grading Checkout' ),
             'edit_item'          => __( 'Edit Grading Checkout' ),
@@ -116,6 +118,8 @@
         );
 
         register_post_type("cards-grading-checkout", $args);
+
+
 
     }
 
