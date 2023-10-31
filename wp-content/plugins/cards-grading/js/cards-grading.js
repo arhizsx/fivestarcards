@@ -143,6 +143,11 @@ function tableAction(what_type, action){
         data: {
             'type' : what_type,
             'action' : action
+        },
+        success: function(resp){
+
+            $(document).find(".view_card").modal("hide");
+            
         }
     });
 
