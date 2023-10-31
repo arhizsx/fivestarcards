@@ -154,9 +154,21 @@ function updateCard(){
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
     var url = $(document).find(".5star_logged_cards").data("table_action_endpoint");
     
-    console.log( $(document).find("input[name='card']").val() );
-    console.log("updating card");
+    var card = $(document).find("input[name='card']").val();
+    var post_id = $(document).find("input[name='post_id']").val();
+    var action = "update";
 
+
+    $.ajax({
+        method: 'post',
+        url: url,
+        headers: {'X-WP-Nonce': nonce },
+        data: {
+            'card' : card,
+            'post_id': post_id,
+            'action' : action
+        }
+    });
 }
 
 $(document).on("click", ".5star_btn", function(e){
