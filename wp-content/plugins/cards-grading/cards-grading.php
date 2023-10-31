@@ -82,14 +82,12 @@
     
 
     function custom_cards_grading_card_column( $column, $post_id ) {
-        global $post;
-
         switch ( $column ) {
           case 'grading':
-            echo get_post_meta( $post->ID , 'grading' , true );
+            echo get_post_meta( $post_id , 'grading' , true );
             break;
           case 'status':
-            echo get_post_meta( $post->ID , 'status' , true );
+            echo get_post_meta( $post_id , 'status' , true );
             break;
         }
     }
