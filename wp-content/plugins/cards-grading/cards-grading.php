@@ -79,7 +79,7 @@
                 );
     }
 
-    function custom_cards_grading_card_column( $column, $post_id ) {
+    public function custom_cards_grading_card_column( $column, $post_id ) {
         switch ( $column ) {
           case 'user_id':
             echo "test";
