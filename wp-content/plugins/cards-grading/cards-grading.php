@@ -110,18 +110,7 @@
 
     public function setup_grading_types(){
 
-        $args = array(
-            'post_type' => 'cards-grading-type',
-            'posts_per_page' => -1
-        );
         
-        $posts = get_posts($args);
-        
-        foreach($posts as $post)
-        {
-            wp_delete_post( $post->ID, true );
-        }
-
 
         $fivestar_grading_types = [
             [
@@ -159,16 +148,41 @@
 
         foreach( $fivestar_grading_types as $grading){
 
-            $post_id = wp_insert_post([
+            $args = array(
+                'meta_query' => array(
+                    array(
+                        'key' => 'type',
+                        'value' => $grading["type"]
+                    )
+                ),
                 'post_type' => 'cards-grading-type',
-                'post_title' => $grading["name"],
-                'post_status' => 'publish'
-            ]);
+                'posts_per_page' => -1
+            );
+            
+            $old_posts = get_posts($args);
+            
+            if( ! $old_posts ){
+
+                $post_id = wp_insert_post([
+                    'post_type' => 'cards-grading-type',
+                    'post_title' => $grading["name"],
+                    'post_status' => 'publish'
+                ]);
+        
+                add_post_meta($post_id, "name", $grading["name"] );
+                add_post_meta($post_id, "type", $grading["type"] );
+                add_post_meta($post_id, "per_card", $grading["per_card"] );
+                add_post_meta($post_id, "max_dv", $grading["max_dv"] );
     
-            add_post_meta($post_id, "name", $grading["name"] );
-            add_post_meta($post_id, "type", $grading["type"] );
-            add_post_meta($post_id, "per_card", $grading["per_card"] );
-            add_post_meta($post_id, "max_dv", $grading["max_dv"] );
+            } else {
+
+                update_post_meta($old_posts->ID, "name", $grading["name"] );
+                update_post_meta($old_posts->ID, "type", $grading["type"] );
+                update_post_meta($old_posts->ID, "per_card", $grading["per_card"] );
+                update_post_meta($old_posts->ID, "max_dv", $grading["max_dv"] );
+                
+            }
+
     
         }
 
