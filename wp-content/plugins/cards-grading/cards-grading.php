@@ -87,8 +87,8 @@
           case 'user_id':
             $user = get_userdata( get_post_meta( $post_id , 'user_id' , true ) );
 
-            echo $user->firstname . " " . $user->lastname;
-            
+            echo $user->login;
+
             break;
           case 'grading':
             echo get_post_meta( $post_id , 'grading' , true );
