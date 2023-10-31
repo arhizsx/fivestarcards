@@ -277,3 +277,7 @@ $(document).on("click", ".5star_btn", function(e){
     }
 
 });
+
+$(document).on("click",".card-row", function(e){
+    
+});
