@@ -127,10 +127,10 @@
 
         register_rest_route(
             "cards-grading/v1",
-            "clear-grading-type",
+            "table-action",
             array(
                 'methods' => 'POST',
-                'callback' => array($this, 'handle_clear_grading_type')
+                'callback' => array($this, 'handle_table_action')
             )                        
         );
     }
@@ -158,7 +158,7 @@
         
     }
 
-    public function handle_clear_grading_type($data){
+    public function handle_table_action($data){
 
         $headers = $data->get_headers();
         $nonce = $headers["x_wp_nonce"][0];
@@ -168,7 +168,7 @@
         }
 
         return $data;
-        
+
     }
  }
 

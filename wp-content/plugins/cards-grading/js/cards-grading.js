@@ -118,16 +118,19 @@ function showClearTableModal(what_type){
 
 }
 
-function clearTable(what_type){
+function tableAction(what_type, action){
 
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
-    var url = $(document).find(".5star_logged_cards").data("clear_endpoint");
+    var url = $(document).find(".5star_logged_cards").data("table_action_endpoint");
 
     $.ajax({
         method: 'post',
         url: url,
         headers: {'X-WP-Nonce': nonce },
-        data: {'type' : what_type}
+        data: {
+            'type' : what_type,
+            'action' : action
+        }
     });
 
 
@@ -240,7 +243,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "confirm_clear":
 
-            clearTable( $(this).data("grading_type") );
+            tableAction( $(this).data("grading_type", "clear") );
 
             break;
 

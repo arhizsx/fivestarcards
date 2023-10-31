@@ -137,7 +137,7 @@ $total_dv = 0;
     </div>
     <div class="table-responsive">
     
-    <table class='table 5star_logged_cards table-bordered table-striped' data-grading_type="<?php echo $params['type'] ?>" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-clear_endpoint="<?php echo get_rest_url(null, "cards-grading/v1/clear-grading-type") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
+    <table class='table 5star_logged_cards table-bordered table-striped' data-grading_type="<?php echo $params['type'] ?>" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-table_action_endpoint="<?php echo get_rest_url(null, "cards-grading/v1/table-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
     <thead>
         <tr>
         <th>Qty</th>
