@@ -122,13 +122,6 @@ function showClearTableModal(w){
 
 }
 
-function showCheckoutModal(w){
-
-    $(document).find(".checkout_cards").find("div#checkout_card_type_box").removeClass("d-none");
-    $(document).find(".checkout_cards").appendTo('body').modal("show");
-
-}
-
 
 function tableAction(what_type, action, what_modal){
 
