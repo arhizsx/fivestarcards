@@ -51,6 +51,21 @@
 
     public function create_custom_post_type()
     {
+        $labels = array(
+            'name'               => _x( 'Manage Lists', 'mmd_list' ),
+            'singular_name'      => _x( 'Manage List', 'mmd_lists' ),
+            'add_new'            => _x( 'New List', 'mmd_list' ),
+            'add_new_item'       => __( 'Add New List' ),
+            'edit_item'          => __( 'Edit List' ),
+            'new_item'           => __( 'New List' ),
+            'all_items'          => __( 'Manage Lists' ),
+            'view_item'          => __( 'View List' ),
+            'search_items'       => __( 'Search List' ),
+            'not_found'          => __( 'No Listing found' ),
+            'not_found_in_trash' => __( 'No Listings found in the Trash' ), 
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Lists'
+        );        
         $args = array(
             'public' => true,
             'has_archive' => false,
@@ -58,10 +73,7 @@
             'exclude_from_search' => true,
             'publicly_queryable' => false,
             'capability' => 'manage_options',
-            'labels' => array(
-                'name' => 'Cards',
-                'singular_name' => 'Card'
-            ),
+            'labels' => $labels,
             'menu_icon' => 'dashicons-media-text',
             'supports' => ['custom-fields']
         );
