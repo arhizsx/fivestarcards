@@ -211,7 +211,7 @@
 
         if($params["action"] == "clear"){
 
-            return "Delete pending cards";
+            doClearTable($params);
 
 
         }
