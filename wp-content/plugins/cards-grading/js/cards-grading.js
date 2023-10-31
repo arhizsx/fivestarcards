@@ -28,8 +28,6 @@ function addCardToTable(card){
             attribute = "";
         }
 
-        console.log(card["attribute"]);
-
         $(document).find(".5star_logged_cards tbody").append(
             "<tr>" +
                 "<td>" + card["quantity"] + "</td>" +
@@ -60,16 +58,12 @@ function addCardToTable(card){
 
     } else {
 
-
-        console.log(card);
         
         $(document).find("div#add_card_form_box").addClass("d-none");
         $(document).find("div#maxed-out").removeClass("d-none");
         $(document).find("div#maxed-out").find(".message").html(
             "<strong>Maximum allowed DV is only " + ( parseFloat(card["max_dv"]) - 1)  + "</strong>"
         );
-
-        console.log( "Max DV Reached" );
 
     }
     
@@ -266,7 +260,7 @@ $(document).on("click", ".5star_btn", function(e){
             tableAction( $(this).data("grading_type"), "checkout" );
 
             break;
-            
+
         default:
             console.log("Button not configured");
     }

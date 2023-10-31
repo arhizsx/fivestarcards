@@ -156,6 +156,7 @@
         add_post_meta($post_id, "status", "pending" );
         add_post_meta($post_id, "card", json_encode($params) );
         
+        return $post_id;
     }
 
     public function handle_table_action($data){
