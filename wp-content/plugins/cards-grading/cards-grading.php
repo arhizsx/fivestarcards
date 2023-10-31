@@ -34,7 +34,7 @@
         add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column'), 10, 2 );
 
 
-        add_action('admin_init', array($this, 'create_checkout_post_type') );        
+        add_action('init', array($this, 'create_checkout_post_type') );        
         
         // Add Assets
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
@@ -91,7 +91,7 @@
             'supports' => ['custom-fields']
         );
 
-        register_post_type("cards-grading-checkout", $args);
+        register_post_type("cards-grading-chk", $args);
 
     }
 
