@@ -73,7 +73,7 @@
                     $columns,
                     array(
                         'user_id' => __('User'),
-                        'player' =>__( 'Player'),
+                        'status' =>__( 'Status'),
                         'grading' =>__( 'Grading')
                     )
                 );
@@ -84,10 +84,10 @@
           case 'user_id':
             echo get_post_meta( $post_id , 'user_id' , true );
             break;
-          case 'player':
-            echo get_post_meta( $post_id , 'player' , true );
+          case 'status':
+            echo get_post_meta( $post_id , 'status' , true );
             break;
-          case 'player':
+          case 'grading':
             echo get_post_meta( $post_id , 'grading' , true );
             break;
         }
