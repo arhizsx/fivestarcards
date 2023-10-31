@@ -211,7 +211,7 @@
 
         if($params["action"] == "clear"){
 
-            doClearTable($params);
+            $this->doClearTable($params);
 
 
         }
