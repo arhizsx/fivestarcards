@@ -149,7 +149,9 @@ function tableAction(what_type, action){
 
 }
 
-function updateCard(what_card, what_post_id){
+function updateCard(){
+
+    
 
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
     var url = $(document).find(".5star_logged_cards").data("table_action_endpoint");
@@ -294,7 +296,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "update_card":
 
-            console.log("update_card");
+            updateCard();
 
             break;
 
@@ -327,6 +329,5 @@ $(document).on("click",".card-row", function(e){
     $(document).find("input[name='max_dv']").val($(this).data("card").max_dv);
     $(document).find("input[name='post_id']").val($(this).data("post_id"));
 
-    updateCard( $(this).data("card"), $(this).data("post_id") )
 
 });
