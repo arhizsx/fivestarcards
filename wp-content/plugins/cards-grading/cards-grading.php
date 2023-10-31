@@ -170,15 +170,14 @@
 
         $params = $data->get_params();
 
-        if($params["type"] == "clear"){
+        if($params["action"] == "clear"){
 
-            return "clearing";
             doClearTable($params);
 
         }
         elseif($params["type"] == "checkout"){
 
-            doClearTable($params);
+            doClearTable($action);
 
         }
 
