@@ -28,12 +28,13 @@
     {
         // Create Custom Post Type
         add_action('init', array($this, 'create_custom_post_type') );        
-        add_action('init', array($this, 'create_checkout_post_type') );        
 
         // Customize Grding Post Type Columns
         add_filter( 'manage_cards-grading-card_posts_columns', array($this, 'add_cards_grading_card_columns'));
         add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column'), 10, 2 );
 
+
+        add_action('init', array($this, 'create_checkout_post_type') );        
         
         // Add Assets
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
@@ -54,21 +55,6 @@
 
     public function create_custom_post_type()
     {
-        $labels = array(
-            'name'               => _x( 'Cards Lists', 'cards-grading' ),
-            'singular_name'      => _x( 'Card', 'cards-grading' ),
-            'add_new'            => _x( 'New Card', 'mmd_list' ),
-            'add_new_item'       => __( 'Add New Card' ),
-            'edit_item'          => __( 'Edit Card' ),
-            'new_item'           => __( 'New Card' ),
-            'all_items'          => __( 'Manage Cards' ),
-            'view_item'          => __( 'View Cards' ),
-            'search_items'       => __( 'Search Cards' ),
-            'not_found'          => __( 'No Listing found' ),
-            'not_found_in_trash' => __( 'No Listings found in the Trash' ), 
-            'parent_item_colon'  => '',
-            'menu_name'          => 'Card Grading'
-        );        
         $args = array(
             'public' => true,
             'has_archive' => false,
@@ -76,7 +62,10 @@
             'exclude_from_search' => true,
             'publicly_queryable' => false,
             'capability' => 'manage_options',
-            'labels' => $labels,
+			'labels'      => array(
+				'name'          => __( 'Cards Grading', 'textdomain' ),
+				'singular_name' => __( 'Cards Grading', 'textdomain' ),
+			),            
             'menu_icon' => 'dashicons-media-text',
             'supports' => ['custom-fields']
         );
@@ -87,21 +76,6 @@
 
     public function create_checkout_post_type()
     {
-        $labels = array(
-            'name'               => _x( 'Grading Checkouts', 'cards-grading-checkout' ),
-            'singular_name'      => _x( 'Grading Checkout', 'cards-grading-checkout' ),
-            'add_new'            => _x( 'New Grading Checkout', 'mmd_list' ),
-            'add_new_item'       => __( 'Add New Grading Checkout' ),
-            'edit_item'          => __( 'Edit Grading Checkout' ),
-            'new_item'           => __( 'New Grading Checkout' ),
-            'all_items'          => __( 'Grading Checkouts' ),
-            'view_item'          => __( 'View Grading Checkouts' ),
-            'search_items'       => __( 'Search Grading Checkouts' ),
-            'not_found'          => __( 'No Listing found' ),
-            'not_found_in_trash' => __( 'No Listings found in the Trash' ), 
-            'parent_item_colon'  => '',
-            'menu_name'          => 'Grading Checkouts'
-        );        
         $args = array(
             'public' => true,
             'has_archive' => false,
@@ -109,7 +83,10 @@
             'exclude_from_search' => true,
             'publicly_queryable' => false,
             'capability' => 'manage_options',
-            'labels' => $labels,
+			'labels'      => array(
+				'name'          => __( 'Cards Grading', 'textdomain' ),
+				'singular_name' => __( 'Cards Grading', 'textdomain' ),
+			),            
             'menu_icon' => 'dashicons-media-text',
             'supports' => ['custom-fields']
         );
