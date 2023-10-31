@@ -41,9 +41,9 @@
         // Add Endpoint
         add_action("rest_api_init", array($this, 'register_endpoint'));
 
-        add_filter( 'manage_cards-grading-card_posts_columns' , array($this, 'add_cards_grading_card_columns'));
+        add_filter( 'manage_{$post->post_type}_posts_columns' , array($this, 'add_cards_grading_card_columns'));
 
-        add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column') );
+        add_action( 'manage_{$post->post_type}_posts_custom_column' , array($this, 'custom_cards_grading_card_column') );
 
     }
 
