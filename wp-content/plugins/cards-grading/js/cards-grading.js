@@ -158,6 +158,26 @@ function updateCard(){
     var post_id = $(document).find("input[name='post_id']").val();
     var action = "update";
 
+    $.ajax({
+        method: 'post',
+        url: url,
+        headers: {'X-WP-Nonce': nonce },
+        data: {
+            'card' : card,
+            'post_id': post_id,
+            'action' : action
+        }
+    });
+}
+
+function deleteCard(){
+
+    var nonce = $(document).find(".5star_logged_cards").data("nonce");
+    var url = $(document).find(".5star_logged_cards").data("table_action_endpoint");
+    
+    var card = JSON.parse($(document).find("input[name='card']").val());
+    var post_id = $(document).find("input[name='post_id']").val();
+    var action = "update";
 
     $.ajax({
         method: 'post',
@@ -170,6 +190,7 @@ function updateCard(){
         }
     });
 }
+
 
 $(document).on("click", ".5star_btn", function(e){
 
@@ -302,7 +323,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "delete_card":
 
-            console.log("delete_card");
+            deleteCard();
 
             break;
 
