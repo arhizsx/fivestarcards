@@ -359,7 +359,7 @@
                 update_post_meta($post->ID, 'status', 'checkout');                
             }
     
-            return true;
+            return $posts;
     
         }
         catch (Exception $e) {

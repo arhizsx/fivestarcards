@@ -146,7 +146,7 @@ function tableAction(what_type, action, what_modal){
                     );
                 }
                 else if(action == "checkout"){
-                    console.log("Checkout");
+                    console.log("Checkout Complete");
                 }
 
                 $(document).find(what_modal).modal("hide");
