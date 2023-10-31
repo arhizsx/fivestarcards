@@ -127,7 +127,7 @@ function clearTable(what_type){
         method: 'post',
         url: url,
         headers: {'X-WP-Nonce': nonce },
-        data: what_type
+        data: {'type' : what_type}
     });
 
 
