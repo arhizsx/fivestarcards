@@ -342,7 +342,6 @@
         $user = get_user_by( "id", $user_id );
 
 
-
         $post_id = wp_insert_post([
             'post_type' => 'cards-grading-card',
             'post_title' => $user->display_name . " - " . $params["player"],
@@ -435,13 +434,26 @@
             $user_id = get_current_user_id();        
 
 
+            $args = array(
+                'meta_query' => array(
+                    array(
+                        'key' => 'type',
+                        'value' => $params["grading"]
+                    )
+                ),
+                'post_type' => 'cards-grading-type',
+                'posts_per_page' => -1
+            );
+            
+            $grading_type = get_posts($args);
+
+
             $checkout_post_id = wp_insert_post([
                 'post_type' => 'cards-grading-chk',
-                'post_title' => $user->display_name . " - " . $params["player"],
+                'post_title' => $user->display_name . " - " . $grading_type["name"],
                 'post_status' => 'publish'
             ]);
-    
-    
+        
 
             $args = array(
                 'meta_query' => array(
@@ -467,7 +479,9 @@
     
             foreach($posts as $post)
             {
-                update_post_meta($post->ID, 'status', 'checkout');                
+                update_post_meta($post->ID, 'status', 'checkout');   
+                add_post_meta($post_id, "checkout_id", $checkout_post_id );
+
             }
     
             return true;
