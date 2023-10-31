@@ -334,7 +334,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "checkout" :
 
-            showCheckoutModal();
+            window.location.replace("/checkout?type=" + $(this).data("grading_type") );
 
             break;
 
