@@ -140,7 +140,7 @@ $total_dv = 0;
                 </div>
                 <div class="modal-footer">
                     <button class="btn border btn-secondary" data-bs-dismiss="modal" >Cancel</button>
-                    <button class="btn border btn-primary 5star_btn" data-action='confirm_clear'  data-grading_type="<?php echo $params['type'] ?>">Checkout</button>
+                    <button class="btn border btn-primary 5star_btn" data-action='confirm_checkout'  data-grading_type="<?php echo $params['type'] ?>">Checkout</button>
                 </div>
             </div>
 		</div>
