@@ -190,7 +190,7 @@ $total_dv = 0;
                     $total_dv = $total_dv + $card_total_dv;
 
         ?>
-        <tr class="card-row" data-post_id="<?php echo $post->ID; ?>" data-card="<?php json_encode($card) ?>">
+        <tr class="card-row" data-post_id="<?php echo $post->ID; ?>" data-card="<?php echo json_encode($card) ?>">
             <td><?php echo $card["quantity"]; ?></td>
             <td><?php echo $card["year"]; ?></td>
             <td><?php echo $card["brand"]; ?></td>
