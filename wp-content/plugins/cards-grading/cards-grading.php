@@ -42,9 +42,7 @@
         add_action("rest_api_init", array($this, 'register_endpoint'));
 
 
-        add_filter( 'manage_edit-post_columns', array($this, 'add_new_columns'));
-
-        add_filter( 'manage_cards-grading-card_posts_columns', 'add_new_columns');
+        add_filter( 'manage_cards-grading-card_posts_columns', 'add_cards_grading_card_columns');
 
     }
 
@@ -70,11 +68,12 @@
 
     }
 
-    function add_new_columns( $columns ) {
-        $column_meta = array( 'meta' => 'Custom Column' );
-       $columns = array_slice( $columns, 0, 2, true ) + $column_meta + array_slice( $columns, 2, NULL, true );
-       return $columns;
-   }
+    function add_cards_grading_card_columns($columns) {
+        return array_merge($columns,
+                  array('client' => __('Client'),
+                        'project_date' =>__( 'Project Date')));
+    }
+
 
     public function load_assets() 
     {
