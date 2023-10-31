@@ -40,6 +40,8 @@
 
         // Add Endpoint
         add_action("rest_api_init", array($this, 'register_endpoint'));
+
+        add_filter( 'manage_cards-grading-card_posts_columns' , array($this, 'add_cards_grading_card_columns'));
     }
 
     public function create_custom_post_type()
@@ -61,8 +63,14 @@
 
         register_post_type("cards-grading-card", $args);
 
-
     }
+
+    public function add_cards_grading_card_columns($columns) {
+        return array_merge($columns,
+                  array('client' => __('Client'),
+                        'project_date' =>__( 'Project Date')));
+    }
+
 
     public function load_assets() 
     {
