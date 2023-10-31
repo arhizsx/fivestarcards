@@ -103,6 +103,61 @@
         register_post_type("cards-grading-type", $args);
 
 
+        $this->setup_grading_types();
+
+    }
+
+
+    public function setup_grading_types(){
+
+        $fivestar_grading_types = [
+            [
+                "name" => "PSA - Value Bulk",
+                "type" => "psa-value_bulk",
+                "per_card" => 19,
+                "max_dv" => 499,
+            ],
+            [
+                "name" => "PSA - Value Plus",
+                "type" => "psa-value_plus",
+                "per_card" => 40,
+                "max_dv" => 499,
+            ],
+            [
+                "name" => "PSA - Regular",
+                "type" => "psa-regular",
+                "per_card" => 75,
+                "max_dv" => 1499,
+            ],
+            [
+                "name" => "PSA - Express",
+                "type" => "psa-express",
+                "per_card" => 165,
+                "max_dv" => 2499,
+            ],
+            [
+                "name" => "PSA - Super Express",
+                "type" => "psa-super_express",
+                "per_card" => 330,
+                "max_dv" => 4999,
+            ]
+
+        ];
+
+        foreach( $fivestar_grading_types as $grading){
+
+            $post_id = wp_insert_post([
+                'post_type' => 'cards-grading-type',
+                'post_title' => $grading["name"],
+                'post_status' => 'publish'
+            ]);
+    
+            add_post_meta($post_id, "name", $grading["name"] );
+            add_post_meta($post_id, "type", $grading["type"] );
+            add_post_meta($post_id, "per_card", $grading["per_card"] );
+            add_post_meta($post_id, "max_dv", $grading["max_dv"] );
+    
+        }
 
     }
 
