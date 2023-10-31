@@ -31,13 +31,8 @@ $total_dv = 0;
 
 <div class="m-0 p-0">
     <div class="row">
-        <div class="col-xl-6 col-lg-6 col-md-6" >
+        <div class="col-xl-12 col-lg-12 col-md-12" >
             <H1 style="color: black !important;"><?php echo $params['title'] ?></H1>
-        </div>
-        <div class="col-xl-6 col-lg-6 col-md-6 text-end">
-            <button class='5star_btn btn btn-success mb-3' data-type="<?php echo $params['type'] ?>" data-action="add_card">
-                Log Card
-            </button>
         </div>
     </div>
     <div class="table-responsive">
