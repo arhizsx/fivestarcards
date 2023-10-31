@@ -147,7 +147,7 @@ $total_dv = 0;
 	</div>
 </div>
 
-<div class="pt-5 px-5 pb-0">
+<div class="m-0 p-0">
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-6" >
             <H1 style="color: black !important;"><?php echo $params['title'] ?></H1>
