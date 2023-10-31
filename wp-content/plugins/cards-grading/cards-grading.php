@@ -66,9 +66,14 @@
     }
 
     public function add_cards_grading_card_columns($columns) {
-        return array_merge($columns,
-                  array('client' => __('Client'),
-                        'project_date' =>__( 'Project Date')));
+        return array_merge(
+                    $columns,
+                    array(
+                        'user' => __('User'),
+                        'Player' =>__( 'Player'),
+                        'grading' =>__( 'Grading')
+                    )
+                );
     }
 
 
