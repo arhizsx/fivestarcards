@@ -42,6 +42,9 @@
         add_action("rest_api_init", array($this, 'register_endpoint'));
 
         add_filter( 'manage_cards-grading-card_posts_columns' , array($this, 'add_cards_grading_card_columns'));
+
+        add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column') );
+
     }
 
     public function create_custom_post_type()
@@ -69,13 +72,27 @@
         return array_merge(
                     $columns,
                     array(
-                        'user' => __('User'),
-                        'Player' =>__( 'Player'),
+                        'user_id' => __('User'),
+                        'player' =>__( 'Player'),
                         'grading' =>__( 'Grading')
                     )
                 );
     }
 
+    function custom_cards_grading_card_column( $column, $post_id ) {
+        switch ( $column ) {
+          case 'user_id':
+            echo get_post_meta( $post_id , 'user_id' , true );
+            break;
+          case 'player':
+            echo get_post_meta( $post_id , 'player' , true );
+            break;
+          case 'player':
+            echo get_post_meta( $post_id , 'grading' , true );
+            break;
+        }
+    }
+        
 
     public function load_assets() 
     {
