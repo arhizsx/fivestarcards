@@ -168,7 +168,9 @@
             return new WP_REST_Response("Invalid Nonce", 422);
         }
 
-        return $data;
+        $params = $data->get_params();
+
+        return $params;
 
     }
  }
