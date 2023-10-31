@@ -285,5 +285,11 @@ $(document).on("click",".card-row", function(e){
 
     $(document).find("input[name='quantity']").val($(this).data("card").quantity);
     $(document).find("input[name='year']").val($(this).data("card").year);
+    $(document).find("input[name='brand']").val($(this).data("card").brand);
+    $(document).find("input[name='card_number']").val($(this).data("card").card_number);
+    $(document).find("input[name='player']").val($(this).data("card").player);
+    $(document).find("input[name='attribute']").val($(this).data("card").attribute);
+    $(document).find("input[name='dv']").val($(this).data("card").dv);
+    $(document).find("input[name='per_card']").val($(this).data("card").per_card);
 
 });
