@@ -215,7 +215,7 @@
             doClearTable($params);
 
         }
-        elseif($params["type"] == "checkout"){
+        elseif($params["action"] == "checkout"){
 
             doClearTable($params);
 
