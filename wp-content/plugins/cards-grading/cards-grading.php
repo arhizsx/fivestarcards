@@ -80,17 +80,6 @@
     }
 
     public function custom_cards_grading_card_column( $column, $post_id ) {
-        switch ( $column ) {
-          case 'user_id':
-            echo "test";
-            break;
-          case 'status':
-            echo "test";
-            break;
-          case 'grading':
-            echo "test";
-            break;
-        }
     }
         
 
