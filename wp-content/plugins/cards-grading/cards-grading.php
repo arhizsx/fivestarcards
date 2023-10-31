@@ -29,10 +29,11 @@
         // Create Custom Post Type
         add_action('init', array($this, 'create_custom_post_type') );        
 
-        // Customize Post Type Columns
+        // Customize Grding Post Type Columns
         add_filter( 'manage_cards-grading-card_posts_columns', array($this, 'add_cards_grading_card_columns'));
         add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column'), 10, 2 );
 
+        
         // Add Assets
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
 
@@ -74,7 +75,6 @@
             'exclude_from_search' => true,
             'publicly_queryable' => false,
             'capability' => 'manage_options',
-            'capability' => 'manage_options',
             'labels' => $labels,
             'menu_icon' => 'dashicons-media-text',
             'supports' => ['custom-fields']
@@ -88,7 +88,38 @@
                      'manage_options',               // Minimum capability to view the menu.
                      'cards-grading-settings',        // Unqiue Slug Name
                      'mmd_maplist_DrawAdminPage' 
-        );  // A callback function used to display page content.        
+        );
+
+        $labels = array(
+            'name'               => _x( 'Grading Checkouts', 'mmd_list' ),
+            'singular_name'      => _x( 'Grading Checkout', 'mmd_lists' ),
+            'add_new'            => _x( 'New Grading Checkout', 'mmd_list' ),
+            'add_new_item'       => __( 'Add New Grading Checkout' ),
+            'edit_item'          => __( 'Edit Grading Checkout' ),
+            'new_item'           => __( 'New Grading Checkout' ),
+            'all_items'          => __( 'Grading Checkouts' ),
+            'view_item'          => __( 'View Grading Checkouts' ),
+            'search_items'       => __( 'Search Grading Checkouts' ),
+            'not_found'          => __( 'No Listing found' ),
+            'not_found_in_trash' => __( 'No Listings found in the Trash' ), 
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Grading Checkouts'
+        );        
+        $args = array(
+            'public' => true,
+            'has_archive' => false,
+            'supports' => array('title'),
+            'exclude_from_search' => true,
+            'publicly_queryable' => false,
+            'capability' => 'manage_options',
+            'labels' => $labels,
+            'menu_icon' => 'dashicons-media-text',
+            'supports' => ['custom-fields']
+        );
+
+        register_post_type("cards-grading-checkout", $args);
+
+
 
     }
 
