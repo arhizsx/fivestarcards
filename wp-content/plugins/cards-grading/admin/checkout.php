@@ -116,13 +116,12 @@ $total_dv = 0;
     </div>
         <div class="row">
         <div class="col-lg-12 text-end border-top pt-2">
-    <button class='5star_btn btn btn-danger' data-type="<?php echo $params['type'] ?>" data-action="clear_table">
-        Clear List
-    </button>
-        
-        <button class='5star_btn btn btn-primary' data-type="<?php echo $params['type'] ?>" data-action="checkout">
-            Checkout
-        </button>      
+            <button class='5star_btn btn btn-danger' data-type="<?php echo $params['type'] ?>" data-action="back_to_log_cards">
+                Log More Cards
+            </button>        
+            <button class='5star_btn btn btn-primary' data-type="<?php echo $params['type'] ?>" data-action="checkout">
+                Checkout
+            </button>      
         </div>
     </div>
     
