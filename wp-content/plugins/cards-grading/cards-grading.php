@@ -33,6 +33,8 @@
         add_filter( 'manage_cards-grading-card_posts_columns', array($this, 'add_cards_grading_card_columns'));
         add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column'), 10, 2 );
 
+        // Create Checkout Post Type
+        add_action('init', array($this, 'create_checkout_post_type') );        
         
         // Add Assets
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
@@ -82,6 +84,10 @@
 
         register_post_type("cards-grading-card", $args);
 
+    }
+
+    public function create_checkout_post_type()
+    {
         $labels = array(
             'name'               => _x( 'Grading Checkouts', 'mmd_list' ),
             'singular_name'      => _x( 'Grading Checkout', 'mmd_lists' ),
@@ -110,8 +116,6 @@
         );
 
         register_post_type("cards-grading-checkout", $args);
-
-
 
     }
 
