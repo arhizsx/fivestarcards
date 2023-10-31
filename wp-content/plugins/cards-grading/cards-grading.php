@@ -88,7 +88,7 @@
             $user_id = get_post_meta( $post_id , 'user_id' , true );
             $user = get_user_by( "id", $user_id );
 
-            echo $user_id;
+            echo $user;
 
             break;
           case 'grading':
