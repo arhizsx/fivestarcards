@@ -97,6 +97,10 @@
     }
     
     function custom_cards_grading_card_column( $column, $post_id ) {
+        
+        $card_data =  get_post_meta( $post_id , 'card' , true );
+        $card = json_decode($card_data, true);
+
         switch ( $column ) {
           case 'user_id':
             $user_id = get_post_meta( $post_id , 'user_id' , true );
@@ -106,10 +110,10 @@
 
             break;
           case 'quantity':
-            echo get_post_meta( $post_id , 'quantity' , true );
+            echo $card["quantity"];
             break;
           case 'dv':
-            echo get_post_meta( $post_id , 'dv' , true );
+            echo $card["dv"];
             break;
 
           case 'grading':
