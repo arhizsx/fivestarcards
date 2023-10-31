@@ -146,7 +146,7 @@ function tableAction(what_type, action, what_modal){
                     );
                 }
                 else if(action == "checkout"){
-                    window.location.replace("/checkout?type=" + what_type);
+                    console.log("Checkout");
                 }
 
                 $(document).find(what_modal).modal("hide");
