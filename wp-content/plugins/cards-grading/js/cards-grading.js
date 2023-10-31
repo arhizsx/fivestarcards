@@ -153,18 +153,8 @@ function updateCard(){
 
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
     var url = $(document).find(".5star_logged_cards").data("table_action_endpoint");
-
-    $.ajax({
-        method: 'post',
-        url: url,
-        headers: {'X-WP-Nonce': nonce },
-        data: {
-            'action' : 'update',
-            'card' : what_card,
-            'post_id' : what_post_id,
-        }
-    });
-
+    
+    console.log($(document).find("input[name='card']").val);
     console.log("updating card");
 
 }
