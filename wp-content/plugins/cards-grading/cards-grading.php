@@ -82,10 +82,10 @@
         register_post_type("cards-grading-card", $args);
 
         add_submenu_page('edit.php?post_type=cards-grading-card',             // Parent Slug from add_menu_page 
-                     'Settings',                     // Title of page
-                     'Settings',                     // Menu title
+                     'Dashboard',                     // Title of page
+                     'Dashboard',                     // Menu title
                      'manage_options',               // Minimum capability to view the menu.
-                     'mmd_list_options_slug',        // Unqiue Slug Name
+                     'cards-grading-settings',        // Unqiue Slug Name
                      'mmd_maplist_DrawAdminPage' 
         );  // A callback function used to display page content.        
 
