@@ -149,6 +149,25 @@ function tableAction(what_type, action){
 
 }
 
+function updateCard(what_card, what_post_id){
+
+    var nonce = $(document).find(".5star_logged_cards").data("nonce");
+    var url = $(document).find(".5star_logged_cards").data("table_action_endpoint");
+
+    $.ajax({
+        method: 'post',
+        url: url,
+        headers: {'X-WP-Nonce': nonce },
+        data: {
+            'action' : 'update',
+            'card' : what_card,
+            'post_id' : what_post_id,
+        }
+    });
+
+
+}
+
 $(document).on("click", ".5star_btn", function(e){
 
     console.log("button pressed");
@@ -295,8 +314,6 @@ $(document).on("click",".card-row", function(e){
     $(document).find(".view_card").find("div#view_card_form_box").removeClass("d-none");
     $(document).find(".view_card").appendTo('body').modal("show");
 
-    console.log( $(this).data("card") );
-
     $(document).find("input[name='quantity']").val($(this).data("card").quantity);
     $(document).find("input[name='year']").val($(this).data("card").year);
     $(document).find("input[name='brand']").val($(this).data("card").brand);
@@ -308,5 +325,7 @@ $(document).on("click",".card-row", function(e){
     $(document).find("input[name='grading']").val($(this).data("card").grading);
     $(document).find("input[name='max_dv']").val($(this).data("card").max_dv);
     $(document).find("input[name='post_id']").val($(this).data("post_id"));
+
+    updateCard( $(this).data("card"), $(this).data("post_id") )
 
 });
