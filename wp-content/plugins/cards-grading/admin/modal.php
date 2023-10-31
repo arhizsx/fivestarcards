@@ -244,7 +244,6 @@ $total_dv = 0;
         <th>Brand</th>
         <th>Card #</th>
         <th>Player Name</th>
-        <th>Attribute S/N</th>
         <th class='text-end'>DV</th>
         <th class='text-end'>Total DV</th>
         <th class="text-end">Grading Total</th>
