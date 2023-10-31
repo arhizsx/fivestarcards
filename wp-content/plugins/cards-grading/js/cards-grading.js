@@ -153,6 +153,9 @@ function tableAction(what_type, action, what_modal){
                         '<tr><td class="text-center" colspan="10">Empty</td></tr>'
                     );
                 }
+                else if(action == "checkout"){
+                    window.location.replace("/checkout?type=" + what_type);
+                }
 
                 $(document).find(what_modal).modal("hide");
             }
