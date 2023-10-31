@@ -154,7 +154,7 @@ function updateCard(){
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
     var url = $(document).find(".5star_logged_cards").data("table_action_endpoint");
     
-    var card = $(document).find("input[name='card']").val();
+    var card = JSON.parse($(document).find("input[name='card']").val());
     var post_id = $(document).find("input[name='post_id']").val();
     var action = "update";
 
