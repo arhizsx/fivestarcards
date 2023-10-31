@@ -41,11 +41,11 @@
         // Add Endpoint
         add_action("rest_api_init", array($this, 'register_endpoint'));
 
-        add_filter( 'manage_cards-grading-card_posts_columns' , array($this, 'add_cards_grading_card_columns'));
 
-        add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column') );
+        add_filter( 'manage_edit-post_columns', array($this, 'add_new_columns'));
 
     }
+
 
     public function create_custom_post_type()
     {
@@ -68,20 +68,11 @@
 
     }
 
-    public function add_cards_grading_card_columns($columns) {
-        return array_merge(
-                    $columns,
-                    array(
-                        'user_id' => __('User'),
-                        'status' =>__( 'Status'),
-                        'grading' =>__( 'Grading')
-                    )
-                );
-    }
-
-    public function custom_cards_grading_card_column( $column, $post_id ) {
-    }
-        
+    function add_new_columns( $columns ) {
+        $column_meta = array( 'meta' => 'Custom Column' );
+       $columns = array_slice( $columns, 0, 2, true ) + $column_meta + array_slice( $columns, 2, NULL, true );
+       return $columns;
+   }
 
     public function load_assets() 
     {
