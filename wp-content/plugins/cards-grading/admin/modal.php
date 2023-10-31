@@ -204,6 +204,8 @@ $total_dv = 0;
                     </div>
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+                        <button class="btn border btn-danger">Delete</button>
+                        <button class="btn border btn-primary">Update</button>
                     </div>
                 </div>
                 <div class="d-none text-center p-5" id="error">
