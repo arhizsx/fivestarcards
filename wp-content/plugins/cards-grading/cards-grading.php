@@ -44,8 +44,8 @@
 
         add_filter( 'manage_edit-post_columns', array($this, 'add_new_columns'));
 
-        add_filter( 'manage_${post_type}_posts_columns', 'add_new_columns');
-        
+        add_filter( 'manage_cards-grading-card_posts_columns', 'add_new_columns');
+
     }
 
 
