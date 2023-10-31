@@ -61,8 +61,8 @@
             'publicly_queryable' => false,
             'capability' => 'manage_options',
 			'labels'      => array(
-				'name'          => __( 'Cards Grading', 'textdomain' ),
-				'singular_name' => __( 'Cards Grading', 'textdomain' ),
+				'name'          => __( 'CG Cards', 'textdomain' ),
+				'singular_name' => __( 'CG Card', 'textdomain' ),
 			),            
             'menu_icon' => 'dashicons-media-text',
             'supports' => ['custom-fields']
