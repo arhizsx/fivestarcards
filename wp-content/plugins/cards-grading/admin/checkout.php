@@ -15,7 +15,7 @@ $args = array(
         ),
         array(
             'key' => 'status',
-            'value' => 'checkout'
+            'value' => 'pending'
         )
     ),
     'post_type' => 'cards-grading-card',
