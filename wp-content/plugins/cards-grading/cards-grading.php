@@ -27,11 +27,11 @@
     public function __construct() 
     {
         // Create Custom Post Type
-        // add_action('init', array($this, 'create_custom_post_type') );        
+        add_action('init', array($this, 'create_custom_post_type') );        
 
         // Customize Grding Post Type Columns
-        // add_filter( 'manage_cards-grading-card_posts_columns', array($this, 'add_cards_grading_card_columns'));
-        // add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column'), 10, 2 );
+        add_filter( 'manage_cards-grading-card_posts_columns', array($this, 'add_cards_grading_card_columns'));
+        add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column'), 10, 2 );
 
 
         add_action('init', array($this, 'create_checkout_post_type') );        
