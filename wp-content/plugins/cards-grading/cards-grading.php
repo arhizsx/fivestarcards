@@ -33,8 +33,6 @@
         add_filter( 'manage_cards-grading-card_posts_columns', array($this, 'add_cards_grading_card_columns'));
         add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column'), 10, 2 );
 
-
-        add_action('init', array($this, 'create_checkout_post_type') );        
         
         // Add Assets
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
@@ -72,10 +70,6 @@
 
         register_post_type("cards-grading-card", $args);
 
-    }
-
-    public function create_checkout_post_type()
-    {
         $args = array(
             'public' => true,
             'has_archive' => false,
@@ -84,8 +78,8 @@
             'publicly_queryable' => false,
             'capability' => 'manage_options',
 			'labels'      => array(
-				'name'          => __( 'Cards Grading Checkout', 'textdomain' ),
-				'singular_name' => __( 'Cards Grading Checkout', 'textdomain' ),
+				'name'          => __( 'CG Checkouts', 'textdomain' ),
+				'singular_name' => __( 'CG Checkout', 'textdomain' ),
 			),            
             'menu_icon' => 'dashicons-media-text',
             'supports' => ['custom-fields']
@@ -334,6 +328,9 @@
         try {
 
             $user_id = get_current_user_id();        
+
+
+
 
             $args = array(
                 'meta_query' => array(
