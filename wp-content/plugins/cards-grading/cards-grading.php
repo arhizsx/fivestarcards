@@ -38,6 +38,7 @@
 
         // Add Shortcodes
         add_shortcode('cards-grading', array( $this, 'cards_grading_shortcode' ));
+        add_shortcode('cards-grading-checkout', array( $this, 'cards_grading_checkout_shortcode' ));
 
         // Add JS
         add_action('wp_footer', array( $this, 'load_scripts' ));
@@ -172,6 +173,25 @@
         
         return $output ;
     }
+
+    public function cards_grading_checkout_shortcode($atts) 
+    {
+
+        $default = array(
+            'title' => 'Grading Title',
+            'type' => 'grading-tyoe'
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
+
+        include( plugin_dir_path( __FILE__ ) . 'admin/checkout.php' );
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
+
 
     public function load_scripts()
     {   
