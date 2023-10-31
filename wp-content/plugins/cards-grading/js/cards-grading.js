@@ -165,6 +165,7 @@ function updateCard(what_card, what_post_id){
         }
     });
 
+    console.log("updating card");
 
 }
 
