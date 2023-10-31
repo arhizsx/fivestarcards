@@ -211,6 +211,8 @@
         
         $posts = get_posts($args);
 
+        return $posts;
+
         foreach($posts as $post)
         {
             wp_delete_post( $post->ID, true );
