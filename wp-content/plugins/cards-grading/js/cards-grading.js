@@ -243,7 +243,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "confirm_clear":
 
-            tableAction( $(this).data("grading_type", "clear") );
+            tableAction( $(this).data("grading_type"), "clear" );
 
             break;
 
