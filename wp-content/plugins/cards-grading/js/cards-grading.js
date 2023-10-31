@@ -177,7 +177,7 @@ function deleteCard(){
     
     var card = JSON.parse($(document).find("input[name='card']").val());
     var post_id = $(document).find("input[name='post_id']").val();
-    var action = "update";
+    var action = "delete";
 
     $.ajax({
         method: 'post',
