@@ -142,6 +142,12 @@
                 "type" => "psa-super_express",
                 "per_card" => 330,
                 "max_dv" => 4999,
+            ],
+            [
+                "name" => "SGC - Bulk",
+                "type" => "sgc-bulk",
+                "per_card" => 15,
+                "max_dv" => 1500,
             ]
 
         ];
