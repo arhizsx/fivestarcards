@@ -166,6 +166,11 @@ function updateCard(){
             'card' : card,
             'post_id': post_id,
             'action' : action
+        },
+        success: function(resp){
+
+            $(document).find(".view_card").modal("hide");
+            
         }
     });
 }
@@ -187,8 +192,15 @@ function deleteCard(){
             'card' : card,
             'post_id': post_id,
             'action' : action
+        },
+        success: function(resp){
+
+            $(document).find(".view_card").modal("hide");
+            
         }
     });
+
+
 }
 
 
