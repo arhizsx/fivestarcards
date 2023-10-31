@@ -28,6 +28,7 @@
     {
         // Create Custom Post Type
         add_action('init', array($this, 'create_custom_post_type') );        
+        add_action('init', array($this, 'create_checkout_post_type') );        
 
         // Customize Grding Post Type Columns
         add_filter( 'manage_cards-grading-card_posts_columns', array($this, 'add_cards_grading_card_columns'));
@@ -82,14 +83,10 @@
 
         register_post_type("cards-grading-card", $args);
 
-        add_submenu_page('edit.php?post_type=cards-grading-card',             // Parent Slug from add_menu_page 
-                     'Dashboard',                     // Title of page
-                     'Dashboard',                     // Menu title
-                     'manage_options',               // Minimum capability to view the menu.
-                     'cards-grading-settings',        // Unqiue Slug Name
-                     'mmd_maplist_DrawAdminPage' 
-        );
+    }
 
+    public function create_checkout_post_type()
+    {
         $labels = array(
             'name'               => _x( 'Grading Checkouts', 'cards-grading-checkout' ),
             'singular_name'      => _x( 'Grading Checkout', 'cards-grading-checkout' ),
@@ -118,8 +115,6 @@
         );
 
         register_post_type("cards-grading-checkout", $args);
-
-
 
     }
 
