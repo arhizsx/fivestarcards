@@ -181,11 +181,18 @@
             return new WP_REST_Response("Invalid Nonce", 422);
         }
 
+        $user_id = get_current_user_id();
+        $user = get_user_by( "id", $user_id );
+
+
+
         $post_id = wp_insert_post([
             'post_type' => 'cards-grading-card',
-            'post_title' => 'Card Grading',
+            'post_title' => $user->display_name . " - " . $params["player"],
             'post_status' => 'publish'
         ]);
+
+
 
         add_post_meta($post_id, "user_id", $params["user_id"] );
         add_post_meta($post_id, "grading", $params["grading"] );
