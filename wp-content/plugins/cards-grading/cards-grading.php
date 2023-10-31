@@ -182,10 +182,10 @@
     
             } else {
 
-                update_post_meta($old_posts->ID, "name", $grading["name"] );
-                update_post_meta($old_posts->ID, "type", $grading["type"] );
-                update_post_meta($old_posts->ID, "per_card", $grading["per_card"] );
-                update_post_meta($old_posts->ID, "max_dv", $grading["max_dv"] );
+                // update_post_meta($old_posts->ID, "name", $grading["name"] );
+                // update_post_meta($old_posts->ID, "type", $grading["type"] );
+                // update_post_meta($old_posts->ID, "per_card", $grading["per_card"] );
+                // update_post_meta($old_posts->ID, "max_dv", $grading["max_dv"] );
                 
             }
 
