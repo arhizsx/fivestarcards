@@ -147,7 +147,7 @@ function tableAction(what_type, action, what_modal){
         success: function(resp){
 
             if(resp == true){
-                if(what_type == "clear"){
+                if(action == "clear"){
                     $(document).find(".5star_logged_cards tbody").empty();
                     $(document).find(".5star_logged_cards tbody").append(
                         '<tr><td class="text-center" colspan="10">Empty</td></tr>'
