@@ -88,7 +88,9 @@
                 array(
                     'user_id' => __('User'),
                     'status' => __('Status'),
-                    'grading' =>__( 'Grading')
+                    'grading' =>__( 'Grading'),
+                    'quantity' =>__( 'Quantity'),
+                    'dv' =>__( 'DV')
                 )
                 
             );
@@ -103,6 +105,13 @@
             print_r ($user->display_name);
 
             break;
+          case 'quantity':
+            echo get_post_meta( $post_id , 'quantity' , true );
+            break;
+          case 'dv':
+            echo get_post_meta( $post_id , 'dv' , true );
+            break;
+
           case 'grading':
             echo get_post_meta( $post_id , 'grading' , true );
             break;
