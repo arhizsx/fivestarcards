@@ -293,5 +293,8 @@ $(document).on("click",".card-row", function(e){
     $(document).find("input[name='attribute']").val($(this).data("card").attribute);
     $(document).find("input[name='dv']").val($(this).data("card").dv);
     $(document).find("input[name='per_card']").val($(this).data("card").per_card);
+    $(document).find("input[name='grading']").val($(this).data("card").grading);
+    $(document).find("input[name='max_dv']").val($(this).data("card").max_dv);
+    $(document).find("input[name='post_id']").val($(this).data("post_id"));
 
 });
