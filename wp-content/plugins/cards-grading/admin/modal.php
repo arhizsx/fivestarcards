@@ -167,7 +167,7 @@ $total_dv = 0;
                                 <input type="hidden" name="max_dv" value=''/>
                                 <input type="hidden" name="post_id" value=''/>
                                 <input type="hidden" name="card" value=''/>
-                                
+
                                 <div class="row">
                                     <div class="col-xl-6 col-lg-6 col-md-6">
                                         <label for="quantity">Qty</label>
@@ -270,9 +270,8 @@ $total_dv = 0;
             <td><?php echo $card["quantity"]; ?></td>
             <td><?php echo $card["year"]; ?></td>
             <td><?php echo $card["brand"]; ?></td>
-            <td><?php echo $card["card_number"]; ?></td>
+            <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
             <td><?php echo $card["player"]; ?></td>
-            <td><?php echo $card["attribute"]; ?></td>
             <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
             <td class='text-end'><?php echo "$" . number_format((float) $card_total_dv, 2, '.', ''); ?></td>
             <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
@@ -282,7 +281,7 @@ $total_dv = 0;
             } else {
         ?>
         <tr>
-            <td class="text-center" colspan="10">Empty</td>
+            <td class="text-center" colspan="9">Empty</td>
         </tr>
         <?php          
             }

@@ -44,9 +44,8 @@ function addCardToTable(card){
                         "<td>" + card["quantity"] + "</td>" +
                         "<td>" + card["year"] + "</td>" +
                         "<td>" + card["brand"] + "</td>" +
-                        "<td>" + card["card_number"] + "</td>" +
+                        "<td>" + card["card_number"] + "<br><small>" + attribute + "</small>" + "</td>" +
                         "<td>" + card["player"] + "</td>" +
-                        "<td>" + attribute + "</td>" +
                         "<td class='text-end'><span class='dollar'>" + parseFloat(card["dv"]).toFixed(2) + "</span></td>" +
                         "<td class='text-end'><span class='dollar'>" + card_total_dv.toFixed(2) + "</span></td>" +
                         "<td class='text-end'><span class='dollar'>" + card_total_charge.toFixed(2) + "</span></td>" +
@@ -150,7 +149,7 @@ function tableAction(what_type, action, what_modal){
                 if(action == "clear"){
                     $(document).find(".5star_logged_cards tbody").empty();
                     $(document).find(".5star_logged_cards tbody").append(
-                        '<tr><td class="text-center" colspan="10">Empty</td></tr>'
+                        '<tr><td class="text-center" colspan="9">Empty</td></tr>'
                     );
                 }
                 else if(action == "checkout"){
