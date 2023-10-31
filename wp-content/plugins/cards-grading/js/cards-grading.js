@@ -131,7 +131,7 @@ function showCheckoutModal(w){
 }
 
 
-function tableAction(what_type, action){
+function tableAction(what_type, action, what_modal){
 
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
     var url = $(document).find(".5star_logged_cards").data("table_action_endpoint");
@@ -146,7 +146,7 @@ function tableAction(what_type, action){
         },
         success: function(resp){
 
-            $(document).find(".view_card").modal("hide");
+            $(document).find(what_modal).modal("hide");
             
         }
     });
@@ -316,7 +316,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "confirm_clear":
 
-            tableAction( $(this).data("grading_type"), "clear" );
+            tableAction( $(this).data("grading_type"), "clear", ".clear_cards" );
 
             break;
 
@@ -328,7 +328,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "confirm_checkout":
 
-            tableAction( $(this).data("grading_type"), "checkout" );
+            tableAction( $(this).data("grading_type"), "checkout", ".checkout_cards" );
 
             break;
 
