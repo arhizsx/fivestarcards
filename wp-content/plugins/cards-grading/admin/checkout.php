@@ -117,7 +117,7 @@ $total_dv = 0;
             <button class='5star_btn btn btn-danger' data-type="<?php echo $params['type'] ?>" data-action="back_to_log_cards">
                 Log More Cards
             </button>        
-            <button class='5star_btn btn btn-primary' data-type="<?php echo $params['type'] ?>" data-action="checkout">
+            <button class='5star_btn btn btn-primary' data-type="<?php echo $params['type'] ?>" data-action="confirm_checkout">
                 Checkout
             </button>      
         </div>
