@@ -447,7 +447,7 @@
             
             $grading_type = get_posts($args);
 
-            return "TEST";
+            return $params["grading"];
 
             $checkout_post_id = wp_insert_post([
                 'post_type' => 'cards-grading-chk',
