@@ -249,13 +249,13 @@
 
         if($params["action"] == "clear"){
 
-            $this->doClearTable($params);
+            return $this->doClearTable($params);
 
 
         }
         elseif($params["action"] == "checkout"){
 
-            $this->doCheckout($params);
+            return $this->doCheckout($params);
 
         }
 
