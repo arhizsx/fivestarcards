@@ -45,7 +45,7 @@
         add_filter( 'manage_cards-grading-card_posts_columns', array($this, 'add_cards_grading_card_columns'));
 
 
-        add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column') );
+        add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column'), 10, 2 );
 
     }
 
@@ -72,12 +72,15 @@
     }
 
     function add_cards_grading_card_columns($columns) {
-        return array_merge($columns,
-                  array(
+        return array_merge(
+                $columns,
+                array(
                     'user_id' => __('User'),
                     'status' => __('Status'),
                     'grading' =>__( 'Grading')
-                ));
+                )
+                
+            );
     }
     
 
