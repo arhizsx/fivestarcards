@@ -44,7 +44,8 @@
         
         add_filter( 'manage_cards-grading-card_posts_columns', array($this, 'add_cards_grading_card_columns'));
 
-        add_action( 'manage_cards-grading-card_custom_column', array($this, "custom_cards_grading_card_columns"));
+
+        add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column') );
 
     }
 
@@ -80,18 +81,19 @@
     }
     
 
-    function custom_cards_grading_card_columns($slides_column){
+    function custom_cards_grading_card_column( $column, $post_id ) {
         global $post;
-        switch ($slides_column)
-        {
-            case "status":
-                echo "test";
-                break;
+
+        switch ( $column ) {
+          case 'grading':
+            echo get_post_meta( $post->ID , 'grading' , true );
+            break;
+          case 'status':
+            echo get_post_meta( $post->ID , 'status' , true );
+            break;
         }
-
     }
-
-
+    
     public function load_assets() 
     {
 
