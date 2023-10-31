@@ -47,8 +47,6 @@
         // Add Endpoint
         add_action("rest_api_init", array($this, 'register_endpoint'));
 
-        
-
     }
 
     public function create_custom_post_type()
@@ -86,6 +84,25 @@
         );
 
         register_post_type("cards-grading-chk", $args);
+
+        $args = array(
+            'public' => true,
+            'has_archive' => false,
+            'supports' => array('title'),
+            'exclude_from_search' => true,
+            'publicly_queryable' => false,
+            'capability' => 'manage_options',
+			'labels'      => array(
+				'name'          => __( 'CG Types', 'textdomain' ),
+				'singular_name' => __( 'CG Type', 'textdomain' ),
+			),            
+            'menu_icon' => 'dashicons-media-text',
+            'supports' => ['custom-fields']
+        );
+
+        register_post_type("cards-grading-type", $args);
+
+
 
     }
 
@@ -330,7 +347,13 @@
             $user_id = get_current_user_id();        
 
 
-
+            $checkout_post_id = wp_insert_post([
+                'post_type' => 'cards-grading-chk',
+                'post_title' => $user->display_name . " - " . $params["player"],
+                'post_status' => 'publish'
+            ]);
+    
+    
 
             $args = array(
                 'meta_query' => array(
