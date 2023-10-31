@@ -172,6 +172,7 @@
 
         if($params["type"] == "clear"){
 
+            return "clearing";
             doClearTable($params);
 
         }
