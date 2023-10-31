@@ -448,9 +448,6 @@
             $grading_type = get_posts($args);
             $grading_name =  get_post_meta( $grading_type[0]->ID , 'name' , true );
 
-
-            return $grading_type;
-
             $checkout_post_id = wp_insert_post([
                 'post_type' => 'cards-grading-chk',
                 'post_title' => $user->display_name . " - " . $grading_name,
