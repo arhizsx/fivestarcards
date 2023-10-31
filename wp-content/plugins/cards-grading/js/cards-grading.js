@@ -334,7 +334,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "checkout" :
 
-            window.location.replace("/checkout?type=" + $(this).data("type") );
+            window.location.href = "/checkout?type=" + $(this).data("type") ;
 
             break;
 
