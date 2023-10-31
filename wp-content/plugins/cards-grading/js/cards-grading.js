@@ -272,6 +272,15 @@ $(document).on("click", ".5star_btn", function(e){
 
             break;
 
+        case "update_card":
+
+            console.log("update_card");
+
+        case "delete_card":
+
+            console.log("delete_card");
+
+
         default:
             console.log("Button not configured");
     }
