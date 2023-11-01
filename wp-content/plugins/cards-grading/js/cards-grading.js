@@ -240,8 +240,8 @@ function orderAction(action, data){
         success: function(resp){
 
             if(resp ==true){
-                console.log("Shipping Set");
                 $(document).find(".dxmodal").modal("hide");
+                location.reload();
 
             } else {
                 console.log("Set Shipping Failed");
