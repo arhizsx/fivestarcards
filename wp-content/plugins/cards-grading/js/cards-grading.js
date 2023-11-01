@@ -377,6 +377,6 @@ $(document).on("click",".card-row", function(e){
 
 $(document).on("click",".my-order-row", function(e){
 
-    window.location.href = "/order?id=" + $(this).data("post_id") ;
+    window.location.href = "/view-order?id=" + $(this).data("post_id") ;
 
 });
