@@ -36,7 +36,7 @@ function addCardToTable(card){
         for ( i = 1; i <= quantity;  i++ ){
 
             card["quantity"] = 1;
-            
+
             $.ajax({
                 method: 'post',
                 url: url,
@@ -47,7 +47,7 @@ function addCardToTable(card){
                     var card_total_charge = 1 * parseFloat(card["per_card"]);
                     var card_total_dv = 1 * parseFloat(card["dv"]);    
 
-                    $(document).find(".5star_logged_cards tbody").append(
+                    $(document).find(".5star_logged_cards tbody").prepend(
                         "<tr class='card-row' data-post_id='" + resp + "' data-card='" + JSON.stringify(card) + "'>" +
                             "<td> 1 </td>" +
                             "<td>" + card["year"] + "</td>" +
