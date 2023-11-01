@@ -31,11 +31,11 @@ $total_dv = 0;
 
 <div class="m-0 p-0">
     <div class="row">
-        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6" >
+        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12" >
             <div style="color: black !important; font-size: .7em;"><?php echo $params['title'] ?></div>
             <H1 style="color: black !important;"><?php echo $params['order_number'] ?></H1>
         </div>
-        <div class="col-xl-4 col-lg-6 col-md-6  col-sm-6" >
+        <div class="col-xl-4 col-lg-6 col-md-6  col-sm-12" >
 
             <div class="row mb-3">
                 <div class="col">
@@ -53,7 +53,7 @@ $total_dv = 0;
                     <div class='order-data'>$400.00</div>
                 </div>
                 <div class="col">
-                    <div class='order-label'>To Cards</div>
+                    <div class='order-label'>Total Cards</div>
                     <div class='order-data'>1</div>
                 </div>
             </div>
