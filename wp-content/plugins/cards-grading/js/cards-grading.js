@@ -140,20 +140,32 @@ function tableAction(what_type, action, what_modal){
         },
         success: function(resp){
 
-            if(resp == true){
                 if(action == "clear"){
-                    $(document).find(".5star_logged_cards tbody").empty();
-                    $(document).find(".5star_logged_cards tbody").append(
-                        '<tr><td class="text-center" colspan="9">Empty</td></tr>'
-                    );
-                    $(document).find(".bottom_buttons").addClass("d-none");
+                    if(resp == true){
+                        $(document).find(".5star_logged_cards tbody").empty();
+                        $(document).find(".5star_logged_cards tbody").append(
+                            '<tr><td class="text-center" colspan="9">Empty</td></tr>'
+                        );
+                        $(document).find(".bottom_buttons").addClass("d-none");
+                    }
                 }
                 else if(action == "checkout"){
-                    console.log("Checkout Complete");
+
+                    if(resp != false){
+                        
+                        $(document).find(".5star_logged_cards tbody").empty();
+                        $(document).find(".5star_logged_cards tbody").append(
+                            '<tr><td class="text-center" colspan="9">Empty</td></tr>'
+                        );
+                        $(document).find(".bottom_buttons").addClass("d-none");
+    
+                        window.location.href = "/view-order?id=" + resp ;
+    
+                    }
+
                 }
 
                 $(document).find(what_modal).modal("hide");
-            }
             
         }
     });
