@@ -36,17 +36,18 @@ $total_dv = 0;
             <H1 style="color: black !important;"><?php echo $params['order_number'] ?></H1>
         </div>
         <div class="col-xl-3 col-lg-6 col-md-6  col-sm-6" >
-            <div class="row">
+
+            <div class="row mb-3">
                 <div style=" font-size: .7em;" class="col-4">Status</div>
                 <div class="col">To Ship</div>
             </div>
-            <div class="row">
-            <div style=" font-size: .7em;"  class="col-4">Status</div>
-                <div class="col">To Ship</div>
+            <div class="row mb-3">
+            <div style=" font-size: .7em;"  class="col-4">Total Cards</div>
+                <div class="col">1</div>
             </div>
-            <div class="row">
-                <div style=" font-size: .7em;"  class="col-4">Status</div>
-                <div class="col">To Ship</div>
+            <div class="row mb-3">
+                <div style=" font-size: .7em;"  class="col-4">Total DV</div>
+                <div class="col">$499.00</div>
             </div>
         </div>
         <div class="col-xl-6 col-lg-12 col-md-12  col-sm-12" >
