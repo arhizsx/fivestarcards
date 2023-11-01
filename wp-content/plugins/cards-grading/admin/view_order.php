@@ -164,13 +164,13 @@ foreach($posts as $post)
             <div class="col-lg-12">
                 <H3 style="color: black !important;">Ship Your Items To</H3>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-3">
                 <div><strong>USPS</strong></div>
                 <div>Matt Sellers</div>
                 <div>PO Box 263</div>
                 <div>Hartland, WI 53029</div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-3">
                 <div><strong>FedEx / UPS / DHL</strong></div>
                 <div>PMB 394</div>
                 <div>1256 Capitol Drive - Suite 700</div>
