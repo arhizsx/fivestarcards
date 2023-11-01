@@ -257,7 +257,7 @@
             'cards-grading',
             plugin_dir_url(__FILE__) . 'js/cards-grading.js',
             array('jquery'),
-            20,
+            19,
             true
         );
 
@@ -450,7 +450,7 @@
 
         if($params["action"] == "set_shipping"){
 
-            return doSetShipping($params);
+            return $this->doSetShipping($params);
 
         }
 
@@ -588,7 +588,7 @@
 
     public function doSetShipping($params){
 
-        return "true";
+        return true;
 
     }
 
