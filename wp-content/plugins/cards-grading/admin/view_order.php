@@ -223,8 +223,8 @@ foreach($posts as $post)
                         <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
                         <input type="hidden" name="order_number" value=''/>
                         <div class="row">
-                            <div class="col-xl-12 col-lg-12 col-md-12">
-                                <label for="carrier">Qty</label>
+                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
+                                <label for="carrier">Carrier</label>
                                 <select name="carrier" class="form-control" >
                                     <option value="USPS">USPS</option>
                                     <option value="FedEx">FedEx</option>
@@ -232,15 +232,15 @@ foreach($posts as $post)
                                     <option value="UPS">UPS</option>
                                 </select>
                             </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="carrier">Shipped By</label>
                                 <input type="text" name="shipped_by" class="form-control">
                             </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="carrier">Tracking Number</label>
                                 <input type="text" name="tracking_number" class="form-control">
                             </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="carrier">Shipping Date</label>
                                 <input type="text" name="shipping_date" class="form-control">
                             </div>
