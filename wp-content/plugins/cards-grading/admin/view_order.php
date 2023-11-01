@@ -37,6 +37,21 @@ $total_dv = 0;
         </div>
         <div class="col-xl-6 col-lg-6 col-md-6" >
             <div style="color: black !important; font-size: .7em;">Shipping Details</div>
+            <div class="row">
+                <div class="col">
+                    <H5>USPS</H5>
+                    <div>Matt Sellers</div>
+                    <div>PO Box 263</div>
+                    <div>Hartland, WI 53029</div>
+                </div>
+                <div class="col">
+                    <H5>USPS</H5>
+                    <div>FedEx / UPS / DHL</div>
+                    <div>PMB 394</div>
+                    <div>1256 Capitol Drive - Suite 700</div>
+                    <div>Pewaukee, WI 53072</div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="table-responsive">    
