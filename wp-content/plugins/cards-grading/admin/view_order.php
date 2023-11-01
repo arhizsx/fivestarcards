@@ -47,11 +47,11 @@ foreach($posts as $post)
 
 <div class="m-0 p-0">
     <div class="row">
-        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12" >
+        <div class="col-xl-4 col-lg-5 col-md-5 col-sm-12" >
             <div class="order-label"><?php echo $params['title'] ?></div>
             <H1 style="color: black !important;"><?php echo $params['order_number'] ?></H1>
         </div>
-        <div class="col-xl-4 col-lg-6 col-md-6  col-sm-12" >
+        <div class="col-xl-8 col-lg-7 col-md-7  col-sm-12" >
 
             <div class="row mb-3">
                 <div class="col">
@@ -71,23 +71,6 @@ foreach($posts as $post)
                 <div class="col">
                     <div class='order-label'>Total Cards</div>
                     <div class='order-data'><?php echo $cards_count; ?></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-6 col-lg-12 col-md-12  col-sm-12" >
-            <div class="order-label">Shipping Details</div>
-            <div class="row mb-3">
-                <div class="col">
-                    <div><strong>USPS</strong></div>
-                    <div>Matt Sellers</div>
-                    <div>PO Box 263</div>
-                    <div>Hartland, WI 53029</div>
-                </div>
-                <div class="col">
-                    <div><strong>FedEx / UPS / DHL</strong></div>
-                    <div>PMB 394</div>
-                    <div>1256 Capitol Drive - Suite 700</div>
-                    <div>Pewaukee, WI 53072</div>
                 </div>
             </div>
         </div>
