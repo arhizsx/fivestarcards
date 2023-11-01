@@ -130,4 +130,49 @@ $total_dv = 0;
             </tbody>
         </table>
     </div>
+    <div class='5star_btn_box_bottom w-100'>
+        <div class="row">
+            <div class="col-lg-6 text-end pb-2 fw-bold cards_dv_total">
+            </div>
+                <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
+            <div class="row mb-2">
+                <div class="col text-end">
+                            Total DV          
+                </div>
+                <div class="col text-end" id="total_dv">
+                    $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-end">
+                            Grading Charge    
+                </div>
+                <div class="col text-end"  id="grading_charges">
+                $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
+                </div>
+            </div>
+            </div>
+        </div>
+        <?php 
+            if( $posts )
+            {
+                $show_bottom_buttons = "";
+            } 
+            else {
+                $show_bottom_buttons = "d-none";
+            }
+        ?>
+        <div class="row bottom_buttons <?php echo $show_bottom_buttons ?>">
+            <div class="col-lg-12 text-end border-top pt-2 ">
+                <button class='5star_btn btn btn-danger' data-type="<?php echo $params['type'] ?>" data-action="clear_table">
+                    Clear List
+                </button>
+                
+                <button class='5star_btn btn btn-primary' data-type="<?php echo $params['type'] ?>" data-action="checkout">
+                    Checkout
+                </button>      
+            </div>
+        </div>
+    </div>
+    
 </div>
