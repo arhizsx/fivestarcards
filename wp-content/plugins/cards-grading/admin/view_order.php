@@ -26,6 +26,18 @@ $posts = get_posts($args);
 $grading_charge = 0;
 $total_dv = 0;
 
+foreach($posts as $post)
+{
+    $meta = get_post_meta($post->ID);
+    $card = json_decode($meta['card'][0], true);
+
+    $card_total_dv = $card["dv"] * $card["quantity"];
+    $card_grading_charge = $card["per_card"] * $card["quantity"];
+
+    $grading_charge = $grading_charge + $card_grading_charge;
+    $total_dv = $total_dv + $card_total_dv;
+}
+
 
 ?>
 
@@ -50,7 +62,7 @@ $total_dv = 0;
             <div class="row mb-3">
                 <div class="col">
                     <div class='order-label'>Total Declared Value</div>
-                    <div class='order-data'>$400.00</div>
+                    <div class='order-data'>$<?php echo number_format((float)$total_dv, 2, '.', ''); ?></div>
                 </div>
                 <div class="col">
                     <div class='order-label'>Total Cards</div>
