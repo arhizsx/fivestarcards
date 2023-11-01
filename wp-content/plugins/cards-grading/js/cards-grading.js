@@ -146,6 +146,7 @@ function tableAction(what_type, action, what_modal){
                     $(document).find(".5star_logged_cards tbody").append(
                         '<tr><td class="text-center" colspan="9">Empty</td></tr>'
                     );
+                    $(document).find(".bottom_buttons").addClass("d-none");
                 }
                 else if(action == "checkout"){
                     console.log("Checkout Complete");
