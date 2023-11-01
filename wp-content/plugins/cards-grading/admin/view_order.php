@@ -3,9 +3,10 @@
 $user_id = get_current_user_id();
 
 $checkout_post = get_post($params['order_number']);
+$checkout_meta = get_post_meta($checkout_post->ID);
 
-if( ! $checkout_post ){
-    echo "Not Found";
+if( $checkout_meta["user_id"] != $user_id){
+    echo "Not Allowed";
     die;
 }
 
