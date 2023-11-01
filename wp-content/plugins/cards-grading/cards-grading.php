@@ -40,6 +40,7 @@
         // Add Shortcodes
         add_shortcode('cards-grading', array( $this, 'cards_grading_shortcode' ));
         add_shortcode('cards-grading-checkout', array( $this, 'cards_grading_checkout_shortcode' ));
+        add_shortcode('cards-grading-my_orders', array( $this, 'cards_grading_my_orders_shortcode' ));
 
         // Add JS
         add_action('wp_footer', array( $this, 'load_scripts' ));
@@ -107,58 +108,61 @@
 
     }
 
-
     public function setup_grading_types(){
-
         
-
         $fivestar_grading_types = [
             [
                 "name" => "PSA - Value Bulk",
                 "type" => "psa-value_bulk",
                 "per_card" => 19,
                 "max_dv" => 499,
+                "url" => '/grading/psa/value-bulk',
             ],
             [
                 "name" => "PSA - Value Plus",
                 "type" => "psa-value_plus",
                 "per_card" => 40,
                 "max_dv" => 499,
+                "url" => '/grading/psa/value-plus',
             ],
             [
                 "name" => "PSA - Regular",
                 "type" => "psa-regular",
                 "per_card" => 75,
                 "max_dv" => 1499,
+                "url" => '/grading/psa/regular',
             ],
             [
                 "name" => "PSA - Express",
                 "type" => "psa-express",
                 "per_card" => 165,
                 "max_dv" => 2499,
+                "url" => '/grading/psa/express',
             ],
             [
                 "name" => "PSA - Super Express",
                 "type" => "psa-super_express",
                 "per_card" => 330,
                 "max_dv" => 4999,
+                "url" => '/grading/psa/super-express',
             ],
             [
                 "name" => "SGC - Bulk",
                 "type" => "sgc-bulk",
                 "per_card" => 15,
                 "max_dv" => 1500,
+                "url" => '/grading/sgc/bulk',
             ]
 
         ];
 
-        foreach( $fivestar_grading_types as $grading){
+        foreach( $fivestar_grading_types as $default_grading){
 
             $args = array(
                 'meta_query' => array(
                     array(
                         'key' => 'type',
-                        'value' => $grading["type"]
+                        'value' => $default_grading["type"]
                     )
                 ),
                 'post_type' => 'cards-grading-type',
@@ -171,25 +175,25 @@
 
                 $post_id = wp_insert_post([
                     'post_type' => 'cards-grading-type',
-                    'post_title' => $grading["name"],
+                    'post_title' => $default_grading["name"],
                     'post_status' => 'publish'
                 ]);
         
-                add_post_meta($post_id, "name", $grading["name"] );
-                add_post_meta($post_id, "type", $grading["type"] );
-                add_post_meta($post_id, "per_card", $grading["per_card"] );
-                add_post_meta($post_id, "max_dv", $grading["max_dv"] );
+                add_post_meta($post_id, "name", $default_grading["name"] );
+                add_post_meta($post_id, "type", $default_grading["type"] );
+                add_post_meta($post_id, "per_card", $default_grading["per_card"] );
+                add_post_meta($post_id, "max_dv", $default_grading["max_dv"] );
+                add_post_meta($post_id, "url", $default_grading["url"] );
     
             } else {
 
-                // update_post_meta($old_posts->ID, "name", $grading["name"] );
-                // update_post_meta($old_posts->ID, "type", $grading["type"] );
-                // update_post_meta($old_posts->ID, "per_card", $grading["per_card"] );
-                // update_post_meta($old_posts->ID, "max_dv", $grading["max_dv"] );
+                update_post_meta($old_posts[0]->ID, "name", $default_grading["name"] );
+                update_post_meta($old_posts[0]->ID, "type", $default_grading["type"] );
+                update_post_meta($old_posts[0]->ID, "per_card", $default_grading["per_card"] );
+                update_post_meta($old_posts[0]->ID, "max_dv", $default_grading["max_dv"] );
+                update_post_meta($old_posts[0]->ID, "url", $default_grading["url"] );
                 
-            }
-
-    
+            }    
         }
 
     }
@@ -218,7 +222,7 @@
             $user_id = get_post_meta( $post_id , 'user_id' , true );
             $user = get_user_by( "id", $user_id );
 
-            print_r ($user->display_name);
+            echo $user->display_name;
 
             break;
           case 'quantity':
@@ -295,6 +299,24 @@
         return $output ;
     }
 
+    public function cards_grading_my_orders_shortcode($atts) 
+    {
+        $type = $_GET['type'];
+
+        $default = array(
+            'title' => 'Checkout',
+            'type' => $type
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
+
+        include( plugin_dir_path( __FILE__ ) . 'admin/my_orders.php' );
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
 
     public function load_scripts()
     {   
