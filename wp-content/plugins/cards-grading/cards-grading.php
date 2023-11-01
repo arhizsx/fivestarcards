@@ -324,7 +324,7 @@
         $order_number = $_GET['id'];
 
         $default = array(
-            'title' => 'View Order',
+            'title' => 'Order Number',
             'order_number' => $order_number
         );
         
