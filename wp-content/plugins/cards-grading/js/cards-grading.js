@@ -52,9 +52,9 @@ function addCardToTable(card){
                             "<td>" + card["brand"] + "</td>" +
                             "<td>" + card["card_number"] + "<br><small>" + attribute + "</small>" + "</td>" +
                             "<td>" + card["player"] + "-" + i + "</td>" +
-                            "<td class='text-end'><span class='dollar'>" + parseFloat(card["dv"]).toFixed(2) + "</span></td>" +
-                            "<td class='text-end'><span class='dollar'>" + card_total_dv.toFixed(2) + "</span></td>" +
-                            "<td class='text-end'><span class='dollar'>" + card_total_charge.toFixed(2) + "</span></td>" +
+                            "<td class='text-end'>$" + parseFloat(card["dv"]).toFixed(2) + "</td>" +
+                            "<td class='text-end'>$" + card_total_dv.toFixed(2) + "</td>" +
+                            "<td class='text-end'>$" + card_total_charge.toFixed(2) + "</td>" +
                         "</tr>"
                     );    
     
