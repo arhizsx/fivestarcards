@@ -56,11 +56,11 @@ foreach($posts as $post)
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
                     <div class='order-label'>Status</div>
-                    <div class='order-data'>To Ship</div>
+                    <div class='order-data'><?php echo $checkout_meta["status"][0] ?></div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
                     <div class='order-label'>Service Type</div>
-                    <div class='order-data'>Card Grading</div>
+                    <div class='order-data'><?php echo $checkout_meta["service_type"][0] ?></div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
                     <div class='order-label'>Total Declared Value</div>
