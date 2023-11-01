@@ -39,7 +39,7 @@ foreach($posts as $post)
 ?>
 
 <div class="m-0 p-0">
-    <div class="row">
+    <div class="row border-bottom">
         <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12" >
             <div class="row">
                 <div class="col-xl-12 mb-3">
