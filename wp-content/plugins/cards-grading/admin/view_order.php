@@ -23,7 +23,7 @@ $args = array(
 
 $posts = get_posts($args);
 
-$grading_charge = 0;
+$cards_count = 0;
 $total_dv = 0;
 
 foreach($posts as $post)
@@ -32,10 +32,9 @@ foreach($posts as $post)
     $card = json_decode($meta['card'][0], true);
 
     $card_total_dv = $card["dv"] * $card["quantity"];
-    $card_grading_charge = $card["per_card"] * $card["quantity"];
 
-    $grading_charge = $grading_charge + $card_grading_charge;
     $total_dv = $total_dv + $card_total_dv;
+    $cards_count = $cards_count * $card["quantity"];
 }
 
 
@@ -66,7 +65,7 @@ foreach($posts as $post)
                 </div>
                 <div class="col">
                     <div class='order-label'>Total Cards</div>
-                    <div class='order-data'>1</div>
+                    <div class='order-data'><?php echo $cards_count; ?></div>
                 </div>
             </div>
         </div>
