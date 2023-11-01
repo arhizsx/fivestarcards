@@ -60,7 +60,7 @@ $total_dv = 0;
         </div>
         <div class="col-xl-6 col-lg-12 col-md-12  col-sm-12" >
             <div class="order-label">Shipping Details</div>
-            <div class="row my-2">
+            <div class="row mb-3">
                 <div class="col">
                     <div><strong>USPS</strong></div>
                     <div>Matt Sellers</div>
