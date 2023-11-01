@@ -44,11 +44,14 @@ $posts = get_posts($args);
 
                             $date_format = get_option( 'date_format' );
                             $time_format = get_option( 'time_format' );
+
+                            $user_id = $meta["user_id"][0];
+                            $user = get_user_by( "id", $user_id );
                                                         
                 ?>
                 <tr class="admin-order-row" data-post_id="<?php echo $post->ID; ?>">
                     <td><?php echo get_the_date( $date_format, $post->ID ) ?><br><span style='font-size:.7em !important;'><?php echo get_the_time( $time_format, $post->ID ); ?></span></td>
-                    <td>-</td>
+                    <td><?php echo $user->diplay_name; ?></td>
                     <td><?php echo $meta["order_number"][0]; ?></td>
                     <td><?php echo $meta["service_type"][0]; ?><br><span style='font-size:.7em !important;'><?php echo $meta["grading_type"][0]; ?></span></td>
                     <td><?php echo $meta["status"][0]; ?></td>

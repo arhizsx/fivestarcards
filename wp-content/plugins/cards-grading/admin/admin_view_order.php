@@ -4,12 +4,6 @@
 $checkout_post = get_post($params['order_number']);
 $checkout_meta = get_post_meta($checkout_post->ID);
 
-$user_id = $checkout_meta["user_id"][0];
-
-
-$user = get_user_by( "id", $user_id );
-
-
 
 $args = array(
     'meta_query' => array(
@@ -17,10 +11,6 @@ $args = array(
         array(
             'key' => 'checkout_id',
             'value' => $params['order_number']
-        ),
-        array(
-            'key' => 'user_id',
-            'value' => $user_id
         )
     ),
     'post_type' => 'cards-grading-card',
@@ -128,6 +118,8 @@ foreach($posts as $post)
 
                             $grading_charge = $grading_charge + $card_grading_charge;
                             $total_dv = $total_dv + $card_total_dv;
+
+                            
 
                 ?>
                 <tr class="card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
