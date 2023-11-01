@@ -7,6 +7,10 @@ $checkout_meta = get_post_meta($checkout_post->ID);
 $user_id = $checkout_meta["user_id"][0];
 
 
+$user = get_user_by( "id", $user_id );
+
+
+
 $args = array(
     'meta_query' => array(
         'relations' =>  'AND',    
@@ -52,7 +56,7 @@ foreach($posts as $post)
                 </div>
                 <div class="col-xl-12 mb-3">
                     <div class='order-label'>User</div>
-                    <div class='order-data'>-</div>
+                    <div class='order-data'><?php echo $user->display_name; ?></div>
                 </div>
             </div>
         </div>
