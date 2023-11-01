@@ -450,13 +450,15 @@
 
         if($params["action"] == "set_shipping"){
 
-            return "Shipping Set";
+            return doSetShipping($params);
 
         }
 
         return $params;
 
     }    
+
+
     public function doClearTable( $params ){
 
         try {
@@ -581,6 +583,12 @@
         catch (Exception $e) {
             return $e;
         }        
+
+    }
+
+    public function doSetShipping($params){
+
+        return true;
 
     }
 
