@@ -2,6 +2,13 @@
 
 $user_id = get_current_user_id();
 
+$checkout_post = get_post($params['order_number']);
+
+if( ! $checkout_post ){
+    echo "Not Found";
+    die;
+}
+
 $args = array(
     'meta_query' => array(
         'relations' =>  'AND',    
