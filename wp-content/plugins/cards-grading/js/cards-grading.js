@@ -216,6 +216,14 @@ function deleteCard(){
 }
 
 
+function showShippedModal(w){
+
+    // $(document).find(".dxmodal").find("div#clear_card_type_box").removeClass("d-none");
+    $(document).find(".dxmodal").appendTo('body').modal("show");
+
+}
+
+
 $(document).on("click", ".5star_btn", function(e){
 
     console.log("button pressed");
@@ -349,6 +357,11 @@ $(document).on("click", ".5star_btn", function(e){
 
             deleteCard();
 
+            break;
+
+        case "shipped":
+
+            showShippedModal();
             break;
 
         default:
