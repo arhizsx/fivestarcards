@@ -152,7 +152,7 @@ function tableAction(what_type, action, what_modal){
                 else if(action == "checkout"){
 
                     if(resp != false){
-                        
+
                         $(document).find(".5star_logged_cards tbody").empty();
                         $(document).find(".5star_logged_cards tbody").append(
                             '<tr><td class="text-center" colspan="9">Empty</td></tr>'
@@ -466,5 +466,11 @@ $(document).on("click",".card-row", function(e){
 $(document).on("click",".my-order-row", function(e){
 
     window.location.href = "/view-order?id=" + $(this).data("post_id") ;
+
+});
+
+$(document).on("click",".admin-order-row", function(e){
+
+    window.location.href = "/admin/view-order?id=" + $(this).data("post_id") ;
 
 });
