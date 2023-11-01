@@ -29,10 +29,14 @@ function addCardToTable(card){
             attribute = "";
         }
         
+        var quantity = parseInt(card["quantity"]);
+
         var i = 0;
 
-        for ( i = 1; i <= parseInt(card["quantity"]);  i++ ){
+        for ( i = 1; i <= quantity;  i++ ){
 
+            card["quantity"] = 1;
+            
             $.ajax({
                 method: 'post',
                 url: url,
