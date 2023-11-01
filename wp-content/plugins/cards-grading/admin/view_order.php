@@ -39,18 +39,22 @@ $total_dv = 0;
 
             <div class="row mb-2">
                 <div class="col">
-                    <div style=" font-size: .7em;">Status</div>
-                    <H4 style="color: black !important;">To Ship</H4>
+                    <div class='order-label'>Status</div>
+                    <div class='order-data'>To Ship</div>
+                </div>
+                <div class="col">
+                    <div class='order-label'>Service Type</div>
+                    <div class='order-data'>Card Grading</div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <div style=" font-size: .7em;">Total Cards</div>
-                    <div>To Ship</div>
+                    <div class='order-label'>Total Declared Value</div>
+                    <div class='order-data'>$400.00</div>
                 </div>
                 <div class="col">
-                    <div style=" font-size: .7em;">Total DV</div>
-                    <div>To Ship</div>
+                    <div class='order-label'>To Cards</div>
+                    <div class='order-data'>1</div>
                 </div>
             </div>
         </div>
