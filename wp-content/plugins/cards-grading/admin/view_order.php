@@ -153,9 +153,11 @@ foreach($posts as $post)
         <?php if( $posts ){ ?>
         <div class="row bottom_buttons">
             <div class="col-lg-12 text-end border-top pt-2 ">
+                <?php if( $checkout_meta["status"][0] == "To Ship" ) { ?>
                 <button class='5star_btn btn btn-primary' data-action="shipped">
                     Items Shipped
                 </button>      
+                <?php } ?>
             </div>
         </div>
         <?php } ?>
