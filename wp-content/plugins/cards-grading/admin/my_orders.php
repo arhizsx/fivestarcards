@@ -24,7 +24,7 @@ $posts = get_posts($args);
                 <tr>
                     <th>Date</th>
                     <th>Order #</th>
-                    <th>Type</th>
+                    <th>Service Type</th>
                     <th>Status</th>
                     <th class='text-end'>Total Cards</th>
                     <th class='text-end'>Total DV</th>
