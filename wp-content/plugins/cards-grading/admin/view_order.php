@@ -39,7 +39,7 @@ $total_dv = 0;
             <div style="color: black !important; font-size: .7em;">Shipping Details</div>
             <div class="row my-2">
                 <div class="col">
-                    <div><strong>USPS<strong></div>
+                    <div><strong>USPS</strong></div>
                     <div>Matt Sellers</div>
                     <div>PO Box 263</div>
                     <div>Hartland, WI 53029</div>
