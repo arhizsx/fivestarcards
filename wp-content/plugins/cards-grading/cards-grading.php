@@ -40,7 +40,7 @@
         // Add Shortcodes
         add_shortcode('cards-grading', array( $this, 'cards_grading_shortcode' ));
         add_shortcode('cards-grading-checkout', array( $this, 'cards_grading_checkout_shortcode' ));
-        add_shortcode('cards-grading-my_orders', array( $this, 'cards_grading_my_orders_shortcode' ));
+        add_shortcode(' ', array( $this, 'cards_grading_my_orders_shortcode' ));
 
         // Add JS
         add_action('wp_footer', array( $this, 'load_scripts' ));
@@ -475,7 +475,11 @@
                 'post_title' => $user->display_name . " - " . $grading_name,
                 'post_status' => 'publish'
             ]);
+
         
+            add_post_meta($checkout_post_id, "service_type", "grading" );
+            add_post_meta($checkout_post_id, "grading_type", $grading_name );
+            add_post_meta($checkout_post_id, "order_number", $checkout_post_id );
 
             $args = array(
                 'meta_query' => array(
@@ -497,14 +501,27 @@
                 'posts_per_page' => -1
             );
             
+            $total_dv = 0;
+            $total_cards = 0;
+
             $posts = get_posts($args);
-    
+
             foreach($posts as $post)
             {
+
+                $card_data =  get_post_meta( $post->ID , 'card' , true );
+                $card = json_decode($card_data, true);
+
+                $total_cards = $total_cards + $card["quantity"];
+                $total_dv = $total_dv + ( $card["quantity"] * $card["dv"] );
+        
                 update_post_meta($post->ID, 'status', 'checkout');   
                 add_post_meta($post->ID, "checkout_id", $checkout_post_id );
 
             }
+
+            add_post_meta($checkout_post_id, "total_dv", $total_dv );
+            add_post_meta($checkout_post_id, "total_cards", $total_cards );
     
             return true;
     
