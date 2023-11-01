@@ -227,6 +227,7 @@ function orderAction(action){
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
     var url = $(document).find(".5star_logged_cards").data("endpoint");
     var order_number = $(document).find("input[name='order_number']").val();
+    var form = $(document).find("#shipping_info_form");
 
     $.ajax({
         method: 'post',
@@ -234,7 +235,8 @@ function orderAction(action){
         headers: {'X-WP-Nonce': nonce },
         data: {
             'action' : action,
-            'order_number': order_number
+            'order_number': order_number,
+            'data': form.serialize()
         },
         success: function(resp){
 
