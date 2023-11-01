@@ -2,9 +2,6 @@
 
 $user_id = get_current_user_id();
 
-
-
-
 $args = array(
     'meta_query' => array(
         'relations' =>  'AND',    
@@ -164,6 +161,9 @@ foreach($posts as $post)
             </div>
             </div>
         </div>
+        <?php 
+        if( $posts ){
+        ?>
         <div class="row bottom_buttons">
             <div class="col-lg-12 text-end border-top pt-2 ">
                 <button class='5star_btn btn btn-primary' data-action="shipped">
@@ -171,6 +171,9 @@ foreach($posts as $post)
                 </button>      
             </div>
         </div>
+        <?php 
+        }
+        ?>
     </div>
     
 </div>
