@@ -42,7 +42,7 @@
         add_shortcode('cards-grading-checkout', array( $this, 'cards_grading_checkout_shortcode' ));
         add_shortcode('cards-grading-my_orders', array( $this, 'cards_grading_my_orders_shortcode' ));
         add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
-        add_shortcode('cards-grading-pending_orders', array( $this, 'cards_grading_pending_orders_shortcode' ));
+        add_shortcode('cards-grading-open_orders', array( $this, 'cards_grading_open_orders_shortcode' ));
 
         // Add JS
         add_action('wp_footer', array( $this, 'load_scripts' ));
@@ -320,17 +320,17 @@
         return $output ;
     }
 
-    public function cards_grading_pending_orders_shortcode($atts) 
+    public function cards_grading_open_orders_shortcode($atts) 
     {
 
         $default = array(
-            'title' => 'Pending Orders',
+            'title' => 'Open Orders',
         );
         
         $params = shortcode_atts($default, $atts);
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . 'admin/pending_orders.php' );
+        include( plugin_dir_path( __FILE__ ) . 'admin/open_orders.php' );
         
         $output = ob_get_clean(); 
         
