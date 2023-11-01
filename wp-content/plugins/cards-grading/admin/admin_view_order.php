@@ -96,7 +96,7 @@ foreach($posts as $post)
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <H4 style="color: black !important;">Cards List</H4>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="col-lg-6 col-md-6 col-sm-6 text-end">
                 <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
                 <button class='5star_btn btn btn-primary mb-3' data-action="order_received">
                     Package Received
