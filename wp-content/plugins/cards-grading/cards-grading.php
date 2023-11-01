@@ -591,9 +591,9 @@
         $order_number = $params["order_number"];
 
         if( metadata_exists('post', $order_number, 'carrier') ){
-            update_post_meta($order_number, "carrier", $params["data"]["order_number"] );
+            update_post_meta($order_number, "carrier", $params["data"]["carrier"] );
         } else {
-            add_post_meta($order_number, "carrier", $params["data"]["order_number"] );
+            add_post_meta($order_number, "carrier", $params["data"]["carrier"] );
         }
 
         if( metadata_exists('post', $order_number, 'shipped_by') ){
