@@ -3,8 +3,8 @@
 $user_id = get_current_user_id();
 
 $args = array(
-    'relations' =>  'OR',    
     'meta_query' => array(
+        'relations' =>  'OR',    
         array(
             'key' => 'status',
             'value' => "To Ship"
@@ -17,6 +17,7 @@ $args = array(
             'key' => 'status',
             'value' => "Received"
         )
+
     ),
     'post_type' => 'cards-grading-chk',
     'posts_per_page' => -1
