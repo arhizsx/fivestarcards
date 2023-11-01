@@ -222,12 +222,11 @@ function showShippedModal(w){
 }
 
 
-function orderAction(action){
+function orderAction(action, data){
 
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
     var url = $(document).find(".5star_logged_cards").data("endpoint");
     var order_number = $(document).find("input[name='order_number']").val();
-    var form = $(document).find("#shipping_info_form");
 
     $.ajax({
         method: 'post',
@@ -236,7 +235,7 @@ function orderAction(action){
         data: {
             'action' : action,
             'order_number': order_number,
-            'data': form.serialize()
+            'data': data
         },
         success: function(resp){
 
@@ -389,7 +388,35 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "confirm_shipping":
 
-            orderAction("set_shipping");
+            var error_cnt = 0;
+            var shipping_info = {};
+
+            $(document).find(".dxmodal").find('#shipping_info_form *').filter(':input').each(function(k, v){
+
+                    if( $(v).val().length > 0 ){
+
+                        shipping_info[ $(v).attr("name") ] = $(v).val();
+
+                    } else {
+
+                        if($(v).data("field_check") == "required"){
+
+                            $(v).focus();
+                            $(v).val('');
+                            error_cnt = error_cnt + 1;
+                            return false;
+
+                        }
+                }
+
+
+            });
+
+            if(error_cnt === 0){
+                orderAction("set_shipping", shipping_info);
+            }
+
+
             break;
 
         default:
