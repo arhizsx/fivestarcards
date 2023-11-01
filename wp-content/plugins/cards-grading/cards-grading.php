@@ -523,7 +523,7 @@
 
             add_post_meta($checkout_post_id, "total_dv", $total_dv );
             add_post_meta($checkout_post_id, "total_cards", $total_cards );
-            add_post_meta($checkout_post_id, "status", "Awaiting Shipment" );
+            add_post_meta($checkout_post_id, "status", "To Ship" );
     
             return true;
     
