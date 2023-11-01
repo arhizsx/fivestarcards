@@ -4,7 +4,7 @@ $user_id = get_current_user_id();
 
 $args = array(
     'meta_query' => array(
-        'relations' =>  'OR',    
+        'relations' =>  'AND',    
         array(
             'key' => 'status',
             'value' => "To Ship"
