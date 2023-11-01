@@ -32,7 +32,7 @@ $total_dv = 0;
 <div class="m-0 p-0">
     <div class="row">
         <div class="col-xl-2 col-lg-6 col-md-6 col-sm-12" >
-            <div style="color: black !important; font-size: .7em;"><?php echo $params['title'] ?></div>
+            <div class="order-label"><?php echo $params['title'] ?></div>
             <H1 style="color: black !important;"><?php echo $params['order_number'] ?></H1>
         </div>
         <div class="col-xl-4 col-lg-6 col-md-6  col-sm-12" >
@@ -59,7 +59,7 @@ $total_dv = 0;
             </div>
         </div>
         <div class="col-xl-6 col-lg-12 col-md-12  col-sm-12" >
-            <div style="color: black !important; font-size: .7em;">Shipping Details</div>
+            <div class="order-label">Shipping Details</div>
             <div class="row my-2">
                 <div class="col">
                     <div><strong>USPS</strong></div>
