@@ -239,7 +239,7 @@ function orderAction(action, data){
         },
         success: function(resp){
 
-            if(resp === true){
+            if(resp ==true){
                 console.log("Shipping Set");
             } else {
                 console.log("Set Shipping Failed");
