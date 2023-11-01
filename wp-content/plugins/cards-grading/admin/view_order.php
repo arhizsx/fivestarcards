@@ -54,19 +54,19 @@ foreach($posts as $post)
         <div class="col-xl-9 col-lg-8 col-md-8  col-sm-12" >
 
             <div class="row">
-                <div class="col-lg-3 col-md-6 mb-3">
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
                     <div class='order-label'>Status</div>
                     <div class='order-data'>To Ship</div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-3">
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
                     <div class='order-label'>Service Type</div>
                     <div class='order-data'>Card Grading</div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-3">
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
                     <div class='order-label'>Total Declared Value</div>
                     <div class='order-data'>$<?php echo number_format((float)$total_dv, 2, '.', ''); ?></div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-3">
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
                     <div class='order-label'>Total Cards</div>
                     <div class='order-data'><?php echo $cards_count; ?></div>
                 </div>
