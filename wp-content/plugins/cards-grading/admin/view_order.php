@@ -6,7 +6,7 @@ $checkout_post = get_post($params['order_number']);
 $checkout_meta = get_post_meta($checkout_post->ID);
 
 if( $checkout_meta["user_id"] != $user_id){
-    echo "Not Allowed";
+    echo "<div class='p-5 text-center'>Not Allowed</div>";
     die;
 }
 
