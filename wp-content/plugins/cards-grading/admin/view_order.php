@@ -118,7 +118,6 @@ foreach($posts as $post)
                             $card_grading_charge = $card["per_card"] * $card["quantity"];
 
                             $grading_charge = $grading_charge + $card_grading_charge;
-                            $total_dv = $total_dv + $card_total_dv;
 
                 ?>
                 <tr class="card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>

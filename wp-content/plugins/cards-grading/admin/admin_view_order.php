@@ -131,7 +131,6 @@ foreach($posts as $post)
 
                             $grading_charge = $grading_charge + $card_grading_charge;
                             $total_dv = $total_dv + $card_total_dv;
-
                             
 
                 ?>
@@ -165,7 +164,7 @@ foreach($posts as $post)
                 <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
             <div class="row mb-2">
                 <div class="col text-end">
-                            Total DV          
+                        Total DV          
                 </div>
                 <div class="col text-end" id="total_dv">
                     $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>
@@ -173,7 +172,7 @@ foreach($posts as $post)
             </div>
             <div class="row">
                 <div class="col text-end">
-                            Grading Charge    
+                        Grading Charge    
                 </div>
                 <div class="col text-end"  id="grading_charges">
                 $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
