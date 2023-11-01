@@ -35,6 +35,7 @@ $total_dv = 0;
                 <tr>
                     <th>Date</th>
                     <th>Order #</th>
+                    <th>Type</th>
                     <th>Status</th>
                     <th class='text-end'>Total Cards</th>
                     <th class='text-end'>Total DV</th>
@@ -71,7 +72,7 @@ $total_dv = 0;
                     } else {
                 ?>
                 <tr>
-                    <td class="text-center" colspan="5">Empty</td>
+                    <td class="text-center" colspan="6">Empty</td>
                 </tr>
                 <?php          
                     }
