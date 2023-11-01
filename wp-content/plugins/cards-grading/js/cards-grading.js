@@ -374,3 +374,9 @@ $(document).on("click",".card-row", function(e){
 
 
 });
+
+$(document).on("click",".my-order-row", function(e){
+
+    window.location.href = "/order?order_number=" + $(this).data("post_id") ;
+
+});
