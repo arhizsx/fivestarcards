@@ -93,12 +93,12 @@ foreach($posts as $post)
     </div>
     <div class="table-responsive mt-3">   
         <div class="row">
-            <div class="col-lg-6 ">
+            <div class="col-lg-6 col-md-6 col-sm-6">
                 <H4 style="color: black !important;">Cards List</H4>
             </div>
-            <div class="col-lg-6 text-end ">
+            <div class="col-lg-6 col-md-6 col-sm-6">
                 <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
-                <button class='5star_btn btn btn-primary' data-action="order_received">
+                <button class='5star_btn btn btn-primary mb-3' data-action="order_received">
                     Package Received
                 </button>      
                 <?php } ?>
