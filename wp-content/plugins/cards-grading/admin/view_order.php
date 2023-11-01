@@ -47,11 +47,11 @@ foreach($posts as $post)
 
 <div class="m-0 p-0">
     <div class="row">
-        <div class="col-xl-4 col-lg-5 col-md-5 col-sm-12" >
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12" >
             <div class="order-label"><?php echo $params['title'] ?></div>
             <H1 style="color: black !important;"><?php echo $params['order_number'] ?></H1>
         </div>
-        <div class="col-xl-8 col-lg-7 col-md-7  col-sm-12" >
+        <div class="col-xl-9 col-lg-8 col-md-8  col-sm-12" >
 
             <div class="row mb-3">
                 <div class="col">
