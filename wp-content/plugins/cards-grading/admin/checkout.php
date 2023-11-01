@@ -118,7 +118,7 @@ $total_dv = 0;
                 Log More Cards
             </button>        
             <button class='5star_btn btn btn-primary' data-type="<?php echo $params['type'] ?>" data-action="confirm_checkout">
-                Checkout
+                Confirm Order
             </button>      
         </div>
     </div>
