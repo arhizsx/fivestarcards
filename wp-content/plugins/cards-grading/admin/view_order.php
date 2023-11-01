@@ -92,7 +92,7 @@ foreach($posts as $post)
     </div>
     <div class="table-responsive mt-3">    
         <H4 style="color: black !important;">Cards List</H4>
-        <table class='table 5star_logged_cards table-bordered table-striped' data-grading_type="<?php echo $params['type'] ?>" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-table_action_endpoint="<?php echo get_rest_url(null, "cards-grading/v1/table-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
+        <table class='table 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
                 <th>Qty</th>
@@ -216,12 +216,12 @@ foreach($posts as $post)
 					X
 				</button>
 			</div>
-            <div class="" id="add_card_form_box">
+            <div class="" id="set_shipping_info_box">
                 <div class="modal-body py-2 px-3">
                     <forn id="add_card_form">
 
-                        <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
-                        <input type="hidden" name="order_number" value=''/>
+                        <input type="hidden" name="user_id" value='<?php echo $checkout_meta["user_id"][0]; ?>'/>
+                        <input type="hidden" name="order_number" value='<?php echo $params['order_number']; ?>'/>
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="carrier">Carrier</label>

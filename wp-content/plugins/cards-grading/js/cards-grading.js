@@ -158,7 +158,6 @@ function tableAction(what_type, action, what_modal){
         }
     });
 
-
 }
 
 function updateCard(){
@@ -218,11 +217,45 @@ function deleteCard(){
 
 function showShippedModal(w){
 
-    // $(document).find(".dxmodal").find("div#clear_card_type_box").removeClass("d-none");
     $(document).find(".dxmodal").appendTo('body').modal("show");
 
 }
 
+
+function orderAction(){
+
+    var nonce = $(document).find(".5star_logged_cards").data("nonce");
+    var url = $(document).find(".5star_logged_cards").data("endpoint");
+
+    $.ajax({
+        method: 'post',
+        url: url,
+        headers: {'X-WP-Nonce': nonce },
+        data: {
+            'type' : what_type,
+            'action' : action
+        },
+        success: function(resp){
+
+            if(resp == true){
+                if(action == "clear"){
+                    $(document).find(".5star_logged_cards tbody").empty();
+                    $(document).find(".5star_logged_cards tbody").append(
+                        '<tr><td class="text-center" colspan="9">Empty</td></tr>'
+                    );
+                    $(document).find(".bottom_buttons").addClass("d-none");
+                }
+                else if(action == "checkout"){
+                    console.log("Checkout Complete");
+                }
+
+                $(document).find(what_modal).modal("hide");
+            }
+            
+        }
+    });
+    
+}
 
 $(document).on("click", ".5star_btn", function(e){
 
@@ -362,6 +395,11 @@ $(document).on("click", ".5star_btn", function(e){
         case "shipped":
 
             showShippedModal();
+            break;
+
+        case "confirm_shipping":
+
+            orderAction("set_shipping", "");
             break;
 
         default:

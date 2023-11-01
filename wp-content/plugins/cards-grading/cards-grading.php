@@ -368,6 +368,16 @@
                 'callback' => array($this, 'handle_table_action')
             )                        
         );
+
+        register_rest_route(
+            "cards-grading/v1",
+            "order-action",
+            array(
+                'methods' => 'POST',
+                'callback' => array($this, 'handle_order_action')
+            )                        
+        );
+
     }
 
     public function handle_add_card($data){
@@ -427,6 +437,27 @@
 
     }
 
+    public function handle_order_action($data){
+
+        $headers = $data->get_headers();
+        $nonce = $headers["x_wp_nonce"][0];
+
+        if( !wp_verify_nonce($nonce, 'wp_rest') ){
+            return new WP_REST_Response("Invalid Nonce", 422);
+        }
+
+        $params = $data->get_params();
+
+        if($params["action"] == "order_shipped"){
+
+            return $this->doClearTable($params);
+
+
+        }
+
+        return $params;
+
+    }    
     public function doClearTable( $params ){
 
         try {
