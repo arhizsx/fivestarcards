@@ -37,17 +37,17 @@ $total_dv = 0;
         </div>
         <div class="col-xl-4 col-lg-6 col-md-6  col-sm-6" >
 
-            <div class="row mb-3">
-                <div style=" font-size: .7em;" class="col-4">Status</div>
-                <div class="col">To Ship</div>
+            <div class="mb-3">
+                <div style=" font-size: .7em;">Status</div>
+                <div>To Ship</div>
             </div>
-            <div class="row mb-3">
-            <div style=" font-size: .7em;"  class="col-4">Total Cards</div>
-                <div class="col">1</div>
+            <div class="mb-3">
+                <div style=" font-size: .7em;">Total Cards</div>
+                <div>To Ship</div>
             </div>
-            <div class="row mb-3">
-                <div style=" font-size: .7em;"  class="col-4">Total DV</div>
-                <div class="col">$499.00</div>
+            <div class="mb-3">
+                <div style=" font-size: .7em;">Total DV</div>
+                <div>To Ship</div>
             </div>
         </div>
         <div class="col-xl-6 col-lg-12 col-md-12  col-sm-12" >
