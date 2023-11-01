@@ -18,6 +18,7 @@ $posts = get_posts($args);
 ?>
 
 <div class="m-0 p-0">
+    <H3>My Orders</H3>
     <div class="table-responsive">    
         <table class='table 5star_my_orders table-bordered table-striped'>
             <thead>
