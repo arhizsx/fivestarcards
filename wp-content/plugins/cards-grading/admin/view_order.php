@@ -62,8 +62,6 @@ foreach($posts as $post)
                     <div class='order-label'>Service Type</div>
                     <div class='order-data'>Card Grading</div>
                 </div>
-            </div>
-            <div class="row mb-3">
                 <div class="col">
                     <div class='order-label'>Total Declared Value</div>
                     <div class='order-data'>$<?php echo number_format((float)$total_dv, 2, '.', ''); ?></div>
