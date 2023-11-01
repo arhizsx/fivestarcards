@@ -577,7 +577,7 @@
             add_post_meta($checkout_post_id, "total_cards", $total_cards );
             add_post_meta($checkout_post_id, "status", "To Ship" );
     
-            return true;
+            return $checkout_post_id;
     
         }
         catch (Exception $e) {
