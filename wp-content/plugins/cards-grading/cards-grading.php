@@ -588,7 +588,7 @@
 
     public function doSetShipping($params){
 
-        return true;
+        return "true";
 
     }
 
