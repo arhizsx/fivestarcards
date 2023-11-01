@@ -2,7 +2,7 @@
     cursor:pointer !important;
 }
 
-.my-order-row {
+.my-order-row, .admin-order-row {
     cursor:pointer !important;
 }
 
