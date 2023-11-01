@@ -3,6 +3,13 @@
 $user_id = get_current_user_id();
 
 $args = array(
+    'meta_query' => array(
+        array(
+            'key' => 'status',
+            'value' => array("To Ship", "Shipped"),
+            'compare' => 'IN'
+        )
+    ),
     'post_type' => 'cards-grading-chk',
     'posts_per_page' => -1
 );
