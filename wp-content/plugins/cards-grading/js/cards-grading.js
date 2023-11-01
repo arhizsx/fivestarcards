@@ -55,7 +55,7 @@ function addCardToTable(card){
                 clearModalForm();  
                 setTotals(card_total_dv, card_total_charge)  
                 
-                $(document).find(".bottom_buttons").removeClass("d-none");
+                $(document).find("div.bottom_buttons").removeClass("d-none");
                 
 
             },

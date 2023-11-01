@@ -296,8 +296,8 @@ $total_dv = 0;
                 $show_bottom_buttons = "d-none";
             }
         ?>
-        <div class="row bottom_buttons">
-            <div class="col-lg-12 text-end border-top pt-2 <?php echo $show_bottom_buttons ?>">
+        <div class="row bottom_buttons <?php echo $show_bottom_buttons ?>">
+            <div class="col-lg-12 text-end border-top pt-2 ">
                 <button class='5star_btn btn btn-danger' data-type="<?php echo $params['type'] ?>" data-action="clear_table">
                     Clear List
                 </button>
