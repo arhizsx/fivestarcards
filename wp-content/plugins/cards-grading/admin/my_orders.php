@@ -40,7 +40,7 @@ $posts = get_posts($args);
                 ?>
                 <tr class="card-row" data-post_id="<?php echo $post->ID; ?>">
                     <td>X</td>
-                    <td><?php echo $meta["order_number"]; ?></td>
+                    <td><?php echo $meta["order_number"][0]; ?></td>
                     <td>X</td>
                     <td>X</td>
                     <td>X</td>
