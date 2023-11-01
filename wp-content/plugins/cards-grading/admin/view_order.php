@@ -160,9 +160,9 @@ foreach($posts as $post)
         </div>
         <?php } ?>
         <?php if( $checkout_meta["status"][0] == "To Ship" ) { ?>
-        <div class="row mx-5" style="margin-top: -80px;">
+        <div class="row mx-5" style="margin-top: -30px;">
             <div class="col-lg-12">
-                <H3>Ship Your Items To</H3>
+                <H3 style="color: black !important;">Ship Your Items To</H3>
             </div>
             <div class="col-lg-4">
                 <div><strong>USPS</strong></div>
