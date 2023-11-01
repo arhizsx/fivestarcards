@@ -40,7 +40,7 @@
         // Add Shortcodes
         add_shortcode('cards-grading', array( $this, 'cards_grading_shortcode' ));
         add_shortcode('cards-grading-checkout', array( $this, 'cards_grading_checkout_shortcode' ));
-        add_shortcode(' ', array( $this, 'cards_grading_my_orders_shortcode' ));
+        add_shortcode('cards-grading-my_orders', array( $this, 'cards_grading_my_orders_shortcode' ));
 
         // Add JS
         add_action('wp_footer', array( $this, 'load_scripts' ));
