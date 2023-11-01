@@ -38,8 +38,6 @@ $total_dv = 0;
                     <th>Status</th>
                     <th class='text-end'>Total Cards</th>
                     <th class='text-end'>Total DV</th>
-                    <th class="text-end">Grading Total</th>
-                    <th class="text-end">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -73,7 +71,7 @@ $total_dv = 0;
                     } else {
                 ?>
                 <tr>
-                    <td class="text-center" colspan="7">Empty</td>
+                    <td class="text-center" colspan="5">Empty</td>
                 </tr>
                 <?php          
                     }
