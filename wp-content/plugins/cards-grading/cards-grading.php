@@ -477,6 +477,7 @@
             ]);
 
         
+            add_post_meta($checkout_post_id, "user_id",  $user_id );
             add_post_meta($checkout_post_id, "service_type", "grading" );
             add_post_meta($checkout_post_id, "grading_type", $grading_name );
             add_post_meta($checkout_post_id, "order_number", $checkout_post_id );

@@ -18,7 +18,7 @@ $args = array(
             'value' => 'checkout'
         )
     ),
-    'post_type' => 'cards-grading-card',
+    'post_type' => 'cards-grading-chk',
     'posts_per_page' => -1
 );
 
