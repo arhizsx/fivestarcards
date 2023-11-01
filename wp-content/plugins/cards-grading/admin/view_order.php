@@ -150,9 +150,7 @@ foreach($posts as $post)
             </div>
             </div>
         </div>
-        <?php 
-        if( $posts ){
-        ?>
+        <?php if( $posts ){ ?>
         <div class="row bottom_buttons">
             <div class="col-lg-12 text-end border-top pt-2 ">
                 <button class='5star_btn btn btn-primary' data-action="shipped">
@@ -160,9 +158,23 @@ foreach($posts as $post)
                 </button>      
             </div>
         </div>
-        <?php 
-        }
-        ?>
+        <?php } ?>
+        <?php if( $checkout_meta["status"][0] == "To Ship" ) { ?>
+        <div class="row mt-3">
+            <div class="col">
+                <div><strong>USPS</strong></div>
+                <div>Matt Sellers</div>
+                <div>PO Box 263</div>
+                <div>Hartland, WI 53029</div>
+            </div>
+            <div class="col">
+                <div><strong>FedEx / UPS / DHL</strong></div>
+                <div>PMB 394</div>
+                <div>1256 Capitol Drive - Suite 700</div>
+                <div>Pewaukee, WI 53072</div>
+            </div>
+        </div>
+        <?php } ?>
     </div>
     
 </div>
