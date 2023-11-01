@@ -2,6 +2,9 @@
 
 $user_id = get_current_user_id();
 
+
+
+
 $args = array(
     'meta_query' => array(
         'relations' =>  'AND',    
@@ -19,6 +22,7 @@ $args = array(
 );
 
 $posts = get_posts($args);
+
 $grading_charge = 0;
 $total_dv = 0;
 
@@ -32,8 +36,18 @@ $total_dv = 0;
             <H1 style="color: black !important;"><?php echo $params['order_number'] ?></H1>
         </div>
         <div class="col-xl-3 col-lg-6 col-md-6  col-sm-6" >
-            <div style="color: black !important; font-size: .7em;">Status</div>
-            <H1 style="color: black !important;">To Ship</H1>
+            <div class="row">
+                <div class="col">Status</div>
+                <div class="col">To Ship</div>
+            </div>
+            <div class="row">
+                <div class="col">Status</div>
+                <div class="col">To Ship</div>
+            </div>
+            <div class="row">
+                <div class="col">Status</div>
+                <div class="col">To Ship</div>
+            </div>
         </div>
         <div class="col-xl-6 col-lg-12 col-md-12  col-sm-12" >
             <div style="color: black !important; font-size: .7em;">Shipping Details</div>
