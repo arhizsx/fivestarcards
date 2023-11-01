@@ -161,17 +161,23 @@ foreach($posts as $post)
         <?php } ?>
         <?php if( $checkout_meta["status"][0] == "To Ship" ) { ?>
         <div class="row mx-5">
-            <div class="col">
+            <div class="col-lg-12">
+                <H3>Ship Your Items To</H3>
+            </div>
+            <div class="col-lg-4">
                 <div><strong>USPS</strong></div>
                 <div>Matt Sellers</div>
                 <div>PO Box 263</div>
                 <div>Hartland, WI 53029</div>
             </div>
-            <div class="col">
+            <div class="col-lg-4">
                 <div><strong>FedEx / UPS / DHL</strong></div>
                 <div>PMB 394</div>
                 <div>1256 Capitol Drive - Suite 700</div>
                 <div>Pewaukee, WI 53072</div>
+            </div>
+            <div class="col-lg-4">
+
             </div>
         </div>
         <?php } ?>
