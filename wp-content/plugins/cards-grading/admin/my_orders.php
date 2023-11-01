@@ -37,9 +37,12 @@ $posts = get_posts($args);
                         foreach($posts as $post)
                         {
                             $meta = get_post_meta($post->ID);
+
+                            $date_format = get_option( 'date_format' );
+                                                        
                 ?>
                 <tr class="card-row" data-post_id="<?php echo $post->ID; ?>">
-                    <td>X</td>
+                    <td><?php echo get_the_date( $date_format, $post->ID ) ?></td>
                     <td><?php echo $meta["order_number"][0]; ?></td>
                     <td><?php echo $meta["service_type"][0]; ?><br><span style='font-size:.7em !important;'><?php echo $meta["grading_type"][0]; ?></span></td>
                     <td><?php echo $meta["status"][0]; ?></td>
