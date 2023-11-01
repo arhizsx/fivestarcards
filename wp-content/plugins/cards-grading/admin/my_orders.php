@@ -18,7 +18,7 @@ $posts = get_posts($args);
 ?>
 
 <div class="m-0 p-0">
-    <H3 style="color: black;">My Orders</H3>
+    <H1 style="color: black;">My Orders</H1>
     <div class="table-responsive">    
         <table class='table 5star_my_orders table-bordered table-striped'>
             <thead>
