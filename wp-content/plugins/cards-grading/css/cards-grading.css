@@ -5,3 +5,7 @@
 .my-order-row {
     cursor:pointer !important;
 }
+
+.order-label {
+    font-size: .7em !important;
+}
