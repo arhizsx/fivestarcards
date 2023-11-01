@@ -1,14 +1,11 @@
 <?php
 
-$user_id = get_current_user_id();
 
 $checkout_post = get_post($params['order_number']);
 $checkout_meta = get_post_meta($checkout_post->ID);
 
-if( $checkout_meta["user_id"][0] != $user_id){
-    echo "<div class='p-5 text-center'>Not Allowed</div>";
-    die;
-}
+$user_id = $checkout_meta["user_id"][0];
+
 
 $args = array(
     'meta_query' => array(
