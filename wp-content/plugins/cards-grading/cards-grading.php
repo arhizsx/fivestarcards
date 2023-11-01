@@ -588,6 +588,9 @@
 
     public function doSetShipping($params){
 
+        $order_number = $params["order_number"];
+        $user_id = $params["data"]["user_id"];
+        
         return true;
 
     }
