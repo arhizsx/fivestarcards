@@ -94,7 +94,7 @@ foreach($posts as $post)
     <div class="table-responsive mt-3">   
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6">
-                <H4 style="color: black !important;">Cards List</H4>
+                <H3 style="color: black !important;">Cards List</H3>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 text-end">
                 <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
