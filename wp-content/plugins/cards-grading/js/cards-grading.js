@@ -13,13 +13,14 @@ function showAddCardModal( what_type, per_card, max_dv ){
 
 function addCardToTable(card){
 
-    if( checkIfAddIsStillValid( card ) )
+    if( checkIfAddIsStillValid( card ) && parseInt(card["quantity"]) > 0 )
     {
     
 
         var nonce = $(document).find(".5star_logged_cards").data("nonce");
         var url = $(document).find(".5star_logged_cards").data("endpoint");
 
+        
         $.ajax({
             method: 'post',
             url: url,
@@ -27,8 +28,6 @@ function addCardToTable(card){
             data: card,
             success: function(resp){
 
-                var card_total_charge = parseFloat(card["quantity"]) * parseFloat(card["per_card"]);
-                var card_total_dv = parseFloat(card["quantity"]) * parseFloat(card["dv"]);
             
                 if( $(document).find(".5star_logged_cards tbody tr td:first-child").text() == "Empty"){
                     $(document).find(".5star_logged_cards tbody").empty();
@@ -38,19 +37,29 @@ function addCardToTable(card){
                 if(card["attribute"] === undefined){
                     attribute = "";
                 }
-        
-                $(document).find(".5star_logged_cards tbody").append(
-                    "<tr class='card-row' data-post_id='" + resp + "'>" +
-                        "<td>" + card["quantity"] + "</td>" +
-                        "<td>" + card["year"] + "</td>" +
-                        "<td>" + card["brand"] + "</td>" +
-                        "<td>" + card["card_number"] + "<br><small>" + attribute + "</small>" + "</td>" +
-                        "<td>" + card["player"] + "</td>" +
-                        "<td class='text-end'><span class='dollar'>" + parseFloat(card["dv"]).toFixed(2) + "</span></td>" +
-                        "<td class='text-end'><span class='dollar'>" + card_total_dv.toFixed(2) + "</span></td>" +
-                        "<td class='text-end'><span class='dollar'>" + card_total_charge.toFixed(2) + "</span></td>" +
-                    "</tr>"
-                );
+                
+                var i = 0;
+
+                for ( i = 1; i <= parseInt(card["quantity"]);  i++ ){
+
+                    var card_total_charge = 1 * parseFloat(card["per_card"]);
+                    var card_total_dv = 1 * parseFloat(card["dv"]);    
+
+                    $(document).find(".5star_logged_cards tbody").append(
+                        "<tr class='card-row' data-post_id='" + resp + "'>" +
+                            "<td> 1 </td>" +
+                            "<td>" + card["year"] + "</td>" +
+                            "<td>" + card["brand"] + "</td>" +
+                            "<td>" + card["card_number"] + "<br><small>" + attribute + "</small>" + "</td>" +
+                            "<td>" + card["player"] + "-" + i + "</td>" +
+                            "<td class='text-end'><span class='dollar'>" + parseFloat(card["dv"]).toFixed(2) + "</span></td>" +
+                            "<td class='text-end'><span class='dollar'>" + card_total_dv.toFixed(2) + "</span></td>" +
+                            "<td class='text-end'><span class='dollar'>" + card_total_charge.toFixed(2) + "</span></td>" +
+                        "</tr>"
+                    );    
+    
+                }
+
             
                 clearModalForm();  
                 setTotals(card_total_dv, card_total_charge)  
