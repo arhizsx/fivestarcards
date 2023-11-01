@@ -241,7 +241,7 @@ function orderAction(action, data){
 
             if(resp ==true){
                 $(document).find(".dxmodal").modal("hide");
-                location.reload();
+                // location.reload();
 
             } else {
                 console.log("Set Shipping Failed");
