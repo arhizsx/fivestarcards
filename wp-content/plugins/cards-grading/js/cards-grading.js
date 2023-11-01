@@ -62,7 +62,7 @@ function addCardToTable(card){
 
             
                 clearModalForm();  
-                setTotals(card_total_dv, card_total_charge)  
+                setTotals(parseInt(card["quantity"]), card_total_dv, card_total_charge)  
                 
                 $(document).find("div.bottom_buttons").removeClass("d-none");
                 
@@ -91,13 +91,13 @@ function addCardToTable(card){
 
 }
 
-function setTotals( total_dv, grading_charge ){
+function setTotals( quantity,total_dv, grading_charge ){
 
     current_dv = parseFloat( $(document).find("#total_dv").text().replace("$",""));
     current_charge = parseFloat($(document).find("#grading_charges").text().replace("$",""));
 
-    new_total_dv = total_dv + current_dv;
-    new_grading_charge = grading_charge + current_charge;
+    new_total_dv = quantity * total_dv + current_dv;
+    new_grading_charge = quantity * grading_charge + current_charge;
     new_grand_total = new_total_dv + new_grading_charge;
 
     $(document).find("#total_dv").text( "$" + new_total_dv.toFixed(2) );
