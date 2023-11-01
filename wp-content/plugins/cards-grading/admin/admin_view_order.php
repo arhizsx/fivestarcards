@@ -91,8 +91,19 @@ foreach($posts as $post)
 
         </div>
     </div>
-    <div class="table-responsive mt-3">    
-        <H4 style="color: black !important;">Cards List</H4>
+    <div class="table-responsive mt-3">   
+        <div class="row">
+            <div class="col-lg-6 ">
+                <H4 style="color: black !important;">Cards List</H4>
+            </div>
+            <div class="col-lg-6 text-end ">
+                <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
+                <button class='5star_btn btn btn-primary' data-action="order_received">
+                    Package Received
+                </button>      
+                <?php } ?>
+            </div>
+        </div>
         <table class='table 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
@@ -170,17 +181,6 @@ foreach($posts as $post)
             </div>
             </div>
         </div>
-        <?php if( $posts ){ ?>
-        <div class="row bottom_buttons">
-            <div class="col-lg-12 text-end border-top pt-2 ">
-                <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
-                <button class='5star_btn btn btn-primary' data-action="order_received">
-                    Package Received
-                </button>      
-                <?php } ?>
-            </div>
-        </div>
-        <?php } ?>
     </div>
     
 </div>
