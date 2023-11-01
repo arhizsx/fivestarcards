@@ -31,11 +31,11 @@ $total_dv = 0;
 
 <div class="m-0 p-0">
     <div class="row">
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6" >
+        <div class="col-xl-2 col-lg-6 col-md-6 col-sm-6" >
             <div style="color: black !important; font-size: .7em;"><?php echo $params['title'] ?></div>
             <H1 style="color: black !important;"><?php echo $params['order_number'] ?></H1>
         </div>
-        <div class="col-xl-3 col-lg-6 col-md-6  col-sm-6" >
+        <div class="col-xl-4 col-lg-6 col-md-6  col-sm-6" >
 
             <div class="row mb-3">
                 <div style=" font-size: .7em;" class="col-4">Status</div>
