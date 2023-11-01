@@ -448,10 +448,9 @@
 
         $params = $data->get_params();
 
-        if($params["action"] == "order_shipped"){
+        if($params["action"] == "set_shipping"){
 
-            return $this->doClearTable($params);
-
+            return "Shipping Set";
 
         }
 
