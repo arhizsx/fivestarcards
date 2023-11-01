@@ -37,7 +37,7 @@ $total_dv = 0;
         </div>
         <div class="col-xl-4 col-lg-6 col-md-6  col-sm-6" >
 
-            <div class="row mb-2>
+            <div class="row mb-2">
                 <div class="col">
                     <div style=" font-size: .7em;">Status</div>
                     <H4 style="color: black !important;">To Ship</H4>
