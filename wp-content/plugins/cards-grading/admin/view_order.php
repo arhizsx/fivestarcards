@@ -34,7 +34,7 @@ foreach($posts as $post)
     $card_total_dv = $card["dv"] * $card["quantity"];
 
     $total_dv = $total_dv + $card_total_dv;
-    $cards_count = $cards_count * $card["quantity"];
+    $cards_count = $cards_count + $card["quantity"];
 }
 
 
