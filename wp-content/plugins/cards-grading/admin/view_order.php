@@ -225,7 +225,7 @@ foreach($posts as $post)
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="carrier">Carrier</label>
-                                <select name="carrier" class="form-control" >
+                                <select name="carrier" class="form-control" data-field_check="required">
                                     <option value="">Select Carrier</option>
                                     <option value="USPS">USPS</option>
                                     <option value="FedEx">FedEx</option>
@@ -235,15 +235,15 @@ foreach($posts as $post)
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="shipped_by">Shipped By</label>
-                                <input type="text" name="shipped_by" class="form-control">
+                                <input type="text" name="shipped_by" class="form-control" data-field_check="required">
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="tracking_number">Tracking Number</label>
-                                <input type="text" name="tracking_number" class="form-control">
+                                <input type="text" name="tracking_number" class="form-control" data-field_check="required">
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="shipping_date">Shipping Date</label>
-                                <input type="date" name="shipping_date" class="form-control">
+                                <input type="date" name="shipping_date" class="form-control" data-field_check="required">
                             </div>
                         </div>
                     </form>
