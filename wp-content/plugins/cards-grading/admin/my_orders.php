@@ -41,7 +41,7 @@ $posts = get_posts($args);
                 <tr class="card-row" data-post_id="<?php echo $post->ID; ?>">
                     <td>X</td>
                     <td><?php echo $meta["order_number"][0]; ?></td>
-                    <td><?php echo $meta["service_type"][0]; ?><br><span style='font-size:.8em !important;'><?php echo $meta["grading_type"][0]; ?></span></td>
+                    <td><?php echo $meta["service_type"][0]; ?><br><span style='font-size:.7em !important;'><?php echo $meta["grading_type"][0]; ?></span></td>
                     <td>X</td>
                     <td>X</td>
                     <td>X</td>
