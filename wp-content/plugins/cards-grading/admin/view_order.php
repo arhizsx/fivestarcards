@@ -37,7 +37,7 @@ $total_dv = 0;
         </div>
         <div class="col-xl-4 col-lg-6 col-md-6  col-sm-6" >
 
-            <div class="row mb-2">
+            <div class="row mb-3">
                 <div class="col">
                     <div class='order-label'>Status</div>
                     <div class='order-data'>To Ship</div>

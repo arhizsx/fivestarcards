@@ -9,3 +9,10 @@
 .order-label {
     font-size: .7em !important;
 }
+
+.order-data {
+
+    font-size : 1em !important;
+    font-weight: bold !important;
+    color: black !important;
+}
