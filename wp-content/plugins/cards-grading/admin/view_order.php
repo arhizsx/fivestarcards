@@ -160,7 +160,7 @@ foreach($posts as $post)
         </div>
         <?php } ?>
         <?php if( $checkout_meta["status"][0] == "To Ship" ) { ?>
-        <div class="row mt-3 mx-5">
+        <div class="row mx-5">
             <div class="col">
                 <div><strong>USPS</strong></div>
                 <div>Matt Sellers</div>
