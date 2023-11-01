@@ -590,6 +590,9 @@
 
         $order_number = $params["order_number"];
 
+        update_post_meta($order_number, "status", "Shipped" );
+
+
         if( metadata_exists('post', $order_number, 'carrier') ){
             update_post_meta($order_number, "carrier", $params["data"]["carrier"] );
         } else {
