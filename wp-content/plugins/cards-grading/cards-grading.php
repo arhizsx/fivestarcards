@@ -249,7 +249,7 @@
             'cards-grading',
             plugin_dir_url(__FILE__) . 'css/cards-grading.css',
             array(),
-            5,
+            6,
             'all'
         );
 
