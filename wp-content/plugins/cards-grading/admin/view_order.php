@@ -243,7 +243,7 @@ foreach($posts as $post)
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="carrier">Shipping Date</label>
-                                <input type="text" name="shipping_date" class="form-control">
+                                <input type="date" name="shipping_date" class="form-control">
                             </div>
                         </div>
                     </form>
