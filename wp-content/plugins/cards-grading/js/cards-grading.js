@@ -20,27 +20,25 @@ function addCardToTable(card){
         var nonce = $(document).find(".5star_logged_cards").data("nonce");
         var url = $(document).find(".5star_logged_cards").data("endpoint");
 
-        
-        $.ajax({
-            method: 'post',
-            url: url,
-            headers: {'X-WP-Nonce': nonce },
-            data: card,
-            success: function(resp){
+        if( $(document).find(".5star_logged_cards tbody tr td:first-child").text() == "Empty"){
+            $(document).find(".5star_logged_cards tbody").empty();
+        }
 
-            
-                if( $(document).find(".5star_logged_cards tbody tr td:first-child").text() == "Empty"){
-                    $(document).find(".5star_logged_cards tbody").empty();
-                }
+        var attribute = card["attribute"];
+        if(card["attribute"] === undefined){
+            attribute = "";
+        }
         
-                var attribute = card["attribute"];
-                if(card["attribute"] === undefined){
-                    attribute = "";
-                }
-                
-                var i = 0;
+        var i = 0;
 
-                for ( i = 1; i <= parseInt(card["quantity"]);  i++ ){
+        for ( i = 1; i <= parseInt(card["quantity"]);  i++ ){
+
+            $.ajax({
+                method: 'post',
+                url: url,
+                headers: {'X-WP-Nonce': nonce },
+                data: card,
+                success: function(resp){
 
                     var card_total_charge = 1 * parseFloat(card["per_card"]);
                     var card_total_dv = 1 * parseFloat(card["dv"]);    
@@ -57,25 +55,19 @@ function addCardToTable(card){
                             "<td class='text-end'>$" + card_total_charge.toFixed(2) + "</td>" +
                         "</tr>"
                     );    
-    
+
+                    clearModalForm();  
+                    setTotals(parseInt(card["quantity"]), card_total_dv, card_total_charge)                                          
+
+                },
+                error: function(){
+                    console.log("Error In Adding Encountered");
                 }
-
+            });
             
-                clearModalForm();  
-                setTotals(parseInt(card["quantity"]), card_total_dv, card_total_charge)  
-                
-                $(document).find("div.bottom_buttons").removeClass("d-none");
-                
-
-            },
-            error: function(){
-                console.log("Error In Adding Encountered");
-            }
-        });
-
-
-
-
+        }
+        
+        $(document).find("div.bottom_buttons").removeClass("d-none");
 
     } else {
 
