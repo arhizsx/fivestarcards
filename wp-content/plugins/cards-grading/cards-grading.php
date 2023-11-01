@@ -431,7 +431,7 @@
         $user_id = get_current_user_id();
         $user = get_user_by( "id", $user_id );
 
-        
+
         $post_id = wp_insert_post([
             'post_type' => 'cards-grading-card',
             'post_title' => $user->display_name . " - " . $params["player"],
@@ -608,6 +608,7 @@
         
                 update_post_meta($post->ID, 'status', 'checkout');   
                 add_post_meta($post->ID, "checkout_id", $checkout_post_id );
+                update_post_meta($post->ID, "status", "To Ship" );
 
             }
 

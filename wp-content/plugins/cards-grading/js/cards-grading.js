@@ -450,6 +450,9 @@ $(document).on("click", ".5star_btn", function(e){
  
             break;
 
+        case "package_received":
+            
+            break;
         default:
             console.log("Button not configured");
     }

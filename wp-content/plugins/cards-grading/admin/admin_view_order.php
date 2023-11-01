@@ -98,7 +98,7 @@ foreach($posts as $post)
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 text-end">
                 <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
-                <button class='5star_btn btn btn-primary mb-3' data-action="order_received">
+                <button class='5star_btn btn btn-primary mb-3' data-action="package_received">
                     Package Received
                 </button>      
                 <?php } ?>
