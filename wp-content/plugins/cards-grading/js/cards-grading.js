@@ -241,6 +241,8 @@ function orderAction(action, data){
 
             if(resp ==true){
                 console.log("Shipping Set");
+                $(document).find(".dxmodal").modal("hide");
+
             } else {
                 console.log("Set Shipping Failed");
             }
