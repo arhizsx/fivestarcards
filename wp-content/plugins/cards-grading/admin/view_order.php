@@ -226,6 +226,7 @@ foreach($posts as $post)
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="carrier">Carrier</label>
                                 <select name="carrier" class="form-control" >
+                                    <option value="">Select Carrier</option>
                                     <option value="USPS">USPS</option>
                                     <option value="FedEx">FedEx</option>
                                     <option value="DHL">DHL</option>
