@@ -153,23 +153,10 @@ $total_dv = 0;
             </div>
             </div>
         </div>
-        <?php 
-            if( $posts )
-            {
-                $show_bottom_buttons = "";
-            } 
-            else {
-                $show_bottom_buttons = "d-none";
-            }
-        ?>
-        <div class="row bottom_buttons <?php echo $show_bottom_buttons ?>">
+        <div class="row bottom_buttons">
             <div class="col-lg-12 text-end border-top pt-2 ">
-                <button class='5star_btn btn btn-danger' data-type="<?php echo $params['type'] ?>" data-action="clear_table">
-                    Clear List
-                </button>
-                
-                <button class='5star_btn btn btn-primary' data-type="<?php echo $params['type'] ?>" data-action="checkout">
-                    Checkout
+                <button class='5star_btn btn btn-primary' data-action="shipped">
+                    Items Shipped
                 </button>      
             </div>
         </div>
