@@ -218,7 +218,7 @@ foreach($posts as $post)
 			</div>
             <div class="" id="set_shipping_info_box">
                 <div class="modal-body py-2 px-3">
-                    <forn id="add_card_form">
+                    <forn id="shipping_info_form">
 
                         <input type="hidden" name="user_id" value='<?php echo $checkout_meta["user_id"][0]; ?>'/>
                         <input type="hidden" name="order_number" value='<?php echo $params['order_number']; ?>'/>

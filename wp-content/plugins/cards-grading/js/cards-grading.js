@@ -226,31 +226,19 @@ function orderAction(){
 
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
     var url = $(document).find(".5star_logged_cards").data("endpoint");
+    var order_number = $(document).find("input[name='order_number']").val();
 
     $.ajax({
         method: 'post',
         url: url,
         headers: {'X-WP-Nonce': nonce },
         data: {
-            'type' : what_type,
-            'action' : action
+            'action' : action,
+            'order_number': order_number
         },
         success: function(resp){
 
-            if(resp == true){
-                if(action == "clear"){
-                    $(document).find(".5star_logged_cards tbody").empty();
-                    $(document).find(".5star_logged_cards tbody").append(
-                        '<tr><td class="text-center" colspan="9">Empty</td></tr>'
-                    );
-                    $(document).find(".bottom_buttons").addClass("d-none");
-                }
-                else if(action == "checkout"){
-                    console.log("Checkout Complete");
-                }
-
-                $(document).find(what_modal).modal("hide");
-            }
+            console.log(resp);
             
         }
     });
@@ -399,7 +387,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "confirm_shipping":
 
-            orderAction("set_shipping", "");
+            orderAction("set_shipping");
             break;
 
         default:
