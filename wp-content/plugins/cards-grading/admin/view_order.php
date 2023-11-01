@@ -47,7 +47,7 @@ $total_dv = 0;
                     <div class='order-data'>Card Grading</div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mb-3">
                 <div class="col">
                     <div class='order-label'>Total Declared Value</div>
                     <div class='order-data'>$400.00</div>
