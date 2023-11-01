@@ -41,6 +41,7 @@
         add_shortcode('cards-grading', array( $this, 'cards_grading_shortcode' ));
         add_shortcode('cards-grading-checkout', array( $this, 'cards_grading_checkout_shortcode' ));
         add_shortcode('cards-grading-my_orders', array( $this, 'cards_grading_my_orders_shortcode' ));
+        add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
 
         // Add JS
         add_action('wp_footer', array( $this, 'load_scripts' ));
@@ -312,6 +313,25 @@
         ob_start();
 
         include( plugin_dir_path( __FILE__ ) . 'admin/my_orders.php' );
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
+
+    public function cards_grading_view_order_shortcode($atts) 
+    {
+        $order_number = $_GET['id'];
+
+        $default = array(
+            'title' => 'View Order',
+            'order_number' => $order_number
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
+
+        include( plugin_dir_path( __FILE__ ) . 'admin/view_order.php' );
         
         $output = ob_get_clean(); 
         
