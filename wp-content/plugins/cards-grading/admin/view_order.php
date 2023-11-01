@@ -70,22 +70,19 @@ foreach($posts as $post)
                     <div class='order-label'>Total Cards</div>
                     <div class='order-data'><?php echo $cards_count; ?></div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
                     <div class='order-label'>Carrier</div>
                     <div class='order-data'><?php echo $checkout_meta["status"][0] ?></div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
                     <div class='order-label'>Shipped By</div>
                     <div class='order-data'><?php echo $checkout_meta["service_type"][0] ?></div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
                     <div class='order-label'>Tracking Number</div>
                     <div class='order-data'>$<?php echo number_format((float)$total_dv, 2, '.', ''); ?></div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 mb-3">
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
                     <div class='order-label'>Shipping Date</div>
                     <div class='order-data'><?php echo $cards_count; ?></div>
                 </div>
