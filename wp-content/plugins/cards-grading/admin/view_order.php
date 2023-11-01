@@ -234,15 +234,15 @@ foreach($posts as $post)
                                 </select>
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
-                                <label for="carrier">Shipped By</label>
+                                <label for="shipped_by">Shipped By</label>
                                 <input type="text" name="shipped_by" class="form-control">
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
-                                <label for="carrier">Tracking Number</label>
+                                <label for="tracking_number">Tracking Number</label>
                                 <input type="text" name="tracking_number" class="form-control">
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
-                                <label for="carrier">Shipping Date</label>
+                                <label for="shipping_date">Shipping Date</label>
                                 <input type="date" name="shipping_date" class="form-control">
                             </div>
                         </div>

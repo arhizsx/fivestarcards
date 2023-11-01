@@ -589,11 +589,32 @@
     public function doSetShipping($params){
 
         $order_number = $params["order_number"];
-        $user_id = $params["data"]["user_id"];
 
+        if( metadata_exists('post', $order_number, 'carrier') ){
+            update_post_meta($order_number, "carrier", $params["data"]["order_number"] );
+        } else {
+            add_post_meta($order_number, "carrier", $params["data"]["order_number"] );
+        }
 
+        if( metadata_exists('post', $order_number, 'shipped_by') ){
+            update_post_meta($order_number, "shipped_by", $params["data"]["shipped_by"] );
+        } else {
+            add_post_meta($order_number, "shipped_by", $params["data"]["shipped_by"] );
+        }
 
-        return $order_number;
+        if( metadata_exists('post', $order_number, 'tracking_number') ){
+            update_post_meta($order_number, "tracking_number", $params["data"]["tracking_number"] );
+        } else {
+            add_post_meta($order_number, "tracking_number", $params["data"]["tracking_number"] );
+        }
+
+        if( metadata_exists('post', $order_number, 'shipping_date') ){
+            update_post_meta($order_number, "shipping_date", $params["data"]["shipping_date"] );
+        } else {
+            add_post_meta($order_number, "shipping_date", $params["data"]["shipping_date"] );
+        }
+
+        return true;
 
     }
 
