@@ -42,6 +42,7 @@ foreach($posts as $post)
     $cards_count = $cards_count + $card["quantity"];
 }
 
+$processed_status = array("Cards Graded");
 
 ?>
 
@@ -125,6 +126,9 @@ foreach($posts as $post)
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
                     <td><?php echo $card["player"]; ?></td>
                     <td><?php echo $meta["status"][0]; ?></td>
+                    <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
+                    <th class="text-end">Grade</th>
+                    <?php } ?>
                     <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                 </tr>
