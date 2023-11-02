@@ -324,6 +324,12 @@ function cardAction(action, value, post_id, parent_element ){
                 $(document).find(".view_card").modal("hide");
                 location.reload();
             }
+            else if(action == "pay_card_grading")
+            {
+                if(resp == true){
+                    $(parent_element).find("td:eq(5)").text(value);                    
+                } 
+            }            
         }
     });
 
@@ -588,11 +594,15 @@ $(document).on("click", ".5star_btn", function(e){
 
             break;
 
-
         case "confirm_card_grade":
 
             confirmCardGrade();
             break;    
+
+        case "pay_card_grading":
+
+            cardAction("card_update_status", "Pay Grading", $(this).data("post_id"), $(this).closest("tr"));
+            break;
 
         default:
             console.log("Button not configured: " + $(this).data("action"));
