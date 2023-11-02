@@ -246,11 +246,10 @@ function showShippedModal(w){
 }
 
 
-function orderAction(action, data){
+function orderAction(action, data, order_number){
 
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
     var url = $(document).find(".5star_logged_cards").data("endpoint");
-    var order_number = $(document).find("input[name='order_number']").val();
 
     $.ajax({
         method: 'post',
@@ -490,7 +489,9 @@ $(document).on("click", ".5star_btn", function(e){
             });
 
             if(error_cnt === 0){
-                orderAction("set_shipping", shipping_info);
+
+                var order_number = $(document).find("input[name='order_number']").val();
+                orderAction("set_shipping", shipping_info, order_number);
             }
  
             break;
@@ -507,6 +508,10 @@ $(document).on("click", ".5star_btn", function(e){
         case "item_avlb_in_package":
 
             cardAction("card_update_status", "Received", $(this).data("post_id"), $(this).closest("tr"));
+            break;
+
+        case "complete_package_contents":
+            
             break;
             
         default:
