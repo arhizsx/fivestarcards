@@ -820,7 +820,7 @@
     }
     public function doPayCardGrading($params){
 
-        update_post_meta($params["order_number"], 'status', 'Pay Grading');   
+        update_post_meta($params["post_id"], 'status', 'Pay Grading');   
         return true;
 
     }
