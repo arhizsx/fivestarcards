@@ -6,7 +6,7 @@ $args = array(
     'meta_query' => array(
         array(
             'key' => 'status',
-            'value' => array("To Ship", "Shipped", "Package Received"),
+            'value' => array("To Ship", "Shipped", "Package Received", "Incomplete Items Shipped"),
             'compare' => 'IN'
         )
     ),
