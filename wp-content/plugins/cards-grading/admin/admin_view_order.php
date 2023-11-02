@@ -145,11 +145,32 @@ $processed_status = array("Processing Order");
             </button>      
             <?php } ?>
 
-            <?php if( $checkout_meta["status"][0] == "Processing Order" ) { ?>
-            <button class='5star_btn btn btn-primary mb-3 <?php echo $complete_btn; ?>' data-action="show_grades" data-order_number="<?php echo $params['order_number'] ?>">
+            <?php 
+            if( $checkout_meta["status"][0] == "Processing Order" ) 
+            { 
+                $graded = 0;
+
+                foreach($posts as $post)
+                {
+                    $meta = get_post_meta($post->ID);
+                    if( $meta["status"][0] == "Graded" ){
+                        $graded++;
+                    }
+                }
+
+                if( count($posts) > $graded ){
+                    $show_grade_btn = "d-none";
+                } else {
+                    $show_grade_btn = "";
+                }
+
+            ?>
+            <button class='5star_btn btn btn-primary mb-3 <?php echo $show_grade_btn; ?>' data-action="show_grades" data-order_number="<?php echo $params['order_number'] ?>">
                 Show Grades
             </button>      
-            <?php } ?>            
+            <?php 
+            } 
+            ?>            
         </div>
     </div>
     <div class="table-responsive">   
