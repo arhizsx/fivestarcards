@@ -156,7 +156,7 @@ $admin_status = array( "Shipped" );
                     <td class='text-end'><?php echo "$" . number_format((float) $card_total_dv, 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                     <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
-                        <td>
+                    <td>
                         <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
                         <button class='5star_btn btn btn-primary mb-3' data-action="item_not_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
                             No
@@ -165,7 +165,7 @@ $admin_status = array( "Shipped" );
                             Yes
                         </button>
                         <?php } ?>
-                        </td>
+                    </td>
                     <?php } ?>
                 </tr>
                 <?php          
