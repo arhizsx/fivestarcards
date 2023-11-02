@@ -299,11 +299,12 @@ function cardAction(action, value, post_id, parent_element ){
                 var missing = 0;
                 if( value == "Received" ){
                     $(parent_element).closest("table tbody").find("tr").each( function(k, v){
-                        if( $(v).find("td:eq(6)").text() == "Not Available"){
+                        if( $(v).find("td:eq(6)").text() != "Received"){
                             missing = missing + 1;
                         }
                     });
                 }
+
                 if( value == "Not Available" ){
                     missing = missing + 1;
                 }
