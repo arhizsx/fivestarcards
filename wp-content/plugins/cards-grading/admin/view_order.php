@@ -100,6 +100,7 @@ foreach($posts as $post)
                 <th>Brand</th>
                 <th>Card #</th>
                 <th>Player Name</th>
+                <th>Status</th>
                 <th class='text-end'>DV</th>
                 <th class='text-end'>Total DV</th>
                 <th class="text-end">Grading Total</th>
@@ -126,6 +127,7 @@ foreach($posts as $post)
                     <td><?php echo $card["brand"]; ?></td>
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
                     <td><?php echo $card["player"]; ?></td>
+                    <td><?php echo $card["status"]; ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_total_dv, 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
