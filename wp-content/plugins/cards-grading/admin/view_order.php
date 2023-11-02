@@ -130,7 +130,7 @@ $processed_status = array("Cards Graded");
                     <td><?php echo $card["player"]; ?></td>
                     <td><?php echo $meta["status"][0]; ?></td>
                     <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
-                    <td class="text-end"><?php echo $meta["status"][0];  ?></td>
+                    <td class="text-end"><?php echo $meta["grade"][0];  ?></td>
                     <?php } ?>
                     <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
