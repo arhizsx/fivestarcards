@@ -324,11 +324,16 @@ function cardAction(action, value, post_id, parent_element ){
 }
 
 function showSetGrade( data ){
-
     $(document).find(".view_card").appendTo('body').modal("show");
     $(document).find("#set_grade_form input[name='grade']").focus();
+
     console.log(data);
 }
+
+function confirmCardGrade(){
+
+}
+
 
 $(document).on("click", ".5star_btn", function(e){
 
@@ -551,9 +556,13 @@ $(document).on("click", ".5star_btn", function(e){
         
         case "set_grade":
 
-            showSetGrade( $(this).data() );
+            showSetGrade( $(this).closest("tr").data() );
 
             break;
+
+        case "":
+            confirmCardGrade();
+            break;    
 
         default:
             console.log("Button not configured: " + $(this).data("action"));
