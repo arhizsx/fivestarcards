@@ -276,6 +276,10 @@ function orderAction(action, data){
     
 }
 
+function cardAction(action, data){
+    
+}
+
 $(document).on("click", ".5star_btn", function(e){
 
     console.log("button pressed");
@@ -451,8 +455,17 @@ $(document).on("click", ".5star_btn", function(e){
         case "package_received":
 
             break;
+
+        case "item_not_avlb_in_package":
+
+            break;
+
+        case "item_avlb_in_package":
+
+            break;
+            
         default:
-            console.log("Button not configured");
+            console.log("Button not configured" + $(this).data("action"));
     }
 
 });
