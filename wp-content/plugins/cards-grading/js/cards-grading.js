@@ -276,8 +276,34 @@ function orderAction(action, data){
     
 }
 
-function cardAction(action, data){
-    
+function cardAction(action, value, post_id ){
+
+    var nonce = $(document).find(".5star_logged_cards").data("nonce");
+    var url = $(document).find(".5star_logged_cards").data("endpoint");
+    var order_number = $(document).find("input[name='order_number']").val();
+
+    $.ajax({
+        method: 'post',
+        url: url,
+        headers: {'X-WP-Nonce': nonce },
+        data: {
+            'action' : action,
+            'post_id': post_id,
+            'value': value
+        },
+        success: function(resp){
+
+            if(resp ==true){
+                $(document).find(".dxmodal").modal("hide");
+                location.reload();
+
+            } else {
+                console.log("Set Shipping Failed");
+            }
+
+        }
+    });
+
 }
 
 $(document).on("click", ".5star_btn", function(e){
@@ -458,10 +484,13 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "item_not_avlb_in_package":
 
+            
+            cardAction("card_update_status", "Received", $(this).data("post_id"));
             break;
 
         case "item_avlb_in_package":
 
+            cardAction("card_update_status", "Not Available", $(this).data("post_id"));
             break;
             
         default:

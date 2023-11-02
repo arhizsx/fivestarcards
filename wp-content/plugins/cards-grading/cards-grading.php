@@ -491,10 +491,23 @@
             return $this->doSetShipping($params);
 
         }
+        elseif($params["action"] == "card_update_status"){
+
+            return $this->doCardUpdateMeta($params, "status");
+
+        }
 
         return $params;
 
     }    
+
+
+    public function doCardUpdateMeta($params, $key){
+
+
+
+        return $params;
+    }
 
 
     public function doClearTable( $params ){
