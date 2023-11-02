@@ -397,7 +397,7 @@
             $what_array = array("Received", "Processing");
         }
         elseif( $params['type'] == "graded" ){
-            $what_array = array("Graded", "Consigned", "To Pay", "Paid");
+            $what_array = array("Graded", "Consign Card", "Consigned", "Pay Grading", "Paid");
         }
         elseif( $params['type'] == "consigned" ){
             $what_array = array("Consign Card", "Consigned", "Sold");
