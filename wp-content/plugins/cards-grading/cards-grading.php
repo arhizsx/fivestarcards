@@ -708,11 +708,17 @@
     }
 
     public function doPackageCompleteItems($params){
-        return "complete" . $params["order_number"];
+
+        update_post_meta($params["order_number"], 'status', 'Processing Order');   
+        return true;
+
     }
 
     public function doPackageIncompleteItems($params){
-        return "incomplete" . $params["order_number"];
+
+        update_post_meta($params["order_number"], 'status', 'Incomplete Items Shipped');   
+        return true;
+
     }
 
  }
