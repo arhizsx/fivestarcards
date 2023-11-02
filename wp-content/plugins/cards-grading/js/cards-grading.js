@@ -484,13 +484,12 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "item_not_avlb_in_package":
 
-            
-            cardAction("card_update_status", "Received", $(this).data("post_id"));
+            cardAction("card_update_status", "Not Available", $(this).data("post_id"));
             break;
 
         case "item_avlb_in_package":
 
-            cardAction("card_update_status", "Not Available", $(this).data("post_id"));
+            cardAction("card_update_status", "Received", $(this).data("post_id"));
             break;
             
         default:
