@@ -294,7 +294,7 @@ function cardAction(action, value, post_id ){
 
             if(resp ==true){
 
-                console.log($(document).find("td.admin-card-row-status").find("[data-post_id='" + post_id + "']").html());
+                console.log($(document).find("td.admin-card-row-status").html());
                 $(document).find("td.admin-card-row-status").find("[data-post_id='" + post_id + "']").text(value);
 
             } else {
