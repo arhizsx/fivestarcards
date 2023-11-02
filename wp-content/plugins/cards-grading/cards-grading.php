@@ -399,6 +399,12 @@
         elseif( $params['type'] == "graded" ){
             $what_array = array("Graded", "Consigned", "To Pay", "Paid");
         }
+        elseif( $params['type'] == "consigned" ){
+            $what_array = array("Consigned", "Sold");
+        }
+        elseif( $params['type'] == "sold" ){
+            $what_array = array("Sold");
+        }
         
         $args = array(
             'meta_query' => array(
