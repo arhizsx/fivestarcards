@@ -329,6 +329,9 @@ function cardAction(action, value, post_id, parent_element ){
 }
 
 function showSetGrade( data ){
+
+    console.log(data);
+    
     $(document).find(".view_card").appendTo('body').modal("show");
 
     $(document).find("#set_grade_form input[name='user_id']").val(data["card"]["user_id"]);
