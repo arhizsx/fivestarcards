@@ -321,7 +321,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12">
                                     <label for="year">Grade</label>
-                                    <input type="number" name="grade" style="font-size: 3em !important;"  value="" data-field_check="required"  class="form-control mb-2"/>
+                                    <input type="number" name="grade" style="font-size: 3em !important; text-align: center !important;"  value="" data-field_check="required"  class="form-control mb-2"/>
                                 </div>
                             </div>
                             <div class="row">
