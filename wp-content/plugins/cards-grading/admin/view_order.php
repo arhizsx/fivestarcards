@@ -126,7 +126,7 @@ $processed_status = array("Cards Graded");
                             $grading_charge = $grading_charge + $card_grading_charge;
 
                 ?>
-                <tr class="card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
+                <tr class="user-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
                     <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
                     <td>                        
                         <?php if( $checkout_meta["status"][0] == "Cards Graded" ) { ?>
