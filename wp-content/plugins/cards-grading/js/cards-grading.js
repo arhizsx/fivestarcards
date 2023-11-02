@@ -326,7 +326,7 @@ function cardAction(action, value, post_id, parent_element ){
 function showSetGrade( data ){
 
     $(document).find(".view_card").appendTo('body').modal("show");
-    $(document).find("input[name='grade']").focust();
+    $(document).find("input[name='grade']").focus();
     console.log(data);
 }
 
