@@ -298,54 +298,69 @@ $processed_status = array("Processing Order", "Cards Graded");
 </div>
 
 
-<div class="modal fade dxmodal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+<div class="modal fade view_card" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
 	<div class="modal-dialog" id="dxmodal">
 		<div class="modal-content modal-ajax">
 			<div class="modal-header bg-dark text-white">
 				<h5 class="modal-title">
-					Set Shipping Information
+					Set Card Grade
 				</h5>
     			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
 					X
 				</button>
 			</div>
-            <div class="" id="set_shipping_info_box">
-                <div class="modal-body py-2 px-3">
-                    <forn id="shipping_info_form">
+                <div class="" id="view_card_form_box">
+                    <div class="modal-body py-2 px-3">
+                        <forn id="add_card_form">
 
-                        <input type="hidden" name="user_id" value='<?php echo $checkout_meta["user_id"][0]; ?>'/>
-                        <input type="hidden" name="order_number" value='<?php echo $params['order_number']; ?>'/>
-                        <div class="row">
-                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
-                                <label for="carrier">Carrier</label>
-                                <select name="carrier" class="form-control" data-field_check="required">
-                                    <option value="">Select Carrier</option>
-                                    <option value="USPS">USPS</option>
-                                    <option value="FedEx">FedEx</option>
-                                    <option value="DHL">DHL</option>
-                                    <option value="UPS">UPS</option>
-                                </select>
+                            <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
+                            <input type="hidden" name="grading" value=''/>
+                            <input type="hidden" name="max_dv" value=''/>
+                            <input type="hidden" name="post_id" value=''/>
+                            <input type="hidden" name="card" value=''/>
+
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="quantity">Qty</label>
+                                    <input type="number" name="quantity" value="1" data-field_check="required" class="form-control mb-2"/>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="year">Year</label>
+                                    <input type="number" name="year" value="" data-field_check="required"  class="form-control mb-2"/>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="brand">Brand</label>
+                                    <input type="text" name="brand" value="" data-field_check="required" class="form-control mb-2"/>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="card_number">Card Number</label>
+                                    <input type="text" name="card_number" value="" data-field_check="required" class="form-control mb-2"/>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="player">Player Name</label>
+                                    <input type="text" name="player" value="" data-field_check="required" class="form-control mb-2"/>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="attribute">Attribute S/N</label>
+                                    <input type="text" name="attribute" value="" data-field_check="" class="form-control mb-2"/>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="per_card">Per Card</label>
+                                    <input type="number" name="per_card" value="" data-field_check="required"  class="form-control mb-2" disabled/>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="dv">Declared Value</label>
+                                    <input type="number" name="dv" value="" data-field_check="required" class="form-control mb-2"/>
+                                </div>
                             </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
-                                <label for="shipped_by">Shipped By</label>
-                                <input type="text" name="shipped_by" class="form-control" data-field_check="required">
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
-                                <label for="tracking_number">Tracking Number</label>
-                                <input type="text" name="tracking_number" class="form-control" data-field_check="required">
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
-                                <label for="shipping_date">Shipping Date</label>
-                                <input type="date" name="shipping_date" class="form-control" data-field_check="required">
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+                        <button class="btn border btn-primary 5star_btn" data-action="confirm_card_grade">Save Grade</button>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                    <button class="btn border btn-success 5star_btn" data-action='confirm_shipping' data-type=''>Set Shipping Details</button>
-                </div>
-            </div>
 		</div>
 	</div>
 </div>
+

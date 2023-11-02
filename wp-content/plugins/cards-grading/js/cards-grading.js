@@ -323,6 +323,11 @@ function cardAction(action, value, post_id, parent_element ){
 
 }
 
+function showSetGrade( data ){
+    $(document).find(".view_card").appendTo('body').modal("show");
+    console.log(data);
+}
+
 $(document).on("click", ".5star_btn", function(e){
 
     console.log("button pressed");
@@ -541,6 +546,12 @@ $(document).on("click", ".5star_btn", function(e){
                 location.reload();
             }
             break;
+        
+        case "set_grade":
+
+            showSetGrade( $(this).data() );
+            break;
+
         default:
             console.log("Button not configured: " + $(this).data("action"));
     }
