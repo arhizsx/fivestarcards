@@ -569,6 +569,12 @@
 
         }
 
+        elseif($params["action"] == "set_grade"){
+
+            return $this->doSetGrade($params);
+
+        }
+
         return $params;
 
     }    
@@ -795,6 +801,14 @@
     public function doShowGrades($params){
 
         update_post_meta($params["order_number"], 'status', 'Cards Graded');   
+        return true;
+
+    }
+
+    public function doSetGrade($params){
+
+        update_post_meta($params["post_id"], 'grade', $params["value"]);   
+        update_post_meta($params["post_id"], 'status', "Graded");   
         return true;
 
     }
