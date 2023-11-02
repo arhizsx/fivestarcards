@@ -205,6 +205,14 @@ $admin_action_status = array( "Package Received", "Processing Order" );
                                     </button>
                                 </div>
                             </div>
+                        <?php }  elseif ( $checkout_meta["status"][0] == "Processing Order" ) { ?>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="set_grade" data-post_id="<?php echo $post->ID; ?>">
+                                        Set Grade
+                                    </button>
+                                </div>
+                            </div>
                         <?php } else {?>
                             -
                         <?php } ?>
