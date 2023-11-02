@@ -333,7 +333,9 @@ function showSetGrade( data ){
     $(document).find("#set_grade_form input[name='player']").val(data["card"]["player"]);
     $(document).find("#set_grade_form input[name='attribute']").val(data["card"]["attribute"]);
 
-    $(document).find("#grade_input").focus();
+    const gradeInput = document.getElementById('grade_input');
+    gradeInput.focus();
+
 
 }
 
