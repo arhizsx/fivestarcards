@@ -44,6 +44,7 @@
         add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
         add_shortcode('cards-grading-open_orders', array( $this, 'cards_grading_open_orders_shortcode' ));
         add_shortcode('cards-grading-admin_view_order', array( $this, 'cards_grading_admin_view_order_shortcode' ));
+        add_shortcode('cards-grading-dashbox', array( $this, 'cards_grading_dashbox_shortcode' ));
 
         // Add JS
         add_action('wp_footer', array( $this, 'load_scripts' ));
@@ -371,6 +372,44 @@
 
         include( plugin_dir_path( __FILE__ ) . 'admin/admin_view_order.php' );
         
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
+
+    
+    public function cards_grading_dashbox_shortcode($atts) 
+    {
+
+        $default = array(
+            'type' => "incoming_cards"
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
+
+        $what_array = null;
+
+        if( $params['type'] == "incoming_cards" ){
+            $what_array = array("To Ship", "Shipped");
+        }
+        
+        $args = array(
+            'meta_query' => array(
+                array(
+                    'key' => 'status',
+                    'value' => $what_array,
+                    'compare' => "IN"
+                )
+            ),
+            'post_type' => 'cards-grading-card',
+            'posts_per_page' => -1
+        );
+        
+        $posts = get_posts($args);
+
+        echo count($posts);
+
         $output = ob_get_clean(); 
         
         return $output ;
