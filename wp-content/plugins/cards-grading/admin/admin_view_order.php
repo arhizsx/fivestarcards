@@ -172,6 +172,9 @@ $processed_status = array("Processing Order");
                     <th>Card #</th>
                     <th>Player Name</th>
                     <th>Status</th>
+                    <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
+                    <th>Grade</th>
+                    <?php } ?>
                     <th class='text-end'>DV</th>
                     <th class="text-end">Grading</th>
                 </tr>
