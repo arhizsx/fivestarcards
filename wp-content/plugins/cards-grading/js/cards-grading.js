@@ -291,7 +291,7 @@ function cardAction(action, value, post_id, parent_element ){
         },
         success: function(resp){
 
-            alert(resp);
+            alert(action);
 
             if(action == "card_update_status")
             {
