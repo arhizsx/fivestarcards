@@ -112,7 +112,7 @@ $admin_action_status = array( "Shipped" );
                     <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
                         <?php 
                             if( $checkout_meta["status"][0] == "Shipped" ) { 
-                                $action_label = "Included In Package";
+                                $action_label = "Inside Package";
                             } else {
                                 $action_label = "Action";
                             }
