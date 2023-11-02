@@ -101,7 +101,7 @@ $processed_status = array("Cards Graded");
                 <th>Card #</th>
                 <th>Player Name</th>
                 <th>Status</th>
-                <?php if( in_array( $meta["status"][0], $processed_status ) ){ ?>
+                <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
                 <th class="text-end">Grade</th>
                 <?php } ?>
                 <th class='text-end'>DV</th>
@@ -129,7 +129,7 @@ $processed_status = array("Cards Graded");
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
                     <td><?php echo $card["player"]; ?></td>
                     <td><?php echo $meta["status"][0]; ?></td>
-                    <?php if( in_array( $meta["status"][0], $processed_status ) ){ ?>
+                    <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
                     <td class="text-end">Grade</td>
                     <?php } ?>
                     <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
