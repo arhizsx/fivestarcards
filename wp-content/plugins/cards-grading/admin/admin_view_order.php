@@ -311,7 +311,7 @@ $processed_status = array("Processing Order", "Cards Graded");
 			</div>
                 <div class="" id="view_card_form_box">
                     <div class="modal-body py-2 px-3">
-                        <forn id="add_card_form">
+                        <forn id="set_grade_form">
 
                             <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
                             <input type="hidden" name="grading" value=''/>
