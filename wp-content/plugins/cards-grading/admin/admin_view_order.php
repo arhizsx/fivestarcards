@@ -99,7 +99,7 @@ $admin_action_status = array( "Package Received" );
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 text-end">
             <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
-            <button class='5star_btn btn btn-primary mb-3' data-action="package_received">
+            <button class='5star_btn btn btn-primary mb-3' data-action="package_received"  data-order_number="<?php echo $params['order_number'] ?>">
                 Package Received
             </button>      
             <?php } ?>
@@ -135,10 +135,10 @@ $admin_action_status = array( "Package Received" );
                     }
                 }
             ?>
-            <button class='5star_btn btn btn-danger mb-3 <?php echo $missing_btn; ?>' data-action="incomplete_package_contents">
+            <button class='5star_btn btn btn-danger mb-3 <?php echo $missing_btn; ?>' data-action="incomplete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
                 Missing Items
             </button>      
-            <button class='5star_btn btn btn-primary mb-3 <?php echo $complete_btn; ?>' data-action="complete_package_contents">
+            <button class='5star_btn btn btn-primary mb-3 <?php echo $complete_btn; ?>' data-action="complete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
                 Items Complete
             </button>      
             <?php } ?>

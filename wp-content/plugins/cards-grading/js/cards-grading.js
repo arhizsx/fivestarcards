@@ -511,6 +511,16 @@ $(document).on("click", ".5star_btn", function(e){
             break;
 
         case "complete_package_contents":
+
+            var order_number = $(this).data("order_number");
+            orderAction("complete_package_contents", null, order_number);
+            
+            break;
+            
+        case "incomplete_package_contents":
+
+            var order_number = $(this).data("order_number");
+            orderAction("incomplete_package_contents", null, order_number);
             
             break;
             

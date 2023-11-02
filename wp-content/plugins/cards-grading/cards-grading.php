@@ -496,6 +496,16 @@
             return $this->doCardUpdateMeta($params, "status");
 
         }
+        elseif($params["action"] == "complete_package_contents"){
+
+            return $this->doPackageCompleteItems($params);
+
+        }
+        elseif($params["action"] == "incomplete_package_contents"){
+
+            return $this->doPackageIncompleteItems($params);
+
+        }
 
         return $params;
 
@@ -697,6 +707,16 @@
 
     }
 
+    public function doPackageCompleteItems($params){
+        return "complete";
+    }
+
+    public function doPackageIncompleteItems($params){
+        return "incomplete";
+    }
+
  }
+
+
 
  new CardsGrading;
