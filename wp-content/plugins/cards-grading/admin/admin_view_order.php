@@ -144,7 +144,7 @@ $admin_action_status = array( "Package Received" );
             <?php } ?>
         </div>
     </div>
-    <div class="table-responsive mt-3">   
+    <div class="table-responsive">   
         <table class='table table-sm 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
