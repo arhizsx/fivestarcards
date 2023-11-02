@@ -154,7 +154,7 @@ $admin_action_status = array( "Shipped" );
                                     </button>
                                 </div>
                                 <div class="col-lg-6">
-                                    <button class='5star_btn btn-sm btn btn-primary w-100 mb-3' data-action="item_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
+                                    <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="item_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
                                         Yes
                                     </button>
                                 </div>
