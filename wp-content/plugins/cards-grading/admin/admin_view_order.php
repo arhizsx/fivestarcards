@@ -93,58 +93,58 @@ $admin_action_status = array( "Package Received" );
 
         </div>
     </div>
-    <div class="table-responsive mt-3">   
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <H3 style="color: black !important;">Cards List</H3>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 text-end">
-                <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
-                <button class='5star_btn btn btn-primary mb-3' data-action="package_received">
-                    Package Received
-                </button>      
-                <?php } ?>
-                <?php 
-                if( $checkout_meta["status"][0] == "Package Received" ) { 
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <H3 style="color: black !important;">Cards List</H3>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 text-end">
+            <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
+            <button class='5star_btn btn btn-primary mb-3' data-action="package_received">
+                Package Received
+            </button>      
+            <?php } ?>
+            <?php 
+            if( $checkout_meta["status"][0] == "Package Received" ) { 
 
-                    if( $posts )
+                if( $posts )
+                {
+                    $received = 0;
+                    $missing = 0;
+
+                    foreach($posts as $post)
                     {
-                        $received = 0;
-                        $missing = 0;
-
-                        foreach($posts as $post)
-                        {
-                            $meta = get_post_meta($post->ID);
-                            if( $meta["status"][0] == "Received" ){
-                                $received++;
-                            }
-                            elseif( $meta["status"][0] == "Not Available" ){
-                                $missing++;
-                            }
+                        $meta = get_post_meta($post->ID);
+                        if( $meta["status"][0] == "Received" ){
+                            $received++;
                         }
-
-                        if( $received == count($posts) ){
-                            $complete_btn = "";
-                        } else {
-                            $complete_btn = "d-none";
-                        }
-
-                        if( $missing > 0){
-                            $missing_btn = "";
-                        } else {
-                            $missing_btn = "d-none";
+                        elseif( $meta["status"][0] == "Not Available" ){
+                            $missing++;
                         }
                     }
-                ?>
-                <button class='5star_btn btn btn-danger mb-3 <?php echo $missing_btn; ?>' data-action="incomplete_package_contents">
-                    Missing Items
-                </button>      
-                <button class='5star_btn btn btn-primary mb-3 <?php echo $complete_btn; ?>' data-action="complete_package_contents">
-                    Items Complete
-                </button>      
-                <?php } ?>
-            </div>
+
+                    if( $received == count($posts) ){
+                        $complete_btn = "";
+                    } else {
+                        $complete_btn = "d-none";
+                    }
+
+                    if( $missing > 0){
+                        $missing_btn = "";
+                    } else {
+                        $missing_btn = "d-none";
+                    }
+                }
+            ?>
+            <button class='5star_btn btn btn-danger mb-3 <?php echo $missing_btn; ?>' data-action="incomplete_package_contents">
+                Missing Items
+            </button>      
+            <button class='5star_btn btn btn-primary mb-3 <?php echo $complete_btn; ?>' data-action="complete_package_contents">
+                Items Complete
+            </button>      
+            <?php } ?>
         </div>
+    </div>
+    <div class="table-responsive mt-3">   
         <table class='table table-sm 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
