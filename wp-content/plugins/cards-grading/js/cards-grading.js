@@ -327,7 +327,7 @@ function cardAction(action, value, post_id, parent_element ){
             else if(action == "pay_card_grading")
             {
                 if(resp == true){
-                    $(parent_element).find("td:eq(5)").text(value);                    
+                    $(parent_element).find("td:eq(4)").text(value);                    
                 } 
             }            
         }
