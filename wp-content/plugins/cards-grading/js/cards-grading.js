@@ -357,11 +357,8 @@ function confirmCardGrade(){
     var post_id =  $(document).find("#set_grade_form input[name='post_id']").val();
     var grade =  $(document).find("#set_grade_form input[name='grade']").val();
 
-    alert(post_id);
-
     cardAction("set_grade", grade, post_id, "");
-
-
+    
 }
 
 
