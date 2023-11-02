@@ -299,13 +299,13 @@ function cardAction(action, value, post_id, parent_element ){
 
                 if( value == "Received" ){
                     $(parent_element).closest("table").find("tr").each( function(k, v){
-                        console.log(v);
+                        if( $(v).find("td:eq(6)") == "Not Available"){
+                            console.log("Missing Items");
+                        }
                     });
                 }
                 else if( value == "Not Available" ){
-                    $(parent_element).closest("table").find("tr").each( function(k, v){
-                        console.log(v);
-                    });
+                    console.log("Missing Items");
                 }
             }
         }
