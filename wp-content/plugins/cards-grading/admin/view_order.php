@@ -101,7 +101,7 @@ foreach($posts as $post)
                 <th>Player Name</th>
                 <th>Status</th>
                 <th class='text-end'>DV</th>
-                <th class="text-end">Grading Total</th>
+                <th class="text-end">Grading</th>
                 </tr>
             </thead>
             <tbody>
