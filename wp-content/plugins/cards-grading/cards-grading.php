@@ -259,7 +259,7 @@
             'cards-grading',
             plugin_dir_url(__FILE__) . 'js/cards-grading.js',
             array('jquery'),
-            28,
+            29,
             true
         );
 
@@ -512,6 +512,11 @@
             return $this->doPackageIncompleteItems($params);
 
         }
+        elseif($params["action"] == "show_grades"){
+
+            return $this->doShowGrades($params);
+
+        }
 
         return $params;
 
@@ -735,6 +740,14 @@
         return true;
 
     }
+
+    public function doShowGrades($params){
+
+        update_post_meta($params["order_number"], 'status', 'Cards Graded');   
+        return true;
+
+    }
+
 
  }
 

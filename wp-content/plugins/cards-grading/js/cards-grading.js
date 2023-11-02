@@ -535,6 +535,12 @@ $(document).on("click", ".5star_btn", function(e){
             
             break;
             
+        case "show_grades":
+            var order_number = $(this).data("order_number");
+            if (orderAction("show_grades", null, order_number) ){
+                location.reload();
+            }
+            break;
         default:
             console.log("Button not configured: " + $(this).data("action"));
     }
