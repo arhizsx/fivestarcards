@@ -330,14 +330,13 @@ function cardAction(action, value, post_id, parent_element ){
 
 function showSetGrade( data ){
 
-    console.log(data);
-    
+
     $(document).find(".view_card").appendTo('body').modal("show");
 
     $(document).find("#set_grade_form input[name='user_id']").val(data["card"]["user_id"]);
     $(document).find("#set_grade_form input[name='grading']").val(data["card"]["grading"]);
     $(document).find("#set_grade_form input[name='max_dv']").val(data["card"]["max_dv"]);
-    $(document).find("#set_grade_form input[name='post_id']").val(data["card"]["post_id"]);
+    $(document).find("#set_grade_form input[name='post_id']").val(data["post_id"]);
     $(document).find("#set_grade_form input[name='card']").val( JSON.stringify(data["card"]) );
 
     $(document).find("#set_grade_form input[name='year']").val(data["card"]["year"]);
