@@ -96,16 +96,19 @@ $processed_status = array("Cards Graded");
         <table class='table 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
-                <th>Year</th>
-                <th>Brand</th>
-                <th>Card #</th>
-                <th>Player Name</th>
-                <th>Status</th>
                 <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
-                <th class="text-end">Grade</th>
+                    <th>Action</th>
                 <?php } ?>
-                <th class='text-end'>DV</th>
-                <th class="text-end">Grading</th>
+                    <th>Year</th>
+                    <th>Brand</th>
+                    <th>Card #</th>
+                    <th>Player Name</th>
+                    <th>Status</th>
+                    <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
+                    <th class="text-end">Grade</th>
+                    <?php } ?>
+                    <th class='text-end'>DV</th>
+                    <th class="text-end">Grading</th>
                 </tr>
             </thead>
             <tbody>
@@ -124,6 +127,9 @@ $processed_status = array("Cards Graded");
 
                 ?>
                 <tr class="card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
+                    <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
+                    <td></td>
+                    <?php } ?>
                     <td><?php echo $card["year"]; ?></td>
                     <td><?php echo $card["brand"]; ?></td>
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
