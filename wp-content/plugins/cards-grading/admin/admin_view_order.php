@@ -327,27 +327,27 @@ $processed_status = array("Processing Order", "Cards Graded");
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <label for="year">Year</label>
-                                    <input type="number" name="year" value="" data-field_check="required"  class="form-control mb-2"/>
+                                    <input type="number" name="year" value="" data-field_check="required"  class="form-control mb-2" disabled/>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <label for="dv">Declared Value</label>
-                                    <input type="number" name="dv" value="" data-field_check="required" class="form-control mb-2"/>
+                                    <input type="number" name="dv" value="" data-field_check="required" class="form-control mb-2" disabled/>
                                 </div>
                                 <div class="col-xl-12">
                                     <label for="brand">Brand</label>
-                                    <input type="text" name="brand" value="" data-field_check="required" class="form-control mb-2"/>
+                                    <input type="text" name="brand" value="" data-field_check="required" class="form-control mb-2" disabled/>
                                 </div>
                                 <div class="col-xl-12">
                                     <label for="card_number">Card Number</label>
-                                    <input type="text" name="card_number" value="" data-field_check="required" class="form-control mb-2"/>
+                                    <input type="text" name="card_number" value="" data-field_check="required" class="form-control mb-2" disabled/>
                                 </div>
                                 <div class="col-xl-12">
                                     <label for="player">Player Name</label>
-                                    <input type="text" name="player" value="" data-field_check="required" class="form-control mb-2"/>
+                                    <input type="text" name="player" value="" data-field_check="required" class="form-control mb-2" disabled/>
                                 </div>
                                 <div class="col-xl-12">
                                     <label for="attribute">Attribute S/N</label>
-                                    <input type="text" name="attribute" value="" data-field_check="" class="form-control mb-2"/>
+                                    <input type="text" name="attribute" value="" data-field_check="" class="form-control mb-2" disabled/>
                                 </div>
                             </div>
                         </form>
