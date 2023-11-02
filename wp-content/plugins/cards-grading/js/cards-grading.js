@@ -326,7 +326,9 @@ function cardAction(action, value, post_id, parent_element ){
             }
             else if(action == "pay_card_grading")
             {
-                $(parent_element).find("td:eq(5)").text(value);                    
+                if(resp == true){
+                    $(parent_element).find("td:eq(5)").text(value);                    
+                }
             }            
         }
     });
