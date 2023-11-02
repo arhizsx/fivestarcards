@@ -302,9 +302,6 @@ function cardAction(action, value, post_id, parent_element ){
                             console.log( $(v).find("td:eq(6)").text() );
                     });
                 }
-                else if( value == "Not Available" ){
-                    console.log("Missing Items");
-                }
             }
         }
     });
