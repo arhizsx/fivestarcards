@@ -326,6 +326,12 @@ function cardAction(action, value, post_id, parent_element ){
 function showSetGrade( data ){
     $(document).find(".view_card").appendTo('body').modal("show");
 
+    $(document).find("#set_grade_form input[name='user_id']").val(data["card"]["user_id"]);
+    $(document).find("#set_grade_form input[name='grading']").val(data["card"]["grading"]);
+    $(document).find("#set_grade_form input[name='max_dv']").val(data["card"]["max_dv"]);
+    $(document).find("#set_grade_form input[name='post_id']").val(data["card"]["post_id"]);
+    $(document).find("#set_grade_form input[name='card']").val(data["card"]);
+
     $(document).find("#set_grade_form input[name='year']").val(data["card"]["year"]);
     $(document).find("#set_grade_form input[name='dv']").val(data["card"]["dv"]);
     $(document).find("#set_grade_form input[name='brand']").val(data["card"]["brand"]);
@@ -341,6 +347,7 @@ function showSetGrade( data ){
 
 function confirmCardGrade(){
 
+    console.log( $(document).find("#set_grade_form input[name='grade']").val() );
 }
 
 
