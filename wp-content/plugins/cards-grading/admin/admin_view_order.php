@@ -36,6 +36,7 @@ foreach($posts as $post)
 }
 
 $admin_status = array( "Shipped" );
+$admin_action_status = array( "Shipped" );
 
 ?>
 
@@ -148,7 +149,7 @@ $admin_status = array( "Shipped" );
                 <tr class="card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
                     <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
                     <td >
-                        <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
+                        <?php if( $meta["status"][0] == "Shipped" ) { ?>
                             <div class="row">
                                 <div class="col-6">
                                     <button class='5star_btn btn-sm btn btn-danger w-100 mb-3' data-action="item_not_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
@@ -161,6 +162,8 @@ $admin_status = array( "Shipped" );
                                     </button>
                                 </div>
                             </div>
+                        <?php } else {?>
+                            <?php echo $meta["status"][0]; ?>
                         <?php } ?>
                     </td>
                     <?php } ?>
