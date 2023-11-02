@@ -55,13 +55,11 @@ function addCardToTable(card){
     
                         $(document).find(".5star_logged_cards tbody").prepend(
                             "<tr class='card-row' data-post_id='" + resp + "' data-card='" + JSON.stringify(card) + "'>" +
-                                "<td> 1 </td>" +
                                 "<td>" + card["year"] + "</td>" +
                                 "<td>" + card["brand"] + "</td>" +
                                 "<td>" + card["card_number"] + "<br><small>" + attribute + "</small>" + "</td>" +
                                 "<td>" + card["player"] + "</td>" +
                                 "<td class='text-end'>$" + parseFloat(card["dv"]).toFixed(2) + "</td>" +
-                                "<td class='text-end'>$" + card_total_dv.toFixed(2) + "</td>" +
                                 "<td class='text-end'>$" + card_total_charge.toFixed(2) + "</td>" +
                             "</tr>"
                         );    
@@ -451,7 +449,7 @@ $(document).on("click", ".5star_btn", function(e){
             break;
 
         case "package_received":
-            
+
             break;
         default:
             console.log("Button not configured");
