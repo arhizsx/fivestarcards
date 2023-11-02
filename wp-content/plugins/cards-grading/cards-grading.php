@@ -668,7 +668,7 @@
                     'value' => $order_number
                 ),
             ),
-            'post_type' => 'cards-grading-chk',
+            'post_type' => 'cards-grading-card',
             'posts_per_page' => -1
         );
         
