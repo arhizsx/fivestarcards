@@ -498,6 +498,12 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "package_received":
 
+            var order_number = $(this).data("order_number");
+            if ( orderAction("package_received", null, order_number) ){
+                location.reload();
+            }
+
+
             break;
 
         case "item_not_avlb_in_package":

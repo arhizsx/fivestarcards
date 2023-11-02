@@ -496,6 +496,12 @@
             return $this->doCardUpdateMeta($params, "status");
 
         }
+        
+        elseif($params["action"] == "package_received"){
+
+            return $this->doPackageReceived($params);
+
+        }
         elseif($params["action"] == "complete_package_contents"){
 
             return $this->doPackageCompleteItems($params);
@@ -707,10 +713,19 @@
 
     }
 
+    public function doPackageReceived($params){
+
+        update_post_meta($params["order_number"], 'status', 'Package Received');   
+        return true;
+
+    }
+
+
     public function doPackageCompleteItems($params){
 
         update_post_meta($params["order_number"], 'status', 'Processing Order');   
         return true;
+
 
     }
 
