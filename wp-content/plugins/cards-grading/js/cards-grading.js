@@ -326,12 +326,12 @@ function cardAction(action, value, post_id, parent_element ){
 function showSetGrade( data ){
     $(document).find(".view_card").appendTo('body').modal("show");
 
-    $(document).find("input[name='year']").val(data["card"]["year"]);
-    $(document).find("input[name='dv']").val(data["card"]["dv"]);
-    $(document).find("input[name='brand']").val(data["card"]["brand"]);
-    $(document).find("input[name='card_number']").val(data["card"]["card_number"]);
-    $(document).find("input[name='player']").val(data["card"]["player"]);
-    $(document).find("input[name='attribute']").val(data["card"]["attribute"]);
+    $(document).find("#set_grade_form input[name='year']").val(data["card"]["year"]);
+    $(document).find("#set_grade_form input[name='dv']").val(data["card"]["dv"]);
+    $(document).find("#set_grade_form input[name='brand']").val(data["card"]["brand"]);
+    $(document).find("#set_grade_form input[name='card_number']").val(data["card"]["card_number"]);
+    $(document).find("#set_grade_form input[name='player']").val(data["card"]["player"]);
+    $(document).find("#set_grade_form input[name='attribute']").val(data["card"]["attribute"]);
 
 }
 
