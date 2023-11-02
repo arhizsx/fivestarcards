@@ -291,6 +291,8 @@ function cardAction(action, value, post_id, parent_element ){
         },
         success: function(resp){
 
+            alert(resp);
+
             if(action == "card_update_status")
             {
                 if(resp == true){
@@ -602,7 +604,6 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "pay_card_grading":
 
-        alert("test");
 
             cardAction("card_update_status", "Pay Grading", $(this).data("post_id"), $(this).closest("tr"));
             break;
