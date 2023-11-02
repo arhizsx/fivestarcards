@@ -318,7 +318,12 @@ $processed_status = array("Processing Order", "Cards Graded");
                             <input type="hidden" name="max_dv" value=''/>
                             <input type="hidden" name="post_id" value=''/>
                             <input type="hidden" name="card" value=''/>
-
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12">
+                                    <label for="year">Grade</label>
+                                    <input type="number" name="grade" style="font-size: 3em !important;"  value="" data-field_check="required"  class="form-control mb-2"/>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <label for="year">Year</label>
