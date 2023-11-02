@@ -293,7 +293,7 @@ function cardAction(action, value, post_id, parent_element ){
         success: function(resp){
 
             if(resp == true){
-                console.log( $(parent_element).find(".card_status").html());
+                console.log( $(parent_element).html());
             }
         }
     });
