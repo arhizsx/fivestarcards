@@ -276,7 +276,7 @@ function orderAction(action, data){
     
 }
 
-function cardAction(action, value, post_id ){
+function cardAction(action, value, post_id, parent_element ){
 
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
     var url = $(document).find(".5star_logged_cards").data("endpoint");
@@ -292,12 +292,9 @@ function cardAction(action, value, post_id ){
         },
         success: function(resp){
 
-            if(resp ==true){
-                return true;
-            } else {
-                return false;
+            if(resp == true){
+                console.log(parent_element);
             }
-
         }
     });
 
@@ -481,17 +478,13 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "item_not_avlb_in_package":
 
-            if(cardAction("card_update_status", "Not Available", $(this).data("post_id"))){
-                console.log($(this).parent().html());
-            }
+            cardAction("card_update_status", "Not Available", $(this).data("post_id"), $(this).closest("tr"));
             break;
 
         case "item_avlb_in_package":
 
-        if(cardAction("card_update_status", "Received", $(this).data("post_id"))){
-            console.log($(this).parent().html());
-        }
-        break;
+            cardAction("card_update_status", "Received", $(this).data("post_id"), $(this).closest("tr"));
+            break;
             
         default:
             console.log("Button not configured" + $(this).data("action"));
