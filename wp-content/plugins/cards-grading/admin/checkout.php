@@ -40,14 +40,12 @@ $total_dv = 0;
     <table class='table 5star_logged_cards table-bordered table-striped' data-grading_type="<?php echo $params['type'] ?>" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-table_action_endpoint="<?php echo get_rest_url(null, "cards-grading/v1/table-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
     <thead>
         <tr>
-        <th>Qty</th>
         <th>Year</th>
         <th>Brand</th>
         <th>Card #</th>
         <th>Player Name</th>
         <th class='text-end'>DV</th>
-        <th class='text-end'>Total DV</th>
-        <th class="text-end">Grading Total</th>
+        <th class="text-end">Grading</th>
         </tr>
     </thead>
     <tbody>
