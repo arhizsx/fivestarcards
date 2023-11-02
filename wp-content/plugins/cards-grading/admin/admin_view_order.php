@@ -149,10 +149,10 @@ $admin_status = array( "Shipped" );
                     <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
                     <td>
                         <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
-                        <button class='5star_btn btn btn-primary mb-3 form-control' data-action="item_not_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
+                        <button class='5star_btn btn btn-danger mb-3 col-6' data-action="item_not_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
                             No
                         </button>
-                        <button class='5star_btn btn btn-primary mb-3 form-control' data-action="item_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
+                        <button class='5star_btn btn btn-primary mb-3 col-6' data-action="item_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
                             Yes
                         </button>
                         <?php } ?>
