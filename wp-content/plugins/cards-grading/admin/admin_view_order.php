@@ -36,7 +36,7 @@ foreach($posts as $post)
 }
 
 $admin_status = array( "Shipped", "Package Received", "Incomplete Items Shipped" );
-$admin_action_status = array( "Package Received" );
+$admin_action_status = array( "Package Received", "Processing Order" );
 
 ?>
 
@@ -142,6 +142,12 @@ $admin_action_status = array( "Package Received" );
                 Items Complete
             </button>      
             <?php } ?>
+
+            <?php if( $checkout_meta["status"][0] == "Processing Order" ) { ?>
+            <button class='5star_btn btn btn-primary mb-3 <?php echo $complete_btn; ?>' data-action="show_grades" data-order_number="<?php echo $params['order_number'] ?>">
+                Show Grades
+            </button>      
+            <?php } ?>            
         </div>
     </div>
     <div class="table-responsive">   
