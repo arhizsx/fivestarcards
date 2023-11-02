@@ -206,7 +206,7 @@ $admin_action_status = array( "Package Received", "Processing Order" );
                                 </div>
                             </div>
                         <?php } else {?>
-                            <?php echo $meta["status"][0]; ?>
+                            -
                         <?php } ?>
                     </td>
                     <?php } ?>
