@@ -333,8 +333,6 @@ function showSetGrade( data ){
     $(document).find("input[name='player']").val(data["card"]["player"]);
     $(document).find("input[name='attribute']").val(data["card"]["attribute"]);
 
-    $(document).find("input[name='grade']").val("1");
-
 }
 
 function confirmCardGrade(){
