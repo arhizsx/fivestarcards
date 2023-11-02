@@ -104,11 +104,42 @@ $admin_action_status = array( "Package Received" );
                     Package Received
                 </button>      
                 <?php } ?>
-                <?php if( $checkout_meta["status"][0] == "Package Received" ) { ?>
-                <button class='5star_btn btn btn-danger mb-3' data-action="incomplete_package_contents">
+                <?php 
+                if( $checkout_meta["status"][0] == "Package Received" ) { 
+
+                    if( $posts )
+                    {
+                        $received = 0;
+                        $missing = 0;
+
+                        foreach($posts as $post)
+                        {
+                            $meta = get_post_meta($post->ID);
+                            if( $meta["status"] == "Received" ){
+                                $received++;
+                            }
+                            elseif( $meta["status"] == "Not Available" ){
+                                $missing++;
+                            }
+                        }
+
+                        if( $received == count($posts) ){
+                            $complete_btn = "";
+                        } else {
+                            $complete_btn = "d-none";
+                        }
+
+                        if( $missing > 0){
+                            $missing_btn = "";
+                        } else {
+                            $missing_btn = "d-none";
+                        }
+                    }
+                ?>
+                <button class='5star_btn btn btn-danger mb-3 <?php echo $missing_btn; ?>' data-action="incomplete_package_contents">
                     Missing Items
                 </button>      
-                <button class='5star_btn btn btn-primary mb-3' data-action="complete_package_contents">
+                <button class='5star_btn btn btn-primary mb-3 <?php echo $complete_btn; ?>' data-action="complete_package_contents">
                     Items Complete
                 </button>      
                 <?php } ?>
