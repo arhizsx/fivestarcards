@@ -106,7 +106,7 @@ $admin_action_status = array( "Shipped" );
                 <?php } ?>
             </div>
         </div>
-        <table class='table 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
+        <table class='table table-sm 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
                     <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
