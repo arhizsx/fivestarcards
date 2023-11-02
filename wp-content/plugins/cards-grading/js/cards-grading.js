@@ -293,12 +293,9 @@ function cardAction(action, value, post_id ){
         success: function(resp){
 
             if(resp ==true){
-
-                console.log($(document).find("td.admin-card-row-status").html());
-                $(document).find("td.admin-card-row-status").find("[data-post_id='" + post_id + "']").text(value);
-
+                return true;
             } else {
-                console.log("Card Update Failed");
+                return false;
             }
 
         }
@@ -484,13 +481,17 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "item_not_avlb_in_package":
 
-            cardAction("card_update_status", "Not Available", $(this).data("post_id"));
+            if(cardAction("card_update_status", "Not Available", $(this).data("post_id"))){
+                console.log($(this).parent().html());
+            }
             break;
 
         case "item_avlb_in_package":
 
-            cardAction("card_update_status", "Received", $(this).data("post_id"));
-            break;
+        if(cardAction("card_update_status", "Received", $(this).data("post_id"))){
+            console.log($(this).parent().html());
+        }
+        break;
             
         default:
             console.log("Button not configured" + $(this).data("action"));
