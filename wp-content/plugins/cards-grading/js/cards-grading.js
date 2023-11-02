@@ -513,14 +513,18 @@ $(document).on("click", ".5star_btn", function(e){
         case "complete_package_contents":
 
             var order_number = $(this).data("order_number");
-            orderAction("complete_package_contents", null, order_number);
+            if ( orderAction("complete_package_contents", null, order_number) ){
+                location.reload();
+            }
             
             break;
             
         case "incomplete_package_contents":
 
             var order_number = $(this).data("order_number");
-            orderAction("incomplete_package_contents", null, order_number);
+            if (orderAction("incomplete_package_contents", null, order_number) ){
+                location.reload();
+            }
             
             break;
             
