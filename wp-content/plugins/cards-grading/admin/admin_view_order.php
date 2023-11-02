@@ -321,12 +321,12 @@ $processed_status = array("Processing Order", "Cards Graded");
 
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-6">
-                                    <label for="quantity">Qty</label>
-                                    <input type="number" name="quantity" value="1" data-field_check="required" class="form-control mb-2"/>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6">
                                     <label for="year">Year</label>
                                     <input type="number" name="year" value="" data-field_check="required"  class="form-control mb-2"/>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="dv">Declared Value</label>
+                                    <input type="number" name="dv" value="" data-field_check="required" class="form-control mb-2"/>
                                 </div>
                                 <div class="col-xl-12">
                                     <label for="brand">Brand</label>
@@ -343,14 +343,6 @@ $processed_status = array("Processing Order", "Cards Graded");
                                 <div class="col-xl-12">
                                     <label for="attribute">Attribute S/N</label>
                                     <input type="text" name="attribute" value="" data-field_check="" class="form-control mb-2"/>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6">
-                                    <label for="per_card">Per Card</label>
-                                    <input type="number" name="per_card" value="" data-field_check="required"  class="form-control mb-2" disabled/>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6">
-                                    <label for="dv">Declared Value</label>
-                                    <input type="number" name="dv" value="" data-field_check="required" class="form-control mb-2"/>
                                 </div>
                             </div>
                         </form>
