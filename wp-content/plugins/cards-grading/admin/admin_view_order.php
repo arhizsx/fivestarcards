@@ -140,9 +140,7 @@ $admin_action_status = array( "Shipped" );
                             $card_total_dv = $card["dv"] * $card["quantity"];
                             $card_grading_charge = $card["per_card"] * $card["quantity"];
 
-                            $grading_charge = $grading_charge + $card_grading_charge;
-                            $total_dv = $total_dv + $card_total_dv;
-                            
+                            $grading_charge = $grading_charge + $card_grading_charge;                            
 
                 ?>
                 <tr class="card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
