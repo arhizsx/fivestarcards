@@ -156,7 +156,7 @@ function tableAction(what_type, action, what_modal){
                     if(resp == true){
                         $(document).find(".5star_logged_cards tbody").empty();
                         $(document).find(".5star_logged_cards tbody").append(
-                            '<tr><td class="text-center" colspan="9">Empty</td></tr>'
+                            '<tr><td class="text-center" colspan="6">Empty</td></tr>'
                         );
                         $(document).find(".bottom_buttons").addClass("d-none");
                     }
@@ -167,7 +167,7 @@ function tableAction(what_type, action, what_modal){
 
                         $(document).find(".5star_logged_cards tbody").empty();
                         $(document).find(".5star_logged_cards tbody").append(
-                            '<tr><td class="text-center" colspan="9">Empty</td></tr>'
+                            '<tr><td class="text-center" colspan="6">Empty</td></tr>'
                         );
                         $(document).find(".bottom_buttons").addClass("d-none");
     
