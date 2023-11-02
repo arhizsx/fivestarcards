@@ -330,7 +330,7 @@ function showSetGrade( data ){
     $(document).find("#set_grade_form input[name='grading']").val(data["card"]["grading"]);
     $(document).find("#set_grade_form input[name='max_dv']").val(data["card"]["max_dv"]);
     $(document).find("#set_grade_form input[name='post_id']").val(data["card"]["post_id"]);
-    $(document).find("#set_grade_form input[name='card']").val(data["card"]);
+    $(document).find("#set_grade_form input[name='card']").val( JSON.stringify(data["card"]) );
 
     $(document).find("#set_grade_form input[name='year']").val(data["card"]["year"]);
     $(document).find("#set_grade_form input[name='dv']").val(data["card"]["dv"]);
