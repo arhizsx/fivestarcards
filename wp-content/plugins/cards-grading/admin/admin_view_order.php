@@ -147,14 +147,20 @@ $admin_status = array( "Shipped" );
                 ?>
                 <tr class="card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
                     <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
-                    <td class="row">
+                    <td >
                         <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
-                        <button class='5star_btn btn btn-danger mb-3 col-6 m-1' data-action="item_not_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
-                            No
-                        </button>
-                        <button class='5star_btn btn btn-primary mb-3 col-6  m-1' data-action="item_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
-                            Yes
-                        </button>
+                            <div class="row">
+                                <div class="col-6">
+                                    <button class='5star_btn btn btn-danger mb-3' data-action="item_not_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
+                                        No
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <button class='5star_btn btn btn-primary mb-3' data-action="item_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
+                                        Yes
+                                    </button>
+                                </div>
+                            </div>
                         <?php } ?>
                     </td>
                     <?php } ?>
