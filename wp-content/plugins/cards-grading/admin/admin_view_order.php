@@ -108,14 +108,6 @@ $admin_status = array( "Shipped" );
         <table class='table 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
-                    <th>Year</th>
-                    <th>Brand</th>
-                    <th>Card #</th>
-                    <th>Player Name</th>
-                    <th>Status</th>
-                    <th class='text-end'>DV</th>
-                    <th class='text-end'>Total DV</th>
-                    <th class="text-end">Grading Total</th>
                     <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
                         <?php 
                             if( $checkout_meta["status"][0] == "Shipped" ) { 
@@ -124,9 +116,16 @@ $admin_status = array( "Shipped" );
                                 $action_label = "Action";
                             }
                         ?>
-
-                        <th class="text-end"><?php  echo $action_label; ?></th>
+                    <th class="text-end"><?php  echo $action_label; ?></th>
                     <?php } ?>
+                    <th>Year</th>
+                    <th>Brand</th>
+                    <th>Card #</th>
+                    <th>Player Name</th>
+                    <th>Status</th>
+                    <th class='text-end'>DV</th>
+                    <th class='text-end'>Total DV</th>
+                    <th class="text-end">Grading Total</th>
                 </tr>
             </thead>
             <tbody>
@@ -147,14 +146,6 @@ $admin_status = array( "Shipped" );
 
                 ?>
                 <tr class="card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
-                    <td><?php echo $card["year"]; ?></td>
-                    <td><?php echo $card["brand"]; ?></td>
-                    <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
-                    <td><?php echo $card["player"]; ?></td>
-                    <td><?php echo $meta["status"][0]; ?></td>
-                    <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
-                    <td class='text-end'><?php echo "$" . number_format((float) $card_total_dv, 2, '.', ''); ?></td>
-                    <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                     <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
                     <td>
                         <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
@@ -167,6 +158,14 @@ $admin_status = array( "Shipped" );
                         <?php } ?>
                     </td>
                     <?php } ?>
+                    <td><?php echo $card["year"]; ?></td>
+                    <td><?php echo $card["brand"]; ?></td>
+                    <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
+                    <td><?php echo $card["player"]; ?></td>
+                    <td><?php echo $meta["status"][0]; ?></td>
+                    <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
+                    <td class='text-end'><?php echo "$" . number_format((float) $card_total_dv, 2, '.', ''); ?></td>
+                    <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                 </tr>
                 <?php          
                         }
