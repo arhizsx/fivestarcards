@@ -36,7 +36,7 @@ foreach($posts as $post)
 }
 
 $admin_status = array( "Shipped", "Package Received" );
-$admin_action_status = array( "Shipped" );
+$admin_action_status = array( "Package Received" );
 
 ?>
 
@@ -109,7 +109,7 @@ $admin_action_status = array( "Shipped" );
         <table class='table table-sm 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
-                    <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
+                    <?php if( in_array( $checkout_meta["status"][0], $admin_action_status ) ){ ?>
                         <?php 
                             if( $checkout_meta["status"][0] == "Shipped" ) { 
                                 $action_label = "Inside Package";
@@ -145,7 +145,7 @@ $admin_action_status = array( "Shipped" );
 
                 ?>
                 <tr class="card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
-                    <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
+                    <?php if( in_array( $checkout_meta["status"][0], $admin_action_status ) ){ ?>
                     <td >
                         <?php if( $checkout_meta["status"][0] == "Package Received" ) { ?>
                             <div class="row">
