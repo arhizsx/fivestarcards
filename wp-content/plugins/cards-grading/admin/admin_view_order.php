@@ -104,6 +104,14 @@ $admin_action_status = array( "Package Received" );
                     Package Received
                 </button>      
                 <?php } ?>
+                <?php if( $checkout_meta["status"][0] == "Package Received" ) { ?>
+                <button class='5star_btn btn btn-danger mb-3' data-action="incomplete_package_contents">
+                    Missing Items
+                </button>      
+                <button class='5star_btn btn btn-primary mb-3' data-action="complete_package_contents">
+                    Items Complete
+                </button>      
+                <?php } ?>
             </div>
         </div>
         <table class='table table-sm 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
