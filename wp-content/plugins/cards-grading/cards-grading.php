@@ -503,10 +503,8 @@
 
 
     public function doCardUpdateMeta($params, $key){
-
-
-
-        return $params;
+        update_post_meta($params["post_id"], $key, $params["value"] );
+        return true;
     }
 
 
