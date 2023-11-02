@@ -119,6 +119,7 @@ $admin_action_status = array( "Shipped" );
                         ?>
                     <th><?php  echo $action_label; ?></th>
                     <?php } ?>
+                    <th>ID</th>
                     <th>Year</th>
                     <th>Brand</th>
                     <th>Card #</th>
@@ -164,6 +165,7 @@ $admin_action_status = array( "Shipped" );
                         <?php } ?>
                     </td>
                     <?php } ?>
+                    <td><?php echo $post->ID; ?></td>
                     <td><?php echo $card["year"]; ?></td>
                     <td><?php echo $card["brand"]; ?></td>
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
