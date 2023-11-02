@@ -291,7 +291,8 @@ function cardAction(action, value, post_id, parent_element ){
         },
         success: function(resp){
 
-            if(action == "card_update_status"){
+            if(action == "card_update_status")
+            {
                 if(resp == true){
                     $(parent_element).find("td:eq(6)").text(value);                    
                 } 
@@ -317,6 +318,10 @@ function cardAction(action, value, post_id, parent_element ){
                     $(document).find(".5star_btn[data-action='incomplete_package_contents']").addClass("d-none");
                 }
 
+            }
+            else if(action == "set_grade")
+            {
+                console.log("Card Grade Set");
             }
         }
     });
@@ -350,7 +355,9 @@ function confirmCardGrade(){
     var post_id =  $(document).find("#set_grade_form input[name='post_id']").val();
     var grade =  $(document).find("#set_grade_form input[name='grade']").val();
 
-    
+    cardAction("set_grade", grade, post_id, "");
+
+
 }
 
 
@@ -581,6 +588,7 @@ $(document).on("click", ".5star_btn", function(e){
 
 
         case "confirm_card_grade":
+
             confirmCardGrade();
             break;    
 
