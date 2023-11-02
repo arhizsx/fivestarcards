@@ -298,7 +298,7 @@ function cardAction(action, value, post_id, parent_element ){
                 } 
 
                 if( value == "Received" ){
-                    $(parent_element).closest("table").find("tr").each( function(k, v){
+                    $(parent_element).closest("table tbody").find("tr").each( function(k, v){
                             console.log( $(v).find("td:eq(6)").text() );
                     });
                 }
