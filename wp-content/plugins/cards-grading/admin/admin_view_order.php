@@ -321,7 +321,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12">
                                     <label for="grade">Grade</label>
-                                    <input autofocus type="number" name="grade" style="font-size: 3em !important; text-align: center !important; color: white !important; background-color: black !important;"  value="" data-field_check="required"  class="form-control mb-2"/>
+                                    <input id="grade_input" type="number" name="grade" style="font-size: 3em !important; text-align: center !important; color: white !important; background-color: black !important;"  value="" data-field_check="required"  class="form-control mb-2"/>
                                 </div>
                             </div>
                             <div class="row">
