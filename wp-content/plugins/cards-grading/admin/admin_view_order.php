@@ -111,6 +111,7 @@ foreach($posts as $post)
                 <th>Brand</th>
                 <th>Card #</th>
                 <th>Player Name</th>
+                <th>Status</th>
                 <th class='text-end'>DV</th>
                 <th class='text-end'>Total DV</th>
                 <th class="text-end">Grading Total</th>
