@@ -116,7 +116,7 @@ $admin_status = array( "Shipped" );
                                 $action_label = "Action";
                             }
                         ?>
-                    <th class="text-end"><?php  echo $action_label; ?></th>
+                    <th><?php  echo $action_label; ?></th>
                     <?php } ?>
                     <th>Year</th>
                     <th>Brand</th>
