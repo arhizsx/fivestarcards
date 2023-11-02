@@ -115,10 +115,10 @@ $admin_action_status = array( "Package Received" );
                         foreach($posts as $post)
                         {
                             $meta = get_post_meta($post->ID);
-                            if( $meta["status"] == "Received" ){
+                            if( $meta["status"][0] == "Received" ){
                                 $received++;
                             }
-                            elseif( $meta["status"] == "Not Available" ){
+                            elseif( $meta["status"][0] == "Not Available" ){
                                 $missing++;
                             }
                         }
