@@ -321,7 +321,8 @@ function cardAction(action, value, post_id, parent_element ){
             }
             else if(action == "set_grade")
             {
-                console.log("Card Grade Set");
+                $(document).find(".view_card").modal("hide");
+                location.reload();
             }
         }
     });
@@ -358,7 +359,7 @@ function confirmCardGrade(){
     var grade =  $(document).find("#set_grade_form input[name='grade']").val();
 
     cardAction("set_grade", grade, post_id, "");
-    
+
 }
 
 
