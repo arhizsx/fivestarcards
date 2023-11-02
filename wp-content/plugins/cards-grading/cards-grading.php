@@ -400,7 +400,7 @@
             $what_array = array("Graded", "Consigned", "To Pay", "Paid");
         }
         elseif( $params['type'] == "consigned" ){
-            $what_array = array("Consigned", "Sold");
+            $what_array = array("Consign Card", "Consigned", "Sold");
         }
         elseif( $params['type'] == "sold" ){
             $what_array = array("Sold");
