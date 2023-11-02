@@ -280,7 +280,6 @@ function cardAction(action, value, post_id ){
 
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
     var url = $(document).find(".5star_logged_cards").data("endpoint");
-    var order_number = $(document).find("input[name='order_number']").val();
 
     $.ajax({
         method: 'post',
@@ -294,11 +293,10 @@ function cardAction(action, value, post_id ){
         success: function(resp){
 
             if(resp ==true){
-                $(document).find(".dxmodal").modal("hide");
-                location.reload();
+                $(document).find("td.admin-card-row-status").find("[data-post_id='" + post_id + "']").text(value);
 
             } else {
-                console.log("Set Shipping Failed");
+                console.log("Card Update Failed");
             }
 
         }
