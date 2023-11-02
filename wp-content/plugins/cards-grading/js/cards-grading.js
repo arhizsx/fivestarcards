@@ -299,9 +299,7 @@ function cardAction(action, value, post_id, parent_element ){
 
                 if( value == "Received" ){
                     $(parent_element).closest("table").find("tr").each( function(k, v){
-                        if( $(v).find("td:eq(6)") == "Not Available"){
-                            console.log("Missing Items");
-                        }
+                            console.log( v.find("td:eq(6)").text() );
                     });
                 }
                 else if( value == "Not Available" ){
