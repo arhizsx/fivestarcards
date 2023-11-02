@@ -581,6 +581,12 @@
 
         }
 
+        elseif($params["action"] == "consign_card"){
+
+            return $this->doConsignCard($params);
+
+        }
+
         return $params;
 
     }    
@@ -825,6 +831,12 @@
 
     }
     
+    public function doConsignCard($params){
+
+        update_post_meta($params["post_id"], 'status', 'Consign Card');   
+        return true;
+
+    }
 
 
  }

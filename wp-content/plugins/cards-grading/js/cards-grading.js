@@ -330,6 +330,12 @@ function cardAction(action, value, post_id, parent_element ){
                     $(parent_element).find("td:eq(5)").text(value);                    
                 }
             }            
+            else if(action == "consign_card")
+            {
+                if(resp == true){
+                    $(parent_element).find("td:eq(5)").text(value);                    
+                }
+            }            
         }
     });
 
@@ -601,8 +607,12 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "pay_card_grading":
 
-
             cardAction("pay_card_grading", "Pay Grading", $(this).data("post_id"), $(this).closest("tr"));
+            break;
+
+        case "consign_card":
+
+            cardAction("consign_card", "Consign Card", $(this).data("post_id"), $(this).closest("tr"));
             break;
 
         default:
