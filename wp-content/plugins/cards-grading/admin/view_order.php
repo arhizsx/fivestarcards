@@ -128,7 +128,22 @@ $processed_status = array("Cards Graded");
                 ?>
                 <tr class="card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
                     <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
-                    <td></td>
+                    <td>                        
+                        <?php if( $checkout_meta["status"][0] == "Cards Graded" ) { ?>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="consign_card" data-post_id="<?php echo $post->ID; ?>">
+                                        Consign
+                                    </button>
+                                </div>
+                                <div class="col-lg-6">
+                                    <button class='5star_btn btn-sm btn btn-primary w-100 mb-3' data-action="pay_card_grading" data-post_id="<?php echo $post->ID; ?>">
+                                        Pay
+                                    </button>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </td>
                     <?php } ?>
                     <td><?php echo $card["year"]; ?></td>
                     <td><?php echo $card["brand"]; ?></td>
