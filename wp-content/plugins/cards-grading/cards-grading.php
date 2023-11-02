@@ -655,6 +655,33 @@
             add_post_meta($order_number, "shipping_date", $params["data"]["shipping_date"] );
         }
 
+
+        $args = array(
+            'relations' =>  'AND',    
+            'meta_query' => array(
+                array(
+                    'key' => 'status',
+                    'value' => "To Ship"
+                ),
+                array(
+                    'key' => 'checkout_id',
+                    'value' => $order_number
+                ),
+            ),
+            'post_type' => 'cards-grading-chk',
+            'posts_per_page' => -1
+        );
+        
+        $posts = get_posts($args);
+
+        foreach($posts as $post){
+
+            $post_id = $post->ID;
+            update_post_meta($post_id, "status", "Shipped" );
+
+        } 
+                
+
         return true;
 
     }
