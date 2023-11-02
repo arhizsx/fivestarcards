@@ -292,8 +292,21 @@ function cardAction(action, value, post_id, parent_element ){
         },
         success: function(resp){
 
-            if(resp == true){
-                $(parent_element).find("td:eq(6)").text(value);
+            if(action == "card_update_status"){
+                if(resp == true){
+                    $(parent_element).find("td:eq(6)").text(value);                    
+                } 
+
+                if( value == "Received" ){
+                    $(parent_element).closest("table").find("tr").each( function(k, v){
+                        console.log(v);
+                    });
+                }
+                else if( value == "Not Available" ){
+                    $(parent_element).closest("table").find("tr").each( function(k, v){
+                        console.log(v);
+                    });
+                }
             }
         }
     });
