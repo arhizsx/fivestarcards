@@ -38,6 +38,8 @@ foreach($posts as $post)
 $admin_status = array( "Shipped", "Package Received", "Incomplete Items Shipped" );
 $admin_action_status = array( "Package Received", "Processing Order" );
 
+$processed_status = array("Processing Order");
+
 ?>
 
 <div class="m-0 p-0">
@@ -224,6 +226,9 @@ $admin_action_status = array( "Package Received", "Processing Order" );
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
                     <td><?php echo $card["player"]; ?></td>
                     <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
+                    <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
+                    <td class=".grade"><?php echo $card["grade"]; ?></td>
+                    <?php }?>
                     <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                 </tr>
