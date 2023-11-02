@@ -576,7 +576,8 @@ $(document).on("click", ".5star_btn", function(e){
 
             break;
 
-        case "":
+
+        case "confirm_card_grade":
             confirmCardGrade();
             break;    
 
