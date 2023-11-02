@@ -393,6 +393,9 @@
         if( $params['type'] == "incoming_cards" ){
             $what_array = array("To Ship", "Shipped");
         }
+        if( $params['type'] == "processing" ){
+            $what_array = array("Received");
+        }
         
         $args = array(
             'meta_query' => array(
@@ -405,7 +408,7 @@
             'post_type' => 'cards-grading-card',
             'posts_per_page' => -1
         );
-        
+
         $posts = get_posts($args);
 
         echo count($posts);
