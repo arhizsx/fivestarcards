@@ -324,6 +324,7 @@ function cardAction(action, value, post_id, parent_element ){
 }
 
 function showSetGrade( data ){
+    
     $(document).find(".view_card").appendTo('body').modal("show");
     console.log(data);
 }
@@ -550,6 +551,7 @@ $(document).on("click", ".5star_btn", function(e){
         case "set_grade":
 
             showSetGrade( $(this).data() );
+
             break;
 
         default:
