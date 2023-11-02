@@ -575,6 +575,12 @@
 
         }
 
+        elseif($params["action"] == "pay_card_grading"){
+
+            return $this->doPayCardGrading($params);
+
+        }
+
         return $params;
 
     }    
@@ -812,6 +818,13 @@
         return true;
 
     }
+    public function doPayCardGrading($params){
+
+        update_post_meta($params["order_number"], 'status', 'Pay Grading');   
+        return true;
+
+    }
+    
 
 
  }
