@@ -393,8 +393,11 @@
         if( $params['type'] == "incoming_cards" ){
             $what_array = array("To Ship", "Shipped");
         }
-        if( $params['type'] == "processing" ){
-            $what_array = array("Received");
+        elseif( $params['type'] == "processing" ){
+            $what_array = array("Received", "Processing");
+        }
+        elseif( $params['type'] == "graded" ){
+            $what_array = array("Graded", "Consigned", "To Pay", "Paid");
         }
         
         $args = array(
