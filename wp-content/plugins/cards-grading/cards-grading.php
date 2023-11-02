@@ -708,11 +708,11 @@
     }
 
     public function doPackageCompleteItems($params){
-        return "complete";
+        return "complete" . $params["order_number"];
     }
 
     public function doPackageIncompleteItems($params){
-        return "incomplete";
+        return "incomplete" . $params["order_number"];
     }
 
  }
