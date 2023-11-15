@@ -166,10 +166,16 @@ $processed_status = array("Cards Graded");
                             $meta = get_post_meta($post->ID);
                             $card = json_decode($meta['card'][0], true);
 
-                            $card_total_dv = $card["dv"] * $card["quantity"];
-                            $card_grading_charge = $card["per_card"] * $card["quantity"];
 
-                            $grading_charge = $grading_charge + $card_grading_charge;
+                            if( $meta["status"][0] != 'Not Available' ){
+
+                                $card_total_dv = $card["dv"] * $card["quantity"];
+                                $card_grading_charge = $card["per_card"] * $card["quantity"];
+
+                                $grading_charge = $grading_charge + $card_grading_charge;
+    
+                            }
+
 
                 ?>
                 <tr class="user-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
