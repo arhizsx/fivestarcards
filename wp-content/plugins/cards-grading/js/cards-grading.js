@@ -247,7 +247,7 @@ function showShippedModal(w){
 
 function showPaidModal(w){
 
-    $(document).find(".dxmodal").appendTo('body').modal("show");
+    $(document).find(".paidmodal").appendTo('body').modal("show");
 
 }
 
