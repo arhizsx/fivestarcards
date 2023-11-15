@@ -558,6 +558,11 @@
             return $this->doPackageCompleteItems($params);
 
         }
+        elseif($params["action"] == "acknowledge_missing_cards"){
+
+            return $this->doPackageCompleteItems($params);
+
+        }
         elseif($params["action"] == "incomplete_package_contents"){
 
             return $this->doPackageIncompleteItems($params);
@@ -799,7 +804,6 @@
 
         update_post_meta($params["order_number"], 'status', 'Processing Order');   
         return true;
-
 
     }
 
