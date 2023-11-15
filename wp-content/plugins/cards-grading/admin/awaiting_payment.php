@@ -66,7 +66,9 @@ $posts = get_posts($args);
                                 $card_meta = get_post_meta($card_in_order->ID);
                                 $card = json_decode($card_meta['card'][0], true);
 
-                                $total_per_card  = $total_per_card  + $card["per_card"];
+                                if( $card_meta["status"] == "To Pay"){
+                                    $total_per_card  = $total_per_card  + $card["per_card"];
+                                }
                             }
                             
                                                         
