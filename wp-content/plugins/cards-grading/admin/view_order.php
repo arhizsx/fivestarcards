@@ -175,7 +175,10 @@ $processed_status = array("Cards Graded");
                 <tr class="user-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
                     <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
                     <td>                        
-                        <?php if( $checkout_meta["status"][0] == "Cards Graded" ) { ?>
+                        <?php 
+                            if( $checkout_meta["status"][0] == "Cards Graded" ) { 
+                                if( $meta["status"][0] == "Graded" ) {
+                        ?>
                             <div class="row">
                                 <div class="col-sm-12">
                                     <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="consign_card" data-post_id="<?php echo $post->ID; ?>">
@@ -188,7 +191,10 @@ $processed_status = array("Cards Graded");
                                     </button>
                                 </div>
                             </div>
-                        <?php } ?>
+                        <?php
+                                } 
+                            } 
+                        ?>
                     </td>
                     <?php } ?>
                     <td><?php echo $card["year"]; ?></td>
