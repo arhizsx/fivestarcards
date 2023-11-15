@@ -577,6 +577,15 @@ $(document).on("click", ".5star_btn", function(e){
             }
             
             break;
+
+        case "acknowledge_missing_cards":
+
+            var order_number = $(this).data("order_number");
+            if ( orderAction("complete_package_contents", null, order_number) ){
+                location.reload();
+            }
+            
+            break;
             
         case "incomplete_package_contents":
 
