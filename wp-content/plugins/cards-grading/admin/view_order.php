@@ -144,7 +144,7 @@ $processed_status = array("Cards Graded");
             <?php 
                 }
 
-                elseif( $checkout_meta["status"][0] == "Incomplete Items Shipped" ) { 
+                elseif( $checkout_meta["status"][0] == "Order To Pay" ) { 
             ?>
                 <button class='5star_btn btn btn-primary mb-3' data-action="order_paid" data-order_number="<?php echo $params['order_number'] ?>">
                     Order Paid
