@@ -121,7 +121,7 @@ $processed_status = array("Cards Graded");
                     }
                 }
             ?>
-            <button class='5star_btn btn btn-primary mb-3 <?php echo $show_btn; ?>' data-action="complete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
+            <button class='5star_btn btn btn-primary mb-3 <?php echo $show_btn; ?>' data-action="complete_grading_process" data-order_number="<?php echo $params['order_number'] ?>">
                 Complete Grading Process
             </button>      
             <?php } 
