@@ -56,11 +56,7 @@
 
 	$show_search_icon = ( false !== et_get_option( 'show_search_icon', true ) && ! $et_slide_header ) || is_customize_preview();
 ?>
-	<?php 
-		get_template_part( 'customized/5starcards_add_card_modal', 'header' );
-	?>
-		
-		
+
 	<?php if ( $et_top_info_defined && ! $et_slide_header || is_customize_preview() ) : ?>
 		<?php ob_start(); ?>
 		<div id="top-header"<?php echo $et_top_info_defined ? '' : 'style="display: none;"'; ?>>
@@ -152,9 +148,6 @@
 
 				et_show_cart_total();
 			?>
-							
-							
-							
 			<?php if ( false !== et_get_option( 'show_search_icon', true ) || is_customize_preview() ) : ?>
 				<?php if ( 'fullscreen' !== et_get_option( 'header_style', 'left' ) ) { ?>
 					<div class="clear"></div>
