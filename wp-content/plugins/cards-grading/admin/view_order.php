@@ -107,6 +107,7 @@ $processed_status = array("Cards Graded");
                     {
                         $pay_grading = 0;
                         $consign_card = 0;
+                        $not_available = 0;
 
                         foreach($posts as $post)
                         {
@@ -117,9 +118,12 @@ $processed_status = array("Cards Graded");
                             elseif( $meta["status"][0] == "Pay Grading" ){
                                 $pay_grading++;
                             }
+                            elseif( $meta["status"][0] == "Not Available" ){
+                                $not_available++;
+                            }
                         }
 
-                        if( $pay_grading + $consign_card == count($posts) ){
+                        if( $pay_grading + $consign_card + $not_available == count($posts) ){
                             $show_btn = "";
                         } else {
                             $show_btn = "d-none";
