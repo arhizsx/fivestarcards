@@ -130,7 +130,7 @@ $processed_status = array("Cards Graded");
 
                 elseif( $checkout_meta["status"][0] == "Incomplete Items Shipped" ) { 
             ?>
-                <button class='5star_btn btn btn-primary mb-3' data-action="complete_grading_process" data-order_number="<?php echo $params['order_number'] ?>">
+                <button class='5star_btn btn btn-primary mb-3' data-action="acknowledge_missing_cards" data-order_number="<?php echo $params['order_number'] ?>">
                     Acknowledge Missing Cards
                 </button>      
             <?php 
