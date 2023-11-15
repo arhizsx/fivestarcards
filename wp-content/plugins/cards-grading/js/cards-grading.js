@@ -245,6 +245,12 @@ function showShippedModal(w){
 
 }
 
+function showPaidModal(w){
+
+    $(document).find(".dxmodal").appendTo('body').modal("show");
+
+}
+
 
 function orderAction(action, data, order_number){
 
@@ -636,7 +642,7 @@ $(document).on("click", ".5star_btn", function(e){
                 location.reload();
             }
         
-        break;
+            break;
         
         case "acknowledge_order_request":
 
@@ -645,8 +651,13 @@ $(document).on("click", ".5star_btn", function(e){
                 location.reload();
             }
         
-        break;
+            break;
 
+        case "order_paid":
+
+            showPaidModal();
+        
+            break;
 
         default:
             console.log("Button not configured: " + $(this).data("action"));
