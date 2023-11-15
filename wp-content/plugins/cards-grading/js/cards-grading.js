@@ -267,7 +267,7 @@ function orderAction(action, data, order_number){
                 location.reload();
 
             } else {
-                console.log("Set Shipping Failed");
+                console.log("Order Action Failed");
             }
 
         }
@@ -628,6 +628,17 @@ $(document).on("click", ".5star_btn", function(e){
 
             cardAction("consign_card", "Consign Card", $(this).data("post_id"), $(this).closest("tr"));
             break;
+
+        case "complete_grading_process":
+
+            var order_number = $(this).data("order_number");
+            if (orderAction("complete_grading_process", null, order_number) ){
+                location.reload();
+            }
+        
+        break;
+        
+
 
         default:
             console.log("Button not configured: " + $(this).data("action"));
