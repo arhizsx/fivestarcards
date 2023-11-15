@@ -393,7 +393,7 @@ $processed_status = array("Cards Graded");
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="amount_paid">Amount</label>
-                                <input type="text" name="paamount_paidid_by" class="form-control" data-field_check="required">
+                                <input type="number" name="paamount_paidid_by" class="form-control" data-field_check="required">
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="reference_number">Reference Number</label>
