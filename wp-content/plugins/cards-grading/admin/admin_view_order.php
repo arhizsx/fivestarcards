@@ -235,9 +235,11 @@ $processed_status = array("Processing Order", "Cards Graded");
                         <?php }  elseif ( $checkout_meta["status"][0] == "Processing Order" ) { ?>
                             <div class="row">
                                 <div class="col-lg-12">
+                                    <?php if( $meta["status"][0] == "Received" ) { ?>
                                     <button class='5star_btn btn-sm btn btn-success w-100' data-action="set_grade" data-post_id="<?php echo $post->ID; ?>">
                                         Set Grade
                                     </button>
+                                    <?php }  ?>
                                 </div>
                             </div>
                         <?php } else {?>
