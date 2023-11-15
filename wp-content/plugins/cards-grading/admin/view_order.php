@@ -36,10 +36,14 @@ foreach($posts as $post)
     $meta = get_post_meta($post->ID);
     $card = json_decode($meta['card'][0], true);
 
+    if( $meta["status"][0] != 'Not Available' ){
+
     $card_total_dv = $card["dv"] * $card["quantity"];
 
     $total_dv = $total_dv + $card_total_dv;
     $cards_count = $cards_count + $card["quantity"];
+
+    }
 }
 
 $processed_status = array("Cards Graded");
