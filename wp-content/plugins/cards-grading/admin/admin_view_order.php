@@ -183,6 +183,9 @@ $processed_status = array("Processing Order", "Cards Graded");
             <button class='5star_btn btn btn-primary mb-3' data-action="acknowledge_grading_completion" data-order_number="<?php echo $params['order_number'] ?>">
                 Acknowledge Grading Completion
             </button>      
+            <button class='5star_btn btn btn-success mb-3' data-action="acknowledge_grading_completion" data-order_number="<?php echo $params['order_number'] ?>">
+                Accept Card Consignment 
+            </button>      
             <?php 
             } 
             ?> 
