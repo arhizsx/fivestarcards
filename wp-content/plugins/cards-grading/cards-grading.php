@@ -592,6 +592,12 @@
 
         }
 
+        elseif($params["action"] == "complete_grading_process"){
+
+            return $this->doCompleteGradingProcess($params);
+
+        }
+
         return $params;
 
     }    
@@ -842,6 +848,12 @@
 
     }
 
+    public function doCompleteGradingProcess($params){
+
+        update_post_meta($params["order_number"], 'status', 'Grading Complete');   
+        return true;
+
+    }
 
  }
 
