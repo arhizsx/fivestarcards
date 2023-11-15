@@ -912,6 +912,8 @@
 
         update_post_meta($params["order_number"], 'status', 'Order To Pay');   
 
+        return true;
+
 
     }
 
