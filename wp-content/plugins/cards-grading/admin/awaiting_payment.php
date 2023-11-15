@@ -60,29 +60,31 @@ $posts = get_posts($args);
                             );
                             
                             $cards_list = get_posts($args);
-                            $total_per_card = 0;
+                            $total_grading_charge = 0;
 
                             foreach($cards_list as $card_in_order){
                                 $card_meta = get_post_meta($card_in_order->ID);
                                 $card = json_decode($card_meta['card'][0], true);
 
                                 if( $card_meta["status"][0] == "To Pay"){
-                                    $total_per_card  = $total_per_card  + $card["per_card"];
+                                    $total_grading_charge  = $total_grading_charge  + $card["per_card"];
                                 }
                             }
                             
+                            if( $total_grading_charge > 0 ) {
                                                         
                 ?>
-                <tr class="admin-order-row" data-post_id="<?php echo $post->ID; ?>">
-                    <td><?php echo get_the_date( $date_format, $post->ID ) ?><br><span style='font-size:.7em !important;'><?php echo get_the_time( $time_format, $post->ID ); ?></span></td>
-                    <td><?php echo $user->display_name; ?></td>
-                    <td><?php echo $meta["order_number"][0]; ?></td>
-                    <td><?php echo $meta["service_type"][0]; ?><br><span style='font-size:.7em !important;'><?php echo $meta["grading_type"][0]; ?></span></td>
-                    <td><?php echo $meta["status"][0]; ?></td>
-                    <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
-                    <td class='text-end'><?php echo "$" . number_format((float) $total_per_card, 2, '.', ''); ?></td>
-                </tr>
+                            <tr class="admin-order-row" data-post_id="<?php echo $post->ID; ?>">
+                                <td><?php echo get_the_date( $date_format, $post->ID ) ?><br><span style='font-size:.7em !important;'><?php echo get_the_time( $time_format, $post->ID ); ?></span></td>
+                                <td><?php echo $user->display_name; ?></td>
+                                <td><?php echo $meta["order_number"][0]; ?></td>
+                                <td><?php echo $meta["service_type"][0]; ?><br><span style='font-size:.7em !important;'><?php echo $meta["grading_type"][0]; ?></span></td>
+                                <td><?php echo $meta["status"][0]; ?></td>
+                                <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
+                                <td class='text-end'><?php echo "$" . number_format((float) $total_grading_charge, 2, '.', ''); ?></td>
+                            </tr>
                 <?php          
+                            }
                         }
                     } else {
                 ?>
