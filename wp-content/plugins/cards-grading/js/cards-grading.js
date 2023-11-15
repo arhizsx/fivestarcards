@@ -638,6 +638,14 @@ $(document).on("click", ".5star_btn", function(e){
         
         break;
         
+        case "acknowledge_order_request":
+
+            var order_number = $(this).data("order_number");
+            if (orderAction("acknowledge_order_request", null, order_number) ){
+                location.reload();
+            }
+        
+        break;
 
 
         default:

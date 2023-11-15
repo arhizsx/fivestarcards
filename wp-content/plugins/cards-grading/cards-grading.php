@@ -598,7 +598,18 @@
 
         }
 
+        elseif($params["action"] == "acknowledge_order_request"){
+
+            return $this->doAcknowledgeOrderRequest($params);
+
+        }
+
+        
+
         return $params;
+
+
+
 
     }    
 
@@ -852,6 +863,55 @@
 
         update_post_meta($params["order_number"], 'status', 'Grading Complete');   
         return true;
+
+    }
+
+    public function doAcknowledgeOrderRequest($params){
+
+        $order_number = $params["order_number"];
+
+        $args = array(
+            'meta_query' => array(
+                array(
+                    'key' => 'checkout_id',
+                    'value' => $params['order_number']
+                )
+            ),
+            'post_type' => 'cards-grading-card',
+            'posts_per_page' => -1
+        );
+        
+        $posts = get_posts($args);
+
+        $pay_grading = 0;
+        $consign_card = 0;
+
+        foreach($posts as $post)
+        {
+
+            switch( get_post_meta( $post->ID , 'status' , true ) ){
+
+                case "Pay Grading":
+
+                    $pay_grading++;
+                    update_post_meta($post->ID, 'status', 'To Pay');   
+    
+                    break;
+                
+                case "Consign Card":
+
+                    $consign_card++;
+                    update_post_meta($post->ID, 'status', 'Consigned');   
+                    break;
+
+                default:
+
+            }
+            
+        }
+
+        update_post_meta($params["order_number"], 'status', 'Order To Pay');   
+
 
     }
 
