@@ -180,11 +180,8 @@ $processed_status = array("Processing Order", "Cards Graded");
             if( $checkout_meta["status"][0] == "Grading Complete" ) 
             { 
             ?>
-            <button class='5star_btn btn btn-primary mb-3' data-action="acknowledge_grading_completion" data-order_number="<?php echo $params['order_number'] ?>">
-                Bill Grading
-            </button>      
             <button class='5star_btn btn btn-success mb-3' data-action="acknowledge_grading_completion" data-order_number="<?php echo $params['order_number'] ?>">
-                Accept Card Consignment 
+                Acknowledge Order Request
             </button>      
             <?php 
             } 
