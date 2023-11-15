@@ -175,6 +175,18 @@ $processed_status = array("Processing Order", "Cards Graded");
             <?php 
             } 
             ?> 
+
+            <?php 
+            if( $checkout_meta["status"][0] == "Grading Complete" ) 
+            { 
+            ?>
+            <button class='5star_btn btn btn-primary mb-3' data-action="acknowledge_grading_completion" data-order_number="<?php echo $params['order_number'] ?>">
+                Acknowledge Grading Completion
+            </button>      
+            <?php 
+            } 
+            ?> 
+
         </div>
     </div>
     <div class="table-responsive">   
