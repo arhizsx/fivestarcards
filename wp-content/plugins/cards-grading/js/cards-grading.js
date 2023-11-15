@@ -328,24 +328,16 @@ function cardAction(action, value, post_id, parent_element ){
             {
                 if(resp == true){
                     $(parent_element).find("td:eq(5)").text(value);                    
+                    location.reload();
                 }
 
-                var missing = 0;
-                if( value != "Consign Card" || value != 'Pay Grading' || value != 'Not Available'){
-                    missing = missing + 1;
-                }
-
-                if( missing > 0 ){
-                    $(document).find(".5star_btn[data-action='complete_package_contents']").addClass("d-none");
-                } else {
-                    $(document).find(".5star_btn[data-action='complete_package_contents']").removeClass("d-none");
-                }
 
             }            
             else if(action == "consign_card")
             {
                 if(resp == true){
                     $(parent_element).find("td:eq(5)").text(value);                    
+                    location.reload();
                 }
             }            
         }
