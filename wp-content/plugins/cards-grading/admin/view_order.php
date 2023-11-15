@@ -91,8 +91,44 @@ $processed_status = array("Cards Graded");
 
         </div>
     </div>
+    <div class="row mt-3">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <H4 style="color: black !important;">Cards List</H4>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 text-end">
+            <?php if( $checkout_meta["status"][0] == "Cards Graded" ) { 
+
+                if( $posts )
+                {
+                    $pay_grading = 0;
+                    $consign_card = 0;
+
+                    foreach($posts as $post)
+                    {
+                        $meta = get_post_meta($post->ID);
+                        if( $meta["status"][0] == "Consign Card" ){
+                            $consign_card++;
+                        }
+                        elseif( $meta["status"][0] == "Pay Grading" ){
+                            $pay_grading++;
+                        }
+                    }
+
+                    if( $pay_grading + $consign_card == count($posts) ){
+                        $show_btn = "";
+                    } else {
+                        $show_btn = "d-none";
+                    }
+                }
+            ?>
+            <button class='5star_btn btn btn-primary mb-3 <?php echo $show_btn; ?>' data-action="complete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
+                Complete Grading Process
+            </button>      
+            <?php } 
+            ?>
+        </div>
+    </div>
     <div class="table-responsive mt-3">    
-        <H4 style="color: black !important;">Cards List</H4>
         <table class='table 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
