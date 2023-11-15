@@ -186,8 +186,8 @@ $processed_status = array("Cards Graded");
                     <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
                     <td>                        
                         <?php 
-                            if( in_array( $checkout_meta["status"][0], array( "Cards Graded", "Consign Card", "Pay Grading" ) )  ) { 
-                                if( $meta["status"][0] == "Graded" ) {
+                            if( $checkout_meta["status"][0] == "Cards Graded" ) { 
+                                if( in_array( $meta["status"][0], array("Graded", "Consign Card", "Pay Grading") ) ) {
                         ?>
                             <div class="row">
                                 <div class="col-sm-12">
