@@ -156,6 +156,9 @@ $processed_status = array("Processing Order", "Cards Graded");
                     if( $meta["status"][0] == "Graded" ){
                         $graded++;
                     }
+                    elseif( $meta["status"][0] == "Not Available" ){
+                        $graded++;
+                    }
                 }
 
                 if( count($posts) > $graded ){
