@@ -131,12 +131,12 @@ $processed_status = array("Cards Graded");
                     <td>                        
                         <?php if( $checkout_meta["status"][0] == "Cards Graded" ) { ?>
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-md-6">
                                     <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="consign_card" data-post_id="<?php echo $post->ID; ?>">
                                         Consign
                                     </button>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-md-6">
                                     <button class='5star_btn btn-sm btn btn-primary w-100 mb-3' data-action="pay_card_grading" data-post_id="<?php echo $post->ID; ?>">
                                         Pay
                                     </button>
