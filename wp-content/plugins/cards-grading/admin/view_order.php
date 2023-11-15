@@ -404,7 +404,7 @@ $processed_status = array("Cards Graded");
                 </div>
                 <div class="modal-footer">
                     <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                    <button class="btn border btn-success 5star_btn" data-action='confirm_shipping' data-type=''>Set Shipping Details</button>
+                    <button class="btn border btn-success 5star_btn" data-action='confirm_payment_info' data-type=''>Submit Payment Details</button>
                 </div>
             </div>
 		</div>
