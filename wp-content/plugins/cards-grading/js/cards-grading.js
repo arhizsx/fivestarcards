@@ -618,11 +618,13 @@ $(document).on("click", ".5star_btn", function(e){
         case "pay_card_grading":
 
             cardAction("pay_card_grading", "Pay Grading", $(this).data("post_id"), $(this).closest("tr"));
+            location.reload();
             break;
 
         case "consign_card":
 
             cardAction("consign_card", "Consign Card", $(this).data("post_id"), $(this).closest("tr"));
+            location.reload();
             break;
 
         default:

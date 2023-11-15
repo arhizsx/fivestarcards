@@ -260,7 +260,7 @@
             'cards-grading',
             plugin_dir_url(__FILE__) . 'js/cards-grading.js',
             array('jquery'),
-            37,
+            38,
             true
         );
 
