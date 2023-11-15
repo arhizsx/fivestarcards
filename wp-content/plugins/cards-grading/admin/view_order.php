@@ -136,8 +136,6 @@ $processed_status = array("Cards Graded");
             <?php 
                 }
             ?>
-
-Incomplete Items Shipped
         </div>
     </div>
     <div class="table-responsive mt-3">    
