@@ -329,7 +329,7 @@ function cardAction(action, value, post_id, parent_element ){
             {
                 if(resp == true){
                     $(document).find(".view_card").modal("hide");
-                    location.reload();
+                    // location.reload();
                 }
             }
             else if(action == "pay_card_grading")
