@@ -49,7 +49,6 @@ $processed_status = array("Processing Order", "Cards Graded");
                 <div class="col-xl-12 mb-3">
                     <div class='order-label'><?php echo $params['title'] ?></div>
                     <div class='order-data'><?php echo $params['order_number'] ?></div>
-                    <div class='order-data'><?php echo $checkout_meta["status"][0] ?></div>
                 </div>
                 <div class="col-xl-12 mb-3">
                     <div class='order-label'>User</div>
@@ -104,96 +103,12 @@ $processed_status = array("Processing Order", "Cards Graded");
             <?php 
             if( $checkout_meta["status"][0] == "Order Partial Payment" ) { 
             ?>
-                <button class='5star_btn btn btn-primary mb-3' data-action="package_received"  data-order_number="<?php echo $params['order_number'] ?>">
-                    Package Received
+                <button class='5star_btn btn btn-primary mb-3' data-action="set_selling_price"  data-order_number="<?php echo $params['order_number'] ?>">
+                    Set Selling Price
                 </button>      
             <?php 
             } 
             ?>
-            <?php 
-            if( $checkout_meta["status"][0] == "Package Received" ) { 
-
-                if( $posts )
-                {
-                    $received = 0;
-                    $missing = 0;
-
-                    foreach($posts as $post)
-                    {
-                        $meta = get_post_meta($post->ID);
-                        if( $meta["status"][0] == "Received" ){
-                            $received++;
-                        }
-                        elseif( $meta["status"][0] == "Not Available" ){
-                            $missing++;
-                        }
-                    }
-
-                    if( $received == count($posts) ){
-                        $complete_btn = "";
-                    } else {
-                        $complete_btn = "d-none";
-                    }
-
-                    if( $missing > 0){
-                        $missing_btn = "";
-                    } else {
-                        $missing_btn = "d-none";
-                    }
-                }
-            ?>
-                <button class='5star_btn btn btn-danger mb-3 <?php echo $missing_btn; ?>' data-action="incomplete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
-                    Missing Items
-                </button>      
-                <button class='5star_btn btn btn-primary mb-3 <?php echo $complete_btn; ?>' data-action="complete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
-                    Items Complete
-                </button>      
-            <?php 
-            } 
-            ?>
-
-            <?php 
-            if( $checkout_meta["status"][0] == "Processing Order" ) 
-            { 
-                $graded = 0;
-
-                foreach($posts as $post)
-                {
-                    $meta = get_post_meta($post->ID);
-                    if( $meta["status"][0] == "Graded" ){
-                        $graded++;
-                    }
-                    elseif( $meta["status"][0] == "Not Available" ){
-                        $graded++;
-                    }
-                }
-
-                if( count($posts) > $graded ){
-                    $show_grade_btn = "d-none";
-                } else {
-                    $show_grade_btn = "";
-                }
-
-            
-            ?>
-                <button class='5star_btn btn btn-primary mb-3 <?php echo $show_grade_btn; ?>' data-action="show_grades" data-order_number="<?php echo $params['order_number'] ?>">
-                    Show Grades
-                </button>      
-            <?php 
-            } 
-            ?> 
-
-            <?php 
-            if( $checkout_meta["status"][0] == "Grading Complete" ) 
-            { 
-            ?>
-                <button class='5star_btn btn btn-success mb-3' data-action="acknowledge_order_request" data-order_number="<?php echo $params['order_number'] ?>">
-                    Acknowledge Order Request
-                </button>      
-            <?php 
-            } 
-            ?> 
-
         </div>
     </div>
     <div class="table-responsive">   
