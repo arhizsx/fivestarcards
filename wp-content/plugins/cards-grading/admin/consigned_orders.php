@@ -71,7 +71,6 @@ $posts = get_posts($args);
                                 }
                             }
                             
-                            if( $total_grading_charge > 0 ) {
                                                         
                 ?>
                             <tr class="admin-order-row" data-post_id="<?php echo $post->ID; ?>">
@@ -84,7 +83,6 @@ $posts = get_posts($args);
                                 <td class='text-end'><?php echo "$" . number_format((float) $total_grading_charge, 2, '.', ''); ?></td>
                             </tr>
                 <?php          
-                            }
                         }
                     } else {
                 ?>
