@@ -61,6 +61,7 @@ $posts = get_posts($args);
                             
                             $cards_list = get_posts($args);
                             $total_grading_charge = 0;
+                            $consigned_cards = 0;
 
                             foreach($cards_list as $card_in_order){
                                 $card_meta = get_post_meta($card_in_order->ID);
@@ -68,6 +69,9 @@ $posts = get_posts($args);
 
                                 if( $card_meta["status"][0] == "To Pay - Grade Only"){
                                     $total_grading_charge  = $total_grading_charge  + $card["per_card"];
+                                }
+                                if( $card_meta["status"][0] == "Consigned"){
+                                    $consigned_cards  = $consigned_cards  + 1;
                                 }
                             }
                             
@@ -80,7 +84,7 @@ $posts = get_posts($args);
                                 <td><?php echo $meta["service_type"][0]; ?><br><span style='font-size:.7em !important;'><?php echo $meta["grading_type"][0]; ?></span></td>
                                 <td><?php echo $meta["status"][0]; ?></td>
                                 <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
-                                <td class='text-end'><?php echo "$" . number_format((float) $total_grading_charge, 2, '.', ''); ?></td>
+                                <td class='text-end'><?php echo $consigned_cards; ?></td>
                             </tr>
                 <?php          
                         }
