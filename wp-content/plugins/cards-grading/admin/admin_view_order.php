@@ -175,23 +175,23 @@ $processed_status = array("Processing Order", "Cards Graded");
                     </td>
                     <td>
                         <div class="row">
-                            <div class="col">Grade</div>
+                            <div class="col-4">Grade</div>
                             <div class="col"><?php echo $meta["grade"][0]; ?></div>
                         </div>
                         <div class="row">
-                            <div class="col">Player</div>
+                            <div class="col-4">Player</div>
                             <div class="col"><?php echo $card["player"]; ?></div>
                         </div>
                         <div class="row">
-                            <div class="col">Year</div>
+                            <div class="col-4">Year</div>
                             <div class="col"><?php echo $card["player"]; ?></div>
                         </div>
                         <div class="row">
-                            <div class="col">Brand</div>
+                            <div class="col-4">Brand</div>
                             <div class="col"><?php echo $card["player"]; ?></div>
                         </div>
                         <div class="row">
-                            <div class="col">Card #</div>
+                            <div class="col-4">Card #</div>
                             <div class="col">
                                 <?php echo $card["card_number"]; ?>
                                 <br><small><?php echo $card["attribute"]; ?></small>
