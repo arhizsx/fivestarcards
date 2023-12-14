@@ -144,14 +144,14 @@ $processed_status = array("Processing Order", "Cards Graded");
                     <td >
                         <?php if( $meta["status"][0] == "Consigned" ) { ?>
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <button class='5star_btn btn-sm btn btn-danger w-100 mb-3' data-action="item_not_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
-                                        No
+                                        Not Sold
                                     </button>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="item_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
-                                        Yes
+                                        Card Sold
                                     </button>
                                 </div>
                             </div>
