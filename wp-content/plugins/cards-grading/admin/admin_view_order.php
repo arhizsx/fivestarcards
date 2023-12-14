@@ -103,8 +103,8 @@ $processed_status = array("Processing Order", "Cards Graded");
             <?php 
             if( $checkout_meta["status"][0] == "Order Partial Payment" ) { 
             ?>
-                <button class='5star_btn btn btn-primary mb-3' data-action="set_selling_price"  data-order_number="<?php echo $params['order_number'] ?>">
-                    Set Selling Price
+                <button class='5star_btn btn btn-danger mb-3' data-action="set_selling_price"  data-order_number="<?php echo $params['order_number'] ?>">
+                    Close Order
                 </button>      
             <?php 
             } 
@@ -115,16 +115,7 @@ $processed_status = array("Processing Order", "Cards Graded");
         <table class='table table-sm 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
-                    <?php if( in_array( $checkout_meta["status"][0], $admin_action_status ) ){ ?>
-                        <?php 
-                            if( $checkout_meta["status"][0] == "Package Received" ) { 
-                                $action_label = "Inside Package";
-                            } else {
-                                $action_label = "Action";
-                            }
-                        ?>
-                    <th><?php  echo $action_label; ?></th>
-                    <?php } ?>
+                    <th>Action</th>
                     <th>ID</th>
                     <th>Year</th>
                     <th>Brand</th>
