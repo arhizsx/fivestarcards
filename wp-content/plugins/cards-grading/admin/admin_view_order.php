@@ -35,7 +35,7 @@ foreach($posts as $post)
     $cards_count = $cards_count + $card["quantity"];
 }
 
-$admin_status = array( "Shipped", "Package Received", "Incomplete Items Shipped" );
+$admin_status = array( "Order Partial Payment", "Order Consigned" );
 $admin_action_status = array( "Order Partial Payment", "Order Consigned" );
 
 $processed_status = array("Processing Order", "Cards Graded");
