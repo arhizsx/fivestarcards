@@ -173,7 +173,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                     <td>
                         <?php echo $post->ID; ?>
                     </td>
-                    <td>
+                    <td style="font-size: 10px !important;">
                         <div class="row">
                             <div class="col-4">Grade</div>
                             <div class="col"><?php echo $meta["grade"][0]; ?></div>
