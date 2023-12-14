@@ -145,24 +145,14 @@ $processed_status = array("Processing Order", "Cards Graded");
                         <?php if( $meta["status"][0] == "Consigned" ) { ?>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <button class='5star_btn btn-sm btn btn-danger w-100 mb-3' data-action="item_not_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
+                                    <button class='5star_btn btn-sm btn btn-danger w-100 mb-3' data-action="card_not_sold" data-post_id="<?php echo $post->ID; ?>">
                                         Not Sold
                                     </button>
                                 </div>
                                 <div class="col-lg-12">
-                                    <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="item_avlb_in_package" data-post_id="<?php echo $post->ID; ?>">
+                                    <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="card_sold" data-post_id="<?php echo $post->ID; ?>">
                                         Card Sold
                                     </button>
-                                </div>
-                            </div>
-                        <?php }  elseif ( $checkout_meta["status"][0] == "Processing Order" ) { ?>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <?php if( $meta["status"][0] == "Received" ) { ?>
-                                    <button class='5star_btn btn-sm btn btn-success w-100' data-action="set_grade" data-post_id="<?php echo $post->ID; ?>">
-                                        Set Grade
-                                    </button>
-                                    <?php }  ?>
                                 </div>
                             </div>
                         <?php } else {?>
