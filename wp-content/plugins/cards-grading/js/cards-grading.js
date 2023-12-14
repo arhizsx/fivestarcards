@@ -327,8 +327,10 @@ function cardAction(action, value, post_id, parent_element ){
             }
             else if(action == "set_grade")
             {
-                $(document).find(".view_card").modal("hide");
-                location.reload();
+                if(resp == true){
+                    $(document).find(".view_card").modal("hide");
+                    location.reload();
+                }
             }
             else if(action == "pay_card_grading")
             {
