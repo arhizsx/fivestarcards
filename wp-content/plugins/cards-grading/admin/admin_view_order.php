@@ -174,12 +174,29 @@ $processed_status = array("Processing Order", "Cards Graded");
                         <?php echo $post->ID; ?>
                     </td>
                     <td>
-                        <?php echo $post->ID; ?><br>
-                        <?php echo $meta["grade"][0]; ?><br>
-                        <?php echo $card["player"]; ?><br>
-                        <?php echo $card["year"]; ?><br>
-                        <?php echo $card["brand"]; ?><br>
-                        <?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small><br>
+                        <div class="row">
+                            <div class="col">Grade</div>
+                            <div class="col"><?php echo $meta["grade"][0]; ?></div>
+                        </div>
+                        <div class="row">
+                            <div class="col">Player</div>
+                            <div class="col"><?php echo $card["player"]; ?></div>
+                        </div>
+                        <div class="row">
+                            <div class="col">Year</div>
+                            <div class="col"><?php echo $card["player"]; ?></div>
+                        </div>
+                        <div class="row">
+                            <div class="col">Brand</div>
+                            <div class="col"><?php echo $card["player"]; ?></div>
+                        </div>
+                        <div class="row">
+                            <div class="col">Card #</div>
+                            <div class="col">
+                                <?php echo $card["card_number"]; ?>
+                                <br><small><?php echo $card["attribute"]; ?></small>
+                            </div>
+                        </div>                        
                     </td>
                     <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
