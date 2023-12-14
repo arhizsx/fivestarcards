@@ -386,7 +386,7 @@ function confirmCardGrade(){
     var grade =  $(document).find("#set_grade_form input[name='grade']").val();
 
     cardAction("set_grade", grade, post_id, "");
-    location.reload();
+    // location.reload();
 
 }
 
@@ -626,8 +626,6 @@ $(document).on("click", ".5star_btn", function(e){
             break;
 
         case "confirm_card_grade":
-
-            alert("SET GRADE");
 
             confirmCardGrade();
             break;    
