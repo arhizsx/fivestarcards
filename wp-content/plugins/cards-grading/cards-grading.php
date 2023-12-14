@@ -42,6 +42,7 @@
         add_shortcode('cards-grading-checkout', array( $this, 'cards_grading_checkout_shortcode' ));
         add_shortcode('cards-grading-my_orders', array( $this, 'cards_grading_my_orders_shortcode' ));
         add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
+        add_shortcode('cards-grading-awaiting_payment', array( $this, 'cards_grading_awaiting_payment_orders_shortcode' ));
         add_shortcode('cards-grading-open_orders', array( $this, 'cards_grading_open_orders_shortcode' ));
         add_shortcode('cards-grading-admin_view_order', array( $this, 'cards_grading_admin_view_order_shortcode' ));
         add_shortcode('cards-grading-dashbox', array( $this, 'cards_grading_dashbox_shortcode' ));
@@ -260,7 +261,7 @@
             'cards-grading',
             plugin_dir_url(__FILE__) . 'js/cards-grading.js',
             array('jquery'),
-            35,
+            45,
             true
         );
 
@@ -377,7 +378,26 @@
         return $output ;
     }
 
+    public function cards_grading_awaiting_payment_orders_shortcode($atts) 
+    {
+        $order_number = $_GET['id'];
+
+        $default = array(
+            'title' => 'Order Number',
+            'order_number' => $order_number
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
+
+        include( plugin_dir_path( __FILE__ ) . 'admin/awaiting_payment.php' );
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
     
+
     public function cards_grading_dashbox_shortcode($atts) 
     {
 
@@ -558,6 +578,11 @@
             return $this->doPackageCompleteItems($params);
 
         }
+        elseif($params["action"] == "acknowledge_missing_cards"){
+
+            return $this->doPackageCompleteItems($params);
+
+        }
         elseif($params["action"] == "incomplete_package_contents"){
 
             return $this->doPackageIncompleteItems($params);
@@ -587,7 +612,24 @@
 
         }
 
+        elseif($params["action"] == "complete_grading_process"){
+
+            return $this->doCompleteGradingProcess($params);
+
+        }
+
+        elseif($params["action"] == "acknowledge_order_request"){
+
+            return $this->doAcknowledgeOrderRequest($params);
+
+        }
+
+        
+
         return $params;
+
+
+
 
     }    
 
@@ -800,7 +842,6 @@
         update_post_meta($params["order_number"], 'status', 'Processing Order');   
         return true;
 
-
     }
 
     public function doPackageIncompleteItems($params){
@@ -838,6 +879,63 @@
 
     }
 
+    public function doCompleteGradingProcess($params){
+
+        update_post_meta($params["order_number"], 'status', 'Grading Complete');   
+        return true;
+
+    }
+
+    public function doAcknowledgeOrderRequest($params){
+
+        $order_number = $params["order_number"];
+
+        $args = array(
+            'meta_query' => array(
+                array(
+                    'key' => 'checkout_id',
+                    'value' => $params['order_number']
+                )
+            ),
+            'post_type' => 'cards-grading-card',
+            'posts_per_page' => -1
+        );
+        
+        $posts = get_posts($args);
+
+        $pay_grading = 0;
+        $consign_card = 0;
+
+        foreach($posts as $post)
+        {
+
+            switch( get_post_meta( $post->ID , 'status' , true ) ){
+
+                case "Pay Grading":
+
+                    $pay_grading++;
+                    update_post_meta($post->ID, 'status', 'To Pay');   
+    
+                    break;
+                
+                case "Consign Card":
+
+                    $consign_card++;
+                    update_post_meta($post->ID, 'status', 'Consigned');   
+                    break;
+
+                default:
+
+            }
+
+        }
+
+        update_post_meta($params["order_number"], 'status', 'Order To Pay');   
+
+        return true;
+
+
+    }
 
  }
 

@@ -156,6 +156,9 @@ $processed_status = array("Processing Order", "Cards Graded");
                     if( $meta["status"][0] == "Graded" ){
                         $graded++;
                     }
+                    elseif( $meta["status"][0] == "Not Available" ){
+                        $graded++;
+                    }
                 }
 
                 if( count($posts) > $graded ){
@@ -172,6 +175,18 @@ $processed_status = array("Processing Order", "Cards Graded");
             <?php 
             } 
             ?> 
+
+            <?php 
+            if( $checkout_meta["status"][0] == "Grading Complete" ) 
+            { 
+            ?>
+            <button class='5star_btn btn btn-success mb-3' data-action="acknowledge_order_request" data-order_number="<?php echo $params['order_number'] ?>">
+                Acknowledge Order Request
+            </button>      
+            <?php 
+            } 
+            ?> 
+
         </div>
     </div>
     <div class="table-responsive">   
@@ -235,9 +250,11 @@ $processed_status = array("Processing Order", "Cards Graded");
                         <?php }  elseif ( $checkout_meta["status"][0] == "Processing Order" ) { ?>
                             <div class="row">
                                 <div class="col-lg-12">
+                                    <?php if( $meta["status"][0] == "Received" ) { ?>
                                     <button class='5star_btn btn-sm btn btn-success w-100' data-action="set_grade" data-post_id="<?php echo $post->ID; ?>">
                                         Set Grade
                                     </button>
+                                    <?php }  ?>
                                 </div>
                             </div>
                         <?php } else {?>

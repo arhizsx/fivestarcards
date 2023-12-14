@@ -36,10 +36,14 @@ foreach($posts as $post)
     $meta = get_post_meta($post->ID);
     $card = json_decode($meta['card'][0], true);
 
+    if( $meta["status"][0] != 'Not Available' ){
+
     $card_total_dv = $card["dv"] * $card["quantity"];
 
     $total_dv = $total_dv + $card_total_dv;
     $cards_count = $cards_count + $card["quantity"];
+
+    }
 }
 
 $processed_status = array("Cards Graded");
@@ -91,8 +95,66 @@ $processed_status = array("Cards Graded");
 
         </div>
     </div>
+    <div class="row mt-3">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <H4 style="color: black !important;">Cards List</H4>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 text-end">
+            <?php 
+                if( $checkout_meta["status"][0] == "Cards Graded" ) { 
+
+                    if( $posts )
+                    {
+                        $pay_grading = 0;
+                        $consign_card = 0;
+                        $not_available = 0;
+
+                        foreach($posts as $post)
+                        {
+                            $meta = get_post_meta($post->ID);
+                            if( $meta["status"][0] == "Consign Card" ){
+                                $consign_card++;
+                            }
+                            elseif( $meta["status"][0] == "Pay Grading" ){
+                                $pay_grading++;
+                            }
+                            elseif( $meta["status"][0] == "Not Available" ){
+                                $not_available++;
+                            }
+                        }
+
+                        if( $pay_grading + $consign_card + $not_available == count($posts) ){
+                            $show_btn = "";
+                        } else {
+                            $show_btn = "d-none";
+                        }
+                    }
+            ?>
+                <button class='5star_btn btn btn-primary mb-3 <?php echo $show_btn; ?>' data-action="complete_grading_process" data-order_number="<?php echo $params['order_number'] ?>">
+                    Complete Grading Process
+                </button>      
+            <?php 
+                } 
+
+                elseif( $checkout_meta["status"][0] == "Incomplete Items Shipped" ) { 
+            ?>
+                <button class='5star_btn btn btn-primary mb-3' data-action="acknowledge_missing_cards" data-order_number="<?php echo $params['order_number'] ?>">
+                    Acknowledge Missing Cards
+                </button>      
+            <?php 
+                }
+
+                elseif( $checkout_meta["status"][0] == "Order To Pay" ) { 
+            ?>
+                <button class='5star_btn btn btn-primary mb-3' data-action="order_paid" data-order_number="<?php echo $params['order_number'] ?>">
+                    Order Paid
+                </button>      
+            <?php 
+                }
+            ?>
+        </div>
+    </div>
     <div class="table-responsive mt-3">    
-        <H4 style="color: black !important;">Cards List</H4>
         <table class='table 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
@@ -120,29 +182,41 @@ $processed_status = array("Cards Graded");
                             $meta = get_post_meta($post->ID);
                             $card = json_decode($meta['card'][0], true);
 
-                            $card_total_dv = $card["dv"] * $card["quantity"];
-                            $card_grading_charge = $card["per_card"] * $card["quantity"];
 
-                            $grading_charge = $grading_charge + $card_grading_charge;
+                            if( $meta["status"][0] != 'Not Available' ){
+
+                                $card_total_dv = $card["dv"] * $card["quantity"];
+                                $card_grading_charge = $card["per_card"] * $card["quantity"];
+
+                                $grading_charge = $grading_charge + $card_grading_charge;
+    
+                            }
+
 
                 ?>
                 <tr class="user-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
                     <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
                     <td>                        
-                        <?php if( $checkout_meta["status"][0] == "Cards Graded" ) { ?>
+                        <?php 
+                            if( $checkout_meta["status"][0] == "Cards Graded" ) { 
+                                if( in_array( $meta["status"][0], array("Graded", "Consign Card", "Pay Grading") ) ) {
+                        ?>
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-sm-12">
                                     <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="consign_card" data-post_id="<?php echo $post->ID; ?>">
                                         Consign
                                     </button>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-sm-12">
                                     <button class='5star_btn btn-sm btn btn-primary w-100 mb-3' data-action="pay_card_grading" data-post_id="<?php echo $post->ID; ?>">
                                         Pay
                                     </button>
                                 </div>
                             </div>
-                        <?php } ?>
+                        <?php
+                                } 
+                            } 
+                        ?>
                     </td>
                     <?php } ?>
                     <td><?php echo $card["year"]; ?></td>
@@ -276,6 +350,61 @@ $processed_status = array("Cards Graded");
                 <div class="modal-footer">
                     <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
                     <button class="btn border btn-success 5star_btn" data-action='confirm_shipping' data-type=''>Set Shipping Details</button>
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade paidmodal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+	<div class="modal-dialog" id="dxmodal">
+		<div class="modal-content modal-ajax">
+			<div class="modal-header bg-dark text-white">
+				<h5 class="modal-title">
+					Payment Information
+				</h5>
+    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+					X
+				</button>
+			</div>
+            <div class="" id="set_shipping_info_box">
+                <div class="modal-body py-2 px-3">
+                    <forn id="shipping_info_form">
+
+                        <input type="hidden" name="user_id" value='<?php echo $checkout_meta["user_id"][0]; ?>'/>
+                        <input type="hidden" name="order_number" value='<?php echo $params['order_number']; ?>'/>
+                        <div class="row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
+                                <label for="mode_of_payment">Mode of Payment</label>
+                                <select name="mode_of_payment" class="form-control" data-field_check="required">
+                                    <option value="">Select Mode of Payment</option>
+                                    <option value="Paypal">Paypal</option>
+                                    <option value="Bank Transfer">Bank Transfer</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
+                                <label for="paid_by">Paid By</label>
+                                <input type="text" name="paid_by" class="form-control" data-field_check="required">
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
+                                <label for="payment_date">Payment Date</label>
+                                <input type="date" name="payment_date" class="form-control" data-field_check="required">
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
+                                <label for="amount_paid">Amount</label>
+                                <input type="number" name="paamount_paidid_by" class="form-control" data-field_check="required">
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
+                                <label for="reference_number">Reference Number</label>
+                                <input type="text" name="reference_number" class="form-control" data-field_check="required">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+                    <button class="btn border btn-success 5star_btn" data-action='confirm_payment_info' data-type=''>Submit Payment Details</button>
                 </div>
             </div>
 		</div>

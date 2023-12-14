@@ -245,6 +245,12 @@ function showShippedModal(w){
 
 }
 
+function showPaidModal(w){
+
+    $(document).find(".paidmodal").appendTo('body').modal("show");
+
+}
+
 
 function orderAction(action, data, order_number){
 
@@ -267,7 +273,7 @@ function orderAction(action, data, order_number){
                 location.reload();
 
             } else {
-                console.log("Set Shipping Failed");
+                console.log("Order Action Failed");
             }
 
         }
@@ -327,13 +333,17 @@ function cardAction(action, value, post_id, parent_element ){
             else if(action == "pay_card_grading")
             {
                 if(resp == true){
-                    $(parent_element).find("td:eq(5)").text(value);                    
+                    // $(parent_element).find("td:eq(5)").text(value);                    
+                    location.reload();
                 }
+
+
             }            
             else if(action == "consign_card")
             {
                 if(resp == true){
-                    $(parent_element).find("td:eq(5)").text(value);                    
+                    // $(parent_element).find("td:eq(5)").text(value);                    
+                    location.reload();
                 }
             }            
         }
@@ -371,6 +381,7 @@ function confirmCardGrade(){
     var grade =  $(document).find("#set_grade_form input[name='grade']").val();
 
     cardAction("set_grade", grade, post_id, "");
+    location.reload();
 
 }
 
@@ -576,6 +587,15 @@ $(document).on("click", ".5star_btn", function(e){
             }
             
             break;
+
+        case "acknowledge_missing_cards":
+
+            var order_number = $(this).data("order_number");
+            if ( orderAction("complete_package_contents", null, order_number) ){
+                location.reload();
+            }
+            
+            break;
             
         case "incomplete_package_contents":
 
@@ -614,7 +634,29 @@ $(document).on("click", ".5star_btn", function(e){
             cardAction("consign_card", "Consign Card", $(this).data("post_id"), $(this).closest("tr"));
             break;
 
+        case "complete_grading_process":
 
+            var order_number = $(this).data("order_number");
+            if (orderAction("complete_grading_process", null, order_number) ){
+                location.reload();
+            }
+        
+            break;
+        
+        case "acknowledge_order_request":
+
+            var order_number = $(this).data("order_number");
+            if (orderAction("acknowledge_order_request", null, order_number) ){
+                location.reload();
+            }
+        
+            break;
+
+        case "order_paid":
+
+            showPaidModal();
+        
+            break;
 
         default:
             console.log("Button not configured: " + $(this).data("action"));
