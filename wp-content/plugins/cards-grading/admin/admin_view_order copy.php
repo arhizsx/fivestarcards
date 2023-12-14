@@ -36,7 +36,7 @@ foreach($posts as $post)
 }
 
 $admin_status = array( "Shipped", "Package Received", "Incomplete Items Shipped" );
-$admin_action_status = array( "Package Received", "Processing Order" );
+$admin_action_status = array( "Order Partial Payment", "Order Consigned" );
 
 $processed_status = array("Processing Order", "Cards Graded");
 
@@ -91,14 +91,6 @@ $processed_status = array("Processing Order", "Cards Graded");
                     <div class='order-label'>Shipping Date</div>
                     <div class='order-data'><?php echo $checkout_meta["shipping_date"][0] ?></div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                    <div class='order-label'>Consigned Cards</div>
-                    <div class='order-data'><?php echo $cards_count; ?></div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                    <div class='order-label'>Grading Balance</div>
-                    <div class='order-data'>$<?php echo number_format((float)$total_dv, 2, '.', ''); ?></div>
-                </div>
             </div>
 
         </div>
@@ -108,120 +100,28 @@ $processed_status = array("Processing Order", "Cards Graded");
             <H3 style="color: black !important;">Cards List</H3>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 text-end">
-            <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
-            <button class='5star_btn btn btn-primary mb-3' data-action="package_received"  data-order_number="<?php echo $params['order_number'] ?>">
-                Package Received
-            </button>      
-            <?php } ?>
             <?php 
-            if( $checkout_meta["status"][0] == "Package Received" ) { 
-
-                if( $posts )
-                {
-                    $received = 0;
-                    $missing = 0;
-
-                    foreach($posts as $post)
-                    {
-                        $meta = get_post_meta($post->ID);
-                        if( $meta["status"][0] == "Received" ){
-                            $received++;
-                        }
-                        elseif( $meta["status"][0] == "Not Available" ){
-                            $missing++;
-                        }
-                    }
-
-                    if( $received == count($posts) ){
-                        $complete_btn = "";
-                    } else {
-                        $complete_btn = "d-none";
-                    }
-
-                    if( $missing > 0){
-                        $missing_btn = "";
-                    } else {
-                        $missing_btn = "d-none";
-                    }
-                }
+            if( $checkout_meta["status"][0] == "Order Partial Payment" ) { 
             ?>
-            <button class='5star_btn btn btn-danger mb-3 <?php echo $missing_btn; ?>' data-action="incomplete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
-                Missing Items
-            </button>      
-            <button class='5star_btn btn btn-primary mb-3 <?php echo $complete_btn; ?>' data-action="complete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
-                Items Complete
-            </button>      
-            <?php } ?>
-
-            <?php 
-            if( $checkout_meta["status"][0] == "Processing Order" ) 
-            { 
-                $graded = 0;
-
-                foreach($posts as $post)
-                {
-                    $meta = get_post_meta($post->ID);
-                    if( $meta["status"][0] == "Graded" ){
-                        $graded++;
-                    }
-                    elseif( $meta["status"][0] == "Not Available" ){
-                        $graded++;
-                    }
-                }
-
-                if( count($posts) > $graded ){
-                    $show_grade_btn = "d-none";
-                } else {
-                    $show_grade_btn = "";
-                }
-
-            
-            ?>
-            <button class='5star_btn btn btn-primary mb-3 <?php echo $show_grade_btn; ?>' data-action="show_grades" data-order_number="<?php echo $params['order_number'] ?>">
-                Show Grades
-            </button>      
+                <button class='5star_btn btn btn-danger mb-3' data-action="set_selling_price"  data-order_number="<?php echo $params['order_number'] ?>">
+                    Close Order
+                </button>      
             <?php 
             } 
-            ?> 
-
-            <?php 
-            if( $checkout_meta["status"][0] == "Grading Complete" ) 
-            { 
             ?>
-            <button class='5star_btn btn btn-success mb-3' data-action="acknowledge_order_request" data-order_number="<?php echo $params['order_number'] ?>">
-                Acknowledge Order Request
-            </button>      
-            <?php 
-            } 
-            ?> 
-
         </div>
     </div>
     <div class="table-responsive">   
         <table class='table table-sm 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
-                    <?php if( in_array( $checkout_meta["status"][0], $admin_action_status ) ){ ?>
-                        <?php 
-                            if( $checkout_meta["status"][0] == "Package Received" ) { 
-                                $action_label = "Inside Package";
-                            } else {
-                                $action_label = "Action";
-                            }
-                        ?>
-                    <th><?php  echo $action_label; ?></th>
-                    <?php } ?>
+                    <th>Action</th>
                     <th>ID</th>
-                    <th>Year</th>
-                    <th>Brand</th>
-                    <th>Card #</th>
-                    <th>Player Name</th>
+                    <th width="30%">Card</th>
                     <th>Status</th>
-                    <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
-                    <th class="text-end">Grade</th>
-                    <?php } ?>
-                    <th class='text-end'>DV</th>
-                    <th class="text-end">Grading</th>
+                    <th class="text-end">Sold Price</th>
+                    <th class="text-end">To Receive</th>
+                    <th class="text-end">Amount</th>
                 </tr>
             </thead>
             <tbody>
@@ -270,16 +170,50 @@ $processed_status = array("Processing Order", "Cards Graded");
                         <?php } ?>
                     </td>
                     <?php } ?>
-                    <td><?php echo $post->ID; ?></td>
-                    <td><?php echo $card["year"]; ?></td>
-                    <td><?php echo $card["brand"]; ?></td>
-                    <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
-                    <td><?php echo $card["player"]; ?></td>
+                    <td>
+                        <?php echo $post->ID; ?>
+                    </td>
+                    <td style="font-size: 12px !important;">
+                        <div class="row">
+                            <div class="col-4">Grade</div>
+                            <div class="col">
+                                <input type="text" class="form-control mb-2" value="<?php echo $meta["grade"][0]; ?>">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Player</div>
+                            <div class="col">
+                                <input type="text" class="form-control mb-2" value="<?php echo $card["player"]; ?>">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Year</div>
+                            <div class="col">
+                                <input type="text" class="form-control mb-2" value="<?php echo $card["year"]; ?>">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Brand</div>
+                            <div class="col">
+                                <input type="text" class="form-control mb-2" value="<?php echo $card["brand"]; ?>">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Card #</div>
+                            <div class="col">
+                                <input type="text" class="form-control mb-2" value="<?php echo $card["card_number"]; ?>">
+                            </div>
+                        </div>                        
+                        <div class="row">
+                            <div class="col-4">Attribute #</div>
+                            <div class="col">
+                                <input type="text" class="form-control mb-2" value="<?php echo $card["attribute"]; ?>">
+                            </div>
+                        </div>                        
+                    </td>
                     <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
-                    <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
-                    <td class="grade text-end"><?php echo $meta["grade"][0]; ?></td>
-                    <?php }?>
-                    <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
+                    <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
+                    <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                 </tr>
                 <?php          
