@@ -1,5 +1,6 @@
 <?php
 
+echo "TESTING";
 
 $checkout_post = get_post($params['order_number']);
 $checkout_meta = get_post_meta($checkout_post->ID);
