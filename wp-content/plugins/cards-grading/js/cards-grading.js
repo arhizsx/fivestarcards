@@ -620,13 +620,14 @@ $(document).on("click", ".5star_btn", function(e){
         
         case "set_grade":
 
-            alert("SET GRADE") ;   
 
             showSetGrade( $(this).closest("tr").data() );
 
             break;
 
         case "confirm_card_grade":
+
+            alert("SET GRADE");
 
             confirmCardGrade();
             break;    
