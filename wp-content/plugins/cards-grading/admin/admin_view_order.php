@@ -116,6 +116,7 @@ $processed_status = array("Processing Order", "Cards Graded");
             <thead>
                 <tr>
                     <th>Action</th>
+                    <th>ID</th>
                     <th width="40%">Card</th>
                     <th>Status</th>
                     <th class="text-end">Sold Price</th>
@@ -169,6 +170,9 @@ $processed_status = array("Processing Order", "Cards Graded");
                         <?php } ?>
                     </td>
                     <?php } ?>
+                    <td>
+                        <?php echo $post->ID; ?>
+                    </td>
                     <td>
                         <?php echo $post->ID; ?><br>
                         <?php echo $meta["grade"][0]; ?><br>
