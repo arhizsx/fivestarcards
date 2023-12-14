@@ -930,7 +930,17 @@
 
         }
 
-        update_post_meta($params["order_number"], 'status', 'Order To Pay');   
+        if( $pay_grading > 0 && $consign_card > 0){
+            $status = "Order Partial Payment";
+        } 
+        elseif( $pay_grading > 0 && $consign_card == 0){
+            $status = "Order To Pay";
+        }
+        elseif( $pay_grading == 0 && $consign_card > 0){
+            $status = "Order Consigned";
+        }
+
+        update_post_meta($params["order_number"], 'status', $status);   
 
         return true;
 
