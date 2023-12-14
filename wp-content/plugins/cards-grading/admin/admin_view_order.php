@@ -100,11 +100,15 @@ $processed_status = array("Processing Order", "Cards Graded");
             <H3 style="color: black !important;">Cards List</H3>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 text-end">
-            <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
-            <button class='5star_btn btn btn-primary mb-3' data-action="package_received"  data-order_number="<?php echo $params['order_number'] ?>">
-                Package Received
-            </button>      
-            <?php } ?>
+            <?php 
+            if( $checkout_meta["status"][0] == "Shipped" ) { 
+            ?>
+                <button class='5star_btn btn btn-primary mb-3' data-action="package_received"  data-order_number="<?php echo $params['order_number'] ?>">
+                    Package Received
+                </button>      
+            <?php 
+            } 
+            ?>
             <?php 
             if( $checkout_meta["status"][0] == "Package Received" ) { 
 
@@ -137,13 +141,15 @@ $processed_status = array("Processing Order", "Cards Graded");
                     }
                 }
             ?>
-            <button class='5star_btn btn btn-danger mb-3 <?php echo $missing_btn; ?>' data-action="incomplete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
-                Missing Items
-            </button>      
-            <button class='5star_btn btn btn-primary mb-3 <?php echo $complete_btn; ?>' data-action="complete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
-                Items Complete
-            </button>      
-            <?php } ?>
+                <button class='5star_btn btn btn-danger mb-3 <?php echo $missing_btn; ?>' data-action="incomplete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
+                    Missing Items
+                </button>      
+                <button class='5star_btn btn btn-primary mb-3 <?php echo $complete_btn; ?>' data-action="complete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
+                    Items Complete
+                </button>      
+            <?php 
+            } 
+            ?>
 
             <?php 
             if( $checkout_meta["status"][0] == "Processing Order" ) 
@@ -169,9 +175,9 @@ $processed_status = array("Processing Order", "Cards Graded");
 
             
             ?>
-            <button class='5star_btn btn btn-primary mb-3 <?php echo $show_grade_btn; ?>' data-action="show_grades" data-order_number="<?php echo $params['order_number'] ?>">
-                Show Grades
-            </button>      
+                <button class='5star_btn btn btn-primary mb-3 <?php echo $show_grade_btn; ?>' data-action="show_grades" data-order_number="<?php echo $params['order_number'] ?>">
+                    Show Grades
+                </button>      
             <?php 
             } 
             ?> 
@@ -180,9 +186,9 @@ $processed_status = array("Processing Order", "Cards Graded");
             if( $checkout_meta["status"][0] == "Grading Complete" ) 
             { 
             ?>
-            <button class='5star_btn btn btn-success mb-3' data-action="acknowledge_order_request" data-order_number="<?php echo $params['order_number'] ?>">
-                Acknowledge Order Request
-            </button>      
+                <button class='5star_btn btn btn-success mb-3' data-action="acknowledge_order_request" data-order_number="<?php echo $params['order_number'] ?>">
+                    Acknowledge Order Request
+                </button>      
             <?php 
             } 
             ?> 
