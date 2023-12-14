@@ -125,6 +125,8 @@ $processed_status = array("Processing Order", "Cards Graded");
                     <th class="text-end">Grade</th>
                     <th class='text-end'>DV</th>
                     <th class="text-end">Grading</th>
+                    <th class="text-end">Sold Price</th>
+                    <th class="text-end">To Receive</th>
                 </tr>
             </thead>
             <tbody>
@@ -181,6 +183,8 @@ $processed_status = array("Processing Order", "Cards Graded");
                     <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
                     <td class="grade text-end"><?php echo $meta["grade"][0]; ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
+                    <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
+                    <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                 </tr>
                 <?php          
