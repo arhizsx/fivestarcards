@@ -35,7 +35,7 @@ foreach($posts as $post)
     $cards_count = $cards_count + $card["quantity"];
 }
 
-$admin_status = array( "Order Partial Payment", "Order Consigned" );
+$admin_status = array( "Shipped", "Package Received", "Incomplete Items Shipped" );
 $admin_action_status = array( "Order Partial Payment", "Order Consigned" );
 
 $processed_status = array("Processing Order", "Cards Graded");
@@ -101,7 +101,7 @@ $processed_status = array("Processing Order", "Cards Graded");
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 text-end">
             <?php 
-            if( $checkout_meta["status"][0] == "Shipped" ) { 
+            if( $checkout_meta["status"][0] == "Order Partial Payment" ) { 
             ?>
                 <button class='5star_btn btn btn-primary mb-3' data-action="package_received"  data-order_number="<?php echo $params['order_number'] ?>">
                     Package Received
