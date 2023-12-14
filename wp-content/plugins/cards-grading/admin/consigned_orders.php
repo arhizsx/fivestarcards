@@ -30,7 +30,7 @@ $posts = get_posts($args);
                     <th>Service Type</th>
                     <th>Status</th>
                     <th class='text-end'>Total Cards</th>
-                    <th class='text-end'>To Pay</th>
+                    <th class='text-end'>Consigned Cards</th>
                 </tr>
             </thead>
             <tbody>
