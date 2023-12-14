@@ -33,7 +33,11 @@
         add_filter( 'manage_cards-grading-card_posts_columns', array($this, 'add_cards_grading_card_columns'));
         add_action( 'manage_cards-grading-card_posts_custom_column' , array($this, 'custom_cards_grading_card_column'), 10, 2 );
 
+        add_filter( 'manage_cards-grading-chk_posts_columns', array($this, 'add_cards_grading_checkout_columns'));
+        add_action( 'manage_cards-grading-chk_posts_custom_column' , array($this, 'custom_cards_grading_checkout_column'), 10, 2 );
+
         
+
         // Add Assets
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
 
@@ -247,6 +251,39 @@
             break;
         }
     }
+
+    function add_cards_grading_checkout_columns($columns) {
+        return array_merge(
+                $columns,
+                array(
+                    'user_id' => __('User'),
+                    'status' => __('Status'),
+                )
+                
+            );
+    }
+
+
+    function custom_cards_grading_checkout_column( $column, $post_id ) {
+        
+        $card_data =  get_post_meta( $post_id , 'chk' , true );
+        $card = json_decode($card_data, true);
+
+        switch ( $column ) {
+          case 'user_id':
+            $user_id = get_post_meta( $post_id , 'user_id' , true );
+            $user = get_user_by( "id", $user_id );
+
+            echo $user->display_name;
+
+            break;
+
+          case 'status':
+            echo get_post_meta( $post_id , 'status' , true );
+            break;
+        }
+    }
+
     
     public function load_assets() 
     {
