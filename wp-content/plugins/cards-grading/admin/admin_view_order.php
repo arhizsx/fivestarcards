@@ -116,17 +116,11 @@ $processed_status = array("Processing Order", "Cards Graded");
             <thead>
                 <tr>
                     <th>Action</th>
-                    <th>ID</th>
-                    <th>Year</th>
-                    <th>Brand</th>
-                    <th>Card #</th>
-                    <th>Player Name</th>
+                    <th>Card</th>
                     <th>Status</th>
-                    <th class="text-end">Grade</th>
-                    <th class='text-end'>DV</th>
-                    <th class="text-end">Grading</th>
                     <th class="text-end">Sold Price</th>
                     <th class="text-end">To Receive</th>
+                    <th class="text-end">Amount</th>
                 </tr>
             </thead>
             <tbody>
@@ -175,14 +169,15 @@ $processed_status = array("Processing Order", "Cards Graded");
                         <?php } ?>
                     </td>
                     <?php } ?>
-                    <td><?php echo $post->ID; ?></td>
-                    <td><?php echo $card["year"]; ?></td>
-                    <td><?php echo $card["brand"]; ?></td>
-                    <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
-                    <td><?php echo $card["player"]; ?></td>
+                    <td>
+                        <?php echo $post->ID; ?><br>
+                        <?php echo $meta["grade"][0]; ?><br>
+                        <?php echo $card["player"]; ?><br>
+                        <?php echo $card["year"]; ?><br>
+                        <?php echo $card["brand"]; ?><br>
+                        <?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small><br>
+                    </td>
                     <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
-                    <td class="grade text-end"><?php echo $meta["grade"][0]; ?></td>
-                    <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
