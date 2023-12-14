@@ -991,7 +991,7 @@
                 case "Pay Grading":
 
                     $pay_grading++;
-                    update_post_meta($post->ID, 'status', 'To Pay');   
+                    update_post_meta($post->ID, 'status', 'To Pay - Grade Only');   
     
                     break;
                 
