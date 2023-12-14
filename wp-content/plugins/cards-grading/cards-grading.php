@@ -430,7 +430,7 @@
         $params = shortcode_atts($default, $atts);
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . 'admin/admin_view_consigment.php' );
+        include( plugin_dir_path( __FILE__ ) . 'admin/admin_view_order.php' );
         
         $output = ob_get_clean(); 
         
