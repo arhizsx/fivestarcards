@@ -173,28 +173,41 @@ $processed_status = array("Processing Order", "Cards Graded");
                     <td>
                         <?php echo $post->ID; ?>
                     </td>
-                    <td style="font-size: 10px !important;">
+                    <td style="font-size: 12px !important;">
                         <div class="row">
                             <div class="col-4">Grade</div>
-                            <div class="col"><?php echo $meta["grade"][0]; ?></div>
+                            <div class="col">
+                                <input type="text" class="form-control" value="<?php echo $meta["grade"][0]; ?>">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-4">Player</div>
-                            <div class="col"><?php echo $card["player"]; ?></div>
+                            <div class="col">
+                                <input type="text" class="form-control" value="<?php echo $card["player"]; ?>">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-4">Year</div>
-                            <div class="col"><?php echo $card["player"]; ?></div>
+                            <div class="col">
+                                <input type="text" class="form-control" value="<?php echo $card["year"]; ?>">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-4">Brand</div>
-                            <div class="col"><?php echo $card["player"]; ?></div>
+                            <div class="col">
+                                <input type="text" class="form-control" value="<?php echo $card["brand"]; ?>">
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-4">Card #</div>
                             <div class="col">
-                                <?php echo $card["card_number"]; ?>
-                                <br><small><?php echo $card["attribute"]; ?></small>
+                                <input type="text" class="form-control" value="<?php echo $card["card_number"]; ?>">
+                            </div>
+                        </div>                        
+                        <div class="row">
+                            <div class="col-4">Attribute #</div>
+                            <div class="col">
+                                <input type="text" class="form-control" value="<?php echo $card["attribute"]; ?>">
                             </div>
                         </div>                        
                     </td>
