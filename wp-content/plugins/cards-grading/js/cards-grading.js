@@ -286,6 +286,9 @@ function cardAction(action, value, post_id, parent_element ){
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
     var url = $(document).find(".5star_logged_cards").data("endpoint");
 
+
+
+
     $.ajax({
         method: 'post',
         url: url,
@@ -329,7 +332,7 @@ function cardAction(action, value, post_id, parent_element ){
             {
                 if(resp == true){
                     $(document).find(".view_card").modal("hide");
-                    // location.reload();
+                    location.reload();
                 }
             }
             else if(action == "pay_card_grading")
@@ -616,6 +619,8 @@ $(document).on("click", ".5star_btn", function(e){
             break;
         
         case "set_grade":
+
+            alert("SET GRADE") ;   
 
             showSetGrade( $(this).closest("tr").data() );
 
