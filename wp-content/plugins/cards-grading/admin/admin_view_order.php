@@ -116,7 +116,7 @@ $processed_status = array("Processing Order", "Cards Graded");
             <thead>
                 <tr>
                     <th>Action</th>
-                    <th>Card</th>
+                    <th width="40%">Card</th>
                     <th>Status</th>
                     <th class="text-end">Sold Price</th>
                     <th class="text-end">To Receive</th>
