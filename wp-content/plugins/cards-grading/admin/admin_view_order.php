@@ -49,6 +49,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                 <div class="col-xl-12 mb-3">
                     <div class='order-label'><?php echo $params['title'] ?></div>
                     <div class='order-data'><?php echo $params['order_number'] ?></div>
+                    <div class='order-data'><?php echo $checkout_meta["status"][0] ?></div>
                 </div>
                 <div class="col-xl-12 mb-3">
                     <div class='order-label'>User</div>
