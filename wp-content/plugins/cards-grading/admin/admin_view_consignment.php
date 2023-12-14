@@ -140,7 +140,7 @@ $processed_status = array("Processing Order", "Cards Graded");
 
                 ?>
                 <tr class="admin-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
-                    <?php if( in_array( $checkout_meta["status"][0], $admin_action_status ) ){ ?>
+                    <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
                     <td >
                         <?php if( $checkout_meta["status"][0] == "Package Received" ) { ?>
                             <div class="row">
