@@ -467,7 +467,6 @@ $(document).on("click", ".5star_btn", function(e){
 
             break;
 
-
         case "confirm_max_dv":
             $(document).find("#maxed-out").addClass("d-none");
             $(document).find("#add_card_form_box").removeClass("d-none");
@@ -614,6 +613,8 @@ $(document).on("click", ".5star_btn", function(e){
 
             cardAction("consign_card", "Consign Card", $(this).data("post_id"), $(this).closest("tr"));
             break;
+
+
 
         default:
             console.log("Button not configured: " + $(this).data("action"));
