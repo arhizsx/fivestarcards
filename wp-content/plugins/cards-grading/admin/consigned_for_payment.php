@@ -71,9 +71,18 @@ $posts = get_posts($args);
                                 if( $card_meta["status"][0] == "To Pay - Grade Only"){
                                     $total_grading_charge  = $total_grading_charge  + $card["per_card"];
                                 }
+                                
                                 if( in_array($card_meta["status"][0], array("Consigned", "Sold - Consigned") )){
                                     $consigned_cards  = $consigned_cards  + 1;
                                 }
+
+                                if( in_array($card_meta["status"][0], array("Sold - Consigned") )){
+
+                                    $total_to_receive  = $total_to_receive  + $card["to_receive"];
+
+                                }
+
+
                             }
                             
                                                         
@@ -86,6 +95,7 @@ $posts = get_posts($args);
                                 <td><?php echo $meta["status"][0]; ?></td>
                                 <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
                                 <td class='text-end'><?php echo $consigned_cards; ?></td>
+                                <td class='text-end'><?php echo $$total_to_receive; ?></td>
                             </tr>
                 <?php          
                         }
