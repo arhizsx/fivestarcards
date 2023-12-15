@@ -96,7 +96,7 @@ $posts = get_posts($args);
                                 <td><?php echo $meta["status"][0]; ?></td>
                                 <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
                                 <td class='text-end'><?php echo $consigned_cards; ?></td>
-                                <td class='text-end'><?php echo $$total_to_receive; ?></td>
+                                <td class='text-end'><?php echo "100"; ?></td>
                             </tr>
                 <?php          
                         }
