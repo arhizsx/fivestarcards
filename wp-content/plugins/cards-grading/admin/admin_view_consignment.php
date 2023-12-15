@@ -296,7 +296,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                     </div>
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                        <button class="btn border btn-primary 5star_btn" data-action="confirm_card_grade">Save Grade</button>
+                        <button class="btn border btn-primary 5star_btn" data-action="confirm_sold_price">Save Selling Price</button>
                     </div>
                 </div>
 		</div>
