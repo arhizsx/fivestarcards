@@ -233,22 +233,22 @@ $admin_action_status = array( "Consigned", "Sold - Consigned" );
     <div class='5star_btn_box_bottom w-100'>
         <div class="row">
             <div class="col-lg-6 text-end pb-2 fw-bold cards_dv_total">
-                </div>
-                    <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
+            </div>
+            <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
                 <div class="row mb-2">
-                    <div class="col text-end">
-                            Grading Charge    
+                <div class="col text-end">
+                        Total To Receive
                     </div>
-                    <div class="col text-end"  id="grading_charges">
-                    $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
+                    <div class="col text-end"  id="to_receive_total">
+                    $<?php echo number_format((float)$to_receive_total, 2, '.', ''); ?>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col text-end">
-                            Total To Receive
+                       LESS Unpaid Grading Charge    
                     </div>
-                    <div class="col text-end"  id="to_receive_total">
-                    $<?php echo number_format((float)$to_receive_total, 2, '.', ''); ?>
+                    <div class="col text-end"  id="grading_charges">
+                        $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
                     </div>
                 </div>
             </div>
