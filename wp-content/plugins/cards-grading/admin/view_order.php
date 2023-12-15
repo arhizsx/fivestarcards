@@ -48,6 +48,9 @@ foreach($posts as $post)
 
 $processed_status = array("Cards Graded");
 
+
+$consignment_status = array("Order Partial Payment", "Order Consigned", "Ready For Payment");
+
 ?>
 
 <div class="m-0 p-0">
@@ -171,6 +174,10 @@ $processed_status = array("Cards Graded");
                     <?php } ?>
                     <th class='text-end'>DV</th>
                     <th class="text-end">Grading</th>
+                <?php if( in_array( $checkout_meta["status"][0], $consignment_status ) ){ ?>
+                    <th>Sold Price</th>
+                    <th>To Receive</th>
+                <?php } ?>
                 </tr>
             </thead>
             <tbody>
@@ -231,6 +238,11 @@ $processed_status = array("Cards Graded");
                     <?php } ?>
                     <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
+                    <?php if( in_array( $checkout_meta["status"][0], $consignment_status ) ){ ?>
+                    <td>0</td>
+                    <td>0</td>
+                    <?php } ?>
+
                 </tr>
                 <?php          
                         }
@@ -245,6 +257,7 @@ $processed_status = array("Cards Graded");
             </tbody>
         </table>
     </div>
+
     <div class='5star_btn_box_bottom w-100'>
         <div class="row">
             <div class="col-lg-6 text-end pb-2 fw-bold cards_dv_total">
