@@ -1165,6 +1165,38 @@
     public function doConfirmConsignmentPayment($params){
 
         update_post_meta($params["order_number"], 'status', 'Consignment Paid');   
+
+        $args = array(
+            'meta_query' => array(
+                array(
+                    'key' => 'checkout_id',
+                    'value' => $params['order_number']
+                )
+            ),
+            'post_type' => 'cards-grading-card',
+            'posts_per_page' => -1
+        );
+        
+        $posts = get_posts($args);
+
+
+        foreach($posts as $post)
+        {
+
+            switch( get_post_meta( $post->ID , 'status' , true ) ){
+
+                case "To Pay - Grade Only":
+
+                    update_post_meta($post->ID, 'status', 'Deducted - Grade Only');   
+    
+                    break;
+                
+                default:
+
+            }
+
+        }
+
         return true;
         
     }
