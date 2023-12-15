@@ -263,7 +263,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12">
                                     <label for="sold_price">Selling Price</label>
-                                    <input id="sold_price" type="text" name="sold_price" style="font-size: 3em !important; text-align: center !important; color: white !important; background-color: green !important;"  value="" data-field_check="required"  class="form-control mb-2"/>
+                                    <input id="sold_price" type="number" name="sold_price" style="font-size: 3em !important; text-align: center !important; color: white !important; background-color: green !important;"  value="" data-field_check="required"  class="form-control mb-2"/>
                                 </div>
                             </div>
                             <div class="row">
