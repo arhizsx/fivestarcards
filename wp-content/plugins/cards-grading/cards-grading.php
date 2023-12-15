@@ -1033,6 +1033,8 @@
 
     public function doSetSoldPrice($params){
 
+        update_post_meta($params["post_id"], "status", "Sold - Consigned" );
+
         update_post_meta($params["post_id"], "sold_price", $params["value"] );
 
         $to_receive = 0;
