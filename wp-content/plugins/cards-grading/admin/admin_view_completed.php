@@ -224,7 +224,7 @@ $admin_action_status = [];
                 </div>
                 <div class="row pt-2">
                     <div class="col text-end">
-                       To Pay
+                       Paid
                     </div>
                     <div class="col text-end"  id="to_pay_total">
                         $<?php echo number_format((float) $to_receive_total - $grading_charge, 2, '.', ''); ?>
