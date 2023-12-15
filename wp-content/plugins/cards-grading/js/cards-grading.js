@@ -723,6 +723,15 @@ $(document).on("click", ".5star_btn", function(e){
         
             break;
 
+        case "confirm_consignment_payment":
+            
+            var order_number = $(this).data("order_number");
+            if (orderAction("confirm_consignment_payment", null, order_number) ){
+                location.reload();
+            }
+
+            break;
+
         case "card_sold":
             
             showCardSoldModal($(this).data());
