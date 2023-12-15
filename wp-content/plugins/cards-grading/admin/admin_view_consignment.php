@@ -103,8 +103,8 @@ $processed_status = array("Processing Order", "Cards Graded");
             <?php 
             if( $checkout_meta["status"][0] == "Order Partial Payment" ) { 
             ?>
-                <button class='5star_btn btn btn-danger mb-3' data-action="set_selling_price"  data-order_number="<?php echo $params['order_number'] ?>">
-                    Close Order
+                <button class='5star_btn btn btn-primary mb-3' data-action="set_selling_price"  data-order_number="<?php echo $params['order_number'] ?>">
+                    Notify Customer
                 </button>      
             <?php 
             } 
