@@ -140,7 +140,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                             $grading_charge = $grading_charge + $card_grading_charge;                            
 
                 ?>
-                <tr class="admin-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>' data-grade="<?php echo $meta["grade"][0]; ?>">
+                <tr class="admin-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>' data-grade="<?php echo $meta['grade'][0]; ?>">
                     <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
                     <td >
                         <?php if( $meta["status"][0] == "Consigned" ) { ?>
