@@ -46,6 +46,7 @@
         add_shortcode('cards-grading-checkout', array( $this, 'cards_grading_checkout_shortcode' ));
         add_shortcode('cards-grading-my_orders', array( $this, 'cards_grading_my_orders_shortcode' ));
         add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
+        
         add_shortcode('cards-grading-awaiting_payment', array( $this, 'cards_grading_awaiting_payment_orders_shortcode' ));
         add_shortcode('cards-grading-consigned_orders', array( $this, 'cards_grading_consigned_orders_shortcode' ));
         add_shortcode('cards-grading-for_payment', array( $this, 'cards_grading_for_payment_shortcode' ));

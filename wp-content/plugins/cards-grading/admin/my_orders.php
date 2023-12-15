@@ -4,10 +4,17 @@ $user_id = get_current_user_id();
 
 $args = array(
     'meta_query' => array(
+        'relation' => 'AND', 
         array(
             'key' => 'user_id',
             'value' => $user_id
+        ),
+        array(
+            'key' => 'status',
+            'value' => array("Ready For Payment", "Consignment Paid", "Order Consigned" ),
+            'compare' => 'NOT IN'
         )
+
     ),
     'post_type' => 'cards-grading-chk',
     'posts_per_page' => -1
