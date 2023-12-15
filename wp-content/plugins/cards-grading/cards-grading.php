@@ -1033,7 +1033,7 @@
 
     public function doSetSoldPrice($params){
 
-        add_post_meta($params["post_id"], "sold_price", $params["value"] );
+        update_post_meta($params["post_id"], "sold_price", $params["value"] );
         return true;
 
     }
