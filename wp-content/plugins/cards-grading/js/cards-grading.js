@@ -238,47 +238,6 @@ function deleteCard(){
 
 }
 
-
-function showShippedModal(){
-
-    $(document).find(".dxmodal").appendTo('body').modal("show");
-
-}
-
-function showPaidModal(){
-
-    $(document).find(".paidmodal").appendTo('body').modal("show");
-
-}
-
-function showCardSoldModal(data){
-
-    console.log(data["card"]["quantity"]);
-
-    $(document).find(".view_card").find("div#view_card_form_box").removeClass("d-none");
-    $(document).find(".view_card").appendTo('body').modal("show");
-
-    $(document).find("input[name='grade']").val(data["grade"]);
-    $(document).find("input[name='quantity']").val(data["card"]["quantity"]);
-    $(document).find("input[name='year']").val(data["card"]["year"]);
-    $(document).find("input[name='brand']").val(data["card"]["brand"]);
-    $(document).find("input[name='card_number']").val(data["card"]["card_number"]);
-    $(document).find("input[name='player']").val( data["card"]["player"]);
-    $(document).find("input[name='attribute']").val( data["card"]["attribute"]);
-    $(document).find("input[name='dv']").val(  data["card"]["dv"]);
-    $(document).find("input[name='per_card']").val(  data["card"]["per_card"]);
-    $(document).find("input[name='grading']").val(  data["card"]["grading"]);
-    $(document).find("input[name='max_dv']").val(  data["card"]["max_dv"]);
-    $(document).find("input[name='post_id']").val(  data["card"]["post_id"]);
-    $(document).find("input[name='card']").val( JSON.stringify( data["card"]) );
-
-    $('.view_card').on('shown.bs.modal', function () {
-        $('#sold_price').focus();
-    });
-
-}
-
-
 function orderAction(action, data, order_number){
 
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
@@ -379,14 +338,25 @@ function cardAction(action, value, post_id, parent_element ){
             else if(action == "confirm_sold_price")
             {
                 if(resp == true){
-                    $(document).find(".view_card").modal("hide");
-                    location.reload();
+                    // location.reload();
                 }
 
 
             }            
         }
     });
+
+}
+
+function showShippedModal(){
+
+    $(document).find(".dxmodal").appendTo('body').modal("show");
+
+}
+
+function showPaidModal(){
+
+    $(document).find(".paidmodal").appendTo('body').modal("show");
 
 }
 
@@ -424,6 +394,33 @@ function confirmCardGrade(){
 
 }
 
+function showCardSoldModal(data){
+
+    console.log(data["card"]["quantity"]);
+
+    $(document).find(".view_card").find("div#view_card_form_box").removeClass("d-none");
+    $(document).find(".view_card").appendTo('body').modal("show");
+
+    $(document).find("input[name='grade']").val(data["grade"]);
+    $(document).find("input[name='quantity']").val(data["card"]["quantity"]);
+    $(document).find("input[name='year']").val(data["card"]["year"]);
+    $(document).find("input[name='brand']").val(data["card"]["brand"]);
+    $(document).find("input[name='card_number']").val(data["card"]["card_number"]);
+    $(document).find("input[name='player']").val( data["card"]["player"]);
+    $(document).find("input[name='attribute']").val( data["card"]["attribute"]);
+    $(document).find("input[name='dv']").val(  data["card"]["dv"]);
+    $(document).find("input[name='per_card']").val(  data["card"]["per_card"]);
+    $(document).find("input[name='grading']").val(  data["card"]["grading"]);
+    $(document).find("input[name='max_dv']").val(  data["card"]["max_dv"]);
+    $(document).find("input[name='post_id']").val(  data["card"]["post_id"]);
+    $(document).find("input[name='card']").val( JSON.stringify( data["card"]) );
+
+    $('.view_card').on('shown.bs.modal', function () {
+        $('#sold_price').focus();
+    });
+
+}
+
 
 function confirmSoldPrice(){
 
@@ -431,7 +428,6 @@ function confirmSoldPrice(){
     var sold_price =  $(document).find("#set_sold_price_form input[name='sold_price']").val();
 
     cardAction("confirm_sold_price", sold_price, post_id, "");
-    // location.reload();
 
 }
 
