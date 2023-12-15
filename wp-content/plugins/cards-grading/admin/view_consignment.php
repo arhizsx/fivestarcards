@@ -45,6 +45,8 @@ $admin_action_status = [];
 
 TESTING ONLY
 
+<?php echo $params['order_number']; ?>
+
 <div class="m-0 p-0">
     <div class="row border-bottom">
         <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12" >
