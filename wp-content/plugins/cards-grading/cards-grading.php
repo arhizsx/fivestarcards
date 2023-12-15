@@ -701,6 +701,11 @@
 
         }
 
+        elseif($params["action"] == "confirm_sold_price"){
+
+            return $this->doSetSoldPrice($params);
+
+        }
         
 
         return $params;
@@ -942,6 +947,7 @@
         return true;
 
     }
+
     public function doPayCardGrading($params){
 
         update_post_meta($params["post_id"], 'status', 'Pay Grading');   
@@ -1021,6 +1027,14 @@
 
         return true;
 
+
+    }
+
+
+    public function doSetSoldPrice($params){
+
+        add_post_meta($params["post_id"], "sold_price", $params["value"] );
+        return true;
 
     }
 
