@@ -134,8 +134,6 @@ $processed_status = array("Processing Order", "Cards Graded");
                             $meta = get_post_meta($post->ID);
                             $card = json_decode($meta['card'][0], true);
 
-                            print_r($meta);
-
                             $card_total_dv = $card["dv"] * $card["quantity"];
                             $card_grading_charge = $card["per_card"] * $card["quantity"];
 
