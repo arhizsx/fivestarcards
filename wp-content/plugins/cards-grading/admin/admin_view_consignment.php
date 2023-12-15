@@ -117,7 +117,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                 <tr>
                     <th>Action</th>
                     <th>ID</th>
-                    <th width="30%">Card</th>
+                    <th width="40%">Card</th>
                     <th>Status</th>
                     <th class="text-end">DV</th>
                     <th class="text-end">Grading</th>
@@ -155,7 +155,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                                 <td>
                                     <?php echo $post->ID; ?>
                                 </td>
-                                <td style="font-size: 12px !important;">
+                                <td  width="40%" style="font-size: 12px !important;">
                                     <div class="row">
                                         <div class="col-md-4">Grade</div>
                                         <div class="col-md-8">
