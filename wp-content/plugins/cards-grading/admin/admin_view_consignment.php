@@ -158,6 +158,7 @@ $admin_action_status = array( "Consigned", "Sold - Consigned" );
                 ?>
                             <tr class="admin-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>' data-grade="<?php echo $meta['grade'][0]; ?>" data-sold_price="<?php echo $meta['sold_price'][0]; ?>">
                                 <td >
+                                <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
                                     <?php if( in_array( $meta["status"][0], $admin_action_status  ) ) { ?>
                                         <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="card_sold" data-post_id="<?php echo $post->ID; ?>"  data-card='<?php echo json_encode($card) ?>' data-grade="<?php echo $meta['grade'][0]; ?>" data-sold_price="<?php echo $meta['sold_price'][0]; ?>">
                                             Card Sold
@@ -165,6 +166,9 @@ $admin_action_status = array( "Consigned", "Sold - Consigned" );
                                     <?php } else {?>
                                         -
                                     <?php } ?>
+                                <?php } else {
+                                    echo "-";
+                                }?>
                                 </td>
                                 <td>
                                     <?php echo $post->ID; ?>
