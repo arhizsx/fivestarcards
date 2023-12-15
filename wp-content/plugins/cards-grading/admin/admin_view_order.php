@@ -236,7 +236,10 @@ $processed_status = array("Processing Order", "Cards Graded");
                             $card_total_dv = $card["dv"] * $card["quantity"];
                             $card_grading_charge = $card["per_card"] * $card["quantity"];
 
-                            $grading_charge = $grading_charge + $card_grading_charge;                            
+                            if( $meta["status"][0] ==  "To Pay - Grade Only" ){
+                                $grading_charge = $grading_charge + $card_grading_charge;
+                            }
+
 
                 ?>
                 <tr class="admin-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
