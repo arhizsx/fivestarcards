@@ -711,7 +711,7 @@ $(document).on("click", ".5star_btn", function(e){
         
             break;
 
-        case "order_paid":
+        case "consignment_paid":
 
             showConsignmentPaidModal();
         
