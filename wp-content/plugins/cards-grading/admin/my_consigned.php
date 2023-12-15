@@ -36,6 +36,8 @@ $posts = get_posts($args);
                     <th>Status</th>
                     <th class='text-end'>Total Cards</th>
                     <th class='text-end'>Total DV</th>
+                    <th class='text-end'>Consigned Cards</th>
+                    <th class='text-end'>Sold Price</th>
                 </tr>
             </thead>
             <tbody>
@@ -57,6 +59,8 @@ $posts = get_posts($args);
                     <td><?php echo $meta["status"][0]; ?></td>
                     <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $meta["total_dv"][0], 2, '.', ''); ?></td>
+                    <td>0</td>
+                    <td>0</td>
                 </tr>
                 <?php          
                         }
