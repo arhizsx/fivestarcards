@@ -188,8 +188,10 @@ $processed_status = array("Cards Graded");
                                 $card_total_dv = $card["dv"] * $card["quantity"];
                                 $card_grading_charge = $card["per_card"] * $card["quantity"];
 
-                                $grading_charge = $grading_charge + $card_grading_charge;
-    
+                                if( $meta["status"][0] ==  "To Pay - Grade Only" ){
+                                    $grading_charge = $grading_charge + $card_grading_charge;
+                                }
+        
                             }
 
 
