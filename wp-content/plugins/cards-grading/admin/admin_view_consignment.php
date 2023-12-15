@@ -102,11 +102,25 @@ $processed_status = array("Processing Order", "Cards Graded");
         <div class="col-lg-6 col-md-6 col-sm-6 text-end">
             <?php 
             if( in_array( $checkout_meta["status"][0], $admin_status  ) ) { 
+
+                $still_in_consignment = 0;
+                foreach($posts as $post)
+                {
+                    $meta = get_post_meta($post->ID);
+                    
+                    if( $meta["status"][0] == "Consigned"){
+                        $still_in_consignment++;
+                    }
+
+                }
+
+                if( $still_in_consignment == 0 ) {
             ?>
                 <button class='5star_btn btn btn-primary mb-3' data-action="set_selling_price"  data-order_number="<?php echo $params['order_number'] ?>">
                     Notify Customer
                 </button>      
             <?php 
+                }
             } 
             ?>
         </div>
