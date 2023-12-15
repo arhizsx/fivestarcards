@@ -161,7 +161,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                     }
                 }
 
-                if( count($posts) > $graded ){
+                if( count($posts) >= $graded ){
                     $show_grade_btn = "d-none";
                 } else {
                     $show_grade_btn = "";
