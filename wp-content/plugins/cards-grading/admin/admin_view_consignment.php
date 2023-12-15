@@ -36,7 +36,7 @@ foreach($posts as $post)
 }
 
 $admin_status = array( "Order Partial Payment", "Order Consigned" );
-$admin_action_status = array( "Consigned" );
+$admin_action_status = array( "Consigned", "Sold - Consigned" );
 
 $processed_status = array("Processing Order", "Cards Graded");
 
