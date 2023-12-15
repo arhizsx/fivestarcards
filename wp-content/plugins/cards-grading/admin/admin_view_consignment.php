@@ -245,7 +245,7 @@ $processed_status = array("Processing Order", "Cards Graded");
 		<div class="modal-content modal-ajax">
 			<div class="modal-header bg-dark text-white">
 				<h5 class="modal-title">
-					Set Card Grade
+					Set Card Selling Price
 				</h5>
     			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
 					X

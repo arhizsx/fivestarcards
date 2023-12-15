@@ -251,6 +251,12 @@ function showPaidModal(w){
 
 }
 
+function showCardSoldModal(w){
+
+    $(document).find(".view_card").appendTo('body').modal("show");
+
+}
+
 
 function orderAction(action, data, order_number){
 
@@ -663,6 +669,10 @@ $(document).on("click", ".5star_btn", function(e){
             showPaidModal();
         
             break;
+
+        case "card_sold":
+            
+            showCardSoldModal();
 
         default:
             console.log("Button not configured: " + $(this).data("action"));
