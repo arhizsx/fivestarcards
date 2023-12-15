@@ -48,11 +48,11 @@
         add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
         add_shortcode('cards-grading-awaiting_payment', array( $this, 'cards_grading_awaiting_payment_orders_shortcode' ));
         add_shortcode('cards-grading-consigned_orders', array( $this, 'cards_grading_consigned_orders_shortcode' ));
+        add_shortcode('cards-grading-for_payment', array( $this, 'cards_grading_for_payment_shortcode' ));
         
         add_shortcode('cards-grading-open_orders', array( $this, 'cards_grading_open_orders_shortcode' ));
         add_shortcode('cards-grading-admin_view_order', array( $this, 'cards_grading_admin_view_order_shortcode' ));
         add_shortcode('cards-grading-admin_view_consignment', array( $this, 'cards_grading_admin_view_consignment_shortcode' ));
-        add_shortcode('cards-grading-admin_view_for_payment', array( $this, 'cards_grading_admin_view_for_payment_shortcode' ));
 
         add_shortcode('cards-grading-dashbox', array( $this, 'cards_grading_dashbox_shortcode' ));
 
@@ -477,7 +477,7 @@
         return $output ;
     }
 
-    public function cards_grading_admin_view_for_payment_shortcode($atts) 
+    public function cards_grading_for_payment_shortcode($atts) 
     {
         $order_number = $_GET['id'];
 
