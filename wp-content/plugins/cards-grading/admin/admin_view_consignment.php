@@ -196,7 +196,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                                 <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
                                 <td class='text-end'><?php echo "$" . number_format((float) $card["dv"], 2, '.', ''); ?></td>
                                 <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
-                                <td class='text-end'><?php echo "$" . number_format((float) 0, 2, '.', ''); ?></td>
+                                <td class='text-end'><?php echo "$" . number_format((float) $meta["sold_price"][0], 2, '.', ''); ?></td>
                                 <td class='text-end'><?php echo "$" . number_format((float) 0, 2, '.', ''); ?></td>
                             </tr>
                 <?php          
