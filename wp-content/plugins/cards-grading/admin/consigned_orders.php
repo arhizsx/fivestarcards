@@ -70,7 +70,7 @@ $posts = get_posts($args);
                                 if( $card_meta["status"][0] == "To Pay - Grade Only"){
                                     $total_grading_charge  = $total_grading_charge  + $card["per_card"];
                                 }
-                                if( $card_meta["status"][0] == "Consigned"){
+                                if( in_array($card_meta["status"][0], array("Consigned", "Sold - Consigned") )){
                                     $consigned_cards  = $consigned_cards  + 1;
                                 }
                             }
