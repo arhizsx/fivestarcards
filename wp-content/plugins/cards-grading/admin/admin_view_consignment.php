@@ -134,71 +134,73 @@ $processed_status = array("Processing Order", "Cards Graded");
                             $meta = get_post_meta($post->ID);
                             $card = json_decode($meta['card'][0], true);
 
+                            print_r($meta);
+
                             $card_total_dv = $card["dv"] * $card["quantity"];
                             $card_grading_charge = $card["per_card"] * $card["quantity"];
 
                             $grading_charge = $grading_charge + $card_grading_charge;                            
 
                 ?>
-                <tr class="admin-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>' data-grade="<?php echo $meta['grade'][0]; ?>">
-                    <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
-                    <td >
-                        <?php if( $meta["status"][0] == "Consigned" ) { ?>
-                            <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="card_sold" data-post_id="<?php echo $post->ID; ?>">
-                                Card Sold
-                            </button>
-                        <?php } else {?>
-                            -
-                        <?php } ?>
-                    </td>
-                    <?php } ?>
-                    <td>
-                        <?php echo $post->ID; ?>
-                    </td>
-                    <td style="font-size: 12px !important;">
-                        <div class="row">
-                            <div class="col-4">Grade</div>
-                            <div class="col">
-                                <input type="text" class="form-control mb-2" value="<?php echo $meta["grade"][0]; ?>">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4">Player</div>
-                            <div class="col">
-                                <input type="text" class="form-control mb-2" value="<?php echo $card["player"]; ?>">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4">Year</div>
-                            <div class="col">
-                                <input type="text" class="form-control mb-2" value="<?php echo $card["year"]; ?>">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4">Brand</div>
-                            <div class="col">
-                                <input type="text" class="form-control mb-2" value="<?php echo $card["brand"]; ?>">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-4">Card #</div>
-                            <div class="col">
-                                <input type="text" class="form-control mb-2" value="<?php echo $card["card_number"]; ?>">
-                            </div>
-                        </div>                        
-                        <div class="row">
-                            <div class="col-4">Attribute #</div>
-                            <div class="col">
-                                <input type="text" class="form-control mb-2" value="<?php echo $card["attribute"]; ?>">
-                            </div>
-                        </div>                        
-                    </td>
-                    <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
-                    <td class='text-end'><?php echo "$" . number_format((float) $card["dv"], 2, '.', ''); ?></td>
-                    <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
-                    <td class='text-end'><?php echo "$" . number_format((float) 0, 2, '.', ''); ?></td>
-                    <td class='text-end'><?php echo "$" . number_format((float) 0, 2, '.', ''); ?></td>
-                </tr>
+                            <tr class="admin-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>' data-grade="<?php echo $meta['grade'][0]; ?>">
+                                <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
+                                <td >
+                                    <?php if( $meta["status"][0] == "Consigned" ) { ?>
+                                        <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="card_sold" data-post_id="<?php echo $post->ID; ?>">
+                                            Card Sold
+                                        </button>
+                                    <?php } else {?>
+                                        -
+                                    <?php } ?>
+                                </td>
+                                <?php } ?>
+                                <td>
+                                    <?php echo $post->ID; ?>
+                                </td>
+                                <td style="font-size: 12px !important;">
+                                    <div class="row">
+                                        <div class="col-4">Grade</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control mb-2" value="<?php echo $meta["grade"][0]; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">Player</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control mb-2" value="<?php echo $card["player"]; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">Year</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control mb-2" value="<?php echo $card["year"]; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">Brand</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control mb-2" value="<?php echo $card["brand"]; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">Card #</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control mb-2" value="<?php echo $card["card_number"]; ?>">
+                                        </div>
+                                    </div>                        
+                                    <div class="row">
+                                        <div class="col-4">Attribute #</div>
+                                        <div class="col">
+                                            <input type="text" class="form-control mb-2" value="<?php echo $card["attribute"]; ?>">
+                                        </div>
+                                    </div>                        
+                                </td>
+                                <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
+                                <td class='text-end'><?php echo "$" . number_format((float) $card["dv"], 2, '.', ''); ?></td>
+                                <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
+                                <td class='text-end'><?php echo "$" . number_format((float) 0, 2, '.', ''); ?></td>
+                                <td class='text-end'><?php echo "$" . number_format((float) 0, 2, '.', ''); ?></td>
+                            </tr>
                 <?php          
                         }
                     } else {
