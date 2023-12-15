@@ -127,8 +127,8 @@ $payment_status = array( "Ready For Payment" );
             } 
             if( in_array( $checkout_meta["status"][0], $payment_status  ) ) { 
             ?>
-                <button class='5star_btn btn btn-primary mb-3' data-action="order_paid"  data-order_number="<?php echo $params['order_number'] ?>">
-                    Order Paid
+                <button class='5star_btn btn btn-primary mb-3' data-action="consignment_paid"  data-order_number="<?php echo $params['order_number'] ?>">
+                    Consignment Paid
                 </button>      
 
             <?php 
