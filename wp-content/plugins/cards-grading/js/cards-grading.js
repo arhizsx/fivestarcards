@@ -696,7 +696,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "confirm_sold_price":
             
-            console.log("Confirm Sold Price");
+            confirmSoldPrice();
 
             break;
             
