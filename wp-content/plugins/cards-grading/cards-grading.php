@@ -1034,6 +1034,62 @@
     public function doSetSoldPrice($params){
 
         update_post_meta($params["post_id"], "sold_price", $params["value"] );
+
+        $to_receive = 0;
+
+        if( $params["value"] < 10 ){
+
+            $to_receive = $params["value"] - 3;
+
+        }
+        elseif( $params["value"] >= 10 && $params["value"] <= 49.99 ){
+
+            $to_receive = $params["value"] - $params["value"] * 0.18;
+            
+        }
+        elseif( $params["value"] >= 50 && $params["value"] <= 99.99 ){
+            
+            $to_receive = $params["value"] - $params["value"] * 0.16;
+
+        }
+        elseif( $params["value"] >= 100 && $params["value"] <= 199.99 ){
+            
+            $to_receive = $params["value"] - $params["value"] * 0.15;
+
+        }
+        elseif( $params["value"] >= 200 && $params["value"] <= 499.99 ){
+            
+            $to_receive = $params["value"] - $params["value"] * 0.14;
+
+        }
+        elseif( $params["value"] >= 500 && $params["value"] <= 999.99 ){
+            
+            $to_receive = $params["value"] - $params["value"] * 0.13;
+
+        }
+        elseif( $params["value"] >= 1000 && $params["value"] <= 2999.99 ){
+            
+            $to_receive = $params["value"] - $params["value"] * 0.12;
+
+        }
+        elseif( $params["value"] >= 3000 && $params["value"] <= 4999.99 ){
+
+            $to_receive = $params["value"] - $params["value"] * 0.10;
+
+        }
+        elseif( $params["value"] >= 5000 && $params["value"] <= 8999.99  ){
+
+            $to_receive = $params["value"] - $params["value"] * 0.08;
+            
+        }
+        elseif( $params["value"] >= 9000  ){
+
+            $to_receive = $params["value"] - $params["value"] * 0.07;
+            
+        }
+
+        update_post_meta($params["post_id"], "to_receive", $to_receive );
+
         return true;
 
     }
