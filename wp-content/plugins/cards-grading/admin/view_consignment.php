@@ -9,7 +9,6 @@ $user = get_user_by( "id", $user_id );
 
 $args = array(
     'meta_query' => array(
-        'relations' =>  'AND',    
         array(
             'key' => 'checkout_id',
             'value' => $params['order_number']
