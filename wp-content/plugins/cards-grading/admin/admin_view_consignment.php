@@ -251,14 +251,14 @@ $payment_status = array( "Ready For Payment" );
             </div>
             <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
                 <div class="row mb-2">
-                <div class="col text-end">
+                    <div class="col text-end">
                         Total To Receive
                     </div>
                     <div class="col text-end"  id="to_receive_total">
-                    $<?php echo number_format((float)$to_receive_total, 2, '.', ''); ?>
+                        $<?php echo number_format((float)$to_receive_total, 2, '.', ''); ?>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row border-bottom">
                     <div class="col text-end">
                        LESS Unpaid Grading Charge    
                     </div>
