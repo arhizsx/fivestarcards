@@ -674,6 +674,14 @@ $(document).on("click", ".5star_btn", function(e){
             
             showCardSoldModal();
 
+            break;
+
+        case "confirm_sold_price":
+            
+            console.log("Confirm Sold Price");
+
+            break;
+            
         default:
             console.log("Button not configured: " + $(this).data("action"));
     }
