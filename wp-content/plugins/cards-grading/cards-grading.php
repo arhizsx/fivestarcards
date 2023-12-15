@@ -49,8 +49,10 @@
         add_shortcode('cards-grading-my_for_payment', array( $this, 'cards_grading_my_for_payment_shortcode' ));
         add_shortcode('cards-grading-my_completed', array( $this, 'cards_grading_my_completed_shortcode' ));
 
-
         add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
+        add_shortcode('cards-grading-view_completed', array( $this, 'cards_grading_view_completed_shortcode' ));
+
+
 
         add_shortcode('cards-grading-awaiting_payment', array( $this, 'cards_grading_awaiting_payment_orders_shortcode' ));
         add_shortcode('cards-grading-consigned_orders', array( $this, 'cards_grading_consigned_orders_shortcode' ));
@@ -475,6 +477,25 @@
         ob_start();
 
         include( plugin_dir_path( __FILE__ ) . 'admin/view_order.php' );
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
+
+    public function cards_grading_view_completed_shortcode($atts) 
+    {
+        $order_number = $_GET['id'];
+
+        $default = array(
+            'title' => 'Order Number',
+            'order_number' => $order_number
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
+
+        include( plugin_dir_path( __FILE__ ) . 'admin/view_completed.php' );
         
         $output = ob_get_clean(); 
         
