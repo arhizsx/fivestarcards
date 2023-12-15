@@ -1,10 +1,8 @@
 <?php
 
-print_r($params['order_number']);
+
 
 $checkout_post = get_post($params['order_number']);
-
-
 $checkout_meta = get_post_meta($checkout_post->ID);
 
 $user_id = $checkout_meta["user_id"][0];
@@ -45,7 +43,10 @@ $admin_action_status = [];
 
 TESTING ONLY
 
-<?php echo $params['order_number']; ?>
+<?php 
+    echo $params['order_number']; 
+    echo $_GET["id"];
+?>
 
 <div class="m-0 p-0">
     <div class="row border-bottom">
