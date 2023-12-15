@@ -387,7 +387,7 @@ function showSetGrade( data ){
     $(document).find("#set_grade_form input[name='attribute']").val(data["card"]["attribute"]);
 
     $('.view_card').on('shown.bs.modal', function () {
-        $('#grade_input').focus();
+        $('#grade').focus();
     })
 
 }
@@ -744,6 +744,11 @@ $(document).on("click",".admin-card-row", function(e){
     $(document).find("input[name='max_dv']").val($(this).data("card").max_dv);
     $(document).find("input[name='post_id']").val($(this).data("post_id"));
     $(document).find("input[name='card']").val( JSON.stringify($(this).data("card")) );
+
+    $('.view_card').on('shown.bs.modal', function () {
+        $('#sold_price').focus();
+    })
+
 
 
 });
