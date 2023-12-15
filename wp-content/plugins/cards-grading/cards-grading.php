@@ -734,6 +734,13 @@
             return $this->doConsignmentReadyForPayment($params);
 
         }
+
+        elseif($params["action"] == "confirm_consignment_payment"){
+
+            return $this->doConfirmConsignmentPayment($params);
+
+        }
+        
         
         
 
@@ -1131,6 +1138,13 @@
         return true;
 
 
+    }
+
+    public function doConfirmConsignmentPayment($params){
+
+        update_post_meta($params["order_number"], 'status', 'Consignment Paid');   
+        return true;
+        
     }
 
  }
