@@ -253,15 +253,15 @@ function showPaidModal(){
 
 function showCardSoldModal(data){
 
-    console.log(data);
+    console.log(data["grade"]);
 
     $(document).find(".view_card").find("div#view_card_form_box").removeClass("d-none");
     $(document).find(".view_card").appendTo('body').modal("show");
 
-    $(document).find("input[name='grade']").val(data("grade"));
-    $(document).find("input[name='quantity']").val(data("card").quantity);
-    $(document).find("input[name='year']").val(data("card").year);
-    $(document).find("input[name='brand']").val(data("card").brand);
+    $(document).find("input[name='grade']").val(data["grade"]);
+    $(document).find("input[name='quantity']").val(data["card"].quantity);
+    $(document).find("input[name='year']").val(data["card"].year);
+    $(document).find("input[name='brand']").val(data"card").brand);
     $(document).find("input[name='card_number']").val($(this).data("card").card_number);
     $(document).find("input[name='player']").val($(this).data("card").player);
     $(document).find("input[name='attribute']").val($(this).data("card").attribute);
