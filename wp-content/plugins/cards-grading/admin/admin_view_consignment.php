@@ -114,7 +114,7 @@ $admin_action_status = array( "Consigned", "Sold - Consigned" );
 
                 if( $still_in_consignment == 0 ) {
             ?>
-                <button class='5star_btn btn btn-primary mb-3' data-action="set_selling_price"  data-order_number="<?php echo $params['order_number'] ?>">
+                <button class='5star_btn btn btn-primary mb-3' data-action="consignment_ready_for_payment"  data-order_number="<?php echo $params['order_number'] ?>">
                     Notify Customer
                 </button>      
             <?php 

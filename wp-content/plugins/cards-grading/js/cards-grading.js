@@ -716,7 +716,17 @@ $(document).on("click", ".5star_btn", function(e){
             confirmSoldPrice();
 
             break;
+
+
+        case "consignment_ready_for_payment":
             
+            var order_number = $(this).data("order_number");
+            if (orderAction("consignment_ready_for_payment", null, order_number) ){
+                location.reload();
+            }
+
+            break;
+    
         default:
             console.log("Button not configured: " + $(this).data("action"));
     }

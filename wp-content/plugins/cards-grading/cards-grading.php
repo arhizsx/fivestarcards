@@ -706,6 +706,13 @@
             return $this->doSetSoldPrice($params);
 
         }
+
+        elseif($params["action"] == "consignment_ready_for_payment"){
+
+            return $this->doConsignmentReadyForPayment($params);
+
+        }
+        
         
 
         return $params;
@@ -1093,6 +1100,14 @@
         update_post_meta($params["post_id"], "to_receive", $to_receive );
 
         return true;
+
+    }
+
+    public function doConsignmentReadyForPayment($params){
+
+        update_post_meta($params["order_number"], 'status', 'Ready For Payment');   
+        return true;
+
 
     }
 
