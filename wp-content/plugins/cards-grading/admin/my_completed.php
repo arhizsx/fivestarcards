@@ -27,7 +27,7 @@ $posts = get_posts($args);
 <div class="m-0 p-0">
     <H3 style="color: black;">Completed Orders</H3>
     <div class="table-responsive">    
-        <table class='table 5star_my_orders table-bordered table-striped'>
+        <table class='table 5star_my_completed table-bordered table-striped'>
             <thead>
                 <tr>
                     <th>Date</th>

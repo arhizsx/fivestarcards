@@ -799,19 +799,19 @@ $(document).on("click",".card-row", function(e){
 
 $(document).on("click",".my-order-row", function(e){
 
-    window.location.href = "/view-order?id=" + $(this).data("post_id") ;
+    window.location.href = "/my-account/view-order?id=" + $(this).data("post_id") ;
 
 });
 
 $(document).on("click",".my-completed-row", function(e){
 
-    window.location.href = "/view-completed?id=" + $(this).data("post_id") ;
+    window.location.href = "/my-account/view-completed?id=" + $(this).data("post_id") ;
 
 });
 
 $(document).on("click",".my-consignment-row", function(e){
 
-    window.location.href = "/view-consignment?id=" + $(this).data("post_id") ;
+    window.location.href = "/my-account/view-consignment?id=" + $(this).data("post_id") ;
 
 });
 
