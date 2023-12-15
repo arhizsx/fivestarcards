@@ -76,9 +76,10 @@ $posts = get_posts($args);
                                 if( in_array($card_meta["status"][0], array("Consigned", "Sold - Consigned") )){
                                     $consigned_cards  = $consigned_cards  + 1;
 
-                                        if($card_meta["status"][0] == "Sold - Consigned"){
-                                            $total_to_receive  = $total_to_receive  + $card["to_receive"];
-                                        }
+                                }
+                                
+                                if($card_meta["status"][0] == "Sold - Consigned"){
+                                    $total_to_receive  = $total_to_receive  + $card["to_receive"];
                                 }
 
                             }
