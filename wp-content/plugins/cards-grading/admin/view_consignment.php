@@ -2,7 +2,7 @@
 
 
 
-$checkout_post = get_post($params['order_number']);
+$checkout_post = get_post($_GET["id"]);
 $checkout_meta = get_post_meta($checkout_post->ID);
 
 $user_id = $checkout_meta["user_id"][0];
@@ -45,7 +45,6 @@ TESTING ONLY
 
 <?php 
     echo $params['order_number']; 
-    echo $_GET["id"];
 ?>
 
 <div class="m-0 p-0">
