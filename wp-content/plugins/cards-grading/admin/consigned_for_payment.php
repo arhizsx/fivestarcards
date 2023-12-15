@@ -79,7 +79,7 @@ $posts = get_posts($args);
                                 }
                                 
                                 if($card_meta["status"][0] == "Sold - Consigned"){
-                                    $total_to_receive  = $total_to_receive  + $card["to_receive"];
+                                    $total_to_receive  = $total_to_receive  + $card_meta["to_receive"];
                                 }
 
                             }
