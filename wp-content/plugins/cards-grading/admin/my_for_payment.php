@@ -11,8 +11,8 @@ $args = array(
         ),
         array(
             'key' => 'status',
-            'value' => array("Order To Pay", "Consignment Paid" ),
-            'compare' => 'NOT IN'
+            'value' => array("Order To Pay", "Order Partial Payment" ),
+            'compare' => 'IN'
         )
 
     ),
