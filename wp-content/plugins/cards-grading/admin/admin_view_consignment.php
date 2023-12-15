@@ -162,7 +162,7 @@ $payment_status = array( "Ready For Payment" );
                             $card_total_dv = $card["dv"] * $card["quantity"];
                             $card_grading_charge = $card["per_card"] * $card["quantity"];
 
-                            if( $meta["status"][0] ==  "To Pay - Grade Only" ){
+                            if( in_array($meta["status"][0], array("To Pay - Grade Only","Deducted - Grade Only")) ){
                                 $grading_charge = $grading_charge + $card_grading_charge;
                             }
 
