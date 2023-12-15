@@ -13,10 +13,6 @@ $args = array(
         array(
             'key' => 'checkout_id',
             'value' => $params['order_number']
-        ),
-        array(
-            'key' => 'user_id',
-            'value' => $user_id
         )
     ),
     'post_type' => 'cards-grading-card',
