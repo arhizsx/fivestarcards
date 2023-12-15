@@ -405,7 +405,7 @@ function confirmCardGrade(){
 
 function confirmSoldPrice(){
 
-    var post_id =  $(document).find("#set_grade_form input[name='post_id']").val();
+    var post_id =  $(document).find("#set_sold_price_form input[name='post_id']").val();
     var sold_price =  $(document).find("#set_sold_price_form input[name='sold_price']").val();
 
     cardAction("confirm_sold_price", sold_price, post_id, "");
