@@ -38,6 +38,8 @@ foreach($posts as $post)
 $admin_status = array( "Order Partial Payment", "Order Consigned" );
 $admin_action_status = array( "Consigned", "Sold - Consigned" );
 
+$payment_status = array( "Ready For Payment" );
+
 ?>
 
 <div class="m-0 p-0">
@@ -118,8 +120,19 @@ $admin_action_status = array( "Consigned", "Sold - Consigned" );
                     Notify Customer
                 </button>      
             <?php 
+
+                    
+
                 }
             } 
+            if( in_array( $checkout_meta["status"][0], $payment_status  ) ) { 
+            ?>
+                <button class='5star_btn btn btn-primary mb-3' data-action="consignment_ready_for_payment"  data-order_number="<?php echo $params['order_number'] ?>">
+                    Order Paid
+                </button>      
+
+            <?php 
+            }
             ?>
         </div>
     </div>
