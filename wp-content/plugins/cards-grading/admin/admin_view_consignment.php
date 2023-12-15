@@ -144,7 +144,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                                 <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
                                 <td >
                                     <?php if( $meta["status"][0] == "Consigned" ) { ?>
-                                        <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="card_sold" data-post_id="<?php echo $post->ID; ?>">
+                                        <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="card_sold" data-post_id="<?php echo $post->ID; ?>"  data-card='<?php echo json_encode($card) ?>' data-grade="<?php echo $meta['grade'][0]; ?>" data-sold_price="<?php echo $meta['sold_price'][0]; ?>">
                                             Card Sold
                                         </button>
                                     <?php } else {?>
