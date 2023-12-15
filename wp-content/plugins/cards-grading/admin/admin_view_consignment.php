@@ -38,8 +38,6 @@ foreach($posts as $post)
 $admin_status = array( "Order Partial Payment", "Order Consigned" );
 $admin_action_status = array( "Consigned", "Sold - Consigned" );
 
-$processed_status = array("Processing Order", "Cards Graded");
-
 ?>
 
 <div class="m-0 p-0">
@@ -152,6 +150,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                             $card_grading_charge = $card["per_card"] * $card["quantity"];
 
                             $grading_charge = $grading_charge + $card_grading_charge;                            
+                            $to_receive_total = $to_receive_total + $meta["to_receive"][0];                            
 
                 ?>
                             <tr class="admin-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>' data-grade="<?php echo $meta['grade'][0]; ?>" data-sold_price="<?php echo $meta['sold_price'][0]; ?>">
@@ -231,24 +230,32 @@ $processed_status = array("Processing Order", "Cards Graded");
     <div class='5star_btn_box_bottom w-100'>
         <div class="row">
             <div class="col-lg-6 text-end pb-2 fw-bold cards_dv_total">
-            </div>
-                <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
-            <div class="row mb-2">
-                <div class="col text-end">
-                        Total DV          
                 </div>
-                <div class="col text-end" id="total_dv">
-                    $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>
+                    <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
+                <div class="row mb-2">
+                    <div class="col text-end">
+                            Total DV          
+                    </div>
+                    <div class="col text-end" id="total_dv">
+                        $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col text-end">
-                        Grading Charge    
+                <div class="row">
+                    <div class="col text-end">
+                            Grading Charge    
+                    </div>
+                    <div class="col text-end"  id="grading_charges">
+                    $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
+                    </div>
                 </div>
-                <div class="col text-end"  id="grading_charges">
-                $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
+                <div class="row">
+                    <div class="col text-end">
+                            Total To Receive
+                    </div>
+                    <div class="col text-end"  id="to_receive_total">
+                    $<?php echo number_format((float)$to_receive_total, 2, '.', ''); ?>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
