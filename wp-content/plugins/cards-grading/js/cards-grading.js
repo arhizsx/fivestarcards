@@ -344,7 +344,6 @@ function cardAction(action, value, post_id, parent_element ){
             else if(action == "pay_card_grading")
             {
                 if(resp == true){
-                    // $(parent_element).find("td:eq(5)").text(value);                    
                     location.reload();
                 }
 
@@ -352,10 +351,18 @@ function cardAction(action, value, post_id, parent_element ){
             }            
             else if(action == "consign_card")
             {
-                if(resp == true){
-                    // $(parent_element).find("td:eq(5)").text(value);                    
+                if(resp == true){                    
                     location.reload();
                 }
+            }            
+            else if(action == "confirm_sold_price")
+            {
+                if(resp == true){
+                    $(document).find(".view_card").modal("hide");
+                    location.reload();
+                }
+
+
             }            
         }
     });
@@ -392,6 +399,17 @@ function confirmCardGrade(){
     var grade =  $(document).find("#set_grade_form input[name='grade']").val();
 
     cardAction("set_grade", grade, post_id, "");
+    // location.reload();
+
+}
+
+
+function confirmSoldPrice(){
+
+    var post_id =  $(document).find("#set_grade_form input[name='post_id']").val();
+    var sold_price =  $(document).find("#set_sold_price_form input[name='sold_price']").val();
+
+    cardAction("confirm_sold_price", sold_price, post_id, "");
     // location.reload();
 
 }
