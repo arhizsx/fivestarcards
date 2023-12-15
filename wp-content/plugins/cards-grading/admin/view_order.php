@@ -154,6 +154,14 @@ $consignment_status = array("Order Partial Payment", "Order Consigned", "Ready F
                 </button>      
             <?php 
                 }
+                elseif( $checkout_meta["status"][0] == "To Ship" ) { 
+            ?>
+
+                <button class='5star_btn btn btn-primary' data-action="shipped">
+                    Items Shipped
+                </button>      
+            <?php 
+                }
             ?>
         </div>
     </div>
@@ -281,17 +289,7 @@ $consignment_status = array("Order Partial Payment", "Order Consigned", "Ready F
             </div>
             </div>
         </div>
-        <?php if( $posts ){ ?>
-        <div class="row bottom_buttons">
-            <div class="col-lg-12 text-end border-top pt-2 ">
-                <?php if( $checkout_meta["status"][0] == "To Ship" ) { ?>
-                <button class='5star_btn btn btn-primary' data-action="shipped">
-                    Items Shipped
-                </button>      
-                <?php } ?>
-            </div>
-        </div>
-        <?php } ?>
+
         <?php if( $checkout_meta["status"][0] == "To Ship" ) { ?>
         <div class="row mx-5">
             <div class="col-lg-12">
