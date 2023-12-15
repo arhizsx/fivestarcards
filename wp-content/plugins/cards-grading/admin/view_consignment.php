@@ -1,8 +1,12 @@
 <?php
 
+if($params['order_number'] == null ){
+    $order_number = $_GET["id"];
+} else {
+    $order_number = $params['order_number'];
+}
 
-
-$checkout_post = get_post($_GET["id"]);
+$checkout_post = get_post($order_number);
 $checkout_meta = get_post_meta($checkout_post->ID);
 
 $user_id = $checkout_meta["user_id"][0];
@@ -13,7 +17,7 @@ $args = array(
         'relations' =>  'AND',    
         array(
             'key' => 'checkout_id',
-            'value' => $params['order_number']
+            'value' => $order_number
         )
     ),
     'post_type' => 'cards-grading-card',
@@ -41,19 +45,13 @@ $admin_action_status = [];
 
 ?>
 
-TESTING ONLY
-
-<?php 
-    echo $params['order_number']; 
-?>
-
 <div class="m-0 p-0">
     <div class="row border-bottom">
         <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12" >
             <div class="row">
                 <div class="col-xl-12 mb-3">
                     <div class='order-label'><?php echo $params['title'] ?></div>
-                    <div class='order-data'><?php echo $params['order_number'] ?></div>
+                    <div class='order-data'><?php echo $order_number ?></div>
                 </div>
                 <div class="col-xl-12 mb-3">
                     <div class='order-label'>User</div>
@@ -327,7 +325,7 @@ TESTING ONLY
                     <forn id="consignment_payment_info_form">
 
                         <input type="hidden" name="user_id" value='<?php echo $checkout_meta["user_id"][0]; ?>'/>
-                        <input type="hidden" name="order_number" value='<?php echo $params['order_number']; ?>'/>
+                        <input type="hidden" name="order_number" value='<?php echo $order_number; ?>'/>
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="mode_of_payment">Mode of Payment</label>
@@ -358,7 +356,7 @@ TESTING ONLY
                 </div>
                 <div class="modal-footer">
                     <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                    <button class="btn border btn-success 5star_btn" data-action='confirm_consignment_payment' data-order_number="<?php echo $params['order_number']; ?>" data-type=''>Confirm Payment</button>
+                    <button class="btn border btn-success 5star_btn" data-action='confirm_consignment_payment' data-order_number="<?php echo $order_number; ?>" data-type=''>Confirm Payment</button>
                 </div>
             </div>
 		</div>
