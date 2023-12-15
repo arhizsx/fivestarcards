@@ -59,8 +59,8 @@ $posts = get_posts($args);
                     <td><?php echo $meta["status"][0]; ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $meta["total_dv"][0], 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
-                    <td>0</td>
-                    <td>0</td>
+                    <td class='text-end'>0</td>
+                    <td class='text-end'>0</td>
                 </tr>
                 <?php          
                         }
