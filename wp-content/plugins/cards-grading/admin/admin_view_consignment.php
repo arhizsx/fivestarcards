@@ -368,7 +368,7 @@ $payment_status = array( "Ready For Payment" );
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="paid_by">Paid By</label>
-                                <input type="text" name="paid_by" class="form-control" data-field_check="required">
+                                <input type="text" name="paid_by" class="form-control" value="Matt Sellers" data-field_check="required">
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="payment_date">Payment Date</label>
