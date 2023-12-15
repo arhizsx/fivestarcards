@@ -253,7 +253,23 @@ function showPaidModal(){
 
 function showCardSoldModal(){
 
+
+    $(document).find(".view_card").find("div#view_card_form_box").removeClass("d-none");
     $(document).find(".view_card").appendTo('body').modal("show");
+
+    $(document).find("input[name='grade']").val($(this).data("grade"));
+    $(document).find("input[name='quantity']").val($(this).data("card").quantity);
+    $(document).find("input[name='year']").val($(this).data("card").year);
+    $(document).find("input[name='brand']").val($(this).data("card").brand);
+    $(document).find("input[name='card_number']").val($(this).data("card").card_number);
+    $(document).find("input[name='player']").val($(this).data("card").player);
+    $(document).find("input[name='attribute']").val($(this).data("card").attribute);
+    $(document).find("input[name='dv']").val($(this).data("card").dv);
+    $(document).find("input[name='per_card']").val($(this).data("card").per_card);
+    $(document).find("input[name='grading']").val($(this).data("card").grading);
+    $(document).find("input[name='max_dv']").val($(this).data("card").max_dv);
+    $(document).find("input[name='post_id']").val($(this).data("post_id"));
+    $(document).find("input[name='card']").val( JSON.stringify($(this).data("card")) );
 
     $('.view_card').on('shown.bs.modal', function () {
         $('#sold_price').focus();
@@ -730,7 +746,6 @@ $(document).on("click",".card-row", function(e){
 
 
 });
-
 
 
 $(document).on("click",".my-order-row", function(e){
