@@ -175,8 +175,8 @@ $consignment_status = array("Order Partial Payment", "Order Consigned", "Ready F
                     <th class='text-end'>DV</th>
                     <th class="text-end">Grading</th>
                 <?php if( in_array( $checkout_meta["status"][0], $consignment_status ) ){ ?>
-                    <th>Sold Price</th>
-                    <th>To Receive</th>
+                    <th class='text-end'>Sold Price</th>
+                    <th class='text-end'>To Receive</th>
                 <?php } ?>
                 </tr>
             </thead>
@@ -239,8 +239,8 @@ $consignment_status = array("Order Partial Payment", "Order Consigned", "Ready F
                     <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                     <?php if( in_array( $checkout_meta["status"][0], $consignment_status ) ){ ?>
-                    <td>0</td>
-                    <td>0</td>
+                    <td class='text-end'>0</td>
+                    <td class='text-end'>0</td>
                     <?php } ?>
 
                 </tr>
