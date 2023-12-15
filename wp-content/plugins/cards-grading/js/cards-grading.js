@@ -239,21 +239,40 @@ function deleteCard(){
 }
 
 
-function showShippedModal(w){
+function showShippedModal(){
 
     $(document).find(".dxmodal").appendTo('body').modal("show");
 
 }
 
-function showPaidModal(w){
+function showPaidModal(){
 
     $(document).find(".paidmodal").appendTo('body').modal("show");
 
 }
 
-function showCardSoldModal(w){
+function showCardSoldModal(){
 
     $(document).find(".view_card").appendTo('body').modal("show");
+
+    $(document).find("#set_sold_price_form input[name='user_id']").val(data["card"]["user_id"]);
+    $(document).find("#set_sold_price_form input[name='grading']").val(data["card"]["grading"]);
+    $(document).find("#set_sold_price_form input[name='max_dv']").val(data["card"]["max_dv"]);
+    $(document).find("#set_sold_price_form input[name='post_id']").val(data["post_id"]);
+    $(document).find("#set_sold_price_form input[name='card']").val( JSON.stringify(data["card"]) );
+
+    $(document).find("#set_sold_price_form input[name='sold_price']").val(data["sold_price"]);
+    $(document).find("#set_sold_price_form input[name='year']").val(data["card"]["year"]);
+    $(document).find("#set_sold_price_form input[name='dv']").val(data["card"]["dv"]);
+    $(document).find("#set_sold_price_form input[name='brand']").val(data["card"]["brand"]);
+    $(document).find("#set_sold_price_form input[name='card_number']").val(data["card"]["card_number"]);
+    $(document).find("#set_sold_price_form input[name='player']").val(data["card"]["player"]);
+    $(document).find("#set_sold_price_form input[name='attribute']").val(data["card"]["attribute"]);
+
+
+    $('.view_card').on('shown.bs.modal', function () {
+        $('#sold_price').focus();
+    })
 
 }
 
@@ -358,7 +377,7 @@ function cardAction(action, value, post_id, parent_element ){
             else if(action == "confirm_sold_price")
             {
                 if(resp == true){
-                    location.reload();
+                    $(document).find(".view_card").modal("hide");
                 }
 
 
@@ -744,11 +763,6 @@ $(document).on("click",".admin-card-row", function(e){
     $(document).find("input[name='max_dv']").val($(this).data("card").max_dv);
     $(document).find("input[name='post_id']").val($(this).data("post_id"));
     $(document).find("input[name='card']").val( JSON.stringify($(this).data("card")) );
-
-    $('.view_card').on('shown.bs.modal', function () {
-        $('#sold_price').focus();
-    })
-
 
 
 });
