@@ -63,6 +63,7 @@ $posts = get_posts($args);
                             $cards_list = get_posts($args);
                             $total_grading_charge = 0;
                             $consigned_cards = 0;
+                            $total_to_receive = 0;
 
                             foreach($cards_list as $card_in_order){
                                 $card_meta = get_post_meta($card_in_order->ID);
