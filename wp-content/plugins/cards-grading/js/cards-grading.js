@@ -714,6 +714,7 @@ $(document).on("click",".admin-card-row", function(e){
     $(document).find(".view_card").find("div#view_card_form_box").removeClass("d-none");
     $(document).find(".view_card").appendTo('body').modal("show");
 
+    $(document).find("input[name='grade']").val($(this).data("card").grade);
     $(document).find("input[name='quantity']").val($(this).data("card").quantity);
     $(document).find("input[name='year']").val($(this).data("card").year);
     $(document).find("input[name='brand']").val($(this).data("card").brand);

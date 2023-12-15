@@ -267,11 +267,15 @@ $processed_status = array("Processing Order", "Cards Graded");
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="col-xl-4 col-lg-4 col-md-4">
+                                    <label for="grade">Grade</label>
+                                    <input type="text" name="grade" value="" data-field_check="required"  class="form-control mb-2" disabled/>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4">
                                     <label for="year">Year</label>
                                     <input type="number" name="year" value="" data-field_check="required"  class="form-control mb-2" disabled/>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                <div class="col-xl-4 col-lg-4 col-md-4">
                                     <label for="dv">Declared Value</label>
                                     <input type="number" name="dv" value="" data-field_check="required" class="form-control mb-2" disabled/>
                                 </div>
