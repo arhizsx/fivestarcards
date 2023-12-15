@@ -500,7 +500,7 @@
             $what_array = array("Consign Card", "Consigned", "Sold");
         }
         elseif( $params['type'] == "sold" ){
-            $what_array = array("Sold");
+            $what_array = array("Sold - Consigned");
         }
         
         $args = array(
