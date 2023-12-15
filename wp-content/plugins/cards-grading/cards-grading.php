@@ -51,6 +51,7 @@
 
         add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
         add_shortcode('cards-grading-view_completed', array( $this, 'cards_grading_view_completed_shortcode' ));
+        add_shortcode('cards-grading-view_consignment', array( $this, 'cards_grading_view_consignment_shortcode' ));
 
 
 
@@ -428,6 +429,26 @@
         return $output ;
     }
 
+    public function cards_grading_view_consignment_shortcode($atts) 
+    {
+        $type = $_GET['type'];
+
+        $default = array(
+            'title' => 'Checkout',
+            'type' => $type
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
+
+        include( plugin_dir_path( __FILE__ ) . 'admin/view_consignment.php' );
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
+
+    
     public function cards_grading_my_for_payment_shortcode($atts) 
     {
         $type = $_GET['type'];
