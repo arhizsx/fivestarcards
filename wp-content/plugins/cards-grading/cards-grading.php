@@ -65,6 +65,27 @@
 
     }
 
+    public function load_assets() 
+    {
+
+        wp_enqueue_style(
+            'cards-grading',
+            plugin_dir_url(__FILE__) . 'css/cards-grading.css',
+            array(),
+            8,
+            'all'
+        );
+
+        wp_enqueue_script(
+            'cards-grading',
+            plugin_dir_url(__FILE__) . 'js/cards-grading.js',
+            array('jquery'),
+            78,
+            true
+        );
+
+    }
+
     public function create_custom_post_type()
     {
         $args = array(
@@ -289,26 +310,6 @@
     }
 
     
-    public function load_assets() 
-    {
-
-        wp_enqueue_style(
-            'cards-grading',
-            plugin_dir_url(__FILE__) . 'css/cards-grading.css',
-            array(),
-            8,
-            'all'
-        );
-
-        wp_enqueue_script(
-            'cards-grading',
-            plugin_dir_url(__FILE__) . 'js/cards-grading.js',
-            array('jquery'),
-            77,
-            true
-        );
-
-    }
 
     public function cards_grading_shortcode($atts) 
     {

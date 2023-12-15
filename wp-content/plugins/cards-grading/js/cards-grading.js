@@ -11,6 +11,323 @@ function showAddCardModal( what_type, per_card, max_dv ){
 
 }
 
+
+$(document).on("click", ".5star_btn", function(e){
+
+    console.log("button pressed");
+
+    switch( $(this).data("action") ){		
+
+        
+        case "add_card" :
+
+            console.log( $(this).data("type") );
+
+            switch( $(this).data("type") ){
+
+                case "psa-value_bulk":
+                    showAddCardModal("psa-value_bulk", 19, 499);
+                    break;
+
+                case "psa-value_plus":
+                    showAddCardModal("psa-value_plus", 40, 499);
+                    break;
+
+                case "psa-regular":
+                    showAddCardModal("psa-regular", 75, 1499);
+                    break;
+
+                case "psa-express":
+                    showAddCardModal("psa-express", 165, 2499);
+                    break;
+
+                case "psa-super_express":
+                    showAddCardModal("psa-super_express", 330, 4999);
+                    break;
+
+                case "sgc-bulk":
+                    showAddCardModal("sgc-bulk", 15, 1500);
+                    break;
+
+
+                case "cgc-bulk":
+                    showAddCardModal("cgc-bulk", 15, 100);
+                    break;
+
+                case "cgc-economy":
+                    showAddCardModal("cgc-economy", 25, 400);
+                    break;
+
+                case "cgc-standard":
+                    showAddCardModal("cgc-standard", 35, 1000);
+                    break;
+
+                case "cgc-express":
+                    showAddCardModal("cgc-express", 65, 10000);
+                    break;
+
+                default:
+
+            }
+
+            break;
+
+        case "confirm_add":
+
+            var error_cnt = 0;
+            var card = {};
+
+            $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(k, v){
+
+                    if( $(v).val().length > 0 ){
+
+                        card[ $(v).attr("name") ] = $(v).val();
+
+                    } else {
+
+                        if($(v).data("field_check") == "required"){
+
+                            $(v).focus();
+                            $(v).val('');
+                            error_cnt = error_cnt + 1;
+                            return false;
+
+                        }
+                }
+
+
+            });
+
+            if(error_cnt === 0){
+                addCardToTable( card );
+            }
+
+            break;
+
+        case "confirm_max_dv":
+            $(document).find("#maxed-out").addClass("d-none");
+            $(document).find("#add_card_form_box").removeClass("d-none");
+
+            break;
+
+        case "clear_table" :
+
+            showClearTableModal();
+
+            break;
+
+        case "confirm_clear":
+
+            tableAction( $(this).data("grading_type"), "clear", ".clear_cards" );
+
+            break;
+
+        case "checkout" :
+
+            window.location.href = "/checkout?type=" + $(this).data("type") ;
+
+            break;
+
+        case "confirm_checkout":
+
+            tableAction( $(this).data("type"), "checkout", ".checkout_cards" );
+
+            break;
+
+        case "update_card":
+
+            updateCard();
+
+            break;
+
+        case "delete_card":
+
+            deleteCard();
+
+            break;
+
+        case "shipped":
+
+            showShippedModal();
+            break;
+
+        case "confirm_shipping":
+
+            var error_cnt = 0;
+            var shipping_info = {};
+
+            $(document).find(".dxmodal").find('#shipping_info_form *').filter(':input').each(function(k, v){
+
+                    if( $(v).val().length > 0 ){
+
+                        shipping_info[ $(v).attr("name") ] = $(v).val();
+
+                    } else {
+
+                        if($(v).data("field_check") == "required"){
+
+                            $(v).focus();
+                            $(v).val('');
+                            error_cnt = error_cnt + 1;
+                            return false;
+
+                        }
+                }
+
+
+            });
+
+            if(error_cnt === 0){
+
+                var order_number = $(document).find("input[name='order_number']").val();
+                orderAction("set_shipping", shipping_info, order_number);
+            }
+ 
+            break;
+
+        case "package_received":
+
+            var order_number = $(this).data("order_number");
+            if ( orderAction("package_received", null, order_number) ){
+                location.reload();
+            }
+
+
+            break;
+
+        case "item_not_avlb_in_package":
+
+            cardAction("card_update_status", "Not Available", $(this).data("post_id"), $(this).closest("tr"));
+            break;
+
+        case "item_avlb_in_package":
+
+            cardAction("card_update_status", "Received", $(this).data("post_id"), $(this).closest("tr"));
+            break;
+
+        case "complete_package_contents":
+
+            var order_number = $(this).data("order_number");
+            if ( orderAction("complete_package_contents", null, order_number) ){
+                location.reload();
+            }
+            
+            break;
+
+        case "acknowledge_missing_cards":
+
+            var order_number = $(this).data("order_number");
+            if ( orderAction("complete_package_contents", null, order_number) ){
+                location.reload();
+            }
+            
+            break;
+            
+        case "incomplete_package_contents":
+
+            var order_number = $(this).data("order_number");
+            if (orderAction("incomplete_package_contents", null, order_number) ){
+                location.reload();
+            }
+            
+            break;
+            
+        case "show_grades":
+            var order_number = $(this).data("order_number");
+            if (orderAction("show_grades", null, order_number) ){
+                location.reload();
+            }
+            break;
+        
+        case "set_grade":
+
+
+            showSetGrade( $(this).closest("tr").data() );
+
+            break;
+
+        case "confirm_card_grade":
+
+            confirmCardGrade();
+            break;    
+
+        case "pay_card_grading":
+
+            cardAction("pay_card_grading", "Pay Grading", $(this).data("post_id"), $(this).closest("tr"));
+            break;
+
+        case "consign_card":
+
+            cardAction("consign_card", "Consign Card", $(this).data("post_id"), $(this).closest("tr"));
+            break;
+
+        case "complete_grading_process":
+
+            var order_number = $(this).data("order_number");
+            if (orderAction("complete_grading_process", null, order_number) ){
+                location.reload();
+            }
+        
+            break;
+        
+        case "acknowledge_order_request":
+
+            var order_number = $(this).data("order_number");
+            if (orderAction("acknowledge_order_request", null, order_number) ){
+                location.reload();
+            }
+        
+            break;
+
+        case "order_paid":
+
+            showPaidModal();
+        
+            break;
+
+        case "consignment_paid":
+
+            showConsignmentPaidModal();
+        
+            break;
+
+        case "confirm_consignment_payment":
+            
+            var order_number = $(this).data("order_number");
+            if (orderAction("confirm_consignment_payment", null, order_number) ){
+                location.reload();
+            }
+
+            break;
+
+        case "card_sold":
+            
+            showCardSoldModal($(this).data());
+
+            break;
+
+        case "confirm_sold_price":
+            
+            confirmSoldPrice();
+
+            break;
+
+
+        case "consignment_ready_for_payment":
+            
+            var order_number = $(this).data("order_number");
+            if (orderAction("consignment_ready_for_payment", null, order_number) ){
+                location.reload();
+            }
+
+            break;
+    
+        default:
+            console.log("Button not configured: " + $(this).data("action"));
+    }
+
+});
+
 function addCardToTable(card){
 
 
@@ -444,321 +761,6 @@ function confirmSoldPrice(){
 }
 
 
-$(document).on("click", ".5star_btn", function(e){
-
-    console.log("button pressed");
-
-    switch( $(this).data("action") ){		
-
-        
-        case "add_card" :
-
-            console.log( $(this).data("type") );
-
-            switch( $(this).data("type") ){
-
-                case "psa-value_bulk":
-                    showAddCardModal("psa-value_bulk", 19, 499);
-                    break;
-
-                case "psa-value_plus":
-                    showAddCardModal("psa-value_plus", 40, 499);
-                    break;
-
-                case "psa-regular":
-                    showAddCardModal("psa-regular", 75, 1499);
-                    break;
-
-                case "psa-express":
-                    showAddCardModal("psa-express", 165, 2499);
-                    break;
-
-                case "psa-super_express":
-                    showAddCardModal("psa-super_express", 330, 4999);
-                    break;
-
-                case "sgc-bulk":
-                    showAddCardModal("sgc-bulk", 15, 1500);
-                    break;
-
-
-                case "cgc-bulk":
-                    showAddCardModal("cgc-bulk", 15, 100);
-                    break;
-
-                case "cgc-economy":
-                    showAddCardModal("cgc-economy", 25, 400);
-                    break;
-
-                case "cgc-standard":
-                    showAddCardModal("cgc-standard", 35, 1000);
-                    break;
-
-                case "cgc-express":
-                    showAddCardModal("cgc-express", 65, 10000);
-                    break;
-
-                default:
-
-            }
-
-            break;
-
-        case "confirm_add":
-
-            var error_cnt = 0;
-            var card = {};
-
-            $(document).find(".dxmodal").find('#add_card_form *').filter(':input').each(function(k, v){
-
-                    if( $(v).val().length > 0 ){
-
-                        card[ $(v).attr("name") ] = $(v).val();
-
-                    } else {
-
-                        if($(v).data("field_check") == "required"){
-
-                            $(v).focus();
-                            $(v).val('');
-                            error_cnt = error_cnt + 1;
-                            return false;
-
-                        }
-                }
-
-
-            });
-
-            if(error_cnt === 0){
-                addCardToTable( card );
-            }
-
-            break;
-
-        case "confirm_max_dv":
-            $(document).find("#maxed-out").addClass("d-none");
-            $(document).find("#add_card_form_box").removeClass("d-none");
-
-            break;
-
-        case "clear_table" :
-
-            showClearTableModal();
-
-            break;
-
-        case "confirm_clear":
-
-            tableAction( $(this).data("grading_type"), "clear", ".clear_cards" );
-
-            break;
-
-        case "checkout" :
-
-            window.location.href = "/checkout?type=" + $(this).data("type") ;
-
-            break;
-
-        case "confirm_checkout":
-
-            tableAction( $(this).data("type"), "checkout", ".checkout_cards" );
-
-            break;
-
-        case "update_card":
-
-            updateCard();
-
-            break;
-
-        case "delete_card":
-
-            deleteCard();
-
-            break;
-
-        case "shipped":
-
-            showShippedModal();
-            break;
-
-        case "confirm_shipping":
-
-            var error_cnt = 0;
-            var shipping_info = {};
-
-            $(document).find(".dxmodal").find('#shipping_info_form *').filter(':input').each(function(k, v){
-
-                    if( $(v).val().length > 0 ){
-
-                        shipping_info[ $(v).attr("name") ] = $(v).val();
-
-                    } else {
-
-                        if($(v).data("field_check") == "required"){
-
-                            $(v).focus();
-                            $(v).val('');
-                            error_cnt = error_cnt + 1;
-                            return false;
-
-                        }
-                }
-
-
-            });
-
-            if(error_cnt === 0){
-
-                var order_number = $(document).find("input[name='order_number']").val();
-                orderAction("set_shipping", shipping_info, order_number);
-            }
- 
-            break;
-
-        case "package_received":
-
-            var order_number = $(this).data("order_number");
-            if ( orderAction("package_received", null, order_number) ){
-                location.reload();
-            }
-
-
-            break;
-
-        case "item_not_avlb_in_package":
-
-            cardAction("card_update_status", "Not Available", $(this).data("post_id"), $(this).closest("tr"));
-            break;
-
-        case "item_avlb_in_package":
-
-            cardAction("card_update_status", "Received", $(this).data("post_id"), $(this).closest("tr"));
-            break;
-
-        case "complete_package_contents":
-
-            var order_number = $(this).data("order_number");
-            if ( orderAction("complete_package_contents", null, order_number) ){
-                location.reload();
-            }
-            
-            break;
-
-        case "acknowledge_missing_cards":
-
-            var order_number = $(this).data("order_number");
-            if ( orderAction("complete_package_contents", null, order_number) ){
-                location.reload();
-            }
-            
-            break;
-            
-        case "incomplete_package_contents":
-
-            var order_number = $(this).data("order_number");
-            if (orderAction("incomplete_package_contents", null, order_number) ){
-                location.reload();
-            }
-            
-            break;
-            
-        case "show_grades":
-            var order_number = $(this).data("order_number");
-            if (orderAction("show_grades", null, order_number) ){
-                location.reload();
-            }
-            break;
-        
-        case "set_grade":
-
-
-            showSetGrade( $(this).closest("tr").data() );
-
-            break;
-
-        case "confirm_card_grade":
-
-            confirmCardGrade();
-            break;    
-
-        case "pay_card_grading":
-
-            cardAction("pay_card_grading", "Pay Grading", $(this).data("post_id"), $(this).closest("tr"));
-            break;
-
-        case "consign_card":
-
-            cardAction("consign_card", "Consign Card", $(this).data("post_id"), $(this).closest("tr"));
-            break;
-
-        case "complete_grading_process":
-
-            var order_number = $(this).data("order_number");
-            if (orderAction("complete_grading_process", null, order_number) ){
-                location.reload();
-            }
-        
-            break;
-        
-        case "acknowledge_order_request":
-
-            var order_number = $(this).data("order_number");
-            if (orderAction("acknowledge_order_request", null, order_number) ){
-                location.reload();
-            }
-        
-            break;
-
-        case "order_paid":
-
-            showPaidModal();
-        
-            break;
-
-        case "consignment_paid":
-
-            showConsignmentPaidModal();
-        
-            break;
-
-        case "confirm_consignment_payment":
-            
-            var order_number = $(this).data("order_number");
-            if (orderAction("confirm_consignment_payment", null, order_number) ){
-                location.reload();
-            }
-
-            break;
-
-        case "card_sold":
-            
-            showCardSoldModal($(this).data());
-
-            break;
-
-        case "confirm_sold_price":
-            
-            confirmSoldPrice();
-
-            break;
-
-
-        case "consignment_ready_for_payment":
-            
-            var order_number = $(this).data("order_number");
-            if (orderAction("consignment_ready_for_payment", null, order_number) ){
-                location.reload();
-            }
-
-            break;
-    
-        default:
-            console.log("Button not configured: " + $(this).data("action"));
-    }
-
-});
 
 $(document).on("click",".card-row", function(e){
 
@@ -797,5 +799,11 @@ $(document).on("click",".admin-order-row", function(e){
 $(document).on("click",".admin-consigned-row", function(e){
 
     window.location.href = "/admin/view-consignment?id=" + $(this).data("post_id") ;
+
+});
+
+$(document).on("click",".admin-completed-row", function(e){
+
+    window.location.href = "/admin/view-completed?id=" + $(this).data("post_id") ;
 
 });
