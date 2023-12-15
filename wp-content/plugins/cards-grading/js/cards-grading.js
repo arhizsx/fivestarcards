@@ -312,7 +312,6 @@ $(document).on("click", ".5star_btn", function(e){
 
             break;
 
-
         case "consignment_ready_for_payment":
             
             var order_number = $(this).data("order_number");
@@ -322,6 +321,15 @@ $(document).on("click", ".5star_btn", function(e){
 
             break;
     
+        case "cancel_order":
+            
+            var order_number = $(this).data("order_number");
+            if (orderAction("cancel_order", null, order_number) ){
+                location.reload();
+            }
+
+            break;
+
         default:
             console.log("Button not configured: " + $(this).data("action"));
     }

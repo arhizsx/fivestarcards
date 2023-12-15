@@ -85,11 +85,23 @@
             'cards-grading',
             plugin_dir_url(__FILE__) . 'js/cards-grading.js',
             array('jquery'),
-            78,
+            79,
             true
         );
 
     }
+
+    public function load_scripts()
+    {   
+        ?>
+        <script>
+
+        </script>
+        <?php 
+    }
+
+    //*********** POST TYPES *********** //
+
 
     public function create_custom_post_type()
     {
@@ -313,8 +325,10 @@
             break;
         }
     }
+    //*********** POST TYPES *********** //
 
-    
+
+    //*********** SHORTCODES *********** //
 
     public function cards_grading_shortcode($atts) 
     {
@@ -580,8 +594,6 @@
         return $output ;
     }
     
-
-
     public function cards_grading_dashbox_shortcode($atts) 
     {
 
@@ -631,15 +643,10 @@
         return $output ;
     }
 
-    public function load_scripts()
-    {   
-        ?>
-        <script>
+    //*********** SHORTCODES *********** //
 
-        </script>
-        <?php 
-    }
 
+    //*********** ENDPOINTS *********** //
 
     public function register_endpoint()
     {
@@ -673,6 +680,11 @@
 
     }
 
+    //*********** ENDPOINTS *********** //
+
+
+    //*********** HANDLERS *********** //
+    
     public function handle_add_card($data){
 
         $headers = $data->get_headers();
@@ -826,6 +838,11 @@
 
         }
         
+        elseif($params["action"] == "cancel_order"){
+
+            return $this->doCancelOrder($params);
+
+        }
         
         
 
@@ -836,12 +853,17 @@
 
     }    
 
+    //*********** HANDLERS *********** //
+
+
+
+    //*********** HANDLER FUNCTIONS *********** //
+
 
     public function doCardUpdateMeta($params, $key){
         update_post_meta($params["post_id"], $key, $params["value"] );
         return true;
     }
-
 
     public function doClearTable( $params ){
 
@@ -1151,7 +1173,6 @@
 
     }
 
-
     public function doSetSoldPrice($params){
 
         update_post_meta($params["post_id"], "status", "Sold - Consigned" );
@@ -1263,6 +1284,15 @@
         return true;
         
     }
+
+    public function doCancelOrder($params){
+
+        update_post_meta($params["order_number"], 'status', 'Order Cancelled');   
+        return true;
+
+    }
+
+    //*********** HANDLER FUNCTIONS *********** //
 
  }
 
