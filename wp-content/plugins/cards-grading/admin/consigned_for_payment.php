@@ -82,9 +82,9 @@ $posts = get_posts($args);
 
                                 }
                                 
-
                             }
-                            
+
+                            $total_to_pay = $total_to_receive - $total_grading_charge;
                                                         
                 ?>
                             <tr class="admin-consigned-row" data-post_id="<?php echo $post->ID; ?>">
@@ -95,7 +95,7 @@ $posts = get_posts($args);
                                 <td><?php echo $meta["status"][0]; ?></td>
                                 <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
                                 <td class='text-end'><?php echo $consigned_cards; ?></td>
-                                <td class='text-end'><?php echo "$" . number_format((float) $total_to_receive - $total_grading_charge, 2, '.', ''); ?></td>
+                                <td class='text-end'><?php echo "$" . number_format((float) $total_to_pay, 2, '.', ''); ?></td>
                             </tr>
                 <?php          
                         }
