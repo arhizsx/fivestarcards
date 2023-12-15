@@ -46,6 +46,7 @@
         add_shortcode('cards-grading-checkout', array( $this, 'cards_grading_checkout_shortcode' ));
         add_shortcode('cards-grading-my_orders', array( $this, 'cards_grading_my_orders_shortcode' ));
         add_shortcode('cards-grading-my_consigned', array( $this, 'cards_grading_my_consigned_shortcode' ));
+        add_shortcode('cards-grading-my_for_payment', array( $this, 'cards_grading_my_for_payment_shortcode' ));
 
         add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
 
@@ -384,6 +385,26 @@
         ob_start();
 
         include( plugin_dir_path( __FILE__ ) . 'admin/my_consigned.php' );
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
+
+
+    public function cards_grading_my_for_payment_shortcode($atts) 
+    {
+        $type = $_GET['type'];
+
+        $default = array(
+            'title' => 'Checkout',
+            'type' => $type
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
+
+        include( plugin_dir_path( __FILE__ ) . 'admin/my_for_payment.php' );
         
         $output = ob_get_clean(); 
         
