@@ -195,7 +195,7 @@ $consignment_status = array("Order Partial Payment", "Order Consigned", "Ready F
                                 $card_total_dv = $card["dv"] * $card["quantity"];
                                 $card_grading_charge = $card["per_card"] * $card["quantity"];
 
-                                if( $meta["status"][0] ==  "To Pay - Grade Only" ){
+                                if( in_array( $meta["status"][0], array("To Pay - Grade Only", "To Ship", "Shipped") ) ){
                                     $grading_charge = $grading_charge + $card_grading_charge;
                                 }
         
