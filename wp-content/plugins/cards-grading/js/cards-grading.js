@@ -253,10 +253,11 @@ function showPaidModal(){
 
 function showCardSoldModal(data){
 
-    console.log(data["grade"]);
+    console.log(data["card"]);
 
     $(document).find(".view_card").find("div#view_card_form_box").removeClass("d-none");
     $(document).find(".view_card").appendTo('body').modal("show");
+
 
     $('.view_card').on('shown.bs.modal', function () {
         $('#sold_price').focus();
