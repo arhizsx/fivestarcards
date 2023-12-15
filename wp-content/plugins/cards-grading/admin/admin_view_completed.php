@@ -35,10 +35,8 @@ foreach($posts as $post)
     $cards_count = $cards_count + $card["quantity"];
 }
 
-$admin_status = array( "Consignment Paid" );
-$admin_action_status = array( "Consigned", "Sold - Consigned" );
-
-$payment_status = array( "Ready For Payment" );
+$admin_status = [];
+$admin_action_status = [];
 
 ?>
 
@@ -102,37 +100,9 @@ $payment_status = array( "Ready For Payment" );
         <div class="col-lg-6 col-md-6 col-sm-6 text-end">
             <?php 
             if( in_array( $checkout_meta["status"][0], $admin_status  ) ) { 
-
-                $still_in_consignment = 0;
-                foreach($posts as $post)
-                {
-                    $meta = get_post_meta($post->ID);
-                    
-                    if( $meta["status"][0] == "Consigned"){
-                        $still_in_consignment++;
-                    }
-
-                }
-
-                if( $still_in_consignment == 0 ) {
             ?>
-                <button class='5star_btn btn btn-primary mb-3' data-action="consignment_ready_for_payment"  data-order_number="<?php echo $params['order_number'] ?>">
-                    Notify Customer
-                </button>      
             <?php 
-
-                    
-
-                }
             } 
-            if( in_array( $checkout_meta["status"][0], $payment_status  ) ) { 
-            ?>
-                <button class='5star_btn btn btn-primary mb-3' data-action="consignment_paid"  data-order_number="<?php echo $params['order_number'] ?>">
-                    Consignment Paid
-                </button>      
-
-            <?php 
-            }
             ?>
         </div>
     </div>
@@ -140,7 +110,6 @@ $payment_status = array( "Ready For Payment" );
         <table class='table table-sm 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
-                    <th>Action</th>
                     <th>ID</th>
                     <th width="40%">Card</th>
                     <th>Status</th>
@@ -170,19 +139,6 @@ $payment_status = array( "Ready For Payment" );
 
                 ?>
                             <tr class="admin-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>' data-grade="<?php echo $meta['grade'][0]; ?>" data-sold_price="<?php echo $meta['sold_price'][0]; ?>">
-                                <td >
-                                <?php if( in_array( $checkout_meta["status"][0], $admin_status ) ){ ?>
-                                    <?php if( in_array( $meta["status"][0], $admin_action_status  ) ) { ?>
-                                        <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="card_sold" data-post_id="<?php echo $post->ID; ?>"  data-card='<?php echo json_encode($card) ?>' data-grade="<?php echo $meta['grade'][0]; ?>" data-sold_price="<?php echo $meta['sold_price'][0]; ?>">
-                                            Card Sold
-                                        </button>
-                                    <?php } else {?>
-                                        -
-                                    <?php } ?>
-                                <?php } else {
-                                    echo "-";
-                                }?>
-                                </td>
                                 <td>
                                     <?php echo $post->ID; ?>
                                 </td>
