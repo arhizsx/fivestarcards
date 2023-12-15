@@ -25,7 +25,7 @@ $posts = get_posts($args);
 ?>
 
 <div class="m-0 p-0">
-    <H2 style="color: black;">Consigned Orders</H2>
+    <H3 style="color: black;">Consigned Orders</H3>
     <div class="table-responsive">    
         <table class='table 5star_my_orders table-bordered table-striped'>
             <thead>
