@@ -260,7 +260,7 @@ $payment_status = array( "Ready For Payment" );
                 </div>
                 <div class="row border-bottom pb-2">
                     <div class="col text-end">
-                       LESS Unpaid Grading Charge    
+                       <span style="color: red;">LESS</span> Unpaid Grading Charge    
                     </div>
                     <div class="col text-end"  id="grading_charges">
                         $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
