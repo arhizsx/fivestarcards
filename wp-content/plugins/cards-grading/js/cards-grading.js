@@ -396,7 +396,7 @@ function confirmCardGrade(){
 
 function showCardSoldModal(data){
 
-    console.log(data["card"]["quantity"]);
+    console.log(data);
 
     $(document).find(".view_card").find("div#view_card_form_box").removeClass("d-none");
     $(document).find(".view_card").appendTo('body').modal("show");
@@ -412,7 +412,7 @@ function showCardSoldModal(data){
     $(document).find("input[name='per_card']").val(  data["card"]["per_card"]);
     $(document).find("input[name='grading']").val(  data["card"]["grading"]);
     $(document).find("input[name='max_dv']").val(  data["card"]["max_dv"]);
-    $(document).find("input[name='post_id']").val(  data["card"]["post_id"]);
+    $(document).find("input[name='post_id']").val(  data["post_id"]);
     $(document).find("input[name='card']").val( JSON.stringify( data["card"]) );
 
     $('.view_card').on('shown.bs.modal', function () {
