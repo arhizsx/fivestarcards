@@ -359,9 +359,9 @@ $payment_status = array( "Ready For Payment" );
 					X
 				</button>
 			</div>
-            <div class="" id="set_shipping_info_box">
+            <div class="" id="set_consignment_payment_info_box">
                 <div class="modal-body py-2 px-3">
-                    <forn id="shipping_info_form">
+                    <forn id="consignment_payment_info_form">
 
                         <input type="hidden" name="user_id" value='<?php echo $checkout_meta["user_id"][0]; ?>'/>
                         <input type="hidden" name="order_number" value='<?php echo $params['order_number']; ?>'/>
@@ -384,7 +384,7 @@ $payment_status = array( "Ready For Payment" );
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="amount_paid">Amount</label>
-                                <input type="number" name="paamount_paidid_by" class="form-control" data-field_check="required">
+                                <input type="number" name="amount_paid" class="form-control" data-field_check="required">
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
                                 <label for="reference_number">Reference Number</label>

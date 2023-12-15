@@ -362,7 +362,13 @@ function showPaidModal(){
 
 function showConsignmentPaidModal(){
 
+    var to_pay_total = $(document).find("#to_pay_total").text();
+    to_pay_total = parseFloat(to_pay_total.replace("$", ""));
+
+    $(document).find("input[name='amount_paid']").val(to_pay_total);
+
     $(document).find(".consignmentpaidmodal").appendTo('body').modal("show");
+
 
 }
 
