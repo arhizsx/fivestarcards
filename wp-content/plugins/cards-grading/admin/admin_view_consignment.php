@@ -234,14 +234,6 @@ $admin_action_status = array( "Consigned", "Sold - Consigned" );
                     <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
                 <div class="row mb-2">
                     <div class="col text-end">
-                            Total DV          
-                    </div>
-                    <div class="col text-end" id="total_dv">
-                        $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>
-                    </div>
-                </div>
-                <div class="row mb-2">
-                    <div class="col text-end">
                             Grading Charge    
                     </div>
                     <div class="col text-end"  id="grading_charges">
