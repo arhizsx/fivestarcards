@@ -31,7 +31,8 @@ $posts = get_posts($args);
                     <th>Status</th>
                     <th class='text-end'>Total Cards</th>
                     <th class='text-end'>Consigned Cards</th>
-                    <th class='text-end'>Paid</th>
+                    <th class='text-end'>Sold Price</th>
+                    <th class='text-end'>Amt Paid</th>
                 </tr>
             </thead>
             <tbody>
@@ -64,6 +65,7 @@ $posts = get_posts($args);
                             $total_grading_charge = 0;
                             $consigned_cards = 0;
                             $total_to_receive = 0;
+                            $total_sold = 0;
 
                             foreach($cards_list as $card_in_order){
                                 $card_meta = get_post_meta($card_in_order->ID);
@@ -78,6 +80,7 @@ $posts = get_posts($args);
 
                                     if($card_meta["status"][0] == "Sold - Consigned"){
                                         $total_to_receive  = $total_to_receive  + $card_meta["to_receive"][0];
+                                        $total_sold  = $total_sold  + $card_meta["sold_price"][0];
                                     }
 
                                 }
@@ -95,6 +98,7 @@ $posts = get_posts($args);
                                 <td><?php echo $meta["status"][0]; ?></td>
                                 <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
                                 <td class='text-end'><?php echo $consigned_cards; ?></td>
+                                <td class='text-end'><?php echo "$" . number_format((float) $total_sold, 2, '.', ''); ?></td>
                                 <td class='text-end'><?php echo "$" . number_format((float) $total_to_pay, 2, '.', ''); ?></td>
                             </tr>
                 <?php          
