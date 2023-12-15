@@ -112,6 +112,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                 {
                     $received = 0;
                     $missing = 0;
+                    $shipped = 0;
 
                     foreach($posts as $post)
                     {
@@ -122,15 +123,18 @@ $processed_status = array("Processing Order", "Cards Graded");
                         elseif( $meta["status"][0] == "Not Available" ){
                             $missing++;
                         }
+                        elseif( $meta["status"][0] == "Shipped" ){
+                            $shipped++;
+                        }
                     }
 
-                    if( $received == count($posts) ){
+                    if( $received == count($posts) && $shipped == 0){
                         $complete_btn = "";
                     } else {
                         $complete_btn = "d-none";
                     }
 
-                    if( $missing > 0){
+                    if( $missing > 0 && $shipped == 0){
                         $missing_btn = "";
                     } else {
                         $missing_btn = "d-none";
