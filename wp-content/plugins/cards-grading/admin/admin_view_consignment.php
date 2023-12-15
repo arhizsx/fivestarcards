@@ -345,7 +345,7 @@ $payment_status = array( "Ready For Payment" );
 		<div class="modal-content modal-ajax">
 			<div class="modal-header bg-dark text-white">
 				<h5 class="modal-title">
-					Payment Information
+					Consignment Payment
 				</h5>
     			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
 					X
