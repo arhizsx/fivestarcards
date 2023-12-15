@@ -618,10 +618,15 @@ function cardAction(action, value, post_id, parent_element ){
                 } 
 
                 var missing = 0;
+                var shipped = 0;
+
                 if( value == "Received" ){
                     $(parent_element).closest("table tbody").find("tr").each( function(k, v){
                         if( $(v).find("td:eq(6)").text() != "Received"){
                             missing = missing + 1;
+                        }
+                        else if( $(v).find("td:eq(6)").text() == "Shipped"){
+                            shipped = shipped + 1;
                         }
                     });
                 }
@@ -630,7 +635,7 @@ function cardAction(action, value, post_id, parent_element ){
                     missing = missing + 1;
                 }
 
-                if( missing > 0 ){
+                if( missing > 0 && shipped == 0 ){
                     $(document).find(".5star_btn[data-action='complete_package_contents']").addClass("d-none");
                     $(document).find(".5star_btn[data-action='incomplete_package_contents']").removeClass("d-none");
                 } else {
