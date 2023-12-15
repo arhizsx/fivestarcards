@@ -360,6 +360,12 @@ function showPaidModal(){
 
 }
 
+function showConsignmentPaidModal(){
+
+    $(document).find(".consignmentpaidmodal").appendTo('body').modal("show");
+
+}
+
 function showSetGrade( data ){
 
 
@@ -702,6 +708,12 @@ $(document).on("click", ".5star_btn", function(e){
         case "order_paid":
 
             showPaidModal();
+        
+            break;
+
+        case "order_paid":
+
+            showConsignmentPaidModal();
         
             break;
 
