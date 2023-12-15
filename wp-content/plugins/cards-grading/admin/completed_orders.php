@@ -31,7 +31,7 @@ $posts = get_posts($args);
                     <th>Status</th>
                     <th class='text-end'>Total Cards</th>
                     <th class='text-end'>Consigned Cards</th>
-                    <th class='text-end'>To Pay</th>
+                    <th class='text-end'>Paid</th>
                 </tr>
             </thead>
             <tbody>
