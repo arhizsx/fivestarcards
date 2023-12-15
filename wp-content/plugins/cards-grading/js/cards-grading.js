@@ -338,7 +338,7 @@ function cardAction(action, value, post_id, parent_element ){
             else if(action == "confirm_sold_price")
             {
                 if(resp == true){
-                    // location.reload();
+                    location.reload();
                 }
 
 
