@@ -271,7 +271,7 @@ $payment_status = array( "Ready For Payment" );
                        To Pay
                     </div>
                     <div class="col text-end"  id="to_pay_total">
-                        $<?php echo number_format((float) $to_receive_total - $grading_charge, 2, '.', ''); ?>
+                        $<?php echo number_format((float) $to_receive_total + $grading_charge, 2, '.', ''); ?>
                     </div>
                 </div>
             </div>
