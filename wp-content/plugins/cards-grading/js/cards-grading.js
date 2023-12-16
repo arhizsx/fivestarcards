@@ -567,6 +567,8 @@ function deleteCard(){
 
 function orderAction(action, data, order_number){
 
+    console.log(data);
+
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
     var url = $(document).find(".5star_logged_cards").data("endpoint");
 
