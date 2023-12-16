@@ -285,6 +285,30 @@ $(document).on("click", ".5star_btn", function(e){
         
             break;
 
+        case "confirm_payment_info":
+
+            var order_number = $(this).data("order_number");
+
+            var mode_of_payment = $(document).find("[name='mode_of_payment'").val();
+            var paid_by = $(document).find("[name='paid_by'").val();
+            var payment_date = $(document).find("[name='payment_date'").val();
+            var amount_paid = $(document).find("[name='amount_paid'").val();
+            var reference_number = $(document).find("[name='reference_number'").val();
+
+            var data = {
+                "mode_of_payment" : mode_of_payment, 
+                "paid_by": paid_by,
+                "payment_date": payment_date,
+                "amount_paid": amount_paid,
+                "reference_number": reference_number,
+            };
+
+            if (orderAction("confirm_payment_info", data, order_number) ){
+                location.reload();
+            }
+    
+            break;
+
         case "consignment_paid":
 
             showConsignmentPaidModal();

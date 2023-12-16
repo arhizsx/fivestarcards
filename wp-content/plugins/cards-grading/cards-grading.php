@@ -863,6 +863,11 @@
 
         }
         
+        elseif($params["action"] == "confirm_payment_info"){
+
+            return $this->doConfirmPaymentInfo($params);
+
+        }
         
 
         return $params;
@@ -1349,6 +1354,49 @@
 
         return true;
 
+    }
+
+    public function doConfirmPaymentInfo($params){
+
+        update_post_meta($params["order_number"], 'status', 'Order Paid');   
+
+        update_post_meta($params["order_number"], "order_mode_of_payment", $params["data"]["mode_of_payment"] );
+        update_post_meta($params["order_number"], "order_paid_by", $params["data"]["paid_by"] );
+        update_post_meta($params["order_number"], "order_payment_date", $params["data"]["payment_date"] );
+        update_post_meta($params["order_number"], "order_reference_number", $params["data"]["reference_number"] );
+
+        $args = array(
+            'meta_query' => array(
+                array(
+                    'key' => 'checkout_id',
+                    'value' => $params['order_number']
+                )
+            ),
+            'post_type' => 'cards-grading-card',
+            'posts_per_page' => -1
+        );
+        
+        $posts = get_posts($args);
+
+
+        foreach($posts as $post)
+        {
+
+            switch( get_post_meta( $post->ID , 'status' , true ) ){
+
+                case "To Pay - Grade Only":
+
+                    update_post_meta($post->ID, 'status', 'Paid - Grade Only');   
+    
+                    break;
+                
+                default:
+
+            }
+
+        }
+        
+        return true;
     }
 
     //*********** HANDLER FUNCTIONS *********** //
