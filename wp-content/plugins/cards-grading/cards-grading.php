@@ -1269,6 +1269,11 @@
 
         update_post_meta($params["order_number"], 'status', 'Consignment Paid');   
 
+        add_post_meta($params["order_number"], "consignment_mode_of_payment", $params["mode_of_payment"] );
+        add_post_meta($params["order_number"], "consignment_paid_by", $params["paid_by"] );
+        add_post_meta($params["order_number"], "consignment_payment_date", $params["payment_date"] );
+        add_post_meta($params["order_number"], "consignment_reference_number", $params["reference_number"] );
+
         $args = array(
             'meta_query' => array(
                 array(
