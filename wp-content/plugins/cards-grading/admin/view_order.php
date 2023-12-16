@@ -209,7 +209,7 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
         
                             }
 
-                            $total_to_receive = $total_to_receive + $meta["sold_price"][0];
+                            $total_to_receive = $total_to_receive + $meta["to_receive"][0];
 
                 ?>
                 <tr class="user-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
