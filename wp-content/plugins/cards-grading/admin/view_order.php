@@ -267,6 +267,8 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
     </div>
 
     <div class='5star_btn_box_bottom w-100'>
+        <?php if( in_array($checkout_meta["status"][0], $consignment_status )  == false ) { ?>
+
         <div class="row">
             <div class="col-lg-6 text-end pb-2 fw-bold cards_dv_total">
             </div>
@@ -289,6 +291,8 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
             </div>
             </div>
         </div>
+
+        <?php } ?>
 
         <?php if( $checkout_meta["status"][0] == "To Ship" ) { ?>
         <div class="row mx-5">
