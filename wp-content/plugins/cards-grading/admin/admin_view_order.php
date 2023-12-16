@@ -169,7 +169,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                     }
                 }
 
-                if( count($posts) > $graded ){
+                if( count($posts) > $graded + $not_avlb ){
                     $show_grade_btn = "d-none";
                 } 
                 elseif( count($posts) == $not_avlb ){
