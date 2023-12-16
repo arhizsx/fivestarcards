@@ -1267,6 +1267,7 @@
 
     public function doConfirmConsignmentPayment($params){
 
+        return $params;
 
         update_post_meta($params["order_number"], 'status', 'Consignment Paid');   
 
