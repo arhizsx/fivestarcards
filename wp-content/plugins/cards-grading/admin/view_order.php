@@ -307,7 +307,7 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
                         $<?php echo number_format((float) $total_to_receive, 2, '.', ''); ?>
                     </div>
                 </div>
-                <div class="row mb-2">
+                <div class="row mb-3 border-bottom">
                     <div class="col text-end">
                        <span style="color: red;">LESS</span> Unpaid Grading Charge    
                     </div>
