@@ -153,6 +153,7 @@ $processed_status = array("Processing Order", "Cards Graded");
             if( $checkout_meta["status"][0] == "Processing Order" ) 
             { 
                 $graded = 0;
+                $not_avlb = 0;
 
                 foreach($posts as $post)
                 {
@@ -161,19 +162,28 @@ $processed_status = array("Processing Order", "Cards Graded");
                         $graded++;
                     }
                     elseif( $meta["status"][0] == "Not Available" ){
+                        $not_avlb++;
                     }
                 }
 
                 if( count($posts) > $graded ){
                     $show_grade_btn = "d-none";
+                } 
+                elseif( count($posts) == $not_avlb ){
+                    $show_grade_btn = "d-none";
+                    $show_cancel_btn = "";
                 } else {
                     $show_grade_btn = "";
+                    $show_cancel_btn = "d-none";
                 }
 
             
             ?>
             <button class='5star_btn btn btn-primary mb-3 <?php echo $show_grade_btn; ?>' data-action="show_grades" data-order_number="<?php echo $params['order_number'] ?>">
                 Show Grades
+            </button>      
+            <button class='5star_btn btn btn-danger mb-3 <?php echo $show_grade_btn; ?>' data-action="show_grades" data-order_number="<?php echo $params['order_number'] ?>">
+                Cancel Order
             </button>      
             <?php 
             } 
