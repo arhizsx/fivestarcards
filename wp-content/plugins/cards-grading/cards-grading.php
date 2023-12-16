@@ -86,7 +86,7 @@
             'cards-grading',
             plugin_dir_url(__FILE__) . 'js/cards-grading.js',
             array('jquery'),
-            91,
+            92,
             true
         );
 
@@ -1267,7 +1267,7 @@
 
     public function doConfirmConsignmentPayment($params){
 
-        return $params;
+        return $params["data"];
 
         update_post_meta($params["order_number"], 'status', 'Consignment Paid');   
 
