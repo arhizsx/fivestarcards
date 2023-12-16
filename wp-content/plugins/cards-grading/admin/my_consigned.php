@@ -6,8 +6,12 @@ $args = array(
     'meta_query' => array(
         'relation' => 'AND', 
         array(
+            'key' => 'user_id',
+            'value' => $user_id
+        ),
+        array(
             'key' => 'status',
-            'value' => array("Order To Pay", "Consignment Paid", "Shipped", "To Ship", "Order Cancelled" ),
+            'value' => array("Order To Pay"),
             'compare' => 'IN'
         )
 
