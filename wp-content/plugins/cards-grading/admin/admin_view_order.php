@@ -167,19 +167,14 @@ $processed_status = array("Processing Order", "Cards Graded");
 
                 if( count($posts) >= $graded ){
                     $show_grade_btn = "d-none";
-                    $show_cancel_btn = "";
                 } else {
                     $show_grade_btn = "";
-                    $show_cancel_btn = "";
                 }
 
             
             ?>
             <button class='5star_btn btn btn-primary mb-3 <?php echo $show_grade_btn; ?>' data-action="show_grades" data-order_number="<?php echo $params['order_number'] ?>">
                 Show Grades
-            </button>      
-            <button class='5star_btn btn btn-danger mb-3 <?php echo $show_cancel_btn; ?>' data-action="cancel_order" data-order_number="<?php echo $params['order_number'] ?>">
-                Cancel Order
             </button>      
             <?php 
             } 
