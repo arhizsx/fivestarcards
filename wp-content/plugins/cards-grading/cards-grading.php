@@ -1267,8 +1267,6 @@
 
     public function doConfirmConsignmentPayment($params){
 
-        return $params["data"]["reference_number"];
-
         update_post_meta($params["order_number"], 'status', 'Consignment Paid');   
 
         update_post_meta($params["order_number"], "consignment_mode_of_payment", $params["data"]["mode_of_payment"] );
