@@ -49,7 +49,7 @@ foreach($posts as $post)
 $processed_status = array("Cards Graded");
 
 
-$consignment_status = array("Order Partial Consignment", "Order Consigned", "Ready For Payment");
+$consignment_status = array("Order Partial Consignment", "Order Consigned", "Ready For Payment", "Consignment Paid");
 
 ?>
 
