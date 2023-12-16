@@ -141,7 +141,10 @@ $processed_status = array("Processing Order", "Cards Graded");
                     }
                 }
             ?>
-            <button class='5star_btn btn btn-danger mb-3 <?php echo $missing_btn; ?>' data-action="incomplete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
+            <button class='5star_btn btn btn-danger mb-3 <?php echo $missing_btn; ?>' data-action="cancel_order" data-order_number="<?php echo $params['order_number'] ?>">
+                Cancel Order
+            </button>      
+            <button class='5star_btn btn btn-warning mb-3 <?php echo $missing_btn; ?>' data-action="incomplete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
                 Missing Items
             </button>      
             <button class='5star_btn btn btn-primary mb-3 <?php echo $complete_btn; ?>' data-action="complete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
