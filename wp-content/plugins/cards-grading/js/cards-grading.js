@@ -638,9 +638,12 @@ function cardAction(action, value, post_id, parent_element ){
                 if( missing > 0 && shipped == 0 ){
                     $(document).find(".5star_btn[data-action='complete_package_contents']").addClass("d-none");
                     $(document).find(".5star_btn[data-action='incomplete_package_contents']").removeClass("d-none");
+                    $(document).find(".5star_btn[data-action='cancel_order']").removeClass("d-none");
                 } else {
                     $(document).find(".5star_btn[data-action='complete_package_contents']").removeClass("d-none");
                     $(document).find(".5star_btn[data-action='incomplete_package_contents']").addClass("d-none");
+                    $(document).find(".5star_btn[data-action='cancel_order']").addClass("d-none");
+
                 }
 
             }
