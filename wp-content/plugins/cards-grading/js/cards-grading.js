@@ -294,9 +294,12 @@ $(document).on("click", ".5star_btn", function(e){
         case "confirm_consignment_payment":
             
             var order_number = $(this).data("order_number");
-            var data = $(document).find("#consignment_payment_info_form form").serialize();
 
-            console.log($(document).find("#consignment_payment_info_form form"));
+            console.log($(document).find("input[name='mode_of_payment'").val() );
+            console.log($(document).find("input[name='paid_by'").val() );
+            console.log($(document).find("input[name='payment_date'").val() );
+            console.log($(document).find("input[name='amount_paid'").val() );
+            console.log($(document).find("input[name='reference_number'").val() );
 
             if (orderAction("confirm_consignment_payment", data, order_number) ){
                 location.reload();
