@@ -1358,8 +1358,6 @@
 
     public function doConfirmPaymentInfo($params){
 
-        return $params;
-
         update_post_meta($params["order_number"], 'status', 'Order Paid');   
 
         update_post_meta($params["order_number"], "order_mode_of_payment", $params["data"]["mode_of_payment"] );
