@@ -295,11 +295,19 @@ $(document).on("click", ".5star_btn", function(e){
             
             var order_number = $(this).data("order_number");
 
-            console.log($(document).find("input[name='mode_of_payment'").val() );
-            console.log($(document).find("input[name='paid_by'").val() );
-            console.log($(document).find("input[name='payment_date'").val() );
-            console.log($(document).find("input[name='amount_paid'").val() );
-            console.log($(document).find("input[name='reference_number'").val() );
+            var mode_of_payment = $(document).find("[name='mode_of_payment'").val();
+            var paid_by = $(document).find("[name='paid_by'").val();
+            var payment_date = $(document).find("[name='payment_date'").val();
+            var amount_paid = $(document).find("[name='amount_paid'").val();
+            var reference_number = $(document).find("[name='reference_number'").val();
+
+            var data = {
+                "mode_of_payment" : mode_of_payment, 
+                "paid_by": paid_by,
+                "payment_date": payment_date,
+                "amount_paid": amount_paid,
+                "reference_number": reference_number,
+            };
 
             if (orderAction("confirm_consignment_payment", data, order_number) ){
                 location.reload();
