@@ -294,7 +294,9 @@ $(document).on("click", ".5star_btn", function(e){
         case "confirm_consignment_payment":
             
             var order_number = $(this).data("order_number");
-            if (orderAction("confirm_consignment_payment", null, order_number) ){
+            var data = $(document).find("#consignment_payment_info_form").serialize();
+
+            if (orderAction("confirm_consignment_payment", data, order_number) ){
                 location.reload();
             }
 
