@@ -11,7 +11,7 @@ $args = array(
         ),
         array(
             'key' => 'status',
-            'value' => array("Order To Pay", "Ready For Payment"),
+            'value' => array("Order To Pay", "Ready For Payment", "Order Partial Payment"),
             'compare' => 'IN'
         )
 
