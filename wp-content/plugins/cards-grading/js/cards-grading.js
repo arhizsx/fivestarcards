@@ -304,7 +304,7 @@ $(document).on("click", ".5star_btn", function(e){
             };
 
             if (orderAction("confirm_payment_info", data, order_number) ){
-                location.reload();
+                // location.reload();
             }
     
             break;
