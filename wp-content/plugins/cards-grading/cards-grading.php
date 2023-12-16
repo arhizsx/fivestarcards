@@ -1307,6 +1307,41 @@
     public function doCancelOrder($params){
 
         update_post_meta($params["order_number"], 'status', 'Order Cancelled');   
+
+        $args = array(
+            'meta_query' => array(
+                array(
+                    'key' => 'checkout_id',
+                    'value' => $params['order_number']
+                )
+            ),
+            'post_type' => 'cards-grading-card',
+            'posts_per_page' => -1
+        );
+        
+        $posts = get_posts($args);
+
+
+        foreach($posts as $post)
+        {
+            $status = get_post_meta( $post->ID , 'status' , true );
+
+            switch( $status  ){
+
+                case "Not Available":
+    
+                    break;
+                
+                default:
+
+                    
+                update_post_meta($post->ID, 'status', $status . " - Cancelled");   
+
+            }
+
+        }
+
+
         return true;
 
     }
