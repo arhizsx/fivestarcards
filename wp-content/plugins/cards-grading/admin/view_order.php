@@ -456,7 +456,7 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
                 </div>
                 <div class="modal-footer">
                     <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                    <button class="btn border btn-success 5star_btn" data-action='confirm_payment_info' data-type=''>Submit Payment Details</button>
+                    <button class="btn border btn-success 5star_btn" data-action='confirm_payment_info' data-order_number="<?php echo $params['order_number']; ?>" data-type=''>Submit Payment Details</button>
                 </div>
             </div>
 		</div>
