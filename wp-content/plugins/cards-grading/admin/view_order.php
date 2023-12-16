@@ -209,6 +209,7 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
         
                             }
 
+                            $total_to_receive = $total_to_receive + $meta["sold_price"][0];
 
                 ?>
                 <tr class="user-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
@@ -303,12 +304,12 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
                         Total To Receive
                     </div>
                     <div class="col text-end" id="total_dv">
-                        $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>
+                        $<?php echo number_format((float) $total_to_receive, 2, '.', ''); ?>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col text-end">
-                       LESS Grading Charge    
+                       LESS Unpaid Grading Charge    
                     </div>
                     <div class="col text-end"  id="grading_charges">
                         $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
