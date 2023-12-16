@@ -272,29 +272,55 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
         <div class="row">
             <div class="col-lg-6 text-end pb-2 fw-bold cards_dv_total">
             </div>
-                <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
-            <div class="row mb-2">
-                <div class="col text-end">
-                            Total DV          
+            <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
+                <div class="row mb-2">
+                    <div class="col text-end">
+                                Total DV          
+                    </div>
+                    <div class="col text-end" id="total_dv">
+                        $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>
+                    </div>
                 </div>
-                <div class="col text-end" id="total_dv">
-                    $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>
+                <div class="row">
+                    <div class="col text-end">
+                        Grading Charge    
+                    </div>
+                    <div class="col text-end"  id="grading_charges">
+                        $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col text-end">
-                            Grading Charge    
-                </div>
-                <div class="col text-end"  id="grading_charges">
-                $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
-                </div>
+        </div>
+
+        <?php } else { ?>
+
+        <div class="row">
+            <div class="col-lg-6 text-end pb-2 fw-bold cards_dv_total">
             </div>
+            <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
+                <div class="row mb-2">
+                    <div class="col text-end">
+                        Total To Receive
+                    </div>
+                    <div class="col text-end" id="total_dv">
+                        $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-end">
+                       LESS Grading Charge    
+                    </div>
+                    <div class="col text-end"  id="grading_charges">
+                        $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
+                    </div>
+                </div>
             </div>
         </div>
 
         <?php } ?>
 
         <?php if( $checkout_meta["status"][0] == "To Ship" ) { ?>
+            
         <div class="row mx-5">
             <div class="col-lg-12">
                 <H3 style="color: black !important;">Ship Your Items To</H3>
