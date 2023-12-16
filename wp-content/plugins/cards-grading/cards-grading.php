@@ -1219,7 +1219,7 @@
         }
 
         if( $pay_grading > 0 && $consign_card > 0){
-            $status = "Order Partial Payment";
+            $status = "Order Partial Consignment";
         } 
         elseif( $pay_grading > 0 && $consign_card == 0){
             $status = "Order To Pay";
