@@ -477,8 +477,8 @@ $processed_status = array("Processing Order", "Cards Graded");
                                     <input type="number" name="order_number" value="" data-field_check="required"  class="form-control mb-2" disabled/>
                                 </div>                                
                                 <div class="col-xl-6 col-lg-6 col-md-6">
-                                    <label for="customer_number">Grading Type</label>
-                                    <input type="number" name="customer_number" value="<?php echo $checkout_meta["grading_type"][0] ?>" data-field_check="required" class="form-control mb-2" disabled/>
+                                    <label for="grading_type">Grading Type</label>
+                                    <input type="text" name="grading_type" value="<?php echo $checkout_meta["grading_type"][0] ?>" data-field_check="required" class="form-control mb-2" disabled/>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-4">
                                     <label for="customer_number">Customer #</label>
