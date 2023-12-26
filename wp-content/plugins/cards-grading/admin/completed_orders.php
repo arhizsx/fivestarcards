@@ -25,7 +25,7 @@ $posts = get_posts($args);
             <thead>
                 <tr>
                     <th>Date</th>
-                    <th>User</th>
+                    <th>Customer</th>
                     <th>Order #</th>
                     <th>Service Type</th>
                     <th>Status</th>
