@@ -54,7 +54,7 @@ $posts = get_posts($args);
                     <td><?php echo $user->display_name; ?></td>
                     <td><?php echo $meta["order_number"][0]; ?></td>
                     <td><?php echo $meta["grading_type"][0]; ?><br><span style='font-size:.7em !important;'><?php echo  $meta["service_type"][0]; ?></span></td>
-                    <td><a href='/admin/?filtered=true&submission_number=<?php echo $meta["submission_number"][0]; ?>'><?php echo $meta["submission_number"][0]; ?></td>
+                    <td><a class="filter-links" href='/admin/?filtered=true&submission_number=<?php echo $meta["submission_number"][0]; ?>'><?php echo $meta["submission_number"][0]; ?></td>
                     <td><?php echo $meta["status"][0]; ?></td>
                     <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
                     <td class="text-end">

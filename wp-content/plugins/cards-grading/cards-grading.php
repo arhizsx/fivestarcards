@@ -81,7 +81,7 @@
             'cards-grading',
             plugin_dir_url(__FILE__) . 'css/cards-grading.css',
             array(),
-            8,
+            9,
             'all'
         );
 

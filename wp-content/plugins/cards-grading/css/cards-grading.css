@@ -16,3 +16,7 @@
     font-weight: bold !important;
     color: black !important;
 }
+
+.filter-links{
+    text-decoration: none;
+}
