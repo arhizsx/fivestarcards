@@ -167,44 +167,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                 Items Complete
             </button>      
             <?php } ?>
-
-            <?php 
-            if( $checkout_meta["status"][0] == "Grading" ) 
-            { 
-                $graded = 0;
-                $not_avlb = 0;
-
-                foreach($posts as $post)
-                {
-                    $meta = get_post_meta($post->ID);
-                    if( $meta["status"][0] == "Graded" ){
-                        $graded++;
-                    }
-                    elseif( $meta["status"][0] == "Not Available" ){
-                        $not_avlb++;
-                    }
-                }
-
-                if( count($posts) > $graded + $not_avlb ){
-                    $show_grade_btn = "d-none";
-                } 
-                elseif( count($posts) == $not_avlb ){
-                    $show_grade_btn = "d-none";
-                    $show_cancel_btn = "";
-                } else {
-                    $show_grade_btn = "";
-                    $show_cancel_btn = "d-none";
-                }
-
             
-            ?>
-            <button class='5star_btn btn btn-primary mb-3 <?php echo $show_grade_btn; ?>' data-action="show_grades" data-order_number="<?php echo $params['order_number'] ?>">
-                Show Grades
-            </button>      
-            <?php 
-            } 
-            ?> 
-
             <?php 
             if( $checkout_meta["status"][0] == "Grading Complete" ) 
             { 
