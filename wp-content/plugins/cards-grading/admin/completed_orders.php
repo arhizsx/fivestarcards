@@ -33,6 +33,7 @@ $posts = get_posts($args);
                     <th class='text-end'>Consigned Cards</th>
                     <th class='text-end'>Sold Price</th>
                     <th class='text-end'>Amt Paid</th>
+                    <th class='text-end'>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -100,6 +101,11 @@ $posts = get_posts($args);
                                 <td class='text-end'><?php echo $consigned_cards; ?></td>
                                 <td class='text-end'><?php echo "$" . number_format((float) $total_sold, 2, '.', ''); ?></td>
                                 <td class='text-end'><?php echo "$" . number_format((float) $total_to_pay, 2, '.', ''); ?></td>
+                                <td class="text-end">
+                                    <button class="5star_btn btn btn-primary mb-3 admin-consigned-row" data-action="admin_table_action" data-order_number="1505">
+                                        ...
+                                    </button>           
+                                </td>
                             </tr>
                 <?php          
                         }
