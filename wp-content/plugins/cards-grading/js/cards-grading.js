@@ -372,7 +372,10 @@ $(document).on("click", ".5star_btn", function(e){
             showUpdateStatusModal();
             break;
 
-                        
+        case "set_submission_number":
+            
+            showSubmissionNumberModal();
+            break;                        
 
         default:
             console.log("Button not configured: " + $(this).data("action"));
@@ -883,3 +886,10 @@ function showUpdateStatusModal(){
     $(document).find(".updatestatusmodal").appendTo('body').modal("show");
 
 }
+
+function showSubmissionNumberModal(){
+
+    $(document).find(".setsubmissionmodal").appendTo('body').modal("show");
+
+}
+

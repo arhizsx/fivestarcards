@@ -220,6 +220,9 @@ $processed_status = array("Processing Order", "Cards Graded");
             if( $checkout_meta["status"][0] == "Processing Order" ) 
             { 
             ?>
+            <button class='5star_btn btn btn-success mb-3' data-action="set_submission_number" data-order_number="<?php echo $params['order_number'] ?>">
+                Set Submission #
+            </button>      
             <button class='5star_btn btn btn-success mb-3' data-action="update_status" data-order_number="<?php echo $params['order_number'] ?>">
                 Update Status
             </button>      
@@ -474,6 +477,56 @@ $processed_status = array("Processing Order", "Cards Graded");
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
                         <button class="btn border btn-primary 5star_btn" data-action="set_order_status">Set Status</button>
+                    </div>
+                </div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade setsubmissionmodal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+	<div class="modal-dialog" id="dxmodal">
+		<div class="modal-content modal-ajax">
+			<div class="modal-header bg-dark text-white">
+				<h5 class="modal-title">
+					Set Submission Number
+				</h5>
+    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+					X
+				</button>
+			</div>
+                <div class="" id="view_card_form_box">
+                    <div class="modal-body py-2 px-3">
+                        <forn id="set_grade_form">
+                            <input type="hidden" name="post_id" value=''/>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="order_number">Order #</label>
+                                    <input type="number" name="order_number" value="" data-field_check="required"  class="form-control mb-2" disabled/>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="customer_number">Customer #</label>
+                                    <input type="number" name="customer_number" value="" data-field_check="required" class="form-control mb-2" disabled/>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="customer">Customer</label>
+                                    <input type="text" name="customer" value="" data-field_check="required" class="form-control mb-3" disabled/>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="status">Status</label>
+                                    <input type="text" name="status" value="" data-field_check="required" class="form-control mb-3" disabled/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12">
+                                    <label for="submission_number">Submission Number</label>
+                                    <input id="submission_number" type="text" name="submission_number" style="font-size: 3em !important; text-align: center !important; color: white !important; background-color: black !important;"  value="" data-field_check="required"  class="form-control mb-2"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+                        <button class="btn border btn-primary 5star_btn" data-action="set_order_status">Set Submission #</button>
                     </div>
                 </div>
 		</div>
