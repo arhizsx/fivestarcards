@@ -451,6 +451,10 @@ $processed_status = array("Processing Order", "Cards Graded");
                                     <input type="text" name="customer" value="" data-field_check="required" class="form-control mb-3" disabled/>
                                 </div>
                                 <div class="col-xl-12">
+                                    <label for="old_status">Old Status</label>
+                                    <input type="text" name="old_status" value="" data-field_check="required" class="form-control mb-3" disabled/>
+                                </div>
+                                <div class="col-xl-12">
                                     <label for="new_status">New Status</label>
                                     <select data-field_check="required" name="new_status" class="form-control mb-2">
                                         <option value="">Select New Status</option>
