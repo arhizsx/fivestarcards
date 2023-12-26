@@ -898,3 +898,7 @@ $(document).find('.setsubmissionmodal').on('shown.bs.modal', function() {
     $(document).find(".setsubmissionmodal").find("input[name='submission_number']").focus();
 });
 
+$(document).find('.view_card').on('shown.bs.modal', function() {
+    $(document).find(".view_card").find("input[name='grade']").focus();
+});
+
