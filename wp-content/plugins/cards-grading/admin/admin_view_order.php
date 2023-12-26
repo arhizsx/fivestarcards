@@ -220,7 +220,7 @@ $processed_status = array("Processing Order", "Cards Graded");
             if( $checkout_meta["status"][0] == "Processing Order" ) 
             { 
             ?>
-            <button class='5star_btn btn btn-success mb-3' data-action="set_submission_number" data-order_number="<?php echo $params['order_number'] ?>">
+            <button class='5star_btn btn btn-primary mb-3' data-action="set_submission_number" data-order_number="<?php echo $params['order_number'] ?>">
                 Set Submission #
             </button>      
             <button class='5star_btn btn btn-success mb-3' data-action="update_status" data-order_number="<?php echo $params['order_number'] ?>">
