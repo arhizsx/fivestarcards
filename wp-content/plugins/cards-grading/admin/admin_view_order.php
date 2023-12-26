@@ -216,6 +216,17 @@ $processed_status = array("Processing Order", "Cards Graded");
             } 
             ?> 
 
+            <?php 
+            if( $checkout_meta["status"][0] == "Processing Order" ) 
+            { 
+            ?>
+            <button class='5star_btn btn btn-success mb-3' data-action="change_status" data-order_number="<?php echo $params['order_number'] ?>">
+                Change Status
+            </button>      
+            <?php 
+            } 
+            ?> 
+
         </div>
     </div>
     <div class="table-responsive">   
