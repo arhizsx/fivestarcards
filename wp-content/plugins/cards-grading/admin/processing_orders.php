@@ -84,9 +84,10 @@ $posts = get_posts($args);
                 </div>
                 <div>
                     Bulk Action 
-                    <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 mr-5  btn-sm" data-action="remove_filter">
-                        Submission #
-                    </button>
+                    <select class="form-control btn-sm">
+                        <option>1</option>
+                        <option>1</option>
+                    </select>
                 </div>
             <?php } ?>
         </div>
