@@ -144,7 +144,6 @@ $payment_status = array( "Ready For Payment" );
                     <th>ID</th>
                     <th width="40%">Card</th>
                     <th>Status</th>
-                    <th class="text-end">DV</th>
                     <th class="text-end">Grading</th>
                     <th class="text-end">Sold Price</th>
                     <th class="text-end">To Receive</th>
@@ -227,7 +226,6 @@ $payment_status = array( "Ready For Payment" );
                                     </div>                        
                                 </td>
                                 <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
-                                <td class='text-end'><?php echo "$" . number_format((float) $card["dv"], 2, '.', ''); ?></td>
                                 <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                                 <td class='text-end'><?php echo "$" . number_format((float) $meta["sold_price"][0], 2, '.', ''); ?></td>
                                 <td class='text-end'><?php echo "$" . number_format((float) $meta["to_receive"][0], 2, '.', ''); ?></td>
