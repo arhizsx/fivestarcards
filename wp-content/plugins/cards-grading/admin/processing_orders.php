@@ -2,17 +2,62 @@
 
 $user_id = get_current_user_id();
 
-$args = array(
-    'meta_query' => array(
+
+    $meta_query = array(
+        "relaton" => 'AND',
+    );
+
+    array_push(
+        $meta_query,             
         array(
             'key' => 'status',
             'value' => array("Processing Order", "Shipped to PSA / SGC", "Research", "Grading", "Assembly", "QA1", "QA2", "Cards Graded", "Grading Complete"),
             'compare' => 'IN'
         )
-    ),
-    'post_type' => 'cards-grading-chk',
-    'posts_per_page' => -1
-);
+    );
+
+
+    if(isset( $_GET['filtered']) && $_GET["filtered"] == "true"){
+
+        if(isset( $_GET["submission_number"]) ){        
+            $filter_array = array(
+                "key" => 'submission_number',
+                'value' => $_GET["submission_number"],
+            );
+
+            array_push(
+                $meta_query,             
+                $filter_array,
+            );
+
+        }
+    
+        if(isset( $_GET["user_id"]) ){
+            
+            $filter_array = array(
+                "key" => 'submission_number',
+                'value' => $_GET["user_id"],
+            );
+
+        }
+
+        array_push(
+            $meta_query,             
+            $filter_array,
+        );
+
+    }
+    
+    $args = array(
+        'meta_query' => array(
+            $meta_query
+        ),
+        'post_type' => 'cards-grading-chk',
+        'posts_per_page' => -1
+    );
+    
+
+
 
 $posts = get_posts($args);
 
@@ -51,7 +96,7 @@ $posts = get_posts($args);
                 ?>
                 <tr class="" data-post_id="<?php echo $post->ID; ?>">
                     <td><?php echo get_the_date( $date_format, $post->ID ) ?><br><span style='font-size:.7em !important;'><?php echo get_the_time( $time_format, $post->ID ); ?></span></td>
-                    <td><a class="filter-links" href='/admin/?filtered=true&show=open&user=<?php echo $user->display_name; ?>'> <?php echo $user->display_name; ?></a></td>
+                    <td><a class="filter-links" href='/admin/?filtered=true&show=open&user_id=<?php echo $user_id; ?>'> <?php echo $user->display_name; ?></a></td>
                     <td><?php echo $meta["order_number"][0]; ?></td>
                     <td><?php echo $meta["grading_type"][0]; ?><br><span style='font-size:.7em !important;'><?php echo  $meta["service_type"][0]; ?></span></td>
                     <td><a class="filter-links" href='/admin/?filtered=true&show=open&submission_number=<?php echo $meta["submission_number"][0]; ?>'><?php echo $meta["submission_number"][0]; ?></td>
