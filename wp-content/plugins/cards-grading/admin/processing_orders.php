@@ -76,19 +76,10 @@ $posts = get_posts($args);
                 </button>           
             <?php } ?>
             <?php if( isset( $_GET["filtered"] ) == "true"  && isset($_GET["submission_number"])){ ?>
-                <div>
-                    Filtered By: 
-                    <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 mr-5  btn-sm" data-action="remove_filter">
-                        Submission #
-                    </button>
-                </div>
-                <div>
-                    Bulk Action 
-                    <select class="form-control btn-sm">
-                        <option>1</option>
-                        <option>1</option>
-                    </select>
-                </div>
+                Filtered By: 
+                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 mr-5  btn-sm" data-action="remove_filter">
+                    Submission #
+                </button>
             <?php } ?>
         </div>
     </div>
