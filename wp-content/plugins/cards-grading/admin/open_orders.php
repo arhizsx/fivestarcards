@@ -19,7 +19,15 @@ $posts = get_posts($args);
 ?>
 
 <div class="m-0 p-0">
-    <H1 style="color: black;">Open Orders</H1>
+    <div class="row">
+        <div class="col-xl-6">
+            <H1 style="color: black;">Open Orders</H1>
+        </div>
+        <div class="col-xl-6">
+            Admin Toolbar
+        </div>
+    </div>
+    
     <div class="table-responsive">    
         <table class='table 5star_my_orders table-bordered table-striped'>
             <thead>
