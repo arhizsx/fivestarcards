@@ -1456,6 +1456,7 @@
             return "incomple data";
         }
 
+        update_post_meta($params["order_number"], 'status', $params["data"]["new_status"]);   
         return true;
 
     }
