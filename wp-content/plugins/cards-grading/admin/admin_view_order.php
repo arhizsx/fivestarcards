@@ -69,7 +69,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
                     <div class='order-label'>Grading Type</div>
-                    <div class='order-data'><?php echo $checkout_meta["grading_type"][0] ?></div>
+                    <div class='order-data grading'><?php echo $checkout_meta["grading_type"][0] ?></div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
                     <div class='order-label'>Total Declared Value</div>
@@ -471,15 +471,20 @@ $processed_status = array("Processing Order", "Cards Graded");
                                 </div>
                             </div>
                             <div class="row">
+
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <label for="order_number">Order #</label>
                                     <input type="number" name="order_number" value="" data-field_check="required"  class="form-control mb-2" disabled/>
-                                </div>
+                                </div>                                
                                 <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="customer_number">Grading Type</label>
+                                    <input type="number" name="customer_number" value="<?php echo $checkout_meta["grading_type"][0] ?>" data-field_check="required" class="form-control mb-2" disabled/>
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4">
                                     <label for="customer_number">Customer #</label>
                                     <input type="number" name="customer_number" value="" data-field_check="required" class="form-control mb-2" disabled/>
                                 </div>
-                                <div class="col-xl-12">
+                                <div class="col-xl-8 col-lg-8 col-md-8">
                                     <label for="customer">Customer</label>
                                     <input type="text" name="customer" value="" data-field_check="required" class="form-control mb-3" disabled/>
                                 </div>
