@@ -909,6 +909,12 @@ $(document).on("click",".admin-order-row", function(e){
 
 });
 
+$(document).on("click",".admin-payment-row", function(e){
+
+    window.location.href = "/admin/view-payment?id=" + $(this).data("post_id") ;
+
+});
+
 $(document).on("click",".admin-consigned-row", function(e){
 
     window.location.href = "/admin/view-consignment?id=" + $(this).data("post_id") ;

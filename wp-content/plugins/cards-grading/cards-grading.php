@@ -62,6 +62,7 @@
         add_shortcode('cards-grading-admin_view_order', array( $this, 'cards_grading_admin_view_order_shortcode' ));
         add_shortcode('cards-grading-admin_view_consignment', array( $this, 'cards_grading_admin_view_consignment_shortcode' ));
         add_shortcode('cards-grading-admin_view_completed', array( $this, 'cards_grading_admin_view_completed_shortcode' ));
+        add_shortcode('cards-grading-admin_view_payment', array( $this, 'cards_grading_admin_view_payment_shortcode' ));
 
         add_shortcode('cards-grading-dashbox', array( $this, 'cards_grading_dashbox_shortcode' ));
 
@@ -533,6 +534,25 @@
         ob_start();
 
         include( plugin_dir_path( __FILE__ ) . 'admin/admin_view_completed.php' );
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
+
+    public function cards_grading_admin_view_payment_shortcode($atts) 
+    {
+        $order_number = $_GET['id'];
+
+        $default = array(
+            'title' => 'Order Number',
+            'order_number' => $order_number
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
+
+        include( plugin_dir_path( __FILE__ ) . 'admin/admin_view_payment.php' );
         
         $output = ob_get_clean(); 
         
