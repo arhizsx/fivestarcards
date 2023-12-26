@@ -415,7 +415,15 @@ $(document).on("click", ".5star_btn", function(e){
             if (orderAction("confirm_new_order_status", data, order_number) ){
                 location.reload();
             }
-            break;                        
+            break;     
+
+
+        case "remove_filter":
+            
+            const url = window.location.href.split('?')[0]
+            location.href =url;
+
+            break;
 
         default:
             console.log("Button not configured: " + $(this).data("action"));
@@ -957,3 +965,4 @@ $(document).find('.setsubmissionmodal').on('shown.bs.modal', function() {
 
 
 
+location.protocol + '//' + location.host + location.pathname
