@@ -75,7 +75,7 @@ $posts = get_posts($args);
                             if( $total_grading_charge > 0 ) {
                                                         
                 ?>
-                            <tr class="admin-order-row" data-post_id="<?php echo $post->ID; ?>">
+                            <tr class="" data-post_id="<?php echo $post->ID; ?>">
                                 <td><?php echo get_the_date( $date_format, $post->ID ) ?><br><span style='font-size:.7em !important;'><?php echo get_the_time( $time_format, $post->ID ); ?></span></td>
                                 <td><?php echo $user->display_name; ?></td>
                                 <td><?php echo $meta["order_number"][0]; ?></td>
