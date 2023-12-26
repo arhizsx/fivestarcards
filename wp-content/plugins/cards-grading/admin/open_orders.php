@@ -49,7 +49,7 @@ $posts = get_posts($args);
                             $user = get_user_by( "id", $user_id );
                                                         
                 ?>
-                <tr class="admin-order-row" data-post_id="<?php echo $post->ID; ?>">
+                <tr class="" data-post_id="<?php echo $post->ID; ?>">
                     <td><?php echo get_the_date( $date_format, $post->ID ) ?><br><span style='font-size:.7em !important;'><?php echo get_the_time( $time_format, $post->ID ); ?></span></td>
                     <td><?php echo $user->display_name; ?></td>
                     <td><?php echo $meta["order_number"][0]; ?></td>
@@ -58,7 +58,7 @@ $posts = get_posts($args);
                     <td><?php echo $meta["status"][0]; ?></td>
                     <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
                     <td class="text-end">
-                        <button class="5star_btn btn btn-primary mb-3" data-action="admin_table_action" data-order_number="1505">
+                        <button class="5star_btn btn btn-primary mb-3 admin-order-row" data-action="admin_table_action" data-order_number="1505">
                             ...
                         </button>           
                     </td>
