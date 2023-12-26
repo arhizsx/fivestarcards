@@ -31,6 +31,7 @@ $posts = get_posts($args);
                     <th>Status</th>
                     <th class='text-end'>Total Cards</th>
                     <th class='text-end'>To Pay</th>
+                    <th class='text-end'>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -82,6 +83,11 @@ $posts = get_posts($args);
                                 <td><?php echo $meta["status"][0]; ?></td>
                                 <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
                                 <td class='text-end'><?php echo "$" . number_format((float) $total_grading_charge, 2, '.', ''); ?></td>
+                                <td class="text-end">
+                                    <button class="5star_btn btn btn-primary mb-3 admin-order-row" data-action="admin_table_action" data-order_number="1505">
+                                        ...
+                                    </button>           
+                                </td>
                             </tr>
                 <?php          
                             }
