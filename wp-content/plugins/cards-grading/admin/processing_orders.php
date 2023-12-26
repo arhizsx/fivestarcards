@@ -69,12 +69,16 @@ $posts = get_posts($args);
             <H1 style="color: black;">Open Orders</H1>
         </div>
         <div class="col-xl-6 text-end">
-            <button class="5star_btn btn btn-secondary mb-3 py-1 px-2  btn-sm" data-action="remove_filter">
-                X - User
-            </button>           
-            <button class="5star_btn btn btn-secondary mb-3 py-1 px-2 btn-sm" data-action="remove_filter">
-                X - Submission #
-            </button>           
+            <?php if( isset( $_GET["filtered"] ) == "true"  && isset($_GET["user_id"])){ ?>
+                <button class="5star_btn btn btn-secondary mb-3 py-1 px-2  btn-sm" data-action="remove_filter">
+                    X - User
+                </button>           
+            <?php } ?>
+            <?php if( isset( $_GET["filtered"] ) == "true"  && isset($_GET["submission_number"])){ ?>
+                <button class="5star_btn btn btn-secondary mb-3 py-1 px-2  btn-sm" data-action="remove_filter">
+                    X - Submission #
+                </button>           
+            <?php } ?>
         </div>
     </div>
     <div class="table-responsive">    
