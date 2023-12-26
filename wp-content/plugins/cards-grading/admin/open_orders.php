@@ -24,8 +24,8 @@ $posts = get_posts($args);
             <H1 style="color: black;">Open Orders</H1>
         </div>
         <div class="col-xl-6 text-right">
-            <button>Search</button>
-            <button>Search</button>
+            <a href="#">Search</a>
+            <a href="#">Select</a>
         </div>
     </div>
     
