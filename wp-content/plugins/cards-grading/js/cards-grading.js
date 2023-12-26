@@ -367,7 +367,12 @@ $(document).on("click", ".5star_btn", function(e){
                 location.reload();
             }
 
+        case "update_status":
+            
+            showUpdateStatusModal();
             break;
+
+                        
 
         default:
             console.log("Button not configured: " + $(this).data("action"));
@@ -805,7 +810,6 @@ function showCardSoldModal(data){
 
 }
 
-
 function confirmSoldPrice(){
 
     var post_id =  $(document).find("#set_sold_price_form input[name='post_id']").val();
@@ -814,8 +818,6 @@ function confirmSoldPrice(){
     cardAction("confirm_sold_price", sold_price, post_id, "");
 
 }
-
-
 
 $(document).on("click",".card-row", function(e){
 
@@ -875,3 +877,9 @@ $(document).on("click",".admin-completed-row", function(e){
     window.location.href = "/admin/view-completed?id=" + $(this).data("post_id") ;
 
 });
+
+function showUpdateStatusModal(){
+
+    $(document).find(".updatestatusmodal").appendTo('body').modal("show");
+
+}

@@ -220,7 +220,7 @@ $processed_status = array("Processing Order", "Cards Graded");
             if( $checkout_meta["status"][0] == "Processing Order" ) 
             { 
             ?>
-            <button class='5star_btn btn btn-success mb-3' data-action="change_status" data-order_number="<?php echo $params['order_number'] ?>">
+            <button class='5star_btn btn btn-success mb-3' data-action="update_status" data-order_number="<?php echo $params['order_number'] ?>">
                 Update Status
             </button>      
             <?php 
@@ -421,4 +421,69 @@ $processed_status = array("Processing Order", "Cards Graded");
 		</div>
 	</div>
 </div>
+
+<div class="modal fade updatestatusmodal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+	<div class="modal-dialog" id="dxmodal">
+		<div class="modal-content modal-ajax">
+			<div class="modal-header bg-dark text-white">
+				<h5 class="modal-title">
+					Update Status
+				</h5>
+    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+					X
+				</button>
+			</div>
+                <div class="" id="view_card_form_box">
+                    <div class="modal-body py-2 px-3">
+                        <forn id="set_grade_form">
+
+                            <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
+                            <input type="hidden" name="grading" value=''/>
+                            <input type="hidden" name="max_dv" value=''/>
+                            <input type="hidden" name="post_id" value=''/>
+                            <input type="hidden" name="card" value=''/>
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12">
+                                    <label for="grade">Grade</label>
+                                    <input id="grade_input" type="text" name="grade" style="font-size: 3em !important; text-align: center !important; color: white !important; background-color: black !important;"  value="" data-field_check="required"  class="form-control mb-2"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="year">Year</label>
+                                    <input type="number" name="year" value="" data-field_check="required"  class="form-control mb-2" disabled/>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="dv">Declared Value</label>
+                                    <input type="number" name="dv" value="" data-field_check="required" class="form-control mb-2" disabled/>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="brand">Brand</label>
+                                    <input type="text" name="brand" value="" data-field_check="required" class="form-control mb-2" disabled/>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="card_number">Card Number</label>
+                                    <input type="text" name="card_number" value="" data-field_check="required" class="form-control mb-2" disabled/>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="player">Player Name</label>
+                                    <input type="text" name="player" value="" data-field_check="required" class="form-control mb-2" disabled/>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="attribute">Attribute S/N</label>
+                                    <input type="text" name="attribute" value="" data-field_check="" class="form-control mb-2" disabled/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+                        <button class="btn border btn-primary 5star_btn" data-action="confirm_card_grade">Save Grade</button>
+                    </div>
+                </div>
+		</div>
+	</div>
+</div>
+
+
 
