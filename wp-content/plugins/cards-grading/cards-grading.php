@@ -909,6 +909,17 @@
 
         }
         
+        elseif($params["action"] == "confirm_new_order_status"){
+
+            return $this->doConfirmNewOrderStatus($params);
+
+        }
+
+        elseif($params["action"] == "confirm_submission_number"){
+
+            return $this->doConfirmSubmissionNumber($params);
+
+        }
 
         return $params;
 
@@ -1437,6 +1448,14 @@
         }
         
         return true;
+    }
+
+    public function doConfirmNewOrderStatus($params){
+        return $params;
+    }
+
+    public function doConfirmSubmissionNumber($params){
+        return $params;
     }
 
     //*********** HANDLER FUNCTIONS *********** //

@@ -380,19 +380,41 @@ $(document).on("click", ".5star_btn", function(e){
         case "confirm_submission_number":
             
             var order_number = $(this).data("order_number");
-            if ( orderAction("complete_package_contents", null, order_number) ){
+
+            var customer_number = $(document).find("[name='customer_number'").val();
+            var customer = $(document).find("[name='customer'").val();
+            var submission_number = $(document).find("[name='submission_number'").val();
+
+            var data = {
+                "customer_number" : customer_number, 
+                "customer": customer,
+                "submission_number": submission_number,
+            };
+
+            if (orderAction("confirm_submission_number", data, order_number) ){
                 location.reload();
             }
-            
             break;                        
             
         case "confirm_new_order_status":
             
             var order_number = $(this).data("order_number");
-            if ( orderAction("complete_package_contents", null, order_number) ){
+
+            var customer_number = $(document).find("[name='customer_number'").val();
+            var customer = $(document).find("[name='customer'").val();
+            var old_status = $(document).find("[name='old_status'").val();
+            var new_status = $(document).find("[name='new_status'").val();
+
+            var data = {
+                "customer_number" : customer_number, 
+                "customer": customer,
+                "old_status": old_status,
+                "new_status": new_status,
+            };
+
+            if (orderAction("confirm_new_order_status", data, order_number) ){
                 location.reload();
             }
-        
             break;                        
 
         default:
