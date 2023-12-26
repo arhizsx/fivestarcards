@@ -169,7 +169,7 @@ $processed_status = array("Processing Order", "Cards Graded");
             <?php } ?>
 
             <?php 
-            if( $checkout_meta["status"][0] == "Processing Order" ) 
+            if( $checkout_meta["status"][0] == "Grading" ) 
             { 
                 $graded = 0;
                 $not_avlb = 0;
