@@ -490,7 +490,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <label for="status">Status</label>
-                                    <input type="text" name="status" value="<?php echo $checkout_meta["status"][0] ?><" data-field_check="required" class="form-control mb-3" disabled/>
+                                    <input type="text" name="status" value="<?php echo $checkout_meta["status"][0] ?>" data-field_check="required" class="form-control mb-3" disabled/>
                                 </div>
                                 <div class="col-xl-12">
                                     <label for="customer">Customer</label>
