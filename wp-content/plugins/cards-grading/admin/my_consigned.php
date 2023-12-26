@@ -34,7 +34,6 @@ $posts = get_posts($args);
                     <th>Order #</th>
                     <th>Service Type</th>
                     <th>Status</th>
-                    <th class='text-end'>Total DV</th>
                     <th class='text-end'>Total Cards</th>
                     <th class='text-end'>Consigned Cards</th>
                 </tr>
@@ -56,7 +55,6 @@ $posts = get_posts($args);
                     <td><?php echo $meta["order_number"][0]; ?></td>
                     <td><?php echo $meta["service_type"][0]; ?><br><span style='font-size:.7em !important;'><?php echo $meta["grading_type"][0]; ?></span></td>
                     <td><?php echo $meta["status"][0]; ?></td>
-                    <td class='text-end'><?php echo "$" . number_format((float) $meta["total_dv"][0], 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
                     <td class='text-end'>0</td>
                 </tr>
