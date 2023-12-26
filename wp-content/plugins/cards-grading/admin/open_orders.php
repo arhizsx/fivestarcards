@@ -24,8 +24,12 @@ $posts = get_posts($args);
             <H1 style="color: black;">Open Orders</H1>
         </div>
         <div class="col-xl-6 text-end">
-            <button class="table_search_button">Search</button>
-            <button class="select_multi_button">Select</button>
+            <button class="5star_btn btn btn-primary mb-3" data-action="table_search_btn" data-order_number="1505">
+                Search
+            </button>           
+            <button class="5star_btn btn btn-primary mb-3" data-action="table_select_btn" data-order_number="1505">
+                Select
+            </button>             
         </div>
     </div>
     
