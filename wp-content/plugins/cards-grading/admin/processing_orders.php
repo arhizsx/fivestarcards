@@ -80,7 +80,7 @@ $posts = get_posts($args);
                 <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 mr-5  btn-sm" data-action="remove_filter">
                     Submission #
                 </button>
-                Bulk Action:           
+                <span class="ml-3">Bulk Action:</span>
             <?php } ?>
         </div>
     </div>
