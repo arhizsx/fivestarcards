@@ -891,7 +891,10 @@ function showSubmissionNumberModal(){
 
     $(document).find(".setsubmissionmodal").appendTo('body').modal("show");
 
-    $(document).find(".setsubmissionmodal").find("input[name='submission_number']").focus();
-
 }
+
+
+$(document).find('.setsubmissionmodal').on('shown.bs.modal', function() {
+    $(document).find(".setsubmissionmodal").find("input[name='submission_number']").focus();
+});
 
