@@ -499,6 +499,12 @@ $processed_status = array("Processing Order", "Cards Graded");
                         <forn id="set_grade_form">
                             <input type="hidden" name="post_id" value=''/>
                             <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12">
+                                    <label for="submission_number">Submission Number</label>
+                                    <input id="submission_number" type="text" name="submission_number" style="font-size: 3em !important; text-align: center !important; color: white !important; background-color: black !important;"  value="" data-field_check="required"  class="form-control mb-2"/>
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <label for="order_number">Order #</label>
                                     <input type="number" name="order_number" value="" data-field_check="required"  class="form-control mb-2" disabled/>
@@ -514,12 +520,6 @@ $processed_status = array("Processing Order", "Cards Graded");
                                 <div class="col-xl-12">
                                     <label for="status">Status</label>
                                     <input type="text" name="status" value="" data-field_check="required" class="form-control mb-3" disabled/>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-12 col-lg-12 col-md-12">
-                                    <label for="submission_number">Submission Number</label>
-                                    <input id="submission_number" type="text" name="submission_number" style="font-size: 3em !important; text-align: center !important; color: white !important; background-color: black !important;"  value="" data-field_check="required"  class="form-control mb-2"/>
                                 </div>
                             </div>
                         </form>
