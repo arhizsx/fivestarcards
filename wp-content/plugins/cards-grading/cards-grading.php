@@ -1452,11 +1452,11 @@
 
     public function doConfirmNewOrderStatus($params){
 
-        if($params["data"]["new_status"] != ""){
-            return $params;
-        } else {
+        if($params["data"]["new_status"] == ""){
             return "incomple data";
         }
+
+        return true;
 
     }
 
