@@ -57,7 +57,7 @@ $posts = get_posts($args);
                     <td>-</td>
                     <td><?php echo $meta["status"][0]; ?></td>
                     <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
-                    <td>
+                    <td class="text-end">
                         <button class="5star_btn btn btn-primary mb-3" data-action="admin_table_action" data-order_number="1505">
                             ...
                         </button>           
