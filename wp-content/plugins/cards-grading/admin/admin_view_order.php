@@ -454,6 +454,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                                     <label for="new_status">New Status</label>
                                     <select data-field_check="required" name="new_status" class="form-control mb-2">
                                         <option value="">Select New Status</option>
+                                        <option value="Processing Order">Processing Order</option>
                                         <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>
                                         <option value="Research">Research</option>
                                         <option value="Grading">Grading</option>
