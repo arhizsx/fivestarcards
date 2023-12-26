@@ -11,7 +11,7 @@ $user_id = get_current_user_id();
         $meta_query,             
         array(
             'key' => 'status',
-            'value' => array("Processing Order", "Shipped to PSA / SGC", "Research", "Grading", "Assembly", "QA1", "QA2", "Cards Graded", "Grading Complete"),
+            'value' => array("Processing Order", "Shipped to PSA / SGC", "Research", "Grading", "Assembly", "QA1", "QA2", "Cards Graded", "Grading Complete", "Completed - Grades Ready"),
             'compare' => 'IN'
         )
     );
