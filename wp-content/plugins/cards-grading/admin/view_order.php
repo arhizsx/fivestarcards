@@ -104,7 +104,7 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 text-end">
             <?php 
-                if( $checkout_meta["status"][0] == "Cards Graded" ) { 
+                if( $checkout_meta["status"][0] == "Completed - Grades Ready" ) { 
 
                     if( $posts )
                     {
