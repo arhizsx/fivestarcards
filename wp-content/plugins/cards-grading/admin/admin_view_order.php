@@ -167,7 +167,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                 Items Complete
             </button>      
             <?php } ?>
-            
+
             <?php 
             if( $checkout_meta["status"][0] == "Grading Complete" ) 
             { 
@@ -218,7 +218,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                     <th>Card #</th>
                     <th>Player Name</th>
                     <th>Status</th>
-                    <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
+                    <?php if( in_array( $checkout_meta["status"][0], $processing_status ) ){ ?>
                     <th class="text-end">Grade</th>
                     <?php } ?>
                     <th class='text-end'>DV</th>
