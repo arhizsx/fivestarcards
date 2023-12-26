@@ -1451,7 +1451,13 @@
     }
 
     public function doConfirmNewOrderStatus($params){
-        return $params;
+
+        if($params["data"]["new_status"] != ""){
+            return $params;
+        } else {
+            return "incomple data";
+        }
+
     }
 
     public function doConfirmSubmissionNumber($params){
