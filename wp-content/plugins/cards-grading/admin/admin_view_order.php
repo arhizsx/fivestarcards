@@ -221,7 +221,7 @@ $processed_status = array("Processing Order", "Cards Graded");
             { 
             ?>
             <button class='5star_btn btn btn-success mb-3' data-action="change_status" data-order_number="<?php echo $params['order_number'] ?>">
-                Change Status
+                Update Status
             </button>      
             <?php 
             } 
