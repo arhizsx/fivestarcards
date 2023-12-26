@@ -280,7 +280,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                                 </div>
                             </div>
                         <?php }  
-                        elseif ( $checkout_meta["status"][0] == "Processing Order" ) { ?>
+                        elseif ( $checkout_meta["status"][0] == "Set Grades" ) { ?>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <?php if( in_array( $meta["status"][0], array("Received", "Graded")  )) { ?>
