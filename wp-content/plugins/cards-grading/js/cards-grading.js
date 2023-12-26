@@ -377,6 +377,24 @@ $(document).on("click", ".5star_btn", function(e){
             showSubmissionNumberModal();
             break;                        
 
+        case "confirm_submission_number":
+            
+            var order_number = $(this).data("order_number");
+            if ( orderAction("complete_package_contents", null, order_number) ){
+                location.reload();
+            }
+            
+            break;                        
+            
+        case "confirm_new_order_status":
+            
+            var order_number = $(this).data("order_number");
+            if ( orderAction("complete_package_contents", null, order_number) ){
+                location.reload();
+            }
+        
+            break;                        
+
         default:
             console.log("Button not configured: " + $(this).data("action"));
     }

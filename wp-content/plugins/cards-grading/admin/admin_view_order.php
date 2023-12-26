@@ -384,7 +384,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                     </div>
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                        <button class="btn border btn-primary 5star_btn" data-action="confirm_card_grade">Save Grade</button>
+                        <button class="btn border btn-primary 5star_btn" data-action="confirm_card_grade" data-order_number="<?php echo $params['order_number']; ?>">Save Grade</button>
                     </div>
                 </div>
 		</div>
@@ -442,7 +442,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                     </div>
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                        <button class="btn border btn-primary 5star_btn" data-action="set_order_status">Set Status</button>
+                        <button class="btn border btn-primary 5star_btn" data-action="confirm_new_order_status" data-order_number="<?php echo $params['order_number']; ?>">Set Status</button>
                     </div>
                 </div>
 		</div>
@@ -492,7 +492,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                     </div>
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                        <button class="btn border btn-primary 5star_btn" data-action="set_order_status">Set Submission #</button>
+                        <button class="btn border btn-primary 5star_btn" data-action="confirm_submission_number" data-order_number="<?php echo $params['order_number']; ?>">Set Submission #</button>
                     </div>
                 </div>
 		</div>
