@@ -1462,7 +1462,13 @@
     }
 
     public function doConfirmSubmissionNumber($params){
-        return $params;
+
+        if($params["data"]["submission_number"] == ""){
+            return "incomple data";
+        }
+
+        update_post_meta($params["order_number"], 'submission_number', $params["data"]["submission_number"]);   
+        return true;
     }
 
     //*********** HANDLER FUNCTIONS *********** //
