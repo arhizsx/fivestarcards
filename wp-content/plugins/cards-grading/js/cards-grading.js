@@ -935,14 +935,17 @@ function showSubmissionNumberModal(){
 
 
 $(document).find('.setsubmissionmodal').on('shown.bs.modal', function() {
+    $(document).find(".setsubmissionmodal").find("input[name='submission_number']").val("");
     $(document).find(".setsubmissionmodal").find("input[name='submission_number']").focus();
 });
 
 $(document).find('.view_card').on('shown.bs.modal', function() {
+    $(document).find(".view_card").find("input[name='grade']").val("");
     $(document).find(".view_card").find("input[name='grade']").focus();
 });
 
 $(document).find('.setsubmissionmodal').on('shown.bs.modal', function() {
+    $(document).find(".setsubmissionmodal").find("input[name='new_status']").val("");
     $(document).find(".setsubmissionmodal").find("input[name='new_status']").focus();
 });
 
