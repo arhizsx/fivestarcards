@@ -69,11 +69,11 @@ $posts = get_posts($args);
             <H1 style="color: black;">Open Orders</H1>
         </div>
         <div class="col-xl-6 text-end">
-            <button class="5star_btn btn btn-primary mb-3 py-1 px-2  btn-sm" data-action="remove_filter">
-                User
+            <button class="5star_btn btn btn-secondary mb-3 py-1 px-2  btn-sm" data-action="remove_filter">
+                X - User
             </button>           
-            <button class="5star_btn btn btn-primary mb-3 py-1 px-2 btn-sm" data-action="remove_filter">
-                Submission #
+            <button class="5star_btn btn btn-secondary mb-3 py-1 px-2 btn-sm" data-action="remove_filter">
+                X - Submission #
             </button>           
         </div>
     </div>
