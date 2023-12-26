@@ -35,7 +35,7 @@ $user_id = get_current_user_id();
         if(isset( $_GET["user_id"]) ){
             
             $filter_array = array(
-                "key" => 'submission_number',
+                "key" => 'user_id',
                 'value' => $_GET["user_id"],
             );
 
