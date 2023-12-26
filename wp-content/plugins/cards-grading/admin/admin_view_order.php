@@ -217,7 +217,10 @@ $processed_status = array("Processing Order", "Cards Graded");
             ?> 
 
             <?php 
-            if( $checkout_meta["status"][0] == "Processing Order" ) 
+
+            $processing_status = array("Processing Order", "Shipped to PSA / SGC", "Research", "Grading", "Assembly", "QA1", "QA2", "Completed - Grades Ready" );
+
+            if( in_array( $checkout_meta["status"][0], $processing_status ) ) 
             { 
             ?>
             <button class='5star_btn btn btn-primary mb-3' data-action="set_submission_number" data-order_number="<?php echo $params['order_number'] ?>">
