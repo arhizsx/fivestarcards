@@ -439,19 +439,19 @@ $processed_status = array("Processing Order", "Cards Graded");
                             <input type="hidden" name="post_id" value=''/>
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-6">
-                                    <label for="year">Order #</label>
-                                    <input type="number" name="year" value="" data-field_check="required"  class="form-control mb-2" disabled/>
+                                    <label for="order_number">Order #</label>
+                                    <input type="number" name="order_number" value="" data-field_check="required"  class="form-control mb-2" disabled/>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6">
-                                    <label for="dv">Customer #</label>
-                                    <input type="number" name="dv" value="" data-field_check="required" class="form-control mb-2" disabled/>
+                                    <label for="customer_number">Customer #</label>
+                                    <input type="number" name="customer_number" value="" data-field_check="required" class="form-control mb-2" disabled/>
                                 </div>
                                 <div class="col-xl-12">
-                                    <label for="brand">Customer</label>
-                                    <input type="text" name="brand" value="" data-field_check="required" class="form-control mb-2" disabled/>
+                                    <label for="customer">Customer</label>
+                                    <input type="text" name="customer" value="" data-field_check="required" class="form-control mb-3" disabled/>
                                 </div>
                                 <div class="col-xl-12">
-                                    <label for="card_number">New Status</label>
+                                    <label for="new_status">New Status</label>
                                     <select data-field_check="required" name="new_status" class="form-control mb-2">
                                         <option value="">Select New Status</option>
                                         <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>
