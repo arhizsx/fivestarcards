@@ -19,17 +19,7 @@ $posts = get_posts($args);
 ?>
 
 <div class="m-0 p-0">
-    <div class="row">
-        <div class="col-xl-6">
-            <H1 style="color: black;">Open Orders</H1>
-        </div>
-        <div class="col-xl-6 text-end">
-            <button class="5star_btn btn btn-primary mb-3" data-action="table_search_btn" data-order_number="1505">
-                Search
-            </button>           
-        </div>
-    </div>
-    
+    <H1 style="color: black;">Open Orders</H1>
     <div class="table-responsive">    
         <table class='table 5star_my_orders table-bordered table-striped'>
             <thead>
@@ -41,6 +31,7 @@ $posts = get_posts($args);
                     <th>Submission #</th>
                     <th>Status</th>
                     <th class='text-end'>Total Cards</th>
+                    <th class='text-end'>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -66,6 +57,11 @@ $posts = get_posts($args);
                     <td>-</td>
                     <td><?php echo $meta["status"][0]; ?></td>
                     <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
+                    <td>
+                        <button class="5star_btn btn btn-primary mb-3" data-action="admin_table_action" data-order_number="1505">
+                            ...
+                        </button>           
+                    </td>
                 </tr>
                 <?php          
                         }
