@@ -46,7 +46,7 @@ foreach($posts as $post)
     }
 }
 
-$processed_status = array("Cards Graded");
+$processed_status = array("Completed - Grades Ready");
 
 
 $consignment_status = array("Order Partial Consignment", "Order Consigned", "Ready For Payment", "Consignment Paid");
@@ -203,7 +203,7 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
                                 $card_total_dv = $card["dv"] * $card["quantity"];
                                 $card_grading_charge = $card["per_card"] * $card["quantity"];
 
-                                if( in_array( $meta["status"][0], array("To Pay - Grade Only", "To Ship", "Shipped", "Received", "Paid - Grade Only") ) ){
+                                if( in_array( $meta["status"][0], array("To Pay - Grade Only", "To Ship", "Shipped", "Received", "Paid - Grade Only", "Graded") ) ){
                                     $grading_charge = $grading_charge + $card_grading_charge;
                                 }
         
@@ -276,7 +276,7 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
             <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
                 <div class="row mb-2">
                     <div class="col text-end">
-                                Total DV          
+                        Total DV          
                     </div>
                     <div class="col text-end" id="total_dv">
                         $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>
