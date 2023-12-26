@@ -64,7 +64,21 @@ $posts = get_posts($args);
 ?>
 
 <div class="m-0 p-0">
-    <H1 style="color: black;">Open Orders</H1>
+    <div class="row">
+        <div class="col-xl-6">
+            <H1 style="color: black;">Open Orders</H1>
+        </div>
+        <div class="col-xl-6">
+            <div class="">
+                <button class="5star_btn btn btn-primary mb-3 p-0 btn-sm" data-action="remove_filter">
+                    User
+                </button>           
+                <button class="5star_btn btn btn-primary mb-3 p-0 btn-sm" data-action="remove_filter">
+                    Submission #
+                </button>           
+            </div>
+        </div>
+    </div>
     <div class="table-responsive">    
         <table class='table 5star_my_orders table-bordered table-striped'>
             <thead>
