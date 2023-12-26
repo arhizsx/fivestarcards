@@ -407,9 +407,9 @@ $processed_status = array("Processing Order", "Cards Graded");
                         <forn id="set_grade_form">
                             <input type="hidden" name="post_id" value=''/>
                             <div class="row">
-                                <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="col-xl-6 col-lg-6 col-md-6">
                                     <label for="order_number">Order #</label>
-                                    <input type="number" name="order_number" value="" data-field_check="required"  class="form-control mb-2" disabled/>
+                                    <input type="number" name="order_number" value="<?php echo $params['order_number'] ?>" data-field_check="required"  class="form-control mb-2" disabled/>
                                 </div>                                
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <label for="grading_type">Grading Type</label>
@@ -421,7 +421,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                                 </div>
                                 <div class="col-xl-8 col-lg-8 col-md-8">
                                     <label for="customer">Customer</label>
-                                    <input type="text" name="customer" value="" data-field_check="required" class="form-control mb-3" disabled/>
+                                    <input type="text" name="customer" value="<?php echo $user->display_name; ?>" data-field_check="required" class="form-control mb-3" disabled/>
                                 </div>
                                 <div class="col-xl-12">
                                     <label for="old_status">Old Status</label>
@@ -478,7 +478,7 @@ $processed_status = array("Processing Order", "Cards Graded");
 
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <label for="order_number">Order #</label>
-                                    <input type="number" name="order_number" value="" data-field_check="required"  class="form-control mb-2" disabled/>
+                                    <input type="number" name="order_number" value="<?php echo $params['order_number'] ?>" data-field_check="required"  class="form-control mb-2" disabled/>
                                 </div>                                
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <label for="grading_type">Grading Type</label>
@@ -490,7 +490,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                                 </div>
                                 <div class="col-xl-8 col-lg-8 col-md-8">
                                     <label for="customer">Customer</label>
-                                    <input type="text" name="customer" value="" data-field_check="required" class="form-control mb-3" disabled/>
+                                    <input type="text" name="customer" value="<?php echo $user->display_name; ?>" data-field_check="required" class="form-control mb-3" disabled/>
                                 </div>
                                 <div class="col-xl-12">
                                     <label for="status">Status</label>
