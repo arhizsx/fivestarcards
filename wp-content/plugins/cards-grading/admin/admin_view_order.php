@@ -436,49 +436,39 @@ $processed_status = array("Processing Order", "Cards Graded");
                 <div class="" id="view_card_form_box">
                     <div class="modal-body py-2 px-3">
                         <forn id="set_grade_form">
-
-                            <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
-                            <input type="hidden" name="grading" value=''/>
-                            <input type="hidden" name="max_dv" value=''/>
                             <input type="hidden" name="post_id" value=''/>
-                            <input type="hidden" name="card" value=''/>
-                            <div class="row">
-                                <div class="col-xl-12 col-lg-12 col-md-12">
-                                    <label for="grade">Grade</label>
-                                    <input id="grade_input" type="text" name="grade" style="font-size: 3em !important; text-align: center !important; color: white !important; background-color: black !important;"  value="" data-field_check="required"  class="form-control mb-2"/>
-                                </div>
-                            </div>
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-6">
-                                    <label for="year">Year</label>
+                                    <label for="year">Order #</label>
                                     <input type="number" name="year" value="" data-field_check="required"  class="form-control mb-2" disabled/>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6">
-                                    <label for="dv">Declared Value</label>
+                                    <label for="dv">Customer #</label>
                                     <input type="number" name="dv" value="" data-field_check="required" class="form-control mb-2" disabled/>
                                 </div>
                                 <div class="col-xl-12">
-                                    <label for="brand">Brand</label>
+                                    <label for="brand">Customer</label>
                                     <input type="text" name="brand" value="" data-field_check="required" class="form-control mb-2" disabled/>
                                 </div>
                                 <div class="col-xl-12">
-                                    <label for="card_number">Card Number</label>
-                                    <input type="text" name="card_number" value="" data-field_check="required" class="form-control mb-2" disabled/>
-                                </div>
-                                <div class="col-xl-12">
-                                    <label for="player">Player Name</label>
-                                    <input type="text" name="player" value="" data-field_check="required" class="form-control mb-2" disabled/>
-                                </div>
-                                <div class="col-xl-12">
-                                    <label for="attribute">Attribute S/N</label>
-                                    <input type="text" name="attribute" value="" data-field_check="" class="form-control mb-2" disabled/>
+                                    <label for="card_number">New Status</label>
+                                    <select data-field_check="required" name="new_status" class="form-control mb-2">
+                                        <option value="">Select New Status</option>
+                                        <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>
+                                        <option value="Research">Research</option>
+                                        <option value="Grading">Grading</option>
+                                        <option value="Assembly">Assembly</option>
+                                        <option value="QA1">QA1</option>
+                                        <option value="QA2">QA2</option>
+                                        <option value="Completed - Grades Ready">Completed - Grades Ready</option>
+                                    </select>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                        <button class="btn border btn-primary 5star_btn" data-action="confirm_card_grade">Save Grade</button>
+                        <button class="btn border btn-primary 5star_btn" data-action="set_order_status">Set Status</button>
                     </div>
                 </div>
 		</div>
