@@ -81,6 +81,11 @@ $posts = get_posts($args);
             <?php } ?>
         </div>
         <div class="col-xl-6 text-end">
+        <?php if( isset( $_GET["filtered"] ) == "true"  && isset($_GET["submission_number"])){ ?>
+            <button class='5star_btn btn btn-success mb-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
+                Update Status
+            </button>      
+        <?php } ?>
         </div>
     </div>
     <div class="table-responsive">    
