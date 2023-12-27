@@ -65,6 +65,9 @@
         add_shortcode('cards-grading-admin_view_payment', array( $this, 'cards_grading_admin_view_payment_shortcode' ));
 
         add_shortcode('cards-grading-dashbox', array( $this, 'cards_grading_dashbox_shortcode' ));
+        add_shortcode('cards-grading-dashbox_orders', array( $this, 'cards_grading_dashbox_orders_shortcode' ));
+
+        
 
         // Add JS
         add_action('wp_footer', array( $this, 'load_scripts' ));
@@ -672,7 +675,42 @@
         
         return $output ;
     }
+    public function cards_grading_dashbox_orders_shortcode($atts) 
+    {
+        $default = array(
+            'type' => "awaiting_payment"
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
 
+        $what_array = null;
+
+        if( $params['type'] == "awaiting_payment" ){
+            $what_array = array("Order To Pay");
+        }
+                        
+        $args = array(
+            'meta_query' => array(
+                array(
+                    'key' => 'status',
+                    'value' => $what_array,
+                    'compare' => "IN"
+                )
+            ),
+            'post_type' => 'cards-grading-chk',
+            'posts_per_page' => -1
+        );
+
+        $posts = get_posts($args);
+
+        echo count($posts);
+
+        $output = ob_get_clean(); 
+        
+        return $output ;
+
+    }
     public function cards_grading_dashbox_shortcode($atts) 
     {
 
@@ -699,9 +737,6 @@
         }
         elseif( $params['type'] == "sold" ){
             $what_array = array("Sold - Consigned");
-        }
-        elseif( $params['type'] == "awaiting_payment" ){
-            $what_array = array("Order to Pay");
         }
                         
         $args = array(
