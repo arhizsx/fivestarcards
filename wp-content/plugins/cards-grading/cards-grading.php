@@ -689,6 +689,12 @@
         if( $params['type'] == "awaiting_payment" ){
             $what_array = array("Order To Pay");
         }
+        elseif( $params['type'] == "order_receiving" ){
+            $what_array = array("To Ship", "Shipped", "Package Received", "Incomplete Items Shipped");
+        }
+        elseif( $params['type'] == "consigned_orders" ){
+            $what_array = array("Order Consigned", "Order Partial Consignment");
+        }
                         
         $args = array(
             'meta_query' => array(
