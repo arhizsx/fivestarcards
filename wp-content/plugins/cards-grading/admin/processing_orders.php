@@ -76,17 +76,19 @@ $posts = get_posts($args);
                 </button>           
             <?php } ?>
             <?php if( isset( $_GET["filtered"] ) == "true"  && isset($_GET["submission_number"])){ ?>
-                <div>
-                Filtered By: 
-                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-2 mr-5  btn-sm" data-action="remove_filter">
-                    Submission #
-                </button>
-                </div>
-                <div>
-                Bulk Action:
-                <button class='5star_btn btn btn-success mb-3 btn-sm py-0 mt-2 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
-                    Update Status
-                </button>      
+                <div class="row">
+                    <div class="col">
+                        Filtered By: 
+                        <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-2 mr-5  btn-sm" data-action="remove_filter">
+                            Submission #
+                        </button>
+                    </div>
+                    <div class="col">
+                        Bulk Action:
+                        <button class='5star_btn btn btn-success mb-3 btn-sm py-0 mt-2 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
+                            Update Status
+                        </button>      
+                    </div>
                 </div>
             <?php } ?>
         </div>
