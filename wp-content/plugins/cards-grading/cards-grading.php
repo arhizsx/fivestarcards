@@ -700,7 +700,10 @@
         elseif( $params['type'] == "sold" ){
             $what_array = array("Sold - Consigned");
         }
-        
+        elseif( $params['type'] == "awaiting_payment" ){
+            $what_array = array("Order to Pay");
+        }
+                        
         $args = array(
             'meta_query' => array(
                 array(
