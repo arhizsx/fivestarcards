@@ -69,13 +69,13 @@ $posts = get_posts($args);
             <H1 style="color: black;">Open Orders</H1>
             <?php if( isset( $_GET["filtered"] ) == "true"  && isset($_GET["user_id"])){ ?>
                 Filtered By: 
-                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
+                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 btn-sm" data-action="remove_filter">
                     Customer
                 </button>           
             <?php } ?>
             <?php if( isset( $_GET["filtered"] ) == "true"  && isset($_GET["submission_number"])){ ?>
                 Filtered By: 
-                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 mr-5  btn-sm" data-action="remove_filter">
+                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mr-5  btn-sm" data-action="remove_filter">
                     Submission #
                 </button>
             <?php } ?>
