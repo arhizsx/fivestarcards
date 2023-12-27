@@ -83,7 +83,8 @@ $posts = get_posts($args);
             <?php } ?>
 
         <?php if( isset( $_GET["filtered"] ) == "true"  && isset($_GET["submission_number"])){ ?>
-            <button class='5star_btn btn btn-success mb-3 btn-sm py-0 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
+            Bulk Action:
+            <button class='5star_btn btn btn-success mb-3 btn-sm py-0 mt-2 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
                 Update Status
             </button>      
         <?php } ?>
