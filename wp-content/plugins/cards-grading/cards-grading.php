@@ -693,7 +693,7 @@
             $what_array = array("To Ship", "Shipped", "Package Received", "Incomplete Items Shipped");
         }
         elseif( $params['type'] == "consigned_orders" ){
-            $what_array = array("Order Consigned", "Order Partial Consignment");
+            $what_array = array("Order Consigned", "Order Partial Consignment", "Ready For Payment");
         }
                         
         $args = array(
