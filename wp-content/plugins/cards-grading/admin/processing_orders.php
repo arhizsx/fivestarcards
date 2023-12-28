@@ -87,6 +87,11 @@ $posts = get_posts($args);
                     </div>
                     <div class="col">
                         Bulk Action:
+                        <select name="multi_update_status_select">
+                            <option>Select New Status</option>
+                            <option>Processing Order</option>
+                            <option>Shipped to PSA / SGC</option>
+                        </select>
                         <button class='5star_btn btn btn-success mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
                             Update Status
                         </button>      
