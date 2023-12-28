@@ -76,29 +76,19 @@ $posts = get_posts($args);
                 </button>           
             <?php } ?>
             <?php if( isset( $_GET["filtered"] ) == "true"  && isset($_GET["submission_number"])){ ?>
-                <div class="row">
-                    <div class="col">
-                    </div>
-                    <div class="col">
-                        Filtered By: 
-                        <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 mr-5  btn-sm" data-action="remove_filter">
-                            Submission #
-                        </button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        Filtered By: 
-                        <select name="multi_update_status_select">
-                            <option>Select New Status</option>
-                            <option>Processing Order</option>
-                            <option>Shipped to PSA / SGC</option>
-                        </select>
-                        <button class='5star_btn btn btn-success mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
-                            Update Status
-                        </button>      
-                    </div>
-                </div>
+                Filtered By: 
+                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 mr-5  btn-sm" data-action="remove_filter">
+                    Submission #
+                </button>
+                Filtered By: 
+                <select name="multi_update_status_select">
+                    <option>Select New Status</option>
+                    <option>Processing Order</option>
+                    <option>Shipped to PSA / SGC</option>
+                </select>
+                <button class='5star_btn btn btn-success mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
+                    Update Status
+                </button>      
 
             <?php } ?>
 
