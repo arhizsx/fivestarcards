@@ -80,7 +80,7 @@ $posts = get_posts($args);
                 <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 mr-5  btn-sm" data-action="remove_filter">
                     Submission #
                 </button>
-                &nbsp;&nbsp;&nbsp;&nbsp;Bulk Action: 
+                &nbsp;&nbsp;&nbsp;&nbsp; New Status: 
                 <select name="multi_update_status_select " class="mt-3" style="font-size: 13px;" >
                     <option value="">Select New Status</option>
                     <option value="Processing Order">Processing Order</option>
