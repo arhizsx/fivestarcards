@@ -81,10 +81,16 @@ $posts = get_posts($args);
                     Submission #
                 </button>
                 &nbsp;&nbsp;&nbsp;&nbsp;Bulk Action: 
-                <select name="multi_update_status_select" class="mt-3">
-                    <option>Select New Status</option>
-                    <option>Processing Order</option>
-                    <option>Shipped to PSA / SGC</option>
+                <select name="multi_update_status_select" class="mt-3 text-sm" >
+                    <option value="">Select New Status</option>
+                    <option value="Processing Order">Processing Order</option>
+                    <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>
+                    <option value="Research">Research</option>
+                    <option value="Grading">Grading</option>
+                    <option value="Assembly">Assembly</option>
+                    <option value="QA1">QA1</option>
+                    <option value="QA2">QA2</option>
+                    <option value="Completed - Grades Ready">Completed - Grades Ready</option>
                 </select>
                 <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
                     Apply
