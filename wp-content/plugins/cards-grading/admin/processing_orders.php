@@ -85,9 +85,9 @@ $posts = get_posts($args);
                             Submission #
                         </button>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col">
-                        <div class="row">
-                        Bulk Action:
                         <select name="multi_update_status_select">
                             <option>Select New Status</option>
                             <option>Processing Order</option>
@@ -96,9 +96,9 @@ $posts = get_posts($args);
                         <button class='5star_btn btn btn-success mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
                             Update Status
                         </button>      
-                        </div>
                     </div>
                 </div>
+
             <?php } ?>
 
         </div>
