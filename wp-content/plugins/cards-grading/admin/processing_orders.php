@@ -81,7 +81,7 @@ $posts = get_posts($args);
                     Submission #
                 </button>
                 &nbsp;&nbsp;&nbsp;&nbsp;Bulk Action: 
-                <select name="multi_update_status_select" class="mt-3 text-sm" >
+                <select name="multi_update_status_select " class="mt-3" style="font-size: 12px;" >
                     <option value="">Select New Status</option>
                     <option value="Processing Order">Processing Order</option>
                     <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>
