@@ -88,6 +88,7 @@ $posts = get_posts($args);
                 </div>
                 <div class="row">
                     <div class="col">
+                        Filtered By: 
                         <select name="multi_update_status_select">
                             <option>Select New Status</option>
                             <option>Processing Order</option>
