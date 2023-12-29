@@ -77,7 +77,17 @@ $posts = get_posts($args);
                 $user_id = $meta["user_id"][0];
                 $user = get_user_by( "id", $user_id );
 
-                array_push($customers, ["customer"=> $user->display_name, "user_id" => $user_id]);
+                $exists = false;
+                foreach($customers as $cx){
+                    if( $cx["user_id"] == $user_id){
+                        $exists = true;
+                        break;
+                    }
+                }
+
+                if($exists == false){
+                    array_push($customers, ["customer"=> $user->display_name, "user_id" => $user_id]);
+                }
             }
         }
     ?>
