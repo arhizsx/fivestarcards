@@ -147,7 +147,7 @@ $posts = get_posts($args);
                     <td><?php echo $meta["order_number"][0]; ?></td>
                     <td><a class="filter-links" href='/admin/?filtered=true&show=open&grading_type=<?php echo $meta["grading_type"][0]; ?>'><?php echo $meta["grading_type"][0]; ?></a><br><span style='font-size:.7em !important;'><?php echo  $meta["service_type"][0]; ?></span></td>
                     <td><a class="filter-links" href='/admin/?filtered=true&show=open&submission_number=<?php echo $meta["submission_number"][0]; ?>'><?php echo $meta["submission_number"][0]; ?></td>
-                    <td><?php echo $meta["status"][0]; ?></td>
+                    <td><a class="filter-links" href='/admin/?filtered=true&show=open&status=<?php echo $meta["status"][0]; ?>'><?php echo $meta["status"][0]; ?></a></td>
                     <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
                     <td class="text-end">
                         <button class="5star_btn btn btn-primary mb-3 admin-order-row" data-action="admin_table_action"  data-post_id="<?php echo $post->ID; ?>">
