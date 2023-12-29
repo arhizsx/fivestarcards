@@ -24,12 +24,12 @@
                 "key" => 'submission_number',
                 'value' => $_GET["submission_number"],
             );
-
+    
             array_push(
                 $meta_query,             
                 $filter_array,
             );
-
+    
         }
     
         if(isset( $_GET["user_id"]) ){
@@ -38,15 +38,35 @@
                 "key" => 'user_id',
                 'value' => $_GET["user_id"],
             );
-
+    
         }
-
+        
+        if(isset( $_GET["status"]) ){
+            
+            $filter_array = array(
+                "key" => 'status',
+                'value' => $_GET["status"],
+            );
+    
+        }
+    
+        if(isset( $_GET["grading_type"]) ){
+            
+            $filter_array = array(
+                "key" => 'grading_type',
+                'value' => $_GET["grading_type"],
+            );
+    
+        }
+    
+    
         array_push(
             $meta_query,             
             $filter_array,
         );
-
+    
     }
+    
     
     $args = array(
         'meta_query' => array(
