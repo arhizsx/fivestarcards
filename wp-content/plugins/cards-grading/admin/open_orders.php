@@ -146,7 +146,7 @@ $posts = get_posts($args);
                             <?php 
                                 foreach($grading_types as $gd){
                             ?>
-                            <option value="<?php echo $gd["grading_type"]; ?>"><?php echo $st["grading_type"]; ?></option>
+                            <option value="<?php echo $gd["grading_type"]; ?>"><?php echo $gd["grading_type"]; ?></option>
                             <?php 
                                 }
                             ?>
