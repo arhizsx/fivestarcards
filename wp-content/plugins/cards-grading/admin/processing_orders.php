@@ -287,7 +287,7 @@ $posts = get_posts($args);
                             <?php 
                                 foreach($submission_numbers as $sn){
                             ?>
-                            <option value="<?php echo $sn["submission_number"]; ?>"><?php echo $st["submission_number"]; ?></option>
+                            <option value="<?php echo $sn["submission_number"]; ?>"><?php echo $sn["submission_number"]; ?></option>
                             <?php 
                                 }
                             ?>
