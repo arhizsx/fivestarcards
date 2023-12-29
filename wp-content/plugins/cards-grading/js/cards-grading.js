@@ -970,5 +970,6 @@ $(document).on("change", ".select_filter", function(){
     var val = $(this).val();
 
     console.log(data);
+    console.log(val);
 
 });
