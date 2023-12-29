@@ -282,7 +282,7 @@ $posts = get_posts($args);
                         </select>
                     </th>
                     <th>
-                        <select name="select_status_filter " class="select_filter w-100 px-2 py-0" data-filter="status" style="" >
+                        <select name="select_status_filter " class="select_filter w-100 px-2 py-0" data-filter="submission_number" style="" >
                             <option value="">Submission #</option>
                             <?php 
                                 foreach($submission_numbers as $sn){
