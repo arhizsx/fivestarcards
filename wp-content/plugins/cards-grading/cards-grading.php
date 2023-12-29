@@ -58,7 +58,7 @@
         add_shortcode('cards-grading-cancelled', array( $this, 'cards_grading_cancelled_shortcode' ));
         add_shortcode('cards-grading-processing', array( $this, 'cards_grading_processing_shortcode' ));
         
-        add_shortcode('cards-grading-open_orders', array( $this, 'cards_grading_open_orders_shortcode' ));
+        add_shortcode('cards-grading-order_receiving', array( $this, 'cards_grading_order_receiving_shortcode' ));
         add_shortcode('cards-grading-admin_view_order', array( $this, 'cards_grading_admin_view_order_shortcode' ));
         add_shortcode('cards-grading-admin_view_consignment', array( $this, 'cards_grading_admin_view_consignment_shortcode' ));
         add_shortcode('cards-grading-admin_view_completed', array( $this, 'cards_grading_admin_view_completed_shortcode' ));
@@ -460,7 +460,7 @@
         $params = shortcode_atts($default, $atts);
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . 'admin/order_receing.php' );
+        include( plugin_dir_path( __FILE__ ) . 'admin/order_receiving.php' );
         
         $output = ob_get_clean(); 
         
