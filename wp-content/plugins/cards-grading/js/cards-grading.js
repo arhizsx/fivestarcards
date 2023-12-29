@@ -969,7 +969,10 @@ $(document).on("change", ".select_filter", function(){
     var data = $(this).data();
     var val = $(this).val();
 
-    console.log(data);
-    console.log(val);
+    var url = location.protocol + '//' + location.host + location.pathname;
+
+    location.href = url;
+
+
 
 });
