@@ -10,7 +10,7 @@ array_push(
     $meta_query,             
     array(
         'key' => 'status',
-        'value' => array("Processing Order", "Shipped to PSA / SGC", "Research", "Grading", "Assembly", "QA1", "QA2", "Cards Graded", "Grading Complete", "Completed - Grades Ready"),
+        'value' => array("To Ship", "Shipped", "Package Received", "Incomplete Items Shipped"),
         'compare' => 'IN'
     )
 );
