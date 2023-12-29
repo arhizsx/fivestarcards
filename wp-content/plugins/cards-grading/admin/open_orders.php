@@ -79,7 +79,8 @@ $posts = get_posts($args);
 ?>
 
 <div class="m-0 p-0">
-<div class="row">
+    
+    <div class="row">
         <div class="col-xl-6">
             <H1 style="color: black;">Order Receiving</H1>            
         </div>
@@ -130,12 +131,14 @@ $posts = get_posts($args);
         <?php } ?>
         </div>
     </div>
+
     <?php 
         if( $posts ){
             
             $customers = [];
             $status = [];
             $grading_types = [];
+            $submission_numbers = [];
 
             foreach($posts as $post)
             {
@@ -180,6 +183,20 @@ $posts = get_posts($args);
                 if($exists == false){
                     array_push($grading_types, ["grading_type"=> $meta["grading_type"][0]]);
                 }
+
+                $exists = false;
+                foreach($submission_numbers as $sn){
+                    if( $sn["submission_number"] == $meta["submission_number"][0]){
+                        $exists = true;
+                        break;
+                    }
+                }
+
+                if($exists == false){
+                    array_push($submission_numbers, ["submission_number"=> $meta["submission_number"][0]]);
+                }
+
+
 
             }
         }

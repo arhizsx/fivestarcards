@@ -64,14 +64,59 @@ $posts = get_posts($args);
 ?>
 
 <div class="m-0 p-0">
+
     <div class="row">
         <div class="col-xl-6">
             <H1 style="color: black;">Open Orders</H1>            
         </div>
         <div class="col-xl-6 text-end">
-            <input type="text" class="mt-3" placeholder="Search">
+        <?php if( isset( $_GET["filtered"] ) == "true") { ?>
+
+            Filtered By: 
+            <?php if(isset($_GET["user_id"])){ ?>
+                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
+                    Customer
+                </button>           
+            <?php } ?>
+            <?php if(isset($_GET["status"])){ ?>
+                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
+                    Status
+                </button>           
+            <?php } ?>
+            <?php if(isset($_GET["grading_type"])){ ?>
+                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
+                    Grading Type
+                </button>           
+            <?php } ?>
+            <?php if( isset($_GET["submission_number"])){ ?>
+                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 mr-5  btn-sm" data-action="remove_filter">
+                    Submission #
+                </button>
+            <?php } ?>
+            <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="remove_filter" data-order_number="<?php echo $params['order_number'] ?>">
+                Clear
+            </button>      
+            <?php if( isset($_GET["submission_number"])){ ?>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Status: 
+                <select name="multi_update_status_select " class="mt-3" style="font-size: 13px;" >
+                    <option value="">Select New Status</option>
+                    <option value="Processing Order">Processing Order</option>
+                    <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>
+                    <option value="Research">Research</option>
+                    <option value="Grading">Grading</option>
+                    <option value="Assembly">Assembly</option>
+                    <option value="QA1">QA1</option>
+                    <option value="QA2">QA2</option>
+                    <option value="Completed - Grades Ready">Completed - Grades Ready</option>
+                </select>
+                <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
+                    Apply
+                </button>      
+            <?php } ?>
+        <?php } ?>
         </div>
     </div>
+
     <?php if( isset( $_GET["filtered"] ) == "true") { ?>
     <div class="row">
         <div class="col-xl-12 text-start">
@@ -112,6 +157,78 @@ $posts = get_posts($args);
         </div>
     </div>
     <?php } ?>
+
+
+    <?php 
+        if( $posts ){
+            
+            $customers = [];
+            $status = [];
+            $grading_types = [];
+            $submission_numbers = [];
+
+            foreach($posts as $post)
+            {
+                $meta = get_post_meta($post->ID);
+
+                $user_id = $meta["user_id"][0];
+                $user = get_user_by( "id", $user_id );
+
+                $exists = false;
+                foreach($customers as $cx){
+                    if( $cx["user_id"] == $user_id){
+                        $exists = true;
+                        break;
+                    }
+                }
+
+                if($exists == false){
+                    array_push($customers, ["customer"=> ucfirst($user->display_name), "user_id" => $user_id]);
+                }
+
+
+                $exists = false;
+                foreach($status as $st){
+                    if( $st["status"] == $meta["status"][0]){
+                        $exists = true;
+                        break;
+                    }
+                }
+
+                if($exists == false){
+                    array_push($status, ["status"=> ucfirst($meta["status"][0])]);
+                }
+
+                $exists = false;
+                foreach($grading_types as $gd){
+                    if( $gd["grading_type"] == $meta["grading_type"][0]){
+                        $exists = true;
+                        break;
+                    }
+                }
+
+                if($exists == false){
+                    array_push($grading_types, ["grading_type"=> $meta["grading_type"][0]]);
+                }
+
+                $exists = false;
+                foreach($submission_numbers as $sn){
+                    if( $sn["submission_number"] == $meta["submission_number"][0]){
+                        $exists = true;
+                        break;
+                    }
+                }
+
+                if($exists == false){
+                    array_push($submission_numbers, ["submission_number"=> $meta["submission_number"][0]]);
+                }
+
+
+
+            }
+        }
+    ?>
+
     <div class="table-responsive">    
         <table class='table 5star_my_orders table-bordered table-striped'>
             <thead>
