@@ -69,8 +69,11 @@ $posts = get_posts($args);
     <?php } ?>
     <?php 
         if( $posts ){
+            
             $customers = [];
             $status = [];
+            $grading_types = [];
+
             foreach($posts as $post)
             {
                 $meta = get_post_meta($post->ID);
@@ -103,6 +106,18 @@ $posts = get_posts($args);
                     array_push($status, ["status"=> ucfirst($meta["status"][0])]);
                 }
 
+                $exists = false;
+                foreach($grading_types as $gd){
+                    if( $gd["grading_type"] == $meta["grading_type"][0]){
+                        $exists = true;
+                        break;
+                    }
+                }
+
+                if($exists == false){
+                    array_push($grading_types, ["grading_type"=> $meta["grading_type"][0]]);
+                }
+
             }
         }
     ?>
@@ -125,7 +140,18 @@ $posts = get_posts($args);
 
                     </th>
                     <th>Order #</th>
-                    <th>Service Type</th>
+                    <th>
+                        <select name="multi_update_status_select " class="w-100 px-2 py-0" style="font-size: 15px; margin-left: -10px; font-weight: bold; border: 0px;" >
+                            <option value="">Grading Type</option>
+                            <?php 
+                                foreach($grading_types as $gd){
+                            ?>
+                            <option value="<?php echo $gd["grading_type"]; ?>"><?php echo $st["grading_type"]; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+                    </th>
                     <th>
                         <select name="multi_update_status_select " class="w-100 px-2 py-0" style="font-size: 15px; margin-left: -10px; font-weight: bold; border: 0px;" >
                             <option value="">Status</option>
@@ -137,8 +163,6 @@ $posts = get_posts($args);
                                 }
                             ?>
                         </select>
-
-
                     </th>
                     <th class='text-end'>Total Cards</th>
                     <th class='text-end'>Action</th>
