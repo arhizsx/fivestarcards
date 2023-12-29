@@ -137,49 +137,6 @@ $posts = get_posts($args);
         </div>
     </div>
 
-
-    <?php if( isset( $_GET["filtered"] ) == "true") { ?>
-    <div class="row">
-        <div class="col-xl-12 text-start">
-            <?php if(isset($_GET["user_id"])){ ?>
-                Filtered By: 
-                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
-                    Customer
-                </button>           
-                <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="remove_filter" data-order_number="<?php echo $params['order_number'] ?>">
-                    Clear
-                </button>      
-            <?php } ?>
-            <?php if( isset($_GET["submission_number"])){ ?>
-                Filtered By: 
-                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 mr-5  btn-sm" data-action="remove_filter">
-                    Submission #
-                </button>
-                <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="remove_filter" data-order_number="<?php echo $params['order_number'] ?>">
-                    Clear
-                </button>      
-                &nbsp;&nbsp;&nbsp;&nbsp; New Status: 
-                <select name="multi_update_status_select " class="mt-3" style="font-size: 13px;" >
-                    <option value="">Select New Status</option>
-                    <option value="Processing Order">Processing Order</option>
-                    <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>
-                    <option value="Research">Research</option>
-                    <option value="Grading">Grading</option>
-                    <option value="Assembly">Assembly</option>
-                    <option value="QA1">QA1</option>
-                    <option value="QA2">QA2</option>
-                    <option value="Completed - Grades Ready">Completed - Grades Ready</option>
-                </select>
-                <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
-                    Apply
-                </button>      
-
-            <?php } ?>
-        </div>
-    </div>
-    <?php } ?>
-
-
     <?php 
         if( $posts ){
             
