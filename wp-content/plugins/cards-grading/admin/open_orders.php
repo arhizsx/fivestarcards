@@ -72,7 +72,20 @@ $posts = get_posts($args);
             <thead>
                 <tr>
                     <th>Date</th>
-                    <th>Customer</th>
+                    <th>
+                        <select name="multi_update_status_select " class="mt-3" style="font-size: 13px;" >
+                            <option value="">Select New Status</option>
+                            <option value="Processing Order">Processing Order</option>
+                            <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>
+                            <option value="Research">Research</option>
+                            <option value="Grading">Grading</option>
+                            <option value="Assembly">Assembly</option>
+                            <option value="QA1">QA1</option>
+                            <option value="QA2">QA2</option>
+                            <option value="Completed - Grades Ready">Completed - Grades Ready</option>
+                        </select>
+
+                    </th>
                     <th>Order #</th>
                     <th>Service Type</th>
                     <th>Status</th>
