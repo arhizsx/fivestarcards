@@ -92,7 +92,7 @@ $posts = get_posts($args);
                             <?php 
                                 foreach($customers as $cx){
                             ?>
-                            <option value="<?php echo $cx->user_id; ?>"><?php echo $cx->customer; ?></option>
+                            <option value="<?php echo $cx["user_id"]; ?>"><?php echo $cx["customer"]; ?></option>
                             <?php 
                                 }
                             ?>
