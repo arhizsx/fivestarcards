@@ -969,7 +969,7 @@ $(document).on("change", ".select_filter", function(){
     var data = $(this).data();
     var val = $(this).val();
 
-    var url = location.protocol + '//' + location.host + location.pathname + '/?filtere=true&show=open&' + data['filter'] + '=' + val ;
+    var url = location.protocol + '//' + location.host + location.pathname + '/?filter=true&show=open&' + data['filter'] + '=' + val ;
     location.href = url;
 
 
