@@ -90,7 +90,18 @@ $posts = get_posts($args);
                     array_push($customers, ["customer"=> ucfirst($user->display_name), "user_id" => $user_id]);
                 }
 
-                array_push($status, ["status"=> ucfirst($meta["status"][0])]);
+
+                $exists = false;
+                foreach($status as $st){
+                    if( $st["status"] == $meta["status"][0]){
+                        $exists = true;
+                        break;
+                    }
+                }
+
+                if($exists == false){
+                    array_push($status, ["status"=> ucfirst($meta["status"][0])]);
+                }
 
             }
         }
