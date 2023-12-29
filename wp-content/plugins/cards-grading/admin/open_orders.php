@@ -86,7 +86,7 @@ $posts = get_posts($args);
                 }
 
                 if($exists == false){
-                    array_push($customers, ["customer"=> $user->display_name, "user_id" => $user_id]);
+                    array_push($customers, ["customer"=> ucfirst($user->display_name), "user_id" => $user_id]);
                 }
             }
         }
