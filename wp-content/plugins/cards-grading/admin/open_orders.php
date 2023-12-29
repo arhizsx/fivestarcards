@@ -67,6 +67,20 @@ $posts = get_posts($args);
         </div>
     </div>
     <?php } ?>
+    <?php 
+        if( $posts ){
+            $customers = [];
+            foreach($posts as $post)
+            {
+                $meta = get_post_meta($post->ID);
+
+                $user_id = $meta["user_id"][0];
+                $user = get_user_by( "id", $user_id );
+
+                array_push($customers, ["customer"=> $user->display_name, "user_id" => $user_id]);
+            }
+        }
+    ?>
     <div class="table-responsive">    
         <table class='table 5star_my_orders table-bordered table-striped'>
             <thead>
@@ -75,14 +89,13 @@ $posts = get_posts($args);
                     <th>
                         <select name="multi_update_status_select " class="w-100 px-2 py-0" style="font-size: 15px; margin-left: -10px; font-weight: bold; border: 0px;" >
                             <option value="">Customer</option>
-                            <option value="Processing Order">Processing Order</option>
-                            <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>
-                            <option value="Research">Research</option>
-                            <option value="Grading">Grading</option>
-                            <option value="Assembly">Assembly</option>
-                            <option value="QA1">QA1</option>
-                            <option value="QA2">QA2</option>
-                            <option value="Completed - Grades Ready">Completed - Grades Ready</option>
+                            <?php 
+                                foreach($customers as $cx){
+                            ?>
+                            <option value="<?php echo $cx->user_id; ?>"><?php echo $cx->customer; ?></option>
+                            <?php 
+                                }
+                            ?>
                         </select>
 
                     </th>
