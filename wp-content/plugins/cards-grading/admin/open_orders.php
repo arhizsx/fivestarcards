@@ -73,7 +73,7 @@ $posts = get_posts($args);
                 <tr>
                     <th>Date</th>
                     <th>
-                        <select name="multi_update_status_select " class="mt-3" style="font-size: 13px;" >
+                        <select name="multi_update_status_select " class="mt-3" style="font-size: 14px; border: 0px;" >
                             <option value="">Select New Status</option>
                             <option value="Processing Order">Processing Order</option>
                             <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>
