@@ -115,7 +115,20 @@ $posts = get_posts($args);
                     </th>
                     <th>Order #</th>
                     <th>Service Type</th>
-                    <th>Status</th>
+                    <th>
+                        <select name="multi_update_status_select " class="w-100 px-2 py-0" style="font-size: 15px; margin-left: -10px; font-weight: bold; border: 0px;" >
+                            <option value="">Status</option>
+                            <?php 
+                                foreach($status as $st){
+                            ?>
+                            <option value="<?php echo $st["status"]; ?>"><?php echo $st["status"]; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+
+
+                    </th>
                     <th class='text-end'>Total Cards</th>
                     <th class='text-end'>Action</th>
                 </tr>
