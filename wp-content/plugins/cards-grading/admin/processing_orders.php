@@ -143,7 +143,7 @@ $posts = get_posts($args);
                 ?>
                 <tr class="" data-post_id="<?php echo $post->ID; ?>">
                     <td><?php echo get_the_date( $date_format, $post->ID ) ?><br><span style='font-size:.7em !important;'><?php echo get_the_time( $time_format, $post->ID ); ?></span></td>
-                    <td><a class="filter-links" href='/admin/?filtered=true&show=open&user_id=<?php echo $user_id; ?>'> <?php echo $user->display_name; ?></a> <br> <small><?php echo $user_id + 1000; ?>'></small></td>
+                    <td><a class="filter-links" href='/admin/?filtered=true&show=open&user_id=<?php echo $user_id; ?>'> <?php echo $user->display_name; ?></a> <br> <small style="font-size: 10px;"><?php echo $user_id + 1000; ?>'</small></td>
                     <td><?php echo $meta["order_number"][0]; ?></td>
                     <td><?php echo $meta["grading_type"][0]; ?><br><span style='font-size:.7em !important;'><?php echo  $meta["service_type"][0]; ?></span></td>
                     <td><a class="filter-links" href='/admin/?filtered=true&show=open&submission_number=<?php echo $meta["submission_number"][0]; ?>'><?php echo $meta["submission_number"][0]; ?></td>
