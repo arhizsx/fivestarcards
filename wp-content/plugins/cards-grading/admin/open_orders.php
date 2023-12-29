@@ -2,13 +2,54 @@
 
 $user_id = get_current_user_id();
 
+$meta_query = array(
+    "relaton" => 'AND',
+);
+
+array_push(
+    $meta_query,             
+    array(
+        'key' => 'status',
+        'value' => array("Processing Order", "Shipped to PSA / SGC", "Research", "Grading", "Assembly", "QA1", "QA2", "Cards Graded", "Grading Complete", "Completed - Grades Ready"),
+        'compare' => 'IN'
+    )
+);
+
+
+if(isset( $_GET['filtered']) && $_GET["filtered"] == "true"){
+
+    if(isset( $_GET["submission_number"]) ){        
+        $filter_array = array(
+            "key" => 'submission_number',
+            'value' => $_GET["submission_number"],
+        );
+
+        array_push(
+            $meta_query,             
+            $filter_array,
+        );
+
+    }
+
+    if(isset( $_GET["user_id"]) ){
+        
+        $filter_array = array(
+            "key" => 'user_id',
+            'value' => $_GET["user_id"],
+        );
+
+    }
+
+    array_push(
+        $meta_query,             
+        $filter_array,
+    );
+
+}
+
 $args = array(
     'meta_query' => array(
-        array(
-            'key' => 'status',
-            'value' => array("To Ship", "Shipped", "Package Received", "Incomplete Items Shipped"),
-            'compare' => 'IN'
-        )
+        $meta_query
     ),
     'post_type' => 'cards-grading-chk',
     'posts_per_page' => -1
