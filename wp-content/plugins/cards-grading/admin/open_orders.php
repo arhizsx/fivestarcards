@@ -70,6 +70,7 @@ $posts = get_posts($args);
     <?php 
         if( $posts ){
             $customers = [];
+            $status = [];
             foreach($posts as $post)
             {
                 $meta = get_post_meta($post->ID);
@@ -88,6 +89,9 @@ $posts = get_posts($args);
                 if($exists == false){
                     array_push($customers, ["customer"=> ucfirst($user->display_name), "user_id" => $user_id]);
                 }
+
+                array_push($status, ["status"=> ucfirst($meta["status"][0])]);
+
             }
         }
     ?>
