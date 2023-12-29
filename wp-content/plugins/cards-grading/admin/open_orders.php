@@ -90,8 +90,8 @@ $posts = get_posts($args);
     <?php if( isset( $_GET["filtered"] ) == "true") { ?>
     <div class="row">
         <div class="col-xl-12 text-start">
+            Filtered By: 
             <?php if(isset($_GET["user_id"])){ ?>
-                Filtered By: 
                 <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
                     Customer
                 </button>           
@@ -99,15 +99,26 @@ $posts = get_posts($args);
                     Clear
                 </button>      
             <?php } ?>
+            <?php if(isset($_GET["status"])){ ?>
+                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
+                    Status
+                </button>           
+            <?php } ?>
+            <?php if(isset($_GET["grading_type"])){ ?>
+                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
+                    Grading Type
+                </button>           
+            <?php } ?>
             <?php if( isset($_GET["submission_number"])){ ?>
-                Filtered By: 
                 <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 mr-5  btn-sm" data-action="remove_filter">
                     Submission #
                 </button>
-                <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="remove_filter" data-order_number="<?php echo $params['order_number'] ?>">
-                    Clear
-                </button>      
-                &nbsp;&nbsp;&nbsp;&nbsp; New Status: 
+            <?php } ?>
+            <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="remove_filter" data-order_number="<?php echo $params['order_number'] ?>">
+                Clear
+            </button>      
+            <?php if( isset($_GET["submission_number"])){ ?>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Status: 
                 <select name="multi_update_status_select " class="mt-3" style="font-size: 13px;" >
                     <option value="">Select New Status</option>
                     <option value="Processing Order">Processing Order</option>
@@ -122,7 +133,6 @@ $posts = get_posts($args);
                 <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
                     Apply
                 </button>      
-
             <?php } ?>
         </div>
     </div>
