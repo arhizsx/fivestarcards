@@ -117,6 +117,7 @@ $posts = get_posts($args);
         </div>
     </div>
 
+
     <?php if( isset( $_GET["filtered"] ) == "true") { ?>
     <div class="row">
         <div class="col-xl-12 text-start">
@@ -234,11 +235,56 @@ $posts = get_posts($args);
             <thead>
                 <tr>
                     <th>Date</th>
-                    <th>Customer</th>
+                    <th>
+                        <select name="select_customer_filter " class="select_filter w-100 px-2 py-0" data-filter="user_id">
+                            <option value="">Customer</option>
+                            <?php 
+                                foreach($customers as $cx){
+                            ?>
+                            <option value="<?php echo $cx["user_id"]; ?>"><?php echo $cx["customer"]; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+
+                    </th>
                     <th>Order #</th>
-                    <th>Service Type</th>
-                    <th>Submission #</th>
-                    <th>Status</th>
+                    <th>
+                        <select name="select_grading_filter " class="select_filter w-100 px-2 py-0" data-filter="grading_type" >
+                            <option value="">Grading Type</option>
+                            <?php 
+                                foreach($grading_types as $gd){
+                            ?>
+                            <option value="<?php echo $gd["grading_type"]; ?>"><?php echo $gd["grading_type"]; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+                    </th>
+                    <th>
+                        <select name="select_status_filter " class="select_filter w-100 px-2 py-0" data-filter="status" style="" >
+                            <option value="">Submission #</option>
+                            <?php 
+                                foreach($submissions as $sn){
+                            ?>
+                            <option value="<?php echo $sn["submission_number"]; ?>"><?php echo $st["submission_number"]; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+                    </th>
+                    <th>
+                        <select name="select_status_filter " class="select_filter w-100 px-2 py-0" data-filter="status" style="" >
+                            <option value="">Status</option>
+                            <?php 
+                                foreach($status as $st){
+                            ?>
+                            <option value="<?php echo $st["status"]; ?>"><?php echo $st["status"]; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+                    </th>
                     <th class='text-end'>Total Cards</th>
                     <th class='text-end'>Action</th>
                 </tr>
