@@ -80,7 +80,7 @@ $posts = get_posts($args);
                 <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
                     Customer
                 </button>           
-                <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
+                <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="remove_filter" data-order_number="<?php echo $params['order_number'] ?>">
                     Clear
                 </button>      
             <?php } ?>
@@ -89,6 +89,9 @@ $posts = get_posts($args);
                 <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 mr-5  btn-sm" data-action="remove_filter">
                     Submission #
                 </button>
+                <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="remove_filter" data-order_number="<?php echo $params['order_number'] ?>">
+                    Clear
+                </button>      
                 &nbsp;&nbsp;&nbsp;&nbsp; New Status: 
                 <select name="multi_update_status_select " class="mt-3" style="font-size: 13px;" >
                     <option value="">Select New Status</option>
