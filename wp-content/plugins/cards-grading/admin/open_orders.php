@@ -127,7 +127,7 @@ $posts = get_posts($args);
                 <tr>
                     <th>Date</th>
                     <th>
-                        <select name="multi_update_status_select " class="w-100 px-2 py-0" style="font-size: 15px; margin-left: -10px; font-weight: bold; border: 0px;" >
+                        <select name="select_customer_filter " class="select_filter w-100 px-2 py-0" data-filter="user_id" style="font-size: 15px; margin-left: -10px; font-weight: bold; border: 0px;" >
                             <option value="">Customer</option>
                             <?php 
                                 foreach($customers as $cx){
@@ -141,7 +141,7 @@ $posts = get_posts($args);
                     </th>
                     <th>Order #</th>
                     <th>
-                        <select name="multi_update_status_select " class="w-100 px-2 py-0" style="font-size: 15px; margin-left: -10px; font-weight: bold; border: 0px;" >
+                        <select name="select_grading_filter " class="select_filter w-100 px-2 py-0" data-filter="grading_type" style="font-size: 15px; margin-left: -10px; font-weight: bold; border: 0px;" >
                             <option value="">Grading Type</option>
                             <?php 
                                 foreach($grading_types as $gd){
@@ -153,7 +153,7 @@ $posts = get_posts($args);
                         </select>
                     </th>
                     <th>
-                        <select name="multi_update_status_select " class="w-100 px-2 py-0" style="font-size: 15px; margin-left: -10px; font-weight: bold; border: 0px;" >
+                        <select name="select_status_filter " class="select_filter w-100 px-2 py-0" data-filter="status" style="font-size: 15px; margin-left: -10px; font-weight: bold; border: 0px;" >
                             <option value="">Status</option>
                             <?php 
                                 foreach($status as $st){

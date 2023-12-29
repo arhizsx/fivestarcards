@@ -964,5 +964,11 @@ $(document).find('.setsubmissionmodal').on('shown.bs.modal', function() {
 });
 
 
+$(document).on("change", ".select_filter", function(){
 
-location.protocol + '//' + location.host + location.pathname
+    var data = $(this).data();
+    var val = $(this).val();
+
+    console.log(data);
+
+});
