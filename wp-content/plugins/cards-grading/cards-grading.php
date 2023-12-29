@@ -669,7 +669,7 @@
         $params = shortcode_atts($default, $atts);
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . 'admin/processing_orders.php' );
+        include( plugin_dir_path( __FILE__ ) . 'admin/open_orders.php' );
         
         $output = ob_get_clean(); 
         

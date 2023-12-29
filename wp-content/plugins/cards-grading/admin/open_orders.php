@@ -1,88 +1,93 @@
 <?php
 
-$user_id = get_current_user_id();
-
-$meta_query = array(
-    "relaton" => 'AND',
-);
-
-array_push(
-    $meta_query,             
-    array(
-        'key' => 'status',
-        'value' => array("To Ship", "Shipped", "Package Received", "Incomplete Items Shipped"),
-        'compare' => 'IN'
-    )
-);
+    $user_id = get_current_user_id();
 
 
-if(isset( $_GET['filtered']) && $_GET["filtered"] == "true"){
+    $meta_query = array(
+        "relaton" => 'AND',
+    );
 
-    if(isset( $_GET["submission_number"]) ){        
-        $filter_array = array(
-            "key" => 'submission_number',
-            'value' => $_GET["submission_number"],
-        );
+    array_push(
+        $meta_query,             
+        array(
+            'key' => 'status',
+            'value' => array("Processing Order", "Shipped to PSA / SGC", "Research", "Grading", "Assembly", "QA1", "QA2", "Cards Graded", "Grading Complete", "Completed - Grades Ready"),
+            'compare' => 'IN'
+        )
+    );
 
+
+    if(isset( $_GET['filtered']) && $_GET["filtered"] == "true"){
+
+        if(isset( $_GET["submission_number"]) ){        
+            $filter_array = array(
+                "key" => 'submission_number',
+                'value' => $_GET["submission_number"],
+            );
+    
+            array_push(
+                $meta_query,             
+                $filter_array,
+            );
+    
+        }
+    
+        if(isset( $_GET["user_id"]) ){
+            
+            $filter_array = array(
+                "key" => 'user_id',
+                'value' => $_GET["user_id"],
+            );
+    
+        }
+        
+        if(isset( $_GET["status"]) ){
+            
+            $filter_array = array(
+                "key" => 'status',
+                'value' => $_GET["status"],
+            );
+    
+        }
+    
+        if(isset( $_GET["grading_type"]) ){
+            
+            $filter_array = array(
+                "key" => 'grading_type',
+                'value' => $_GET["grading_type"],
+            );
+    
+        }
+    
+    
         array_push(
             $meta_query,             
             $filter_array,
         );
-
-    }
-
-    if(isset( $_GET["user_id"]) ){
-        
-        $filter_array = array(
-            "key" => 'user_id',
-            'value' => $_GET["user_id"],
-        );
-
+    
     }
     
-    if(isset( $_GET["status"]) ){
-        
-        $filter_array = array(
-            "key" => 'status',
-            'value' => $_GET["status"],
-        );
-
-    }
-
-    if(isset( $_GET["grading_type"]) ){
-        
-        $filter_array = array(
-            "key" => 'grading_type',
-            'value' => $_GET["grading_type"],
-        );
-
-    }
-
-
-    array_push(
-        $meta_query,             
-        $filter_array,
+    
+    $args = array(
+        'meta_query' => array(
+            $meta_query
+        ),
+        'post_type' => 'cards-grading-chk',
+        'posts_per_page' => -1
     );
+    
 
-}
 
-$args = array(
-    'meta_query' => array(
-        $meta_query
-    ),
-    'post_type' => 'cards-grading-chk',
-    'posts_per_page' => -1
-);
 
 $posts = get_posts($args);
 
 ?>
 
 <div class="m-0 p-0">
-    
+
     <div class="row">
         <div class="col-xl-6">
-            <H1 style="color: black;">Order Receiving</H1>            
+            <H1 style="color: black;">Open Orders</H1>            
         </div>
         <div class="col-xl-6 text-end">
             
@@ -204,6 +209,7 @@ $posts = get_posts($args);
             }
         }
     ?>
+
     <div class="table-responsive">    
         <table class='table 5star_my_orders table-bordered table-striped'>
             <thead>
@@ -230,6 +236,18 @@ $posts = get_posts($args);
                                 foreach($grading_types as $gd){
                             ?>
                             <option value="<?php echo $gd["grading_type"]; ?>"><?php echo $gd["grading_type"]; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+                    </th>
+                    <th>
+                        <select name="select_status_filter " class="select_filter w-100 px-2 py-0" data-filter="submission_number" style="" >
+                            <option value="">Submission #</option>
+                            <?php 
+                                foreach($submission_numbers as $sn){
+                            ?>
+                            <option value="<?php echo $sn["submission_number"]; ?>"><?php echo $sn["submission_number"]; ?></option>
                             <?php 
                                 }
                             ?>
@@ -271,6 +289,7 @@ $posts = get_posts($args);
                     <td><?php echo $user->display_name; ?><br> <small style="font-size: 11px;"><?php echo $user_id + 1000; ?></small></td>
                     <td><?php echo $meta["order_number"][0]; ?></td>
                     <td><?php echo $meta["grading_type"][0]; ?><br><span style='font-size:.7em !important;'><?php echo  $meta["service_type"][0]; ?></span></td>
+                    <td><?php echo $meta["submission_number"][0]; ?></td>
                     <td><?php echo $meta["status"][0]; ?></td>
                     <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
                     <td class="text-end">
@@ -284,7 +303,7 @@ $posts = get_posts($args);
                     } else {
                 ?>
                 <tr>
-                    <td class="text-center" colspan="7">Empty</td>
+                    <td class="text-center" colspan="8">Empty</td>
                 </tr>
                 <?php          
                     }
