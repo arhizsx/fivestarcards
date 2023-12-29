@@ -68,14 +68,19 @@ $posts = get_posts($args);
         <div class="col-xl-6">
             <H1 style="color: black;">Open Orders</H1>            
         </div>
-        <div class="col-xl-6 text-end">
-            <?php if( isset( $_GET["filtered"] ) == "true"  && isset($_GET["user_id"])){ ?>
+        <div class="col-xl-6">
+        </div>
+    </div>
+    <?php if( isset( $_GET["filtered"] ) == "true") { ?>
+    <div class="row">
+        <div class="col-xl-12 text-end">
+            <?php if(isset($_GET["user_id"])){ ?>
                 Filtered By: 
                 <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
                     Customer
                 </button>           
             <?php } ?>
-            <?php if( isset( $_GET["filtered"] ) == "true"  && isset($_GET["submission_number"])){ ?>
+            <?php if( isset($_GET["submission_number"])){ ?>
                 Filtered By: 
                 <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 mr-5  btn-sm" data-action="remove_filter">
                     Submission #
@@ -97,9 +102,9 @@ $posts = get_posts($args);
                 </button>      
 
             <?php } ?>
-
         </div>
     </div>
+    <?php } ?>
     <div class="table-responsive">    
         <table class='table 5star_my_orders table-bordered table-striped'>
             <thead>
