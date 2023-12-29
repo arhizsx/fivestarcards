@@ -95,9 +95,6 @@ $posts = get_posts($args);
                 <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
                     Customer
                 </button>           
-                <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="remove_filter" data-order_number="<?php echo $params['order_number'] ?>">
-                    Clear
-                </button>      
             <?php } ?>
             <?php if(isset($_GET["status"])){ ?>
                 <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
