@@ -84,12 +84,8 @@ $posts = get_posts($args);
             <H1 style="color: black;">Order Receiving</H1>            
         </div>
         <div class="col-xl-6 text-end">
-            <input type="text" class="mt-3" placeholder="Search">
-        </div>
-    </div>
-    <?php if( isset( $_GET["filtered"] ) == "true") { ?>
-    <div class="row">
-        <div class="col-xl-12 text-start">
+        <?php if( isset( $_GET["filtered"] ) == "true") { ?>
+
             Filtered By: 
             <?php if(isset($_GET["user_id"])){ ?>
                 <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
@@ -131,9 +127,9 @@ $posts = get_posts($args);
                     Apply
                 </button>      
             <?php } ?>
+        <?php } ?>
         </div>
     </div>
-    <?php } ?>
     <?php 
         if( $posts ){
             
