@@ -90,6 +90,9 @@ $posts = get_posts($args);
             <H1 style="color: black;">Open Orders</H1>            
         </div>
         <div class="col-xl-6 text-end">
+            
+        </div>
+        <div class="col-xl-12">
         <?php if( isset( $_GET["filtered"] ) == "true") { ?>
 
             Filtered By: 
