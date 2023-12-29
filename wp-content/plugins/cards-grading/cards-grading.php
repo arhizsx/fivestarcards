@@ -450,7 +450,7 @@
         return $output ;
     }
 
-    public function cards_grading_open_orders_shortcode($atts) 
+    public function cards_grading_order_receiving_shortcode($atts) 
     {
 
         $default = array(
@@ -460,7 +460,7 @@
         $params = shortcode_atts($default, $atts);
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . 'admin/open_orders.php' );
+        include( plugin_dir_path( __FILE__ ) . 'admin/order_receing.php' );
         
         $output = ob_get_clean(); 
         
