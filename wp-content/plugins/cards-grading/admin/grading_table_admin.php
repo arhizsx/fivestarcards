@@ -262,9 +262,6 @@ $total_dv = 0;
             <button class='5star_btn btn btn-secondary btn-sm' data-type="" data-action="admin_create_order_cancel">
                 Cancel
             </button>
-            <button class='5star_btn btn btn-success btn-sm' data-type="" data-action="admin_create_order_cancel">
-                Log Cards
-            </button>
             <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order_cancel">
                 Save New Order
             </button>
