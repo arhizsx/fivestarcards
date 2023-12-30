@@ -699,6 +699,7 @@
         }
 
         $params = $data->get_params();
+        
 
         if($params["action"] == "set_shipping"){
 
