@@ -435,10 +435,10 @@ $(document).on("click", ".5star_btn", function(e){
 
             var order_number = $(this).data("order_number");
             var back = $(this).data("back");
-            var data = {"back" : "back"};
+            var data = {"back" : back};
             
             if (orderAction("confirm_admin_delete_order", data, order_number) ){
-                location.href = back;
+                // location.href = back;
             }
 
             
