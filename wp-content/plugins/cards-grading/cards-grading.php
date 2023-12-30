@@ -42,6 +42,9 @@
 
         // Add Shortcodes
         add_shortcode('cards-grading', array( $this, 'cards_grading_shortcode' ));
+
+        add_shortcode('cards-grading-admin', array( $this, 'cards_grading_admin_shortcode' ));
+
         add_shortcode('cards-grading-checkout', array( $this, 'cards_grading_checkout_shortcode' ));
 
 
@@ -337,6 +340,24 @@
         ob_start();
 
         include( plugin_dir_path( __FILE__ ) . 'admin/modal.php' );
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
+
+    public function cards_grading_admin_shortcode($atts) 
+    {
+
+        $default = array(
+            'title' => 'Grading Title',
+            'type' => 'grading-tyoe'
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
+
+        include( plugin_dir_path( __FILE__ ) . 'admin/cards_grading_admin.php' );
         
         $output = ob_get_clean(); 
         
