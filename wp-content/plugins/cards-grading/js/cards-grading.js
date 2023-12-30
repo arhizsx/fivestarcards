@@ -425,6 +425,19 @@ $(document).on("click", ".5star_btn", function(e){
 
             break;
 
+        case "admin_delete_order":
+
+            $(document).find(".delete_order").appendTo('body').modal("show");
+            
+            break;
+
+        case "confirm_admin_delete_order":
+            
+            break;
+
+            
+            
+
         default:
             console.log("Button not configured: " + $(this).data("action"));
     }

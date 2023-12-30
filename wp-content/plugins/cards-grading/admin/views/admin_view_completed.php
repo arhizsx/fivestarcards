@@ -233,18 +233,18 @@ $admin_action_status = [];
             </div>
         </div>
     </div>
-    <div class='5star_btn_box_admin_bottom w-100 border-top'>
-        DELETE
+    <div class='5star_btn_box_admin_bottom w-100 border-top pt-3'>
+        <button class="btn border btn-danger 5star_btn" data-action="admin_delete_order" data-order_number="<?php echo $params['order_number'] ?>" >Delete Order</button>
     </div>    
 </div>
 
 
-<div class="modal fade view_card" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+<div class="modal fade delete_order" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
 	<div class="modal-dialog" id="dxmodal">
 		<div class="modal-content modal-ajax">
 			<div class="modal-header bg-dark text-white">
 				<h5 class="modal-title">
-					Set Card Selling Price
+					Delete Order
 				</h5>
     			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
 					X
@@ -252,111 +252,25 @@ $admin_action_status = [];
 			</div>
                 <div class="" id="view_card_form_box">
                     <div class="modal-body py-2 px-3">
-                        <forn id="set_sold_price_form">
+                        <forn id="delete_order_form">
 
                             <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
-                            <input type="hidden" name="grading" value=''/>
-                            <input type="hidden" name="max_dv" value=''/>
-                            <input type="hidden" name="post_id" value=''/>
-                            <input type="hidden" name="card" value=''/>
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12">
-                                    <label for="sold_price">Selling Price</label>
-                                    <input id="sold_price" type="number" name="sold_price" style="font-size: 3em !important; text-align: center !important; color: white !important; background-color: green !important;"  value="" data-field_check="required"  class="form-control mb-2"/>
+                                    <label for="order_number">Order Number</label>
+                                    <input id="order_number" type="number" name="order_number" style="font-size: 3em !important; text-align: center !important; color: white !important; background-color: green !important;"  value="<?php echo $params['order_number'] ?>" data-field_check="required"  class="form-control mb-2"/>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-4">
-                                    <label for="grade">Grade</label>
-                                    <input type="text" name="grade" value="" data-field_check="required"  class="form-control mb-2" disabled/>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4">
-                                    <label for="year">Year</label>
-                                    <input type="number" name="year" value="" data-field_check="required"  class="form-control mb-2" disabled/>
-                                </div>
-                                <div class="col-xl-4 col-lg-4 col-md-4">
-                                    <label for="dv">Declared Value</label>
-                                    <input type="number" name="dv" value="" data-field_check="required" class="form-control mb-2" disabled/>
-                                </div>
-                                <div class="col-xl-12">
-                                    <label for="brand">Brand</label>
-                                    <input type="text" name="brand" value="" data-field_check="required" class="form-control mb-2" disabled/>
-                                </div>
-                                <div class="col-xl-12">
-                                    <label for="card_number">Card Number</label>
-                                    <input type="text" name="card_number" value="" data-field_check="required" class="form-control mb-2" disabled/>
-                                </div>
-                                <div class="col-xl-12">
-                                    <label for="player">Player Name</label>
-                                    <input type="text" name="player" value="" data-field_check="required" class="form-control mb-2" disabled/>
-                                </div>
-                                <div class="col-xl-12">
-                                    <label for="attribute">Attribute S/N</label>
-                                    <input type="text" name="attribute" value="" data-field_check="" class="form-control mb-2" disabled/>
+                                <div class="col-xl-12 col-lg-12 col-md-12">
+                                    Are you sure you want to delete this order? This action cannot be reverted.
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                        <button class="btn border btn-primary 5star_btn" data-action="confirm_sold_price">Save Selling Price</button>
+                        <button class="btn border btn-primary 5star_btn" data-action="confirm_admin_delete_order">Confirm Delete</button>
                     </div>
                 </div>
 		</div>
 	</div>
 </div>
-
-<div class="modal fade consignmentpaidmodal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
-	<div class="modal-dialog" id="dxmodal">
-		<div class="modal-content modal-ajax">
-			<div class="modal-header bg-dark text-white">
-				<h5 class="modal-title">
-					Consignment Payment
-				</h5>
-    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
-					X
-				</button>
-			</div>
-            <div class="" id="set_consignment_payment_info_box">
-                <div class="modal-body py-2 px-3">
-                    <forn id="consignment_payment_info_form">
-
-                        <input type="hidden" name="user_id" value='<?php echo $checkout_meta["user_id"][0]; ?>'/>
-                        <input type="hidden" name="order_number" value='<?php echo $params['order_number']; ?>'/>
-                        <div class="row">
-                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
-                                <label for="mode_of_payment">Mode of Payment</label>
-                                <select name="mode_of_payment" class="form-control" data-field_check="required">
-                                    <option value="">Select Mode of Payment</option>
-                                    <option value="Paypal">Paypal</option>
-                                    <option value="Bank Transfer">Bank Transfer</option>
-                                </select>
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
-                                <label for="paid_by">Paid By</label>
-                                <input type="text" name="paid_by" class="form-control" value="Matt Sellers" data-field_check="required">
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
-                                <label for="payment_date">Payment Date</label>
-                                <input type="date" name="payment_date" class="form-control" data-field_check="required">
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
-                                <label for="amount_paid">Amount</label>
-                                <input type="number" name="amount_paid" class="form-control" data-field_check="required">
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 mb-3">
-                                <label for="reference_number">Reference Number</label>
-                                <input type="text" name="reference_number" class="form-control" data-field_check="required">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                    <button class="btn border btn-success 5star_btn" data-action='confirm_consignment_payment' data-order_number="<?php echo $params['order_number']; ?>" data-type=''>Confirm Payment</button>
-                </div>
-            </div>
-		</div>
-	</div>
-</div>
-
