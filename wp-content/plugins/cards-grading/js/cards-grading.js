@@ -367,6 +367,8 @@ $(document).on("click", ".5star_btn", function(e){
                 location.reload();
             }
 
+            break;
+
         case "update_status":
             
             showUpdateStatusModal();
@@ -416,7 +418,6 @@ $(document).on("click", ".5star_btn", function(e){
                 location.reload();
             }
             break;     
-
 
         case "remove_filter":
             
