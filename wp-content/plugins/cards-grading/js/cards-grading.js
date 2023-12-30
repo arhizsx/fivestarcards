@@ -437,7 +437,7 @@ $(document).on("click", ".5star_btn", function(e){
             var back = $(this).data("back");
             
             if (orderAction("confirm_admin_delete_order", '', order_number) ){
-                window.history.back();
+                // window.history.back();
             }
 
             
