@@ -200,7 +200,7 @@ $total_dv = 0;
 <!-- table for grading -->
 
 <div class="m-0 p-0">
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-xl-12" >
             Customer
             <select class='btn btn-sm me-4'>
