@@ -1372,7 +1372,6 @@
 
         $args = array(
             'meta_query' => array(
-                'relations' =>  'AND',    
                 array(
                     'key' => 'checkout_id',
                     'value' => $params['order_number']
