@@ -206,7 +206,7 @@ $total_dv = 0;
             <?php 
 
                 $args = array(
-                    'orderby'    => 'ID',
+                    'orderby'    => 'display_name',
                     'order'      => 'ASC'
                 );   
 
@@ -219,7 +219,7 @@ $total_dv = 0;
                     foreach( $users as $user){
                         if( $user->roles[0] == 'um_member' ){
                             $id = $user->ID + 1000;
-                            echo "<option>" . $id . ' - ' . $user->display_name . '</option>';    
+                            echo "<option value='" . $id . "'>" .  $user->display_name . '</option>';    
                         }
                     }
                 ?>
