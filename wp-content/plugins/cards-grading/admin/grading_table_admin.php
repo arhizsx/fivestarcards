@@ -251,6 +251,8 @@ $total_dv = 0;
             </button>
         </div>
         <div class="col-xl-12 new_order_details d-none">
+            <span class="" style="font-size: 12px">Order Number</span>
+            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
             <span class="" style="font-size: 12px">Customer</span>
             <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
             <span class="" style="font-size: 12px">Grading Type</span>
