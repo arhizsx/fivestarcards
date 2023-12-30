@@ -204,11 +204,11 @@ $total_dv = 0;
         <div class="col-xl-12" >
             Customer
             <select class='btn btn-sm me-4'>
-                <option>US</option>
+                <option>Select Customer</option>
             </select>
             Grading Type
             <select class='btn btn-sm me-4'>
-                <option>US</option>
+                <option>Select Grading Type</option>
             </select>
             <button class='5star_btn btn btn-success btn-sm' data-type="" data-action="add_card">
                 Log Card
