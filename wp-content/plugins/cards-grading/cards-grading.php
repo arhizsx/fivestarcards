@@ -37,7 +37,6 @@
         add_action( 'manage_cards-grading-chk_posts_custom_column' , array($this, 'custom_cards_grading_checkout_column'), 10, 2 );
 
         
-
         // Add Assets
         add_action('wp_enqueue_scripts', array( $this, 'load_assets') );
 
@@ -46,20 +45,14 @@
         add_shortcode('cards-grading-checkout', array( $this, 'cards_grading_checkout_shortcode' ));
 
 
-
-
-        add_shortcode('cards-grading-admin_view_order', array( $this, 'cards_grading_admin_view_order_shortcode' ));
-        add_shortcode('cards-grading-admin_view_consignment', array( $this, 'cards_grading_admin_view_consignment_shortcode' ));
-        add_shortcode('cards-grading-admin_view_completed', array( $this, 'cards_grading_admin_view_completed_shortcode' ));
-        add_shortcode('cards-grading-admin_view_payment', array( $this, 'cards_grading_admin_view_payment_shortcode' ));
-
         add_shortcode('cards-grading-dashbox_cards', array( $this, 'cards_grading_dashbox_cards_shortcode' ));
         add_shortcode('cards-grading-dashbox_orders', array( $this, 'cards_grading_dashbox_orders_shortcode' ));
-
+        
         // Tables
 
         add_shortcode('cards-grading-orders_table', array( $this, 'cards_grading_orders_table_shortcode' ));
         
+        // Views
 
         add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
 
@@ -490,6 +483,11 @@
                 $view = 'admin_view_payment.php';
                 break;
             
+            case "view_order":
+                $folder = "members";
+                $view = 'view_order.php';
+                break;
+            
             default:
         }
 
@@ -499,102 +497,6 @@
         
         return $output ;
     }
-
-    public function cards_grading_admin_view_order_shortcode($atts) 
-    {
-        $order_number = $_GET['id'];
-
-        $default = array(
-            'title' => 'Order Number',
-            'order_number' => $order_number
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/admin_view_order.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-
-    public function cards_grading_admin_view_consignment_shortcode($atts) 
-    {
-        $order_number = $_GET['id'];
-
-        $default = array(
-            'title' => 'Order Number',
-            'order_number' => $order_number
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/admin_view_consignment.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-
-    public function cards_grading_admin_view_completed_shortcode($atts) 
-    {
-        $order_number = $_GET['id'];
-
-        $default = array(
-            'title' => 'Order Number',
-            'order_number' => $order_number
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/admin_view_completed.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-
-    public function cards_grading_admin_view_payment_shortcode($atts) 
-    {
-        $order_number = $_GET['id'];
-
-        $default = array(
-            'title' => 'Order Number',
-            'order_number' => $order_number
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/admin_view_payment.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-    
-    public function cards_grading_consigned_orders_shortcode($atts) 
-    {
-        $order_number = $_GET['id'];
-
-        $default = array(
-            'title' => 'Order Number',
-            'order_number' => $order_number
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/consigned_orders.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-
 
 
     public function cards_grading_dashbox_orders_shortcode($atts) 
