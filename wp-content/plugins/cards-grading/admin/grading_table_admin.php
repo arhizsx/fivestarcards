@@ -268,10 +268,10 @@ $total_dv = 0;
         </div>
         <div class="col-xl-3 row">
             <div class="col-6 pt-3">
-                <button class="form-control btn border btn-success 5star_btn" data-action='confirm_add' data-type=''>Log</button>
+                <button class="form-control btn btn-sm border btn-success 5star_btn" data-action='confirm_add' data-type=''>Log</button>
             </div>
             <div class="col-6 pt-3">
-                <button class="form-control btn border btn-success 5star_btn" data-action='confirm_add' data-type=''>Log</button>
+                <button class="form-control btn btn-sm border btn-success 5star_btn" data-action='confirm_add' data-type=''>Log</button>
             </div>
         </div>
     </div>
