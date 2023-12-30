@@ -1390,7 +1390,7 @@
 
         wp_delete_post( $params['order_number'], true );
 
-        return false;
+        return $params['order_number'];
     }
 
 
