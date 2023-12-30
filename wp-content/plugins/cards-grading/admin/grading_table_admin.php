@@ -247,7 +247,7 @@ $total_dv = 0;
                 <option value="Completed - Grades Ready">Completed - Grades Ready</option>
             </select>
             <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order">
-                Create Order
+                Create New Order
             </button>
         </div>
         <div class="col-xl-12 new_order_details d-none">
@@ -259,6 +259,12 @@ $total_dv = 0;
             <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
             <button class='5star_btn btn btn-secondary btn-sm' data-type="" data-action="admin_create_order_cancel">
                 Cancel
+            </button>
+            <button class='5star_btn btn btn-success btn-sm' data-type="" data-action="admin_create_order_cancel">
+                Log Cards
+            </button>
+            <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order_cancel">
+                Save New Order
             </button>
         </div>
     </div>
