@@ -201,7 +201,7 @@ $total_dv = 0;
 
 <div class="m-0 p-0">
     <div class="row mb-5 mt-3">
-        <div class="col-xl-12" >
+        <div class="col-xl-12 new_order_fields">
             <span class="" style="font-size: 12px">Customer</span>
             <?php 
 
@@ -248,6 +248,17 @@ $total_dv = 0;
             </select>
             <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order">
                 Create Order
+            </button>
+        </div>
+        <div class="col-xl-12 new_order_details">
+            <span class="" style="font-size: 12px">Customer</span>
+            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
+            <span class="" style="font-size: 12px">Grading Type</span>
+            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
+            <span class="" style="font-size: 12px">Order Status</span>
+            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
+            <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order">
+                Cancel
             </button>
         </div>
     </div>
