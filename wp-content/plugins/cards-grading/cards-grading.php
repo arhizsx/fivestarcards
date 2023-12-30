@@ -486,7 +486,7 @@
 
         }
 
-        return $atts["view"];
+        return $folder . '/views/' . $view;
 
         include( plugin_dir_path( __FILE__ ) . $folder . '/views/' . $view );
         
