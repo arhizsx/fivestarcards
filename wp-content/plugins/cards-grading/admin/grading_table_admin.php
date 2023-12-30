@@ -209,6 +209,11 @@ $total_dv = 0;
             ?>
             <select class='btn btn-sm me-4' style="border: 1px solid black">
                 <option>Select Customer</option>
+                <?php 
+                    foreach( $users as $user){
+                        echo "<option>" . $user->ID . ' - ' . $user->display_name . '</option>';
+                    }
+                ?>
             </select>
             <span class="" style="font-size: 12px">Grading Type</span>
             <select class='btn btn-sm me-4' style="border: 1px solid black">
