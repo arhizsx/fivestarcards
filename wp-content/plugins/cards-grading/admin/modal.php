@@ -41,46 +41,46 @@ $total_dv = 0;
 			</div>
                 <div class="" id="add_card_form_box">
                     <div class="modal-body py-2 px-3">
-                            <forn id="add_card_form">
+                        <forn id="add_card_form">
 
-                                <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
-                                <input type="hidden" name="grading" value=''/>
-                                <input type="hidden" name="max_dv" value=''/>
-                                <div class="row">
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <label for="quantity">Qty</label>
-                                        <input type="number" name="quantity" value="1" data-field_check="required" class="form-control mb-2"/>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <label for="year">Year</label>
-                                        <input type="number" name="year" value="" data-field_check="required"  class="form-control mb-2"/>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <label for="brand">Brand</label>
-                                        <input type="text" name="brand" value="" data-field_check="required" class="form-control mb-2"/>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <label for="card_number">Card Number</label>
-                                        <input type="text" name="card_number" value="" data-field_check="required" class="form-control mb-2"/>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <label for="player">Player Name</label>
-                                        <input type="text" name="player" value="" data-field_check="required" class="form-control mb-2"/>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <label for="attribute">Attribute S/N</label>
-                                        <input type="text" name="attribute" value="" data-field_check="" class="form-control mb-2"/>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <label for="per_card">Per Card</label>
-                                        <input type="number" name="per_card" value="" data-field_check="required"  class="form-control mb-2" disabled/>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <label for="dv">Declared Value</label>
-                                        <input type="number" name="dv" value="" data-field_check="required" class="form-control mb-2"/>
-                                    </div>
+                            <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
+                            <input type="hidden" name="grading" value=''/>
+                            <input type="hidden" name="max_dv" value=''/>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="quantity">Qty</label>
+                                    <input type="number" name="quantity" value="1" data-field_check="required" class="form-control mb-2"/>
                                 </div>
-                            </form>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="year">Year</label>
+                                    <input type="number" name="year" value="" data-field_check="required"  class="form-control mb-2"/>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="brand">Brand</label>
+                                    <input type="text" name="brand" value="" data-field_check="required" class="form-control mb-2"/>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="card_number">Card Number</label>
+                                    <input type="text" name="card_number" value="" data-field_check="required" class="form-control mb-2"/>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="player">Player Name</label>
+                                    <input type="text" name="player" value="" data-field_check="required" class="form-control mb-2"/>
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="attribute">Attribute S/N</label>
+                                    <input type="text" name="attribute" value="" data-field_check="" class="form-control mb-2"/>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="per_card">Per Card</label>
+                                    <input type="number" name="per_card" value="" data-field_check="required"  class="form-control mb-2" disabled/>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="dv">Declared Value</label>
+                                    <input type="number" name="dv" value="" data-field_check="required" class="form-control mb-2"/>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>

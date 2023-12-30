@@ -200,7 +200,7 @@ $total_dv = 0;
 <!-- table for grading -->
 
 <div class="m-0 p-0">
-    <div class="row mb-5 mt-3">
+    <!-- <div class="row mb-5 mt-3">
         <div class="col-xl-12 new_order_fields">
             <span class="" style="font-size: 12px">Customer</span>
             <?php 
@@ -252,7 +252,7 @@ $total_dv = 0;
                 Save New Order
             </button>
         </div>
-    </div>
+    </div> -->
     <div class="row">
         <div class="col-xl-6">
             <H2 style="color: black;">Cards List</H2>
