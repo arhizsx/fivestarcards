@@ -462,10 +462,11 @@
         $default = array(
             'title' => 'Order Number',
             'order_number' => $order_number,
-            'view' => 'view_order'
+            'view' => 'admin_view_order'
         );
         
         $params = shortcode_atts($default, $atts);
+
         ob_start();
 
         switch( $atts['view'] ){
@@ -482,7 +483,10 @@
                 
             default:
 
+
         }
+
+        return $atts["view"];
 
         include( plugin_dir_path( __FILE__ ) . $folder . '/views/' . $view );
         
