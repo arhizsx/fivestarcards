@@ -696,7 +696,7 @@ function orderAction(action, data, order_number){
         },
         success: function(resp){
 
-            console.log(resp);
+            console.log(resp.action);
 
             // if(resp ==true){
             //     $(document).find(".dxmodal").modal("hide");
