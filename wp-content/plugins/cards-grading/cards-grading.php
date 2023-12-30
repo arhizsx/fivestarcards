@@ -409,9 +409,9 @@
                 $table = 'completed_orders.php';
                 break;
 
-            case "completed_orders":
+            case "cancelled_orders":
                 $folder = "admin";
-                $table = 'completed_orders.php';
+                $table = 'cancelled_orders.php';
                 break;
 
             case "my_completed":
