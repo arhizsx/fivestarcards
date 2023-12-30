@@ -266,7 +266,7 @@ $total_dv = 0;
             Grading Type
             <input type="text" class="form-control">
         </div>
-        <div class="col-xl-auto row">
+        <div class="col-xl-3 row">
             <div class="col-6 pt-4">
                 <button class="form-control btn btn-sm border btn-success 5star_btn" data-action='confirm_add' data-type=''>Log</button>
             </div>
