@@ -414,6 +414,10 @@
                 $table = 'awaiting_payment.php';
                 break;
 
+            case "completed_orders":
+                $table = 'completed_orders.php';
+                break;
+
             default:
                 $table = '';
 
