@@ -202,7 +202,7 @@ $total_dv = 0;
 <div class="m-0 p-0">
     <div class="row">
         <div class="col-xl-12" >
-            <select class='btn btn-sm mr-4'>
+            <select class='btn btn-sm me-4'>
                 <option>US</option>
             </select>
             <button class='5star_btn btn btn-success btn-sm' data-type="" data-action="add_card">
