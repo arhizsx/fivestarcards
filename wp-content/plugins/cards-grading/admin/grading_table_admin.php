@@ -253,7 +253,7 @@ $total_dv = 0;
             </button>
         </div>
     </div> -->
-    <div class="row">
+    <div class="row mb-3 border-bottom">
         <div class="col-xl-3">
             Order Number
             <input type="text" class="form-control">
