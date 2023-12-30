@@ -205,7 +205,7 @@ $total_dv = 0;
             <select>
                 <option>US</option>
             </select>
-            <button class='5star_btn btn btn-success mb-3' data-type="" data-action="add_card">
+            <button class='5star_btn btn btn-success btn-sm mb-3' data-type="" data-action="add_card">
                 Log Card
             </button>
         </div>
