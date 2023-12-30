@@ -325,7 +325,7 @@ $total_dv = 0;
     </div>
 </div>
 
-<div class="modal show dxmodal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="false"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+<div class="modal fade dxmodal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
 	<div class="modal-dialog" id="dxmodal">
 		<div class="modal-content modal-ajax">
 			<div class="modal-header bg-dark text-white">
@@ -397,4 +397,7 @@ $total_dv = 0;
 
 
 <script>
+    
+    $(document).find(".dxmodal").appendTo('body').modal("show");
+
 </script>
