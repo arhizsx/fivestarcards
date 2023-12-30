@@ -1368,6 +1368,29 @@
     
 
     public function doConfirmAdminDeleteOrder($params){
+
+
+        $args = array(
+            'meta_query' => array(
+                'relations' =>  'AND',    
+                array(
+                    'key' => 'checkout_id',
+                    'value' => $params['checkout_number']
+                )
+            ),
+            'post_type' => 'cards-grading-card',
+            'posts_per_page' => -1
+        );
+        
+        $posts = get_posts($args);
+
+        foreach($posts as $post)
+        {
+            wp_delete_post( $post->ID, true );
+        }
+
+        wp_delete_post( $params['checkout_number'], true );
+
         return true;
     }
 
