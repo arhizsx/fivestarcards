@@ -205,7 +205,7 @@ $total_dv = 0;
         </div>
         <div class="col-xl-12 new_order_details d-none">
             <span class="" style="font-size: 12px">Order Number</span>
-            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
+            <input type="text" class='form-control btn btn-sm me-4' style="border: 1px solid black">
             <span class="" style="font-size: 12px">Customer</span>
             <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
             <span class="" style="font-size: 12px">Grading Type</span>
@@ -234,7 +234,7 @@ $total_dv = 0;
                 $users = get_users( $args );
 
             ?>
-            <select class='btn btn-sm me-4' style="border: 1px solid black">
+            <select class='orm-control btn btn-sm me-4' style="border: 1px solid black">
                 <option>Select Customer</option>
                 <?php 
                     foreach( $users as $user){
@@ -246,7 +246,7 @@ $total_dv = 0;
                 ?>
             </select>
             <span class="" style="font-size: 12px">Grading Type</span>
-            <select class='btn btn-sm me-4' style="border: 1px solid black">
+            <select class='orm-control btn btn-sm me-4' style="border: 1px solid black">
                 <option>Select Grading Type</option>
                 <option value="psa-value_bulk">PSA - Value Bulk</option>
                 <option value="psa-value_plus">PSA - Value Plus</option>
