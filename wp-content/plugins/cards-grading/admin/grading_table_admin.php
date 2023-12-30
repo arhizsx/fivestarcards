@@ -234,18 +234,6 @@ $total_dv = 0;
                 <option value="psa-super_express">PSA - Super Express</option>
                 <option value="sgc-bulk">SGC - Bulk</option>
             </select>
-            <span class="" style="font-size: 12px">Order Status</span>
-            <select class='btn btn-sm me-4' style="border: 1px solid black">
-                <option>Select Order Status</option>
-                <option value="Processing Order">Processing Order</option>
-                <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>
-                <option value="Research">Research</option>
-                <option value="Grading">Grading</option>
-                <option value="Assembly">Assembly</option>
-                <option value="QA1">QA1</option>
-                <option value="QA2">QA2</option>
-                <option value="Completed - Grades Ready">Completed - Grades Ready</option>
-            </select>
             <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order">
                 Create New Order
             </button>
@@ -256,8 +244,6 @@ $total_dv = 0;
             <span class="" style="font-size: 12px">Customer</span>
             <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
             <span class="" style="font-size: 12px">Grading Type</span>
-            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
-            <span class="" style="font-size: 12px">Order Status</span>
             <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
             <button class='5star_btn btn btn-secondary btn-sm' data-type="" data-action="admin_create_order_cancel">
                 Cancel
