@@ -233,7 +233,9 @@ $admin_action_status = [];
             </div>
         </div>
     </div>
-    
+    <div class='5star_btn_box_admin_bottom w-100 border-top'>
+        DELETE
+    </div>    
 </div>
 
 
