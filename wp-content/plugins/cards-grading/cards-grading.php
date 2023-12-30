@@ -51,14 +51,6 @@
 
         add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
 
-        add_shortcode('cards-grading-awaiting_payment', array( $this, 'cards_grading_awaiting_payment_orders_shortcode' ));
-        add_shortcode('cards-grading-consigned_orders', array( $this, 'cards_grading_consigned_orders_shortcode' ));
-        add_shortcode('cards-grading-for_payment', array( $this, 'cards_grading_for_payment_shortcode' ));
-        add_shortcode('cards-grading-completed', array( $this, 'cards_grading_completed_shortcode' ));
-        add_shortcode('cards-grading-cancelled', array( $this, 'cards_grading_cancelled_shortcode' ));
-        add_shortcode('cards-grading-processing', array( $this, 'cards_grading_processing_shortcode' ));
-        
-        add_shortcode('cards-grading-order_receiving', array( $this, 'cards_grading_order_receiving_shortcode' ));
         add_shortcode('cards-grading-admin_view_order', array( $this, 'cards_grading_admin_view_order_shortcode' ));
         add_shortcode('cards-grading-admin_view_consignment', array( $this, 'cards_grading_admin_view_consignment_shortcode' ));
         add_shortcode('cards-grading-admin_view_completed', array( $this, 'cards_grading_admin_view_completed_shortcode' ));
@@ -66,6 +58,8 @@
 
         add_shortcode('cards-grading-dashbox', array( $this, 'cards_grading_dashbox_shortcode' ));
         add_shortcode('cards-grading-dashbox_orders', array( $this, 'cards_grading_dashbox_orders_shortcode' ));
+
+        // Tables
 
         add_shortcode('cards-grading-orders_table', array( $this, 'cards_grading_orders_table_shortcode' ));
         
@@ -390,32 +384,61 @@
         ob_start();
 
 
-        $folder = "admin/tables/";
-
         switch( $atts['table'] ){
 
             case "open_orders":
+                $folder = "admin";
                 $table = 'open_orders.php';
                 break;
 
             case "order_receiving":
+                $folder = "admin";
                 $table = 'order_receiving.php';
                 break;
 
             case "consigned_orders":
+                $folder = "admin";
                 $table = 'consigned_orders.php';
                 break;
 
             case "consigned_for_payment":
+                $folder = "admin";
                 $table = 'consigned_for_payment.php';
                 break;
 
             case "awaiting_payment":
+                $folder = "admin";
                 $table = 'awaiting_payment.php';
                 break;
 
             case "completed_orders":
+                $folder = "admin";
                 $table = 'completed_orders.php';
+                break;
+
+            case "completed_orders":
+                $folder = "admin";
+                $table = 'completed_orders.php';
+                break;
+
+            case "my_completed":
+                $folder = "members";
+                $table = 'my_completed.php';
+                break;
+
+            case "my_consigned":
+                $folder = "members";
+                $table = 'my_consigned.php';
+                break;
+
+            case "my_for_payment":
+                $folder = "members";
+                $table = 'my_for_payment.php';
+                break;
+
+            case "my_orders":
+                $folder = "members";
+                $table = 'my_orders.php';
                 break;
 
             default:
@@ -424,7 +447,7 @@
         }
 
 
-        include( plugin_dir_path( __FILE__ ) . $folder . $table );
+        include( plugin_dir_path( __FILE__ ) . $folder . '/tables/'  . $table );
         
         $output = ob_get_clean(); 
         
@@ -507,23 +530,6 @@
         ob_start();
 
         include( plugin_dir_path( __FILE__ ) . 'admin/my_for_payment.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-
-    public function cards_grading_order_receiving_shortcode($atts) 
-    {
-
-        $default = array(
-            'title' => 'Open Orders',
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/order_receiving.php' );
         
         $output = ob_get_clean(); 
         
@@ -624,25 +630,6 @@
         
         return $output ;
     }
-
-    public function cards_grading_awaiting_payment_orders_shortcode($atts) 
-    {
-        $order_number = $_GET['id'];
-
-        $default = array(
-            'title' => 'Order Number',
-            'order_number' => $order_number
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/awaiting_payment.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
     
     public function cards_grading_consigned_orders_shortcode($atts) 
     {
@@ -663,81 +650,8 @@
         return $output ;
     }
 
-    public function cards_grading_for_payment_shortcode($atts) 
-    {
-        $order_number = $_GET['id'];
 
-        $default = array(
-            'title' => 'Order Number',
-            'order_number' => $order_number
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . 'admin/consigned_for_payment.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-    
-    public function cards_grading_completed_shortcode($atts) 
-    {
-        $order_number = $_GET['id'];
-
-        $default = array(
-            'title' => 'Order Number',
-            'order_number' => $order_number
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/completed_orders.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-
-    public function cards_grading_cancelled_shortcode($atts) 
-    {
-        $order_number = $_GET['id'];
-
-        $default = array(
-            'title' => 'Order Number',
-            'order_number' => $order_number
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/cancelled_orders.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-    
-    public function cards_grading_processing_shortcode($atts) 
-    {
-        $order_number = $_GET['id'];
-
-        $default = array(
-            'title' => 'Order Number',
-            'order_number' => $order_number
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/open_orders.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
     public function cards_grading_dashbox_orders_shortcode($atts) 
     {
         $default = array(
