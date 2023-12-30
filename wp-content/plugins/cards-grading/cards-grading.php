@@ -46,6 +46,8 @@
         add_shortcode('cards-grading-checkout', array( $this, 'cards_grading_checkout_shortcode' ));
 
 
+        add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
+
 
         add_shortcode('cards-grading-admin_view_order', array( $this, 'cards_grading_admin_view_order_shortcode' ));
         add_shortcode('cards-grading-admin_view_consignment', array( $this, 'cards_grading_admin_view_consignment_shortcode' ));
@@ -60,8 +62,6 @@
         add_shortcode('cards-grading-orders_table', array( $this, 'cards_grading_orders_table_shortcode' ));
         
         // Views
-
-        add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
         
 
 
@@ -461,32 +461,13 @@
 
         $default = array(
             'title' => 'Order Number',
-            'order_number' => $order_number,
-            'view' => 'admin_view_order'
+            'order_number' => $order_number
         );
         
         $params = shortcode_atts($default, $atts);
-
         ob_start();
 
-        switch( $atts['view'] ){
-
-            case "admin_view_order":
-                $folder = "admin";
-                $view = 'admin_view_order.php';
-                break;
-                
-            case "admin_view_consignment":
-                $folder = "admin";
-                $view = 'admin_view_consignment.php';
-                break;
-                
-            default:
-
-
-        }
-
-        include( plugin_dir_path( __FILE__ ) . $folder . '/views/' . $view );
+        include( plugin_dir_path( __FILE__ ) . 'admin/view_order.php' );
         
         $output = ob_get_clean(); 
         
