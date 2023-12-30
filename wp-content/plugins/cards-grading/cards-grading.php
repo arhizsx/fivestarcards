@@ -67,6 +67,7 @@
         add_shortcode('cards-grading-dashbox', array( $this, 'cards_grading_dashbox_shortcode' ));
         add_shortcode('cards-grading-dashbox_orders', array( $this, 'cards_grading_dashbox_orders_shortcode' ));
 
+        add_shortcode('cards-grading-orders_table', array( $this, 'cards_grading_orders_table_shortcode' ));
         
 
         // Add JS
@@ -373,6 +374,64 @@
         
         return $output ;
     }
+
+
+    public function cards_grading_orders_table_shortcode($atts) 
+    {
+
+        $default = array(
+            'title' => 'Orders Table Shortcode',
+            'table' => '',
+            'type' => 'admin'
+        );
+        
+        $params = shortcode_atts($default, $atts);
+
+        ob_start();
+
+
+        $folder = "admin/tables/";
+
+        switch( $atts['table'] ){
+
+            case "open_orders":
+                $table = 'open_orders.php';
+                break;
+
+            case "order_receiving":
+                $table = 'order_receiving.php';
+                break;
+
+            case "consigned_orders":
+                $table = '/consigned_orders.php';
+                break;
+
+            case "consigned_for_payment":
+                $table = '/consigned_for_payment.php';
+                break;
+
+            case "awaiting_payment":
+                $table = 'admin/tables/consigned_for_payment.php';
+                break;
+
+            default:
+                $table = '';
+
+        }
+
+
+        include( plugin_dir_path( __FILE__ ) . $folder . $table );
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
+
+
+
+
+
+
 
     public function cards_grading_my_orders_shortcode($atts) 
     {
