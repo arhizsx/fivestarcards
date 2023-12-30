@@ -206,7 +206,6 @@ $total_dv = 0;
             <?php 
 
                 $args = array(
-                    'role'       => 'member',
                     'orderby'    => 'ID',
                     'order'      => 'ASC'
                 );   
