@@ -208,8 +208,7 @@ $total_dv = 0;
                 $args = array(
                     'role'       => 'member',
                     'orderby'    => 'ID',
-                    'order'      => 'ASC',
-                    'fields'     => 'all_with_meta',
+                    'order'      => 'ASC'
                 );   
 
                 $users = get_users( $args );
