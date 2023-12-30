@@ -44,19 +44,17 @@
         // Add Shortcodes
         add_shortcode('cards-grading', array( $this, 'cards_grading_shortcode' ));
         add_shortcode('cards-grading-checkout', array( $this, 'cards_grading_checkout_shortcode' ));
-        add_shortcode('cards-grading-my_orders', array( $this, 'cards_grading_my_orders_shortcode' ));
-        add_shortcode('cards-grading-my_consigned', array( $this, 'cards_grading_my_consigned_shortcode' ));
-        add_shortcode('cards-grading-my_for_payment', array( $this, 'cards_grading_my_for_payment_shortcode' ));
-        add_shortcode('cards-grading-my_completed', array( $this, 'cards_grading_my_completed_shortcode' ));
+
 
         add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
+
 
         add_shortcode('cards-grading-admin_view_order', array( $this, 'cards_grading_admin_view_order_shortcode' ));
         add_shortcode('cards-grading-admin_view_consignment', array( $this, 'cards_grading_admin_view_consignment_shortcode' ));
         add_shortcode('cards-grading-admin_view_completed', array( $this, 'cards_grading_admin_view_completed_shortcode' ));
         add_shortcode('cards-grading-admin_view_payment', array( $this, 'cards_grading_admin_view_payment_shortcode' ));
 
-        add_shortcode('cards-grading-dashbox', array( $this, 'cards_grading_dashbox_shortcode' ));
+        add_shortcode('cards-grading-dashbox_cards', array( $this, 'cards_grading_dashbox_cards_shortcode' ));
         add_shortcode('cards-grading-dashbox_orders', array( $this, 'cards_grading_dashbox_orders_shortcode' ));
 
         // Tables
@@ -454,88 +452,6 @@
         return $output ;
     }
 
-
-
-
-
-
-
-    public function cards_grading_my_orders_shortcode($atts) 
-    {
-        $type = $_GET['type'];
-
-        $default = array(
-            'title' => 'Checkout',
-            'type' => $type
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/my_orders.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-
-    public function cards_grading_my_consigned_shortcode($atts) 
-    {
-        $type = $_GET['type'];
-
-        $default = array(
-            'title' => 'Checkout',
-            'type' => $type
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/my_consigned.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-
-    public function cards_grading_my_completed_shortcode($atts) 
-    {
-        $type = $_GET['type'];
-
-        $default = array(
-            'title' => 'Checkout',
-            'type' => $type
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/my_completed.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-    
-    public function cards_grading_my_for_payment_shortcode($atts) 
-    {
-        $type = $_GET['type'];
-
-        $default = array(
-            'title' => 'Checkout',
-            'type' => $type
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        include( plugin_dir_path( __FILE__ ) . 'admin/my_for_payment.php' );
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-
     public function cards_grading_view_order_shortcode($atts) 
     {
         $order_number = $_GET['id'];
@@ -694,7 +610,7 @@
         return $output ;
 
     }
-    public function cards_grading_dashbox_shortcode($atts) 
+    public function cards_grading_dashbox_cards_shortcode($atts) 
     {
 
         $default = array(
