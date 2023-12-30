@@ -434,8 +434,10 @@ $(document).on("click", ".5star_btn", function(e){
         case "confirm_admin_delete_order":
 
             var order_number = $(this).data("order_number");
+            var back = $(this).data("back");
+
             if (orderAction("confirm_admin_delete_order", data, order_number) ){
-                window.history.back();
+                location.href = back;
             }
 
             
