@@ -1375,7 +1375,7 @@
                 'relations' =>  'AND',    
                 array(
                     'key' => 'checkout_id',
-                    'value' => $params['checkout_number']
+                    'value' => $params['order_number']
                 )
             ),
             'post_type' => 'cards-grading-card',
@@ -1389,7 +1389,7 @@
             wp_delete_post( $post->ID, true );
         }
 
-        wp_delete_post( $params['checkout_number'], true );
+        wp_delete_post( $params['order_number'], true );
 
         return true;
     }
