@@ -253,6 +253,21 @@ $total_dv = 0;
             </button>
         </div>
     </div> -->
+    <div class="row">
+        <div class="col-xl-3">
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-xl-3">
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-xl-3">
+            <input type="text" class="form-control">
+        </div>
+        <div class="col-xl-3">
+            <input type="text" class="form-control">
+        </div>
+    </div>
+    
 
     <div class="table-responsive">    
         <table class='table 5star_logged_cards table-bordered table-striped' data-grading_type="" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-table_action_endpoint="<?php echo get_rest_url(null, "cards-grading/v1/table-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
@@ -271,13 +286,13 @@ $total_dv = 0;
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td><?php echo $card["player"]; ?></td>
                     <td class='text-end'></td>
                     <td class='text-end'></td>
                 </tr>
-                <!-- <tr>
+                <tr>
                     <td class="text-center" colspan="9">Empty</td>
-                </tr> -->
+                </tr>
             </tbody>
         </table>
     </div>
