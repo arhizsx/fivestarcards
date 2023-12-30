@@ -108,7 +108,7 @@ $posts = get_posts($args);
                     } else {
                 ?>
                 <tr>
-                    <td class="text-center" colspan="8">Empty</td>
+                    <td class="text-center" colspan="9">Empty</td>
                 </tr>
                 <?php          
                     }
