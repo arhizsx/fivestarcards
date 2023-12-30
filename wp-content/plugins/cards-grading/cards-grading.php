@@ -403,15 +403,15 @@
                 break;
 
             case "consigned_orders":
-                $table = '/consigned_orders.php';
+                $table = 'consigned_orders.php';
                 break;
 
             case "consigned_for_payment":
-                $table = '/consigned_for_payment.php';
+                $table = 'consigned_for_payment.php';
                 break;
 
             case "awaiting_payment":
-                $table = 'admin/tables/awaiting_payment.php';
+                $table = 'awaiting_payment.php';
                 break;
 
             default:
