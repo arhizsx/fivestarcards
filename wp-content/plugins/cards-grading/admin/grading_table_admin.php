@@ -211,16 +211,15 @@ $total_dv = 0;
                 );   
 
                 $users = get_users( $args );
-
-                print_r( $users[0]->roles );
-
             ?>
             <select class='btn btn-sm me-4' style="border: 1px solid black">
                 <option>Select Customer</option>
                 <?php 
                     foreach( $users as $user){
-                        $id = $user->ID + 1000;
-                        echo "<option>" . $id . ' - ' . $user->display_name . ' - ' . $user->user_email . '</option>';
+                        if( $user->roles[0] == 'member' ){
+                            $id = $user->ID + 1000;
+                            echo "<option>" . $id . ' - ' . $user->display_name . ' - ' . $user->user_email . '</option>';    
+                        }
                     }
                 ?>
             </select>
