@@ -204,7 +204,16 @@ $total_dv = 0;
         <div class="col-xl-12" >
             <span class="" style="font-size: 12px">Customer</span>
             <?php 
-                $users = get_users();
+
+                $args = array(
+                    'role'       => 'member',
+                    'orderby'    => 'ID',
+                    'order'      => 'ASC',
+                    'fields'     => 'all_with_meta',
+                );   
+
+                $users = get_users( $args );
+
             ?>
             <select class='btn btn-sm me-4' style="border: 1px solid black">
                 <option>Select Customer</option>
