@@ -250,14 +250,14 @@ $total_dv = 0;
                 Create Order
             </button>
         </div>
-        <div class="col-xl-12 new_order_details">
+        <div class="col-xl-12 new_order_details d-none">
             <span class="" style="font-size: 12px">Customer</span>
             <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
             <span class="" style="font-size: 12px">Grading Type</span>
             <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
             <span class="" style="font-size: 12px">Order Status</span>
             <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
-            <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order">
+            <button class='5star_btn btn btn-secondary btn-sm' data-type="" data-action="admin_create_order_cancel">
                 Cancel
             </button>
         </div>

@@ -444,9 +444,14 @@ $(document).on("click", ".5star_btn", function(e){
             
             break;
 
-            
-            
+        case "admin_create_order":
 
+            $(document).find(".new_order_fields").toggleClass("d-none");
+            $(document).find(".new_order_details").toggleClass("d-none");
+        
+
+            break;
+            
         default:
             console.log("Button not configured: " + $(this).data("action"));
     }
@@ -1001,3 +1006,5 @@ $(document).on("change", ".select_filter", function(){
 
 
 });
+
+
