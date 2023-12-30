@@ -460,13 +460,40 @@
 
         $default = array(
             'title' => 'Order Number',
-            'order_number' => $order_number
+            'order_number' => $order_number,
+            'view' => 'admin_view_order.php'
         );
         
         $params = shortcode_atts($default, $atts);
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . 'admin/views/view_order.php' );
+
+        switch( $atts['view'] ){
+
+            case "admin_view_order":
+                $folder = "admin";
+                $view = 'admin_view_order.php';
+                break;
+            
+            case "admin_view_consignment":
+                $folder = "admin";
+                $view = 'admin_view_consignment.php';
+                break;
+            
+            case "admin_view_completed":
+                $folder = "admin";
+                $view = 'admin_view_completed.php';
+                break;
+            
+            case "admin_view_payment":
+                $folder = "admin";
+                $view = 'admin_view_payment.php';
+                break;
+            
+            default:
+        }
+
+        include( plugin_dir_path( __FILE__ ) . $folder .'/views/' . $view );
         
         $output = ob_get_clean(); 
         
