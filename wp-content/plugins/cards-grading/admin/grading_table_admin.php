@@ -253,13 +253,6 @@ $total_dv = 0;
             </button>
         </div>
     </div> -->
-    <div class="row">
-        <div class="col-xl-6">
-            <H2 style="color: black;">Cards List</H2>
-        </div>
-        <div class="col-xl-6"></div>
-    </div>
-    
 
     <div class="table-responsive">    
         <table class='table 5star_logged_cards table-bordered table-striped' data-grading_type="" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-table_action_endpoint="<?php echo get_rest_url(null, "cards-grading/v1/table-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
@@ -278,13 +271,13 @@ $total_dv = 0;
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><?php echo $card["player"]; ?></td>
+                    <td></td>
                     <td class='text-end'></td>
                     <td class='text-end'></td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td class="text-center" colspan="9">Empty</td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>
