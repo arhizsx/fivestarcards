@@ -205,7 +205,7 @@ $total_dv = 0;
             <span class="" style="font-size: 12px">Customer</span>
             <?php 
                 $users = get_users();
-                print_r($users[0]);
+                print_r($users[0]["data"]["display_name"]);
             ?>
             <select class='btn btn-sm me-4' style="border: 1px solid black">
                 <option>Select Customer</option>
