@@ -1382,8 +1382,6 @@
             'posts_per_page' => -1
         );
         
-
-        return $params["data"];
         
         $posts = get_posts($args);
 
