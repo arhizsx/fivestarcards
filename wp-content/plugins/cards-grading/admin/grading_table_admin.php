@@ -209,10 +209,24 @@ $total_dv = 0;
             <span class="" style="font-size: 12px">Grading Type</span>
             <select class='btn btn-sm me-4' style="border: 1px solid black">
                 <option>Select Grading Type</option>
+                <option value="psa-value_bulk">PSA - Value Bulk</option>
+                <option value="psa-value_plus">PSA - Value Plus</option>
+                <option value="psa-regular">PSA - Regular</option>
+                <option value="psa-express">PSA - Express</option>
+                <option value="psa-super_express">PSA - Super Express</option>
+                <option value="sgc-bulk">SGC - Bulk</option>
             </select>
             <span class="" style="font-size: 12px">Order Status</span>
             <select class='btn btn-sm me-4' style="border: 1px solid black">
                 <option>Select Order Status</option>
+                <option value="Processing Order">Processing Order</option>
+                <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>
+                <option value="Research">Research</option>
+                <option value="Grading">Grading</option>
+                <option value="Assembly">Assembly</option>
+                <option value="QA1">QA1</option>
+                <option value="QA2">QA2</option>
+                <option value="Completed - Grades Ready">Completed - Grades Ready</option>
             </select>
             <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order">
                 Create Order
