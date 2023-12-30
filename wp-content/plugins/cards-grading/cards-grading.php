@@ -357,7 +357,7 @@
         $params = shortcode_atts($default, $atts);
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . 'admin/cards_grading_admin.php' );
+        include( plugin_dir_path( __FILE__ ) . 'admin/grading_table_admin.php' );
         
         $output = ob_get_clean(); 
         
