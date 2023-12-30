@@ -202,6 +202,27 @@ $total_dv = 0;
 <div class="m-0 p-0">
     <div class="row mb-5 mt-3">
         <div class="col-xl-12 new_order_fields">
+        </div>
+        <div class="col-xl-12 new_order_details d-none">
+            <span class="" style="font-size: 12px">Order Number</span>
+            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
+            <span class="" style="font-size: 12px">Customer</span>
+            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
+            <span class="" style="font-size: 12px">Grading Type</span>
+            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
+            <button class='5star_btn btn btn-secondary btn-sm' data-type="" data-action="admin_create_order_cancel">
+                Cancel
+            </button>
+            <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order_cancel">
+                Save New Order
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-6">
+            <H1 style="color: black;">Consigned Orders</H1>
+        </div>
+        <div class="col-xl-6">
             <span class="" style="font-size: 12px">Customer</span>
             <?php 
 
@@ -237,22 +258,11 @@ $total_dv = 0;
             <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order">
                 Create New Order
             </button>
-        </div>
-        <div class="col-xl-12 new_order_details d-none">
-            <span class="" style="font-size: 12px">Order Number</span>
-            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
-            <span class="" style="font-size: 12px">Customer</span>
-            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
-            <span class="" style="font-size: 12px">Grading Type</span>
-            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
-            <button class='5star_btn btn btn-secondary btn-sm' data-type="" data-action="admin_create_order_cancel">
-                Cancel
-            </button>
-            <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order_cancel">
-                Save New Order
-            </button>
+
         </div>
     </div>
+    
+
     <div class="table-responsive">    
         <table class='table 5star_logged_cards table-bordered table-striped' data-grading_type="" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-table_action_endpoint="<?php echo get_rest_url(null, "cards-grading/v1/table-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
