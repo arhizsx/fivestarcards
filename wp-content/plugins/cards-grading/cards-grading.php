@@ -809,6 +809,12 @@
 
         }
 
+        elseif($params["action"] == "confirm_admin_delete_order"){
+
+            return $this->doConfirmAdminDeleteOrder($params);
+
+        }
+
         return $params;
 
 
@@ -1358,6 +1364,13 @@
         update_post_meta($params["order_number"], 'submission_number', $params["data"]["submission_number"]);   
         return true;
     }
+
+    
+
+    public function doConfirmAdminDeleteOrder($params){
+        return true;
+    }
+
 
     //*********** HANDLER FUNCTIONS *********** //
 
