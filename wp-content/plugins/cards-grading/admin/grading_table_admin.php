@@ -202,10 +202,45 @@ $total_dv = 0;
 <div class="m-0 p-0">
     <div class="row mb-5 mt-3">
         <div class="col-xl-12 new_order_fields">
+            <span class="" style="font-size: 12px">Customer</span>
+            <?php 
+
+                $args = array(
+                    'orderby'    => 'display_name',
+                    'order'      => 'ASC'
+                );   
+
+                $users = get_users( $args );
+
+            ?>
+            <select class='btn btn-sm me-4' style="border: 1px solid black">
+                <option>Select Customer</option>
+                <?php 
+                    foreach( $users as $user){
+                        if( $user->roles[0] == 'um_member' ){
+                            $id = $user->ID + 1000;
+                            echo "<option value='" . $id . "'>" .  $user->display_name . '</option>';    
+                        }
+                    }
+                ?>
+            </select>
+            <span class="" style="font-size: 12px">Grading Type</span>
+            <select class='btn btn-sm me-4' style="border: 1px solid black">
+                <option>Select Grading Type</option>
+                <option value="psa-value_bulk">PSA - Value Bulk</option>
+                <option value="psa-value_plus">PSA - Value Plus</option>
+                <option value="psa-regular">PSA - Regular</option>
+                <option value="psa-express">PSA - Express</option>
+                <option value="psa-super_express">PSA - Super Express</option>
+                <option value="sgc-bulk">SGC - Bulk</option>
+            </select>
+            <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order">
+                Create New Order
+            </button>
         </div>
         <div class="col-xl-12 new_order_details d-none">
             <span class="" style="font-size: 12px">Order Number</span>
-            <input type="text" class='form-control btn btn-sm me-4' style="border: 1px solid black">
+            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
             <span class="" style="font-size: 12px">Customer</span>
             <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
             <span class="" style="font-size: 12px">Grading Type</span>
@@ -220,46 +255,9 @@ $total_dv = 0;
     </div>
     <div class="row">
         <div class="col-xl-6">
-            <H3 style="color: black;">Cards List</H3>
+            <H2 style="color: black;">Cards List</H2>
         </div>
-        <div class="col-xl-6">
-            <span class="" style="font-size: 12px">Customer</span>
-            <?php 
-
-                $args = array(
-                    'orderby'    => 'display_name',
-                    'order'      => 'ASC'
-                );   
-
-                $users = get_users( $args );
-
-            ?>
-            <select class='form-control btn btn-sm me-4' style="border: 1px solid black">
-                <option>Select Customer</option>
-                <?php 
-                    foreach( $users as $user){
-                        if( $user->roles[0] == 'um_member' ){
-                            $id = $user->ID + 1000;
-                            echo "<option value='" . $id . "'>" .  $user->display_name . '</option>';    
-                        }
-                    }
-                ?>
-            </select>
-            <span class="" style="font-size: 12px">Grading Type</span>
-            <select class='form-control btn btn-sm me-4' style="border: 1px solid black">
-                <option>Select Grading Type</option>
-                <option value="psa-value_bulk">PSA - Value Bulk</option>
-                <option value="psa-value_plus">PSA - Value Plus</option>
-                <option value="psa-regular">PSA - Regular</option>
-                <option value="psa-express">PSA - Express</option>
-                <option value="psa-super_express">PSA - Super Express</option>
-                <option value="sgc-bulk">SGC - Bulk</option>
-            </select>
-            <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order">
-                Create New Order
-            </button>
-
-        </div>
+        <div class="col-xl-6"></div>
     </div>
     
 
