@@ -203,6 +203,10 @@ $total_dv = 0;
     <div class="row mb-5 mt-3">
         <div class="col-xl-12" >
             <span class="" style="font-size: 12px">Customer</span>
+            <?php 
+                $users = get_users();
+                print_r($users);
+            ?>
             <select class='btn btn-sm me-4' style="border: 1px solid black">
                 <option>Select Customer</option>
             </select>
