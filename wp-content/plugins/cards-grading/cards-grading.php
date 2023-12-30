@@ -472,10 +472,16 @@
 
         switch( $atts['view'] ){
 
-            case "view_order":
+            case "admin_view_order":
                 $folder = "admin";
                 $view = 'admin_view_order.php';
                 break;
+                
+            case "admin_view_consignment":
+                $folder = "admin";
+                $view = 'admin_view_consignment.php';
+                break;
+                
             default:
 
         }
