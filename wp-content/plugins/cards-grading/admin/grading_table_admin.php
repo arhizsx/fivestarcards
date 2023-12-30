@@ -202,11 +202,11 @@ $total_dv = 0;
 <div class="m-0 p-0">
     <div class="row mb-3">
         <div class="col-xl-12" >
-            <span class="btn-sm">Customer</span>
+            <span class="text-sm">Customer</span>
             <select class='btn btn-sm me-4'>
                 <option>Select Customer</option>
             </select>
-            <span class="btn-sm">Grading Type</span>
+            <span class="text-sm">Grading Type</span>
             <select class='btn btn-sm me-4'>
                 <option>Select Grading Type</option>
             </select>
