@@ -218,7 +218,7 @@ $total_dv = 0;
                 <?php 
                     foreach( $users as $user){
                         $id = $user->ID + 1000;
-                        echo "<option>" . $id . ' - ' . $user->display_name . '</option>';
+                        echo "<option>" . $id . ' - ' . $user->display_name . ' - ' . $user->email . '</option>';
                     }
                 ?>
             </select>
