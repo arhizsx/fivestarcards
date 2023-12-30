@@ -46,7 +46,6 @@
         add_shortcode('cards-grading-checkout', array( $this, 'cards_grading_checkout_shortcode' ));
 
 
-        add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
 
 
         add_shortcode('cards-grading-admin_view_order', array( $this, 'cards_grading_admin_view_order_shortcode' ));
@@ -61,8 +60,8 @@
 
         add_shortcode('cards-grading-orders_table', array( $this, 'cards_grading_orders_table_shortcode' ));
         
-        // Views
-        
+
+        add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
 
 
         // Add JS
@@ -467,7 +466,7 @@
         $params = shortcode_atts($default, $atts);
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . 'admin/view_order.php' );
+        include( plugin_dir_path( __FILE__ ) . 'admin/views/view_order.php' );
         
         $output = ob_get_clean(); 
         
