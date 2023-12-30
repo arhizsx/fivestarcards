@@ -212,6 +212,8 @@ $total_dv = 0;
 
                 $users = get_users( $args );
 
+                print_r( $users[0] );
+
             ?>
             <select class='btn btn-sm me-4' style="border: 1px solid black">
                 <option>Select Customer</option>
