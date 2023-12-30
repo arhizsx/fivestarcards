@@ -219,7 +219,7 @@ $total_dv = 0;
                     foreach( $users as $user){
                         if( $user->roles[0] == 'um_member' ){
                             $id = $user->ID + 1000;
-                            echo "<option>" . $id . ' - ' . $user->display_name . ' - ' . $user->user_email . '</option>';    
+                            echo "<option>" . $id . ' - ' . $user->display_name . '</option>';    
                         }
                     }
                 ?>
