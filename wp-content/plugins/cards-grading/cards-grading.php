@@ -411,7 +411,7 @@
                 break;
 
             case "awaiting_payment":
-                $table = 'admin/tables/consigned_for_payment.php';
+                $table = 'admin/tables/awaiting_payment.php';
                 break;
 
             default:
