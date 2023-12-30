@@ -80,7 +80,7 @@
             'cards-grading',
             plugin_dir_url(__FILE__) . 'js/cards-grading.js',
             array('jquery'),
-            120,
+            121,
             true
         );
 
@@ -1382,6 +1382,9 @@
             'posts_per_page' => -1
         );
         
+
+        return $params["data"];
+        
         $posts = get_posts($args);
 
         foreach($posts as $post)
@@ -1391,7 +1394,7 @@
 
         wp_delete_post( $params['order_number'], true );
 
-        return true;
+        return ['action' => 'back', "back" => $params["data"]["back"]] ;
     }
 
 

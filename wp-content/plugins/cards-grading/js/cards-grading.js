@@ -435,8 +435,9 @@ $(document).on("click", ".5star_btn", function(e){
 
             var order_number = $(this).data("order_number");
             var back = $(this).data("back");
+            var data = {"back" : "back"};
             
-            if (orderAction("confirm_admin_delete_order", '', order_number) ){
+            if (orderAction("confirm_admin_delete_order", data, order_number) ){
                 location.href = back;
             }
 
@@ -698,6 +699,10 @@ function orderAction(action, data, order_number){
             if(resp ==true){
                 $(document).find(".dxmodal").modal("hide");
                 location.reload();
+            }
+            else if(resp.action == "back"){
+                $(document).find(".dxmodal").modal("hide");
+                location.href = resp.back;
 
             } else {
                 console.log("Order Action Failed");
