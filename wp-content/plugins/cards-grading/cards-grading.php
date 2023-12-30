@@ -61,6 +61,11 @@
 
         add_shortcode('cards-grading-orders_table', array( $this, 'cards_grading_orders_table_shortcode' ));
         
+        // Views
+
+        add_shortcode('cards-grading-view_order', array( $this, 'cards_grading_view_order_shortcode' ));
+        
+
 
         // Add JS
         add_action('wp_footer', array( $this, 'load_scripts' ));
@@ -458,13 +463,24 @@
 
         $default = array(
             'title' => 'Order Number',
-            'order_number' => $order_number
+            'order_number' => $order_number,
+            'view' => 'view_order'
         );
         
         $params = shortcode_atts($default, $atts);
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . 'admin/view_order.php' );
+        switch( $atts['view'] ){
+
+            case "view_order":
+                $folder = "admin";
+                $view = 'admin_view_order.php';
+                break;
+            default:
+
+        }
+
+        include( plugin_dir_path( __FILE__ ) . $folder . '/views/' . $view );
         
         $output = ob_get_clean(); 
         
