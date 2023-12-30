@@ -261,16 +261,5 @@ $total_dv = 0;
             </div>
             </div>
         </div>
-        <div class="row bottom_buttons>
-            <div class="col-lg-12 text-end border-top pt-2 ">
-                <button class='5star_btn btn btn-danger' data-type="" data-action="clear_table">
-                    Clear List
-                </button>
-                
-                <button class='5star_btn btn btn-primary' data-type="" data-action="checkout">
-                    Checkout
-                </button>      
-            </div>
-        </div>
     </div>
 </div>
