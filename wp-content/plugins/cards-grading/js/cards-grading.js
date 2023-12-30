@@ -696,17 +696,19 @@ function orderAction(action, data, order_number){
         },
         success: function(resp){
 
-            if(resp ==true){
-                $(document).find(".dxmodal").modal("hide");
-                location.reload();
-            }
-            else if(resp.action == "back"){
-                $(document).find(".dxmodal").modal("hide");
-                location.href = resp.back;
+            console.log(resp);
 
-            } else {
-                console.log("Order Action Failed");
-            }
+            // if(resp ==true){
+            //     $(document).find(".dxmodal").modal("hide");
+            //     location.reload();
+            // }
+            // else if(resp.action == "back"){
+            //     $(document).find(".dxmodal").modal("hide");
+            //     location.href = resp.back;
+
+            // } else {
+            //     console.log("Order Action Failed");
+            // }
 
         }
     });
