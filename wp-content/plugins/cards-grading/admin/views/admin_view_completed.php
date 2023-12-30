@@ -193,7 +193,7 @@ $admin_action_status = [];
                     } else {
                 ?>
                 <tr>
-                    <td class="text-center" colspan="13">Empty</td>
+                    <td class="text-center" colspan="9">Empty</td>
                 </tr>
                 <?php          
                     }
