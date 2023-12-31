@@ -121,7 +121,7 @@ $posts = get_posts($args);
             </button>      
             <?php if( isset($_GET["submission_number"])){ ?>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Status: 
-                <select name="multi_update_status_select " class="mt-3" style="font-size: 13px;" >
+                <select name="multi_update_status_select " class="mt-3" style="font-size: 14px;" >
                     <option value="">Select New Status</option>
                     <option value="Processing Order">Processing Order</option>
                     <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>

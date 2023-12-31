@@ -511,7 +511,6 @@ $processed_status = array("Processing Order", "Cards Graded");
 	</div>
 </div>
 
-
 <div class="modal fade delete_order" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
 	<div class="modal-dialog" id="dxmodal">
 		<div class="modal-content modal-ajax">
