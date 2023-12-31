@@ -342,9 +342,10 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
             </div>
             <div class="col-lg-4 mb-3">
                 <div><strong>FedEx / UPS / DHL</strong></div>
-                <div>PMB 394</div>
-                <div>1256 Capitol Drive - Suite 700</div>
-                <div>Pewaukee, WI 53072</div>
+                <div>Matt Sellers</div>
+                <div>203 E Wisconsin Ave</div>
+                <div>Suite 203C</div>
+                <div>Oconomowoc, WI 53066</div>
             </div>
             <div class="col-lg-4">
 
