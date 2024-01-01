@@ -118,14 +118,7 @@ $posts = get_posts($args);
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Status: 
                 <select name="multi_update_status_select " class="mt-3" style="font-size: 13px;" >
                     <option value="">Select New Status</option>
-                    <option value="Processing Order">Processing Order</option>
-                    <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>
-                    <option value="Research">Research</option>
-                    <option value="Grading">Grading</option>
-                    <option value="Assembly">Assembly</option>
-                    <option value="QA1">QA1</option>
-                    <option value="QA2">QA2</option>
-                    <option value="Completed - Grades Ready">Completed - Grades Ready</option>
+                    <option value="Package Received">Package Received</option>
                 </select>
                 <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
                     Apply
