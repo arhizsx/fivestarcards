@@ -1,33 +1,4 @@
-<?php
 
-$user_id = get_current_user_id();
-
-$args = array(
-    'meta_query' => array(
-        'relations' =>  'AND',    
-        array(
-            'key' => 'grading',
-            'value' => $params['type']
-        ),
-        array(
-            'key' => 'user_id',
-            'value' => $user_id
-        ),
-        array(
-            'key' => 'status',
-            'value' => 'pending'
-        )
-    ),
-    'post_type' => 'cards-grading-card',
-    'posts_per_page' => -1
-);
-
-$posts = get_posts($args);
-$grading_charge = 0;
-$total_dv = 0;
-
-
-?>
 <div class="modal fade dxmodal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
 	<div class="modal-dialog" id="dxmodal">
 		<div class="modal-content modal-ajax">
@@ -277,7 +248,7 @@ $total_dv = 0;
     <?php
         if(isset($_GET["order_number"])) {
 
-
+        
 
     ?>
         <div class="add_customer_order_log_cards">
