@@ -69,7 +69,6 @@
 	</div>
 </div>
 
-
 <div class="modal fade clear_cards" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
 	<div class="modal-dialog" id="clear_cards">
 		<div class="modal-content modal-ajax">
@@ -248,28 +247,45 @@
     <?php
         if(isset($_GET["order_number"])) {
 
-        
+            $args = array(
+                'meta_query' => array(
+                    array(
+                        'key' => 'order_number',
+                        'value' => $_GET['order_number']
+                    )
+                ),
+                'post_type' => 'cards-grading-chk',
+                'posts_per_page' => -1
+            );
+            
+            $posts = get_posts($args);
 
+            foreach($posts as $post)
+            {            
     ?>
         <div class="add_customer_order_log_cards">
             <div class="row mt-4 mb-5 ">
                 <div class="col-xl-3">
                     Order Number
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" vale="<?php echo $meta["order_number"][0]?>">
                 </div>
                 <div class="col-xl-3">
                     Customer
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" vale="<?php echo $meta["user_id"][0]?>">
                 </div>
                 <div class="col-xl-3">
                     Grading Type
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" vale="<?php echo $meta["grading_type"][0]?>">
                 </div>
                 <div class="col-xl-3">
                     Status
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" vale="<?php echo $meta["status"][0]?>">
                 </div>
             </div>
+    <?php 
+            }
+    ?>
+            
             <div class="row">
                 <div class="col-xl-6">
                     <H2 style="color: black;">Cards List</H2>
@@ -280,6 +296,10 @@
                     </button>           
                 </div>
             </div>
+
+
+
+
             <div class="table-responsive">    
                 <table class='table 5star_logged_cards table-bordered table-striped' data-grading_type="" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-table_action_endpoint="<?php echo get_rest_url(null, "cards-grading/v1/table-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
                     <thead>
