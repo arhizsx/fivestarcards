@@ -251,16 +251,20 @@ $total_dv = 0;
     ?>
         <div class="add_customer_order_log_cards">
             <div class="row mt-4 mb-5 ">
-                <div class="col-xl-4">
+                <div class="col-xl-3">
                     Order Number
                     <input type="text" class="form-control">
                 </div>
-                <div class="col-xl-4">
+                <div class="col-xl-3">
                     Customer
                     <input type="text" class="form-control">
                 </div>
-                <div class="col-xl-4">
+                <div class="col-xl-3">
                     Grading Type
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-xl-3">
+                    Status
                     <input type="text" class="form-control">
                 </div>
             </div>
