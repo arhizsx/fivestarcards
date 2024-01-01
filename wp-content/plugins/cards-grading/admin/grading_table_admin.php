@@ -85,14 +85,18 @@
                             $user = get_user_by( "id", $user_id );
 
                     ?>
-                    <tr class="pending-admin-order-row" data-post_id="<?php echo $post->ID; ?>" data-card=''>
+                    <tr class="" data-post_id="<?php echo $post->ID; ?>" data-card=''>
                         <td><?php echo get_the_date( $date_format, $post->ID ) ?><br><span style='font-size:.7em !important;'><?php echo get_the_time( $time_format, $post->ID ); ?></span></td>
                         <td><?php echo $user->display_name; ?><br> <small style="font-size: 11px;"><?php echo $user_id + 1000; ?></small></td>
                         <td><?php echo $meta["order_number"][0]; ?></td>
                         <td><?php echo $meta["grading_type"][0]; ?></td>
                         <td><?php echo $meta["status"][0]; ?></td>
                         <td class='text-end'></td>
-                        <td class='text-end'></td>
+                        <td class='text-end'>
+                            <a class="btn btn-primary mb-3"  href="/admin/add-customer-order/?order-number=<?php echo $post->ID; ?>">
+                                ...
+                            </a>           
+                        </td>
                     </tr>
                     <?php 
                         }   
