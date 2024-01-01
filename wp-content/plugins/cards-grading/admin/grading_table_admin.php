@@ -75,12 +75,20 @@
                     <?php 
                     if( $posts ){
                         foreach($posts as $post){
+                            $meta = get_post_meta($post->ID);
+
+                            $date_format = get_option( 'date_format' );
+                            $time_format = get_option( 'time_format' );
+
+                            $user_id = $meta["user_id"][0];
+                            $user = get_user_by( "id", $user_id );
+
                     ?>
-                    <tr class="pending-admin-order-row" data-post_id="" data-card=''>
-                        <td><?php echo $post->ID; ?></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr class="pending-admin-order-row" data-post_id="<?php echo $post->ID; ?>" data-card=''>
+                        <td><?php echo get_the_date( $date_format, $post->ID ) ?><br><span style='font-size:.7em !important;'><?php echo get_the_time( $time_format, $post->ID ); ?></span></td>
+                        <td><?php echo $user->display_name; ?><br> <small style="font-size: 11px;"><?php echo $user_id + 1000; ?></small></td>
+                        <td><?php echo $meta["order_number"][0]; ?></td>
+                        <td><?php echo $meta["status"][0]; ?></td>
                         <td class='text-end'></td>
                         <td class='text-end'></td>
                     </tr>
