@@ -260,6 +260,8 @@
             
             $posts = get_posts($args);
 
+            print_r($posts);
+
             foreach($posts as $post)
             {            
                 $meta = get_post_meta($post->ID);
