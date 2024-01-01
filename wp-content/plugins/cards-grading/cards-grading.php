@@ -1427,7 +1427,7 @@
 
     public function doMultiOrderUpdate( $params)  {
 
-        return true;
+        return $params;
         
     }
 
