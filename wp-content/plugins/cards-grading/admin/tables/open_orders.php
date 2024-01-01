@@ -77,8 +77,6 @@
     );
     
 
-
-
 $posts = get_posts($args);
 
 ?>

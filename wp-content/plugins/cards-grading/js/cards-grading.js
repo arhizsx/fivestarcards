@@ -449,10 +449,19 @@ $(document).on("click", ".5star_btn", function(e){
 
             $(document).find(".new_order_fields").toggleClass("d-none");
             $(document).find(".new_order_details").toggleClass("d-none");
-        
 
             break;
             
+        case "multi_update_status":
+            var order_list = $(document).find("table.5star_my_orders tbody tr");
+
+            $.each(order_list, function(){
+                console.log( $(this).data("post_id") );
+            });
+
+            break;
+
+
         default:
             console.log("Button not configured: " + $(this).data("action"));
     }
