@@ -242,6 +242,33 @@ $total_dv = 0;
                 </button>
             </div>
         </div>
+        <div class="table-responsive">    
+                <table class='table 5star_logged_cards table-bordered table-striped' data-grading_type="" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-table_action_endpoint="<?php echo get_rest_url(null, "cards-grading/v1/table-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Order #</th>
+                            <th>Status</th>
+                            <th class="text-end">Total Cards</th>
+                            <th class="text-end">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="card-row" data-post_id="" data-card=''>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class='text-end'></td>
+                            <td class='text-end'></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" colspan="6">Empty</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
     <?php 
         }
     ?>
