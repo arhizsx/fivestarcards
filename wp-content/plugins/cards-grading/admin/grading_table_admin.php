@@ -200,45 +200,52 @@ $total_dv = 0;
 <!-- table for grading -->
 
 <div class="m-0 p-0">
-    <div class="row mb-5 mt-3">
-        <div class="col-xl-12 new_order_fields">
-            <span class="" style="font-size: 12px">Customer</span>
-            <?php 
-
-                $args = array(
-                    'orderby'    => 'display_name',
-                    'order'      => 'ASC'
-                );   
-
-                $users = get_users( $args );
-
-            ?>
-            <select class='btn me-4' style="border: 1px solid black">
-                <option>Select Customer</option>
+    <?php
+        if(isset($_GET["order_number"]) == false) {
+    ?>
+        <div class="row mb-5 mt-3">
+            <div class="col-xl-12 new_order_fields">
+                <span class="" style="font-size: 12px">Customer</span>
                 <?php 
-                    foreach( $users as $user){
-                        if( $user->roles[0] == 'um_member' ){
-                            $id = $user->ID + 1000;
-                            echo "<option value='" . $id . "'>" .  $user->display_name . '</option>';    
-                        }
-                    }
+
+                    $args = array(
+                        'orderby'    => 'display_name',
+                        'order'      => 'ASC'
+                    );   
+
+                    $users = get_users( $args );
+
                 ?>
-            </select>
-            <span class="" style="font-size: 12px">Grading Type</span>
-            <select class='btn me-4' style="border: 1px solid black">
-                <option>Select Grading Type</option>
-                <option value="psa-value_bulk">PSA - Value Bulk</option>
-                <option value="psa-value_plus">PSA - Value Plus</option>
-                <option value="psa-regular">PSA - Regular</option>
-                <option value="psa-express">PSA - Express</option>
-                <option value="psa-super_express">PSA - Super Express</option>
-                <option value="sgc-bulk">SGC - Bulk</option>
-            </select>
-            <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order">
-                Create New Order
-            </button>
+                <select class='btn me-4' style="border: 1px solid black">
+                    <option>Select Customer</option>
+                    <?php 
+                        foreach( $users as $user){
+                            if( $user->roles[0] == 'um_member' ){
+                                $id = $user->ID + 1000;
+                                echo "<option value='" . $id . "'>" .  $user->display_name . '</option>';    
+                            }
+                        }
+                    ?>
+                </select>
+                <span class="" style="font-size: 12px">Grading Type</span>
+                <select class='btn me-4' style="border: 1px solid black">
+                    <option>Select Grading Type</option>
+                    <option value="psa-value_bulk">PSA - Value Bulk</option>
+                    <option value="psa-value_plus">PSA - Value Plus</option>
+                    <option value="psa-regular">PSA - Regular</option>
+                    <option value="psa-express">PSA - Express</option>
+                    <option value="psa-super_express">PSA - Super Express</option>
+                    <option value="sgc-bulk">SGC - Bulk</option>
+                </select>
+                <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order">
+                    Create New Order
+                </button>
+            </div>
         </div>
-    </div>
+    <?php 
+        }
+    ?>
+
     <?php
         if(isset($_GET["order_number"])) {
     ?>
