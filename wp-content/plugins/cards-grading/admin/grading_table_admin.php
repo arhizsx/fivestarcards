@@ -249,7 +249,7 @@ $total_dv = 0;
     <?php
         if(isset($_GET["order_number"])) {
     ?>
-        <div class="add_customer_order_log_cards d-none">
+        <div class="add_customer_order_log_cards">
             <div class="row mt-4 mb-5 ">
                 <div class="col-xl-4">
                     Order Number
