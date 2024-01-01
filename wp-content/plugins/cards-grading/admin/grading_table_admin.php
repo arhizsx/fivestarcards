@@ -192,6 +192,7 @@
                 );
 
                 $cards = get_posts($args);
+
             ?> 
             <table class='table 5star_logged_cards table-bordered table-striped' data-grading_type="<?php echo $meta['type'] ?>" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-table_action_endpoint="<?php echo get_rest_url(null, "cards-grading/v1/table-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
                 <thead>
@@ -208,14 +209,18 @@
                 <?php
                 if($cards){
                     foreach($cards as $card){
+
+                        $cardmeta = get_post_meta($card->ID);
+                        $card = json_decode($cardmeta['card'][0], true);
+        
                 ?>
                     <tr class="card-row" data-post_id="" data-card=''>
-                        <td>-</td>
-                        <td></td>
-                        <td></td>
-                        <td><?php  ?></td>
-                        <td class='text-end'></td>
-                        <td class='text-end'></td>
+                        <td><?php echo $card["year"]; ?></td>
+                        <td><?php echo $card["brand"]; ?></td>
+                        <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
+                        <td><?php echo $card["player"]; ?></td>
+                        <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
+                        <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                     </tr>
                 <?php 
                     }
