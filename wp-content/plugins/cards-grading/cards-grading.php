@@ -844,9 +844,14 @@
 
             return $this->doMultiOrderUpdate($params);
 
-
         }
 
+        elseif($params["action"] == "admin_create_order"){
+
+            return $this->doAdminCreateOrder($params);
+
+        }
+        
         
 
         return $params;
@@ -1440,6 +1445,11 @@
         
         return true;
         
+    }
+
+    function doAdminCreateOrder($params)  {
+        
+        return $params;
     }
 
 
