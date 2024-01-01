@@ -837,6 +837,13 @@
 
         }
 
+        elseif($params["action"] == "multi_update_status"){
+
+            return $this->doMultiOrderUpdate($params);
+
+
+        }
+
         
 
         return $params;
@@ -1416,6 +1423,12 @@
         wp_delete_post( $params['order_number'], true );
 
         return ['action' => 'back', "back" => $params["data"]["back"]] ;
+    }
+
+    public function doMultiOrderUpdate( $params)  {
+
+        return true;
+        
     }
 
 
