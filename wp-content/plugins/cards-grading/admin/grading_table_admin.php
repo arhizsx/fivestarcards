@@ -260,11 +260,13 @@
             
             $posts = get_posts($args);
 
-            print_r($posts);
 
             foreach($posts as $post)
             {            
                 $meta = get_post_meta($post->ID);
+
+                print_r($meta);
+
 
     ?>
         <div class="add_customer_order_log_cards">
