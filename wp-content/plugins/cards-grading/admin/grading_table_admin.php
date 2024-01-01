@@ -14,8 +14,6 @@
         
         $posts = get_posts($args);
 
-        $meta = get_post_meta($post->ID);
-        $user = get_user_by( "id", $meta["user_id"][0] );      
           
         $args = array(
             'meta_query' => array(
@@ -142,6 +140,8 @@
             if($posts){
                 foreach($posts as $post)
                 {            
+                    $meta = get_post_meta($post->ID);
+                    $user = get_user_by( "id", $meta["user_id"][0] );                  
 
     ?>
                 <div class="row mt-4 mb-5 ">
