@@ -446,7 +446,15 @@ $(document).on("click", ".5star_btn", function(e){
             break;
 
         case "admin_create_order":
-            
+
+            var user_id = $(document).find("[name='select_customer']").val();
+            var grading_type = $(document).find("[name='select_grading_type']").val();
+
+            var data = {"user_id": user_id, "grading_type": grading_type};
+
+            if (orderAction("admin_create_order", data, '') ){
+            }
+
             break;
             
         case "multi_update_status":
