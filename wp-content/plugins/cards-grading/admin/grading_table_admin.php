@@ -26,6 +26,13 @@
         );
         
         $gradings = get_posts($args);
+        
+        if($gradings){
+            foreach($gradings as $grading){
+                $grading_meta = get_post_meta($grading->ID);                        
+            }
+        }
+
 ?>
 
 <!-- table for grading -->
@@ -136,14 +143,7 @@
                 foreach($posts as $post)
                 {            
                     $meta = get_post_meta($post->ID);
-                    $user = get_user_by( "id", $meta["user_id"][0] );     
-                    
-                    if($gradings){
-                        foreach($gradings as $grading){
-                            $grading_meta = get_post_meta($grading->ID);                        
-                        }
-                    }
-                                
+                    $user = get_user_by( "id", $meta["user_id"][0] );                                                         
 
     ?>
                 <div class="row mt-4 mb-5 ">
