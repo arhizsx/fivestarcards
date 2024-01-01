@@ -238,20 +238,6 @@ $total_dv = 0;
                 Create New Order
             </button>
         </div>
-        <div class="col-xl-12 new_order_details d-none">
-            <span class="" style="font-size: 12px">Order Number</span>
-            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
-            <span class="" style="font-size: 12px">Customer</span>
-            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
-            <span class="" style="font-size: 12px">Grading Type</span>
-            <input type="text" class='btn btn-sm me-4' style="border: 1px solid black">
-            <button class='5star_btn btn btn-secondary btn-sm' data-type="" data-action="admin_create_order_cancel">
-                Cancel
-            </button>
-            <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order_cancel">
-                Save New Order
-            </button>
-        </div>
     </div>
     <div class="add_customer_order_log_cards">
         <div class="row mt-4 mb-5 ">
