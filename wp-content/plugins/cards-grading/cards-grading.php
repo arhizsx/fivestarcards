@@ -837,12 +837,6 @@
 
         }
 
-        elseif($params["action"] == "multi_update_status"){
-
-            return "TEST";
-
-        }
-
         
 
         return $params;
