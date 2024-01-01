@@ -91,7 +91,7 @@
                         <td><?php echo $meta["grading_type"][0]; ?></td>
                         <td><?php echo $meta["status"][0]; ?></td>
                         <td class='text-end'>
-                            <a class="btn btn-primary mb-3"  href="/admin/add-customer-order/?order-number=<?php echo $post->ID; ?>">
+                            <a class="btn btn-primary mb-3"  href="/admin/add-customer-order/?order_number=<?php echo $post->ID; ?>">
                                 ...
                             </a>           
                         </td>
