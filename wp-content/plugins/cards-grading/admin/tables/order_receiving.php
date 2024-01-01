@@ -2,6 +2,8 @@
 
 $user_id = get_current_user_id();
 
+$table_statuses = array("To Ship", "Shipped", "Package Received", "Incomplete Items Shipped");
+
 $meta_query = array(
     "relaton" => 'AND',
 );
@@ -10,7 +12,7 @@ array_push(
     $meta_query,             
     array(
         'key' => 'status',
-        'value' => array("To Ship", "Shipped", "Package Received", "Incomplete Items Shipped"),
+        'value' => $table_statuses,
         'compare' => 'IN'
     )
 );
