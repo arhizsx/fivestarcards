@@ -261,9 +261,6 @@
         }
     ?>
 </div>
-<div class='5star_btn_box_admin_bottom w-100 mt-3 mb-3'>
-    <button class="btn border btn-danger 5star_btn" data-action="admin_delete_order" data-order_number="<?php echo $_GET['order_number'] ?>" >Delete Order</button>
-</div>        
 
 
 <div class="modal fade dxmodal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
