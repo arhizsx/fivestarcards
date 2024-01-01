@@ -452,8 +452,9 @@ $(document).on("click", ".5star_btn", function(e){
 
             var data = {"user_id": user_id, "grading_type": grading_type};
 
-            if (orderAction("admin_create_order", data, '') ){
-            }
+            var order_number = orderAction("admin_create_order", data, '');
+
+            location.href = "/admin/add-customer-order/?order_number=" + order_number;
 
             break;
             
