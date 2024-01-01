@@ -114,7 +114,7 @@ $posts = get_posts($args);
             <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="remove_filter" data-order_number="<?php echo $params['order_number'] ?>">
                 Clear
             </button>      
-            <?php if( isset($_GET["submission_number"]) || isset($_GET["user_id"]) ){ ?>
+            <?php if( isset($_GET["submission_number"]) || isset($_GET["user_id"]) || isset($_GET["status"]) ){ ?>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Status: 
                 <select name="multi_update_status_select " class="mt-3" style="font-size: 13px;" >
                     <option value="">Select New Status</option>
