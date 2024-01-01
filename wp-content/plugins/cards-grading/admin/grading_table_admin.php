@@ -12,6 +12,9 @@
         );
         
         $posts = get_posts($args);
+
+        $user_id=0;
+
         if($posts){
             foreach($posts as $post)
             {            
@@ -19,7 +22,9 @@
                 $user = get_user_by( "id", $meta["user_id"][0] );                                                         
             }
         }
-          
+        
+        print_r($user);
+        
         $args = array(
             'meta_query' => array(
                 array(
@@ -280,7 +285,7 @@
                     <div class="modal-body py-2 px-3">
                             <forn id="add_card_form">
 
-                                <input type="hidden" name="checkout_id" value='<?php echo $_GET["order_numebr"]; ?>'/>
+                                <input type="hidden" name="checkout_id" value='<?php echo $_GET["order_number"]; ?>'/>
                                 <input type="hidden" name="user_id" value=''/>
                                 <input type="hidden" name="grading" value=''/>
                                 <input type="hidden" name="max_dv" value=''/>
