@@ -19,16 +19,164 @@ $posts = get_posts($args);
 ?>
 
 <div class="m-0 p-0">
-    <H1 style="color: black;">Consigned Orders</H1>
+    <div class="row">
+        <div class="col-xl-6">
+            <H1 style="color: black;">Consigned</H1>            
+        </div>
+        <div class="col-xl-6 text-end">
+            
+        </div>
+        <div class="col-xl-12">
+        <?php if( isset( $_GET["filtered"] ) == "true") { ?>
+
+            Filtered By: 
+            <?php if(isset($_GET["user_id"])){ ?>
+                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
+                    Customer
+                </button>           
+            <?php } ?>
+            <?php if(isset($_GET["status"])){ ?>
+                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
+                    Status
+                </button>           
+            <?php } ?>
+            <?php if(isset($_GET["grading_type"])){ ?>
+                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 btn-sm" data-action="remove_filter">
+                    Grading Type
+                </button>           
+            <?php } ?>
+            <?php if( isset($_GET["submission_number"])){ ?>
+                <button class="5star_btn btn btn-danger mb-3 py-0 px-2 mt-3 mr-5  btn-sm" data-action="remove_filter">
+                    Submission #
+                </button>
+            <?php } ?>
+            <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="remove_filter" data-order_number="<?php echo $params['order_number'] ?>">
+                Clear
+            </button>      
+            <?php if( isset($_GET["submission_number"]) || isset($_GET["user_id"]) || isset($_GET["status"]) ){ ?>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Status: 
+                <select name="multi_update_status_select " class="mt-3" style="font-size: 13px;" >
+                    <option value="">Select New Status</option>
+                    <option value="Package Received">Package Received</option>
+                </select>
+                <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
+                    Apply
+                </button>      
+            <?php } ?>
+        <?php } ?>
+        </div>
+    </div>
+    <?php 
+        if( $posts ){
+            
+            $customers = [];
+            $status = [];
+            $grading_types = [];
+            $submission_numbers = [];
+
+            foreach($posts as $post)
+            {
+                $meta = get_post_meta($post->ID);
+
+                $user_id = $meta["user_id"][0];
+                $user = get_user_by( "id", $user_id );
+
+                $exists = false;
+                foreach($customers as $cx){
+                    if( $cx["user_id"] == $user_id){
+                        $exists = true;
+                        break;
+                    }
+                }
+
+                if($exists == false){
+                    array_push($customers, ["customer"=> ucfirst($user->display_name), "user_id" => $user_id]);
+                }
+
+
+                $exists = false;
+                foreach($status as $st){
+                    if( $st["status"] == $meta["status"][0]){
+                        $exists = true;
+                        break;
+                    }
+                }
+
+                if($exists == false){
+                    array_push($status, ["status"=> ucfirst($meta["status"][0])]);
+                }
+
+                $exists = false;
+                foreach($grading_types as $gd){
+                    if( $gd["grading_type"] == $meta["grading_type"][0]){
+                        $exists = true;
+                        break;
+                    }
+                }
+
+                if($exists == false){
+                    array_push($grading_types, ["grading_type"=> $meta["grading_type"][0]]);
+                }
+
+                $exists = false;
+                foreach($submission_numbers as $sn){
+                    if( $sn["submission_number"] == $meta["submission_number"][0]){
+                        $exists = true;
+                        break;
+                    }
+                }
+
+                if($exists == false){
+                    array_push($submission_numbers, ["submission_number"=> $meta["submission_number"][0]]);
+                }
+
+
+
+            }
+        }
+    ?>
     <div class="table-responsive">    
         <table class='table 5star_my_orders table-bordered table-striped'>
             <thead>
                 <tr>
                     <th>Date</th>
-                    <th>User</th>
+                    <th>
+                        <select name="select_customer_filter " class="select_filter w-100 px-2 py-0" data-filter="user_id">
+                            <option value="">Customer</option>
+                            <?php 
+                                foreach($customers as $cx){
+                            ?>
+                            <option value="<?php echo $cx["user_id"]; ?>"><?php echo $cx["customer"]; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+                    </th>
                     <th>Order #</th>
-                    <th>Service Type</th>
-                    <th>Status</th>
+                    <th>
+                        <select name="select_grading_filter " class="select_filter w-100 px-2 py-0" data-filter="grading_type" >
+                            <option value="">Grading Type</option>
+                            <?php 
+                                foreach($grading_types as $gd){
+                            ?>
+                            <option value="<?php echo $gd["grading_type"]; ?>"><?php echo $gd["grading_type"]; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+                    </th>
+                    <th>
+                        <select name="select_status_filter " class="select_filter w-100 px-2 py-0" data-filter="status" style="" >
+                            <option value="">Status</option>
+                            <?php 
+                                foreach($status as $st){
+                            ?>
+                            <option value="<?php echo $st["status"]; ?>"><?php echo $st["status"]; ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+                    </th>
                     <th class='text-end'>Total Cards</th>
                     <th class='text-end'>Consigned Cards</th>
                     <th class='text-end'>Action</th>

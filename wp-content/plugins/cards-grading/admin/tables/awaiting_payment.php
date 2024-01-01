@@ -83,7 +83,7 @@ $posts = get_posts($args);
 ?>
 
 <div class="m-0 p-0">
-<div class="row">
+    <div class="row">
         <div class="col-xl-6">
             <H1 style="color: black;">Awaiting Payment</H1>            
         </div>
