@@ -2,6 +2,7 @@
 
     $user_id = get_current_user_id();
 
+    $table_statuses =  array("Processing Order", "Shipped to PSA / SGC", "Research", "Grading", "Assembly", "QA1", "QA2", "Cards Graded", "Grading Complete", "Completed - Grades Ready");
 
     $meta_query = array(
         "relaton" => 'AND',
@@ -11,7 +12,7 @@
         $meta_query,             
         array(
             'key' => 'status',
-            'value' => array("Processing Order", "Shipped to PSA / SGC", "Research", "Grading", "Assembly", "QA1", "QA2", "Cards Graded", "Grading Complete", "Completed - Grades Ready"),
+            'value' => $table_statuses,
             'compare' => 'IN'
         )
     );
@@ -121,14 +122,13 @@ $posts = get_posts($args);
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Status: 
                 <select name="multi_update_status_select " class="mt-3" style="font-size: 14px;" >
                     <option value="">Select New Status</option>
-                    <option value="Processing Order">Processing Order</option>
-                    <option value="Shipped to PSA / SGC">Shipped to PSA / SGC</option>
-                    <option value="Research">Research</option>
-                    <option value="Grading">Grading</option>
-                    <option value="Assembly">Assembly</option>
-                    <option value="QA1">QA1</option>
-                    <option value="QA2">QA2</option>
-                    <option value="Completed - Grades Ready">Completed - Grades Ready</option>
+                    <?php 
+                        foreach($table_statuses as $stat){                            
+                    ?>
+                        <option value="<?php echo $stat ?>"><?php echo $stat ?></option>
+                    <?php 
+                        }
+                    ?>
                 </select>
                 <button class='5star_btn btn btn-secondary mb-3 btn-sm py-0 mt-3 px-2 ml-3' data-action="multi_update_status" data-order_number="<?php echo $params['order_number'] ?>">
                     Apply
