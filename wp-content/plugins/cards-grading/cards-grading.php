@@ -1427,7 +1427,7 @@
 
     public function doMultiOrderUpdate( $params)  {
         
-        if($params["data"]["new_status"] != ""){
+        if($params["data"]["new_status"] == ""){
             return false;
         }
 
