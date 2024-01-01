@@ -254,22 +254,17 @@ $total_dv = 0;
         </div>
     </div> -->
     <div class="row mb-5 ">
-        <div class="col-xl-3">
+        <div class="col-xl-4">
             Order Number
             <input type="text" class="form-control">
         </div>
-        <div class="col-xl-3">
+        <div class="col-xl-4">
             Customer
             <input type="text" class="form-control">
         </div>
-        <div class="col-xl-3">
+        <div class="col-xl-4">
             Grading Type
             <input type="text" class="form-control">
-        </div>
-        <div class="col-xl-3 pt-4">
-            <button class="form-control btn btn-sm border btn-primary 5star_btn" data-action='confirm_add' data-type=''>
-                Add to Customer
-            </button>
         </div>
     </div>
     
