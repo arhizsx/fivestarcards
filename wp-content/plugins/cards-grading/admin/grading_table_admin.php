@@ -213,7 +213,7 @@ $total_dv = 0;
                 $users = get_users( $args );
 
             ?>
-            <select class='btn btn-sm me-4' style="border: 1px solid black">
+            <select class='btn me-4' style="border: 1px solid black">
                 <option>Select Customer</option>
                 <?php 
                     foreach( $users as $user){
@@ -225,7 +225,7 @@ $total_dv = 0;
                 ?>
             </select>
             <span class="" style="font-size: 12px">Grading Type</span>
-            <select class='btn btn-sm me-4' style="border: 1px solid black">
+            <select class='btn me-4' style="border: 1px solid black">
                 <option>Select Grading Type</option>
                 <option value="psa-value_bulk">PSA - Value Bulk</option>
                 <option value="psa-value_plus">PSA - Value Plus</option>
