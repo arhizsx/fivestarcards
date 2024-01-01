@@ -239,83 +239,89 @@ $total_dv = 0;
             </button>
         </div>
     </div>
-    <div class="add_customer_order_log_cards d-none">
-        <div class="row mt-4 mb-5 ">
-            <div class="col-xl-4">
-                Order Number
-                <input type="text" class="form-control">
+    <?php
+        if(isset($_GET["order_number"])) {
+    ?>
+        <div class="add_customer_order_log_cards d-none">
+            <div class="row mt-4 mb-5 ">
+                <div class="col-xl-4">
+                    Order Number
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-xl-4">
+                    Customer
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-xl-4">
+                    Grading Type
+                    <input type="text" class="form-control">
+                </div>
             </div>
-            <div class="col-xl-4">
-                Customer
-                <input type="text" class="form-control">
-            </div>
-            <div class="col-xl-4">
-                Grading Type
-                <input type="text" class="form-control">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-6">
-                <H2 style="color: black;">Cards List</H2>
-            </div>
-            <div class="col-xl-6 text-end">
-                <button class="5star_btn btn btn-success" data-action="log_card">
-                    Log Cards
-                </button>           
-            </div>
-        </div>
-        <div class="table-responsive">    
-            <table class='table 5star_logged_cards table-bordered table-striped' data-grading_type="" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-table_action_endpoint="<?php echo get_rest_url(null, "cards-grading/v1/table-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
-                <thead>
-                    <tr>
-                    <th>Year</th>
-                    <th>Brand</th>
-                    <th>Card #</th>
-                    <th>Player Name</th>
-                    <th class='text-end'>DV</th>
-                    <th class="text-end">Grading</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="card-row" data-post_id="" data-card=''>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><?php echo $card["player"]; ?></td>
-                        <td class='text-end'></td>
-                        <td class='text-end'></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center" colspan="9">Empty</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class='5star_btn_box_bottom w-100'>
             <div class="row">
-                <div class="col-lg-6 text-end pb-2 fw-bold cards_dv_total">
+                <div class="col-xl-6">
+                    <H2 style="color: black;">Cards List</H2>
                 </div>
-                    <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
-                <div class="row mb-2">
-                    <div class="col text-end">
-                        Total DV          
-                    </div>
-                    <div class="col text-end" id="total_dv">
-                        
-                    </div>
+                <div class="col-xl-6 text-end">
+                    <button class="5star_btn btn btn-success" data-action="log_card">
+                        Log Cards
+                    </button>           
                 </div>
+            </div>
+            <div class="table-responsive">    
+                <table class='table 5star_logged_cards table-bordered table-striped' data-grading_type="" data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/add-card") ?>" data-table_action_endpoint="<?php echo get_rest_url(null, "cards-grading/v1/table-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
+                    <thead>
+                        <tr>
+                        <th>Year</th>
+                        <th>Brand</th>
+                        <th>Card #</th>
+                        <th>Player Name</th>
+                        <th class='text-end'>DV</th>
+                        <th class="text-end">Grading</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="card-row" data-post_id="" data-card=''>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><?php echo $card["player"]; ?></td>
+                            <td class='text-end'></td>
+                            <td class='text-end'></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" colspan="9">Empty</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class='5star_btn_box_bottom w-100'>
                 <div class="row">
-                    <div class="col text-end">
-                        Grading Charge    
+                    <div class="col-lg-6 text-end pb-2 fw-bold cards_dv_total">
                     </div>
-                    <div class="col text-end"  id="grading_charges">
-                    
+                        <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
+                    <div class="row mb-2">
+                        <div class="col text-end">
+                            Total DV          
+                        </div>
+                        <div class="col text-end" id="total_dv">
+                            
+                        </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col text-end">
+                            Grading Charge    
+                        </div>
+                        <div class="col text-end"  id="grading_charges">
+                        
+                        </div>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    <?php 
+        }
+    ?>
 </div>
 
 <div class="modal fade admin_add_customer_order" data-show="true" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
