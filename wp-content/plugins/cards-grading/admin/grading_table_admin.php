@@ -15,7 +15,26 @@
         $posts = get_posts($args);
 
         $meta = get_post_meta($post->ID);
-        $user = get_user_by( "id", $meta["user_id"][0] );        
+        $user = get_user_by( "id", $meta["user_id"][0] );      
+          
+        $args = array(
+            'meta_query' => array(
+                array(
+                    'key' => 'name',
+                    'value' => $meta["grading_type"][0]
+                )
+            ),
+            'post_type' => 'cards-grading-type',
+            'posts_per_page' => -1
+        );
+        
+        $gradings = get_posts($args);
+
+        if($gradings){
+            foreach($gradings as $grading){
+                $grading_meta = get_post_meta($grading->ID);                        
+            }
+        }
 
 ?>
 
@@ -120,20 +139,6 @@
     <?php
         if(isset($_GET["order_number"])) {
 
-            $args = array(
-                'meta_query' => array(
-                    array(
-                        'key' => 'order_number',
-                        'value' => $_GET['order_number']
-                    )
-                ),
-                'post_type' => 'cards-grading-chk',
-                'posts_per_page' => -1
-            );
-            
-            $posts = get_posts($args);
-
-
             if($posts){
                 foreach($posts as $post)
                 {            
@@ -158,25 +163,6 @@
                     </div>
                 </div>
     <?php 
-                }
-
-                $args = array(
-                    'meta_query' => array(
-                        array(
-                            'key' => 'name',
-                            'value' => $meta["grading_type"][0]
-                        )
-                    ),
-                    'post_type' => 'cards-grading-type',
-                    'posts_per_page' => -1
-                );
-                
-                $gradings = get_posts($args);
-
-                if($gradings){
-                    foreach($gradings as $grading){
-                        $grading_meta = get_post_meta($grading->ID);                        
-                    }
                 }
     
             }
