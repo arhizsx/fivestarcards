@@ -324,7 +324,7 @@ $total_dv = 0;
                     </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-4">
                     <div class="col-12 text-end">
                         <button class="5star_btn btn btn-secondary" data-action="log_card">
                             Cancel Order
