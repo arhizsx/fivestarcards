@@ -89,7 +89,7 @@ $posts = get_posts($args);
             <H1 style="color: black;">Open Orders</H1>            
         </div>
         <div class="col-xl-6 text-end">
-                <button class="5star_btn btn btn-primary mb-3 py-0 px-2" data-action="remove_filter">
+                <button class="5star_btn btn btn-primary" data-action="remove_filter">
                     Add Customer Order
                 </button>                       
         </div>
