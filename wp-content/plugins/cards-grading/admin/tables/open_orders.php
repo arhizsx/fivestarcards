@@ -226,32 +226,34 @@ $posts = get_posts($args);
                             $show_it = true;
 
                             if(isset( $_GET['filtered']) && $_GET["filtered"] == "true"){
+                                
+                                $show_it = false;
 
                                 if(isset( $_GET["submission_number"]) ){    
-                                    if( $meta["submission_number"][0] != $_GET["submission_number"] )
+                                    if( $meta["submission_number"][0] == $_GET["submission_number"] )
                                     {
-                                        $show_it = false;
+                                        $show_it = true;
                                     }    
                                 }
                             
                                 if(isset( $_GET["user_id"]) ){                                                                
-                                    if( $user_id != $_GET["user_id"] )
+                                    if( $user_id == $_GET["user_id"] )
                                     {
-                                        $show_it = false;
+                                        $show_it = true;
                                     }    
                                 }
                                 
                                 if(isset( $_GET["status"]) ){     
-                                    if( $meta["status"][0] != $_GET["user_id"] )
+                                    if( $meta["status"][0] == $_GET["user_id"] )
                                     {
-                                        $show_it = false;
+                                        $show_it = true;
                                     }    
                                 }
                             
                                 if(isset( $_GET["grading_type"]) ){                                
-                                    if( $meta["service_type"][0] != $_GET["grading_type"] )
+                                    if( $meta["service_type"][0] == $_GET["grading_type"] )
                                     {
-                                        $show_it = false;
+                                        $show_it = true;
                                     }    
                                 }
                             
