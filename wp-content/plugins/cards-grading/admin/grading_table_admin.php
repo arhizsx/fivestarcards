@@ -265,7 +265,7 @@
             {            
                 $meta = get_post_meta($post->ID);
 
-                print_r($meta);
+                print_r($meta["grading_type"][0]);
 
 
     ?>
