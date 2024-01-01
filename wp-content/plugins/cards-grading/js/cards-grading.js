@@ -727,17 +727,25 @@ function orderAction(action, data, order_number){
         },
         success: function(resp){
 
-            if(resp ==true){
-                $(document).find(".dxmodal").modal("hide");
-                location.reload();
-            }
-            else if(resp.action == "back"){
-                $(document).find(".dxmodal").modal("hide");
-                location.href = resp.back;
+            if(action == "admin_create_order"){
+                location.href = "/admin/add-customer-order/?order_number=" + resp;
+            } 
+            else {
 
-            } else {
-                console.log("Order Action Failed");
+                if(resp ==true){
+                    $(document).find(".dxmodal").modal("hide");
+                    location.reload();
+                }
+                else if(resp.action == "back"){
+                    $(document).find(".dxmodal").modal("hide");
+                    location.href = resp.back;
+    
+                } else {
+                    console.log("Order Action Failed");
+                }
+    
             }
+
 
         }
     });
