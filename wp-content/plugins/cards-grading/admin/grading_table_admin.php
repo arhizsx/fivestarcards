@@ -262,6 +262,8 @@
 
             foreach($posts as $post)
             {            
+                $meta = get_post_meta($post->ID);
+
     ?>
         <div class="add_customer_order_log_cards">
             <div class="row mt-4 mb-5 ">
