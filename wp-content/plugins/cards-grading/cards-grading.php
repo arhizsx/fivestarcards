@@ -1426,8 +1426,16 @@
     }
 
     public function doMultiOrderUpdate( $params)  {
+        
+        if($params["data"]["new_status"] != ""){
+            return false;
+        }
 
-        return $params["data"]["new_status"];
+        foreach($params["order_number"] as $order){
+            update_post_meta($order, 'status', $params["data"]["new_status"]);   
+        }
+        
+        return true;
         
     }
 
