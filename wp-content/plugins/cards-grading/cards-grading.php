@@ -1452,14 +1452,14 @@
 
         try {
 
-            $user_id = $params["data"]->user_id;        
+            $user_id = $params["data"]["user_id"];        
             $user = get_user_by( "id", $user_id );
 
             $args = array(
                 'meta_query' => array(
                     array(
                         'key' => 'type',
-                        'value' => $params["data"]->grading_type
+                        'value' => $params["data"]["grading_type"]
                     )
                 ),
                 'post_type' => 'cards-grading-type',
