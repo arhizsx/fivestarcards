@@ -68,7 +68,6 @@
                         <th>Order #</th>
                         <th>Grading Type</th>
                         <th>Status</th>
-                        <th class="text-end">Total Cards</th>
                         <th class="text-end">Action</th>
                     </tr>
                 </thead>
@@ -91,7 +90,6 @@
                         <td><?php echo $meta["order_number"][0]; ?></td>
                         <td><?php echo $meta["grading_type"][0]; ?></td>
                         <td><?php echo $meta["status"][0]; ?></td>
-                        <td class='text-end'></td>
                         <td class='text-end'>
                             <a class="btn btn-primary mb-3"  href="/admin/add-customer-order/?order-number=<?php echo $post->ID; ?>">
                                 ...
