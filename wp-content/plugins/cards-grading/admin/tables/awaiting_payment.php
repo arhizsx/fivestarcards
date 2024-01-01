@@ -242,7 +242,7 @@ $posts = get_posts($args);
                         </select>
                     </th>
                     <th class='text-end'>Total Cards</th>
-                    <th class='text-end'>To Pay</th>
+                    <th class='text-end'>To Receive</th>
                     <th class='text-end'>Action</th>
                 </tr>
             </thead>
