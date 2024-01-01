@@ -1455,8 +1455,6 @@
             $user_id = $params["data"]["user_id"] - 1000;        
             $user = get_user_by( "id", $user_id );
 
-            return $user->display_name;
-
             $args = array(
                 'meta_query' => array(
                     array(
