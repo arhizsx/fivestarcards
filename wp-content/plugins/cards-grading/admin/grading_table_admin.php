@@ -165,7 +165,7 @@
                         <H2 style="color: black;">Cards List</H2>
                     </div>
                     <div class="col-xl-6 text-end">
-                        <button class="5star_btn btn btn-success" data-action="log_card">
+                        <button class="5star_btn btn btn-success" data-action="add_card" data-type="<?php echo $meta["grading_type"][0]; ?>">
                             Log Cards
                         </button>           
                     </div>
