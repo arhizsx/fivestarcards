@@ -270,7 +270,7 @@ $total_dv = 0;
         </div>
         <div class="row">
             <div class="col-xl-6">
-                <H2>Cards List</H2>
+                <H2 style="color: black;">Cards List</H2>
             </div>
             <div class="col-xl-6 text-end">
                 <button class="5star_btn btn btn-success mb-3 mt-3" data-action="log_card">
