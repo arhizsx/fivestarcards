@@ -66,6 +66,7 @@
                         <th>Date</th>
                         <th>Customer</th>
                         <th>Order #</th>
+                        <th>Grading Type</th>
                         <th>Status</th>
                         <th class="text-end">Total Cards</th>
                         <th class="text-end">Action</th>
@@ -88,6 +89,7 @@
                         <td><?php echo get_the_date( $date_format, $post->ID ) ?><br><span style='font-size:.7em !important;'><?php echo get_the_time( $time_format, $post->ID ); ?></span></td>
                         <td><?php echo $user->display_name; ?><br> <small style="font-size: 11px;"><?php echo $user_id + 1000; ?></small></td>
                         <td><?php echo $meta["order_number"][0]; ?></td>
+                        <td><?php echo $meta["grading_type"][0]; ?></td>
                         <td><?php echo $meta["status"][0]; ?></td>
                         <td class='text-end'></td>
                         <td class='text-end'></td>
