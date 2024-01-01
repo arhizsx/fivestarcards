@@ -1448,6 +1448,45 @@
     }
 
     function doAdminCreateOrder($params)  {
+
+
+        try {
+
+            $user_id = $params["data"]->user_id;        
+            $user = get_user_by( "id", $user_id );
+
+            $args = array(
+                'meta_query' => array(
+                    array(
+                        'key' => 'type',
+                        'value' => $params["data"]->grading_type
+                    )
+                ),
+                'post_type' => 'cards-grading-type',
+                'posts_per_page' => -1
+            );
+            
+            $grading_type = get_posts($args);
+            $grading_name =  get_post_meta( $grading_type[0]->ID , 'name' , true );
+
+            $checkout_post_id = wp_insert_post([
+                'post_type' => 'cards-grading-chk',
+                'post_title' => $user->display_name . " - " . $grading_name,
+                'post_status' => 'publish'
+            ]);
+
+        
+            add_post_meta($checkout_post_id, "user_id",  $user_id );
+            add_post_meta($checkout_post_id, "service_type", "Card Grading" );
+            add_post_meta($checkout_post_id, "grading_type", $grading_name );
+            add_post_meta($checkout_post_id, "order_number", $checkout_post_id );
+    
+            return $checkout_post_id;
+    
+        }
+        catch (Exception $e) {
+            return $e;
+        }        
         
         return $params;
     }
