@@ -278,10 +278,6 @@
                         </div>
                     </div>
                 </div>
-        <div class='5star_btn_box_admin_bottom w-100 mt-3 mb-3'>
-            <button class="btn border btn-danger 5star_btn" data-action="admin_delete_order" data-order_number="<?php echo $_GET['order_number'] ?>" >Delete Order</button>
-        </div>        
-
     <?php 
         }
     ?>
