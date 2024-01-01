@@ -264,7 +264,7 @@
                         Cancel
                     </a>           
                     <button class="5star_btn btn btn-primary">
-                        Add To Customer
+                        Assign To Customer
                     </button>           
                 </div>
             </div>
