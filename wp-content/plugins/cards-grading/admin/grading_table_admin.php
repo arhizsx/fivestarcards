@@ -1,115 +1,115 @@
+<?php
+    if(isset($_GET["order_number"]) == false) {
+
+        $args = array(
+            'meta_query' => array(
+                array(
+                    'key' => 'status',
+                    'value' => "Pending Customer Order"
+                )
+            ),
+            'post_type' => 'cards-grading-chk',
+            'posts_per_page' => -1
+        );
+        
+        $posts = get_posts($args);
+
+?>
 
 <!-- table for grading -->
 
 <div class="m-0 p-0">
-    <?php
-        if(isset($_GET["order_number"]) == false) {
+    <div class="row mb-5 mt-3">
+        <div class="col-xl-12 new_order_fields">
+            <span class="" style="font-size: 12px">Customer</span>
+            <?php 
 
-            $args = array(
-                'meta_query' => array(
-                    array(
-                        'key' => 'status',
-                        'value' => "Pending Customer Order"
-                    )
-                ),
-                'post_type' => 'cards-grading-chk',
-                'posts_per_page' => -1
-            );
-            
-            $posts = get_posts($args);
+                $args = array(
+                    'orderby'    => 'display_name',
+                    'order'      => 'ASC'
+                );   
 
-    ?>
-        <div class="row mb-5 mt-3">
-            <div class="col-xl-12 new_order_fields">
-                <span class="" style="font-size: 12px">Customer</span>
+                $users = get_users( $args );
+
+            ?>
+            <select name="select_customer" class='btn me-4' style="border: 1px solid black">
+                <option>Select Customer</option>
                 <?php 
+                    foreach( $users as $user){
+                        // if( $user->roles[0] == 'um_member' ){
+                            $id = $user->ID + 1000;
+                            echo "<option value='" . $id . "'>" .  $user->display_name . '</option>';    
+                        // }
+                    }
+                ?>
+            </select>
+            <span class="" style="font-size: 12px">Grading Type</span>
+            <select name="select_grading_type" class='btn me-4' style="border: 1px solid black">
+                <option>Select Grading Type</option>
+                <option value="psa-value_bulk">PSA - Value Bulk</option>
+                <option value="psa-value_plus">PSA - Value Plus</option>
+                <option value="psa-regular">PSA - Regular</option>
+                <option value="psa-express">PSA - Express</option>
+                <option value="psa-super_express">PSA - Super Express</option>
+                <option value="sgc-bulk">SGC - Bulk</option>
+            </select>
+            <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order">
+                Create New Order
+            </button>
+        </div>
+    </div>
+    <H3 style="color: black">Pending Orders</H3>
+    <div class="table-responsive">    
+        <table class='table 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Order #</th>
+                    <th>Grading Type</th>
+                    <th>Status</th>
+                    <th class="text-end">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                if( $posts ){
+                    foreach($posts as $post){
+                        $meta = get_post_meta($post->ID);
 
-                    $args = array(
-                        'orderby'    => 'display_name',
-                        'order'      => 'ASC'
-                    );   
+                        $date_format = get_option( 'date_format' );
+                        $time_format = get_option( 'time_format' );
 
-                    $users = get_users( $args );
+                        $user_id = $meta["user_id"][0];
+                        $user = get_user_by( "id", $user_id );                                                                  
 
                 ?>
-                <select name="select_customer" class='btn me-4' style="border: 1px solid black">
-                    <option>Select Customer</option>
-                    <?php 
-                        foreach( $users as $user){
-                            // if( $user->roles[0] == 'um_member' ){
-                                $id = $user->ID + 1000;
-                                echo "<option value='" . $id . "'>" .  $user->display_name . '</option>';    
-                            // }
-                        }
-                    ?>
-                </select>
-                <span class="" style="font-size: 12px">Grading Type</span>
-                <select name="select_grading_type" class='btn me-4' style="border: 1px solid black">
-                    <option>Select Grading Type</option>
-                    <option value="psa-value_bulk">PSA - Value Bulk</option>
-                    <option value="psa-value_plus">PSA - Value Plus</option>
-                    <option value="psa-regular">PSA - Regular</option>
-                    <option value="psa-express">PSA - Express</option>
-                    <option value="psa-super_express">PSA - Super Express</option>
-                    <option value="sgc-bulk">SGC - Bulk</option>
-                </select>
-                <button class='5star_btn btn btn-primary btn-sm' data-type="" data-action="admin_create_order">
-                    Create New Order
-                </button>
-            </div>
-        </div>
-        <H3 style="color: black">Pending Orders</H3>
-        <div class="table-responsive">    
-            <table class='table 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Customer</th>
-                        <th>Order #</th>
-                        <th>Grading Type</th>
-                        <th>Status</th>
-                        <th class="text-end">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php 
-                    if( $posts ){
-                        foreach($posts as $post){
-                            $meta = get_post_meta($post->ID);
-
-                            $date_format = get_option( 'date_format' );
-                            $time_format = get_option( 'time_format' );
-
-                            $user_id = $meta["user_id"][0];
-                            $user = get_user_by( "id", $user_id );                                                                  
-
-                    ?>
-                    <tr class="" data-post_id="<?php echo $post->ID; ?>" data-card=''>
-                        <td><?php echo get_the_date( $date_format, $post->ID ) ?><br><span style='font-size:.7em !important;'><?php echo get_the_time( $time_format, $post->ID ); ?></span></td>
-                        <td><?php echo $user->display_name; ?><br> <small style="font-size: 11px;"><?php echo $user_id + 1000; ?></small></td>
-                        <td><?php echo $meta["order_number"][0]; ?></td>
-                        <td><?php echo $meta["grading_type"][0]; ?></td>
-                        <td><?php echo $meta["status"][0]; ?></td>
-                        <td class='text-end'>
-                            <a class="btn btn-primary mb-3"  href="/admin/add-customer-order/?order_number=<?php echo $post->ID; ?>">
-                                ...
-                            </a>           
-                        </td>
-                    </tr>
-                    <?php 
-                        }   
-                    } 
-                    else {
-                    ?>
-                    <tr>
-                        <td class="text-center" colspan="6">Empty</td>
-                    </tr>
-                    <?php 
-                    } 
-                    ?>
-                </tbody>
-            </table>
-        </div>
+                <tr class="" data-post_id="<?php echo $post->ID; ?>" data-card=''>
+                    <td><?php echo get_the_date( $date_format, $post->ID ) ?><br><span style='font-size:.7em !important;'><?php echo get_the_time( $time_format, $post->ID ); ?></span></td>
+                    <td><?php echo $user->display_name; ?><br> <small style="font-size: 11px;"><?php echo $user_id + 1000; ?></small></td>
+                    <td><?php echo $meta["order_number"][0]; ?></td>
+                    <td><?php echo $meta["grading_type"][0]; ?></td>
+                    <td><?php echo $meta["status"][0]; ?></td>
+                    <td class='text-end'>
+                        <a class="btn btn-primary mb-3"  href="/admin/add-customer-order/?order_number=<?php echo $post->ID; ?>">
+                            ...
+                        </a>           
+                    </td>
+                </tr>
+                <?php 
+                    }   
+                } 
+                else {
+                ?>
+                <tr>
+                    <td class="text-center" colspan="6">Empty</td>
+                </tr>
+                <?php 
+                } 
+                ?>
+            </tbody>
+        </table>
+    </div>
     <?php 
         }
     ?>
