@@ -210,6 +210,12 @@
                             </tr>
                         <?php 
                             }
+                        } else {
+                        ?>
+                            <tr>
+                                <td colspan="6">Empty</td>
+                            </tr>
+                        <?php
                         }
                         ?>
                         </tbody>
