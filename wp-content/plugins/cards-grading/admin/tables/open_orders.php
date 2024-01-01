@@ -89,9 +89,9 @@ $posts = get_posts($args);
             <H1 style="color: black;">Open Orders</H1>            
         </div>
         <div class="col-xl-6 text-end">
-                <button class="5star_btn btn btn-primary" data-action="remove_filter">
+                <a href="/admin/add-customer-order/" class="5star_btn btn btn-primary">
                     Add Customer Order
-                </button>                       
+                </a>                       
         </div>
         <div class="col-xl-12">
         <?php if( isset( $_GET["filtered"] ) == "true") { ?>
