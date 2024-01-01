@@ -839,7 +839,7 @@
 
         elseif($params["action"] == "multi_update_status"){
 
-            return $params;
+            return "TEST";
 
         }
 
