@@ -213,7 +213,7 @@
                         } else {
                         ?>
                             <tr>
-                                <td colspan="6">Empty</td>
+                                <td colspan="6" text-center>Empty</td>
                             </tr>
                         <?php
                         }
