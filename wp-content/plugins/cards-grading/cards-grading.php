@@ -540,6 +540,9 @@
         elseif( $params['type'] == "consigned_orders" ){
             $what_array = array("Order Consigned", "Order Partial Consignment", "Ready For Payment");
         }
+        elseif( $params['type'] == "for_payment" ){
+            $what_array = array("Ready For Payment");
+        }
                         
         $args = array(
             'meta_query' => array(
