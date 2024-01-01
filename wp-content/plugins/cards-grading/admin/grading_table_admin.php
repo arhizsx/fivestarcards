@@ -76,7 +76,7 @@
                     if( $posts ){
                         foreach($posts as $post){
                     ?>
-                    <tr class="card-row" data-post_id="" data-card=''>
+                    <tr class="pending-admin-order-row" data-post_id="" data-card=''>
                         <td><?php echo $post->ID; ?></td>
                         <td></td>
                         <td></td>
