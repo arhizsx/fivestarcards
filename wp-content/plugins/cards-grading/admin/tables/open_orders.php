@@ -15,6 +15,58 @@
             'compare' => 'IN'
         )
     );
+
+
+    // if(isset( $_GET['filtered']) && $_GET["filtered"] == "true"){
+
+    //     if(isset( $_GET["submission_number"]) ){        
+    //         $filter_array = array(
+    //             "key" => 'submission_number',
+    //             'value' => $_GET["submission_number"],
+    //         );
+    
+    //         array_push(
+    //             $meta_query,             
+    //             $filter_array,
+    //         );
+    
+    //     }
+    
+    //     if(isset( $_GET["user_id"]) ){
+            
+    //         $filter_array = array(
+    //             "key" => 'user_id',
+    //             'value' => $_GET["user_id"],
+    //         );
+    
+    //     }
+        
+    //     if(isset( $_GET["status"]) ){
+            
+    //         $filter_array = array(
+    //             "key" => 'status',
+    //             'value' => $_GET["status"],
+    //         );
+    
+    //     }
+    
+    //     if(isset( $_GET["grading_type"]) ){
+            
+    //         $filter_array = array(
+    //             "key" => 'grading_type',
+    //             'value' => $_GET["grading_type"],
+    //         );
+    
+    //     }
+    
+    
+    //     array_push(
+    //         $meta_query,             
+    //         $filter_array,
+    //     );
+    
+    // }
+    
     
     $args = array(
         'meta_query' => array(
@@ -223,44 +275,6 @@ $posts = get_posts($args);
 
                         foreach($posts as $post)
                         {
-
-                            if(isset( $_GET['filtered']) && $_GET["filtered"] == "true"){
-                                
-                                $show_it = false;
-
-                                if(isset( $_GET["submission_number"]) ){    
-                                    if( $meta["submission_number"][0] == $_GET["submission_number"] )
-                                    {
-                                        $show_it = true;
-                                    }    
-                                }
-                            
-                                if(isset( $_GET["user_id"]) ){                                                                
-                                    if( $user_id == $_GET["user_id"] )
-                                    {
-                                        $show_it = true;
-                                    }    
-                                }
-                                
-                                if(isset( $_GET["status"]) ){     
-                                    if( $meta["status"][0] == $_GET["user_id"] )
-                                    {
-                                        $show_it = true;
-                                    }    
-                                }
-                            
-                                if(isset( $_GET["grading_type"]) ){                                
-                                    if( $meta["service_type"][0] == $_GET["grading_type"] )
-                                    {
-                                        $show_it = true;
-                                    }    
-                                }
-                            
-                            } else {
-                                $show_it = true;
-                            }
-                                
-
                             $meta = get_post_meta($post->ID);
 
                             $date_format = get_option( 'date_format' );
@@ -268,25 +282,23 @@ $posts = get_posts($args);
 
                             $user_id = $meta["user_id"][0];
                             $user = get_user_by( "id", $user_id );
-                            
-                           if( $show_it ) {
+                                                        
                 ?>
-                            <tr class="" data-post_id="<?php echo $post->ID; ?>">
-                                <td><?php echo get_the_date( $date_format, $post->ID ) ?><br><span style='font-size:.7em !important;'><?php echo get_the_time( $time_format, $post->ID ); ?></span></td>
-                                <td><?php echo $user->display_name; ?><br> <small style="font-size: 11px;"><?php echo $user_id + 1000; ?></small></td>
-                                <td><?php echo $meta["order_number"][0]; ?></td>
-                                <td><?php echo $meta["grading_type"][0]; ?><br><span style='font-size:.7em !important;'><?php echo  $meta["service_type"][0]; ?></span></td>
-                                <td><?php echo $meta["submission_number"][0]; ?></td>
-                                <td><?php echo $meta["status"][0]; ?></td>
-                                <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
-                                <td class="text-end">
-                                    <button class="5star_btn btn btn-primary mb-3 admin-order-row" data-action="admin_table_action"  data-post_id="<?php echo $post->ID; ?>">
-                                        ...
-                                    </button>           
-                                </td>
-                            </tr>
-                <?php       
-                            }
+                <tr class="" data-post_id="<?php echo $post->ID; ?>">
+                    <td><?php echo get_the_date( $date_format, $post->ID ) ?><br><span style='font-size:.7em !important;'><?php echo get_the_time( $time_format, $post->ID ); ?></span></td>
+                    <td><?php echo $user->display_name; ?><br> <small style="font-size: 11px;"><?php echo $user_id + 1000; ?></small></td>
+                    <td><?php echo $meta["order_number"][0]; ?></td>
+                    <td><?php echo $meta["grading_type"][0]; ?><br><span style='font-size:.7em !important;'><?php echo  $meta["service_type"][0]; ?></span></td>
+                    <td><?php echo $meta["submission_number"][0]; ?></td>
+                    <td><?php echo $meta["status"][0]; ?></td>
+                    <td class='text-end'><?php echo $meta["total_cards"][0]; ?></td>
+                    <td class="text-end">
+                        <button class="5star_btn btn btn-primary mb-3 admin-order-row" data-action="admin_table_action"  data-post_id="<?php echo $post->ID; ?>">
+                            ...
+                        </button>           
+                    </td>
+                </tr>
+                <?php          
                         }
                     } else {
                 ?>
