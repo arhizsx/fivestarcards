@@ -264,28 +264,24 @@
             foreach($posts as $post)
             {            
                 $meta = get_post_meta($post->ID);
-
-                print_r($meta["grading_type"][0]);
-
-
     ?>
         <div class="add_customer_order_log_cards">
             <div class="row mt-4 mb-5 ">
                 <div class="col-xl-3 col-md-6">
                     Order Number
-                    <input type="text" class="form-control" vale="<?php echo $meta["order_number"][0]?>">
+                    <input type="text" class="form-control" value="<?php echo $meta["order_number"][0]; ?>">
                 </div>
                 <div class="col-xl-3 col-md-6">
                     Customer
-                    <input type="text" class="form-control" vale="<?php echo $meta["user_id"][0]?>">
+                    <input type="text" class="form-control" value="<?php echo $meta["user_id"][0]; ?>">
                 </div>
                 <div class="col-xl-3 col-md-6">
                     Grading Type
-                    <input type="text" class="form-control" vale="<?php echo $meta["grading_type"][0]?>">
+                    <input type="text" class="form-control" value="<?php echo $meta["grading_type"][0]; ?>">
                 </div>
                 <div class="col-xl-3 col-md-6">
                     Status
-                    <input type="text" class="form-control" vale="<?php echo $meta["status"][0]?>">
+                    <input type="text" class="form-control" value="<?php echo $meta["status"][0]; ?>">
                 </div>
             </div>
     <?php 
