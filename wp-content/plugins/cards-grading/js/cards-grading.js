@@ -446,10 +446,7 @@ $(document).on("click", ".5star_btn", function(e){
             break;
 
         case "admin_create_order":
-
-            $(document).find(".new_order_fields").toggleClass("d-none");
-            $(document).find(".new_order_details").toggleClass("d-none");
-
+            
             break;
             
         case "multi_update_status":
