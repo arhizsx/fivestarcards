@@ -454,8 +454,6 @@ $(document).on("click", ".5star_btn", function(e){
 
             var order_number = orderAction("admin_create_order", data, '');
 
-            location.href = "/admin/add-customer-order/?order_number=" + order_number;
-
             break;
             
         case "multi_update_status":
