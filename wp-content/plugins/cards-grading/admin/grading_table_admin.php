@@ -453,7 +453,7 @@
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12">
                                     <label for="order_number">Order Number</label>
-                                    <input id="order_number" type="number" name="order_number" style="font-size: 3em !important; text-align: center !important; color: white !important; background-color: red !important;"  value="<?php echo $params['order_number'] ?>" data-field_check="required" disabled  class="form-control mb-2"/>
+                                    <input id="order_number" type="number" name="order_number" style="font-size: 3em !important; text-align: center !important; color: white !important; background-color: red !important;"  value="<?php echo $_GET['order_number'] ?>" data-field_check="required" disabled  class="form-control mb-2"/>
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12">
                                     Are you sure you want to delete this order? This action cannot be reverted.
