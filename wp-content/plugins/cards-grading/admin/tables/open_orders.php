@@ -209,7 +209,7 @@ $posts = get_posts($args);
     ?>
 
     <div class="table-responsive">    
-        <table class='table 5star_my_orders table-bordered table-striped'>
+        <table class='table 5star_my_orders table-bordered table-striped' data-endpoint="https://5starcards.com/wp-json/cards-grading/v1/order-action">
             <thead>
                 <tr>
                     <th>Date</th>
