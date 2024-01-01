@@ -223,7 +223,6 @@ $posts = get_posts($args);
 
                         foreach($posts as $post)
                         {
-                            $show_it = true;
 
                             if(isset( $_GET['filtered']) && $_GET["filtered"] == "true"){
                                 
@@ -257,6 +256,8 @@ $posts = get_posts($args);
                                     }    
                                 }
                             
+                            } else {
+                                $show_it = true;
                             }
                                 
 
