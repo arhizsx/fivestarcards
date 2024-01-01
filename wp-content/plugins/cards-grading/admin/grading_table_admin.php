@@ -254,7 +254,7 @@ $total_dv = 0;
         </div>
     </div> -->
     <div class="add_customer_order_log_cards">
-        <div class="row mb-5 ">
+        <div class="row mt-4 mb-5 ">
             <div class="col-xl-4">
                 Order Number
                 <input type="text" class="form-control">
@@ -273,7 +273,7 @@ $total_dv = 0;
                 <H2 style="color: black;">Cards List</H2>
             </div>
             <div class="col-xl-6 text-end">
-                <button class="5star_btn btn btn-success mb-3 mt-3" data-action="log_card">
+                <button class="5star_btn btn btn-success" data-action="log_card">
                     Log Cards
                 </button>           
             </div>
