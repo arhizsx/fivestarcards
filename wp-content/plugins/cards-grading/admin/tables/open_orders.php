@@ -209,7 +209,7 @@ $posts = get_posts($args);
     ?>
 
     <div class="table-responsive">    
-        <table class='table 5star_my_orders table-bordered 5star_logged_cards table-striped' data-endpoint="https://5starcards.com/wp-json/cards-grading/v1/order-action">
+        <table class='table 5star_my_orders table-bordered 5star_logged_cards table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
                     <th>Date</th>
