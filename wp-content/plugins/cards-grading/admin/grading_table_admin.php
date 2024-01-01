@@ -130,10 +130,10 @@
             
             $posts = get_posts($args);
 
-
-            foreach($posts as $post)
-            {            
-                $meta = get_post_meta($post->ID);
+            if($posts){
+                foreach($posts as $post)
+                {            
+                    $meta = get_post_meta($post->ID);
     ?>
                 <div class="row mt-4 mb-5 ">
                     <div class="col-xl-3 col-md-6">
@@ -154,6 +154,7 @@
                     </div>
                 </div>
     <?php 
+                }
             }
     ?>
             
@@ -181,8 +182,26 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <?php 
+
+                        $args = array(
+                            'meta_query' => array(
+                                array(
+                                    'key' => 'checkout_id',
+                                    'value' => $_GET['order_number']
+                                )
+                            ),
+                            'post_type' => 'cards-grading-card',
+                            'posts_per_page' => -1
+                        );
+
+                        $posts = get_posts($args);
+
+                        if($posts){
+                            foreach($posts as $post){
+                        ?>
                             <tr class="card-row" data-post_id="" data-card=''>
-                                <td></td>
+                                <td>-</td>
                                 <td></td>
                                 <td></td>
                                 <td><?php echo $card["player"]; ?></td>
@@ -192,6 +211,16 @@
                             <tr>
                                 <td class="text-center" colspan="9">Empty</td>
                             </tr>
+                        <?php 
+                            }
+                        } else {
+                        ?>
+                            <tr colspan="6">
+                                Empty
+                            </tr>
+                        <?php
+                        }
+                        ?>
                         </tbody>
                     </table>
                 </div>
