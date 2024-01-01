@@ -81,7 +81,7 @@
                             $time_format = get_option( 'time_format' );
 
                             $user_id = $meta["user_id"][0];
-                            $user = get_user_by( "id", $user_id );
+                            $user = get_user_by( "id", $user_id );        
 
                     ?>
                     <tr class="" data-post_id="<?php echo $post->ID; ?>" data-card=''>
@@ -134,6 +134,8 @@
                 foreach($posts as $post)
                 {            
                     $meta = get_post_meta($post->ID);
+                    $user = get_user_by( "id", $meta["user_id"][0] );        
+
     ?>
                 <div class="row mt-4 mb-5 ">
                     <div class="col-xl-3 col-md-6">
@@ -142,7 +144,7 @@
                     </div>
                     <div class="col-xl-3 col-md-6">
                         Customer
-                        <input type="text" class="form-control" value="<?php echo $meta["user_id"][0]; ?>">
+                        <input type="text" class="form-control" value="<?php echo $user->display_name; ?>">
                     </div>
                     <div class="col-xl-3 col-md-6">
                         Grading Type
