@@ -326,10 +326,10 @@ $total_dv = 0;
                 </div>
                 <div class="row mb-4 border-top pt-3">
                     <div class="col-12 text-end">
-                        <button class="5star_btn btn btn-secondary" data-action="log_card">
+                        <a href="/admin/add-customer-order" class="5star_btn btn btn-secondary">
                             Cancel Order
-                        </button>           
-                        <button class="5star_btn btn btn-primary" data-action="log_card">
+                        </a>           
+                        <button class="5star_btn btn btn-primary">
                             Add To Customer
                         </button>           
                     </div>
