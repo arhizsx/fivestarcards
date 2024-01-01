@@ -327,7 +327,7 @@ $total_dv = 0;
                 <div class="row mb-4 border-top pt-3">
                     <div class="col-12 text-end">
                         <a href="/admin/add-customer-order" class="5star_btn btn btn-secondary">
-                            Cancel Order
+                            Cancel
                         </a>           
                         <button class="5star_btn btn btn-primary">
                             Add To Customer
