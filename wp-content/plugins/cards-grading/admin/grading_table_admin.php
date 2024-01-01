@@ -77,7 +77,7 @@
                         foreach($posts as $post){
                     ?>
                     <tr class="card-row" data-post_id="" data-card=''>
-                        <td></td>
+                        <td><?php echo $post->ID; ?></td>
                         <td></td>
                         <td></td>
                         <td></td>
