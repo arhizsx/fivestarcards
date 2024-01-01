@@ -83,7 +83,7 @@
             'cards-grading',
             plugin_dir_url(__FILE__) . 'js/cards-grading.js',
             array('jquery'),
-            128,
+            129,
             true
         );
 
@@ -836,6 +836,14 @@
             return $this->doConfirmAdminDeleteOrder($params);
 
         }
+
+        elseif($params["action"] == "multi_update_status"){
+
+            return $params;
+
+        }
+
+        
 
         return $params;
 

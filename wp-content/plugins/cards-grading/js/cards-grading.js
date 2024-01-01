@@ -453,11 +453,21 @@ $(document).on("click", ".5star_btn", function(e){
             break;
             
         case "multi_update_status":
+            
             var order_list = $(document).find("table.5star_my_orders tbody tr");
+            var orders = [];
 
             $.each(order_list, function(){
-                console.log( $(this).data("post_id") );
+                orders.push($(this).data("post_id"))
             });
+
+            var new_status = $(document).find("select[name='multi_update_status_select ']").val();
+            var data = {"new_status" : new_status};
+
+            
+            if (orderAction("multi_update_status", data, orders) ){
+                
+            }
 
             break;
 
@@ -727,6 +737,7 @@ function orderAction(action, data, order_number){
     });
     
 }
+
 
 function cardAction(action, value, post_id, parent_element ){
 
