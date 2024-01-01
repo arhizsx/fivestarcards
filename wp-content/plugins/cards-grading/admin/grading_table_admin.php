@@ -220,10 +220,10 @@ $total_dv = 0;
                     <option>Select Customer</option>
                     <?php 
                         foreach( $users as $user){
-                            if( $user->roles[0] == 'um_member' ){
+                            // if( $user->roles[0] == 'um_member' ){
                                 $id = $user->ID + 1000;
                                 echo "<option value='" . $id . "'>" .  $user->display_name . '</option>';    
-                            }
+                            // }
                         }
                     ?>
                 </select>
@@ -278,7 +278,7 @@ $total_dv = 0;
         if(isset($_GET["order_number"])) {
 
 
-            
+
     ?>
         <div class="add_customer_order_log_cards">
             <div class="row mt-4 mb-5 ">
