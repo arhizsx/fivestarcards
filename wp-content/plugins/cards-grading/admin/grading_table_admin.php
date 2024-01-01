@@ -81,7 +81,7 @@
                             $time_format = get_option( 'time_format' );
 
                             $user_id = $meta["user_id"][0];
-                            $user = get_user_by( "id", $user_id );        
+                            $user = get_user_by( "id", $user_id );                                                                  
 
                     ?>
                     <tr class="" data-post_id="<?php echo $post->ID; ?>" data-card=''>
@@ -130,6 +130,7 @@
             
             $posts = get_posts($args);
 
+
             if($posts){
                 foreach($posts as $post)
                 {            
@@ -157,6 +158,26 @@
                 </div>
     <?php 
                 }
+
+                $args = array(
+                    'meta_query' => array(
+                        array(
+                            'key' => 'name',
+                            'value' => $meta["grading_type"][0]
+                        )
+                    ),
+                    'post_type' => 'cards-grading-type',
+                    'posts_per_page' => -1
+                );
+                
+                $gradings = get_posts($args);
+
+                if($gradings){
+                    foreach($gradings as $grading){
+                        $grading_meta = get_post_meta($grading->ID);                        
+                    }
+                }
+    
             }
     ?>
             
@@ -165,7 +186,7 @@
                         <H2 style="color: black;">Cards List</H2>
                     </div>
                     <div class="col-xl-6 col-md-6 text-end">
-                        <button class="5star_btn btn btn-success" data-action="add_card" data-type="<?php echo $meta["grading_type"][0]; ?>">
+                        <button class="5star_btn btn btn-success" data-action="add_card" data-type="<?php echo $grading_meta["type"][0]; ?>">
                             Log Cards
                         </button>           
                     </div>
@@ -265,7 +286,6 @@
         }
     ?>
 </div>
-
 
 <div class="modal fade dxmodal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
 	<div class="modal-dialog" id="dxmodal">
