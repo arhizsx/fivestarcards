@@ -476,6 +476,13 @@ $(document).on("click", ".5star_btn", function(e){
 
             break;
 
+        case "admin_assign_order":
+
+            if (orderAction("admin_assign_order", "", $(this).data("order_number")) ){
+
+            }
+            
+            break;
 
         default:
             console.log("Button not configured: " + $(this).data("action"));
