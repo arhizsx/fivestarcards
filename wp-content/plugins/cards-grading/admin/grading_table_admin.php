@@ -211,27 +211,27 @@
                     foreach($cards as $card){
 
                         $cardmeta = get_post_meta($card->ID);
-                        $card = json_decode($cardmeta['card'][0], true);
+                        $active_card = json_decode($cardmeta['card'][0], true);
 
-                        $card_total_dv = $card["dv"] * $card["quantity"];
-                        $card_grading_charge = $card["per_card"] * $card["quantity"];
+                        $card_total_dv = $active_card["dv"] * $active_card["quantity"];
+                        $card_grading_charge = $active_card["per_card"] * $active_card["quantity"];
     
                         $grading_charge = $grading_charge + $card_grading_charge;
                         $total_dv = $total_dv + $card_total_dv;
                         
         
                 ?>
-                    <tr class="card-row" data-post_id="<?php echo $card->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
+                    <tr class="card-row" data-post_id="<?php echo $card->ID; ?>" data-card='<?php echo json_encode($active_card) ?>'>
                         <td>
                             <?php 
-                                echo $card["year"]; 
+                                echo $active_card["year"]; 
                                 print_r($card);
                             ?>
                         </td>
-                        <td><?php echo $card["brand"]; ?></td>
-                        <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
-                        <td><?php echo $card["player"]; ?></td>
-                        <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
+                        <td><?php echo $active_card["brand"]; ?></td>
+                        <td><?php echo $active_card["card_number"]; ?><br><small><?php echo $active_card["attribute"]; ?></small></td>
+                        <td><?php echo $active_card["player"]; ?></td>
+                        <td class='text-end'><?php echo "$" . number_format((float)$active_card["dv"], 2, '.', ''); ?></td>
                         <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                     </tr>
                 <?php 
