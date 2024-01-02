@@ -729,6 +729,8 @@ function orderAction(action, data, order_number){
         url = $(document).find(".5star_logged_cards").data("order_endpoint");
     }
 
+    console.log(url);
+
     $.ajax({
         method: 'post',
         url: url,
