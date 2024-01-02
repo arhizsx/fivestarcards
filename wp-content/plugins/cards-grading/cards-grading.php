@@ -1544,6 +1544,13 @@
 
 
     function doDeleteCard($params){
+
+        if($params["action"] == "delete"){
+
+            wp_delete_post( $params["post_id"], true );
+            return true;
+        }   
+
         return $params;
     }
 
