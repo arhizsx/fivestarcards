@@ -214,7 +214,7 @@
                         $card = json_decode($cardmeta['card'][0], true);
         
                 ?>
-                    <tr class="card-row" data-post_id="" data-card=''>
+                    <tr class="card-row" data-post_id="<?php echo $card->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
                         <td><?php echo $card["year"]; ?></td>
                         <td><?php echo $card["brand"]; ?></td>
                         <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
