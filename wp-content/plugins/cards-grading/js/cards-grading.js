@@ -723,14 +723,14 @@ function orderAction(action, data, order_number){
 
     var xurl = "";
 
-    var override  = ["confirm_admin_delete_order", "admin_assign_order"];
+    var override  = ["admin_create_order", "admin_assign_order"];
 
 
     if(  $.inArray(action, override)  == 0 ){
-        var xurl = $(document).find(".5star_logged_cards").data("endpoint");
+        var xurl = $(document).find(".5star_logged_cards").data("order_endpoint");
     } 
     else {
-        var xurl = $(document).find(".5star_logged_cards").data("order_endpoint");
+        var xurl = $(document).find(".5star_logged_cards").data("endpoint");
     }
 
     $.ajax({
