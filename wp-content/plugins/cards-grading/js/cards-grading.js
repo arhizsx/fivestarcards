@@ -731,41 +731,41 @@ function orderAction(action, data, order_number){
 
     console.log(url);
 
-    // $.ajax({
-    //     method: 'post',
-    //     url: url,
-    //     headers: {'X-WP-Nonce': nonce },
-    //     data: {
-    //         'action' : action,
-    //         'order_number': order_number,
-    //         'data': data
-    //     },
-    //     success: function(resp){
+    $.ajax({
+        method: 'post',
+        url: url,
+        headers: {'X-WP-Nonce': nonce },
+        data: {
+            'action' : action,
+            'order_number': order_number,
+            'data': data
+        },
+        success: function(resp){
 
-    //         if(action == "admin_create_order"){
-    //             console.log(resp);
+            if(action == "admin_create_order"){
+                console.log(resp);
 
-    //             // location.href = "/admin/add-customer-order/?order_number=" + resp;
-    //         } 
-    //         else {
+                // location.href = "/admin/add-customer-order/?order_number=" + resp;
+            } 
+            else {
 
-    //             if(resp ==true){
-    //                 $(document).find(".dxmodal").modal("hide");
-    //                 location.reload();
-    //             }
-    //             else if(resp.action == "back"){
-    //                 $(document).find(".dxmodal").modal("hide");
-    //                 location.href = resp.back;
+                if(resp ==true){
+                    $(document).find(".dxmodal").modal("hide");
+                    location.reload();
+                }
+                else if(resp.action == "back"){
+                    $(document).find(".dxmodal").modal("hide");
+                    location.href = resp.back;
     
-    //             } else {
-    //                 console.log("Order Action Failed");
-    //             }
+                } else {
+                    console.log("Order Action Failed");
+                }
     
-    //         }
+            }
 
 
-    //     }
-    // });
+        }
+    });
     
 }
 
