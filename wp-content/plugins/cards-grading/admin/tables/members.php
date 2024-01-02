@@ -31,6 +31,8 @@
 
                     if($users){
                         foreach($users as $user){
+
+                            print_r($user);
                 ?>
                     <tr>
                         <td>
