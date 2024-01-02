@@ -731,7 +731,9 @@ function orderAction(action, data, order_number){
     } else {
         var xurl = $(document).find(".5star_logged_cards").data("endpoint");
     }
-    alert( xurl );
+
+    console.log(override);
+
     $.ajax({
         method: 'post',
         url: xurl,
