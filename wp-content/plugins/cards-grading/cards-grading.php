@@ -704,6 +704,11 @@
 
 
         }
+        elseif($params["action"] == "delete"){
+
+            return $this->doDeleteCard($params);
+
+        }
         elseif($params["action"] == "checkout"){
 
             return $this->doCheckout($params);
@@ -1535,6 +1540,11 @@
         update_post_meta($params["order_number"], 'service_type', "Card Grading" );   
 
         return true;
+    }
+
+
+    function doDeleteCard($params){
+        return $params;
     }
 
     //*********** HANDLER FUNCTIONS *********** //
