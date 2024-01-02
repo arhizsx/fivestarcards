@@ -1,5 +1,5 @@
 <div class="m-0 p-0">
-<div class="row">
+    <div class="row">
         <div class="col-xl-6">
             <H1 style="color: black;">Admins</H1>            
         </div>
@@ -31,7 +31,7 @@
 
                     if($users){
                         foreach($users as $user){
-                            if($user->roles[0] == "um_member"){
+                            if($user->roles[0] == "um_admin"){
 
                 ?>
                     <tr>
