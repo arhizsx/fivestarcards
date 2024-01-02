@@ -67,7 +67,7 @@
             <H1 style="color: black;">Members</H1>            
         </div>
         <div class="col-xl-6 text-end">
-            
+            <input class="" type="text">
         </div>
     </div>
     <div class="table-responsive">    
