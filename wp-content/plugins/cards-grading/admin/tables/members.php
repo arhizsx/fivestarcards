@@ -31,8 +31,6 @@
 
                     if($users){
                         foreach($users as $user){
-
-                            print_r($user->roles);
                 ?>
                     <tr>
                         <td>
@@ -45,7 +43,7 @@
                             <?php  echo $user->user_email ?>
                         </td>
                         <td>
-                            <?php  echo $user->um_role ?>
+                            <?php  echo $user->roles[0] ?>
                         </td>
                         <td class="text-end">
                             AAA
