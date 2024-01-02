@@ -279,7 +279,7 @@
                     <a href="/admin/add-customer-order" class="5star_btn btn btn-secondary">
                         Go Back
                     </a>           
-                    <button class="5star_btn btn btn-primary">
+                    <button class="btn border btn-primary 5star_btn" data-action="admin_assign_order" data-order_number="<?php echo $_GET['order_number'] ?>" >
                         Assign To Customer
                     </button>           
                 </div>
