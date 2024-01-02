@@ -1,7 +1,7 @@
 <div class="m-0 p-0">
     <div class="row">
         <div class="col-xl-6">
-            <H1 style="color: black;">Admins</H1>            
+            <H1 style="color: black;">Administrators</H1>            
         </div>
         <div class="col-xl-6 text-end">
             
@@ -48,7 +48,7 @@
                             <?php  echo ucwords(str_replace("um_", "", $user->roles[0])) ?>
                         </td>
                         <td class="text-end">
-                            <button class="btn border btn-success 5star_btn" data-action='edit_member' data-type=''>...</button>
+                            <button class="btn border btn-success 5star_btn" data-action='edit_admin' data-type=''>...</button>
                         </td>
                     </tr>
                 <?php    
@@ -115,7 +115,7 @@
                             <?php  echo ucwords(str_replace("um_", "", $user->roles[0])) ?>
                         </td>
                         <td class="text-end">
-                            AAA
+                            <button class="btn border btn-primary 5star_btn" data-action='edit_member' data-type=''>...</button>
                         </td>
                     </tr>
                 <?php    
