@@ -14,14 +14,47 @@
                     <th>Customer #</th>
                     <th>Customer</th>
                     <th>Email</th>
-                    <th></th>
                     <th class='text-end'>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="text-center" colspan="8">Empty</td>
-                </tr>
+                <?php 
+
+                    $args = array(
+                        'orderby'    => 'display_name',
+                        'order'      => 'ASC'
+                    );   
+
+                    $users = get_users( $args );
+
+
+                    if($users){
+                        foreach($users as $user){
+                ?>
+                    <tr>
+                        <td>
+                            <?php  echo $user->ID ?>
+                        </td>
+                        <td>
+                            <?php  echo $user->display_name ?>
+                        </td>
+                        <td>
+                            <?php  echo $user->user_email ?>
+                        </td>
+                        <td>
+                            AAA
+                        </td>
+                    </tr>
+                <?php        
+                        }
+                    } else {
+                ?>
+                    <tr>
+                        <td class="text-center" colspan="4">Empty</td>
+                    </tr>
+                <?php                  
+                    }
+                ?>                
             </tbody>
         </table>
     </div>
