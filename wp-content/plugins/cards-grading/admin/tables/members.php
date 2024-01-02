@@ -63,10 +63,10 @@
     </div>
 
     <div class="row">
-        <div class="col-xl-6">
+        <div class="col-6">
             <H1 style="color: black;">Members</H1>            
         </div>
-        <div class="col-xl-6 text-end">
+        <div class="col-6 text-end">
             <input class="btn mt-3" type="text" >
         </div>
     </div>
