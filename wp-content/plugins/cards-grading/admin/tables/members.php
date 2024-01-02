@@ -64,7 +64,26 @@
 
     <div class="row">
         <div class="col-6">
-            <H1 style="color: black;">Members</H1>            
+            <?php 
+
+                $args = array(
+                    'orderby'    => 'display_name',
+                    'order'      => 'ASC'
+                );
+
+                $users = get_users( $args );
+
+                $total_users = 0;
+
+                if($users){
+                    foreach($users as $user){
+                        if($user->roles[0] == "um_member"){
+                            $total_users++;
+                        }
+                    }
+                }
+            ?>
+            <H1 style="color: black;">Members (<?php echo $total_users;?>)</H1>            
         </div>
         <div class="col-6 text-end">
             <input class="btn mt-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target="#members_table">
@@ -82,14 +101,6 @@
             </thead>
             <tbody>
                 <?php 
-
-                    $args = array(
-                        'orderby'    => 'display_name',
-                        'order'      => 'ASC'
-                    );   
-
-                    $users = get_users( $args );
-
 
                     if($users){
                         foreach($users as $user){
