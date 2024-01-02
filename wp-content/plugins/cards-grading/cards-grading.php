@@ -709,6 +709,11 @@
             return $this->doDeleteCard($params);
 
         }
+        elseif($params["action"] == "update"){
+
+            return $this->doUpdateCard($params);
+
+        }
         elseif($params["action"] == "checkout"){
 
             return $this->doCheckout($params);
@@ -1421,8 +1426,6 @@
         return true;
     }
 
-    
-
     public function doConfirmAdminDeleteOrder($params){
 
 
@@ -1542,7 +1545,6 @@
         return true;
     }
 
-
     function doDeleteCard($params){
 
         if($params["action"] == "delete"){
@@ -1554,6 +1556,17 @@
         return $params;
     }
 
+    function doUpdateCard($params){
+
+        if($params["action"] == "update"){
+
+            return $params;
+        }   
+
+        return $params;
+    }
+
+    
     //*********** HANDLER FUNCTIONS *********** //
 
  }
