@@ -14,7 +14,6 @@
                     <th>Customer #</th>
                     <th>Customer</th>
                     <th>Email</th>
-                    <th>Role</th>
                     <th class='text-end'>Action</th>
                 </tr>
             </thead>
@@ -43,9 +42,6 @@
                         </td>
                         <td>
                             <?php  echo $user->user_email ?>
-                        </td>
-                        <td>
-                            <?php  echo ucwords(str_replace("um_", "", $user->roles[0])) ?>
                         </td>
                         <td class="text-end">
                             <button class="btn border btn-success 5star_btn" data-action='demote_admin' data-user_id='<?php echo $user->ID; ?>'>Demote</button>
@@ -81,7 +77,6 @@
                     <th>Customer #</th>
                     <th>Customer</th>
                     <th>Email</th>
-                    <th>Role</th>
                     <th class='text-end'>Action</th>
                 </tr>
             </thead>
@@ -110,9 +105,6 @@
                         </td>
                         <td>
                             <?php  echo $user->user_email ?>
-                        </td>
-                        <td>
-                            <?php  echo ucwords(str_replace("um_", "", $user->roles[0])) ?>
                         </td>
                         <td class="text-end">
                             <button class="btn border btn-primary 5star_btn" data-action='make_admin' data-user_id='<?php echo $user->ID; ?>'>Promote</button>
