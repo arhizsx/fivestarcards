@@ -745,6 +745,9 @@ function orderAction(action, data, order_number){
             if(action == "admin_create_order"){
                 location.href = "/admin/add-customer-order/?order_number=" + resp;
             } 
+            else if(action == "admin_assign_order" && resp){
+                location.href = "/admin/add-customer-order";
+            }
             else {
 
                 if(resp ==true){
