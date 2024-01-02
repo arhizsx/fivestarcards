@@ -90,7 +90,7 @@
             </button>
         </div>
     </div>
-    <H3 style="color: black">Pending Orders</H3>
+    <H3 style="color: black">Pending Assignment</H3>
     <div class="table-responsive">    
         <table class='table 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
