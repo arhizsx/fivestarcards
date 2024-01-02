@@ -472,8 +472,8 @@
                 <div class="" id="view_card_form_box">
                     <div class="modal-body py-2 px-3">
                         <forn id="delete_order_form">
-
-                            <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
+                            <input type="hidden" name="checkout_id" value='<?php echo $_GET["order_number"]; ?>'/>
+                            <input type="hidden" name="user_id" value='<?php echo $meta["user_id"][0]; ?>'/>
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12">
                                     <label for="order_number">Order Number</label>
