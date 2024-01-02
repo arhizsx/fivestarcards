@@ -547,6 +547,28 @@
         elseif( $params['type'] == "for_payment" ){
             $what_array = array("Ready For Payment");
         }
+        elseif( $params["type"] == "members"){
+
+            $args = array(
+                'orderby'    => 'display_name',
+                'order'      => 'ASC'
+            );
+
+            $users = get_users( $args );
+
+            $total_users = 0;
+
+            if($users){
+                foreach($users as $user){
+                    if($user->roles[0] == "um_member"){
+                        $total_users++;
+                    }
+                }
+            }
+
+            return $total_users;
+
+        }
                         
         $args = array(
             'meta_query' => array(
