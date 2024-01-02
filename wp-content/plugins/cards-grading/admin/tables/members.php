@@ -33,7 +33,7 @@
                 ?>
                     <tr>
                         <td>
-                            <?php  echo $user->ID ?>
+                            <?php  echo $user->ID + 1000 ?>
                         </td>
                         <td>
                             <?php  echo $user->display_name ?>
