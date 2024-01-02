@@ -723,7 +723,7 @@ function orderAction(action, data, order_number){
 
     var xurl = "";
 
-    var override  = ["admin_create_order", "admin_assign_order"];
+    var override  = ["admin_create_order", "admin_assign_order", "confirm_admin_delete_order"];
 
 
     if(  $.inArray(action, override)  == 0 ){
