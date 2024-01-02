@@ -731,8 +731,6 @@ function orderAction(action, data, order_number){
         url = $(document).find(".5star_logged_cards").data("endpoint");
     }
 
-    console.log(url);
-
     $.ajax({
         method: 'post',
         url: url,
@@ -745,9 +743,7 @@ function orderAction(action, data, order_number){
         success: function(resp){
 
             if(action == "admin_create_order"){
-                console.log(resp);
-
-                // location.href = "/admin/add-customer-order/?order_number=" + resp;
+                location.href = "/admin/add-customer-order/?order_number=" + resp;
             } 
             else {
 
