@@ -31,6 +31,7 @@
 
                     if($users){
                         foreach($users as $user){
+                            if($user->roles[0] != "administrator"){
                 ?>
                     <tr>
                         <td>
@@ -49,7 +50,8 @@
                             AAA
                         </td>
                     </tr>
-                <?php        
+                <?php    
+                            }    
                         }
                     } else {
                 ?>
