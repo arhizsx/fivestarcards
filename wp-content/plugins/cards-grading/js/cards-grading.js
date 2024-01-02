@@ -725,6 +725,7 @@ function orderAction(action, data, order_number){
 
     var override  = ["admin_create_order", "admin_assign_order", "confirm_admin_delete_order"];
 
+    alert($.inArray(action, override));
 
     if(  $.inArray(action, override)  == 0 ){
         var xurl = $(document).find(".5star_logged_cards").data("order_endpoint");
