@@ -67,11 +67,11 @@
             <H1 style="color: black;">Members</H1>            
         </div>
         <div class="col-6 text-end">
-            <input class="btn mt-3 px-2" style="text-align: left;" placeholder="Search" type="text" >
+            <input class="btn mt-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target="#members_table">
         </div>
     </div>
     <div class="table-responsive">    
-        <table class='table 5star_my_orders table-bordered table-striped'>
+        <table class='table 5star_my_orders table-bordered table-striped' id="members_table">
             <thead>
                 <tr>
                     <th>Customer #</th>
