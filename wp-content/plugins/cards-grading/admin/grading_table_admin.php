@@ -274,7 +274,7 @@
                     <a href="/admin/add-customer-order" class="5star_btn btn btn-secondary">
                         Go Back
                     </a>           
-                    <button class="5star_btn btn btn-danger">
+                    <button class="btn border btn-danger 5star_btn" data-action="admin_delete_order" data-order_number="<?php echo $_GET['order_number'] ?>" >Delete Order</button>
                         Delete Order
                     </button>           
                     <button class="5star_btn btn btn-primary">
