@@ -721,21 +721,20 @@ function orderAction(action, data, order_number){
 
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
 
-    var url = "";
+    var xurl = "";
 
     var override  = ["confirm_admin_delete_order", "admin_assign_order"];
 
 
     if(  $.inArray(action, override)  != -1 ){
-        url = $(document).find(".5star_logged_cards").data("order_endpoint");
+        var xurl = $(document).find(".5star_logged_cards").data("order_endpoint");
     } else {
-        url = $(document).find(".5star_logged_cards").data("endpoint");
+        var xurl = $(document).find(".5star_logged_cards").data("endpoint");
     }
-    alert( url );
-
+    alert( xurl );
     $.ajax({
         method: 'post',
-        url: url,
+        url: xurl,
         headers: {'X-WP-Nonce': nonce },
         data: {
             'action' : action,
