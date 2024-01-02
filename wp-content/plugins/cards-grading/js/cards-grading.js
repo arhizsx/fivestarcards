@@ -723,6 +723,10 @@ function deleteCard(){
         success: function(resp){
 
             $(document).find(".view_card").modal("hide");
+
+            if(resp){
+                location.reload();
+            }
             
         }
     });
