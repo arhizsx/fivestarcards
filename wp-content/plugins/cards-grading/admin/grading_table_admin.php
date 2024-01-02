@@ -256,7 +256,7 @@
                         Total DV          
                     </div>
                     <div class="col text-end" id="total_dv">
-                        
+                        $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>                    
                     </div>
                 </div>
                 <div class="row">
@@ -264,7 +264,7 @@
                         Grading Charge    
                     </div>
                     <div class="col text-end"  id="grading_charges">
-                    
+                    $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>                    
                     </div>
                 </div>
                 </div>
