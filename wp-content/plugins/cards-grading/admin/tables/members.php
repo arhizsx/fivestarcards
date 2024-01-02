@@ -44,7 +44,7 @@
                             <?php  echo $user->user_email ?>
                         </td>
                         <td>
-                            <?php  echo strtoupper(str_replace("um_", "", $user->roles[0])) ?>
+                            <?php  echo ucwords(str_replace("um_", "", $user->roles[0])) ?>
                         </td>
                         <td class="text-end">
                             AAA
