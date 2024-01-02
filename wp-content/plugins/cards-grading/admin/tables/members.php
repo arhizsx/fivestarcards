@@ -14,6 +14,7 @@
                     <th>Customer #</th>
                     <th>Customer</th>
                     <th>Email</th>
+                    <th>Role</th>
                     <th class='text-end'>Action</th>
                 </tr>
             </thead>
@@ -42,6 +43,9 @@
                             <?php  echo $user->user_email ?>
                         </td>
                         <td>
+                            <?php  echo $user->um_role ?>
+                        </td>
+                        <td class="text-end">
                             AAA
                         </td>
                     </tr>
