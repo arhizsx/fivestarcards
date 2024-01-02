@@ -481,7 +481,7 @@ $(document).on("click", ".5star_btn", function(e){
             if (orderAction("admin_assign_order", "", $(this).data("order_number")) ){
 
             }
-            
+
             break;
 
         default:
@@ -723,7 +723,9 @@ function orderAction(action, data, order_number){
 
     var url = $(document).find(".5star_logged_cards").data("endpoint");
 
-    if(action == "confirm_admin_delete_order"){
+    var override  = ["confirm_admin_delete_order", "admin_assign_order"];
+
+    if(  $.inArray(action, override) ){
         url = $(document).find(".5star_logged_cards").data("order_endpoint");
     }
 
