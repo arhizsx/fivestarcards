@@ -1520,7 +1520,7 @@
             update_post_meta( $post->ID, "status", "Received" );
         }
 
-
+        return true;
     }
 
     //*********** HANDLER FUNCTIONS *********** //
