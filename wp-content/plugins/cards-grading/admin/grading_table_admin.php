@@ -446,7 +446,6 @@
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
                         <button class="btn border btn-danger 5star_btn" data-action="delete_card">Delete</button>
-                        <button class="btn border btn-primary 5star_btn" data-action="update_card">Update</button>
                     </div>
                 </div>
                 <div class="d-none text-center p-5" id="error">
