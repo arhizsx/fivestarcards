@@ -843,7 +843,7 @@
 
         elseif($params["action"] == "confirm_admin_delete_manual_order"){
 
-            return $this->doConfirmAdminDeleteOrder($params);
+            return $this->doConfirmAdminDeleteOrder($params); 
 
         }
 
