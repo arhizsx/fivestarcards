@@ -391,7 +391,8 @@
                     <div class="modal-body py-2 px-3">
                             <forn id="add_card_form">
 
-                                <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
+                                <input type="hidden" name="checkout_id" value='<?php echo $_GET["order_number"]; ?>'/>
+                                <input type="hidden" name="user_id" value='<?php echo $meta["user_id"][0]; ?>'/>
                                 <input type="hidden" name="grading" value=''/>
                                 <input type="hidden" name="max_dv" value=''/>
                                 <input type="hidden" name="post_id" value=''/>
