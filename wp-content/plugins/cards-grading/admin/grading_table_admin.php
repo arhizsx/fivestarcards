@@ -225,7 +225,6 @@
                         <td>
                             <?php 
                                 echo $active_card["year"]; 
-                                print_r($card);
                             ?>
                         </td>
                         <td><?php echo $active_card["brand"]; ?></td>
