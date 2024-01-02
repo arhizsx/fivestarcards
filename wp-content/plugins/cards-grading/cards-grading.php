@@ -852,8 +852,13 @@
             return $this->doAdminCreateOrder($params);
 
         }
-        
-        
+
+        elseif( $params["action"] == "admin_assign_order" ){
+
+            return $this->doAdminAssignOrder($params);
+
+        }
+            
 
         return $params;
 
@@ -1493,6 +1498,30 @@
         return $params;
     }
 
+    function doAdminAssignOrder($params){
+
+        update_post_meta($params["order_number"], 'status', "Processing Order");   
+
+        $args = array(
+            'meta_query' => array(
+                array(
+                    'key' => 'checkout_id',
+                    'value' => $params["order_number"]
+                )
+            ),
+            'post_type' => 'cards-grading-card',
+            'posts_per_page' => -1
+        );
+
+        $posts = get_posts($args);
+
+        foreach($posts as $post)
+        {
+            update_post_meta( $post->ID, "status", "Received" );
+        }
+
+
+    }
 
     //*********** HANDLER FUNCTIONS *********** //
 
