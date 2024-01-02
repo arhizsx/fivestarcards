@@ -274,11 +274,11 @@
                     <a href="/admin/add-customer-order" class="5star_btn btn btn-secondary">
                         Go Back
                     </a>           
-                    <button class="5star_btn btn btn-primary">
-                        Assign To Customer
-                    </button>           
                     <button class="5star_btn btn btn-danger">
                         Delete Order
+                    </button>           
+                    <button class="5star_btn btn btn-primary">
+                        Assign To Customer
                     </button>           
                 </div>
             </div>
