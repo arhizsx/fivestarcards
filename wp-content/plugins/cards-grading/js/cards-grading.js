@@ -732,7 +732,7 @@ function orderAction(action, data, order_number){
         var xurl = $(document).find(".5star_logged_cards").data("endpoint");
     }
 
-    console.log(override);
+    console.log($.inArray(action, override));
 
     $.ajax({
         method: 'post',
