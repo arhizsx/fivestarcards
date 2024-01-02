@@ -48,7 +48,7 @@
                             <?php  echo ucwords(str_replace("um_", "", $user->roles[0])) ?>
                         </td>
                         <td class="text-end">
-                            <button class="btn border btn-success 5star_btn" data-action='edit_admin' data-type=''>...</button>
+                            <button class="btn border btn-success 5star_btn" data-action='edit_admin' data-type=''>Demote</button>
                         </td>
                     </tr>
                 <?php    
@@ -115,7 +115,7 @@
                             <?php  echo ucwords(str_replace("um_", "", $user->roles[0])) ?>
                         </td>
                         <td class="text-end">
-                            <button class="btn border btn-primary 5star_btn" data-action='edit_member' data-type=''>...</button>
+                            <button class="btn border btn-primary 5star_btn" data-action='edit_member' data-type=''>Make Admin</button>
                         </td>
                     </tr>
                 <?php    
