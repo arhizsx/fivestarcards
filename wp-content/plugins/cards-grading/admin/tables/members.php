@@ -11,16 +11,10 @@
         <table class='table 5star_my_orders table-bordered table-striped'>
             <thead>
                 <tr>
-                    <th>Date</th>
-                    <th>
-                    </th>
-                    <th>Order #</th>
-                    <th>
-                    </th>
-                    <th>
-                    </th>
-                    <th class='text-end'>Total Cards</th>
-                    <th class='text-end'>To Receive</th>
+                    <th>Customer #</th>
+                    <th>Customer</th>
+                    <th>Email</th>
+                    <th></th>
                     <th class='text-end'>Action</th>
                 </tr>
             </thead>
