@@ -1078,3 +1078,9 @@ $(document).on("change", ".select_filter", function(){
 });
 
 
+$(document).find(".search_box").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(document).find($(this).data("target") + " tbody tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+});
