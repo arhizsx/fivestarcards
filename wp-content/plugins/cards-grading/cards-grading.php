@@ -454,6 +454,11 @@
                 $table = 'my_orders.php';
                 break;
 
+            case "members":
+                $folder = "admin";
+                $table = 'members.php';
+                break;
+
             default:
                 $table = '';
 
