@@ -271,7 +271,7 @@
             </div>
             <div class="row mb-4 border-top pt-3">
                 <div class="col-6">
-                    <button class="btn border btn-danger 5star_btn" data-action="admin_delete_manual_order" data-order_number="<?php echo $_GET['order_number'] ?>" >
+                    <button class="btn border btn-danger 5star_btn" data-action="admin_delete_order" data-order_number="<?php echo $_GET['order_number'] ?>" >
                         Delete Order
                     </button>
                 </div>
