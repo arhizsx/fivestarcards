@@ -67,7 +67,7 @@
             <H1 style="color: black;">Members</H1>            
         </div>
         <div class="col-6 text-end">
-            <input class="btn mt-3" type="text" >
+            <input class="btn mt-3" style="text-align: left;" placeholder="Search" type="text" >
         </div>
     </div>
     <div class="table-responsive">    
