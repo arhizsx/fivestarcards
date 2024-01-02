@@ -841,6 +841,12 @@
 
         }
 
+        elseif($params["action"] == "confirm_admin_delete_manual_order"){
+
+            return $this->doConfirmAdminDeleteOrder($params);
+
+        }
+
         elseif($params["action"] == "multi_update_status"){
 
             return $this->doMultiOrderUpdate($params);

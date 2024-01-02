@@ -445,6 +445,19 @@ $(document).on("click", ".5star_btn", function(e){
             
             break;
 
+        case "confirm_admin_delete_manual_order":
+
+            var order_number = $(this).data("order_number");
+            var back = $(this).data("back");
+            var data = {"back" : back};
+            
+            if (orderAction("confirm_admin_delete_manual_order", data, order_number) ){
+                // location.href = back;
+            }
+
+            
+            break;
+
             
         case "admin_create_order":
 
