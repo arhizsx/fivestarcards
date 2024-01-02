@@ -218,11 +218,16 @@
     
                         $grading_charge = $grading_charge + $card_grading_charge;
                         $total_dv = $total_dv + $card_total_dv;
-    
+                        
         
                 ?>
                     <tr class="card-row" data-post_id="<?php echo $card->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
-                        <td><?php echo $card["year"]; ?></td>
+                        <td>
+                            <?php 
+                                echo $card["year"]; 
+                                print_r($card);
+                            ?>
+                        </td>
                         <td><?php echo $card["brand"]; ?></td>
                         <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
                         <td><?php echo $card["player"]; ?></td>
