@@ -383,7 +383,6 @@
         return $output ;
     }
 
-
     public function cards_grading_orders_table_shortcode($atts) 
     {
 
