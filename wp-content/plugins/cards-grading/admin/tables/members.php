@@ -32,7 +32,7 @@
                     if($users){
                         foreach($users as $user){
 
-                            print_r($user["wp_capabilities"]);
+                            print_r($user->wp_capabilities);
                 ?>
                     <tr>
                         <td>
