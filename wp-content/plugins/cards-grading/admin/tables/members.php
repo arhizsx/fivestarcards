@@ -115,7 +115,7 @@
                             <?php  echo ucwords(str_replace("um_", "", $user->roles[0])) ?>
                         </td>
                         <td class="text-end">
-                            <button class="btn border btn-primary 5star_btn" data-action='make_admin' data-user_id='<?php echo $user->ID; ?>'>Make Admin</button>
+                            <button class="btn border btn-primary 5star_btn" data-action='make_admin' data-user_id='<?php echo $user->ID; ?>'>Promote</button>
                         </td>
                     </tr>
                 <?php    
