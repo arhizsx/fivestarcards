@@ -212,6 +212,13 @@
 
                         $cardmeta = get_post_meta($card->ID);
                         $card = json_decode($cardmeta['card'][0], true);
+
+                        $card_total_dv = $card["dv"] * $card["quantity"];
+                        $card_grading_charge = $card["per_card"] * $card["quantity"];
+    
+                        $grading_charge = $grading_charge + $card_grading_charge;
+                        $total_dv = $total_dv + $card_total_dv;
+    
         
                 ?>
                     <tr class="card-row" data-post_id="<?php echo $card->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
