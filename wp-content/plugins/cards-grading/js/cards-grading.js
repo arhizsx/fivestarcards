@@ -445,6 +445,7 @@ $(document).on("click", ".5star_btn", function(e){
             
             break;
 
+            
         case "admin_create_order":
 
             var user_id = $(document).find("[name='select_customer']").val();
@@ -712,7 +713,12 @@ function deleteCard(){
 function orderAction(action, data, order_number){
 
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
+
     var url = $(document).find(".5star_logged_cards").data("endpoint");
+
+    if(action == "confirm_admin_delete_order"){
+        url = $(document).find(".5star_logged_cards").data("order_endpoint");
+    }
 
     $.ajax({
         method: 'post',
