@@ -270,13 +270,15 @@
                 </div>
             </div>
             <div class="row mb-4 border-top pt-3">
-                <div class="col-12 text-end">
-                    <a href="/admin/add-customer-order" class="5star_btn btn btn-secondary">
-                        Go Back
-                    </a>           
+                <div class="col-6">
                     <button class="btn border btn-danger 5star_btn" data-action="admin_delete_order" data-order_number="<?php echo $_GET['order_number'] ?>" >
                         Delete Order
                     </button>
+                </div>
+                <div class="col-6 text-end">
+                    <a href="/admin/add-customer-order" class="5star_btn btn btn-secondary">
+                        Go Back
+                    </a>           
                     <button class="5star_btn btn btn-primary">
                         Assign To Customer
                     </button>           
