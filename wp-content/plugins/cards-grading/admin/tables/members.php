@@ -32,8 +32,14 @@
                     if($users){
                         foreach($users as $user){
                             if($user->roles[0] != "administrator"){
+
+                                if($user->roles[0] == "um_admin"){
+                                    $styler = "font-weight:bold; color: blue";
+                                } else {
+                                    $styler = "";
+                                }
                 ?>
-                    <tr>
+                    <tr style="<?php echo $styler ?>">
                         <td>
                             <?php  echo $user->ID + 1000 ?>
                         </td>
