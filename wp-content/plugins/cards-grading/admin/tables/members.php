@@ -33,7 +33,7 @@
                         foreach($users as $user){
                             if($user->roles[0] != "administrator"){
 
-                                if($user->roles[0] == "um_admin"){
+                                if($user->roles[0] == "um_member"){
                                     $styler = "font-weight:bold; color: blue";
                                 } else {
                                     $styler = "";
