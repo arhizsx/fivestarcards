@@ -1455,7 +1455,6 @@
 
     function doAdminCreateOrder($params)  {
 
-
         try {
 
             $user_id = $params["data"]["user_id"] - 1000;        
@@ -1501,6 +1500,8 @@
 
         update_post_meta($params["order_number"], 'status', "Processing Order");   
 
+        
+
         $args = array(
             'meta_query' => array(
                 array(
@@ -1514,10 +1515,18 @@
 
         $posts = get_posts($args);
 
+        $total_cards = 0;
+        $total_dv = 0;
+ 
         foreach($posts as $post)
         {
             update_post_meta( $post->ID, "status", "Received" );
+            $total_cards = $total_cards + 1;
         }
+
+        update_post_meta($params["order_number"], 'total_cards', $total_cards );   
+        update_post_meta($params["order_number"], 'total_dv', $total_dv );   
+        update_post_meta($params["order_number"], 'service_type', "Card Grading" );   
 
         return true;
     }
