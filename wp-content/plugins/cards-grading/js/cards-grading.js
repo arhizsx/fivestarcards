@@ -741,7 +741,9 @@ function orderAction(action, data, order_number){
         success: function(resp){
 
             if(action == "admin_create_order"){
-                location.href = "/admin/add-customer-order/?order_number=" + resp;
+                console.log(resp);
+
+                // location.href = "/admin/add-customer-order/?order_number=" + resp;
             } 
             else {
 
