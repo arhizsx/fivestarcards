@@ -725,7 +725,7 @@ function orderAction(action, data, order_number){
 
     var override  = ["confirm_admin_delete_order", "admin_assign_order"];
 
-    if(  $.inArray(action, override) ){
+    if(  $.inArray(action, override)  != -1 ){
         url = $(document).find(".5star_logged_cards").data("order_endpoint");
     } else {
         url = $(document).find(".5star_logged_cards").data("endpoint");
