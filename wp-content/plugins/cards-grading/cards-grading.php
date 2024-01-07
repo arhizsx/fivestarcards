@@ -55,7 +55,7 @@
         add_shortcode('cards-grading-dashbox_cards', array( $this, 'cards_grading_dashbox_cards_shortcode' ));
         add_shortcode('cards-grading-dashbox_orders', array( $this, 'cards_grading_dashbox_orders_shortcode' ));
         
-        add_shortcode('cards-grading-pdf', array( $this, 'make_pdf' ));
+        add_shortcode('cards-grading-pdf', array( $this, 'cards_grading_pdf' ));
 
 
         // Tables
@@ -335,27 +335,6 @@
 
     //*********** SHORTCODES *********** //
 
-
-
-    public function make_pdf($atts) 
-    {
-        $default = array(
-            'title' => 'PDF',
-        );
-
-        $dompdf = new Dompdf();
-
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        echo "TRY ONLY";
-
-        $output = ob_get_clean(); 
-        
-        return $output ;
-
-    }
-
     public function cards_grading_shortcode($atts) 
     {
 
@@ -365,9 +344,10 @@
         );
         
         $params = shortcode_atts($default, $atts);
+
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . 'admin/modal.php' );
+        include( plugin_dir_path( __FILE__ ) . 'admin/modal.php');
         
         $output = ob_get_clean(); 
         
@@ -668,6 +648,22 @@
         return $output ;
     }
 
+    public function cards_grading_pdf($atts) 
+    {
+
+        $dompdf = new Dompdf();
+
+        $dompdf->loadHtml('hello world');
+        $dompdf->render();
+        return $dompdf->stream();
+            
+    }
+
+    
+
+
+
+
     //*********** SHORTCODES *********** //
 
 
@@ -936,6 +932,7 @@
 
 
     }    
+
 
     //*********** HANDLERS *********** //
 
