@@ -9,7 +9,7 @@ include( '/wp-load.php' );
 $dompdf = new Dompdf();
 
 
-
+$post = get_post(2244);
 
 $dompdf->loadHtml($post->post_content);
 
