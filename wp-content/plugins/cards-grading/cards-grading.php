@@ -961,6 +961,7 @@
         $dompdf = new Dompdf();
         $dompdf->loadHtml($html);
                 
+		$dompdf->setPaper(array(0,0,609.4488,935.433), 'portrait').
 
         // Render the HTML as PDF
         $dompdf->render();
