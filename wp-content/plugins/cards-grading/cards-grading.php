@@ -21,7 +21,7 @@
     echo 'You are not allowed';
     exit;
  }
- require_once ( 'wp-content/plugins/cards-grading/autoload.inc.php');
+ require_once ( 'dompdf/autoload.inc.php');
  use Dompdf\Dompdf; 
 
  class CardsGrading {
@@ -923,9 +923,6 @@
     }    
 
     public function handle_pdf($data){
-
-        $headers = $data->get_headers();
-        $params = $data->get_params();
 
 
         
