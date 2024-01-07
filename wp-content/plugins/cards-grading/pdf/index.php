@@ -1,5 +1,6 @@
 <?php 
 
+include("./wp-load.php");
 include("./wp-blog-header.php");
 
 require_once ( '../dompdf/autoload.inc.php');
@@ -9,6 +10,16 @@ use Dompdf\Dompdf;
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
 
+$args = array(
+    'post_type' => 'cards-grading-chk',
+    'post__in' => array(2244)
+);
+
+$posts = get_posts($args);
+
+foreach ($posts as $p) :
+    
+endforeach;
 
 $dompdf->loadHtml("test");
 
