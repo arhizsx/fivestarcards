@@ -497,6 +497,27 @@ $(document).on("click", ".5star_btn", function(e){
 
             break;
 
+        case "view_pdf":
+
+            var nonce = $(document).find(".5star_logged_cards").data("nonce");
+            var url = $(document).find(".5star_logged_cards").data("view_pdf_endpoint");
+            var order_number = $(this).data("order_number");
+    
+            $.ajax({
+                method: 'get',
+                url: url,
+                headers: {'X-WP-Nonce': nonce },
+                data: {
+                    'order_number' : order_number,
+                },
+                success: function(resp){
+        
+
+                }
+            });
+
+            break;
+
         default:
             console.log("Button not configured: " + $(this).data("action"));
     }
