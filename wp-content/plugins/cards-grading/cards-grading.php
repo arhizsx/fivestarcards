@@ -21,12 +21,9 @@
     echo 'You are not allowed';
     exit;
  }
-
  require_once (plugin_dir_path( __FILE__ ) . 'dompdf/autoload.inc.php');
-
  use Dompdf\Dompdf; 
 
- $dompdf = new Dompdf();
  
  class CardsGrading {
 
@@ -58,6 +55,9 @@
         add_shortcode('cards-grading-dashbox_cards', array( $this, 'cards_grading_dashbox_cards_shortcode' ));
         add_shortcode('cards-grading-dashbox_orders', array( $this, 'cards_grading_dashbox_orders_shortcode' ));
         
+        add_shortcode('cards-grading-pdf', array( $this, 'make_pdf' ));
+
+
         // Tables
 
         add_shortcode('cards-grading-orders_table', array( $this, 'cards_grading_orders_table_shortcode' ));
@@ -334,6 +334,17 @@
 
 
     //*********** SHORTCODES *********** //
+
+
+
+    public function make_pdf($atts) 
+    {
+
+    $dompdf = new Dompdf();
+
+
+
+    }
 
     public function cards_grading_shortcode($atts) 
     {
