@@ -930,6 +930,9 @@
         $order_number = "1000555";
         
         $html = "<style>";
+
+        
+        $html .= " body { font-family: Arial, Helvetica, sans-serif; }";
         $html .= " table { width: 100%; border: 1px solid black; }";
         $html .= " tr:nth-child(even) {";
         $html .= "   background-color: #f2f2f2;";
@@ -938,7 +941,7 @@
         $html .= " logo { heigh: 30px; }";          
         $html .= "</style>";
 
-        $html .= "<img src='" .$_SERVER["DOCUMENT_ROOT"] . "/wp-content/uploads/2023/09/5-star-cards-logo.png' class='logo'>";
+        $html .= "<H1>5starcards.com</H1>";
         $html .= "<table'>";
         $html .= "  <tr>";
         $html .= "    <td>Customer Name</td>";
