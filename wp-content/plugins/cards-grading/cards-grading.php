@@ -339,10 +339,20 @@
 
     public function make_pdf($atts) 
     {
+        $default = array(
+            'title' => 'PDF',
+        );
 
-    $dompdf = new Dompdf();
+        $dompdf = new Dompdf();
 
+        $params = shortcode_atts($default, $atts);
+        ob_start();
 
+        echo "Try";
+
+        $output = ob_get_clean(); 
+        
+        return $output ;
 
     }
 
