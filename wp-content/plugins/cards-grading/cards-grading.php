@@ -931,12 +931,11 @@
         }
 
         $checkout_post = get_post(2244);
-        $title = $checkout_post->post_title;
         $content = apply_filters('the_content', $checkout_post->post_content);
 
         $dompdf = new Dompdf();
 
-        $dompdf->loadHtml("<H1>". $title . "</H1>" .  $content );
+        $dompdf->loadHtml($content );
         $dompdf->render();
     
         $dompdf->stream('title.pdf');
