@@ -924,6 +924,11 @@
 
     public function handle_pdf($data){
 
+        $post = get_post(2244);
+    
+    
+    
+        return $post;        
 
         $dompdf = new Dompdf();
 
