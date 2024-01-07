@@ -348,7 +348,7 @@
         $params = shortcode_atts($default, $atts);
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . 'admin/grading_table_admin.php' );
+        echo "TRY ONLY";
 
         $output = ob_get_clean(); 
         
