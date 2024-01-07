@@ -927,6 +927,10 @@
         $post = get_post(2243);
         $html = "<style>";
         $html .= " table { width: 100%; }";
+        $html .= " tr:nth-child(even) {";
+        $html .= "   background-color: #f2f2f2;";
+        $html .= " }";
+          
         $html .= "</style>";
 
         $html .= "<H1>5 Star Cards</H1>";
