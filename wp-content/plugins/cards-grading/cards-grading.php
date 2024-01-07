@@ -960,7 +960,7 @@
 
         $dompdf = new Dompdf();
 
-        $dompdf->setPaper(array(0,0,600,800));
+        $dompdf->setPaper(array(0,0,300,300));
 
         $dompdf->loadHtml($html);
                 
