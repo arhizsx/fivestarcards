@@ -925,9 +925,15 @@
     public function handle_pdf($data){
 
         $post = get_post(2244);
-    
+        
+        ob_start();
+
+        echo $post->post_content;
+
+        $output = ob_end_clean();
+
         $dompdf = new Dompdf();
-        $dompdf->loadHtml($post->post_content);
+        $dompdf->loadHtml($output);
         
         // (Optional) Setup the paper size and orientation
         $dompdf->setPaper('A4', 'landscape');
