@@ -929,7 +929,7 @@
 
 
         
-        return true;
+        return "test";
     }
     //*********** HANDLERS *********** //
 
