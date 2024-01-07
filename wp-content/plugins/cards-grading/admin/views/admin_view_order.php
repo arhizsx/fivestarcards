@@ -116,7 +116,7 @@ $processed_status = array("Processing Order", "Cards Graded");
             <H3 style="color: black !important;">Cards List</H3>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 text-end">
-            <button class='5star_btn btn btn-primary mb-3' data-action="view_pdf"  data-order_number="<?php echo $params['order_number'] ?>">
+            <button class='5star_btn btn btn-light mb-3' data-action="view_pdf"  data-order_number="<?php echo $params['order_number'] ?>">
                 PDF
             </button>      
             <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
