@@ -8,9 +8,7 @@ use Dompdf\Dompdf;
 $dompdf = new Dompdf();
 
 
-$post = get_post(2244);
-
-$dompdf->loadHtml($post->post_content);
+$dompdf->loadHtml("test");
 
 // (Optional) Setup the paper size and orientation
 $dompdf->setPaper('A4', 'landscape');
