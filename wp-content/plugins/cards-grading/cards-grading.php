@@ -927,7 +927,7 @@
     public function handle_pdf(){
 
         if(!isset($_GET["id"] )){
-            return "Not Allowed";
+            echo "Not Allowed";
         }
 
         $checkout_post = get_post(2244);
