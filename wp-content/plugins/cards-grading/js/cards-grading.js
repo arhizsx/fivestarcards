@@ -421,7 +421,7 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "remove_filter":
             
-            const url = window.location.href.split('?')[0]
+            var url = window.location.href.split('?')[0]
             location.href =url;
 
             break;
