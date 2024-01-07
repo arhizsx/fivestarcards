@@ -924,15 +924,21 @@
 
     public function handle_pdf($data){
 
-        $headers = $data->get_headers();
-        $params = $data->get_params();
-        $nonce = $headers["x_wp_nonce"][0];
 
         $dompdf = new Dompdf();
-    
+
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml('hello world');
         
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
         
-        return true;
+        // Render the HTML as PDF
+        $dompdf->render();
+        
+        // Output the generated PDF to Browser
+        return $dompdf->stream();        
+        
     }
     //*********** HANDLERS *********** //
 
