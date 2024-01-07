@@ -103,7 +103,10 @@ $admin_action_status = [];
             ?>
             <?php 
             } 
-            ?>
+            ?>        
+            <button class='5star_btn btn btn-secondary mb-3' data-action="view_pdf"  data-order_number="<?php echo $params['order_number'] ?>">
+                PDF
+            </button>      
         </div>
     </div>
     <div class="table-responsive">   

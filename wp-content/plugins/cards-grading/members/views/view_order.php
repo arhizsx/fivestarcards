@@ -163,6 +163,9 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
             <?php 
                 }
             ?>
+            <button class='5star_btn btn btn-secondary mb-3' data-action="view_pdf"  data-order_number="<?php echo $params['order_number'] ?>">
+                PDF
+            </button>      
         </div>
     </div>
     <div class="table-responsive mt-3">    

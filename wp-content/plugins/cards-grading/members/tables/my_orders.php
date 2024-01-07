@@ -25,7 +25,14 @@ $posts = get_posts($args);
 ?>
 
 <div class="m-0 p-0">
-    <H3 style="color: black;">Open Orders</H3>
+    <div class="row">
+        <div class="col-xl-6">
+            <H1 style="color: black;">Open Orders</H1>            
+        </div>
+        <div class="col-xl-6 text-end">
+            <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".5star_my_orders">        
+        </div>
+    </div>
     <div class="table-responsive">    
         <table class='table 5star_my_orders table-bordered table-striped'>
             <thead>
