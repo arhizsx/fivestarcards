@@ -662,15 +662,16 @@
         ob_start();
 
         $dompdf = new Dompdf();
+
         
         $html = "TEST";
         
         $dompdf->loadHtml($html);
         
-        
-        
-        $output = $dompdf->render();;
-        
+        $dompdf->render();
+            
+                
+        $output = ob_get_clean(); 
         
         return $output ;
     }
