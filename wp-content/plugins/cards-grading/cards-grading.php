@@ -925,10 +925,12 @@
     public function handle_pdf($data){
 
         $post = get_post(2243);
-        
-        
-        $html = "<H1>5S tar Cards</H1>";
-        $html .= "<table>";
+        $html = "<style>";
+        $html .= " table { width: 100%; }";
+        $html .= "</style>";
+
+        $html .= "<H1>5 Star Cards</H1>";
+        $html .= "<table'>";
         $html .= "  <tr>";
         $html .= "    <td>Customer Name</td>";
         $html .= "    <td>TEST</td>";
