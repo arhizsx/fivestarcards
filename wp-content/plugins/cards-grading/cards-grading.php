@@ -667,7 +667,7 @@
         $html = "TEST";        
         $dompdf->loadHtml($html);
         
-        echo $dompdf;
+        echo $html;
 
             
                 
