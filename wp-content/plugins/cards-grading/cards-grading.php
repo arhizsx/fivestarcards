@@ -680,6 +680,14 @@
             )                        
         );
 
+        register_rest_route(
+            "cards-grading/v1",
+            "pdf",
+            array(
+                'methods' => 'GET',
+                'callback' => array($this, 'handle_pdf')
+            )                        
+        );
     }
 
     //*********** ENDPOINTS *********** //
@@ -914,6 +922,15 @@
 
     }    
 
+    public function handle_pdf($data){
+
+        $headers = $data->get_headers();
+        $params = $data->get_params();
+        $nonce = $headers["x_wp_nonce"][0];
+
+        
+        return true;
+    }
     //*********** HANDLERS *********** //
 
 

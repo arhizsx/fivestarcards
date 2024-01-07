@@ -1,8 +1,5 @@
 <?php 
-
-require_once("./wp-load.php");
-require_once("./wp-blog-header.php");
-
+    
 require_once ( '../dompdf/autoload.inc.php');
 use Dompdf\Dompdf; 
 
