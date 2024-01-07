@@ -21,7 +21,9 @@
     echo 'You are not allowed';
     exit;
  }
-
+ require_once (plugin_dir_path( __FILE__ ) . 'dompdf/autoload.inc.php');
+ use Dompdf\Dompdf; 
+ 
  
  class CardsGrading {
 
@@ -659,11 +661,15 @@
         $params = shortcode_atts($default, $atts);
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . "admin/order_pdf.php" );
+        $dompdf = new Dompdf();
+
+        $html = "TEST";
         
-        $output = ob_get_clean(); 
+        $dompdf->loadHtml($html);
         
-        return $output ;
+        $dompdf->render();
+        
+        return $dompdf->stream('title.pdf');
     }
 
 
