@@ -11,6 +11,7 @@ function showAddCardModal( what_type, per_card, max_dv ){
 
 }
 
+dselect(document.querySelector('.form-select'));
 
 $(document).on("click", ".5star_btn", function(e){
 
