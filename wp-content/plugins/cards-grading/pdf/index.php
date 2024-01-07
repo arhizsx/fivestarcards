@@ -1,5 +1,7 @@
 <?php 
 
+include("./wp-blog-header.php");
+
 require_once ( '../dompdf/autoload.inc.php');
 use Dompdf\Dompdf; 
 
