@@ -924,7 +924,14 @@
 
     public function handle_pdf($data){
 
-        $post = get_post(2243);
+        $order_number = $_GET["id"];
+
+        $post = get_post($order_number);
+        $post_meta = get_post_meta($post->ID);
+
+        $user_id =  $post_meta->user_id;
+        $user = get_user_by( "id", $user_id );
+
 
         $customer = "Aris";
         $order_number = "1000555";
@@ -945,19 +952,19 @@
         $html .= "<table'>";
         $html .= "  <tr>";
         $html .= "    <td>Customer Name</td>";
-        $html .= "    <td>TEST</td>";
+        $html .= "    <td>" .$user->display_name . "</td>";
         $html .= "  </tr>";
         $html .= "  <tr>";
         $html .= "    <td>Order #</td>";
-        $html .= "    <td>88888</td>";
+        $html .= "    <td>" . $post_meta->order_number . "</td>";
         $html .= "  </tr>";
         $html .= "  <tr>";
         $html .= "    <td>Service Type</td>";
-        $html .= "    <td>PSA - Value Plus</td>";
+        $html .= "    <td>" . $post_meta->grading_type . "</td>";
         $html .= "  </tr>";
         $html .= "  <tr>";
         $html .= "    <td>Total Cards</td>";
-        $html .= "    <td>0</td>";
+        $html .= "    <td>" . $post_meta->total_cards . "</td>";
         $html .= "  </tr>";
         $html .= "</tr>";
         $html .= "</table>";
