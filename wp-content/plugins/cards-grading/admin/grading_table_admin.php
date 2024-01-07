@@ -64,7 +64,7 @@
                 $users = get_users( $args );
 
             ?>
-            <select name="select_customer"  class="btn form-select  me-4 " data-dselect-search="true" style="border: 1px solid black">
+            <select name="select_customer"  class="btn  me-4 " data-dselect-search="true" style="border: 1px solid black">
                 <option>Select Customer</option>
                 <?php 
                     foreach( $users as $user){
