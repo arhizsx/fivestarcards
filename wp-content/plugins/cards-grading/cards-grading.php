@@ -21,8 +21,6 @@
     echo 'You are not allowed';
     exit;
  }
- require_once (plugin_dir_path( __FILE__ ) . 'dompdf/autoload.inc.php');
- use Dompdf\Dompdf; 
 
  
  class CardsGrading {
@@ -54,9 +52,9 @@
 
         add_shortcode('cards-grading-dashbox_cards', array( $this, 'cards_grading_dashbox_cards_shortcode' ));
         add_shortcode('cards-grading-dashbox_orders', array( $this, 'cards_grading_dashbox_orders_shortcode' ));
-        
-        add_shortcode('cards-grading-pdf', array( $this, 'cards_grading_pdf' ));
 
+
+        add_shortcode('cards-grading-pdf', array( $this, 'cards_grading_pdf' ));
 
         // Tables
 
@@ -650,18 +648,23 @@
 
     public function cards_grading_pdf($atts) 
     {
+        $order_number = $_GET['id'];
 
-        $dompdf = new Dompdf();
+        $default = array(
+            'title' => 'Order Number',
+            'order_number' => $order_number,
+            'view' => 'admin_view_order.php'
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
 
-        $dompdf->loadHtml('hello world');
-        $dompdf->render();
-        return $dompdf->stream();
-            
+        include( plugin_dir_path( __FILE__ ) . "admin/order_pdf.php" );
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
     }
-
-    
-
-
 
 
     //*********** SHORTCODES *********** //
