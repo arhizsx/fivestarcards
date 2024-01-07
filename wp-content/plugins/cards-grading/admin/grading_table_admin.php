@@ -64,6 +64,13 @@
                 $users = get_users( $args );
 
             ?>
+
+<select class="selectpicker">
+  <option>Mustard</option>
+  <option>Ketchup</option>
+  <option>Relish</option>
+</select>
+
             <select name="select_customer"  class="btn selectpicker  me-4 " data-show-subtext="true" data-live-search="true" style="border: 1px solid black">
                 <option>Select Customer</option>
                 <?php 
