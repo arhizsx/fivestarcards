@@ -8,12 +8,6 @@ use Dompdf\Dompdf;
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
 
-$args = array(
-    'post_type' => 'cards-grading-chk',
-    'post__in' => array(2244)
-);
-
-$posts = get_posts($args);
 
 $dompdf->loadHtml("test");
 
