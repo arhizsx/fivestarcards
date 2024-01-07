@@ -3,9 +3,16 @@
 require_once ( '../dompdf/autoload.inc.php');
 use Dompdf\Dompdf; 
  
+
+
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
-$dompdf->loadHtml('hello world');
+
+
+
+$post = get_post(2244);
+
+$dompdf->loadHtml($post->post_content);
 
 // (Optional) Setup the paper size and orientation
 $dompdf->setPaper('A4', 'landscape');
