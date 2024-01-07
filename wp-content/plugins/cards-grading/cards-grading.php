@@ -927,7 +927,7 @@
         $post = get_post(2244);
     
         $dompdf = new Dompdf();
-        $dompdf->loadHtml($post->content);
+        $dompdf->loadHtml($post->post_content);
         
         // (Optional) Setup the paper size and orientation
         $dompdf->setPaper('A4', 'landscape');
