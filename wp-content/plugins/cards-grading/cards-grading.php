@@ -959,6 +959,9 @@
         $html .= "</table>";
 
         $dompdf = new Dompdf();
+
+        $dompdf->setPaper(array(0,0,600,800));
+
         $dompdf->loadHtml($html);
                 
         // Render the HTML as PDF
