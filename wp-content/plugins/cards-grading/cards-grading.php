@@ -926,10 +926,7 @@
 
         $headers = $data->get_headers();
         $params = $data->get_params();
-        $nonce = $headers["x_wp_nonce"][0];
 
-
-        
 
         
         return true;
