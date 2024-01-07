@@ -940,9 +940,9 @@
         
         $html .= " body { font-family: Arial, Helvetica, sans-serif; }";
         $html .= " table { width: 100%; border: 1px solid black; }";
+        $html .= " table tr { border: 1px solid black; }";        
         $html .= " tr:nth-child(even) {";
         $html .= "   background-color: #f2f2f2;";
-        $html .= "   border: 1px solid black";        
         $html .= " }";
         $html .= " logo { heigh: 30px; }";          
         $html .= "</style>";
