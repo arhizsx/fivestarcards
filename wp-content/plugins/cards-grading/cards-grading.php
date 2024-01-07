@@ -929,12 +929,11 @@
         $post = get_post($order_number);
         
         $post_meta = get_post_meta($post->ID);
-        $user_id =  $post_meta->user_id;
+        $user_id =  $post_meta["user_id"][0];
         $user = get_user_by( "id", $user_id );
 
 
-        $customer = "Aris";
-        $order_number = "1000555";
+        $customer = $user->display_name;
         
         $html = "<style>";
 
