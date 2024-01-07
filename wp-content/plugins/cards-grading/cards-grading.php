@@ -930,7 +930,7 @@
         $order_number = "1000555";
         
         $html = "<style>";
-        $html .= " table { width: 100%; }";
+        $html .= " table { width: 100%; border: 1px solid black; }";
         $html .= " tr:nth-child(even) {";
         $html .= "   background-color: #f2f2f2;";
         $html .= " }";
