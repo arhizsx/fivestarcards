@@ -1,13 +1,14 @@
 <?php 
 
 require_once("./wp-load.php");
+require_once("./wp-blog-header.php");
+
 require_once ( '../dompdf/autoload.inc.php');
 use Dompdf\Dompdf; 
 
 
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
-
 
 $dompdf->loadHtml("test");
 
