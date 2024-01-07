@@ -1,6 +1,6 @@
 <?php 
 
-require_once (plugin_dir_path( __FILE__ ) . 'dompdf/autoload.inc.php');
+require_once ( 'wp-content/plugins/cards-grading/autoload.inc.php');
 use Dompdf\Dompdf; 
  
 
