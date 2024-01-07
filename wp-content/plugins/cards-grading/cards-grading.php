@@ -926,7 +926,7 @@
 
     public function handle_pdf(){
 
-        $checkout_post = get_post(2243);
+        $checkout_post = get_post(2244);
         $html = $checkout_post->post_title;
 
         $dompdf = new Dompdf();
