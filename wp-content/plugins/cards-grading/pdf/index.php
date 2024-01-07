@@ -2,7 +2,7 @@
 
 require_once ( '../dompdf/autoload.inc.php');
 use Dompdf\Dompdf; 
-include( './wp-load.php' );
+include( './wp-blog-header.php' );
 
 
 // instantiate and use the dompdf class
