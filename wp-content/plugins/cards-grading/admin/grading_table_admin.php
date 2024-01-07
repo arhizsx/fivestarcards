@@ -64,7 +64,7 @@
                 $users = get_users( $args );
 
             ?>
-            <select name="select_customer"  class="selectpicker  me-4 " data-show-subtext="true" data-live-search="true" style="border: 1px solid black">
+            <select name="select_customer"  class="  me-4 " data-show-subtext="true" data-live-search="true" style="border: 1px solid black">
                 <option>Select Customer</option>
                 <?php 
                     foreach( $users as $user){
@@ -76,7 +76,7 @@
                 ?>
             </select>
             <span class="" style="font-size: 12px">Grading Type</span>
-            <select name="select_grading_type" class="selectpicker mb-3" data-show-subtext="true" data-live-search="true" style="border: 1px solid black">
+            <select name="select_grading_type" class=" mb-3" data-show-subtext="true" data-live-search="true" style="border: 1px solid black">
                 <option>Select Grading Type</option>
                 <option value="psa-value_bulk">PSA - Value Bulk</option>
                 <option value="psa-value_plus">PSA - Value Plus</option>
