@@ -925,6 +925,10 @@
     public function handle_pdf($data){
 
         $post = get_post(2243);
+
+        $customer = "Aris";
+        $order_number = "1000555";
+        
         $html = "<style>";
         $html .= " table { width: 100%; }";
         $html .= " tr:nth-child(even) {";
@@ -965,6 +969,7 @@
         
         // Output the generated PDF to Browser
         return $dompdf->stream();        
+        $dompdf->stream("5 Star Cards - ". $customer . " - ". $order_number . ".pdf");
         
     }
     //*********** HANDLERS *********** //
