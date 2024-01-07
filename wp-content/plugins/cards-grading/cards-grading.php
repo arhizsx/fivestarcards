@@ -926,9 +926,16 @@
 
     public function handle_pdf(){
 
+        $checkout_post = get_post(2243);
+        $html = $checkout_post->post_title;
 
+        $dompdf = new Dompdf();
 
-        return "TEST";
+        $dompdf->loadHtml($html);
+        $dompdf->render();
+    
+        $dompdf->stream('title.pdf');
+
 
     }    
 
