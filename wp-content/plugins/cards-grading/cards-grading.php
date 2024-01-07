@@ -928,7 +928,9 @@
         $params = $data->get_params();
         $nonce = $headers["x_wp_nonce"][0];
 
-
+        $dompdf = new Dompdf();
+    
+        
         
         return true;
     }
