@@ -9,10 +9,7 @@ use Dompdf\Dompdf;
 $dompdf = new Dompdf();
 
 
-get_header(); 
-$posts = get_posts();
-var_dump($posts[0]->ID);
-
+$wp_query->posts ;  // contains an array of posts.
 
 $dompdf->loadHtml($post->post_content);
 
