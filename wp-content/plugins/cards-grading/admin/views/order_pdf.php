@@ -6,7 +6,7 @@ use Dompdf\Dompdf;
 global $wp;
 $current_url = home_url();
 
-$html = file_get_contents($current_url);
+$html = "TEST";
 
 $dompdf = new Dompdf();
 $dompdf->loadHtml($html);
