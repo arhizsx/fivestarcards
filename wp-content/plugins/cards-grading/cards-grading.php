@@ -22,10 +22,17 @@
     exit;
  }
 
+ require_once (plugin_dir_path( __FILE__ ) . 'dompdf/autoload.inc.php');
+
+ use Dompdf\Dompdf;
+
+ $dompdf = new Dompdf();
+ 
  class CardsGrading {
 
     public function __construct() 
     {
+
         // Create Custom Post Type
         add_action('init', array($this, 'create_custom_post_type') );        
 
