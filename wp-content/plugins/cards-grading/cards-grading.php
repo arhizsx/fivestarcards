@@ -55,9 +55,6 @@
         add_shortcode('cards-grading-dashbox_cards', array( $this, 'cards_grading_dashbox_cards_shortcode' ));
         add_shortcode('cards-grading-dashbox_orders', array( $this, 'cards_grading_dashbox_orders_shortcode' ));
 
-
-        add_shortcode('cards-grading-pdf', array( $this, 'cards_grading_pdf' ));
-
         // Tables
 
         add_shortcode('cards-grading-orders_table', array( $this, 'cards_grading_orders_table_shortcode' ));
@@ -648,34 +645,6 @@
         return $output ;
     }
 
-    public function cards_grading_pdf($atts) 
-    {
-        $order_number = $_GET['id'];
-
-        $default = array(
-            'title' => 'Order Number',
-            'order_number' => $order_number,
-            'view' => 'admin_view_order.php'
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-        $dompdf = new Dompdf();
-
-        
-        $html = "TEST";        
-        $dompdf->loadHtml($html);
-        
-        echo $html;
-
-            
-                
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-
 
     //*********** SHORTCODES *********** //
 
@@ -709,6 +678,15 @@
             array(
                 'methods' => 'POST',
                 'callback' => array($this, 'handle_order_action')
+            )                        
+        );
+
+        register_rest_route(
+            "cards-grading/v1",
+            "pdf",
+            array(
+                'methods' => 'GET',
+                'callback' => array($this, 'handle_pdf')
             )                        
         );
 
@@ -946,6 +924,19 @@
 
     }    
 
+    public function handle_pdf($data){
+
+        $headers = $data->get_headers();
+        $nonce = $headers["x_wp_nonce"][0];
+
+        // if( !wp_verify_nonce($nonce, 'wp_rest') ){
+        //     return new WP_REST_Response("Invalid Nonce", 422);
+        // }
+
+
+        return "TEST";
+
+    }    
 
     //*********** HANDLERS *********** //
 
