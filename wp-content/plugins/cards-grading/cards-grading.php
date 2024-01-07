@@ -928,7 +928,7 @@
 
         $checkout_post = get_post(2244);
         $title = $checkout_post->post_title;
-        $content = $checkout_post->post_content;
+        $content = apply_filters('the_content', $checkout_post->post_content);
 
         $dompdf = new Dompdf();
 
