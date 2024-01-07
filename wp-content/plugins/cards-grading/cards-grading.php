@@ -929,8 +929,6 @@
         $post = get_post($order_number);
         
         $post_meta = get_post_meta($post->ID);
-        return $post_meta;
-
         $user_id =  $post_meta->user_id;
         $user = get_user_by( "id", $user_id );
 
