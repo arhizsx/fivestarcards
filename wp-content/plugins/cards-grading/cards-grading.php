@@ -929,9 +929,17 @@
         $checkout_post = get_post(2244);
         $content = $checkout_post->post_content;
 
+
+        ob_start();
+
+        the_content();
+
+        $page_content = ob_get_clean();
+
+
         $dompdf = new Dompdf();
 
-        $dompdf->loadHtml($content); 
+        $dompdf->loadHtml($page_content); 
         $dompdf->render();
     
         $dompdf->stream('title.pdf');
