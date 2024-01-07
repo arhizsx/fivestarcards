@@ -924,9 +924,13 @@
 
     public function handle_pdf($data){
 
+        $headers = $data->get_headers();
+        $params = $data->get_params();
+        $nonce = $headers["x_wp_nonce"][0];
+
 
         
-        return "test";
+        return true;
     }
     //*********** HANDLERS *********** //
 
