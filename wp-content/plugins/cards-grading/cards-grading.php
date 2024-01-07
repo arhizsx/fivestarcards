@@ -650,14 +650,29 @@
 
     public function cards_grading_pdf($atts) 
     {
+        $order_number = $_GET['id'];
+
+        $default = array(
+            'title' => 'Order Number',
+            'order_number' => $order_number,
+            'view' => 'admin_view_order.php'
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
 
         $dompdf = new Dompdf();
         
-        $dompdf->loadHtml("<H1>TEST</H1>");
+        $html = "TEST";
+        
+        $dompdf->loadHtml($html);
         
         $dompdf->render();
         
-        return $dompdf->stream('title.pdf');
+        $output = $dompdf->stream('title.pdf');
+        
+        
+        return $output ;
     }
 
 
