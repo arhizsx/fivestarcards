@@ -21,9 +21,11 @@
     echo 'You are not allowed';
     exit;
  }
- 
- class CardsGrading {
+ require_once ( 'wp-content/plugins/cards-grading/autoload.inc.php');
+ use Dompdf\Dompdf; 
 
+ class CardsGrading {
+    
     public function __construct() 
     {
 
