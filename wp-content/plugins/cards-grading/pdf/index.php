@@ -2,14 +2,14 @@
 
 require_once ( '../dompdf/autoload.inc.php');
 use Dompdf\Dompdf; 
- 
+include( 'wp-load.php' );
 
 
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
 
 
-$wp_query->posts ;  // contains an array of posts.
+
 
 $dompdf->loadHtml($post->post_content);
 
