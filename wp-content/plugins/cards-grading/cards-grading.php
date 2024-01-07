@@ -961,12 +961,11 @@
         $dompdf = new Dompdf();
         $dompdf->loadHtml($html);
                 
+
         // Render the HTML as PDF
         $dompdf->render();
-        
         // Output the generated PDF to Browser
-        return $dompdf->stream();        
-        $dompdf->stream("5 Star Cards - ". $customer . " - ". $order_number . ".pdf");
+        return $dompdf->stream("5 Star Cards - ". $customer . " - ". $order_number . ".pdf");
         
     }
     //*********** HANDLERS *********** //
