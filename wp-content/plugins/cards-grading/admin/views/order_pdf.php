@@ -13,7 +13,7 @@ $dompdf->loadHtml($html);
 
 $dompdf->render();
 
-$dompdf->stream('title.pdf');
+return $dompdf->stream('title.pdf');
 
 ?>
 </div>
