@@ -927,11 +927,12 @@
     public function handle_pdf(){
 
         $checkout_post = get_post(2244);
-        $html = $checkout_post->post_title;
+        $title = $checkout_post->post_title;
+        $content = $checkout_post->post_content;
 
         $dompdf = new Dompdf();
 
-        $dompdf->loadHtml($html);
+        $dompdf->loadHtml("<H1>". $title . "</H1>" .  $content );
         $dompdf->render();
     
         $dompdf->stream('title.pdf');
