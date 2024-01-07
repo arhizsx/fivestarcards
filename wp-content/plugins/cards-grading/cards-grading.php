@@ -924,16 +924,32 @@
 
     public function handle_pdf($data){
 
-        $post = get_post(2244);
+        $post = get_post(2243);
         
-        ob_start();
-
-        echo $post->post_content;
-
-        $output = ob_end_clean();
+        
+        $html = "<H1>5S tar Cards</H1>";
+        $html .= "<table>";
+        $html .= "  <tr>";
+        $html .= "    <td>Customer Name</td>";
+        $html .= "    <td>TEST</td>";
+        $html .= "  </tr>";
+        $html .= "  <tr>";
+        $html .= "    <td>Order #</td>";
+        $html .= "    <td>88888</td>";
+        $html .= "  </tr>";
+        $html .= "  <tr>";
+        $html .= "    <td>Service Type</td>";
+        $html .= "    <td>PSA - Value Plus</td>";
+        $html .= "  </tr>";
+        $html .= "  <tr>";
+        $html .= "    <td>Total Cards</td>";
+        $html .= "    <td>0</td>";
+        $html .= "  </tr>";
+        $html .= "</tr>";
+        $html .= "</table>";
 
         $dompdf = new Dompdf();
-        $dompdf->loadHtml($output);
+        $dompdf->loadHtml($html);
         
         // (Optional) Setup the paper size and orientation
         $dompdf->setPaper('A4', 'landscape');
