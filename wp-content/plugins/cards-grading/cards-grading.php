@@ -938,7 +938,7 @@
         $html .= " logo { heigh: 30px; }";          
         $html .= "</style>";
 
-        $html .= "<img src='https://5starcards.com/wp-content/uploads/2023/09/5-star-cards-logo.png' class='logo'>";
+        $html .= "<img src='" .$_SERVER["DOCUMENT_ROOT"] . "/wp-content/uploads/2023/09/5-star-cards-logo.png' class='logo'>";
         $html .= "<table'>";
         $html .= "  <tr>";
         $html .= "    <td>Customer Name</td>";
