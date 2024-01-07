@@ -9,8 +9,10 @@ use Dompdf\Dompdf;
 $dompdf = new Dompdf();
 
 
+get_header(); 
+$posts = get_posts();
+var_dump($posts[0]->ID);
 
-$post = get_post(2244);
 
 $dompdf->loadHtml($post->post_content);
 
