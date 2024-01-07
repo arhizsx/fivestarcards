@@ -928,6 +928,7 @@
 
         if(!isset($_GET["id"] )){
             echo "Not Allowed";
+            return false;
         }
 
         $checkout_post = get_post(2244);
