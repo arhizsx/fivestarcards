@@ -926,6 +926,10 @@
 
     public function handle_pdf(){
 
+        if(!isset($_GET["id"] )){
+            return "<H1>Not Allowed</H1>";
+        }
+
         $checkout_post = get_post(2244);
         $title = $checkout_post->post_title;
         $content = apply_filters('the_content', $checkout_post->post_content);
