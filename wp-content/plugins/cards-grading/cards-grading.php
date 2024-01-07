@@ -664,11 +664,11 @@
         $dompdf = new Dompdf();
 
         
-        $html = "TEST";
-        
+        $html = "TEST";        
         $dompdf->loadHtml($html);
         
-        $dompdf->render();
+        echo $dompdf;
+
             
                 
         $output = ob_get_clean(); 
