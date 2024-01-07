@@ -924,14 +924,8 @@
 
     }    
 
-    public function handle_pdf($data){
+    public function handle_pdf(){
 
-        $headers = $data->get_headers();
-        $nonce = $headers["x_wp_nonce"][0];
-
-        // if( !wp_verify_nonce($nonce, 'wp_rest') ){
-        //     return new WP_REST_Response("Invalid Nonce", 422);
-        // }
 
 
         return "TEST";
