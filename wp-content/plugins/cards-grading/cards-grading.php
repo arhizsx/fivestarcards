@@ -935,7 +935,7 @@
 
         $dompdf = new Dompdf();
 
-        $dompdf->loadHtml($content );
+        $dompdf->loadHtml($content);
         $dompdf->render();
     
         $dompdf->stream('title.pdf');
