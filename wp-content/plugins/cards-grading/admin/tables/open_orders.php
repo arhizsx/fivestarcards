@@ -91,7 +91,8 @@ $posts = get_posts($args);
         <div class="col-xl-6 col-md-6 text-end">
             <a href="/admin/add-customer-order/" class="5star_btn btn btn-primary">
                 Add Customer Order
-            </a>                       
+            </a>
+            <input class="btn mt-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target=".5star_my_orders">
         </div>
         <div class="col-xl-12">
         <?php if( isset( $_GET["filtered"] ) == "true") { ?>
