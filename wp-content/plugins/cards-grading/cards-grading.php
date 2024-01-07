@@ -667,9 +667,9 @@
         
         $dompdf->loadHtml($html);
         
-        $dompdf->render();
         
-        $output = $dompdf->stream('title.pdf');
+        
+        $output = $dompdf->render();;
         
         
         return $output ;
