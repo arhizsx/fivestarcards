@@ -17,10 +17,6 @@ $args = array(
 
 $posts = get_posts($args);
 
-foreach ($posts as $p) :
-    
-endforeach;
-
 $dompdf->loadHtml("test");
 
 // (Optional) Setup the paper size and orientation
