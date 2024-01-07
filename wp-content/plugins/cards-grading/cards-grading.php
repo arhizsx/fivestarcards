@@ -21,9 +21,6 @@
     echo 'You are not allowed';
     exit;
  }
- require_once (plugin_dir_path( __FILE__ ) . 'dompdf/autoload.inc.php');
- use Dompdf\Dompdf; 
- 
  
  class CardsGrading {
 
@@ -681,15 +678,6 @@
             )                        
         );
 
-        register_rest_route(
-            "cards-grading/v1",
-            "pdf",
-            array(
-                'methods' => 'GET',
-                'callback' => array($this, 'handle_pdf')
-            )                        
-        );
-
     }
 
     //*********** ENDPOINTS *********** //
@@ -920,29 +908,6 @@
         return $params;
 
 
-
-
-    }    
-
-    public function handle_pdf(){
-
-        $checkout_post = get_post(2244);
-        $content = $checkout_post->post_content;
-
-
-        ob_start();
-
-        the_content();
-
-        $page_content = ob_get_clean();
-
-
-        $dompdf = new Dompdf();
-
-        $dompdf->loadHtml($page_content); 
-        $dompdf->render();
-    
-        $dompdf->stream('title.pdf');
 
 
     }    
