@@ -933,11 +933,12 @@
         $html .= " table { width: 100%; border: 1px solid black; }";
         $html .= " tr:nth-child(even) {";
         $html .= "   background-color: #f2f2f2;";
+        $html .= "   border: 1px solid black";        
         $html .= " }";
-          
+        $html .= " logo { heigh: 30px; }";          
         $html .= "</style>";
 
-        $html .= "<H1>5 Star Cards</H1>";
+        $html .= "<img src='https://5starcards.com/wp-content/uploads/2023/09/5-star-cards-logo.png' class='logo'>";
         $html .= "<table'>";
         $html .= "  <tr>";
         $html .= "    <td>Customer Name</td>";
