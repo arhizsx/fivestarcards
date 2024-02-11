@@ -30,17 +30,16 @@
         // Add Endpoint
         add_action("rest_api_init", array($this, 'register_endpoint'));
 
+
+
     }
 
     //*********** ENDPOINTS *********** //
 
-    public function register_endpoint()
+    function register_endpoint()
     {
-        
-        register_rest_route( 'ebay-integrator/v1', '/notification', array(
-            'methods'  => [ 'GET', 'POST' ],
-            'callback' => array( $this, 'handle_notification' )
-        ) );
+
+        return "Test";
 
     }
 
