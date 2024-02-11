@@ -42,7 +42,11 @@
             "rnotification",
             array(
                 'methods' => 'GET',
-                'callback' => array($this, 'handle_notification')
+                'callback' => array($this, 'handle_notification'),
+                'args' => array(),
+                'permission_callback' => function () {
+                  return true;
+                }            
             )                        
         );
     }
