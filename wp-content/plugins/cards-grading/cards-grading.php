@@ -704,14 +704,7 @@
         $body = $data->get_body();
 
         
-
-        $xml_string = substr( $body, strpos( $body, "<soapenv:Body>", 0 ), strlen($body) );
-
-        $xml = simplexml_load_string($xml_string);
-        $json = json_encode($xml);
-        $array = json_decode($json,TRUE);
-
-        return str_replace($body, '<?xml version="1.0" encoding="UTF-8"?>', '');
+        return str_replace('<?xml version="1.0" encoding="UTF-8"?>', '', $body);
                 
     }
 
