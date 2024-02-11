@@ -711,11 +711,9 @@
                         $body
                         EOR;
         
-        $xml = simplexml_load_string($xml_string);
-        $json = json_encode($xml);
-        $array = json_decode($json, true);
+        $json = json_encode($body);
         
-        return print_r($array);
+        return print_r($json);
     }
 
     //*********** ENDPOINTS *********** //
