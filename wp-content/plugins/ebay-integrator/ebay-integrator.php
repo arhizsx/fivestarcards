@@ -28,19 +28,27 @@
     {
 
         // Add Endpoint
-        add_action('rest_api_init', function () {
-            register_rest_route('ebay-integrator/notification', 'test', [
-                'methods' => 'GET',
-                'callback' => function (WP_REST_Request $request) {
-                    error_log('Route "notifications" works');
-                    return new WP_REST_Response(true, 200);
-                },
-            ]);
-        });
-        
+        add_action("rest_api_init", array($this, 'register_endpoint'));
 
     }
 
+    //*********** ENDPOINTS *********** //
+
+    public function register_endpoint()
+    {
+        
+        register_rest_route( 'ebay-integrator/v1', '/notification', array(
+            'methods'  => [ 'GET', 'POST' ],
+            'callback' => array( $this, 'handle_notification' )
+        ) );
+
+    }
+
+    //*********** ENDPOINTS *********** //
+
+    public function handle_notification($data){
+        return "TEST";
+    }
 
 
  }
