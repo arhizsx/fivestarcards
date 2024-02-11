@@ -27,31 +27,20 @@
     public function __construct() 
     {
 
-        // Add Endpoint
-        add_action("rest_api_init", array($this, 'register_endpoint'));
 
-    }
-
-    //*********** ENDPOINTS *********** //
-
-    public function register_endpoint()
-    {
-        
-        register_rest_route(
-            "ebay-integrator/v1",
-            "notification",
-            array(
-                'methods' => 'GET',
-                'callback' => array($this, 'handle_notification'),
+        add_action('rest_api_init', function() {
+            register_rest_route('ebay-integrator/v1', 'notification', array(
+                'methods' => WP_REST_SERVER::CREATABLE,
+                'callback' => 'handle_notification',
                 'args' => array(),
                 'permission_callback' => function () {
-                  return true;
-                }            
-            )                        
-        );
-    }
+                return true;
+                }
+            ));
+        });
 
-    //*********** ENDPOINTS *********** //
+
+    }
 
     public function handle_notification($data){
         return "TEST";
