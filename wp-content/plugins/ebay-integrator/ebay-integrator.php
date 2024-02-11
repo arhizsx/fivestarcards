@@ -38,8 +38,8 @@
     {
         
         register_rest_route(
-            "ebay-integrator/v1",
-            "receive-notification",
+            "ebay-integrator/v2",
+            "rnotification",
             array(
                 'methods' => 'POST',
                 'callback' => array($this, 'handle_notification')
@@ -49,7 +49,7 @@
 
     //*********** ENDPOINTS *********** //
 
-    public function handle_notification(){
+    public function handle_notification($data){
         return "TEST";
     }
 
