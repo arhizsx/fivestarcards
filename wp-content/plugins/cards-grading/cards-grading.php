@@ -704,18 +704,10 @@
         $headers = $data->get_headers();
         $params = $data->get_params();
         $body = $data->get_body();
-        return $this->XMLtoJSON($body);
-    }
 
-    function XMLtoJSON($xml) {
-        $xml = str_replace(array("\n", "\r", "\t"), '', $xml);    // removes newlines, returns and tabs
-      
-        // replace double quotes with single quotes, to ensure the simple XML function can parse the XML
-        $xml = trim(str_replace('"', "'", $xml));
-        $simpleXml = simplexml_load_string($xml);
-      
-        return stripslashes(json_encode($simpleXml));    // returns a string with JSON object
-      }    
+        $array = (array) simplexml_load_string($body, null , LIBXML_NOCDATA); 
+        return $array;
+    }
 
     //*********** ENDPOINTS *********** //
 
