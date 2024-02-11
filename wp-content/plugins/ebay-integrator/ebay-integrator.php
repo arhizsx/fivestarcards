@@ -2,7 +2,7 @@
 
 /** 
 * Plugin Name:       Ebay Integrator
- * Plugin URI:        https://www.techteam.ph/wordpress/plugins/cards-grading
+ * Plugin URI:        https://www.techteam.ph/wordpress/plugins/ebay-integrator
  * Description:       Ebay Integrator Plugin.
  * Version:           1.0.0
  * Requires at least: 5.2
