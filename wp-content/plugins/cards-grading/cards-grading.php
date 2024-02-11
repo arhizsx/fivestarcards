@@ -705,8 +705,7 @@
         $params = $data->get_params();
         $body = $data->get_body();
 
-        $array = (array) simplexml_load_string($body, null , LIBXML_NOCDATA); 
-        return print_r($array);
+        return print_r($body);
     }
 
     //*********** ENDPOINTS *********** //
