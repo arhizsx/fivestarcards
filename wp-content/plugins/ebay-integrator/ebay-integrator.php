@@ -41,7 +41,7 @@
             "ebay-integrator/v2",
             "rnotification",
             array(
-                'methods' => 'POST',
+                'methods' => 'GET',
                 'callback' => array($this, 'handle_notification')
             )                        
         );
