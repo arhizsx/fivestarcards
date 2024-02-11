@@ -704,7 +704,18 @@
         $headers = $data->get_headers();
         $params = $data->get_params();
         $body = $data->get_body();
-        return $body;
+
+
+
+        $xml_string = <<<EOR
+                        $body
+                        EOR;
+        
+        $xml = simplexml_load_string($xml_string, "SimpleXMLElement", LIBXML_NOCDATA, 'ns0', true);
+        $json = json_encode($xml);
+        $array = json_decode($json, true);
+        
+        return print_r($array);
     }
 
     //*********** ENDPOINTS *********** //
