@@ -702,7 +702,7 @@
 
     public function handle_notification($data){
         $params = $data->get_params();
-        return $params;
+        return $data;
     }
 
     //*********** ENDPOINTS *********** //
