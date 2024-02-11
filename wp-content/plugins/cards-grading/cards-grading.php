@@ -688,6 +688,20 @@
                 'callback' => array($this, 'handle_pdf')
             )                        
         );
+
+        register_rest_route(
+            "cards-grading/v1",
+            "notification",
+            array(
+                'methods' => 'POST',
+                'callback' => array($this, 'handle_notification')
+            )                        
+        );
+
+    }
+
+    public function handle_notification($data){
+        return $data;
     }
 
     //*********** ENDPOINTS *********** //
