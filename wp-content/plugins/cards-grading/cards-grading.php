@@ -706,6 +706,7 @@
         $body = $data->get_body();
 
         $xml = simplexml_load_string($body);
+        $xml = simplexml_load_string($body, 'SimpleXMLElement', LIBXML_NOCDATA | LIBXML_NOBLANKS);
 
         return print_r($xml);
     }
