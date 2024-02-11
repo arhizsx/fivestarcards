@@ -703,7 +703,14 @@
     public function handle_notification($data){
         $body = $data->get_body();
 
-        return substr( $body, strpos( $body, "<soapenv:Body>", 0 ), strlen($body) );
+        $xml_string = substr( $body, strpos( $body, "<soapenv:Body>", 0 ), strlen($body) );
+
+        $xml = simplexml_load_string($xml_string);
+        $json = json_encode($xml);
+        $array = json_decode($json,TRUE);
+
+        return $array;
+                
     }
 
     //*********** ENDPOINTS *********** //
