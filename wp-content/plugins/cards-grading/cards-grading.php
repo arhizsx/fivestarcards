@@ -704,10 +704,7 @@
         $headers = $data->get_headers();
         $params = $data->get_params();
         $body = $data->get_body();
-
-        $xml = simplexml_load_string($body);
-
-        return $xml;
+        return $body;
     }
 
     //*********** ENDPOINTS *********** //
