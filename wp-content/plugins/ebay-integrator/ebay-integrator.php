@@ -39,7 +39,7 @@
         
         register_rest_route(
             "ebay-integrator/v2",
-            "rnotification",
+            "notification",
             array(
                 'methods' => 'GET',
                 'callback' => array($this, 'handle_notification'),
