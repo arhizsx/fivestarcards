@@ -704,9 +704,7 @@
         $body = $data->get_body();
 
         
-        $xml_string = str_replace('<?xml version="1.0" encoding="UTF-8"?>', '', $body);
-
-        $xml = simplexml_load_string($xml_string);
+        $xml = simplexml_load_string($body);
 
         return $xml;
 
