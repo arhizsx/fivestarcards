@@ -701,7 +701,8 @@
     }
 
     public function handle_notification($data){
-        return "TEST";
+        $params = $data->get_params();
+        return $params;
     }
 
     //*********** ENDPOINTS *********** //
