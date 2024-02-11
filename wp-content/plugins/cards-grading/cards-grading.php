@@ -701,19 +701,9 @@
     }
 
     public function handle_notification($data){
-        $headers = $data->get_headers();
-        $params = $data->get_params();
         $body = $data->get_body();
 
-
-
-        $xml_string = <<<EOR
-                        $body
-                        EOR;
-        
-        $json = json_encode($body);
-        
-        return print_r($json);
+        return var_dump($body);
     }
 
     //*********** ENDPOINTS *********** //
