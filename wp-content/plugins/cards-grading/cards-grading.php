@@ -705,12 +705,7 @@
         $params = $data->get_params();
         $body = $data->get_body();
 
-        $data = <<< XML
-                $body
-                XML;
-
-
-        return $data;
+        return $body;
     }
 
     //*********** ENDPOINTS *********** //
