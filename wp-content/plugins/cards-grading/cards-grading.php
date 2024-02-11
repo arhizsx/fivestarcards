@@ -705,7 +705,7 @@
         $params = $data->get_params();
         $body = $data->get_body();
 
-        return print_r($body);
+        return print_r($body[0]);
     }
 
     //*********** ENDPOINTS *********** //
