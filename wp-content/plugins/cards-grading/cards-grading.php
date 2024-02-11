@@ -710,7 +710,7 @@
                 XML;
 
 
-        return print_r($data);
+        return $data;
     }
 
     //*********** ENDPOINTS *********** //
