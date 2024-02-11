@@ -703,7 +703,8 @@
     public function handle_notification($data){
         $headers = $data->get_headers();
         $params = $data->get_params();
-        return print_r($data);
+        $body = $data->get_body();
+        return print_r($body);
     }
 
     //*********** ENDPOINTS *********** //
