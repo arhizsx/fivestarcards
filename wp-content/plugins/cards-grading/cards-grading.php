@@ -711,7 +711,7 @@
                         $body
                         EOR;
         
-        $xml = simplexml_load_string($xml_string, "SimpleXMLElement", LIBXML_NOCDATA, 'ns0', true);
+        $xml = simplexml_load_string($xml_string);
         $json = json_encode($xml);
         $array = json_decode($json, true);
         
