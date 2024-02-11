@@ -705,7 +705,14 @@
         $params = $data->get_params();
         $body = $data->get_body();
 
-        return $body;
+        $data = <<< XML
+                $body
+                XML;
+
+        $xml = simplexml_load_string($data);
+        $data = $xml->xpath("//soap:Body/*")[0];
+
+        return $data;
     }
 
     //*********** ENDPOINTS *********** //
