@@ -38,7 +38,7 @@
     {
         
         register_rest_route(
-            "ebay-integrator/v2",
+            "ebay-integrator/v1",
             "notification",
             array(
                 'methods' => 'GET',
