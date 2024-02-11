@@ -703,7 +703,7 @@
     public function handle_notification($data){
         $body = $data->get_body();
 
-        return strpos( $body, "<soapenv:Body>", 0 );
+        return substr( $body, strpos( $body, "<soapenv:Body>", 0 ), strlen($body) );
     }
 
     //*********** ENDPOINTS *********** //
