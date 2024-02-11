@@ -701,7 +701,7 @@
     }
 
     public function handle_notification($data){
-        return $data;
+        return "TEST";
     }
 
     //*********** ENDPOINTS *********** //
