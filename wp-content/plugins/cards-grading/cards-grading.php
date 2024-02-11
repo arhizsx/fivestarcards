@@ -705,10 +705,15 @@
         $params = $data->get_params();
         $body = $data->get_body();
 
-        $xml = simplexml_load_string($body);
-        $xml = simplexml_load_string($body, 'SimpleXMLElement', LIBXML_NOCDATA | LIBXML_NOBLANKS);
+        $data = <<< XML
+                $body
+                XML;
 
-        return print_r($xml);
+        $xml = simplexml_load_string($data);
+        $data = $xml->xpath("//soap:Body/*")[0];
+
+
+        return print_r($data);
     }
 
     //*********** ENDPOINTS *********** //
