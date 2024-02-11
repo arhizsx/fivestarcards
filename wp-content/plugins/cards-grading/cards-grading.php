@@ -705,7 +705,9 @@
         $params = $data->get_params();
         $body = $data->get_body();
 
-        return print_r($body[2]);
+        $xml = simplexml_load_string($body);
+
+        return print_r($xml);
     }
 
     //*********** ENDPOINTS *********** //
