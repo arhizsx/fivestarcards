@@ -703,9 +703,17 @@
     public function handle_notification($data){
         $body = $data->get_body();
 
+        libxml_use_internal_errors(true);
         
         $xml = simplexml_load_string($body);
-
+        
+        if (false === $xml) {
+            $errors = libxml_get_errors();
+            echo 'Errors are '.var_export($errors, true);
+            throw new \Exception('invalid XML');
+        } 
+        
+        
         return $xml;
 
                 
