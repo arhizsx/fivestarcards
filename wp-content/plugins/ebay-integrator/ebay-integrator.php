@@ -49,7 +49,7 @@
 
     //*********** ENDPOINTS *********** //
 
-    public function handle_notification($data){
+    public function handle_notification(){
         return "TEST";
     }
 
