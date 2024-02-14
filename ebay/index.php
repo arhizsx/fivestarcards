@@ -21,11 +21,11 @@ $grant_type = "authorization_code";
 
 
 $headers = array (
-    'Authorization' => print('Basic ' . base64_encode($client_id . ":" . $client_secret)),
+    'Authorization' => 'Basic ' . base64_encode($client_id . ":" . $client_secret),
     'Content-Type'  => 'application/x-www-form-urlencoded'
 );
 
-echo 'Basic ' . base64_encode($client_id . ":" . $client_secret);
+// echo 'Basic ' . base64_encode($client_id . ":" . $client_secret);
 
 echo "<hr>";
 
