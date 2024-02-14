@@ -23,5 +23,28 @@ echo '<div class="ebay"
 
 <script>
 
+$.ajax({
+    method: 'post',
+    url: apiURL,
+    headers: {
+        'Centent-Type': 'application/x-www-form-urlencoded',
+        'Authorization': 'Basic RmVybmFuZG8tNXN0YXJjYXItUFJELWE4MWZkZDE4OS1hNzYyZGZjNzpQUkQtODFmZGQxODljYmYxLWY0NzItNDEzMS05M2EyLTE5OTA=' 
+    },
+    data: {
+        code: '<?php echo $auth_code; ?>',
+        grant_type: '<?php echo $grant_type; ?>',
+        redirect_uri: '<?php echo $redirect_uri; ?>',
+    },
+    success: function(resp){
+
+        console.log(resp)
+
+    },
+    error: function(){
+        console.log("ebay error");
+    }
+});
+
+
 </script>
 
