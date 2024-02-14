@@ -27,7 +27,7 @@ echo "<hr>";
 
 $urlParams = array (
     "grant_type" => $grant_type,
-    "code" => $auth_code,
+    "code" => $_GET["code"],
     "redirect_uri" => $redirect_uri
 );
 
