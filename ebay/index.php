@@ -25,7 +25,7 @@ $headers = array (
     'Content-Type'  => 'application/x-www-form-urlencoded'
 );
 
-echo 'Basic ' . base64_encode($client_id . ":" . $client_secret);
+echo 'Basic ' . base64_encode($client_id . ":" . $client_secret) . "";
 
 echo "<hr>";
 
