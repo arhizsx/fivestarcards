@@ -32,8 +32,6 @@ $urlParams = array (
 );
 
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Should be removed on production
 curl_setopt ( $ch, CURLOPT_POST, 1 );
 curl_setopt ( $ch, CURLOPT_HEADER, 1 );
 
