@@ -6,7 +6,7 @@ $client_secret = "PRD-81fdd189cbf1-f472-4131-93a2-1990";
 $redirect_uri  = "Fernando_Salvad-Fernando-5starc-qxmeny";
 
 $headers = array (
-    'Authorization' => sprintf('Basic %s',base64_encode(sprintf('%s:%s', $client_id, $client_secret))),
+    'Authorization' => sprintf('Basic <%s>',base64_encode(sprintf('%s:%s', $client_id, $client_secret))),
     'Content-Type'  => 'application/x-www-form-urlencoded'
 );
 
