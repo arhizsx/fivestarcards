@@ -47,7 +47,7 @@ curl_close($curl);
 
 $results = json_decode($response, true);
 
-print_r($results);
+print_r($results["access_token"]);
 
 ?>
 
