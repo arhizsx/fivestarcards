@@ -27,16 +27,16 @@ $post_data = json_encode(array(
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $apiURL);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $response = curl_exec($ch);
-
-print_r($response);
-
+if(curl_errno($ch)){
+    echo "ERROR:".curl_error($ch);
+}
+curl_close($ch); 
+echo json_decode($response,true);
 
 ?>
 
