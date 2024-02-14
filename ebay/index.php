@@ -12,7 +12,7 @@ $client_secret = "PRD-81fdd189cbf1-f472-4131-93a2-1990";
 $redirect_uri  = "Fernando_Salvad-Fernando-5starc-qxmeny";
 
 $headers = array (
-    'Authorization' => 'Basic ' . base64_encode($client_id . ":" . $client_secret),
+    'Authorization' => print('Basic ' . base64_encode($client_id . ":" . $client_secret)),
     'Content-Type'  => 'application/x-www-form-urlencoded'
 );
 
@@ -23,7 +23,7 @@ echo "<hr>";
 
 $apiURL = "https://api.ebay.com/identity/v1/oauth2/token";
 $urlParams = array (
-    "grant_type" => "authorization_code",
+    "grant_type" => "client_credentials",
     "code" => $auth_code,
     "redirect_uri" => $redirect_uri
 );
