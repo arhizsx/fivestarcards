@@ -36,7 +36,7 @@ if(curl_errno($ch)){
     echo "ERROR:".curl_error($ch);
 }
 curl_close($ch); 
-echo json_decode($response,true);
+var_dump($response);
 
 ?>
 
