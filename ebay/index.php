@@ -32,7 +32,7 @@
 
             $.ajax({
                 method: 'post',
-                url: apiURL,
+                url: '<?php echo $apiURL; ?>',
                 headers: {
                     'Centent-Type': 'application/x-www-form-urlencoded',
                     'Authorization': 'Basic RmVybmFuZG8tNXN0YXJjYXItUFJELWE4MWZkZDE4OS1hNzYyZGZjNzpQUkQtODFmZGQxODljYmYxLWY0NzItNDEzMS05M2EyLTE5OTA=' 
