@@ -13,30 +13,39 @@ echo "<hr>";
 echo 'Basic ' . base64_encode($client_id . ":" . $client_secret);
 echo "<hr>";
 
-$headers = array (
-    'Authorization' => 'Basic ' . base64_encode($client_id . ":" . $client_secret),
-    'Content-Type'  => 'application/x-www-form-urlencoded'
-);
-
 $post_data = [
         'grant_type' => 'authorization_code',
         'code' => $auth_code,
         'redirect_uri' => 'Fernando_Salvad-Fernando-5starc-qxmeny'
 ];
 
+$curl = curl_init();
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $apiURL);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post_data) );
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$response = curl_exec($ch);
-if(curl_errno($ch)){
-    echo "ERROR:".curl_error($ch);
-}
-curl_close($ch); 
-var_dump($response);
+curl_setopt_array(
+    $curl,
+    [
+        CURLOPT_URL => 'https://api.ebay.com/identity/v1/oauth2/token',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => http_build_query($post_data),
+        CURLOPT_HTTPHEADER => [
+            'Content-Type: application/x-www-form-urlencoded',
+            'Authorization: Basic ' . base64_encode($client_id . ":" . $client_secret)
+        ]
+    ]
+);
+
+$response = curl_exec($curl);
+$status = curl_getinfo($curl);
+
+curl_close($curl);
+
+$results = json_decode($response, true);
 
 ?>
 
