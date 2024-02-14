@@ -49,6 +49,10 @@ $results = json_decode($response, true);
 
 print_r($results["access_token"]);
 
+echo "<hr>";
+
+print_r($results["refresh_token"]);
+
 ?>
 
 <script>
