@@ -1,56 +1,46 @@
-<html>
-    <head>
+<?php 
+$auth_code = urldecode($_GET["code"]);
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>    
-    </head>
-    <body>
+// PRODUCTION
+$client_id = "Fernando-5starcar-PRD-a81fdd189-a762dfc7";
+$client_secret = "PRD-81fdd189cbf1-f472-4131-93a2-1990";
+$redirect_uri  = "Fernando_Salvad-Fernando-5starc-qxmeny";
+$apiURL = "https://api.ebay.com/identity/v1/oauth2/token";
+$grant_type = "authorization_code";
 
-        <?php 
-        $auth_code = urldecode($_GET["code"]);
+echo $auth_code;
+echo "<hr>";
+echo 'Basic ' . base64_encode($client_id . ":" . $client_secret);
+echo "<hr>";
 
-        // PRODUCTION
-        $client_id = "Fernando-5starcar-PRD-a81fdd189-a762dfc7";
-        $client_secret = "PRD-81fdd189cbf1-f472-4131-93a2-1990";
-        $redirect_uri  = "Fernando_Salvad-Fernando-5starc-qxmeny";
-        $apiURL = "https://api.ebay.com/identity/v1/oauth2/token";
-        $grant_type = "authorization_code";
-        $authorization = 'Basic ' . base64_encode($client_id . ":" . $client_secret);
+$headers = array (
+    'Authorization' => 'Basic ' . base64_encode($client_id . ":" . $client_secret),
+    'Content-Type'  => 'application/x-www-form-urlencoded'
+);
 
-        echo '<div class="ebay" 
-            data-code="' . $auth_code . '" 
-            data-client_id="' . $client_id . '" 
-            data-client_secret="' . $client_secret . '" 
-            data-redirect_uri="' . $redirect_uri . '" 
-            data-apiURL="' . $apiURL . '" 
-            data-grant_type="' . $grant_type . '" 
-            data-authorization="' . $authorization . '"'. 
-            '><eBay Integration/div>';
+$post_data = array(
+        'grant_type' => 'authorization_code',
+        'code' => $auth_code,
+        'redirect_uri' => 'Fernando_Salvad-Fernando-5starc-qxmeny'
+);
 
-        ?>
-        <script>
 
-            $.ajax({
-                method: 'post',
-                url: '<?php echo $apiURL; ?>',
-                headers: {
-                    'Centent-Type': 'application/x-www-form-urlencoded',
-                    'Authorization': 'Basic RmVybmFuZG8tNXN0YXJjYXItUFJELWE4MWZkZDE4OS1hNzYyZGZjNzpQUkQtODFmZGQxODljYmYxLWY0NzItNDEzMS05M2EyLTE5OTA=' 
-                },
-                data: {
-                    code: '<?php echo $auth_code; ?>',
-                    grant_type: '<?php echo $grant_type; ?>',
-                    redirect_uri: '<?php echo $redirect_uri; ?>',
-                },
-                success: function(resp){
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $apiURL);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$response = curl_exec($ch);
 
-                    console.log(resp)
+print_r($response);
 
-                },
-                error: function(){
-                    console.log("ebay error");
-                }
-            });
 
-        </script>
-    </body>
-</html>
+?>
+
+<script>
+
+</script>
+
