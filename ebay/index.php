@@ -5,7 +5,6 @@ echo $auth_code;
 
 echo "<hr>";
 
-echo sprintf('Basic <%s>',base64_encode(sprintf('%s:%s', $client_id, $client_secret)));
 
 echo "<hr>";
 
@@ -17,6 +16,9 @@ $headers = array (
     'Authorization' => sprintf('Basic <%s>',base64_encode(sprintf('%s:%s', $client_id, $client_secret))),
     'Content-Type'  => 'application/x-www-form-urlencoded'
 );
+
+echo sprintf('Basic <%s>',base64_encode(sprintf('%s:%s', $client_id, $client_secret)));
+
 
 $apiURL = "https://api.ebay.com/identity/v1/oauth2/token";
 $urlParams = array (
