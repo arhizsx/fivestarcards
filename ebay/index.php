@@ -1,7 +1,7 @@
 <?php 
 $auth_code = urldecode($_GET["code"]);
 
-echo $auth_code;
+echo $_GET["code"];
 
 echo "<hr>";
 
