@@ -1,6 +1,14 @@
 <?php 
-
 $auth_code = urldecode($_GET["code"]);
+
+echo $auth_code;
+
+echo "<hr>";
+
+echo sprintf('Basic <%s>',base64_encode(sprintf('%s:%s', $client_id, $client_secret)));
+
+echo "<hr>";
+
 $client_id = "Fernando-5starcar-PRD-a81fdd189-a762dfc7";
 $client_secret = "PRD-81fdd189cbf1-f472-4131-93a2-1990";
 $redirect_uri  = "Fernando_Salvad-Fernando-5starc-qxmeny";
