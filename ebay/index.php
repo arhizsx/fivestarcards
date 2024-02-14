@@ -12,11 +12,11 @@ $client_secret = "PRD-81fdd189cbf1-f472-4131-93a2-1990";
 $redirect_uri  = "Fernando_Salvad-Fernando-5starc-qxmeny";
 
 $headers = array (
-    'Authorization' => sprintf('Basic <%s>',base64_encode(sprintf('%s:%s', $client_id, $client_secret))),
+    'Authorization' => 'Basic ' . base64_encode($client_id . ":" . $client_secret),
     'Content-Type'  => 'application/x-www-form-urlencoded'
 );
 
-echo 'Basic <' . base64_encode("Fernando-5starcar-PRD-a81fdd189-a762dfc7:PRD-81fdd189cbf1-f472-4131-93a2-1990") . '>';
+echo 'Basic ' . base64_encode($client_id . ":" . $client_secret);
 
 echo "<hr>";
 
