@@ -41,6 +41,8 @@ curl_setopt ( $ch, CURLOPT_POSTFIELDS, $urlParams );
 $resp = curl_exec ( $ch );
 curl_close ( $ch );
 
+echo "<hr>";
+
 print_r ( $resp );
 ?>
 
