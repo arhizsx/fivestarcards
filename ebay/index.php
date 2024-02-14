@@ -18,11 +18,11 @@ $headers = array (
     'Content-Type'  => 'application/x-www-form-urlencoded'
 );
 
-$post_data = array(
+$post_data = json_encode(array(
         'grant_type' => 'authorization_code',
         'code' => $auth_code,
         'redirect_uri' => 'Fernando_Salvad-Fernando-5starc-qxmeny'
-);
+));
 
 
 $ch = curl_init();
