@@ -1,5 +1,5 @@
 <?php 
 
-echo "ebay";
+echo  urldecode($_GET["code"]);
 
 ?>
