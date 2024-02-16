@@ -81,6 +81,9 @@
             <br><br><label>Access Token</label><br>
             <textarea class="boxsizingBorder" rows="15"><?php print_r($results["access_token"]); ?></textarea>
         </div>
+
+        <?php } ?>
+
         <div>
             <br><br><label>Refresh Token</label><br>
             <textarea class="boxsizingBorder"><?php print_r($results["refresh_token"]);?></textarea>
@@ -130,10 +133,9 @@
 
 
         <div>
-            <br><br><label>Refresh Token</label><br>
+            <br><br><label>Access Token</label><br>
             <textarea class="boxsizingBorder" rows="5"><?php print_r($results["access_token"]);?></textarea>
         </div>
-
-        <?php } ?>
+        
     </body>
 </html>
