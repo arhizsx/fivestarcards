@@ -1,73 +1,87 @@
-<?php 
-$auth_code = urldecode($_GET["code"]);
+<html>
+    <head>
+        <style>
+            .boxsizingBorder {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                        box-sizing: border-box;
+            }            
+        </style>
+    </head>
+    <body>
+        <?php 
 
-$client_id = "Fernando-5starcar-PRD-a81fdd189-a762dfc7";
-$client_secret = "PRD-81fdd189cbf1-f472-4131-93a2-1990";
-$redirect_uri  = "Fernando_Salvad-Fernando-5starc-qxmeny";
-$apiURL = "https://api.ebay.com/identity/v1/oauth2/token";
-$grant_type = "authorization_code";
+        $auth_code = urldecode($_GET["code"]);
 
-$post_data = [
-    'grant_type' => $grant_type,
-    'code' => $auth_code,
-    'redirect_uri' => $redirect_uri
-];
+        $client_id = "Fernando-5starcar-PRD-a81fdd189-a762dfc7";
+        $client_secret = "PRD-81fdd189cbf1-f472-4131-93a2-1990";
+        $redirect_uri  = "Fernando_Salvad-Fernando-5starc-qxmeny";
+        $apiURL = "https://api.ebay.com/identity/v1/oauth2/token";
+        $grant_type = "authorization_code";
 
-$curl = curl_init();
+        $post_data = [
+            'grant_type' => $grant_type,
+            'code' => $auth_code,
+            'redirect_uri' => $redirect_uri
+        ];
 
-curl_setopt_array(
-    $curl,
-    [
-        CURLOPT_URL => $apiURL,
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => http_build_query($post_data),
-        CURLOPT_HTTPHEADER => [
-            'Content-Type: application/x-www-form-urlencoded',
-            'Authorization: Basic ' . base64_encode($client_id . ":" . $client_secret)
-        ]
-    ]
-);
+        $curl = curl_init();
 
-$response = curl_exec($curl);
-$status = curl_getinfo($curl);
+        curl_setopt_array(
+            $curl,
+            [
+                CURLOPT_URL => $apiURL,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS => http_build_query($post_data),
+                CURLOPT_HTTPHEADER => [
+                    'Content-Type: application/x-www-form-urlencoded',
+                    'Authorization: Basic ' . base64_encode($client_id . ":" . $client_secret)
+                ]
+            ]
+        );
 
-curl_close($curl);
+        $response = curl_exec($curl);
+        $status = curl_getinfo($curl);
 
-$results = json_decode($response, true);
+        curl_close($curl);
 
-?>
-<H1>5 Star Cards eBay Integration</H1>
-<hr>
+        $results = json_decode($response, true);
 
-<?php if(isset($_GET["code"]) === false){ ?>
-<div>
-    <a href="https://auth.ebay.com/oauth2/authorize?client_id=Fernando-5starcar-PRD-a81fdd189-a762dfc7&response_type=code&redirect_uri=Fernando_Salvad-Fernando-5starc-qxmeny&scope=https://api.ebay.com/oauth/api_scope https://api.ebay.com/oauth/api_scope/sell.marketing.readonly https://api.ebay.com/oauth/api_scope/sell.marketing https://api.ebay.com/oauth/api_scope/sell.inventory.readonly https://api.ebay.com/oauth/api_scope/sell.inventory https://api.ebay.com/oauth/api_scope/sell.account.readonly https://api.ebay.com/oauth/api_scope/sell.account https://api.ebay.com/oauth/api_scope/sell.fulfillment.readonly https://api.ebay.com/oauth/api_scope/sell.fulfillment https://api.ebay.com/oauth/api_scope/sell.analytics.readonly https://api.ebay.com/oauth/api_scope/sell.finances https://api.ebay.com/oauth/api_scope/sell.payment.dispute https://api.ebay.com/oauth/api_scope/commerce.identity.readonly https://api.ebay.com/oauth/api_scope/sell.reputation https://api.ebay.com/oauth/api_scope/sell.reputation.readonly https://api.ebay.com/oauth/api_scope/commerce.notification.subscription https://api.ebay.com/oauth/api_scope/commerce.notification.subscription.readonly https://api.ebay.com/oauth/api_scope/sell.stores https://api.ebay.com/oauth/api_scope/sell.stores.readonly">
-        Connect To Ebay
-    </a>
-</div>
-<?php } else { ?>
+        ?>
+        <H1>5 Star Cards eBay Integration</H1>
+        <hr>
 
-<div>
-    <br><br><label>Access Token</label><br>
-    <textarea>
-    <?php 
-    print_r($results["access_token"]);
-    ?>
-    </textarea>
-</div>
-<div>
-    <br><br><label>Refresh Token</label><br>
-    <textarea>
-    <?php 
-    print_r($results["refresh_token"]);
-    ?>
-    </textarea>
-</div>
+        <?php if(isset($_GET["code"]) === false){ ?>
+        <div>
+            <a href="https://auth.ebay.com/oauth2/authorize?client_id=Fernando-5starcar-PRD-a81fdd189-a762dfc7&response_type=code&redirect_uri=Fernando_Salvad-Fernando-5starc-qxmeny&scope=https://api.ebay.com/oauth/api_scope https://api.ebay.com/oauth/api_scope/sell.marketing.readonly https://api.ebay.com/oauth/api_scope/sell.marketing https://api.ebay.com/oauth/api_scope/sell.inventory.readonly https://api.ebay.com/oauth/api_scope/sell.inventory https://api.ebay.com/oauth/api_scope/sell.account.readonly https://api.ebay.com/oauth/api_scope/sell.account https://api.ebay.com/oauth/api_scope/sell.fulfillment.readonly https://api.ebay.com/oauth/api_scope/sell.fulfillment https://api.ebay.com/oauth/api_scope/sell.analytics.readonly https://api.ebay.com/oauth/api_scope/sell.finances https://api.ebay.com/oauth/api_scope/sell.payment.dispute https://api.ebay.com/oauth/api_scope/commerce.identity.readonly https://api.ebay.com/oauth/api_scope/sell.reputation https://api.ebay.com/oauth/api_scope/sell.reputation.readonly https://api.ebay.com/oauth/api_scope/commerce.notification.subscription https://api.ebay.com/oauth/api_scope/commerce.notification.subscription.readonly https://api.ebay.com/oauth/api_scope/sell.stores https://api.ebay.com/oauth/api_scope/sell.stores.readonly">
+                Connect To Ebay
+            </a>
+        </div>
+        <?php } else { ?>
 
-<?php } ?>
+        <div>
+            <br><br><label>Access Token</label><br>
+            <textarea class="boxsizingBorder">
+            <?php 
+            print_r($results["access_token"]);
+            ?>
+            </textarea>
+        </div>
+        <div>
+            <br><br><label>Refresh Token</label><br>
+            <textarea class="boxsizingBorder">
+            <?php 
+            print_r($results["refresh_token"]);
+            ?>
+            </textarea>
+        </div>
+
+        <?php } ?>
+    </body>
+</html>
