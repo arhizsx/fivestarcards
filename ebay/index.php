@@ -54,7 +54,7 @@ $results = json_decode($response, true);
 <?php } else { ?>
 
 <div>
-    <label>Access Token</label><br>
+    <br><br><label>Access Token</label><br>
     <textarea>
     <?php 
     print_r($results["access_token"]);
@@ -62,7 +62,7 @@ $results = json_decode($response, true);
     </textarea>
 </div>
 <div>
-    <label>Refresh Token</label><br>
+    <br><br><label>Refresh Token</label><br>
     <textarea>
     <?php 
     print_r($results["refresh_token"]);
