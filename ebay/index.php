@@ -18,7 +18,16 @@
             </a>
         </div>
 
-        <?php if(isset($_GET["code"]) === false){ ?>
+        <?php 
+        $auth_code = urldecode($_GET["code"]);
+
+        $client_id = "Fernando-5starcar-PRD-a81fdd189-a762dfc7";
+        $client_secret = "PRD-81fdd189cbf1-f472-4131-93a2-1990";
+        $redirect_uri  = "Fernando_Salvad-Fernando-5starc-qxmeny";
+        $apiURL = "https://api.ebay.com/identity/v1/oauth2/token";
+        $grant_type = "authorization_code";
+        
+        if(isset($_GET["code"]) === false){ ?>
             <div>
             <br><br><label>Access Token</label><br>
             <textarea class="boxsizingBorder" rows="20"></textarea>
@@ -31,14 +40,6 @@
         <?php } else { ?>
 
         <?php 
-
-        $auth_code = urldecode($_GET["code"]);
-
-        $client_id = "Fernando-5starcar-PRD-a81fdd189-a762dfc7";
-        $client_secret = "PRD-81fdd189cbf1-f472-4131-93a2-1990";
-        $redirect_uri  = "Fernando_Salvad-Fernando-5starc-qxmeny";
-        $apiURL = "https://api.ebay.com/identity/v1/oauth2/token";
-        $grant_type = "authorization_code";
 
         $post_data = [
             'grant_type' => $grant_type,
