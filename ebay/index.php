@@ -79,7 +79,7 @@
 
         <div>
             <br><br><label>Access Token</label><br>
-            <textarea class="boxsizingBorder" rows="20"><?php print_r($results["access_token"]); ?></textarea>
+            <textarea class="boxsizingBorder" rows="15"><?php print_r($results["access_token"]); ?></textarea>
         </div>
         <div>
             <br><br><label>Refresh Token</label><br>
