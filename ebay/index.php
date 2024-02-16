@@ -42,22 +42,32 @@ curl_close($curl);
 $results = json_decode($response, true);
 
 ?>
+<H1>5 Star Cards eBay Integration</H1>
+<hr>
 
-<label>Access Token</label>
-<textarea>
-<?php 
-print_r($results["access_token"]);
-?>
-</textarea>
+<?php if(isset($_GET["code"]) === false){ ?>
+<div>
+    <a href="https://auth.ebay.com/oauth2/authorize?client_id=Fernando-5starcar-PRD-a81fdd189-a762dfc7&response_type=code&redirect_uri=Fernando_Salvad-Fernando-5starc-qxmeny&scope=https://api.ebay.com/oauth/api_scope https://api.ebay.com/oauth/api_scope/sell.marketing.readonly https://api.ebay.com/oauth/api_scope/sell.marketing https://api.ebay.com/oauth/api_scope/sell.inventory.readonly https://api.ebay.com/oauth/api_scope/sell.inventory https://api.ebay.com/oauth/api_scope/sell.account.readonly https://api.ebay.com/oauth/api_scope/sell.account https://api.ebay.com/oauth/api_scope/sell.fulfillment.readonly https://api.ebay.com/oauth/api_scope/sell.fulfillment https://api.ebay.com/oauth/api_scope/sell.analytics.readonly https://api.ebay.com/oauth/api_scope/sell.finances https://api.ebay.com/oauth/api_scope/sell.payment.dispute https://api.ebay.com/oauth/api_scope/commerce.identity.readonly https://api.ebay.com/oauth/api_scope/sell.reputation https://api.ebay.com/oauth/api_scope/sell.reputation.readonly https://api.ebay.com/oauth/api_scope/commerce.notification.subscription https://api.ebay.com/oauth/api_scope/commerce.notification.subscription.readonly https://api.ebay.com/oauth/api_scope/sell.stores https://api.ebay.com/oauth/api_scope/sell.stores.readonly"></a>
+        Connect To Ebay
+    </a>
+</div>
+<?php } else { ?>
 
-<label>Refresh Token</label>
-<textarea>
-<?php 
-print_r($results["refresh_token"]);
-?>
-</textarea>
+<div>
+    <label>Access Token</label><br>
+    <textarea>
+    <?php 
+    print_r($results["access_token"]);
+    ?>
+    </textarea>
+</div>
+<div>
+    <label>Refresh Token</label><br>
+    <textarea>
+    <?php 
+    print_r($results["refresh_token"]);
+    ?>
+    </textarea>
+</div>
 
-<script>
-
-</script>
-
+<?php } ?>
