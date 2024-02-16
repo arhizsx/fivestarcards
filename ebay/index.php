@@ -41,17 +41,21 @@ curl_close($curl);
 
 $results = json_decode($response, true);
 
-print_r($results["access_token"]);
-
-echo "<hr>";
-
-print_r($results["refresh_token"]);
-
-echo "<hr>";
-
-print_r($results);
-
 ?>
+
+<label>Access Token</label>
+<textarea>
+<?php 
+print_r($results["access_token"]);
+?>
+</textarea>
+
+<label>Refresh Token</label>
+<textarea>
+<?php 
+print_r($results["refresh_token"]);
+?>
+</textarea>
 
 <script>
 
