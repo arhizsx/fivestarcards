@@ -94,7 +94,7 @@
         
         $post_data = [
             'grant_type' => $grant_type,
-            'refresh_token' => $refresh_token,
+            'refresh_token' => "v^1.1#i^1#f^0#p^3#I^3#r^1#t^Ul4xMF8xMToyOENGODYzNEU0NDNBMTEwMjJCNTMzNjkyNjc2REQ5Q18wXzEjRV4yNjA=",
             'scope' => $scope
         ];
 
