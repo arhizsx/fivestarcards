@@ -21,7 +21,7 @@
         <?php if(isset($_GET["code"]) === false){ ?>
             <div>
             <br><br><label>Access Token</label><br>
-            <textarea class="boxsizingBorder"></textarea>
+            <textarea class="boxsizingBorder" rows="20"></textarea>
         </div>
         <div>
             <br><br><label>Refresh Token</label><br>
@@ -79,7 +79,7 @@
 
         <div>
             <br><br><label>Access Token</label><br>
-            <textarea class="boxsizingBorder"><?php print_r($results["access_token"]); ?></textarea>
+            <textarea class="boxsizingBorder" rows="20"><?php print_r($results["access_token"]); ?></textarea>
         </div>
         <div>
             <br><br><label>Refresh Token</label><br>
