@@ -30,7 +30,7 @@
         if(isset($_GET["code"]) === false){ ?>
             <div>
             <br><br><label>Access Token</label><br>
-            <textarea class="boxsizingBorder" rows="20"></textarea>
+            <textarea class="boxsizingBorder" rows="5"></textarea>
         </div>
         <div>
             <br><br><label>Refresh Token</label><br>
