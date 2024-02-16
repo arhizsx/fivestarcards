@@ -131,7 +131,7 @@
 
         <div>
             <br><br><label>Refresh Token</label><br>
-            <textarea class="boxsizingBorder"><?php print_r($results);?></textarea>
+            <textarea class="boxsizingBorder" rows="5"><?php print_r($results);?></textarea>
         </div>
 
         <?php } ?>
