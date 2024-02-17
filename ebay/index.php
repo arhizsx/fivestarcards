@@ -274,7 +274,7 @@
 
             url: "https://api.ebay.com/ws/api.dll",
             method: "POST",
-            data: "<?php echo $get_item_body; ?>",
+            data: '<?php echo $get_item_body; ?>',
             headers: {
                 "X-EBAY-API-SITEID" : "0",
                 "X-EBAY-API-COMPATIBILITY-LEVEL" : "967",
