@@ -140,7 +140,7 @@
         <hr>
 
         <?php  
-        $access_token = $response["access_token"];
+        $access_token = $results["access_token"];
         $apiURL = "https://api.ebay.com/ws/api.dll";
         
         
