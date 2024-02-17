@@ -30,11 +30,11 @@
         if(isset($_GET["code"]) === false){ ?>
             <div>
             <br><br><label>Access Token</label><br>
-            <textarea class="boxsizingBorder" rows="5"></textarea>
+            <textarea class="boxsizingBorder"  style="display: none;" rows="5"></textarea>
         </div>
         <div>
             <br><br><label>Refresh Token</label><br>
-            <textarea class="boxsizingBorder"></textarea>
+            <textarea class="boxsizingBorder"  style="display: none;"></textarea>
         </div>
 
         <?php } else { ?>
@@ -80,11 +80,11 @@
 
         <div>
             <br><br><label>Access Token</label><br>
-            <textarea class="boxsizingBorder" rows="5"><?php print_r($results["access_token"]); ?></textarea>
+            <textarea class="boxsizingBorder" style="display: none;" rows="5"><?php print_r($results["access_token"]); ?></textarea>
         </div>
         <div>
             <br><br><label>Refresh Token</label><br>
-            <textarea class="boxsizingBorder"><?php print_r($results["refresh_token"]);?></textarea>
+            <textarea class="boxsizingBorder" style="display: none;"><?php print_r($results["refresh_token"]);?></textarea>
         </div>
 
 
@@ -135,7 +135,7 @@
 
         <div>
             <br><br><label>Refreshed Access Token</label><br>
-            <textarea class="boxsizingBorder" rows="5"><?php print_r($results["access_token"]);?></textarea>
+            <textarea class="boxsizingBorder" style="display: none;" rows="5"><?php print_r($results["access_token"]);?></textarea>
         </div>
         <hr>
 
