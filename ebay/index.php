@@ -205,17 +205,17 @@
                 </div>
                 <div class="col-xl-8 py-3">
                     <label>ItemID</label>
-                    <input class="form-control" type="text" value="<?php echo $item["ItemID"] ?>"/>
+                    <input class="form-control mb-2" type="text" value="<?php echo $item["ItemID"] ?>"/>
                     <label>Title</label>
-                    <input class="form-control" type="text" value="<?php echo $item["Title"] ?>"/>
+                    <input class="form-control mb-2" type="text" value="<?php echo $item["Title"] ?>"/>
                     <label>StartPrice</label>
-                    <input class="form-control" type="text" value="<?php echo $item["StartPrice"] ?>"/>
+                    <input class="form-control mb-2" type="text" value="<?php echo $item["StartPrice"] ?>"/>
                     <label>CurrentPrice</label>
-                    <input class="form-control" type="text" value="<?php echo $item["SellingStatus"]["CurrentPrice"] ?>"/>
+                    <input class="form-control mb-2" type="text" value="<?php echo $item["SellingStatus"]["CurrentPrice"] ?>"/>
                     <label>BidCount</label>
-                    <input class="form-control" type="text" value="<?php echo $item["SellingStatus"]["BidCount"] ?>"/>
+                    <input class="form-control mb-2" type="text" value="<?php echo $item["SellingStatus"]["BidCount"] ?>"/>
                     <label>SKU</label>
-                    <input class="form-control" type="text" value="<?php echo $item["SKU"] ?>"/>
+                    <input class="form-control mb-2" type="text" value="<?php echo $item["SKU"] ?>"/>
                 </div>
             </div>
         <?php
