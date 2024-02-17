@@ -135,7 +135,7 @@
 
         <div>
             <br><br><label>Refreshed Access Token</label><br>
-            <textarea class="boxsizingBorder" style="display: none;" rows="5"><?php print_r($results["access_token"]);?></textarea>
+            <textarea class="boxsizingBorder" rows="5"><?php print_r($results["access_token"]);?></textarea>
         </div>
         <hr>
 
