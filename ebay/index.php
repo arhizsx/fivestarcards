@@ -188,8 +188,6 @@
 
         curl_close($curl);
 
-        print_r($response);
-
         $xml=simplexml_load_string($response) or die("Error: Cannot create object");
         print_r($xml);
 
