@@ -203,7 +203,7 @@
                 <div class="col-xl-4">
                     <img src="" data-itemID="" class="itemImage">
                 </div>
-                <div class="col-xl-8">
+                <div class="col-xl-8 py-3">
                     <label>ItemID</label>
                     <input class="form-control" type="text" value="<?php echo $item["ItemID"] ?>"/>
                     <label>Title</label>
