@@ -189,10 +189,10 @@
         curl_close($curl);
 
         $xml=simplexml_load_string($response) or die("Error: Cannot create object");
-        $json_response = json_encode($xml, true);
+        $json = json_encode($xml);
 
-            print_r($json_response);
-
+        print_r($json);
+        
         ?>
 
 
