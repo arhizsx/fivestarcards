@@ -258,10 +258,45 @@
             </div>
         <?php
         }
+
+        $get_item_body = '<?xml version="1.0" encoding="utf-8"?><GetItemRequest xmlns="urn:ebay:apis:eBLBaseComponents"><ErrorLanguage>en_US</ErrorLanguage><WarningLevel>High</WarningLevel><ItemID>256380588293</ItemID></GetItemRequest>';
+
         ?>
     
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+        <script>
+        var xml = '';
+
+        $.ajax({
+
+            url: "https://api.ebay.com/ws/api.dll",
+            method: "POST",
+            data: "<?php echo $get_item_body; ?>",
+            headers: {
+                "X-EBAY-API-SITEID" : "0",
+                "X-EBAY-API-COMPATIBILITY-LEVEL" : "967",
+                "X-EBAY-API-CALL-NAME" : "GetItem",
+                "X-EBAY-API-IAF-TOKEN" : "<?php echo $access_token; ?>"
+            },
+            beforeSend:function(){
+            },
+            success: function (resp){
+
+                console.log(resp);
+
+            },
+            complete: function(){
+            },
+            error: function (resp){
+
+            }
+        });
+
+
+        </script>
+
     </body>
 </html>
