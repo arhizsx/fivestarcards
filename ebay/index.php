@@ -199,8 +199,9 @@
 
         foreach($json["ActiveList"]["ItemArray"]["Item"] as $item){
         ?>
-            <div class="row">
+            <div class="row border-bottom">
                 <div class="col-xl-4">
+                    <img src="" data-itemID="" class="itemImage">
                 </div>
                 <div class="col-xl-8">
                     <label>ItemID</label>
