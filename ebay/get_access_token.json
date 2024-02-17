@@ -1,0 +1,42 @@
+{
+    "action" : "get_access_token",
+    "method" : "POST",
+    "header" : [
+        {
+            "key": "Authorization",
+            "val" : "Basic RmVybmFuZG8tNXN0YXJjYXItUFJELWE4MWZkZDE4OS1hNzYyZGZjNzpQUkQtODFmZGQxODljYmYxLWY0NzItNDEzMS05M2EyLTE5OTA="
+        },
+        {
+            "key": "Content-Type",
+            "val" : "application/x-www-form-urlencoded"
+        }
+
+    ],
+    "params" : [
+        {
+            "key": "grant_type",
+            "val" : "authorization_code"
+        },
+        {
+            "key": "redirect_uri",
+            "val" : "Fernando_Salvad-Fernando-5starc-qxmeny"
+        },
+        {
+            "key": "code",
+            "val" : "%CODE%"
+        }
+    ],
+    "values" : [
+        {
+            "action": "replace",
+            "target": "params",
+            "to_process": [
+                {
+                    "key": "CODE",
+                    "val" : "%FUNCTION||CODE%"
+                }
+            ]
+        }
+    ],
+    "url" : "https://api.ebay.com/identity/v1/oauth2/token"
+}

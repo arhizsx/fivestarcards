@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetItemResponse 
+  xmlns="urn:ebay:apis:eBLBaseComponents">
+  <Timestamp>2024-02-17T15:25:22.428Z</Timestamp>
+  <Ack>Success</Ack>
+  <Version>1193</Version>
+  <Build>E1193_CORE_API_19146280_R1</Build>
+  <Item>
+    <AutoPay>false</AutoPay>
+    <BuyerProtection>ItemIneligible</BuyerProtection>
+    <BuyItNowPrice currencyID="USD">0.0</BuyItNowPrice>
+    <Country>US</Country>
+    <Currency>USD</Currency>
+    <ItemID>256380588293</ItemID>
+    <ListingDetails>
+      <Adult>false</Adult>
+      <BindingAuction>false</BindingAuction>
+      <CheckoutEnabled>true</CheckoutEnabled>
+      <ConvertedBuyItNowPrice currencyID="USD">0.0</ConvertedBuyItNowPrice>
+      <ConvertedStartPrice currencyID="USD">2000.0</ConvertedStartPrice>
+      <ConvertedReservePrice currencyID="USD">0.0</ConvertedReservePrice>
+      <HasReservePrice>false</HasReservePrice>
+      <StartTime>2024-01-17T21:56:11.000Z</StartTime>
+      <EndTime>2024-02-17T21:56:11.000Z</EndTime>
+      <ViewItemURL>https://www.ebay.com/itm/2023-Bowman-Sterling-Jackson-Holliday-Auto-Speckle-99-PSA-10-GEM-MT-PAJH-POP-1-/256380588293</ViewItemURL>
+      <HasUnansweredQuestions>false</HasUnansweredQuestions>
+      <HasPublicMessages>false</HasPublicMessages>
+      <MinimumBestOfferPrice currencyID="USD">1250.0</MinimumBestOfferPrice>
+      <ViewItemURLForNaturalSearch>https://www.ebay.com/itm/2023-Bowman-Sterling-Jackson-Holliday-Auto-Speckle-99-PSA-10-GEM-MT-PAJH-POP-1-/256380588293</ViewItemURLForNaturalSearch>
+      <BestOfferAutoAcceptPrice currencyID="USD">1500.0</BestOfferAutoAcceptPrice>
+    </ListingDetails>
+    <ListingDuration>GTC</ListingDuration>
+    <ListingType>FixedPriceItem</ListingType>
+    <Location>Nashotah, Wisconsin</Location>
+    <PrimaryCategory>
+      <CategoryID>261328</CategoryID>
+      <CategoryName>Sports Mem, Cards &amp; Fan Shop:Sports Trading Cards:Trading Card Singles</CategoryName>
+    </PrimaryCategory>
+    <PrivateListing>false</PrivateListing>
+    <Quantity>1</Quantity>
+    <IsItemEMSEligible>false</IsItemEMSEligible>
+    <ReservePrice currencyID="USD">0.0</ReservePrice>
+    <ReviseStatus>
+      <ItemRevised>true</ItemRevised>
+    </ReviseStatus>
+    <Seller>
+      <AboutMePage>false</AboutMePage>
+      <Email>ebay@5starcards.com</Email>
+      <FeedbackScore>57559</FeedbackScore>
+      <PositiveFeedbackPercent>99.9</PositiveFeedbackPercent>
+      <FeedbackPrivate>false</FeedbackPrivate>
+      <IDVerified>false</IDVerified>
+      <eBayGoodStanding>true</eBayGoodStanding>
+      <NewUser>false</NewUser>
+      <RegistrationDate>2013-12-13T21:27:09.000Z</RegistrationDate>
+      <Site>US</Site>
+      <Status>Confirmed</Status>
+      <UserID>5_star_cards</UserID>
+      <UserIDChanged>false</UserIDChanged>
+      <UserIDLastChanged>2023-12-14T00:36:44.000Z</UserIDLastChanged>
+      <VATStatus>NoVATTax</VATStatus>
+      <SellerInfo>
+        <AllowPaymentEdit>false</AllowPaymentEdit>
+        <CheckoutEnabled>true</CheckoutEnabled>
+        <CIPBankAccountStored>false</CIPBankAccountStored>
+        <GoodStanding>true</GoodStanding>
+        <LiveAuctionAuthorized>false</LiveAuctionAuthorized>
+        <MerchandizingPref>OptIn</MerchandizingPref>
+        <QualifiesForB2BVAT>false</QualifiesForB2BVAT>
+        <StoreOwner>true</StoreOwner>
+        <StoreURL>https://www.ebay.com/str/sellerssportscardsbreaks</StoreURL>
+        <SafePaymentExempt>false</SafePaymentExempt>
+        <TopRatedSeller>true</TopRatedSeller>
+      </SellerInfo>
+      <MotorsDealer>false</MotorsDealer>
+    </Seller>
+    <SellingStatus>
+      <BidCount>0</BidCount>
+      <BidIncrement currencyID="USD">0.0</BidIncrement>
+      <ConvertedCurrentPrice currencyID="USD">2000.0</ConvertedCurrentPrice>
+      <CurrentPrice currencyID="USD">2000.0</CurrentPrice>
+      <LeadCount>0</LeadCount>
+      <MinimumToBid currencyID="USD">2000.0</MinimumToBid>
+      <QuantitySold>0</QuantitySold>
+      <ReserveMet>true</ReserveMet>
+      <SecondChanceEligible>false</SecondChanceEligible>
+      <ListingStatus>Active</ListingStatus>
+      <QuantitySoldByPickupInStore>0</QuantitySoldByPickupInStore>
+    </SellingStatus>
+    <ShippingDetails>
+      <ApplyShippingDiscount>false</ApplyShippingDiscount>
+      <CalculatedShippingRate>
+        <WeightMajor measurementSystem="English" unit="lbs">0</WeightMajor>
+        <WeightMinor measurementSystem="English" unit="oz">2</WeightMinor>
+      </CalculatedShippingRate>
+      <SalesTax>
+        <SalesTaxPercent>0.0</SalesTaxPercent>
+        <ShippingIncludedInTax>false</ShippingIncludedInTax>
+      </SalesTax>
+      <ShippingServiceOptions>
+        <ShippingService>USPSPriorityMailSmallFlatRateBox</ShippingService>
+        <ShippingServiceCost currencyID="USD">12.99</ShippingServiceCost>
+        <ShippingServicePriority>1</ShippingServicePriority>
+        <ExpeditedService>false</ExpeditedService>
+        <ShippingTimeMin>1</ShippingTimeMin>
+        <ShippingTimeMax>4</ShippingTimeMax>
+      </ShippingServiceOptions>
+      <ShippingType>Flat</ShippingType>
+      <ThirdPartyCheckout>false</ThirdPartyCheckout>
+      <ShippingDiscountProfileID>0</ShippingDiscountProfileID>
+      <InternationalShippingDiscountProfileID>0</InternationalShippingDiscountProfileID>
+      <SellerExcludeShipToLocationsPreference>true</SellerExcludeShipToLocationsPreference>
+    </ShippingDetails>
+    <ShipToLocations>US</ShipToLocations>
+    <Site>US</Site>
+    <StartPrice currencyID="USD">2000.0</StartPrice>
+    <Storefront>
+      <StoreCategoryID>35251259018</StoreCategoryID>
+      <StoreCategory2ID>0</StoreCategory2ID>
+      <StoreURL>https://www.ebay.com/str/sellerssportscardsbreaks</StoreURL>
+    </Storefront>
+    <SubTitle>GEM MINT PROSPECTS</SubTitle>
+    <TimeLeft>PT6H30M49S</TimeLeft>
+    <Title>2023 Bowman Sterling Jackson Holliday Auto Speckle /99 PSA 10 GEM MT #PAJH POP 1</Title>
+    <BestOfferDetails>
+      <BestOfferCount>0</BestOfferCount>
+      <BestOfferEnabled>true</BestOfferEnabled>
+      <NewBestOffer>false</NewBestOffer>
+    </BestOfferDetails>
+    <LocationDefaulted>true</LocationDefaulted>
+    <GetItFast>false</GetItFast>
+    <BuyerResponsibleForShipping>false</BuyerResponsibleForShipping>
+    <SKU>Chaz Haggerty - 4117</SKU>
+    <PostalCode>53058</PostalCode>
+    <PictureDetails>
+      <GalleryType>Plus</GalleryType>
+      <PhotoDisplay>PicturePack</PhotoDisplay>
+      <PictureURL>https://i.ebayimg.com/00/s/MTYwMFg5NDI=/z/5r4AAOSwHZdlqEx3/$_57.JPG?set_id=880000500F</PictureURL>
+      <PictureURL>https://i.ebayimg.com/00/s/MTYwMFg5NDI=/z/MEkAAOSwxOJlqEx3/$_57.JPG?set_id=880000500F</PictureURL>
+    </PictureDetails>
+    <DispatchTimeMax>1</DispatchTimeMax>
+    <ProxyItem>false</ProxyItem>
+    <BuyerGuaranteePrice currencyID="USD">20000.0</BuyerGuaranteePrice>
+    <BuyerRequirementDetails>
+      <MaximumUnpaidItemStrikesInfo>
+        <Count>5</Count>
+        <Period>Days_30</Period>
+      </MaximumUnpaidItemStrikesInfo>
+    </BuyerRequirementDetails>
+    <IntangibleItem>false</IntangibleItem>
+    <ReturnPolicy>
+      <ReturnsAcceptedOption>ReturnsNotAccepted</ReturnsAcceptedOption>
+      <ReturnsAccepted>No returns accepted</ReturnsAccepted>
+      <InternationalReturnsAcceptedOption>ReturnsNotAccepted</InternationalReturnsAcceptedOption>
+    </ReturnPolicy>
+    <ConditionID>2750</ConditionID>
+    <ConditionDescriptors>
+      <ConditionDescriptor>
+        <Name>27501</Name>
+        <Value>275010</Value>
+      </ConditionDescriptor>
+      <ConditionDescriptor>
+        <Name>27502</Name>
+        <Value>275020</Value>
+      </ConditionDescriptor>
+    </ConditionDescriptors>
+    <ConditionDisplayName>Graded</ConditionDisplayName>
+    <PostCheckoutExperienceEnabled>false</PostCheckoutExperienceEnabled>
+    <SellerProfiles>
+      <SellerShippingProfile>
+        <ShippingProfileID>192712451024</ShippingProfileID>
+        <ShippingProfileName>SMALL Flat Rate Shipping</ShippingProfileName>
+      </SellerShippingProfile>
+      <SellerReturnProfile>
+        <ReturnProfileID>125277377024</ReturnProfileID>
+        <ReturnProfileName>No returns accepted</ReturnProfileName>
+      </SellerReturnProfile>
+      <SellerPaymentProfile>
+        <PaymentProfileID>214315433024</PaymentProfileID>
+        <PaymentProfileName>eBay Payments</PaymentProfileName>
+      </SellerPaymentProfile>
+    </SellerProfiles>
+    <ShippingPackageDetails>
+      <PackageDepth measurementSystem="English" unit="inches">1</PackageDepth>
+      <PackageLength measurementSystem="English" unit="inches">10</PackageLength>
+      <PackageWidth measurementSystem="English" unit="inches">6</PackageWidth>
+      <ShippingIrregular>false</ShippingIrregular>
+      <ShippingPackage>None</ShippingPackage>
+      <WeightMajor measurementSystem="English" unit="lbs">0</WeightMajor>
+      <WeightMinor measurementSystem="English" unit="oz">2</WeightMinor>
+    </ShippingPackageDetails>
+    <HideFromSearch>false</HideFromSearch>
+    <eBayPlus>false</eBayPlus>
+    <eBayPlusEligible>false</eBayPlusEligible>
+    <IsSecureDescription>true</IsSecureDescription>
+  </Item>
+</GetItemResponse>

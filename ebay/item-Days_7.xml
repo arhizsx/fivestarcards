@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetItemResponse 
+  xmlns="urn:ebay:apis:eBLBaseComponents">
+  <Timestamp>2024-02-17T15:28:20.096Z</Timestamp>
+  <Ack>Success</Ack>
+  <Version>1193</Version>
+  <Build>E1193_CORE_API_19146280_R1</Build>
+  <Item>
+    <AutoPay>false</AutoPay>
+    <BuyerProtection>ItemIneligible</BuyerProtection>
+    <BuyItNowPrice currencyID="USD">0.0</BuyItNowPrice>
+    <Country>US</Country>
+    <Currency>USD</Currency>
+    <ItemID>266667592684</ItemID>
+    <ListingDetails>
+      <Adult>false</Adult>
+      <BindingAuction>false</BindingAuction>
+      <CheckoutEnabled>true</CheckoutEnabled>
+      <ConvertedBuyItNowPrice currencyID="USD">0.0</ConvertedBuyItNowPrice>
+      <ConvertedStartPrice currencyID="USD">2.99</ConvertedStartPrice>
+      <ConvertedReservePrice currencyID="USD">0.0</ConvertedReservePrice>
+      <HasReservePrice>false</HasReservePrice>
+      <StartTime>2024-02-11T01:03:00.000Z</StartTime>
+      <EndTime>2024-02-18T01:03:00.000Z</EndTime>
+      <ViewItemURL>https://www.ebay.com/itm/2007-08-Upper-Deck-Cup-Hockey-Chris-Drury-Stanley-Cup-Signatures-25-/266667592684</ViewItemURL>
+      <HasUnansweredQuestions>false</HasUnansweredQuestions>
+      <HasPublicMessages>false</HasPublicMessages>
+      <ViewItemURLForNaturalSearch>https://www.ebay.com/itm/2007-08-Upper-Deck-Cup-Hockey-Chris-Drury-Stanley-Cup-Signatures-25-/266667592684</ViewItemURLForNaturalSearch>
+    </ListingDetails>
+    <ListingDuration>Days_7</ListingDuration>
+    <ListingType>Chinese</ListingType>
+    <Location>Nashotah, Wisconsin</Location>
+    <PrimaryCategory>
+      <CategoryID>261328</CategoryID>
+      <CategoryName>Sports Mem, Cards &amp; Fan Shop:Sports Trading Cards:Trading Card Singles</CategoryName>
+    </PrimaryCategory>
+    <PrivateListing>false</PrivateListing>
+    <Quantity>1</Quantity>
+    <IsItemEMSEligible>false</IsItemEMSEligible>
+    <ReservePrice currencyID="USD">0.0</ReservePrice>
+    <ReviseStatus>
+      <ItemRevised>true</ItemRevised>
+    </ReviseStatus>
+    <Seller>
+      <AboutMePage>false</AboutMePage>
+      <Email>ebay@5starcards.com</Email>
+      <FeedbackScore>57559</FeedbackScore>
+      <PositiveFeedbackPercent>99.9</PositiveFeedbackPercent>
+      <FeedbackPrivate>false</FeedbackPrivate>
+      <IDVerified>false</IDVerified>
+      <eBayGoodStanding>true</eBayGoodStanding>
+      <NewUser>false</NewUser>
+      <RegistrationDate>2013-12-13T21:27:09.000Z</RegistrationDate>
+      <Site>US</Site>
+      <Status>Confirmed</Status>
+      <UserID>5_star_cards</UserID>
+      <UserIDChanged>false</UserIDChanged>
+      <UserIDLastChanged>2023-12-14T00:36:44.000Z</UserIDLastChanged>
+      <VATStatus>NoVATTax</VATStatus>
+      <SellerInfo>
+        <AllowPaymentEdit>false</AllowPaymentEdit>
+        <CheckoutEnabled>true</CheckoutEnabled>
+        <CIPBankAccountStored>false</CIPBankAccountStored>
+        <GoodStanding>true</GoodStanding>
+        <LiveAuctionAuthorized>false</LiveAuctionAuthorized>
+        <MerchandizingPref>OptIn</MerchandizingPref>
+        <QualifiesForB2BVAT>false</QualifiesForB2BVAT>
+        <StoreOwner>true</StoreOwner>
+        <StoreURL>https://www.ebay.com/str/sellerssportscardsbreaks</StoreURL>
+        <SafePaymentExempt>false</SafePaymentExempt>
+        <TopRatedSeller>true</TopRatedSeller>
+      </SellerInfo>
+      <MotorsDealer>false</MotorsDealer>
+    </Seller>
+    <SellingStatus>
+      <BidCount>4</BidCount>
+      <BidIncrement currencyID="USD">0.5</BidIncrement>
+      <ConvertedCurrentPrice currencyID="USD">10.27</ConvertedCurrentPrice>
+      <CurrentPrice currencyID="USD">10.27</CurrentPrice>
+      <HighBidder>
+        <AboutMePage>false</AboutMePage>
+        <EIASToken>nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6ANlIWgCJCLqQudj6x9nY+seQ==</EIASToken>
+        <Email>sroachebay1969@gmail.com</Email>
+        <FeedbackScore>2192</FeedbackScore>
+        <PositiveFeedbackPercent>100.0</PositiveFeedbackPercent>
+        <eBayGoodStanding>true</eBayGoodStanding>
+        <NewUser>false</NewUser>
+        <RegistrationDate>2019-04-01T10:13:07.000Z</RegistrationDate>
+        <Site>US</Site>
+        <UserID>stero_3266</UserID>
+        <VATStatus>NoVATTax</VATStatus>
+        <BuyerInfo>
+          <ShippingAddress>
+            <Country>US</Country>
+            <PostalCode>20005-6559</PostalCode>
+          </ShippingAddress>
+        </BuyerInfo>
+        <UserAnonymized>false</UserAnonymized>
+      </HighBidder>
+      <LeadCount>0</LeadCount>
+      <MinimumToBid currencyID="USD">10.77</MinimumToBid>
+      <QuantitySold>0</QuantitySold>
+      <ReserveMet>true</ReserveMet>
+      <SecondChanceEligible>false</SecondChanceEligible>
+      <ListingStatus>Active</ListingStatus>
+      <QuantitySoldByPickupInStore>0</QuantitySoldByPickupInStore>
+    </SellingStatus>
+    <ShippingDetails>
+      <ApplyShippingDiscount>true</ApplyShippingDiscount>
+      <CalculatedShippingRate>
+        <WeightMajor measurementSystem="English" unit="lbs">0</WeightMajor>
+        <WeightMinor measurementSystem="English" unit="oz">2</WeightMinor>
+      </CalculatedShippingRate>
+      <SalesTax>
+        <SalesTaxPercent>0.0</SalesTaxPercent>
+        <ShippingIncludedInTax>false</ShippingIncludedInTax>
+      </SalesTax>
+      <ShippingServiceOptions>
+        <ShippingService>USPSParcel</ShippingService>
+        <ShippingServiceCost currencyID="USD">4.99</ShippingServiceCost>
+        <ShippingServicePriority>1</ShippingServicePriority>
+        <ExpeditedService>false</ExpeditedService>
+        <ShippingTimeMin>2</ShippingTimeMin>
+        <ShippingTimeMax>5</ShippingTimeMax>
+      </ShippingServiceOptions>
+      <ShippingType>Flat</ShippingType>
+      <ThirdPartyCheckout>false</ThirdPartyCheckout>
+      <ShippingDiscountProfileID>229594024</ShippingDiscountProfileID>
+      <FlatShippingDiscount>
+        <DiscountName>EachAdditionalAmount</DiscountName>
+        <DiscountProfile>
+          <DiscountProfileID>229594024</DiscountProfileID>
+          <EachAdditionalAmount currencyID="USD">1.0</EachAdditionalAmount>
+        </DiscountProfile>
+      </FlatShippingDiscount>
+      <InternationalShippingDiscountProfileID>0</InternationalShippingDiscountProfileID>
+      <SellerExcludeShipToLocationsPreference>true</SellerExcludeShipToLocationsPreference>
+    </ShippingDetails>
+    <ShipToLocations>US</ShipToLocations>
+    <Site>US</Site>
+    <StartPrice currencyID="USD">2.99</StartPrice>
+    <Storefront>
+      <StoreCategoryID>36421036018</StoreCategoryID>
+      <StoreCategory2ID>0</StoreCategory2ID>
+      <StoreURL>https://www.ebay.com/str/sellerssportscardsbreaks</StoreURL>
+    </Storefront>
+    <SubTitle>Actively accepting consignments! Listings within 2 days</SubTitle>
+    <TimeLeft>PT9H34M41S</TimeLeft>
+    <Title>2007-08 Upper Deck The Cup Hockey Chris Drury Stanley Cup Signatures /25</Title>
+    <LocationDefaulted>true</LocationDefaulted>
+    <GetItFast>false</GetItFast>
+    <BuyerResponsibleForShipping>false</BuyerResponsibleForShipping>
+    <SKU>Josh Thorne</SKU>
+    <PostalCode>53058</PostalCode>
+    <PictureDetails>
+      <GalleryType>Plus</GalleryType>
+      <PhotoDisplay>PicturePack</PhotoDisplay>
+      <PictureURL>https://i.ebayimg.com/00/s/ODMyWDExMzE=/z/~-kAAOSwZuNlyACi/$_57.PNG?set_id=880000500F</PictureURL>
+      <PictureURL>https://i.ebayimg.com/00/s/ODMyWDExMzE=/z/QpQAAOSwwcRlyACn/$_57.PNG?set_id=880000500F</PictureURL>
+    </PictureDetails>
+    <DispatchTimeMax>1</DispatchTimeMax>
+    <ProxyItem>false</ProxyItem>
+    <BuyerGuaranteePrice currencyID="USD">20000.0</BuyerGuaranteePrice>
+    <BuyerRequirementDetails>
+      <MaximumUnpaidItemStrikesInfo>
+        <Count>5</Count>
+        <Period>Days_30</Period>
+      </MaximumUnpaidItemStrikesInfo>
+    </BuyerRequirementDetails>
+    <IntangibleItem>false</IntangibleItem>
+    <ReturnPolicy>
+      <ReturnsAcceptedOption>ReturnsNotAccepted</ReturnsAcceptedOption>
+      <ReturnsAccepted>No returns accepted</ReturnsAccepted>
+      <InternationalReturnsAcceptedOption>ReturnsNotAccepted</InternationalReturnsAcceptedOption>
+    </ReturnPolicy>
+    <ConditionID>4000</ConditionID>
+    <ConditionDescriptors>
+      <ConditionDescriptor>
+        <Name>40001</Name>
+        <Value>400010</Value>
+      </ConditionDescriptor>
+    </ConditionDescriptors>
+    <ConditionDisplayName>Ungraded</ConditionDisplayName>
+    <PostCheckoutExperienceEnabled>false</PostCheckoutExperienceEnabled>
+    <SellerProfiles>
+      <SellerShippingProfile>
+        <ShippingProfileID>170995304024</ShippingProfileID>
+        <ShippingProfileName>Single Card Shipping</ShippingProfileName>
+      </SellerShippingProfile>
+      <SellerReturnProfile>
+        <ReturnProfileID>125277377024</ReturnProfileID>
+        <ReturnProfileName>No returns accepted</ReturnProfileName>
+      </SellerReturnProfile>
+      <SellerPaymentProfile>
+        <PaymentProfileID>214315433024</PaymentProfileID>
+        <PaymentProfileName>eBay Payments</PaymentProfileName>
+      </SellerPaymentProfile>
+    </SellerProfiles>
+    <ShippingPackageDetails>
+      <PackageDepth measurementSystem="English" unit="inches">1</PackageDepth>
+      <PackageLength measurementSystem="English" unit="inches">10</PackageLength>
+      <PackageWidth measurementSystem="English" unit="inches">6</PackageWidth>
+      <ShippingIrregular>false</ShippingIrregular>
+      <ShippingPackage>None</ShippingPackage>
+      <WeightMajor measurementSystem="English" unit="lbs">0</WeightMajor>
+      <WeightMinor measurementSystem="English" unit="oz">2</WeightMinor>
+    </ShippingPackageDetails>
+    <HideFromSearch>false</HideFromSearch>
+    <eBayPlus>false</eBayPlus>
+    <eBayPlusEligible>false</eBayPlusEligible>
+    <IsSecureDescription>true</IsSecureDescription>
+  </Item>
+</GetItemResponse>

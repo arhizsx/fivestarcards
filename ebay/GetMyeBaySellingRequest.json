@@ -1,0 +1,50 @@
+{
+    "action" : "GetMyeBaySellingRequest",
+    "method" : "POST",
+    "header" : [
+        {
+            "key": "X-EBAY-API-SITEID",
+            "val": "0"
+        },
+        {
+            "key": "X-EBAY-API-COMPATIBILITY-LEVEL",
+            "val": "967"
+        },
+        {
+            "key": "X-EBAY-API-CALL-NAME",
+            "val": "GetMyeBaySelling"
+        },
+        {
+            "key": "X-EBAY-API-IAF-TOKEN",
+            "val": "%ACCESS_TOKEN%"
+        }
+    ],
+    "body" : "<?xml version='1.0' encoding='utf-8'?><GetMyeBaySellingRequest xmlns='urn:ebay:apis:eBLBaseComponents'><ErrorLanguage>en_US</ErrorLanguage><WarningLevel>High</WarningLevel><ActiveList><Sort>TimeLeft</Sort><Pagination><EntriesPerPage>%ENTRIES_PER_PAGE%%</EntriesPerPage><PageNumber>%PAGE_NUMBER%</PageNumber></Pagination></ActiveList></GetMyeBaySellingRequest>",
+    "values" : [
+        {
+            "action": "replace",
+            "target": "body",
+            "to_process": [
+                {
+                    "key": "ENTRIES_PER_PAGE",
+                    "val" : "200"
+                },
+                {
+                    "key": "PAGE_NUMBER",
+                    "val" : "1"
+                }
+            ]
+        },
+        {
+            "action": "replace",
+            "target": "header",
+            "to_process": [
+                {
+                    "key": "ACCESS_TOKEN",
+                    "val" : "%FUNCTION||ACCESS_TOKEN%"
+                }
+            ]
+        }
+    ],
+    "url" : "https://api.ebay.com/ws/api.dll"
+}
