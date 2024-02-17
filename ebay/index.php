@@ -191,9 +191,7 @@
         $xml=simplexml_load_string($response) or die("Error: Cannot create object");
         $json_response = json_encode($xml, true);
 
-        foreach($json_reponse["ActiveList"]["ItemArray"]["Item"] as $item){
-            print_r($item);
-        }
+            print_r($json_response["ActiveList"]["ItemArray"]["Item"]);
 
         ?>
 
