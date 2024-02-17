@@ -209,7 +209,9 @@
                             <label>ItemID</label>
                             <input class="form-control mb-2" type="text" value="<?php echo $item["ItemID"] ?>"/>
                         </div>
-                        <div class="col-xl-6">
+                        <div class="col-xl-6">                              
+                            <label>StartTime</label>
+                            <input class="form-control mb-2" type="text" value="<?php echo $item["ListingDetails"]["StartTime"] ?>"/>
                         </div>
                     </div>
                     <div class="row">
