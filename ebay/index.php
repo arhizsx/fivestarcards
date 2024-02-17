@@ -191,7 +191,7 @@
         $xml=simplexml_load_string($response) or die("Error: Cannot create object");
         $json_response = json_encode($xml, true);
 
-            print_r($json_response["ActiveList"]);
+            print_r($json_response);
 
         ?>
 
