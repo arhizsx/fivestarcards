@@ -28,11 +28,11 @@
         $grant_type = "authorization_code";
         
         if(isset($_GET["code"]) === false){ ?>
-            <div>
+        <div  style="display: none;">
             <br><br><label>Access Token</label><br>
             <textarea class="boxsizingBorder"  style="display: none;" rows="5"></textarea>
         </div>
-        <div>
+        <div  style="display: none;">
             <br><br><label>Refresh Token</label><br>
             <textarea class="boxsizingBorder"  style="display: none;"></textarea>
         </div>
@@ -78,11 +78,11 @@
         ?>
 
 
-        <div>
+        <div  style="display: none;">
             <br><br><label>Access Token</label><br>
-            <textarea class="boxsizingBorder" style="display: none;" rows="5"><?php print_r($results["access_token"]); ?></textarea>
+            <textarea class="boxsizingBorder" rows="5"><?php print_r($results["access_token"]); ?></textarea>
         </div>
-        <div>
+        <div  style="display: none;">
             <br><br><label>Refresh Token</label><br>
             <textarea class="boxsizingBorder" style="display: none;"><?php print_r($results["refresh_token"]);?></textarea>
         </div>
@@ -133,7 +133,7 @@
         ?>
 
 
-        <div>
+        <div  style="display: none;">
             <br><br><label>Refreshed Access Token</label><br>
             <textarea class="boxsizingBorder" style="display: none;" rows="5"><?php print_r($results["access_token"]);?></textarea>
         </div>
