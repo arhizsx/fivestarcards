@@ -147,7 +147,7 @@
         <?php  
         $access_token = $results["access_token"];
         $apiURL = "https://api.ebay.com/ws/api.dll";
-        $per_page = 200;
+        $per_page = 20;
         $page_number = 1;
         
         $post_data = 
