@@ -193,10 +193,22 @@
         $json = json_decode(json_encode($xml), true);
 
         foreach($json["ActiveList"]["ItemArray"]["Item"] as $item){
-            echo "<hr>";
-            print_r($item);
+        ?>
+            <hr>
+            <label>ItemID</label><br>
+            <input type="text" value="<?php echo $item["itemID"] ?>"/><br><br>
+            <label>Title</label><br>
+            <input type="text" value="<?php echo $item["Title"] ?>"/><br><br>
+            <label>StartPrice</label><br>
+            <input type="text" value="<?php echo $item["StartPrice"] ?>"/><br><br>
+            <label>CurrentPrice</label><br>
+            <input type="text" value="<?php echo $item["SellingStatus"]["CurrentPrice"] ?>"/><br><br>
+            <label>BidCount</label><br>
+            <input type="text" value="<?php echo $item["SellingStatus"]["BidCount"] ?>"/><br><br>
+            <label>SKU</label><br>
+            <input type="text" value="<?php echo $item["SKU"] ?>"/><br><br>
+        <?php
         }
-
         ?>
 
 
