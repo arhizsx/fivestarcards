@@ -196,7 +196,7 @@
         ?>
             <hr>
             <label>ItemID</label><br>
-            <input type="text" value="<?php echo $item["itemID"] ?>"/><br><br>
+            <input type="text" value="<?php echo $item["ItemID"] ?>"/><br><br>
             <label>Title</label><br>
             <input type="text" value="<?php echo $item["Title"] ?>"/><br><br>
             <label>StartPrice</label><br>
