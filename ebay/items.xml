@@ -1,0 +1,513 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GetMyeBaySellingResponse xmlns="urn:ebay:apis:eBLBaseComponents">
+    <Timestamp>2024-02-17T06:02:53.052Z</Timestamp>
+    <Ack>Success</Ack>
+    <Version>1271</Version>
+    <ActiveList>
+        <ItemArray>
+            <Item>
+                <ItemID>256408378305</ItemID>
+                <ListingDetails>
+                    <StartTime>2024-02-11T01:21:00.000Z</StartTime>
+                    <ViewItemURL>https://www.ebay.com/itm/2006-07-Upper-Deck-The-Cup-Hockey-Dave-Bolland-RC-Patch-Auto-249-/256408378305</ViewItemURL>
+                    <ViewItemURLForNaturalSearch>http://cgi.ebay.com/2006-07-Upper-Deck-The-Cup-Hockey-Dave-Bolland-RC-Patch-Auto-249?item=256408378305&amp;category=261328&amp;cmd=ViewItem</ViewItemURLForNaturalSearch>
+                </ListingDetails>
+                <ListingDuration>Days_7</ListingDuration>
+                <ListingType>Chinese</ListingType>
+                <Quantity>1</Quantity>
+                <ReservePrice currencyID="USD">0.0</ReservePrice>
+                <SellingStatus>
+                    <BidCount>4</BidCount>
+                    <CurrentPrice currencyID="USD">10.5</CurrentPrice>
+                    <HighBidder>
+                        <FeedbackScore>887</FeedbackScore>
+                        <FeedbackRatingStar>Purple</FeedbackRatingStar>
+                        <UserID>trevman95</UserID>
+                    </HighBidder>
+                    <ReserveMet>true</ReserveMet>
+                    <BidderCount>2</BidderCount>
+                </SellingStatus>
+                <ShippingDetails>
+                    <ShippingServiceOptions>
+                        <ShippingServiceCost currencyID="USD">4.99</ShippingServiceCost>
+                    </ShippingServiceOptions>
+                    <ShippingType>Flat</ShippingType>
+                </ShippingDetails>
+                <StartPrice currencyID="USD">2.99</StartPrice>
+                <TimeLeft>PT19H18M8S</TimeLeft>
+                <Title>2006-07 Upper Deck The Cup Hockey Dave Bolland RC Patch Auto /249</Title>
+                <WatchCount>11</WatchCount>
+                <QuantityAvailable>1</QuantityAvailable>
+                <SKU>Josh Thorne</SKU>
+                <ClassifiedAdPayPerLeadFee currencyID="USD">0.0</ClassifiedAdPayPerLeadFee>
+                <SellerProfiles>
+                    <SellerShippingProfile>
+                        <ShippingProfileID>170995304024</ShippingProfileID>
+                        <ShippingProfileName>Single Card Shipping</ShippingProfileName>
+                    </SellerShippingProfile>
+                    <SellerReturnProfile>
+                        <ReturnProfileID>125277377024</ReturnProfileID>
+                        <ReturnProfileName>No returns accepted</ReturnProfileName>
+                    </SellerReturnProfile>
+                    <SellerPaymentProfile>
+                        <PaymentProfileID>214315433024</PaymentProfileID>
+                        <PaymentProfileName>eBay Payments</PaymentProfileName>
+                    </SellerPaymentProfile>
+                </SellerProfiles>
+            </Item>
+            <Item>
+                <ItemID>266667592681</ItemID>
+                <ListingDetails>
+                    <StartTime>2024-02-11T01:22:00.000Z</StartTime>
+                    <ViewItemURL>https://www.ebay.com/itm/2010-11-Upper-Deck-SP-Authentic-Hockey-Tyler-Myers-Limited-Patch-Auto-100-/266667592681</ViewItemURL>
+                    <ViewItemURLForNaturalSearch>http://cgi.ebay.com/2010-11-Upper-Deck-SP-Authentic-Hockey-Tyler-Myers-Limited-Patch-Auto-100?item=266667592681&amp;category=261328&amp;cmd=ViewItem</ViewItemURLForNaturalSearch>
+                </ListingDetails>
+                <ListingDuration>Days_7</ListingDuration>
+                <ListingType>Chinese</ListingType>
+                <Quantity>1</Quantity>
+                <ReservePrice currencyID="USD">0.0</ReservePrice>
+                <SellingStatus>
+                    <BidCount>1</BidCount>
+                    <CurrentPrice currencyID="USD">2.99</CurrentPrice>
+                    <HighBidder>
+                        <FeedbackScore>3</FeedbackScore>
+                        <FeedbackRatingStar>None</FeedbackRatingStar>
+                        <UserID>hnhu4619</UserID>
+                    </HighBidder>
+                    <ReserveMet>true</ReserveMet>
+                    <BidderCount>1</BidderCount>
+                </SellingStatus>
+                <ShippingDetails>
+                    <ShippingServiceOptions>
+                        <ShippingServiceCost currencyID="USD">4.99</ShippingServiceCost>
+                    </ShippingServiceOptions>
+                    <ShippingType>Flat</ShippingType>
+                </ShippingDetails>
+                <StartPrice currencyID="USD">2.99</StartPrice>
+                <TimeLeft>PT19H19M8S</TimeLeft>
+                <Title>2010-11 Upper Deck SP Authentic Hockey Tyler Myers Limited Patch Auto /100</Title>
+                <QuantityAvailable>1</QuantityAvailable>
+                <SKU>Josh Thorne</SKU>
+                <ClassifiedAdPayPerLeadFee currencyID="USD">0.0</ClassifiedAdPayPerLeadFee>
+                <SellerProfiles>
+                    <SellerShippingProfile>
+                        <ShippingProfileID>170995304024</ShippingProfileID>
+                        <ShippingProfileName>Single Card Shipping</ShippingProfileName>
+                    </SellerShippingProfile>
+                    <SellerReturnProfile>
+                        <ReturnProfileID>125277377024</ReturnProfileID>
+                        <ReturnProfileName>No returns accepted</ReturnProfileName>
+                    </SellerReturnProfile>
+                    <SellerPaymentProfile>
+                        <PaymentProfileID>214315433024</PaymentProfileID>
+                        <PaymentProfileName>eBay Payments</PaymentProfileName>
+                    </SellerPaymentProfile>
+                </SellerProfiles>
+            </Item>
+            <Item>
+                <ItemID>256408378299</ItemID>
+                <ListingDetails>
+                    <StartTime>2024-02-11T01:23:00.000Z</StartTime>
+                    <ViewItemURL>https://www.ebay.com/itm/2005-06-Upper-Deck-The-Cup-Hockey-David-Aebischer-Signature-Patch-Auto-75-/256408378299</ViewItemURL>
+                    <ViewItemURLForNaturalSearch>http://cgi.ebay.com/2005-06-Upper-Deck-The-Cup-Hockey-David-Aebischer-Signature-Patch-Auto-75?item=256408378299&amp;category=261328&amp;cmd=ViewItem</ViewItemURLForNaturalSearch>
+                </ListingDetails>
+                <ListingDuration>Days_7</ListingDuration>
+                <ListingType>Chinese</ListingType>
+                <Quantity>1</Quantity>
+                <ReservePrice currencyID="USD">0.0</ReservePrice>
+                <SellingStatus>
+                    <BidCount>2</BidCount>
+                    <CurrentPrice currencyID="USD">10.5</CurrentPrice>
+                    <HighBidder>
+                        <FeedbackScore>3</FeedbackScore>
+                        <FeedbackRatingStar>None</FeedbackRatingStar>
+                        <UserID>jamt4203</UserID>
+                    </HighBidder>
+                    <ReserveMet>true</ReserveMet>
+                    <BidderCount>2</BidderCount>
+                </SellingStatus>
+                <ShippingDetails>
+                    <ShippingServiceOptions>
+                        <ShippingServiceCost currencyID="USD">4.99</ShippingServiceCost>
+                    </ShippingServiceOptions>
+                    <ShippingType>Flat</ShippingType>
+                </ShippingDetails>
+                <StartPrice currencyID="USD">2.99</StartPrice>
+                <TimeLeft>PT19H20M8S</TimeLeft>
+                <Title>2005-06 Upper Deck The Cup Hockey David Aebischer Signature Patch Auto /75</Title>
+                <WatchCount>11</WatchCount>
+                <QuantityAvailable>1</QuantityAvailable>
+                <SKU>Josh Thorne</SKU>
+                <ClassifiedAdPayPerLeadFee currencyID="USD">0.0</ClassifiedAdPayPerLeadFee>
+                <SellerProfiles>
+                    <SellerShippingProfile>
+                        <ShippingProfileID>170995304024</ShippingProfileID>
+                        <ShippingProfileName>Single Card Shipping</ShippingProfileName>
+                    </SellerShippingProfile>
+                    <SellerReturnProfile>
+                        <ReturnProfileID>125277377024</ReturnProfileID>
+                        <ReturnProfileName>No returns accepted</ReturnProfileName>
+                    </SellerReturnProfile>
+                    <SellerPaymentProfile>
+                        <PaymentProfileID>214315433024</PaymentProfileID>
+                        <PaymentProfileName>eBay Payments</PaymentProfileName>
+                    </SellerPaymentProfile>
+                </SellerProfiles>
+            </Item>
+            <Item>
+                <ItemID>266667592664</ItemID>
+                <ListingDetails>
+                    <StartTime>2024-02-11T01:24:00.000Z</StartTime>
+                    <ViewItemURL>https://www.ebay.com/itm/2009-10-Upper-Deck-Black-Hockey-Ryan-O-Reilly-Rookie-Lettermen-Patch-Auto-99-/266667592664</ViewItemURL>
+                    <ViewItemURLForNaturalSearch>http://cgi.ebay.com/2009-10-Upper-Deck-Black-Hockey-Ryan-O-Reilly-Rookie-Lettermen-Patch-Auto-99?item=266667592664&amp;category=261328&amp;cmd=ViewItem</ViewItemURLForNaturalSearch>
+                </ListingDetails>
+                <ListingDuration>Days_7</ListingDuration>
+                <ListingType>Chinese</ListingType>
+                <Quantity>1</Quantity>
+                <ReservePrice currencyID="USD">0.0</ReservePrice>
+                <SellingStatus>
+                    <BidCount>4</BidCount>
+                    <CurrentPrice currencyID="USD">6.0</CurrentPrice>
+                    <HighBidder>
+                        <FeedbackScore>3</FeedbackScore>
+                        <FeedbackRatingStar>None</FeedbackRatingStar>
+                        <UserID>hnhu4619</UserID>
+                    </HighBidder>
+                    <ReserveMet>true</ReserveMet>
+                    <BidderCount>4</BidderCount>
+                </SellingStatus>
+                <ShippingDetails>
+                    <ShippingServiceOptions>
+                        <ShippingServiceCost currencyID="USD">4.99</ShippingServiceCost>
+                    </ShippingServiceOptions>
+                    <ShippingType>Flat</ShippingType>
+                </ShippingDetails>
+                <StartPrice currencyID="USD">2.99</StartPrice>
+                <TimeLeft>PT19H21M8S</TimeLeft>
+                <Title>2009-10 Upper Deck Black Hockey Ryan O'Reilly Rookie Lettermen Patch Auto /99</Title>
+                <WatchCount>10</WatchCount>
+                <QuantityAvailable>1</QuantityAvailable>
+                <SKU>Josh Thorne</SKU>
+                <ClassifiedAdPayPerLeadFee currencyID="USD">0.0</ClassifiedAdPayPerLeadFee>
+                <SellerProfiles>
+                    <SellerShippingProfile>
+                        <ShippingProfileID>170995304024</ShippingProfileID>
+                        <ShippingProfileName>Single Card Shipping</ShippingProfileName>
+                    </SellerShippingProfile>
+                    <SellerReturnProfile>
+                        <ReturnProfileID>125277377024</ReturnProfileID>
+                        <ReturnProfileName>No returns accepted</ReturnProfileName>
+                    </SellerReturnProfile>
+                    <SellerPaymentProfile>
+                        <PaymentProfileID>214315433024</PaymentProfileID>
+                        <PaymentProfileName>eBay Payments</PaymentProfileName>
+                    </SellerPaymentProfile>
+                </SellerProfiles>
+            </Item>
+            <Item>
+                <ItemID>256408378308</ItemID>
+                <ListingDetails>
+                    <StartTime>2024-02-11T01:25:00.000Z</StartTime>
+                    <ViewItemURL>https://www.ebay.com/itm/2005-06-SP-Game-Used-Hockey-Brent-Seabrook-Rookie-Exclusives-Auto-100-/256408378308</ViewItemURL>
+                    <ViewItemURLForNaturalSearch>http://cgi.ebay.com/2005-06-SP-Game-Used-Hockey-Brent-Seabrook-Rookie-Exclusives-Auto-100?item=256408378308&amp;category=261328&amp;cmd=ViewItem</ViewItemURLForNaturalSearch>
+                </ListingDetails>
+                <ListingDuration>Days_7</ListingDuration>
+                <ListingType>Chinese</ListingType>
+                <Quantity>1</Quantity>
+                <ReservePrice currencyID="USD">0.0</ReservePrice>
+                <SellingStatus>
+                    <BidCount>3</BidCount>
+                    <CurrentPrice currencyID="USD">5.5</CurrentPrice>
+                    <HighBidder>
+                        <FeedbackScore>131</FeedbackScore>
+                        <FeedbackRatingStar>Turquoise</FeedbackRatingStar>
+                        <UserID>littlemanjohns</UserID>
+                    </HighBidder>
+                    <ReserveMet>true</ReserveMet>
+                    <BidderCount>3</BidderCount>
+                </SellingStatus>
+                <ShippingDetails>
+                    <ShippingServiceOptions>
+                        <ShippingServiceCost currencyID="USD">4.99</ShippingServiceCost>
+                    </ShippingServiceOptions>
+                    <ShippingType>Flat</ShippingType>
+                </ShippingDetails>
+                <StartPrice currencyID="USD">2.99</StartPrice>
+                <TimeLeft>PT19H22M8S</TimeLeft>
+                <Title>2005-06 SP Game Used Hockey Brent Seabrook Rookie Exclusives Auto /100</Title>
+                <WatchCount>7</WatchCount>
+                <QuantityAvailable>1</QuantityAvailable>
+                <SKU>Josh Thorne</SKU>
+                <ClassifiedAdPayPerLeadFee currencyID="USD">0.0</ClassifiedAdPayPerLeadFee>
+                <SellerProfiles>
+                    <SellerShippingProfile>
+                        <ShippingProfileID>170995304024</ShippingProfileID>
+                        <ShippingProfileName>Single Card Shipping</ShippingProfileName>
+                    </SellerShippingProfile>
+                    <SellerReturnProfile>
+                        <ReturnProfileID>125277377024</ReturnProfileID>
+                        <ReturnProfileName>No returns accepted</ReturnProfileName>
+                    </SellerReturnProfile>
+                    <SellerPaymentProfile>
+                        <PaymentProfileID>214315433024</PaymentProfileID>
+                        <PaymentProfileName>eBay Payments</PaymentProfileName>
+                    </SellerPaymentProfile>
+                </SellerProfiles>
+            </Item>
+            <Item>
+                <ItemID>256408378302</ItemID>
+                <ListingDetails>
+                    <StartTime>2024-02-11T01:26:00.000Z</StartTime>
+                    <ViewItemURL>https://www.ebay.com/itm/2011-ITG-Hockey-Joe-Sakic-Canada-vs-The-World-Auto-/256408378302</ViewItemURL>
+                    <ViewItemURLForNaturalSearch>http://cgi.ebay.com/2011-ITG-Hockey-Joe-Sakic-Canada-vs-The-World-Auto?item=256408378302&amp;category=261328&amp;cmd=ViewItem</ViewItemURLForNaturalSearch>
+                </ListingDetails>
+                <ListingDuration>Days_7</ListingDuration>
+                <ListingType>Chinese</ListingType>
+                <Quantity>1</Quantity>
+                <ReservePrice currencyID="USD">0.0</ReservePrice>
+                <SellingStatus>
+                    <BidCount>4</BidCount>
+                    <CurrentPrice currencyID="USD">11.61</CurrentPrice>
+                    <HighBidder>
+                        <FeedbackScore>1466</FeedbackScore>
+                        <FeedbackRatingStar>Red</FeedbackRatingStar>
+                        <UserID>pattsa2</UserID>
+                    </HighBidder>
+                    <ReserveMet>true</ReserveMet>
+                    <BidderCount>4</BidderCount>
+                </SellingStatus>
+                <ShippingDetails>
+                    <ShippingServiceOptions>
+                        <ShippingServiceCost currencyID="USD">4.99</ShippingServiceCost>
+                    </ShippingServiceOptions>
+                    <ShippingType>Flat</ShippingType>
+                </ShippingDetails>
+                <StartPrice currencyID="USD">2.99</StartPrice>
+                <TimeLeft>PT19H23M8S</TimeLeft>
+                <Title>2011 ITG Hockey Joe Sakic Canada vs The World Auto</Title>
+                <WatchCount>13</WatchCount>
+                <QuantityAvailable>1</QuantityAvailable>
+                <SKU>Josh Thorne</SKU>
+                <ClassifiedAdPayPerLeadFee currencyID="USD">0.0</ClassifiedAdPayPerLeadFee>
+                <SellerProfiles>
+                    <SellerShippingProfile>
+                        <ShippingProfileID>170995304024</ShippingProfileID>
+                        <ShippingProfileName>Single Card Shipping</ShippingProfileName>
+                    </SellerShippingProfile>
+                    <SellerReturnProfile>
+                        <ReturnProfileID>125277377024</ReturnProfileID>
+                        <ReturnProfileName>No returns accepted</ReturnProfileName>
+                    </SellerReturnProfile>
+                    <SellerPaymentProfile>
+                        <PaymentProfileID>214315433024</PaymentProfileID>
+                        <PaymentProfileName>eBay Payments</PaymentProfileName>
+                    </SellerPaymentProfile>
+                </SellerProfiles>
+            </Item>
+            <Item>
+                <ItemID>266667592677</ItemID>
+                <ListingDetails>
+                    <StartTime>2024-02-11T01:27:00.000Z</StartTime>
+                    <ViewItemURL>https://www.ebay.com/itm/2005-06-Upper-Deck-The-Cup-Hockey-Brent-Seabrook-RC-Patch-Auto-199-ROOKIE-/266667592677</ViewItemURL>
+                    <ViewItemURLForNaturalSearch>http://cgi.ebay.com/2005-06-Upper-Deck-The-Cup-Hockey-Brent-Seabrook-RC-Patch-Auto-199-ROOKIE?item=266667592677&amp;category=261328&amp;cmd=ViewItem</ViewItemURLForNaturalSearch>
+                </ListingDetails>
+                <ListingDuration>Days_7</ListingDuration>
+                <ListingType>Chinese</ListingType>
+                <Quantity>1</Quantity>
+                <ReservePrice currencyID="USD">0.0</ReservePrice>
+                <SellingStatus>
+                    <BidCount>9</BidCount>
+                    <CurrentPrice currencyID="USD">22.0</CurrentPrice>
+                    <HighBidder>
+                        <FeedbackScore>647</FeedbackScore>
+                        <FeedbackRatingStar>Purple</FeedbackRatingStar>
+                        <UserID>scottcollectables2010</UserID>
+                    </HighBidder>
+                    <ReserveMet>true</ReserveMet>
+                    <BidderCount>8</BidderCount>
+                </SellingStatus>
+                <ShippingDetails>
+                    <ShippingServiceOptions>
+                        <ShippingServiceCost currencyID="USD">4.99</ShippingServiceCost>
+                    </ShippingServiceOptions>
+                    <ShippingType>Flat</ShippingType>
+                </ShippingDetails>
+                <StartPrice currencyID="USD">2.99</StartPrice>
+                <TimeLeft>PT19H24M8S</TimeLeft>
+                <Title>2005-06 Upper Deck The Cup Hockey Brent Seabrook RC Patch Auto /199 ROOKIE</Title>
+                <WatchCount>18</WatchCount>
+                <QuantityAvailable>1</QuantityAvailable>
+                <SKU>Josh Thorne</SKU>
+                <ClassifiedAdPayPerLeadFee currencyID="USD">0.0</ClassifiedAdPayPerLeadFee>
+                <SellerProfiles>
+                    <SellerShippingProfile>
+                        <ShippingProfileID>170995304024</ShippingProfileID>
+                        <ShippingProfileName>Single Card Shipping</ShippingProfileName>
+                    </SellerShippingProfile>
+                    <SellerReturnProfile>
+                        <ReturnProfileID>125277377024</ReturnProfileID>
+                        <ReturnProfileName>No returns accepted</ReturnProfileName>
+                    </SellerReturnProfile>
+                    <SellerPaymentProfile>
+                        <PaymentProfileID>214315433024</PaymentProfileID>
+                        <PaymentProfileName>eBay Payments</PaymentProfileName>
+                    </SellerPaymentProfile>
+                </SellerProfiles>
+            </Item>
+            <Item>
+                <ItemID>256408378309</ItemID>
+                <ListingDetails>
+                    <StartTime>2024-02-11T01:28:00.000Z</StartTime>
+                    <ViewItemURL>https://www.ebay.com/itm/2005-06-Upper-Deck-Ice-Hockey-Milan-Hejduk-Signature-Swatches-Patch-Auto-/256408378309</ViewItemURL>
+                    <ViewItemURLForNaturalSearch>http://cgi.ebay.com/2005-06-Upper-Deck-Ice-Hockey-Milan-Hejduk-Signature-Swatches-Patch-Auto?item=256408378309&amp;category=261328&amp;cmd=ViewItem</ViewItemURLForNaturalSearch>
+                </ListingDetails>
+                <ListingDuration>Days_7</ListingDuration>
+                <ListingType>Chinese</ListingType>
+                <Quantity>1</Quantity>
+                <ReservePrice currencyID="USD">0.0</ReservePrice>
+                <SellingStatus>
+                    <BidCount>4</BidCount>
+                    <CurrentPrice currencyID="USD">8.16</CurrentPrice>
+                    <HighBidder>
+                        <FeedbackScore>3</FeedbackScore>
+                        <FeedbackRatingStar>None</FeedbackRatingStar>
+                        <UserID>jamt4203</UserID>
+                    </HighBidder>
+                    <ReserveMet>true</ReserveMet>
+                    <BidderCount>3</BidderCount>
+                </SellingStatus>
+                <ShippingDetails>
+                    <ShippingServiceOptions>
+                        <ShippingServiceCost currencyID="USD">4.99</ShippingServiceCost>
+                    </ShippingServiceOptions>
+                    <ShippingType>Flat</ShippingType>
+                </ShippingDetails>
+                <StartPrice currencyID="USD">2.99</StartPrice>
+                <TimeLeft>PT19H25M8S</TimeLeft>
+                <Title>2005-06 Upper Deck Ice Hockey Milan Hejduk Signature Swatches Patch Auto</Title>
+                <WatchCount>1</WatchCount>
+                <QuantityAvailable>1</QuantityAvailable>
+                <SKU>Josh Thorne</SKU>
+                <ClassifiedAdPayPerLeadFee currencyID="USD">0.0</ClassifiedAdPayPerLeadFee>
+                <SellerProfiles>
+                    <SellerShippingProfile>
+                        <ShippingProfileID>170995304024</ShippingProfileID>
+                        <ShippingProfileName>Single Card Shipping</ShippingProfileName>
+                    </SellerShippingProfile>
+                    <SellerReturnProfile>
+                        <ReturnProfileID>125277377024</ReturnProfileID>
+                        <ReturnProfileName>No returns accepted</ReturnProfileName>
+                    </SellerReturnProfile>
+                    <SellerPaymentProfile>
+                        <PaymentProfileID>214315433024</PaymentProfileID>
+                        <PaymentProfileName>eBay Payments</PaymentProfileName>
+                    </SellerPaymentProfile>
+                </SellerProfiles>
+            </Item>
+            <Item>
+                <ItemID>256408378301</ItemID>
+                <ListingDetails>
+                    <StartTime>2024-02-11T01:29:00.000Z</StartTime>
+                    <ViewItemURL>https://www.ebay.com/itm/2020-21-Ultimate-Collection-Hockey-Martin-St-Louis-Auto-15-GOLD-/256408378301</ViewItemURL>
+                    <ViewItemURLForNaturalSearch>http://cgi.ebay.com/2020-21-Ultimate-Collection-Hockey-Martin-St-Louis-Auto-15-GOLD?item=256408378301&amp;category=261328&amp;cmd=ViewItem</ViewItemURLForNaturalSearch>
+                </ListingDetails>
+                <ListingDuration>Days_7</ListingDuration>
+                <ListingType>Chinese</ListingType>
+                <Quantity>1</Quantity>
+                <ReservePrice currencyID="USD">0.0</ReservePrice>
+                <SellingStatus>
+                    <BidCount>3</BidCount>
+                    <CurrentPrice currencyID="USD">16.49</CurrentPrice>
+                    <HighBidder>
+                        <FeedbackScore>268</FeedbackScore>
+                        <FeedbackRatingStar>Turquoise</FeedbackRatingStar>
+                        <UserID>karsonskards</UserID>
+                    </HighBidder>
+                    <ReserveMet>true</ReserveMet>
+                    <BidderCount>3</BidderCount>
+                </SellingStatus>
+                <ShippingDetails>
+                    <ShippingServiceOptions>
+                        <ShippingServiceCost currencyID="USD">4.99</ShippingServiceCost>
+                    </ShippingServiceOptions>
+                    <ShippingType>Flat</ShippingType>
+                </ShippingDetails>
+                <StartPrice currencyID="USD">2.99</StartPrice>
+                <TimeLeft>PT19H26M8S</TimeLeft>
+                <Title>2020-21 Ultimate Collection Hockey Martin St. Louis Auto /15 GOLD</Title>
+                <WatchCount>7</WatchCount>
+                <QuantityAvailable>1</QuantityAvailable>
+                <SKU>Josh Thorne</SKU>
+                <ClassifiedAdPayPerLeadFee currencyID="USD">0.0</ClassifiedAdPayPerLeadFee>
+                <SellerProfiles>
+                    <SellerShippingProfile>
+                        <ShippingProfileID>170995304024</ShippingProfileID>
+                        <ShippingProfileName>Single Card Shipping</ShippingProfileName>
+                    </SellerShippingProfile>
+                    <SellerReturnProfile>
+                        <ReturnProfileID>125277377024</ReturnProfileID>
+                        <ReturnProfileName>No returns accepted</ReturnProfileName>
+                    </SellerReturnProfile>
+                    <SellerPaymentProfile>
+                        <PaymentProfileID>214315433024</PaymentProfileID>
+                        <PaymentProfileName>eBay Payments</PaymentProfileName>
+                    </SellerPaymentProfile>
+                </SellerProfiles>
+            </Item>
+            <Item>
+                <ItemID>266667592663</ItemID>
+                <ListingDetails>
+                    <StartTime>2024-02-11T01:30:00.000Z</StartTime>
+                    <ViewItemURL>https://www.ebay.com/itm/2019-20-Ultimate-Collection-Hockey-Mike-Modano-Auto-/266667592663</ViewItemURL>
+                    <ViewItemURLForNaturalSearch>http://cgi.ebay.com/2019-20-Ultimate-Collection-Hockey-Mike-Modano-Auto?item=266667592663&amp;category=261328&amp;cmd=ViewItem</ViewItemURLForNaturalSearch>
+                </ListingDetails>
+                <ListingDuration>Days_7</ListingDuration>
+                <ListingType>Chinese</ListingType>
+                <Quantity>1</Quantity>
+                <ReservePrice currencyID="USD">0.0</ReservePrice>
+                <SellingStatus>
+                    <BidCount>6</BidCount>
+                    <CurrentPrice currencyID="USD">21.5</CurrentPrice>
+                    <HighBidder>
+                        <FeedbackScore>1180</FeedbackScore>
+                        <FeedbackRatingStar>Red</FeedbackRatingStar>
+                        <UserID>ondan-30</UserID>
+                    </HighBidder>
+                    <ReserveMet>true</ReserveMet>
+                    <BidderCount>4</BidderCount>
+                </SellingStatus>
+                <ShippingDetails>
+                    <ShippingServiceOptions>
+                        <ShippingServiceCost currencyID="USD">4.99</ShippingServiceCost>
+                    </ShippingServiceOptions>
+                    <ShippingType>Flat</ShippingType>
+                </ShippingDetails>
+                <StartPrice currencyID="USD">2.99</StartPrice>
+                <TimeLeft>PT19H27M8S</TimeLeft>
+                <Title>2019-20 Ultimate Collection Hockey Mike Modano Auto</Title>
+                <WatchCount>17</WatchCount>
+                <QuantityAvailable>1</QuantityAvailable>
+                <SKU>Josh Thorne</SKU>
+                <ClassifiedAdPayPerLeadFee currencyID="USD">0.0</ClassifiedAdPayPerLeadFee>
+                <SellerProfiles>
+                    <SellerShippingProfile>
+                        <ShippingProfileID>170995304024</ShippingProfileID>
+                        <ShippingProfileName>Single Card Shipping</ShippingProfileName>
+                    </SellerShippingProfile>
+                    <SellerReturnProfile>
+                        <ReturnProfileID>125277377024</ReturnProfileID>
+                        <ReturnProfileName>No returns accepted</ReturnProfileName>
+                    </SellerReturnProfile>
+                    <SellerPaymentProfile>
+                        <PaymentProfileID>214315433024</PaymentProfileID>
+                        <PaymentProfileName>eBay Payments</PaymentProfileName>
+                    </SellerPaymentProfile>
+                </SellerProfiles>
+            </Item>
+        </ItemArray>
+        <PaginationResult>
+            <TotalNumberOfPages>158</TotalNumberOfPages>
+            <TotalNumberOfEntries>1576</TotalNumberOfEntries>
+        </PaginationResult>
+    </ActiveList>
+</GetMyeBaySellingResponse>

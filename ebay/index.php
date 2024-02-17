@@ -137,6 +137,62 @@
             <br><br><label>Refreshed Access Token</label><br>
             <textarea class="boxsizingBorder" rows="5"><?php print_r($results["access_token"]);?></textarea>
         </div>
+        <hr>
+
+        <?php  
+        $access_token = $response["access_token"];
+        $apiURL = "https://api.ebay.com/ws/api.dll";
+        
+        
+        $post_data = 
+        '<?xml version="1.0" encoding="utf-8"?>' .
+        '<GetMyeBaySellingRequest xmlns="urn:ebay:apis:eBLBaseComponents">' .
+        '<RequesterCredentials>' .
+          '<eBayAuthToken>' . $access_token . '</eBayAuthToken>' .
+            '</RequesterCredentials>' .
+          '<ErrorLanguage>en_US</ErrorLanguage>' .
+            '<WarningLevel>High</WarningLevel>' .
+            '<ActiveList>' .
+          '<Sort>TimeLeft</Sort>' .
+            '<Pagination>' .
+            '<EntriesPerPage>3</EntriesPerPage>' .
+              '<PageNumber>1</PageNumber>' .
+              '</Pagination>' .
+            '</ActiveList>' .
+        '</GetMyeBaySellingRequest> ';
+
+        $curl = curl_init();
+
+        curl_setopt_array(
+            $curl,
+            [
+                CURLOPT_URL => $apiURL,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS =>$post_data,
+                CURLOPT_HTTPHEADER => [
+                    'X-EBAY-API-SITEID:0',
+                    'X-EBAY-API-COMPATIBILITY-LEVEL:967',
+                    'X-EBAY-API-CALL-NAME:GetMyeBaySelling',
+                ]
+            ]
+        );
+
+        $response = curl_exec($curl);
+        $status = curl_getinfo($curl);
+
+        curl_close($curl);
+
+        $xml=simplexml_load_string($response) or die("Error: Cannot create object");
+        print_r($xml);
+
+        ?>
+
 
     </body>
 </html>
