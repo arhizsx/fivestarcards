@@ -155,7 +155,7 @@
             '<ActiveList>' .
           '<Sort>TimeLeft</Sort>' .
             '<Pagination>' .
-            '<EntriesPerPage>3</EntriesPerPage>' .
+            '<EntriesPerPage>1</EntriesPerPage>' .
               '<PageNumber>1</PageNumber>' .
               '</Pagination>' .
             '</ActiveList>' .
