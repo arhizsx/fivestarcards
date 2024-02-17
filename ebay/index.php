@@ -240,6 +240,16 @@
                             <input class="form-control mb-2" type="text" value="<?php echo $item["SKU"] ?>"/>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <label>ListingType</label>
+                            <input class="form-control mb-2" type="text" value="<?php echo $item["ListingType"] ?>"/>
+                        </div>
+                        <div class="col-xl-6">
+                            <label>ListingDuration</label>
+                            <input class="form-control mb-2" type="text" value="<?php echo $item["ListingDuration"] ?>"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         <?php
