@@ -142,7 +142,8 @@
         <?php  
         $access_token = $results["access_token"];
         $apiURL = "https://api.ebay.com/ws/api.dll";
-        
+        $per_page = 200;
+        $page_number = 1;
         
         $post_data = 
         '<?xml version="1.0" encoding="utf-8"?>' .
@@ -155,8 +156,8 @@
             '<ActiveList>' .
           '<Sort>TimeLeft</Sort>' .
             '<Pagination>' .
-            '<EntriesPerPage>2</EntriesPerPage>' .
-              '<PageNumber>1</PageNumber>' .
+            '<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
+              '<PageNumber>' . $page_number . '</PageNumber>' .
               '</Pagination>' .
             '</ActiveList>' .
         '</GetMyeBaySellingRequest> ';
