@@ -199,23 +199,45 @@
 
         foreach($json["ActiveList"]["ItemArray"]["Item"] as $item){
         ?>
-            <div class="row border-bottom">
-                <div class="col-xl-4">
+            <div class="row border-bottom py-3">
+                <div class="col-xl-3">
                     <img src="" data-itemID="" class="itemImage">
                 </div>
-                <div class="col-xl-8 py-3">
-                    <label>ItemID</label>
-                    <input class="form-control mb-2" type="text" value="<?php echo $item["ItemID"] ?>"/>
-                    <label>Title</label>
-                    <input class="form-control mb-2" type="text" value="<?php echo $item["Title"] ?>"/>
-                    <label>StartPrice</label>
-                    <input class="form-control mb-2" type="text" value="<?php echo $item["StartPrice"] ?>"/>
-                    <label>CurrentPrice</label>
-                    <input class="form-control mb-2" type="text" value="<?php echo $item["SellingStatus"]["CurrentPrice"] ?>"/>
-                    <label>BidCount</label>
-                    <input class="form-control mb-2" type="text" value="<?php echo $item["SellingStatus"]["BidCount"] ?>"/>
-                    <label>SKU</label>
-                    <input class="form-control mb-2" type="text" value="<?php echo $item["SKU"] ?>"/>
+                <div class="col-xl-9">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <label>ItemID</label>
+                            <input class="form-control mb-2" type="text" value="<?php echo $item["ItemID"] ?>"/>
+                        </div>
+                        <div class="col-xl-6">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <label>Title</label>
+                            <input class="form-control mb-2" type="text" value="<?php echo $item["Title"] ?>"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <label>StartPrice</label>
+                            <input class="form-control mb-2" type="text" value="<?php echo $item["StartPrice"] ?>"/>
+                        </div>
+                        <div class="col-xl-6">
+                            <label>CurrentPrice</label>
+                            <input class="form-control mb-2" type="text" value="<?php echo $item["SellingStatus"]["CurrentPrice"] ?>"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <label>BidCount</label>
+                            <input class="form-control mb-2" type="text" value="<?php echo $item["SellingStatus"]["BidCount"] ?>"/>
+                        </div>
+                        <div class="col-xl-6">
+                            <label>SKU</label>
+                            <input class="form-control mb-2" type="text" value="<?php echo $item["SKU"] ?>"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         <?php
