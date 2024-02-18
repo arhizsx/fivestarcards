@@ -268,32 +268,40 @@
     
         </div>
 
-        <script>
-        var xml = '';
+        <?php 
 
-        $.ajax({
+$access_token = $results["access_token"];
+$apiURL = "https://api.ebay.com/buy/browse/v1/item/get_item_by_legacy_id?legacy_item_id=266676499755";
+$post_data = "";
 
-            url: "/ebay/getitem.php",
-            method: "GET",
-            data: {
-                item_id : "266676499755",
-            },
-            beforeSend:function(){
-            },
-            success: function (resp){
+$curl = curl_init();
 
-                console.log(resp);
+curl_setopt_array(
+    $curl,
+    [
+        CURLOPT_URL => $apiURL,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>$post_data,
+        CURLOPT_HTTPHEADER => [
+            'Authorization: Bearer ' . $access_token,
+        ]
+    ]
+);
 
-            },
-            complete: function(){
-            },
-            error: function (resp){
+$response = curl_exec($curl);
+$status = curl_getinfo($curl);
 
-            }
-        });
+curl_close($curl);
 
+$xml=simplexml_load_string($response) or die("Error: Cannot create object");
+$json = json_decode(json_encode($xml), true);
 
-        </script>
-
+        ?>
     </body>
 </html>
