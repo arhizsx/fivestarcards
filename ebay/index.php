@@ -279,6 +279,7 @@
         </div>
         <div class="row">
             <div class="col-xl-12">
+                <label>API Response</label>
                 <textarea class="form-control mb-3"><?php echo json_encode($json); ?></textarea>
             </div>
         </div>
