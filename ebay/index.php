@@ -277,7 +277,6 @@
             method: "GET",
             data: {
                 item_id : "266676499755",
-                access_token : "<?php echo $access_token; ?>"
             },
             beforeSend:function(){
             },
