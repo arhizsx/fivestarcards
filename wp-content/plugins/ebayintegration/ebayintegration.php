@@ -4,7 +4,7 @@
  * Version: 1.0.0
  * Plugin URI: http://www.techteam.ph/
  * Description: This is your starter template for your next WordPress plugin.
- * Author: Hugh Lashbrooke
+ * Author: Aris Salvador
  * Author URI: http://www.techteam.ph/
  * Requires at least: 4.0
  * Tested up to: 4.0
