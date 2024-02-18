@@ -192,9 +192,10 @@ class Ebay_Integration {
 
         curl_close($curl);
 
+		return $response;
+
         $results = json_decode($response, true);
 
-        return $response;
     }
 
 
