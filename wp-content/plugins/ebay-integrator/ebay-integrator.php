@@ -98,8 +98,8 @@
     {
         
         register_rest_route(
-            "ebay-integrator/v1",
-            "request",
+            "/ebay-integrator/v1",
+            "/request",
             array(
                 'methods' => 'POST',
                 'callback' => array($this, 'handle_request')
