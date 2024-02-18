@@ -264,8 +264,16 @@
         ?>
     
         <div class="row">
-            <div class="col-xl-12">
+            <div class="col-xl-6">
                 <input class="form-control" value="<?php echo $json['TotalNumberOfEntries'] ?>">
+            </div>
+            <div class="col-xl-6">
+                <input class="form-control" value="<?php echo $json['TotalNumberOfEntries'] ?>">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <textarea class="form-control"><?php print_r($json); ?></textarea>
             </div>
         </div>
 
