@@ -126,7 +126,7 @@ class Ebay_Integration_Settings {
 		return apply_filters(
 			$this->base . 'menu_settings',
 			array(
-				'location'    => 'options', // Possible settings: options, menu, submenu.
+				'location'    => 'menu', // Possible settings: options, menu, submenu.
 				'parent_slug' => 'options-general.php',
 				'page_title'  => __( 'eBay Integration', 'ebayintegration' ),
 				'menu_title'  => __( 'eBay Integration', 'ebayintegration' ),
