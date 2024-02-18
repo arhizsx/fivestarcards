@@ -139,11 +139,22 @@ class Ebay_Integration {
 		$this->load_plugin_textdomain();
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
 
+        add_action("rest_api_init", array($this, 'add_api_endpoint'));
+
 
 
 	} // End __construct ()
 
-    public function api_endpoint( $data ){
+    public function add_api_endpoint(  ){
+
+		register_rest_route( '/ebayintegration/v1', '/request', array(
+			'methods' => 'GET',
+			'callback' => array( $this, 'handle_api_endpoint' )
+		) );        
+
+    }
+
+    public function handle_api_endpoint($data){
         return $data;
     }
 
