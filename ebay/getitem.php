@@ -43,7 +43,8 @@ $access_token = $results["access_token"];
 // GET THE ITEM
 
 $post_data = [
-    'legacy_item_id' => $_GET["item_id"]
+    'legacy_item_id' => $_GET["item_id"],
+    'Authorization' => $access_token    
 ];
 
 
@@ -52,7 +53,7 @@ $curl = curl_init();
 curl_setopt_array(
     $curl,
     [
-        CURLOPT_URL => "https://api.ebay.com/buy/browse/v1/item/get_item_by_legacy_id=" . $_GET["item_id"],
+        CURLOPT_URL => "https://api.ebay.com/buy/browse/v1/item/get_item_by_legacy_id",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -60,6 +61,7 @@ curl_setopt_array(
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'GET',
+        CURLOPT_POSTFIELDS => http_build_query($post_data),
     ]
 );
 
