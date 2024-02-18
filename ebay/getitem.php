@@ -52,15 +52,14 @@ $curl = curl_init();
 curl_setopt_array(
     $curl,
     [
-        CURLOPT_URL => "https://api.ebay.com/buy/browse/v1/item/get_item_by_legacy_id",
+        CURLOPT_URL => "https://api.ebay.com/buy/browse/v1/item/get_item_by_legacy_id=" . $_GET["item_id"],
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
         CURLOPT_TIMEOUT => 0,
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => http_build_query($post_data),
+        CURLOPT_CUSTOMREQUEST => 'GET',
     ]
 );
 
@@ -72,7 +71,7 @@ curl_close($curl);
 $results = json_decode($response, true);
 
 
-print_r($results);
+return print_r($results);
 
 
 ?>
