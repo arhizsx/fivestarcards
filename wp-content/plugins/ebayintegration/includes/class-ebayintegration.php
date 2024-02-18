@@ -194,7 +194,7 @@ class Ebay_Integration {
 
         $results = json_decode($response, true);
 
-        return $results;
+        return $response;
     }
 
 
