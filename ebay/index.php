@@ -265,7 +265,7 @@
     
         <div class="row">
             <div class="col-xl-12">
-                <texarea><?php print_r($json); ?></texarea>
+                <input class="form-control" value="<?php echo $json['TotalNumberOfEntries'] ?>">
             </div>
         </div>
 
