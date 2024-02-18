@@ -401,7 +401,7 @@ class Ebay_Integration_Settings {
 
 		// Build page HTML.
 		$html      = '<div class="wrap" id="' . $this->parent->_token . '_settings">' . "\n";
-			$html .= '<h2>' . __( 'Plugin Settings', 'ebayintegration' ) . '</h2>' . "\n";
+			$html .= '<h2>' . __( 'eBay Integration', 'ebayintegration' ) . '</h2>' . "\n";
 
 			$tab = '';
 		//phpcs:disable
