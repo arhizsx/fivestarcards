@@ -263,14 +263,17 @@
         }
         ?>
     
-        <div class="row">
+        <div class="row my-4">
             <div class="col-xl-4">
+                <label>Per Page</label>
                 <input class="form-control mb-3" value="<?php echo $per_page ?>">
             </div>
             <div class="col-xl-4">
+                <label>TotalNumberOfPages</label>
                 <input class="form-control mb-3" value="<?php echo $json["ActiveList"]["PaginationResult"]['TotalNumberOfPages'] ?>">
             </div>
             <div class="col-xl-4">
+            <label>TotalNumberOfEntries</label>
                 <input class="form-control mb-3" value="<?php echo $json["ActiveList"]["PaginationResult"]['TotalNumberOfEntries'] ?>">
             </div>
         </div>
