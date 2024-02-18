@@ -265,18 +265,18 @@
     
         <div class="row">
             <div class="col-xl-4">
-                <input class="form-control" value="<?php echo $per_page ?>">
+                <input class="form-control mb-3" value="<?php echo $per_page ?>">
             </div>
             <div class="col-xl-4">
-                <input class="form-control" value="<?php echo $json["ActiveList"]["PaginationResult"]['TotalNumberOfPages'] ?>">
+                <input class="form-control mb-3" value="<?php echo $json["ActiveList"]["PaginationResult"]['TotalNumberOfPages'] ?>">
             </div>
             <div class="col-xl-4">
-                <input class="form-control" value="<?php echo $json["ActiveList"]["PaginationResult"]['TotalNumberOfEntries'] ?>">
+                <input class="form-control mb-3" value="<?php echo $json["ActiveList"]["PaginationResult"]['TotalNumberOfEntries'] ?>">
             </div>
         </div>
         <div class="row">
             <div class="col-xl-12">
-                <textarea class="form-control"><?php echo json_encode($json); ?></textarea>
+                <textarea class="form-control mb-3"><?php echo json_encode($json); ?></textarea>
             </div>
         </div>
 
