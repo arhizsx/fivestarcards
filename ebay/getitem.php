@@ -72,7 +72,7 @@ curl_close($curl);
 $results = json_decode($response, true);
 
 
-return $results;
+print_r($results);
 
 
 ?>
