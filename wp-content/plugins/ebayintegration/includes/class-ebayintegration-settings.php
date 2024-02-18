@@ -190,8 +190,8 @@ class Ebay_Integration_Settings {
 	private function settings_fields() {
 
 		$settings['standard'] = array(
-			'title'       => __( 'Standard', 'ebayintegration' ),
-			'description' => __( 'These are fairly standard form input fields.', 'ebayintegration' ),
+			'title'       => __( 'API Details', 'ebayintegration' ),
+			'description' => __( 'eBay API access details', 'ebayintegration' ),
 			'fields'      => array(
 				array(
 					'id'          => 'authorization',
