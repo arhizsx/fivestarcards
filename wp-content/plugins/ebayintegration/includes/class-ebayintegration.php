@@ -155,7 +155,46 @@ class Ebay_Integration {
     }
 
     public function handle_api_endpoint($data){
-        return $data;
+
+		$apiURL = "";
+        $grant_type = "refresh_token";
+        $refresh_token = "v^1.1#i^1#r^1#p^3#I^3#f^0#t^Ul4xMF83OkZFMDQ5NTk4NkI0MzgyRjVFQTY2QzQ3NEIxNDY0RkMxXzBfMSNFXjI2MA==";
+		$authorization = "RmVybmFuZG8tNXN0YXJjYXItUFJELWE4MWZkZDE4OS1hNzYyZGZjNzpQUkQtODFmZGQxODljYmYxLWY0NzItNDEzMS05M2EyLTE5OTA";
+
+        $post_data = [
+            'grant_type' => $grant_type,
+            'refresh_token' => $refresh_token,
+        ];
+
+        $curl = curl_init();
+
+        curl_setopt_array(
+            $curl,
+            [
+                CURLOPT_URL => $apiURL,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => '',
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => 'POST',
+                CURLOPT_POSTFIELDS => http_build_query($post_data),
+                CURLOPT_HTTPHEADER => [
+                    'Content-Type: application/x-www-form-urlencoded',
+                    'Authorization: Basic ' . $authorization
+                ]
+            ]
+        );
+
+        $response = curl_exec($curl);
+        $status = curl_getinfo($curl);
+
+        curl_close($curl);
+
+        $results = json_decode($response, true);
+
+        return $results;
     }
 
 
