@@ -286,8 +286,7 @@ curl_setopt_array(
         CURLOPT_TIMEOUT => 0,
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS =>$post_data,
+        CURLOPT_CUSTOMREQUEST => 'GET',
         CURLOPT_HTTPHEADER => [
             'Authorization: Bearer ' . $access_token,
         ]
@@ -299,8 +298,8 @@ $status = curl_getinfo($curl);
 
 curl_close($curl);
 
-$xml=simplexml_load_string($response) or die("Error: Cannot create object");
-$json = json_decode(json_encode($xml), true);
+print_r($response);
+
 
         ?>
     </body>
