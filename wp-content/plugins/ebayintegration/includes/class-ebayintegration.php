@@ -138,7 +138,19 @@ class Ebay_Integration {
 		// Handle localisation.
 		$this->load_plugin_textdomain();
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
+
+
+		register_rest_route( '/ebayintegration/v1', '/request', array(
+			'methods' => 'GET',
+			'callback' => array( $this, 'api_endpoint' )
+		) );
+
 	} // End __construct ()
+
+    public function api_endpoint( $data ){
+        return $data;
+    }
+
 
 	/**
 	 * Register post type function.
