@@ -140,10 +140,6 @@ class Ebay_Integration {
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
 
 
-		register_rest_route( '/ebayintegration/v1', '/request', array(
-			'methods' => 'GET',
-			'callback' => array( $this, 'api_endpoint' )
-		) );
 
 	} // End __construct ()
 
