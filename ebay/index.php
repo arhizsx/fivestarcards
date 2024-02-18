@@ -264,11 +264,14 @@
         ?>
     
         <div class="row">
-            <div class="col-xl-6">
-                <input class="form-control" value="<?php echo $json['TotalNumberOfEntries'] ?>">
+            <div class="col-xl-4">
+                <input class="form-control" value="<?php echo $per_page ?>">
             </div>
-            <div class="col-xl-6">
-                <input class="form-control" value="<?php echo $json['TotalNumberOfEntries'] ?>">
+            <div class="col-xl-4">
+                <input class="form-control" value="<?php echo $json["PaginationResult"]['TotalNumberOfPages'] ?>">
+            </div>
+            <div class="col-xl-4">
+                <input class="form-control" value="<?php echo $json["PaginationResult"]['TotalNumberOfEntries'] ?>">
             </div>
         </div>
         <div class="row">
