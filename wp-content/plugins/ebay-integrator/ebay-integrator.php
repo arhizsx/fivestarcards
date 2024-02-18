@@ -90,7 +90,7 @@
             'supports' => ['custom-fields']
         );
 
-        register_post_type("ebay-integrator", $args);
+        register_post_type("ebay-integrator-settings", $args);
     }
 
 
