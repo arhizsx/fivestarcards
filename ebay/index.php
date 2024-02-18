@@ -268,10 +268,10 @@
                 <input class="form-control" value="<?php echo $per_page ?>">
             </div>
             <div class="col-xl-4">
-                <input class="form-control" value="<?php echo $json["PaginationResult"]['TotalNumberOfPages'] ?>">
+                <input class="form-control" value="<?php echo $json["ActiveList"]["PaginationResult"]['TotalNumberOfPages'] ?>">
             </div>
             <div class="col-xl-4">
-                <input class="form-control" value="<?php echo $json["PaginationResult"]['TotalNumberOfEntries'] ?>">
+                <input class="form-control" value="<?php echo $json["ActiveList"]["PaginationResult"]['TotalNumberOfEntries'] ?>">
             </div>
         </div>
         <div class="row">
