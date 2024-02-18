@@ -128,8 +128,8 @@ class Ebay_Integration_Settings {
 			array(
 				'location'    => 'options', // Possible settings: options, menu, submenu.
 				'parent_slug' => 'options-general.php',
-				'page_title'  => __( 'Plugin Settings', 'ebayintegration' ),
-				'menu_title'  => __( 'Plugin Settings', 'ebayintegration' ),
+				'page_title'  => __( 'eBay Integration', 'ebayintegration' ),
+				'menu_title'  => __( 'eBay Integration', 'ebayintegration' ),
 				'capability'  => 'manage_options',
 				'menu_slug'   => $this->parent->_token . '_settings',
 				'function'    => array( $this, 'settings_page' ),
