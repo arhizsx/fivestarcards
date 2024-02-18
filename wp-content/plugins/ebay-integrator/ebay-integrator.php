@@ -101,7 +101,7 @@
             "ebay-integrator/v1",
             "request",
             array(
-                'methods' => 'POST',
+                'methods' => 'GET',
                 'callback' => array($this, 'handle_request')
             )                        
         );
