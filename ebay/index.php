@@ -276,7 +276,7 @@
         </div>
         <div class="row">
             <div class="col-xl-12">
-                <textarea class="form-control"><?php echo $json; ?></textarea>
+                <textarea class="form-control"><?php echo json_encode($json); ?></textarea>
             </div>
         </div>
 
