@@ -183,8 +183,11 @@ class Ebay_Integration_Ebay_API {
         
         $params = shortcode_atts($default, $atts);
         ob_start();
-
-        include( '/wp-content/plugins/ebayintegration/shortcodes/getitem.php' );
+		?>
+		<div>
+			<button>Get eBay Items</button>
+		</div>		
+		<?php
         
         $output = ob_get_clean(); 
         
