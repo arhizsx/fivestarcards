@@ -201,8 +201,6 @@ class Ebay_Integration_Ebay_API {
 	}				
 
 	public function getItems($page_number = 1,  $per_page = 50){
-
-		return get_option("access_token");
 		
 		$apiURL = "https://api.ebay.com/ws/api.dll";
 		
@@ -210,7 +208,7 @@ class Ebay_Integration_Ebay_API {
 		'<?xml version="1.0" encoding="utf-8"?>' .
 		'<GetMyeBaySellingRequest xmlns="urn:ebay:apis:eBLBaseComponents">' .
 		'<RequesterCredentials>' .
-		  '<eBayAuthToken>' . get_option("access_token")  . '</eBayAuthToken>' .
+		  '<eBayAuthToken>' . get_option("wpt_access_token")  . '</eBayAuthToken>' .
 			'</RequesterCredentials>' .
 		  '<ErrorLanguage>en_US</ErrorLanguage>' .
 			'<WarningLevel>High</WarningLevel>' .
