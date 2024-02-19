@@ -88,9 +88,11 @@ class Ebay_Integration_Ebay_API {
 			}
 		}
 
+		return count($result["ActiveList"]["ItemArray"]["Item"]);
+
+
 		if( count($result["ActiveList"]["ItemArray"]["Item"]) == 1){
 
-			return count($result["ActiveList"]["ItemArray"]["Item"]);
 			
 		} else {
 			return $result;
