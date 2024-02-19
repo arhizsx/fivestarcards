@@ -83,6 +83,8 @@ class Ebay_Integration_Ebay_API {
 				$result = "Max Retries";
 			}
 		}
+
+		return $result;
 		
 	}
 
