@@ -15,10 +15,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Ebay_Integration_Ebay_API {
 
 	
-	 public function __construct( ) {
+	//  public function __construct( ) {
 
 
-	 }
+	//  }
 
 
 	//  public function create_ebay_enpoint( ){
