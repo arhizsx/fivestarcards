@@ -47,17 +47,17 @@ class Ebay_Integration_Ebay_API {
         $nonce = $headers["x_wp_nonce"][0];
 
 		if( !isset($params["action"]) ){
-			return "Action Not Set";
+			return array("error"=> true, "error_message" => "Action Not Set");
 		}
 
 		if($params["action"] == ""){
 			return "Action Not Defined";
 		} 
 		elseif($params["action"] == "getItems"){
-			return $this->handleGetItems();
+			return array("error"=> false, "data" => $this->handleGetItems());
 		} 
 		else {
-			return $params["action"] . " - Action Not Defined";
+			return array("error"=> true, "error_message" => $params["action"] . " - Action Not Defined");
 		}
 	
 	}
