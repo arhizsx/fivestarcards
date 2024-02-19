@@ -74,7 +74,7 @@ class Ebay_Integration_Ebay_API {
 		} 
 		elseif($params["action"] == "getItemInfo"){
 
-			return $this->getItemInfo();
+			return $this->getItemInfo($params["item_id"]);
 
 		} 
 		elseif($params["action"] == "refreshToken"){
