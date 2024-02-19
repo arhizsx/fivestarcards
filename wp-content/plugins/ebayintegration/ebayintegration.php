@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Load plugin class files.
 require_once 'includes/class-ebayintegration.php';
 require_once 'includes/class-ebayintegration-settings.php';
-require_once 'includes/class-ebayintegration-ebay-api.php';
+// require_once 'includes/class-ebayintegration-ebay-api.php';
 
 // Load plugin libraries.
 require_once 'includes/lib/class-ebayintegration-admin-api.php';
