@@ -19,7 +19,6 @@ class Ebay_Integration_Ebay_API {
 	
 	 public function __construct( ) {
 
-		// Handle REST API
         add_action("rest_api_init", array($this, 'add_api_endpoint'));
 
 	 }

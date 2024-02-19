@@ -139,6 +139,9 @@ class Ebay_Integration {
 		$this->load_plugin_textdomain();
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
 
+		// Create eBay REST API endpoint
+		$this->create_ebay_enpoint();
+
 
 	} // End __construct ()
 
@@ -147,11 +150,12 @@ class Ebay_Integration {
 	 *
 	 */
 
-	 public function ebay_api_endpoint(){
+	 public function create_ebay_enpoint(){
 
 		$ebay = new Ebay_Integration_Ebay_API();
 
 		return $ebay;
+
 	 }
 
 
