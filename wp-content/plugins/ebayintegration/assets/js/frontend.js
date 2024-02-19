@@ -100,10 +100,10 @@ function eBayItemTemplate(data){
 							"</div>" +
 						"</div>";
 
-	if(data.ListingType == "GTC"){
+	if(data.ListingDuration == "GTC"){
 		template = template + 	"<div class='row'>" +
 									"<div class='col-xl-6'>" + 
-										"<label>StartBuyItNowPricePrice</label>" +
+										"<label>BuyItNowPrice</label>" +
 										"<input type='text' class='form-control mb-3' value='" + data.BuyItNowPrice + "'/>" +
 									"</div>" +
 									"<div class='col-xl-6'>" + 
