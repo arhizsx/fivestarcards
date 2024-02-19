@@ -13,7 +13,9 @@ jQuery( document ).ready(
 jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 	if( jQuery(this).data("action") == "getItems" ){
-	
+		
+		jQuery(document).find(".ebayintegration-items_box").html("");
+
 		jQuery.ajax({
 			method: 'get',
 			url: "/wp-json/ebayintegration/v1/ajax",
