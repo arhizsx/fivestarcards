@@ -88,7 +88,7 @@ class Ebay_Integration_Ebay_API {
 			}
 		}
 
-		return count($result["ActiveList"]["ItemArray"]["Item"]);
+		return $result["ActiveList"]["ItemArray"]["Item"];
 
 
 		if( count($result["ActiveList"]["ItemArray"]["Item"]) == 1){
@@ -101,7 +101,7 @@ class Ebay_Integration_Ebay_API {
 
 	}
 
-	public function getItems($page_number = 1,  $per_page = 100){
+	public function getItems($page_number = 1,  $per_page = 1){
 		
 		$apiURL = "https://api.ebay.com/ws/api.dll";
 		
