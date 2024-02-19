@@ -42,10 +42,31 @@ class Ebay_Integration_Ebay_API {
 
 	public function handle_api_endpoint($data){
 
+        $headers = $data->get_headers();
+        $params = $data->get_params();
+        $nonce = $headers["x_wp_nonce"][0];
+
+		if($params["action"] == "getItems"){
+			$this->handleGetItems();
+
+		} else {
+			return "Action Not Defined";
+		}
+
+		
+	}
+
+	public function refreshToken(){
+		return true;
+	}
+				
+	public function handleGetItems(){
+
 		$executed = false;
 		$max_retry = 5;
 		$retries = 0;
 		$result = "";
+
 		
 		while($executed == false){
 		
@@ -66,13 +87,9 @@ class Ebay_Integration_Ebay_API {
 		}
 
 		return $result;
-		
+
 	}
 
-	public function refreshToken(){
-		return true;
-	}
-				
 	public function getItems($page_number = null){
 		
 		$apiURL = "https://api.ebay.com/ws/api.dll";
