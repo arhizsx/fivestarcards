@@ -10,6 +10,3 @@ jQuery( document ).ready(
 	}
 );
 
-jQuery( document ).on("click", ".ebayintegration-btn", function(){
-	console.log( jQuery(this).data("action") );
-});
