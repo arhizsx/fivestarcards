@@ -140,7 +140,7 @@ class Ebay_Integration {
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
 
 		// Create eBay REST API endpoint
-		$this->create_ebay_enpoint();
+		// $this->create_ebay_enpoint();
 
 
 	} // End __construct ()
