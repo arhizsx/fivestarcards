@@ -38,11 +38,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 						success: function(resp){
 
 							jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){		
-								console.log(eBayItemTemplate(v));
+								jQuery(document).find(".ebayintegration-items_box").append(eBayItemTemplate(v))
 							});
 
 
-							// jQuery(document).find(".ebayintegration-items_box").append(to_append)
 
 						},
 						error: function(){
