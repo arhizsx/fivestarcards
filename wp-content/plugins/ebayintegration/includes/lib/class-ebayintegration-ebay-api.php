@@ -99,7 +99,7 @@ class Ebay_Integration_Ebay_API {
 		if( count($result["ActiveList"]["ItemArray"]["Item"]) == 2){
 
 			$entries = $result["ActiveList"]["PaginationResult"]["TotalNumberOfEntries"];
-			$pages = ceil($entries / 100);
+			$pages = ceil($entries / 50);
 
 			return $pages;
 			
@@ -158,7 +158,7 @@ class Ebay_Integration_Ebay_API {
 
 	}
 
-	public function getItems($page_number = 1,  $per_page = 100){
+	public function getItems($page_number = 1,  $per_page = 50){
 		
 		$apiURL = "https://api.ebay.com/ws/api.dll";
 		
