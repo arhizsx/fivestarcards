@@ -46,7 +46,6 @@ class Ebay_Integration_Ebay_API {
         $params = $data->get_params();
         $nonce = $headers["x_wp_nonce"][0];
 
-
 		if( !isset($params["action"]) ){
 			return "Action Not Set";
 		}
@@ -57,8 +56,7 @@ class Ebay_Integration_Ebay_API {
 		} else {
 			return $params["action"] . " - Action Not Defined";
 		}
-
-		
+	
 	}
 
 	public function refreshToken(){
@@ -71,7 +69,6 @@ class Ebay_Integration_Ebay_API {
 		$max_retry = 5;
 		$retries = 0;
 		$result = "";
-
 		
 		while($executed == false){
 		
@@ -91,19 +88,25 @@ class Ebay_Integration_Ebay_API {
 			}
 		}
 
-		return $result;
+		if(array_key_exists("PaginationResult", $result)){
+
+			$tries = $result["PaginationResult"]["TotalNumberOfEntries"];
+			$pages = $tries / 100;
+			$results = [];
+
+			$pass_result = $this->getItems(1, 100);
+
+			return $pass_result;
+
+		} else {
+			return $result;
+		}
 
 	}
 
-	public function getItems($page_number = null){
+	public function getItems($page_number = 1,  $per_page = 1){
 		
 		$apiURL = "https://api.ebay.com/ws/api.dll";
-		$per_page = 100;
-		$page_number = 1;
-		
-		if( $page_number != null ){
-			$page_number = $page_number ;
-		}
 		
 		$post_data = 
 		'<?xml version="1.0" encoding="utf-8"?>' .
