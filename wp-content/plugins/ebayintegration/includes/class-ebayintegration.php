@@ -31,6 +31,13 @@ class Ebay_Integration {
 	public $admin = null;
 
 	/**
+	 * Local instance of Ebay_Integration_Admin_API
+	 *
+	 * @var Ebay_Integration_Ebay_API|null
+	 */
+	public $ebay = null;
+
+	/**
 	 * Settings class object
 	 *
 	 * @var     object
@@ -46,7 +53,6 @@ class Ebay_Integration {
 	 * @access  public
 	 * @since   1.0.0
 	 */
-	public $ebay = null;
 
 	/**
 	 * The version number.
@@ -148,8 +154,7 @@ class Ebay_Integration {
 		$this->load_plugin_textdomain();
 		add_action( 'init', array( $this, 'load_localisation' ), 0 );
 
-		// Create eBay REST API endpoint
-		// $this->create_ebay_enpoint();
+		$this->ebay = new Ebay_Integration_Ebay_API();
 
 
 	} // End __construct ()
