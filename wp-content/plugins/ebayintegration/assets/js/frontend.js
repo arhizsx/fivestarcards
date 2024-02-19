@@ -68,7 +68,7 @@ function eBayItemTemplate(data){
 
 	var template = "";
 
-	template = "<div class='row mb-3 border-top' data-item_id=''>" +
+	template = "<div class='row mt-3 pt-3 border-top' data-item_id=''>" +
 					"<div class='col-lg-3 col-xl-3'>" + 
 						"<img src='' class='item_img' />" +
 					"</div>" + 
