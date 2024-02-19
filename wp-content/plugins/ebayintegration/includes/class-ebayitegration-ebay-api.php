@@ -2,7 +2,7 @@
 /**
  * .
  *
- * @package Ebay Integration/Includes
+ * @package Ebay Integration/Ebay API
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Ebay_Integration_Ebay_API {
 
 	/**
-	 * The single instance of Ebay_Integration_Settings.
+	 * The single instance of Ebay_Integration_Ebay_API.
 	 *
 	 * @var     object
 	 * @access  private
