@@ -184,7 +184,7 @@ class Ebay_Integration_Ebay_API {
         $params = shortcode_atts($default, $atts);
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . 'shortcodes/getItem.php' );
+		echo "TEST";
         
         $output = ob_get_clean(); 
         
