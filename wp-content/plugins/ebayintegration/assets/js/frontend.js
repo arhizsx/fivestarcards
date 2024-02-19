@@ -26,7 +26,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 				
 				var loops = parseInt(resp["data"]);
-
+				
 				for(var i=1; i <= loops; i++){
 					jQuery.ajax({
 						method: 'get',
