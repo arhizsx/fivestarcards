@@ -95,7 +95,7 @@ class Ebay_Integration_Ebay_API {
 				CURLOPT_POSTFIELDS => http_build_query($post_data),
 				CURLOPT_HTTPHEADER => [
 					'Content-Type: application/x-www-form-urlencoded',
-					'Authorization: Basic RmVybmFuZG8tNXN0YXJjYXItUFJELWE4MWZkZDE4OS1hNzYyZGZjNzpQUkQtODFmZGQxODljYmYxLWY0NzItNDEzMS05M2EyLTE5OTA='
+					'Authorization: ' .  $this->authorization
 				]
 			]
 		);
@@ -105,6 +105,7 @@ class Ebay_Integration_Ebay_API {
 		
 		curl_close($curl);
 
+		update_option("wpt_access_token", $response["access_token"]);
 		return $response;
 
 	}
