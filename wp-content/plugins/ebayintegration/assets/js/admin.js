@@ -5,11 +5,28 @@
  */
 
 jQuery( document ).ready(
-	function ( e ) {
-
-	}
 );
 
 jQuery( document ).on("click", ".ebayintegration-btn", function(){
-	console.log( jQuery(this).data("action") );
+
+	if( jQuery(this).data("action") == "getItems" ){
+	
+		jQuery.ajax({
+			method: 'get',
+			url: "wp-json/ebayintegration/v1/ajax",
+			data: {
+				action: "getItems"
+			},
+			success: function(resp){
+				console.log(resp);
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});
+
+	
+	}
+
+
 });
