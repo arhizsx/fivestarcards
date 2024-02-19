@@ -88,19 +88,24 @@ class Ebay_Integration_Ebay_API {
 			}
 		}
 
-		if(array_key_exists("PaginationResult", $result)){
+		if( count($result["ActiveList"]["ItemArray"]["Item"]) == 1){
 
-			$tries = $result["PaginationResult"]["TotalNumberOfEntries"];
-			$pages = $tries / 100;
-			$results = [];
+			if(array_key_exists("PaginationResult", $result)){
 
-			$pass_result = $this->getItems(1, 100);
-
-			return $pass_result;
-
+				$tries = $result["PaginationResult"]["TotalNumberOfEntries"];
+				$pages = $tries / 100;
+				$results = [];
+	
+				$pass_result = $this->getItems(1, 100);
+	
+				return $pass_result;
+	
+			}
+			
 		} else {
 			return $result;
 		}
+
 
 	}
 
