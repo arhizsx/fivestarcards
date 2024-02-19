@@ -109,19 +109,23 @@ function eBayItemTemplate(data){
 								"<label>ListingDuration</label>" +
 								"<input type='text' class='form-control mb-3' value='" + data.ListingDuration + "'/>" +
 							"</div>" +
-						"</div>" +
-						// "<div class='row'>" +
-						// 	"<div class='col-xl-6'>" + 
-						// 		"<label>BidCount</label>" +
-						// 		"<input type='text' class='form-control mb-3' value='" + data.SellingStatus.BidCount + "'/>" +
-						// 	"</div>" +
-						// 	"<div class='col-xl-6'>" + 
-						// 		"<label>HighBidder</label>" +
-						// 		"<input type='text' class='form-control mb-3' value='" + data.SellingStatus.HighBidder.UserID + "'/>" +
-						// 	"</div>" +
-						// "</div>" +
-					"</div>" + 
-				"</div>";
+						"</div>";
+
+	if(data.ListingDuration != "GTC"){
+		template = template + "<div class='row'>" +
+								"<div class='col-xl-6'>" + 
+									"<label>BidCount</label>" +
+									"<input type='text' class='form-control mb-3' value='" + data.SellingStatus.BidCount + "'/>" +
+								"</div>" +
+								"<div class='col-xl-6'>" + 
+									"<label>HighBidder</label>" +
+									"<input type='text' class='form-control mb-3' value='" + data.SellingStatus.HighBidder.UserID + "'/>" +
+								"</div>";
+	}
+
+	template = template + "</div>" +
+						"</div>" + 
+					"</div>";
 
 	return template;
 		
