@@ -58,6 +58,9 @@ class Ebay_Integration_Ebay_API {
 		elseif($params["action"] == "getItems"){
 			return array("error"=> false, "data" => $this->handleGetItems());
 		} 
+		elseif($params["action"] == "getItemPages"){
+			return array("error"=> false, "data" => $this->handleGetItemPages());
+		} 
 		else {
 			return array("error"=> true, "error_message" => $params["action"] . " - Action Not Defined");
 		}
@@ -67,7 +70,45 @@ class Ebay_Integration_Ebay_API {
 	public function refreshToken(){
 		return true;
 	}
-				
+	public function handleGetItemPages(){
+
+		$executed = false;
+		$max_retry = 5;
+		$retries = 0;
+		$result = "";
+		
+		while($executed == false){
+		
+			$retries++;
+			$result = $this->getItems();
+		
+			if($result["Ack"] == "Success"){
+				$executed = true;
+			} 
+			elseif($result["Ack"] == "Failure"){
+				$result = $this->refreshToken();
+			}
+		
+			if($retries == $max_retry){
+				$executed = true;
+				$result = "Max Retries";
+			}
+		}
+
+
+		if( count($result["ActiveList"]["ItemArray"]["Item"]) == 2){
+
+			$entries = $result["ActiveList"]["PaginationResult"]["TotalNumberOfEntries"];
+			$pages = ceil($entries / 100);
+
+			return $pages;
+			
+		} else {
+			return $result;
+		}
+
+
+	}				
 	public function handleGetItems(){
 
 		$executed = false;
