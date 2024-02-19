@@ -52,7 +52,7 @@ class Ebay_Integration_Ebay_API {
 
 	 public function create_ebay_enpoint( ){
 
-		register_rest_route( '/ebayintegration/v1', '/request', array(
+		register_rest_route( '/ebayintegration/v1', '/ajax', array(
 			'methods' => 'GET',
 			'callback' => array( $this, 'handle_api_endpoint' )
 		) );        
