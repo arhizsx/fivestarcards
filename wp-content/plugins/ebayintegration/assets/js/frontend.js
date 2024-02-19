@@ -34,9 +34,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 							page_number: i
 						},
 						success: function(resp){
-							jQuery(document).find(".ebayintegration-items_box").append(
-								JSON.stringify(resp)					
-							);
+
+							jQuery.each(resp.ActiveList.ItemArray.Item, function(k, v){
+								jQuery(document).find(".ebayintegration-items_box").append(
+									JSON.stringify(v) + "<hr>"
+								)
+							});
+
 						},
 						error: function(){
 							console.log("Error in AJAX");
