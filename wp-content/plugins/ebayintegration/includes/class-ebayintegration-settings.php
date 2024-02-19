@@ -197,7 +197,7 @@ class Ebay_Integration_Settings {
 					'id'          => 'authorization',
 					'label'       => __( 'Authorization', 'ebayintegration' ),
 					'description' => __( 'Base64 encoded App ID and App Secret', 'ebayintegration' ),
-					'type'        => 'text',
+					'type'        => 'textarea',
 					'default'     => '',
 					'placeholder' => __( 'Base64 encoded App ID and App Secret', 'ebayintegration' ),
 				),
