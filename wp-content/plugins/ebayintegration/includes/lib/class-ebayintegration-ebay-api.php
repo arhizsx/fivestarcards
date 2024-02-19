@@ -155,7 +155,7 @@ class Ebay_Integration_Ebay_API {
 			return $pages;
 			
 		} else {
-			return $result;
+			return $response;
 		}
 
 
