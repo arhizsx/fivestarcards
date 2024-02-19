@@ -23,14 +23,25 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 				action: "getItemPages"
 			},
 			success: function(resp){
-				if(resp.error != true){										
+
+				if(resp.error != true){	
+
 					var loops = parseInt(resp["data"]);				
 					for(var i=1; i <= loops; i++){
 						getItems(i);
 					}
+
 				} else {
-					console.log(resp.data);
+
+					if(resp.data == "Refresh Access Token"){
+						console.log("Iniating Token Refresh");
+					}
+					else {
+						console.log(resp.data);
+					}
+
 				}
+
 			},
 			error: function(){
 				console.log("Error in AJAX");
