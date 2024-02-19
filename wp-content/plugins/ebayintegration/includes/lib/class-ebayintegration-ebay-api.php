@@ -133,16 +133,16 @@ class Ebay_Integration_Ebay_API {
 			$json = json_decode(json_encode($xml), true);
 	
 		
-			if($result["Ack"] == "Success"){
+			if($json["Ack"] == "Success"){
 				$executed = true;
 			} 
-			elseif($result["Ack"] == "Failure"){
+			elseif($json["Ack"] == "Failure"){
 				$result = $this->refreshToken();
 			}
 		
 			if($retries == $max_retry){
 				$executed = true;
-				$result = $response;
+				$result = $json;
 			}
 		}
 
@@ -155,7 +155,7 @@ class Ebay_Integration_Ebay_API {
 			return $pages;
 			
 		} else {
-			return $response;
+			return $result;
 		}
 
 
