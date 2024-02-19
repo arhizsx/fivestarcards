@@ -215,7 +215,7 @@ function getItemInfo(item_id){
 
 				var img = (resp.data.Item.PictureDetails.PictureURL[0]);
 				$(document).find(".item_img[data-item_id='" + item_id + "']").attr("src", img);
-
+				console.log(img);
 
 			} else {
 
