@@ -37,9 +37,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 						},
 						success: function(resp){
 							console.log(resp.data);
-							jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){
+							jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){							
 								jQuery(document).find(".ebayintegration-items_box").append(
-									JSON.stringify(v) + "<hr>"
+									eBayItemTemplate(v)
 								)
 							});
 
@@ -63,3 +63,29 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 
 });
+
+function eBayItemTemplate(data){
+
+	var template = "";
+
+	template = "<div class='row' data-item_id=''>" +
+				"<div class='col-lg-3 col-xl-3'>" + 
+					"<img src='' class='item_img' />" +
+				"</div>" + 
+				"<div class='col-lg-9 col-xl-9'>"+
+					"<div class='row'>" +
+						"<div class='col-xl-6'>" + 
+							"<label>ItemID</label>" +
+							"<input type='text' class='form-control' value='" + data.ItemID + "'/>" +
+						"</div>" +
+						"<div class='col-xl-6'>" + 
+							"<label>StartTime</label>" +
+							"<input type='text' class='form-control' value='" + data.ListingDetails.StartTime + "'/>" +
+						"</div>" +
+					"</div>" +
+				"</div>" + 
+			  "</div>";
+
+	return template;
+		
+}
