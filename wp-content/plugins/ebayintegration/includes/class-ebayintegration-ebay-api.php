@@ -37,6 +37,9 @@ class Ebay_Integration_Ebay_API {
 
 		$this->parent = $parent;
 
+
+
+
 	}
 
 
@@ -46,6 +49,24 @@ class Ebay_Integration_Ebay_API {
 		}
 		return self::$_instance;
 	} // End instance()
+
+	/**
+	 * Cloning is forbidden.
+	 *
+	 * @since 1.0.0
+	 */
+	public function __clone() {
+		_doing_it_wrong( __FUNCTION__, esc_html( __( 'Cloning of Ebay_Integration_API is forbidden.' ) ), esc_attr( $this->parent->_version ) );
+	} // End __clone()
+
+	/**
+	 * Unserializing instances of this class is forbidden.
+	 *
+	 * @since 1.0.0
+	 */
+	public function __wakeup() {
+		_doing_it_wrong( __FUNCTION__, esc_html( __( 'Unserializing instances of Ebay_Integration_API is forbidden.' ) ), esc_attr( $this->parent->_version ) );
+	} // End __wakeup()
 
      
 }
