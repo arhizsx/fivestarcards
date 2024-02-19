@@ -92,7 +92,7 @@ class Ebay_Integration_Ebay_API {
 		if( count($result["ActiveList"]["ItemArray"]["Item"]) == 2){
 
 			$entries = $result["ActiveList"]["PaginationResult"]["TotalNumberOfEntries"];
-			$pages = $entries / 100;
+			$pages = ceil($entries / 100);
 
 			return $pages;
 			
