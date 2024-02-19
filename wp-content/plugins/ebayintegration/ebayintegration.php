@@ -29,7 +29,7 @@ require_once 'includes/class-ebayintegration-settings.php';
 require_once 'includes/lib/class-ebayintegration-admin-api.php';
 require_once 'includes/lib/class-ebayintegration-post-type.php';
 require_once 'includes/lib/class-ebayintegration-taxonomy.php';
-require_once 'includes/lib/class-ebayintegration-ebay-api.php';
+// require_once 'includes/lib/class-ebayintegration-ebay-api.php';
 
 /**
  * Returns the main instance of Ebay_Integration to prevent the need to use globals.
