@@ -29,6 +29,8 @@ class Ebay_Integration_Ebay_API {
 
         add_action("rest_api_init", array($this, 'create_ebay_enpoint'));
 
+		add_shortcode('ebayintegration-getItem', array( $this, 'getItem_shortcode' ));
+
 	}
 
 	 public function create_ebay_enpoint( ){
@@ -171,5 +173,22 @@ class Ebay_Integration_Ebay_API {
 		
 	}
 		
+    public function getItem_shortcode($atts) 
+    {
+
+        $default = array(
+            'title' => 'getItem',
+            'type' => 'getItem'
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
+
+        include( plugin_dir_path( __FILE__ ) . 'shortcodes/getItem.php' );
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
      
 }
