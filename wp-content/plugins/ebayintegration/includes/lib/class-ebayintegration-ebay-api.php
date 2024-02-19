@@ -72,96 +72,81 @@ class Ebay_Integration_Ebay_API {
 	}
 	public function handleGetItemPages(){
 
-		$executed = false;
-		$max_retry = 5;
-		$retries = 0;
-		$result = "";
 		$per_page = 2;
 		$page_number = 1;
 
-		while($executed == false){
-		
-			$retries++;
 
-			$apiURL = "https://api.ebay.com/ws/api.dll";
+		$apiURL = "https://api.ebay.com/ws/api.dll";
+
+		$post_data = 
+		'<?xml version="1.0" encoding="utf-8"?>' .
+		'<GetMyeBaySellingRequest xmlns="urn:ebay:apis:eBLBaseComponents">' .
+		'<RequesterCredentials>' .
+			'<eBayAuthToken>' . $this->access_token  . '</eBayAuthToken>' .
+			'</RequesterCredentials>' .
+			'<ErrorLanguage>en_US</ErrorLanguage>' .
+			'<WarningLevel>High</WarningLevel>' .
+			'<ActiveList>' .
+			'<Sort>TimeLeft</Sort>' .
+			'<Pagination>' .
+			'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
+				'<PageNumber>' . $page_number . '</PageNumber>' .
+				'</Pagination>' .
+			'</ActiveList>' .
+		'</GetMyeBaySellingRequest> ';
 		
-			$post_data = 
-			'<?xml version="1.0" encoding="utf-8"?>' .
-			'<GetMyeBaySellingRequest xmlns="urn:ebay:apis:eBLBaseComponents">' .
-			'<RequesterCredentials>' .
-			  '<eBayAuthToken>' . $this->access_token  . '</eBayAuthToken>' .
-				'</RequesterCredentials>' .
-			  '<ErrorLanguage>en_US</ErrorLanguage>' .
-				'<WarningLevel>High</WarningLevel>' .
-				'<ActiveList>' .
-			  '<Sort>TimeLeft</Sort>' .
-				'<Pagination>' .
-				'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
-				  '<PageNumber>' . $page_number . '</PageNumber>' .
-				  '</Pagination>' .
-				'</ActiveList>' .
-			'</GetMyeBaySellingRequest> ';
-			
-			$curl = curl_init();
-			
-			curl_setopt_array(
-				$curl,
-				[
-					CURLOPT_URL => $apiURL,
-					CURLOPT_RETURNTRANSFER => true,
-					CURLOPT_ENCODING => '',
-					CURLOPT_MAXREDIRS => 10,
-					CURLOPT_TIMEOUT => 0,
-					CURLOPT_FOLLOWLOCATION => true,
-					CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-					CURLOPT_CUSTOMREQUEST => 'POST',
-					CURLOPT_POSTFIELDS =>$post_data,
-					CURLOPT_HTTPHEADER => [
-						'X-EBAY-API-SITEID:0',
-						'X-EBAY-API-COMPATIBILITY-LEVEL:967',
-						'X-EBAY-API-CALL-NAME:GetMyeBaySelling',
-					]
+		$curl = curl_init();
+		
+		curl_setopt_array(
+			$curl,
+			[
+				CURLOPT_URL => $apiURL,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => '',
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'POST',
+				CURLOPT_POSTFIELDS =>$post_data,
+				CURLOPT_HTTPHEADER => [
+					'X-EBAY-API-SITEID:0',
+					'X-EBAY-API-COMPATIBILITY-LEVEL:967',
+					'X-EBAY-API-CALL-NAME:GetMyeBaySelling',
 				]
-			);
-			
-			$response = curl_exec($curl);
-			$status = curl_getinfo($curl);
-			
-			curl_close($curl);
-			
-			$xml=simplexml_load_string($response) or die("Error: Cannot create object");
-			$json = json_decode(json_encode($xml), true);
-			return $json;
-
+			]
+		);
 		
-			if($json["Ack"] == "Success"){
-				$executed = true;
-			} 
-			elseif($json["Ack"] == "Failure"){
-				$result = $this->refreshToken();
-			}
+		$response = curl_exec($curl);
+		$status = curl_getinfo($curl);
 		
-			if($retries == $max_retry){
-				$executed = true;
-			}
-		}
+		curl_close($curl);
+		
+		$xml=simplexml_load_string($response) or die("Error: Cannot create object");
+		$json = json_decode(json_encode($xml), true);
+		
+		if($json["Ack"] == "Failure"){
 
+			return array("error" => true, "data"=> $json);
 
-
-
-		if( count($json["ActiveList"]["ItemArray"]["Item"]) == 2){
-
-			$entries = $result["ActiveList"]["PaginationResult"]["TotalNumberOfEntries"];
-			$pages = ceil($entries / 50);
-
-			return $pages;
-			
 		} else {
-			return $result;
+			
+			if( count($json["ActiveList"]["ItemArray"]["Item"]) == 2){
+
+				$entries = $json["ActiveList"]["PaginationResult"]["TotalNumberOfEntries"];
+				$pages = ceil($entries / 50);
+
+				
+			}
+			else {
+
+				return array("error" => true, "data"=> $json);
+			}
 		}
 
+	}
 
-	}				
+
 	public function handleGetItems(){
 
 		$executed = false;
