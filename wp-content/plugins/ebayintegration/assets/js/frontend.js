@@ -94,7 +94,7 @@ function eBayItemTemplate(data){
 
 	template = "<div class='row mt-3 pt-3 border-top' data-item_id=''>" +
 					"<div class='col-lg-3 col-xl-3'>" + 
-						"<a class='item_href' data-item_id='' href='' target='_blank'>" +
+						"<a class='item_href' data-item_id='" + data.ItemID +  "' href='' target='_blank'>" +
 							"<img src='' class='item_img w-100' data-item_id='" + data.ItemID +  "' />" +
 						"</a>" +
 					"</div>" + 
@@ -222,9 +222,7 @@ function getItemInfo(item_id){
 				// console.log(href);
 				
 				$(document).find(".item_img[data-item_id='" + item_id + "']").attr("src", img);
-				$(document).find("a.item_href[data-item_id='" + item_id + "']").attr("href", href);
-
-				console.log($(document).find("a.item_href[data-item_id='" + item_id + "']").html());
+				$(document).find(".item_href[data-item_id='" + item_id + "']").attr("href", href);
 
 			} else {
 
