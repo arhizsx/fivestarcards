@@ -37,6 +37,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 							page_number: i
 						},
 						success: function(resp){
+							console.log(resp.data);
 							jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){		
 								items.push(v)					;
 							});
@@ -48,7 +49,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 					});
 
 				}
-				console.log(items);
+
+				jQuery.each(items, function(k, v){
+					jQuery(document).find(".ebayintegration-items_box").append(
+						eBayItemTemplate(v)
+					);
+				});
+
 
 			},
 			error: function(){
