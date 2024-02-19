@@ -56,7 +56,7 @@ class Ebay_Integration_Ebay_API {
 			return array("error"=> true, "error_message" => "Action Not Defined");
 		} 
 		elseif($params["action"] == "getItems"){
-			return array("error"=> false, "data" => $this->getItems());
+			return array("error"=> false, "data" => $this->getItems($params["page_number"]));
 		} 
 		elseif($params["action"] == "getItemPages"){
 			return array("error"=> false, "data" => $this->handleGetItemPages());
@@ -158,7 +158,7 @@ class Ebay_Integration_Ebay_API {
 
 	}
 
-	public function getItems($page_number = 1,  $per_page = 2){
+	public function getItems($page_number = 1,  $per_page = 100){
 		
 		$apiURL = "https://api.ebay.com/ws/api.dll";
 		
