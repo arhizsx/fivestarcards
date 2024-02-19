@@ -104,21 +104,21 @@ function eBayItemTemplate(data){
 							"</div>" +
 						"</div>" + 
 						"<div class='row'>" +
-							"<div class='col-xl-6'>" + 
+							"<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6'>" + 
 								"<label>ItemID</label>" +
 								"<input type='text' class='form-control mb-3' value='" + data.ItemID + "'/>" +
 							"</div>" +
-							"<div class='col-xl-6'>" + 
+							"<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6'>" + 
 								"<label>StartTime</label>" +
 								"<input type='text' class='form-control mb-3' value='" + data.ListingDetails.StartTime + "'/>" +
 							"</div>" +
 						"</div>" +
 						"<div class='row'>" +
-							"<div class='col-xl-6'>" + 
+							"<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6'>" + 
 								"<label>ListingType</label>" +
 								"<input type='text' class='form-control mb-3' value='" + data.ListingType + "'/>" +
 							"</div>" +
-							"<div class='col-xl-6'>" + 
+							"<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6'>" + 
 								"<label>ListingDuration</label>" +
 								"<input type='text' class='form-control mb-3' value='" + data.ListingDuration + "'/>" +
 							"</div>" +
@@ -126,11 +126,11 @@ function eBayItemTemplate(data){
 
 	if(data.ListingDuration == "GTC"){
 		template = template + 	"<div class='row'>" +
-									"<div class='col-xl-6'>" + 
+									"<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6'>" + 
 										"<label>BuyItNowPrice</label>" +
 										"<input type='text' class='form-control mb-3' value='" + data.BuyItNowPrice + "'/>" +
 									"</div>" +
-									"<div class='col-xl-6'>" + 
+									"<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6'>" + 
 										"<label>CurrentPrice</label>" +
 										"<input type='text' class='form-control mb-3' value='" + data.SellingStatus.CurrentPrice + "'/>" +
 									"</div>" +
@@ -138,11 +138,11 @@ function eBayItemTemplate(data){
 
 	} else {
 		template = template + 	"<div class='row'>" +
-									"<div class='col-xl-6'>" + 
+									"<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6'>" + 
 										"<label>StartPrice</label>" +
 										"<input type='text' class='form-control mb-3' value='" + data.StartPrice + "'/>" +
 									"</div>" +
-									"<div class='col-xl-6'>" + 
+									"<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6'>" + 
 										"<label>CurrentPrice</label>" +
 										"<input type='text' class='form-control mb-3' value='" + data.SellingStatus.CurrentPrice + "'/>" +
 									"</div>" +
@@ -150,11 +150,11 @@ function eBayItemTemplate(data){
 	}				
 
 	template = template + 		"<div class='row'>" +
-									"<div class='col-xl-6'>" + 
+									"<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6'>" + 
 										"<label>SKU</label>" +
 										"<input type='text' class='form-control mb-3' value='" + data.SKU + "'/>" +
 									"</div>" +
-									"<div class='col-xl-6'>" + 
+									"<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6'>" + 
 										"<label>QuantityAvailable</label>" +
 										"<input type='text' class='form-control mb-3' value='" + data.QuantityAvailable + "'/>" +
 									"</div>" +
