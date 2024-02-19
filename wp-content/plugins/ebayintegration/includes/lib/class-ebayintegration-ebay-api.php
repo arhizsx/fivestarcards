@@ -94,7 +94,7 @@ class Ebay_Integration_Ebay_API {
 			$entries = $result["ActiveList"]["PaginationResult"]["TotalNumberOfEntries"];
 			$pages = $entries / 100;
 
-			return $entries;
+			return $pages;
 			
 		} else {
 			return $result;
