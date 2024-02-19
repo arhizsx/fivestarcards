@@ -130,10 +130,8 @@ class Ebay_Integration_Ebay_API {
 
 			if($json["Ack"] == "Failure"){
 
-				if( $json["Errors"]["ShortMessage"] == "Auth token is hard expired" ){
-
+				if( $json["Errors"]["ShortMessage"] == "Auth token is hard expired." ){
 					return array("error" => true, "data"=> "Refresh Access Token");
-
 				} else {
 
 					return array("error" => true, "data"=> $json);
