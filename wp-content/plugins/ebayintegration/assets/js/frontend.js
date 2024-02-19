@@ -24,7 +24,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 			},
 			success: function(resp){
 
-				
+				console.log(resp);
 				var loops = parseInt(resp["data"]);
 				
 				for(var i=1; i <= loops; i++){
