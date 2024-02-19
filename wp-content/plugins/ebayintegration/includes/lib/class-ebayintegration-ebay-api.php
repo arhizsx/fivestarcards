@@ -68,10 +68,19 @@ class Ebay_Integration_Ebay_API {
 			return $this->getItems($page_number);
 		} 
 		elseif($params["action"] == "getItemPages"){
+
 			return $this->GetItemPages();
+
+		} 
+		elseif($params["action"] == "getItemInfo"){
+
+			return $this->getItemInfo();
+
 		} 
 		elseif($params["action"] == "refreshToken"){
+
 			return $this->refreshToken();
+
 		} 
 		else {
 			return array("error"=> true, "error_message" => $params["action"] . " - Action Not Defined");
@@ -295,6 +304,11 @@ class Ebay_Integration_Ebay_API {
 		
 	}
 		
+
+	public function getItemInfo($item_id){
+		return $item_id;
+	}
+
     public function getItem_shortcode($atts) 
     {
 
