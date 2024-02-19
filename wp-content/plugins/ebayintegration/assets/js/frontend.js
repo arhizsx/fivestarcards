@@ -26,7 +26,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 				
 				var loops = parseInt(resp["data"]);
-				var items = [];
 
 				for(var i=1; i <= loops; i++){
 					jQuery.ajax({
@@ -38,8 +37,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 						},
 						success: function(resp){
 							console.log(resp.data);
-							jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){		
-								items.push(v)					;
+							jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){							
+								jQuery(document).find(".ebayintegration-items_box").append(
+									eBayItemTemplate(v)
+								)
 							});
 
 						},
@@ -47,14 +48,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 							console.log("Error in AJAX");
 						}
 					});
-
+	
 				}
-
-				jQuery.each(items, function(k, v){
-					jQuery(document).find(".ebayintegration-items_box").append(
-						eBayItemTemplate(v)
-					);
-				});
 
 
 			},
