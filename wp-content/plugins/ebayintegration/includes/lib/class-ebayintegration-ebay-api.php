@@ -184,7 +184,7 @@ class Ebay_Integration_Ebay_API {
         $params = shortcode_atts($default, $atts);
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . '/shortcodes/getitem.php' );
+        include( '/wp-content/plugin/ebayintegration/shortcodes/getitem.php' );
         
         $output = ob_get_clean(); 
         
