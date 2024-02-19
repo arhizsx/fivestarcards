@@ -89,6 +89,36 @@ function eBayItemTemplate(data){
 								"<input type='text' class='form-control mb-3' value='" + data.ListingDetails.StartTime + "'/>" +
 							"</div>" +
 						"</div>" +
+						"<div class='row'>" +
+							"<div class='col-xl-6'>" + 
+								"<label>StartPrice</label>" +
+								"<input type='text' class='form-control mb-3' value='" + data.StartPrice + "'/>" +
+							"</div>" +
+							"<div class='col-xl-6'>" + 
+								"<label>CurrentPrice</label>" +
+								"<input type='text' class='form-control mb-3' value='" + data.SellingStatus.CurrentPrice + "'/>" +
+							"</div>" +
+						"</div>" +
+						"<div class='row'>" +
+							"<div class='col-xl-6'>" + 
+								"<label>ListingType</label>" +
+								"<input type='text' class='form-control mb-3' value='" + data.ListingType + "'/>" +
+							"</div>" +
+							"<div class='col-xl-6'>" + 
+								"<label>ListingDuration</label>" +
+								"<input type='text' class='form-control mb-3' value='" + data.ListingDuration + "'/>" +
+							"</div>" +
+						"</div>" +
+						"<div class='row'>" +
+							"<div class='col-xl-6'>" + 
+								"<label>SellingStatus</label>" +
+								"<input type='text' class='form-control mb-3' value='" + data.SellingStatus.BidCount + "'/>" +
+							"</div>" +
+							"<div class='col-xl-6'>" + 
+								"<label>ListingDuration</label>" +
+								"<input type='text' class='form-control mb-3' value='" + data.ListingDuration + "'/>" +
+							"</div>" +
+						"</div>" +
 					"</div>" + 
 				"</div>";
 
