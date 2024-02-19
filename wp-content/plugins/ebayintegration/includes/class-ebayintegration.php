@@ -150,11 +150,11 @@ class Ebay_Integration {
 	 *
 	 */
 
-	 public function create_ebay_enpoint(){
+	//  public function create_ebay_enpoint(){
 
-		$ebay = new Ebay_Integration_Ebay_API();
-		return $ebay;
-	 }
+	// 	$ebay = new Ebay_Integration_Ebay_API();
+	// 	return $ebay;
+	//  }
 
 
 	/**
