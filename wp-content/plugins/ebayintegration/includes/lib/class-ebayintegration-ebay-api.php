@@ -90,17 +90,7 @@ class Ebay_Integration_Ebay_API {
 
 		if( count($result["ActiveList"]["ItemArray"]["Item"]) == 1){
 
-			if(array_key_exists("PaginationResult", $result)){
-
-				$tries = $result["PaginationResult"]["TotalNumberOfEntries"];
-				$pages = $tries / 100;
-				$results = [];
-	
-				$pass_result = $this->getItems(1, 100);
-	
-				return $pass_result;
-	
-			}
+			return count($result["ActiveList"]["ItemArray"]["Item"]);
 			
 		} else {
 			return $result;
