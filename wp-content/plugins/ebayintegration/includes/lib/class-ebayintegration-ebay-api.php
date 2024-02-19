@@ -185,7 +185,7 @@ class Ebay_Integration_Ebay_API {
         ob_start();
 		?>
 		<div>
-			<button>Get eBay Items</button>
+			<button class="ebayintegration-btn" data-action="getItems">Get eBay Items</button>
 		</div>		
 		<?php
         
