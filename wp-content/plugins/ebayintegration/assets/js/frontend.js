@@ -39,10 +39,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 							var to_append = "";
 							jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){		
-								to_append = to_append + eBayItemTemplate(v);
+								console.log(to_append);
 							});
 
-							console.log(to_append);
 
 							// jQuery(document).find(".ebayintegration-items_box").append(to_append)
 
