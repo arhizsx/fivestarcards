@@ -37,7 +37,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 					if(resp.data == "Refresh Access Token"){
 						console.log("Do Refresh Access Token");
 					} else {
-						console.log(esp.data);
+						console.log(resp.data);
 					}
 
 				}
