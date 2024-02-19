@@ -51,7 +51,7 @@ class Ebay_Integration_Ebay_API {
 		}
 
 		if($params["action"] == ""){
-			return "Action Not Defined";
+			return array("error"=> true, "error_message" => "Action Not Defined");
 		} 
 		elseif($params["action"] == "getItems"){
 			return array("error"=> false, "data" => $this->handleGetItems());
