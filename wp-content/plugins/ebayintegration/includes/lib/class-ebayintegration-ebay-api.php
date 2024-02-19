@@ -127,7 +127,7 @@ class Ebay_Integration_Ebay_API {
 		
 		if($json["Ack"] == "Failure"){
 
-			return array("error" => true, "data"=> "TEST" );
+			return array("error" => true, "data"=> $json);
 
 		} else {
 			
@@ -139,11 +139,13 @@ class Ebay_Integration_Ebay_API {
 				
 			}
 			else {
-				return array("error" => true, "data"=> "TEST" );
+
+				return array("error" => true, "data"=> $json);
 			}
 		}
 
 	}
+
 
 
 	public function handleGetItems(){
