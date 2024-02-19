@@ -111,7 +111,7 @@ function eBayItemTemplate(data){
 						"</div>" +
 						"<div class='row'>" +
 							"<div class='col-xl-6'>" + 
-								"<label>SellingStatus</label>" +
+								"<label>BidCount</label>" +
 								"<input type='text' class='form-control mb-3' value='" + data.SellingStatus.BidCount + "'/>" +
 							"</div>" +
 							"<div class='col-xl-6'>" + 
