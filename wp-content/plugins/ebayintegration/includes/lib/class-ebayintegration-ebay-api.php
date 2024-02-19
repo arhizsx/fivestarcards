@@ -98,7 +98,9 @@ class Ebay_Integration_Ebay_API {
 
 			for($i = 1; $i <= $pages; $i++ ){
 				$loop_result =  $this->getItems($i, 100);
-				$items[] = $loop_result["ActiveList"]["ItemArray"]["Item"]; 
+				foreach($loop_result["ActiveList"]["ItemArray"]["Item"] as $item){
+					$items[] = $item; 
+				}
 			}
 
 			return $items;
