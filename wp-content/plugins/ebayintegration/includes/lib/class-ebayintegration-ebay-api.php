@@ -50,10 +50,13 @@ class Ebay_Integration_Ebay_API {
 			return "Action Not Set";
 		}
 
-		if($params["action"] == "getItems"){
+		if($params["action"] == ""){
+			return "Action Not Defined";
+		} 
+		elseif($params["action"] == "getItems"){
 			return $this->handleGetItems();
-
-		} else {
+		} 
+		else {
 			return $params["action"] . " - Action Not Defined";
 		}
 	
