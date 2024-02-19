@@ -72,7 +72,7 @@ class Ebay_Integration_Ebay_API {
 
 	public function refreshToken(){
 
-		$apiURL = "https://api.sandbox.ebay.com/identity/v1/oauth2/token";
+		$apiURL = "https://api.ebay.com/identity/v1/oauth2/token";
 
 		$post_data = [
 			"grant_type" => "refresh_token",
