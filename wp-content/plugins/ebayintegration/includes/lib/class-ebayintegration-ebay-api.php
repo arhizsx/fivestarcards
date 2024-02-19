@@ -76,11 +76,62 @@ class Ebay_Integration_Ebay_API {
 		$max_retry = 5;
 		$retries = 0;
 		$result = "";
-		
+		$per_page = 2;
+		$page_number = 1;
+
 		while($executed == false){
 		
 			$retries++;
-			$result = $this->getItems(1,2);
+
+			$apiURL = "https://api.ebay.com/ws/api.dll";
+		
+			$post_data = 
+			'<?xml version="1.0" encoding="utf-8"?>' .
+			'<GetMyeBaySellingRequest xmlns="urn:ebay:apis:eBLBaseComponents">' .
+			'<RequesterCredentials>' .
+			  '<eBayAuthToken>' . $this->access_token  . '</eBayAuthToken>' .
+				'</RequesterCredentials>' .
+			  '<ErrorLanguage>en_US</ErrorLanguage>' .
+				'<WarningLevel>High</WarningLevel>' .
+				'<ActiveList>' .
+			  '<Sort>TimeLeft</Sort>' .
+				'<Pagination>' .
+				'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
+				  '<PageNumber>' . $page_number . '</PageNumber>' .
+				  '</Pagination>' .
+				'</ActiveList>' .
+			'</GetMyeBaySellingRequest> ';
+			
+			$curl = curl_init();
+			
+			curl_setopt_array(
+				$curl,
+				[
+					CURLOPT_URL => $apiURL,
+					CURLOPT_RETURNTRANSFER => true,
+					CURLOPT_ENCODING => '',
+					CURLOPT_MAXREDIRS => 10,
+					CURLOPT_TIMEOUT => 0,
+					CURLOPT_FOLLOWLOCATION => true,
+					CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+					CURLOPT_CUSTOMREQUEST => 'POST',
+					CURLOPT_POSTFIELDS =>$post_data,
+					CURLOPT_HTTPHEADER => [
+						'X-EBAY-API-SITEID:0',
+						'X-EBAY-API-COMPATIBILITY-LEVEL:967',
+						'X-EBAY-API-CALL-NAME:GetMyeBaySelling',
+					]
+				]
+			);
+			
+			$response = curl_exec($curl);
+			$status = curl_getinfo($curl);
+			
+			curl_close($curl);
+			
+			$xml=simplexml_load_string($response) or die("Error: Cannot create object");
+			$json = json_decode(json_encode($xml), true);
+	
 		
 			if($result["Ack"] == "Success"){
 				$executed = true;
@@ -91,12 +142,12 @@ class Ebay_Integration_Ebay_API {
 		
 			if($retries == $max_retry){
 				$executed = true;
-				$result = "Max Retries";
+				$result = $response;
 			}
 		}
 
 
-		if( count($result["ActiveList"]["ItemArray"]["Item"]) == 2){
+		if( count($json["ActiveList"]["ItemArray"]["Item"]) == 2){
 
 			$entries = $result["ActiveList"]["PaginationResult"]["TotalNumberOfEntries"];
 			$pages = ceil($entries / 50);
@@ -210,7 +261,7 @@ class Ebay_Integration_Ebay_API {
 		$json = json_decode(json_encode($xml), true);
 		
 		
-		return $response;
+		return $json;
 		
 	}
 		
