@@ -18,6 +18,7 @@ class Ebay_Integration_Ebay_API {
 	public $refresh_token;
     public $authorization;		
     public $content_type;		
+    public $per_page;		
 
 	
 	public function __construct( ) {
@@ -26,6 +27,7 @@ class Ebay_Integration_Ebay_API {
 		$this->refresh_token = get_option("wpt_refresh_token");
 		$this->authorization = get_option("wpt_authorization");
 		$this->content_type = "application/x-www-form-urlencoded";
+		$this->per_page = 20;
 
         add_action("rest_api_init", array($this, 'create_ebay_enpoint'));
 
@@ -62,7 +64,7 @@ class Ebay_Integration_Ebay_API {
 			} else {
 				$page_number = 1;
 			}
-			
+
 			return $this->getItems($page_number);
 		} 
 		elseif($params["action"] == "getItemPages"){
@@ -190,7 +192,7 @@ class Ebay_Integration_Ebay_API {
 				if( count($json["ActiveList"]["ItemArray"]["Item"]) == 2){
 	
 					$entries = $json["ActiveList"]["PaginationResult"]["TotalNumberOfEntries"];
-					$pages = ceil($entries / 50);
+					$pages = ceil($entries / $this->per_page);
 	
 					return array("error" => false, "data"=> $pages);
 					return $pages;
@@ -216,7 +218,7 @@ class Ebay_Integration_Ebay_API {
 		}
 
 		if($per_page == null){
-			$per_page = 50;
+			$per_page = $this->per_page;
 		}
 
 		$post_data = 
@@ -304,7 +306,7 @@ class Ebay_Integration_Ebay_API {
         ob_start();
 		?>
 		<div>
-			<button class="ebayintegration-btn" data-action="getItems">Get Active eBay Items</button>
+			<button class="ebayintegration-btn" data-action="getItems" data-per_page="<?php echo $this->per_page ?><">Get Active eBay Items</button>
 		</div>		
 		<div class="ebayintegration-items_box">
 		</div>		
