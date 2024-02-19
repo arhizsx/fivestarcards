@@ -131,7 +131,8 @@ class Ebay_Integration_Ebay_API {
 			
 			$xml=simplexml_load_string($response) or die("Error: Cannot create object");
 			$json = json_decode(json_encode($xml), true);
-	
+			return $json;
+
 		
 			if($json["Ack"] == "Success"){
 				$executed = true;
@@ -142,7 +143,6 @@ class Ebay_Integration_Ebay_API {
 		
 			if($retries == $max_retry){
 				$executed = true;
-				return $json;
 			}
 		}
 
