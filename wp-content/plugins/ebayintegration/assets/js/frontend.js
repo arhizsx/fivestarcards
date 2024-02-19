@@ -24,7 +24,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 			},
 			success: function(resp){
 
-				console.log(resp.error);
 
 				if(resp.error != true){	
 
@@ -35,7 +34,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 				} else {
 
-						console.log("X: " + resp.data);
+					if(resp.data == "Refresh Access Token"){
+						console.log("Do Refresh Access Token");
+					} else {
+						console.log(esp.data);
+					}
 
 				}
 
@@ -131,14 +134,14 @@ function eBayItemTemplate(data){
 		
 }
 
-function getItems(pages){
+function getItems(page){
 
 	jQuery.ajax({
 		method: 'get',
 		url: "/wp-json/ebayintegration/v1/ajax",
 		data: { 
 			action: "getItems",
-			page_number: pages
+			page_number: page
 		},
 		success: function(resp){
 
@@ -148,7 +151,12 @@ function getItems(pages){
 				});	
 			} else {
 
-				console.log(resp.data);
+				if(resp.data == "Refresh Access Token"){
+					console.log("Do Refresh Access Token");
+				} else {
+					console.log(resp.data);
+				}
+
 			}
 
 		},
