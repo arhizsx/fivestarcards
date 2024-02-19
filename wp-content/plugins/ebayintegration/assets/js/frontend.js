@@ -33,12 +33,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 				} else {
 
-					if(resp.data == "Refresh Access Token"){
-						console.log("Iniating Token Refresh");
-					}
-					else {
-						console.log(resp.data);
-					}
+						console.log("X: " + resp.data);
 
 				}
 
