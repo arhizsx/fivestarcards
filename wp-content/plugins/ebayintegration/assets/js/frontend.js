@@ -68,23 +68,23 @@ function eBayItemTemplate(data){
 
 	var template = "";
 
-	template = "<div class='row' data-item_id=''>" +
-				"<div class='col-lg-3 col-xl-3'>" + 
-					"<img src='' class='item_img' />" +
-				"</div>" + 
-				"<div class='col-lg-9 col-xl-9'>"+
-					"<div class='row'>" +
-						"<div class='col-xl-6'>" + 
-							"<label>ItemID</label>" +
-							"<input type='text' class='form-control' value='" + data.ItemID + "'/>" +
+	template = "<div class='row mb-3 border-bottom' data-item_id=''>" +
+					"<div class='col-lg-3 col-xl-3'>" + 
+						"<img src='' class='item_img' />" +
+					"</div>" + 
+					"<div class='col-lg-9 col-xl-9'>"+
+						"<div class='row'>" +
+							"<div class='col-xl-6'>" + 
+								"<label>ItemID</label>" +
+								"<input type='text' class='form-control' value='" + data.ItemID + "'/>" +
+							"</div>" +
+							"<div class='col-xl-6'>" + 
+								"<label>StartTime</label>" +
+								"<input type='text' class='form-control' value='" + data.ListingDetails.StartTime + "'/>" +
+							"</div>" +
 						"</div>" +
-						"<div class='col-xl-6'>" + 
-							"<label>StartTime</label>" +
-							"<input type='text' class='form-control' value='" + data.ListingDetails.StartTime + "'/>" +
-						"</div>" +
-					"</div>" +
-				"</div>" + 
-			  "</div>";
+					"</div>" + 
+				"</div>";
 
 	return template;
 		
