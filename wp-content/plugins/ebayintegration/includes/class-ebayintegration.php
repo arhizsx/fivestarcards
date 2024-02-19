@@ -40,6 +40,15 @@ class Ebay_Integration {
 	public $settings = null;
 
 	/**
+	 * Ebay class object
+	 *
+	 * @var     object
+	 * @access  public
+	 * @since   1.0.0
+	 */
+	public $ebay = null;
+
+	/**
 	 * The version number.
 	 *
 	 * @var     string

@@ -14,21 +14,38 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Ebay_Integration_Ebay_API {
 
+	/**
+	 * The single instance of Ebay_Integration_Settings.
+	 *
+	 * @var     object
+	 * @access  private
+	 * @since   1.0.0
+	 */
+	private static $_instance = null; //phpcs:ignore
+
+	/**
+	 * The main plugin object.
+	 *
+	 * @var     object
+	 * @access  public
+	 * @since   1.0.0
+	 */
+	public $parent = null;
+
 	
-	//  public function __construct( ) {
+	public function __construct( $parent ) {
+
+		$this->parent = $parent;
+
+	}
 
 
-	//  }
-
-
-	//  public function create_ebay_enpoint( ){
-
-	// 	register_rest_route( '/ebayintegration/v1', '/request', array(
-	// 		'methods' => 'GET',
-	// 		'callback' => array( $this, 'handle_api_endpoint' )
-	// 	) );        
-
-    // }
+	public static function instance( $parent ) {
+		if ( is_null( self::$_instance ) ) {
+			self::$_instance = new self( $parent );
+		}
+		return self::$_instance;
+	} // End instance()
 
      
 }
