@@ -198,3 +198,37 @@ function getItems(page){
 	});
 
 }
+
+function getItemInfo(item_id){
+
+	jQuery.ajax({
+		method: 'get',
+		url: "/wp-json/ebayintegration/v1/ajax",
+		data: { 
+			action: "getItemInfo",
+			item_id: item_id
+		},
+		success: function(resp){
+
+			if(resp.error != true){
+
+				console.log(resp);
+
+			} else {
+
+				if(resp.data == "Refresh Access Token"){
+					console.log("Do Refresh Access Token");
+				} else {
+					console.log(resp.data);
+				}
+
+			}
+
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
+
+}
