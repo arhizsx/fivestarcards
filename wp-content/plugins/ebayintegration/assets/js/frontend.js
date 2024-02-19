@@ -22,7 +22,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 			},
 			success: function(resp){
 				console.log(resp);
-				jQuery(document).find(".ebayintegration-items_box").html().append(
+				jQuery(document).find(".ebayintegration-items_box").append(
 					JSON.stringify(resp)					
 				);
 			},
