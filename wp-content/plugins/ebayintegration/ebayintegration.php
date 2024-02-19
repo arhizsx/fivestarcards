@@ -44,9 +44,9 @@ function Ebay_Integration() {
 		$instance->settings = Ebay_Integration_Settings::instance( $instance );
 	}
 
-	if ( is_null( $instance->ebay ) ) {
-		$instance->ebay = Ebay_Integration_Ebay_API::instance( $instance );
-	}
+	// if ( is_null( $instance->ebay ) ) {
+	// 	$instance->ebay = Ebay_Integration_Ebay_API::instance( $instance );
+	// }
 
 	return $instance;
 }
