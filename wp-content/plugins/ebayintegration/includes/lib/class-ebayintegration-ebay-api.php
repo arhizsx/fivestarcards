@@ -46,7 +46,7 @@ class Ebay_Integration_Ebay_API {
         $params = $data->get_params();
         $nonce = $headers["x_wp_nonce"][0];
 
-		return $params;
+		return $params["action"];
 
 		if($params["action"] == "getItems"){
 			$this->handleGetItems();
