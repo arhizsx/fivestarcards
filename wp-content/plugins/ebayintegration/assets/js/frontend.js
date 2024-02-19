@@ -219,10 +219,12 @@ function getItemInfo(item_id){
 
 				var img = (resp.data.Item.PictureDetails.PictureURL[0]);
 				var href = (resp.data.Item.ListingDetails.ViewItemURL);
-				console.log(href);
+				// console.log(href);
 				
 				$(document).find(".item_img[data-item_id='" + item_id + "']").attr("src", img);
-				$(document).find(".item_href[data-item_id='" + item_id + "']").attr("href", href);
+				$(document).find("a.item_href[data-item_id='" + item_id + "']").attr("href", href);
+
+				console.log($(document).find("a.item_href[data-item_id='" + item_id + "']").html());
 
 			} else {
 
