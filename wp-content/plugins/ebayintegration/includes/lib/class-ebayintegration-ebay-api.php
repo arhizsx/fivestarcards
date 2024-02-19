@@ -226,7 +226,7 @@ class Ebay_Integration_Ebay_API {
         ob_start();
 		?>
 		<div>
-			<button class="ebayintegration-btn" data-action="getItems">Get eBay Items</button>
+			<button class="ebayintegration-btn" data-action="getItems">Get Active eBay Items</button>
 		</div>		
 		<div class="ebayintegration-items_box">
 		</div>		
