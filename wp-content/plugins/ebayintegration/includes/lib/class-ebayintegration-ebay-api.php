@@ -56,7 +56,14 @@ class Ebay_Integration_Ebay_API {
 			return array("error"=> true, "error_message" => "Action Not Defined");
 		} 
 		elseif($params["action"] == "getItems"){
-			return $this->getItems($params["page_number"]);
+
+			if( isset( $params["page_number"] ) ){
+				$page_number = $params["page_number"];
+			} else {
+				$page_number = 1;
+			}
+			
+			return $this->getItems($page_number);
 		} 
 		elseif($params["action"] == "getItemPages"){
 			return $this->GetItemPages();
