@@ -116,7 +116,7 @@ function eBayItemTemplate(data){
 							"</div>" +
 							"<div class='col-xl-6'>" + 
 								"<label>HighBidder</label>" +
-								"<input type='text' class='form-control mb-3' value='" + data.SellingStatus.HighBidder + "'/>" +
+								"<input type='text' class='form-control mb-3' value='" + data.SellingStatus.HighBidder.UserID + "'/>" +
 							"</div>" +
 						"</div>" +
 					"</div>" + 
