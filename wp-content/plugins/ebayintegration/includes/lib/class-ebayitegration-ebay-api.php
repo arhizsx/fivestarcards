@@ -19,12 +19,12 @@ class Ebay_Integration_Ebay_API {
 	
 	 public function __construct( ) {
 
-        add_action("rest_api_init", array($this, 'add_api_endpoint'));
+        // add_action("rest_api_init", array($this, 'add_api_endpoint'));
 
 	 }
 
 
-	 public function add_api_endpoint(  ){
+	 public function create_ebay_enpoint(  ){
 
 		register_rest_route( '/ebayintegration/v1', '/request', array(
 			'methods' => 'GET',
