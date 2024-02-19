@@ -94,7 +94,9 @@ function eBayItemTemplate(data){
 
 	template = "<div class='row mt-3 pt-3 border-top' data-item_id=''>" +
 					"<div class='col-lg-3 col-xl-3'>" + 
-						"<img src='' class='item_img w-100' data-item_id='" + data.ItemID +  "' />" +
+						"<a class='item_href' data-item_id='' href=''>" +
+							"<img src='' class='item_img w-100' data-item_id='" + data.ItemID +  "' />" +
+						"</a>" +
 					"</div>" + 
 					"<div class='col-lg-9 col-xl-9'>"+
 						"<div class='row'>" +
@@ -182,9 +184,7 @@ function getItems(page){
 			if(resp.error != true){
 				jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){		
 					jQuery(document).find(".ebayintegration-items_box").append(eBayItemTemplate(v));
-					// if(page == 1){
-						getItemInfo(v.ItemID);
-					// }
+					getItemInfo(v.ItemID);
 				});	
 			} else {
 
@@ -218,9 +218,9 @@ function getItemInfo(item_id){
 			if(resp.error != true){
 
 				var img = (resp.data.Item.PictureDetails.PictureURL[0]);
+				var href = (resp.data.Item.ListingDetails.ViewItemURL);
 				$(document).find(".item_img[data-item_id='" + item_id + "']").attr("src", img);
-				console.log(img);
-				console.log(img);
+				$(document).find(".item_href[data-item_id='" + item_id + "']").attr("href", href);
 
 			} else {
 
