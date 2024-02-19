@@ -24,7 +24,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 			},
 			success: function(resp){
 
-				if(resp.error != true){
+				if(resp.error != true){					
 					
 					var loops = parseInt(resp["data"]);
 				
@@ -33,6 +33,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 						getItems(i);
 
 					}
+
 				} else {
 					console.log(resp.data);
 				}
@@ -141,9 +142,14 @@ function getItems(pages){
 		},
 		success: function(resp){
 
-			jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){		
-				jQuery(document).find(".ebayintegration-items_box").append(eBayItemTemplate(v))
-			});
+			if(resp.error != true){
+				jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){		
+					jQuery(document).find(".ebayintegration-items_box").append(eBayItemTemplate(v))
+				});	
+			} else {
+
+				console.log(resp.data);
+			}
 
 		},
 		error: function(){
