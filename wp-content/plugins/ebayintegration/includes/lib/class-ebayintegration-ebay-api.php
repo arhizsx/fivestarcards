@@ -46,10 +46,9 @@ class Ebay_Integration_Ebay_API {
         $params = $data->get_params();
         $nonce = $headers["x_wp_nonce"][0];
 
-		return $params["action"];
 
 		if($params["action"] == "getItems"){
-			$this->handleGetItems();
+			return $this->handleGetItems();
 
 		} else {
 			return "Action Not Defined";
