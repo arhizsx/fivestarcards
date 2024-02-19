@@ -91,16 +91,6 @@ function eBayItemTemplate(data){
 						"</div>" +
 						"<div class='row'>" +
 							"<div class='col-xl-6'>" + 
-								"<label>StartPrice</label>" +
-								"<input type='text' class='form-control mb-3' value='" + data.StartPrice + "'/>" +
-							"</div>" +
-							"<div class='col-xl-6'>" + 
-								"<label>CurrentPrice</label>" +
-								"<input type='text' class='form-control mb-3' value='" + data.SellingStatus.CurrentPrice + "'/>" +
-							"</div>" +
-						"</div>" +
-						"<div class='row'>" +
-							"<div class='col-xl-6'>" + 
 								"<label>ListingType</label>" +
 								"<input type='text' class='form-control mb-3' value='" + data.ListingType + "'/>" +
 							"</div>" +
@@ -108,19 +98,45 @@ function eBayItemTemplate(data){
 								"<label>ListingDuration</label>" +
 								"<input type='text' class='form-control mb-3' value='" + data.ListingDuration + "'/>" +
 							"</div>" +
-						"</div>" +
-						"<div class='row'>" +
-							"<div class='col-xl-6'>" + 
-								"<label>SKU</label>" +
-								"<input type='text' class='form-control mb-3' value='" + data.SKU + "'/>" +
-							"</div>" +
-							"<div class='col-xl-6'>" + 
-								"<label>QuantityAvailable</label>" +
-								"<input type='text' class='form-control mb-3' value='" + data.QuantityAvailable + "'/>" +
-							"</div>" +
 						"</div>";
 
-	template = template + "</div>" +
+	if(data.ListingType == "GTC"){
+		template = template + 	"<div class='row'>" +
+									"<div class='col-xl-6'>" + 
+										"<label>StartBuyItNowPricePrice</label>" +
+										"<input type='text' class='form-control mb-3' value='" + data.BuyItNowPrice + "'/>" +
+									"</div>" +
+									"<div class='col-xl-6'>" + 
+										"<label>CurrentPrice</label>" +
+										"<input type='text' class='form-control mb-3' value='" + data.SellingStatus.CurrentPrice + "'/>" +
+									"</div>" +
+								"</div>";
+
+	} else {
+		template = template + 	"<div class='row'>" +
+									"<div class='col-xl-6'>" + 
+										"<label>StartPrice</label>" +
+										"<input type='text' class='form-control mb-3' value='" + data.StartPrice + "'/>" +
+									"</div>" +
+									"<div class='col-xl-6'>" + 
+										"<label>CurrentPrice</label>" +
+										"<input type='text' class='form-control mb-3' value='" + data.SellingStatus.CurrentPrice + "'/>" +
+									"</div>" +
+								"</div>";
+	}				
+
+	template = template + 		"<div class='row'>" +
+									"<div class='col-xl-6'>" + 
+										"<label>SKU</label>" +
+										"<input type='text' class='form-control mb-3' value='" + data.SKU + "'/>" +
+									"</div>" +
+									"<div class='col-xl-6'>" + 
+										"<label>QuantityAvailable</label>" +
+										"<input type='text' class='form-control mb-3' value='" + data.QuantityAvailable + "'/>" +
+									"</div>" +
+								"</div>";
+
+							"</div>" +
 						"</div>" + 
 					"</div>";
 
