@@ -74,13 +74,19 @@ function eBayItemTemplate(data){
 					"</div>" + 
 					"<div class='col-lg-9 col-xl-9'>"+
 						"<div class='row'>" +
+							"<div class='col-xl-12'>" + 
+								"<label>ItemID</label>" +
+								"<input type='text' class='form-control mb-3' value='" + data.Title + "'/>" +
+							"</div>" +
+						"</div>" + 
+						"<div class='row'>" +
 							"<div class='col-xl-6'>" + 
 								"<label>ItemID</label>" +
-								"<input type='text' class='form-control' value='" + data.ItemID + "'/>" +
+								"<input type='text' class='form-control mb-3' value='" + data.ItemID + "'/>" +
 							"</div>" +
 							"<div class='col-xl-6'>" + 
 								"<label>StartTime</label>" +
-								"<input type='text' class='form-control' value='" + data.ListingDetails.StartTime + "'/>" +
+								"<input type='text' class='form-control mb-3' value='" + data.ListingDetails.StartTime + "'/>" +
 							"</div>" +
 						"</div>" +
 					"</div>" + 
