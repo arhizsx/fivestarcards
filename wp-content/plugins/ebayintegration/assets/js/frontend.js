@@ -179,7 +179,8 @@ function getItems(page){
 
 			if(resp.error != true){
 				jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){		
-					jQuery(document).find(".ebayintegration-items_box").append(eBayItemTemplate(v))
+					jQuery(document).find(".ebayintegration-items_box").append(eBayItemTemplate(v));
+					getItemInfo(v.ItemID);
 				});	
 			} else {
 
