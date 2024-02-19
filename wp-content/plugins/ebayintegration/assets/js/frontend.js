@@ -37,7 +37,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 							page_number: i
 						},
 						success: function(resp){
-							console.log(resp.data);
 							jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){		
 								items.push(v)					;
 							});
