@@ -18,7 +18,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 			method: 'get',
 			url: "/wp-json/ebayintegration/v1/ajax",
 			data: { 
-				action: "getItems"
+				action: "getItemPages"
 			},
 			success: function(resp){
 				console.log(resp);
