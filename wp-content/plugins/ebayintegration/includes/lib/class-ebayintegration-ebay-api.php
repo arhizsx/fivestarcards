@@ -91,7 +91,7 @@ class Ebay_Integration_Ebay_API {
 		
 			if($retries == $max_retry){
 				$executed = true;
-				$result = "Max Retries";
+				// $result = "Max Retries";
 			}
 		}
 
