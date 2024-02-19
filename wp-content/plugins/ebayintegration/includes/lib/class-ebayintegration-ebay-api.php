@@ -101,7 +101,7 @@ class Ebay_Integration_Ebay_API {
 
 	}
 
-	public function getItems($page_number = 1,  $per_page = 1){
+	public function getItems($page_number = 1,  $per_page = 10){
 		
 		$apiURL = "https://api.ebay.com/ws/api.dll";
 		
