@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Load plugin class files.
 require_once 'includes/class-ebayintegration.php';
 require_once 'includes/class-ebayintegration-settings.php';
-// require_once 'includes/class-ebayintegration-ebay-api.php';
+require_once 'includes/class-ebayintegration-ebay-api.php';
 
 // Load plugin libraries.
 require_once 'includes/lib/class-ebayintegration-admin-api.php';
@@ -44,9 +44,9 @@ function Ebay_Integration() {
 		$instance->settings = Ebay_Integration_Settings::instance( $instance );
 	}
 
-	// if ( is_null( $instance->ebay ) ) {
-	// 	$instance->ebay = Ebay_Integration_Ebay_API::instance( $instance );
-	// }
+	if ( is_null( $instance->ebay ) ) {
+		$instance->ebay = Ebay_Integration_Ebay_API::instance( $instance );
+	}
 
 	return $instance;
 }
