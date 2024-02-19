@@ -75,7 +75,7 @@ function eBayItemTemplate(data){
 					"<div class='col-lg-9 col-xl-9'>"+
 						"<div class='row'>" +
 							"<div class='col-xl-12'>" + 
-								"<label>ItemID</label>" +
+								"<label>Title</label>" +
 								"<input type='text' class='form-control mb-3' value='" + data.Title + "'/>" +
 							"</div>" +
 						"</div>" + 
