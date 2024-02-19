@@ -36,12 +36,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 							page_number: i
 						},
 						success: function(resp){
-							console.log(resp.data);
-							jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){							
-								jQuery(document).find(".ebayintegration-items_box").append(
-									eBayItemTemplate(v)
-								)
+
+							var to_append = "";
+							jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){		
+								to_append = to_append + eBayItemTemplate(v);
 							});
+
+							jQuery(document).find(".ebayintegration-items_box").append(to_append)
 
 						},
 						error: function(){
