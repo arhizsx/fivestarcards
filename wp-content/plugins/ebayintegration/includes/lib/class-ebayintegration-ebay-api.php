@@ -142,9 +142,11 @@ class Ebay_Integration_Ebay_API {
 		
 			if($retries == $max_retry){
 				$executed = true;
-				$result = $json;
+				return $json;
 			}
 		}
+
+
 
 
 		if( count($json["ActiveList"]["ItemArray"]["Item"]) == 2){
