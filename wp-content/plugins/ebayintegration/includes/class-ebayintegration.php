@@ -221,7 +221,7 @@ class Ebay_Integration {
         $json = json_decode(json_encode($xml), true);
         
 		if($json["Ack"] != "Success"){
-			return "API Failed";
+			return $response;
 		}
 		
 		return $json;
