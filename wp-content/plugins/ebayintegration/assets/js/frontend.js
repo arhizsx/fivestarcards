@@ -34,7 +34,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 							page_number: i
 						},
 						success: function(resp){
-
+							console.log(resp);
 							jQuery.each(resp.ActiveList.ItemArray.Item, function(k, v){
 								jQuery(document).find(".ebayintegration-items_box").append(
 									JSON.stringify(v) + "<hr>"
