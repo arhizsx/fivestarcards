@@ -153,8 +153,7 @@ class Ebay_Integration {
 	 public function create_ebay_enpoint(){
 
 		$ebay = new Ebay_Integration_Ebay_API();
-        add_action("rest_api_init", $ebay, 'create_ebay_enpoint');
-
+		return $ebay;
 	 }
 
 
