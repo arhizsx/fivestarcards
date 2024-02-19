@@ -42,7 +42,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 								to_append = to_append + eBayItemTemplate(v);
 							});
 
-							jQuery(document).find(".ebayintegration-items_box").append(to_append)
+							console.log(to_append);
+
+							// jQuery(document).find(".ebayintegration-items_box").append(to_append)
 
 						},
 						error: function(){
