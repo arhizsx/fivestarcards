@@ -69,13 +69,13 @@ class Ebay_Integration_Ebay_API {
 		while($executed == false){
 		
 			$retries++;
-			$result = self::getItems();
+			$result = $this->getItems();
 		
 			if($result["Ack"] == "Success"){
 				$executed = true;
 			} 
 			elseif($result["Ack"] == "Failure"){
-				$result = self::refreshToken();
+				$result = $this->refreshToken();
 			}
 		
 			if($retries == $max_retry){
