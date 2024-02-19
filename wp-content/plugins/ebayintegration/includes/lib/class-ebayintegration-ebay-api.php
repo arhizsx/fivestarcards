@@ -126,35 +126,33 @@ class Ebay_Integration_Ebay_API {
 		$json = json_decode(json_encode($xml), true);
 		
 		if(array_key_exists( "Ack", $json )){
-			return $json;
-		} else {
-			return "FLA";
-		}
 
-		if($json["Ack"] == "Failure"){
+			if($json["Ack"] == "Failure"){
 
-			return array("error" => true, "data"=> $json);
-
-		} else {
-			
-			if( count($json["ActiveList"]["ItemArray"]["Item"]) == 2){
-
-				$entries = $json["ActiveList"]["PaginationResult"]["TotalNumberOfEntries"];
-				$pages = ceil($entries / 50);
-
-				return array("error" => true, "data"=> $pages);
-				return $pages;
-				
-			}
-		}
-
+				return array("error" => true, "data"=> $json);
 	
-
+			} else {
+				
+				if( count($json["ActiveList"]["ItemArray"]["Item"]) == 2){
+	
+					$entries = $json["ActiveList"]["PaginationResult"]["TotalNumberOfEntries"];
+					$pages = ceil($entries / 50);
+	
+					return array("error" => true, "data"=> $pages);
+					return $pages;
+					
+				}
+			}
+	
+		} else {
+			return "Not Valid JSON";
+		}
 
 
 
 
 	}				
+
 	public function handleGetItems(){
 
 		$executed = false;
