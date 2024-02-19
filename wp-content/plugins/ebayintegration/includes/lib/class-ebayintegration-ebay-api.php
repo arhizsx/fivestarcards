@@ -138,7 +138,7 @@ class Ebay_Integration_Ebay_API {
 					$entries = $json["ActiveList"]["PaginationResult"]["TotalNumberOfEntries"];
 					$pages = ceil($entries / 50);
 	
-					return array("error" => true, "data"=> $pages);
+					return array("error" => false, "data"=> $pages);
 					return $pages;
 					
 				} else {
