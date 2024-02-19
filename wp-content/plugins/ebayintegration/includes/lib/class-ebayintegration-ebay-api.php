@@ -59,7 +59,10 @@ class Ebay_Integration_Ebay_API {
 			return $this->getItems($params["page_number"]);
 		} 
 		elseif($params["action"] == "getItemPages"){
-			return $this->handleGetItemPages();
+			return $this->GetItemPages();
+		} 
+		elseif($params["action"] == "refreshToken"){
+			return $this->refreshToken();
 		} 
 		else {
 			return array("error"=> true, "error_message" => $params["action"] . " - Action Not Defined");
@@ -68,14 +71,48 @@ class Ebay_Integration_Ebay_API {
 	}
 
 	public function refreshToken(){
-		return true;
+
+		$apiURL = "https://api.sandbox.ebay.com/identity/v1/oauth2/token";
+
+		$post_data = [
+			"grant_type" => "refresh_token",
+			"refresh_token" => $this->refresh_token,
+		];
+
+		$curl = curl_init();
+
+		curl_setopt_array(
+			$curl,
+			[
+				CURLOPT_URL => $apiURL,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => '',
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'POST',
+				CURLOPT_POSTFIELDS => http_build_query($post_data),
+				CURLOPT_HTTPHEADER => [
+					'Content-Type: application/x-www-form-urlencoded',
+					'Authorization: Basic RmVybmFuZG8tNXN0YXJjYXItUFJELWE4MWZkZDE4OS1hNzYyZGZjNzpQUkQtODFmZGQxODljYmYxLWY0NzItNDEzMS05M2EyLTE5OTA='
+				]
+			]
+		);
+		
+		$response = curl_exec($curl);
+		$status = curl_getinfo($curl);
+		
+		curl_close($curl);
+
+		return $response;
+
 	}
 	
-	public function handleGetItemPages(){
+	public function GetItemPages(){
 
 		$per_page = 2;
 		$page_number = 1;
-
 
 		$apiURL = "https://api.ebay.com/ws/api.dll";
 
@@ -139,7 +176,6 @@ class Ebay_Integration_Ebay_API {
 					return array("error" => true, "data"=> $json);
 
 				}
-
 	
 			} else {
 				
@@ -161,59 +197,7 @@ class Ebay_Integration_Ebay_API {
 			return "Not Valid JSON";
 		}
 
-
-
-
 	}				
-
-	public function handleGetItems(){
-
-		$executed = false;
-		$max_retry = 5;
-		$retries = 0;
-		$result = "";
-		
-		while($executed == false){
-		
-			$retries++;
-			$result = $this->getItems();
-		
-			if($result["Ack"] == "Success"){
-				$executed = true;
-			} 
-			elseif($result["Ack"] == "Failure"){
-				$result = $this->refreshToken();
-			}
-		
-			if($retries == $max_retry){
-				$executed = true;
-				$result = "Max Retries";
-			}
-		}
-
-
-		if( count($result["ActiveList"]["ItemArray"]["Item"]) == 2){
-
-			$entries = $result["ActiveList"]["PaginationResult"]["TotalNumberOfEntries"];
-			$pages = ceil($entries / 100);
-
-			$items = [];
-
-			for($i = 1; $i <= $pages; $i++ ){
-				$loop_result =  $this->getItems($i, 100);
-				foreach($loop_result["ActiveList"]["ItemArray"]["Item"] as $item){
-					$items[] = $item; 
-				}
-			}
-
-			return $items;
-			
-		} else {
-			return $result;
-		}
-
-
-	}
 
 	public function getItems($page_number = 1,  $per_page = 50){
 		
@@ -289,8 +273,6 @@ class Ebay_Integration_Ebay_API {
 		} else {
 			return "Not Valid JSON";
 		}
-
-		
 		
 	}
 		
