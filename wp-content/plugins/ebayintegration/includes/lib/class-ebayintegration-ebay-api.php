@@ -88,11 +88,13 @@ class Ebay_Integration_Ebay_API {
 			}
 		}
 
-		return count($result["ActiveList"]["ItemArray"]["Item"]);
 
+		if( count($result["ActiveList"]["ItemArray"]["Item"]) == 2){
 
-		if( count($result["ActiveList"]["ItemArray"]["Item"]) == 1){
+			$entries = $result["PaginationResult"]["TotalNumberOfEntries"];
+			$pages = $entries / 100;
 
+			return $pages;
 			
 		} else {
 			return $result;
