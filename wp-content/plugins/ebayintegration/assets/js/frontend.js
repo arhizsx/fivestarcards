@@ -49,6 +49,38 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 		});
 
 	
+	} 
+	else if( jQuery(this).data("action") == "refreshToken" ){
+
+		jQuery.ajax({
+			method: 'get',
+			url: "/wp-json/ebayintegration/v1/ajax",
+			data: { 
+				action: "refreshToken"
+			},
+			success: function(resp){
+
+
+				if(resp.error != true){	
+
+					alert("Reconnected to eBay");
+
+				} else {
+
+					if(resp.data == "Refresh Access Token"){
+						console.log("Do Refresh Access Token");
+					} else {
+						console.log(esp.data);
+					}
+
+				}
+
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});
+
 	}
 
 
