@@ -201,6 +201,8 @@ class Ebay_Integration_Ebay_API {
 	}				
 
 	public function getItems($page_number = 1,  $per_page = 50){
+
+		return get_option("access_token");
 		
 		$apiURL = "https://api.ebay.com/ws/api.dll";
 		
