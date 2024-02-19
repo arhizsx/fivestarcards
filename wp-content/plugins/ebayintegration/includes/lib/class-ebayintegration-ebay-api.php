@@ -80,7 +80,7 @@ class Ebay_Integration_Ebay_API {
 		while($executed == false){
 		
 			$retries++;
-			$result = $this->getItems();
+			$result = $this->getItems(1,2);
 		
 			if($result["Ack"] == "Success"){
 				$executed = true;
