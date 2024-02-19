@@ -90,6 +90,8 @@ function eBayItemTemplate(data){
 
 	var template = "";
 
+	var title = data.Title.replace(/'/g,"&apos;").replace(/"/g,"&quot;")
+
 	template = "<div class='row mt-3 pt-3 border-top' data-item_id=''>" +
 					"<div class='col-lg-3 col-xl-3'>" + 
 						"<img src='' class='item_img' data-item_id='" + data.ItemID +  "' />" +
@@ -98,7 +100,7 @@ function eBayItemTemplate(data){
 						"<div class='row'>" +
 							"<div class='col-xl-12'>" + 
 								"<label>Title</label>" +
-								"<input type='text' class='form-control mb-3' value='" + data.Title + "'/>" +
+								"<input type='text' class='form-control mb-3' value='" + title + "'/>" +
 							"</div>" +
 						"</div>" + 
 						"<div class='row'>" +
@@ -215,6 +217,7 @@ function getItemInfo(item_id){
 
 				var img = (resp.data.Item.PictureDetails.PictureURL[0]);
 				$(document).find(".item_img[data-item_id='" + item_id + "']").attr("src", img);
+				console.log(img);
 				console.log(img);
 
 			} else {
