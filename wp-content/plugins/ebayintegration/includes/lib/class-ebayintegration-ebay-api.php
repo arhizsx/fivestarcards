@@ -94,7 +94,14 @@ class Ebay_Integration_Ebay_API {
 			$entries = $result["ActiveList"]["PaginationResult"]["TotalNumberOfEntries"];
 			$pages = ceil($entries / 100);
 
-			return $pages;
+			$items = [];
+
+			for($i = 1; $i <= $pages; $i++ ){
+				$loop_result =  $this->getItems($i, 100);
+				$items[] = $loop_result["ActiveList"]["ItemArray"]["Item"]; 
+			}
+
+			return $items;
 			
 		} else {
 			return $result;
