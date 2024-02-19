@@ -200,10 +200,18 @@ class Ebay_Integration_Ebay_API {
 
 	}				
 
-	public function getItems($page_number = 1,  $per_page = 50){
+	public function getItems($page_number = null,  $per_page = null){
 		
 		$apiURL = "https://api.ebay.com/ws/api.dll";
 		
+		if($page_number == null){
+			$page_number = 1;
+		}
+
+		if($per_page == null){
+			$per_page = 50;
+		}
+
 		$post_data = 
 		'<?xml version="1.0" encoding="utf-8"?>' .
 		'<GetMyeBaySellingRequest xmlns="urn:ebay:apis:eBLBaseComponents">' .
