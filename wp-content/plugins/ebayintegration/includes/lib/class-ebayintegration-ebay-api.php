@@ -114,8 +114,8 @@ class Ebay_Integration_Ebay_API {
 		
 		curl_close($curl);
 
-		update_option("wpt_access_token", $response["access_token"]);
-		return $response;
+		// update_option("wpt_access_token", );
+		return $response["access_token"];
 
 	}
 	
