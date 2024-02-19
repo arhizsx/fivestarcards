@@ -114,9 +114,10 @@ class Ebay_Integration_Ebay_API {
 		
 		curl_close($curl);
 
-		// update_option("wpt_access_token", );
-		return json_decode($response, true);
+		$json = json_decode($response, true);
+		update_option("wpt_access_token", $json["access_token"]);
 
+		return $json;
 	}
 	
 	public function GetItemPages(){
