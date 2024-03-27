@@ -301,7 +301,7 @@ class Ebay_Integration_Ebay_API {
 	
 			} else {
 
-				return array("error" => false, "data"=> $json["ActiveList"]["ItemArray"]);
+				return array("error" => false, "data"=> $json["Version"]);
 				
 			}
 	
