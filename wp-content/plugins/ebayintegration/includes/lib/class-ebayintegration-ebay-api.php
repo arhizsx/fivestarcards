@@ -69,7 +69,13 @@ class Ebay_Integration_Ebay_API {
 			return $this->getItems($page_number);
 		} 
 		elseif($params["action"] == "getItemPages"){
+			
+			$user_id = 2;
+			$meta = "test";
+			$value = "test";
 
+			add_user_meta( $user_id, 'test', $value);
+			
 			return $this->GetItemPages();
 
 		} 
