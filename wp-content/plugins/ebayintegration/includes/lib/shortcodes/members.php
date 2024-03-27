@@ -84,7 +84,8 @@
                 <div class="" id="view_card_form_box">
                     <div class="modal-body py-2 px-3">
                         <forn id="delete_order_form">
-                            <!-- <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/> -->
+                            <input type="hidden" name="user_id" value=''/>
+                            <input type="text" name="sku" />
                         </form>
                     </div>
                     <div class="modal-footer">

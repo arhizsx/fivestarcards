@@ -91,6 +91,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 	else if( jQuery(this).data("action") == "addSKU" ){
 
 		$(document).find(".add_sku").appendTo('body').modal("show");
+		$(document).find(".add_sku").find("input[name='iser_id']").val( $(this).data("user_id") );
 
 	}
 
