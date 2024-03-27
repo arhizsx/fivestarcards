@@ -325,6 +325,7 @@ class Ebay_Integration_Ebay_API {
 
 			return $wpdb->replace("ebay", array(
 				"item_id" => $item["ItemID"],
+				"sku" => $item["SKU"],
 				"data" => json_encode($item),
 				"status" => "active"
 			));
