@@ -506,6 +506,12 @@ $(document).on("click", ".5star_btn", function(e){
             window.open("/wp-json/cards-grading/v1/pdf?id=" + order_number, '_blank');
             break;
 
+        case "set_skus":
+
+            showSetSkus();
+            break;
+
+
         default:
             console.log("Button not configured: " + $(this).data("action"));
     }
@@ -1093,3 +1099,10 @@ $(document).find(".search_box").on("keyup", function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
 });
+
+function showSetSkus(){
+
+    $(document).find(".dxmodal").appendTo('body').modal("show");
+
+}
+
