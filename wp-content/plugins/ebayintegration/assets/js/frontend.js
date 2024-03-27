@@ -170,29 +170,6 @@ function eBayItemTemplate(data){
 		
 }
 
-function processItems(data){
-
-	jQuery.ajax({
-		method: 'get',
-		url: "/wp-json/ebayintegration/v1/ajax",
-		data: { 
-			action: "processItems",
-			data: data
-		},
-		success: function(resp){
-
-			return resp;
-
-		},
-		error: function(){
-			console.log("Error in AJAX");
-		}
-	});
-
-
-
-}
-
 
 function getItems(page){
 
@@ -207,17 +184,17 @@ function getItems(page){
 
 			if(resp.error != true){
 
-				var data = [];
+				// var data = [];
 
-				jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){							
-					data.push(v);					
-					// jQuery(document).find(".ebayintegration-items_box").append(eBayItemTemplate(v));
-					// getItemInfo(v.ItemID);
-				});	
+				// jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){							
+				// 	data.push(v);					
+				// 	// jQuery(document).find(".ebayintegration-items_box").append(eBayItemTemplate(v));
+				// 	// getItemInfo(v.ItemID);
+				// });	
 
-				processItems( JSON.stringify(data) );
+				// processItems( JSON.stringify(data) );
 
-				console.log(data);
+				console.log("Items on " + page + " processed");
 
 			} else {
 
