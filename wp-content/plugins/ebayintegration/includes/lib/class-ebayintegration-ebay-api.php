@@ -318,7 +318,10 @@ class Ebay_Integration_Ebay_API {
 		
 		global $wpdb;     
 
+		return $items["item"];
+
 		foreach($items["item"] as $item){
+
 
 			$wpdb->insert("ebay", array(
 				"item_id" => $item["ItemID"],
