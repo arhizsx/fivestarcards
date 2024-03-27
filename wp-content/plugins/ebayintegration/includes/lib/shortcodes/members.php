@@ -83,7 +83,7 @@
 			</div>
                 <div class="" id="view_card_form_box">
                     <div class="modal-body py-2 px-3">
-                        <forn id="delete_order_form">
+                        <forn id="delete_order_form mb-3">
                             <input type="hidden" name="user_id" value=''/>
                             <label>eBay SKU</label>
                             <input type="text" name="sku"  class="form-control"/>
@@ -91,7 +91,7 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                        <button class="btn border btn-danger ebayintegration" data-action="confirm_add_sku">Confirm Delete</button>
+                        <button class="btn border btn-primary ebayintegration" data-action="confirm_add_sku">Confirm Delete</button>
                     </div>
                 </div>
 		</div>
