@@ -131,8 +131,6 @@ global $wpdb;
                                     }
                                 ?>
                             </select>
-                            <input type="text" name="sku_manual" class="form-control mb-3" placeholder="SKU Manual"/>
-
                         </form>
                     </div>
                     <div class="modal-footer">
