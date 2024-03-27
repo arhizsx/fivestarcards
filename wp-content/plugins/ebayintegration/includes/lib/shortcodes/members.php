@@ -51,7 +51,7 @@
                         </td>
                         <td>
                             <?php
-                                print_r(json_decode( $all_meta_for_user['sku'] ));
+                                print_r( $all_meta_for_user['sku']  ) ;
                             ?>
                         </td>
                         <td class="text-end">
