@@ -72,7 +72,7 @@ class Ebay_Integration_Ebay_API {
 			
 			$user_id = 7;
 			$meta = "sku";
-			$value = serialize ('Kevin Romano - 9092', 'test');  
+			$value = array ('Kevin Romano - 9092', 'test');  
 
 			update_user_meta( $user_id, $meta, $value);
 

@@ -40,7 +40,7 @@
                     if($users){                        
                         foreach($users as $user){
 
-                        $all_meta_for_user = get_user_meta( $user->ID );
+                        $all_meta_for_user = get_user_meta( $user->ID, "sku", true );
 
                 ?>
                     <tr>
@@ -51,7 +51,7 @@
                         </td>
                         <td>
                             <?php
-                                print_r( $all_meta_for_user['sku']  ) ;
+                                print_r( $all_meta_for_user  ) ;
                             ?>
                         </td>
                         <td class="text-end">
