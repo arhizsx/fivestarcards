@@ -37,8 +37,11 @@
             <tbody>
                 <?php 
 
-                    if($users){
+                    if($users){                        
                         foreach($users as $user){
+
+                        $all_meta_for_user = get_user_meta( $user->ID );
+
                 ?>
                     <tr>
                         <td>
@@ -47,6 +50,9 @@
                             <small><?php  echo $user->ID + 1000 ?></small>
                         </td>
                         <td>
+                            <?php
+                                print_r($all_meta_for_user);
+                            ?>
                         </td>
                         <td class="text-end">
                             <button class="btn border btn-primary 5star_btn" data-action='make_admin' data-user_id='<?php echo $user->ID; ?>'>Add SKU</button>
