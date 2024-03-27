@@ -177,7 +177,7 @@ function processItems(data){
 		url: "/wp-json/ebayintegration/v1/ajax",
 		data: { 
 			action: "processItems",
-			data: data
+			data: JSON.stringify(data)
 		},
 		success: function(resp){
 
