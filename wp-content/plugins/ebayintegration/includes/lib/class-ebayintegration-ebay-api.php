@@ -385,14 +385,8 @@ class Ebay_Integration_Ebay_API {
         
         $params = shortcode_atts($default, $atts);
         ob_start();
-		?>
-		<div>
-			<button class="ebayintegration-btn" data-action="getItems" data-per_page="<?php echo $this->per_page ?><">Get Active eBay Items</button>
-			<button class="ebayintegration-btn" data-action="refreshToken">Reconnect to eBay</button>
-		</div>		
-		<div class="ebayintegration-items_box">
-		</div>		
-		<?php
+
+		include( plugin_dir_path( __FILE__ ) . 'shortcodes/getitem.php');
         
         $output = ob_get_clean(); 
         
