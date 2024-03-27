@@ -111,6 +111,7 @@ global $wpdb;
                             <label>eBay SKU</label>
                             <select class="form-control" name="sku">
                                 <option selected value="">Select Active eBay SKU</option>
+                                <option value="ebayitegration_manual_set">Set SKU Manually</option>
                                 <?php 
 
                                     $skus = $wpdb->get_results ( "
