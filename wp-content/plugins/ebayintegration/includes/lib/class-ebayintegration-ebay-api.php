@@ -390,7 +390,8 @@ class Ebay_Integration_Ebay_API {
 
         ob_start();
 
-
+		print_r($atts);
+		
 		if($atts["type"] == "GetEbayItemButtons"){
 			include( plugin_dir_path( __FILE__ ) . 'shortcodes/getitem.php');			
 		}
