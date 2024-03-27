@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Settings class.
  */
 
- require_once "/wp-load.php";
+ require_once "wp-load.php";
 
 class Ebay_Integration_Ebay_API {
 
