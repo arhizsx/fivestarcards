@@ -94,13 +94,13 @@
                             <input type="hidden" name="user_id" value=''/>
                             
                             <label>Name</label>
-                            <input type="text" name="user_name"  class="form-control mb-2"/>
+                            <input type="text" name="user_name" disabled class="form-control mb-2"/>
                             
                             <label>Email</label>
-                            <input type="text" name="user_email"  class="form-control mb-2"/>
+                            <input type="text" name="user_email" disabled  class="form-control mb-2"/>
                             
                             <label>User ID</label>
-                            <input type="text" name="id"  class="form-control mb-2"/>
+                            <input type="text" name="id" disabled  class="form-control mb-2"/>
                             
                             <label>eBay SKU</label>
                             <input type="text" name="sku"  class="form-control mb-2"/>
