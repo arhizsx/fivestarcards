@@ -123,7 +123,7 @@ global $wpdb;
                                     }
                                 ?>
                             </select>
-                            <input type="text" name="sku_manual" class="form-control d-none"/>
+                            <input type="text" name="sku_manual" class="form-control" placeholder="SKU Manual"/>
 
                         </form>
                     </div>
