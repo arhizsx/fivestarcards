@@ -3,13 +3,6 @@
 
 global $wpdb;
 
-$skus = $wpdb->get_results ( "
-    SELECT DISTINCT sku FROM ebay
-" );
-
-
-print_r($skus[0]->sku);
-
 ?>
 <div class="m-0 p-0">
     <div class="row">
@@ -119,6 +112,11 @@ print_r($skus[0]->sku);
                             <select class="form-control" name="sku">
                                 <option value="">Select Active eBay SKU</option>
                                 <?php 
+
+                                    $skus = $wpdb->get_results ( "
+                                        SELECT DISTINCT sku FROM ebay
+                                    " );
+
                                     foreach($skus as $sku){
                                         echo "<option>" . $sku->sku . "</option>";
                                     }
