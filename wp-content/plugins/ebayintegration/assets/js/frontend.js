@@ -206,15 +206,15 @@ function getItems(page){
 
 			if(resp.error != true){
 
-				var array = [];
+				var data = [];
 
 				jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){							
-					array.push(v);					
+					data.push(v);					
 					// jQuery(document).find(".ebayintegration-items_box").append(eBayItemTemplate(v));
 					// getItemInfo(v.ItemID);
 				});	
 
-				processItems(array);
+				processItems(data);
 
 
 			} else {
