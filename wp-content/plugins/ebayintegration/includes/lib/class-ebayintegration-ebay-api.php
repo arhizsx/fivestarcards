@@ -316,7 +316,11 @@ class Ebay_Integration_Ebay_API {
 
 	public function processItems($items){
 
-		return $items;
+		foreach($items as $item){
+
+		}
+
+		return "Processed Items";
 
 	}
 
