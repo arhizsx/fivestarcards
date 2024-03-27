@@ -387,14 +387,8 @@ class Ebay_Integration_Ebay_API {
 
         ob_start();
 
+		include( plugin_dir_path( __FILE__ ) . 'shortcodes/router.php');			
 		
-		if($atts["type"] == "GetEbayItemButtons"){
-			include( plugin_dir_path( __FILE__ ) . 'shortcodes/getitem.php');			
-		}
-		elseif($atts["type"] == "GetMemberSKUs"){
-			include( plugin_dir_path( __FILE__ ) . 'shortcodes/members.php');
-		}
-
         $output = ob_get_clean(); 
         
         return $output ;
