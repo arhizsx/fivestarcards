@@ -141,7 +141,7 @@ class Ebay_Integration_Post_Type {
 		$args = array_merge( $args, $this->options );
 
 		register_post_type( $this->post_type, apply_filters( $this->post_type . '_register_args', $args, $this->post_type ) );
-
+ 
 	}
 
 	/**
