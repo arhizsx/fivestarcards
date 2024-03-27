@@ -33,9 +33,6 @@ class Ebay_Integration_Ebay_API {
 
 		add_shortcode('ebayintegration-shortcode', array( $this, 'shortcode' ));
 		
-		add_shortcode('ebayintegration-getSkuMembersList', array( $this, 'getSkuMembers_shortcode' ));
-		add_shortcode('ebayintegration-getItem', array( $this, 'getItem_shortcode' ));
-
 	}
 
 	 public function create_ebay_enpoint( ){
@@ -390,55 +387,18 @@ class Ebay_Integration_Ebay_API {
 
         ob_start();
 
-		print_r($atts);
 		
 		if($atts["type"] == "GetEbayItemButtons"){
 			include( plugin_dir_path( __FILE__ ) . 'shortcodes/getitem.php');			
 		}
-
+		elseif($atts["type"] == "GetMemberSKUs"){
+			include( plugin_dir_path( __FILE__ ) . 'shortcodes/members.php');
+		}
 
         $output = ob_get_clean(); 
         
         return $output ;
     }
 	
-
-    public function getItem_shortcode($atts) 
-    {
-
-        $default = array(
-            'title' => 'getItem',
-            'type' => 'getItem'
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-		include( plugin_dir_path( __FILE__ ) . 'shortcodes/getitem.php');
-        
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-     
-    public function getSkuMembers_shortcode($atts) 
-    {
-
-        $default = array(
-            'title' => 'getSku',
-            'type' => 'getSku'
-        );
-        
-        $params = shortcode_atts($default, $atts);
-        ob_start();
-
-		include( plugin_dir_path( __FILE__ ) . 'shortcodes/members.php');
-
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-
-
 
 }
