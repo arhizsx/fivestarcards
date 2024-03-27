@@ -52,7 +52,14 @@
                             ?>
                         </td>
                         <td class="text-end">
-                            <button class="btn border btn-primary ebayintegration-btn" data-action='addSKU' data-user_id='<?php echo $user->ID; ?>'>Add SKU</button>
+                            <button class="btn border btn-primary ebayintegration-btn" 
+                                data-action='addSKU' 
+                                data-user_name='<?php  echo $user->display_name ?>' 
+                                data-user_email='<?php  echo $user->user_email ?>' 
+                                data-user_id='<?php echo $user->ID; ?>'
+                            >
+                                Add SKU
+                            </button>
                         </td>
                     </tr>
                 <?php    
@@ -85,6 +92,16 @@
                     <div class="modal-body py-2 px-3">
                         <forn id="delete_order_form mb-3">
                             <input type="hidden" name="user_id" value=''/>
+                            
+                            <label>Name</label>
+                            <input type="text" name="user_name"  class="form-control"/>
+                            
+                            <label>Email</label>
+                            <input type="text" name="user_email"  class="form-control"/>
+                            
+                            <label>User ID</label>
+                            <input type="text" name="id"  class="form-control"/>
+                            
                             <label>eBay SKU</label>
                             <input type="text" name="sku"  class="form-control"/>
                         </form>
