@@ -7,6 +7,9 @@ $skus = $wpdb->get_results ( "
     SELECT DISTINCT sku FROM ebay
 " );
 
+
+print_r($skus);
+
 ?>
 <div class="m-0 p-0">
     <div class="row">
