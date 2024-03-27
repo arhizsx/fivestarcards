@@ -315,12 +315,17 @@ class Ebay_Integration_Ebay_API {
 		
 
 	public function processItems($items){
+		
+		global $wpdb;     
 
 		foreach($items as $item){
-
+			$wpdb->insert("ebay", array(
+				"item_id" => $item["ItemID"],
+				"data" => $item
+			));
 		}
 
-		return "Processed Items";
+		return "Processed Items " . $items;
 
 	}
 

@@ -193,6 +193,7 @@ class Ebay_Integration {
 		return $post_type;
 	}
 
+	
 	/**
 	 * Wrapper function to register a new taxonomy.
 	 *
