@@ -1,3 +1,13 @@
+<?php
+ require_once "wp-load.php";
+
+global $wpdb;
+
+$skus = $wpdb->get_results ( "
+    SELECT DISTINCT sku FROM ebay
+" );
+
+?>
 <div class="m-0 p-0">
     <div class="row">
         <div class="col-6">
@@ -103,7 +113,14 @@
                             <input type="text" name="id" disabled  class="form-control mb-2"/>
                             
                             <label>eBay SKU</label>
-                            <input type="text" name="sku"  class="form-control mb-2"/>
+                            <select class="form-control" name="sku">
+                                <option value="">Select Active eBay SKU</option>
+                                <?php 
+                                    foreach($skus as $sku){
+                                        echo "<option>" . $sku->sku . "</option>";
+                                    }
+                                ?>
+                            </select>
                         </form>
                     </div>
                     <div class="modal-footer">
