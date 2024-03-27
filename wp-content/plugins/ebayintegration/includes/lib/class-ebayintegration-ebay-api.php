@@ -301,7 +301,9 @@ class Ebay_Integration_Ebay_API {
 	
 			} else {
 
-				return array("error" => false, "data"=> $json["ActiveList"]["ItemArray"]);
+				
+
+				return array("error" => false, "data"=> $this->processItems($json["ActiveList"]["ItemArray"]) );
 				
 			}
 	
@@ -311,6 +313,13 @@ class Ebay_Integration_Ebay_API {
 		
 	}
 		
+
+	public function processItems($items){
+
+		return $items;
+
+	}
+
 
 	public function getItemInfo($item_id){
 
