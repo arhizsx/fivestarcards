@@ -170,6 +170,29 @@ function eBayItemTemplate(data){
 		
 }
 
+function processItems(data){
+
+	jQuery.ajax({
+		method: 'get',
+		url: "/wp-json/ebayintegration/v1/ajax",
+		data: { 
+			action: "processItems",
+			data: data
+		},
+		success: function(resp){
+
+			console.log(resp);
+
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
+
+}
+
+
 function getItems(page){
 
 	jQuery.ajax({
@@ -212,27 +235,6 @@ function getItems(page){
 
 }
 
-function processItems(data){
-
-	jQuery.ajax({
-		method: 'get',
-		url: "/wp-json/ebayintegration/v1/ajax",
-		data: { 
-			action: "processItems",
-			data: data
-		},
-		success: function(resp){
-
-			console.log(resp);
-
-		},
-		error: function(){
-			console.log("Error in AJAX");
-		}
-	});
-
-
-}
 
 function getItemInfo(item_id){
 
