@@ -35,6 +35,7 @@ global $wpdb;
                 <tr>
                     <th>Customer</th>
                     <th>SKUs</th>
+                    <th>eBay Items</th>
                     <th class='text-end'>Action</th>
                 </tr>
             </thead>
@@ -61,6 +62,8 @@ global $wpdb;
                                     }    
                                 }
                             ?>
+                        </td>
+                        <td>
                         </td>
                         <td class="text-end">
                             <button class="btn border btn-primary ebayintegration-btn" 
@@ -128,7 +131,7 @@ global $wpdb;
                                     }
                                 ?>
                             </select>
-                            <input type="text" name="sku_manual" class="form-control" placeholder="SKU Manual"/>
+                            <input type="text" name="sku_manual" class="form-control mb-3" placeholder="SKU Manual"/>
 
                         </form>
                     </div>
