@@ -51,7 +51,7 @@
                         </td>
                         <td>
                             <?php
-                                print_r($all_meta_for_user['sku']);
+                                print_r($all_meta_for_user['sku'][0] );
                             ?>
                         </td>
                         <td class="text-end">
