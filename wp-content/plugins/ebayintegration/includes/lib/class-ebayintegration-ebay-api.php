@@ -31,7 +31,7 @@ class Ebay_Integration_Ebay_API {
 
         add_action("rest_api_init", array($this, 'create_ebay_enpoint'));
 
-		add_shortcode('ebayintegration-getItem', array( $this, 'getItem_shortcode' ));
+		add_shortcode('ebayintegration-getSkuMembersList', array( $this, 'getSkuMembers_shortcode' ));
 		add_shortcode('ebayintegration-getItem', array( $this, 'getItem_shortcode' ));
 
 	}
