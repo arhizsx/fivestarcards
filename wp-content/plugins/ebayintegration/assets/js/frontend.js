@@ -182,10 +182,19 @@ function getItems(page){
 		success: function(resp){
 
 			if(resp.error != true){
+
+				var array = [];
+
 				jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){		
+					
+					array.push(v);
+					
 					// jQuery(document).find(".ebayintegration-items_box").append(eBayItemTemplate(v));
 					// getItemInfo(v.ItemID);
 				});	
+
+				console.log(array);
+
 			} else {
 
 				if(resp.data == "Refresh Access Token"){
