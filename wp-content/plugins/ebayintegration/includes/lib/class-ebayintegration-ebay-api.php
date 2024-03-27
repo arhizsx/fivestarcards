@@ -318,6 +318,8 @@ class Ebay_Integration_Ebay_API {
 		
 		global $wpdb;     
 
+		return $items;
+
 		foreach($items as $item){
 
 			return $item;
