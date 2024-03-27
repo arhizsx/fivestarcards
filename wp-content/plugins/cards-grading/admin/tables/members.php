@@ -44,7 +44,6 @@
                             <?php  echo $user->user_email ?>
                         </td>
                         <td class="text-end">
-                            <button class="btn border btn-secondary 5star_btn" data-action='set_skus' data-user_id='<?php echo $user->ID; ?>'>SKUs</button>
                             <button class="btn border btn-success 5star_btn" data-action='demote_admin' data-user_id='<?php echo $user->ID; ?>'>Demote</button>
                         </td>
                     </tr>
@@ -119,7 +118,6 @@
                             <?php  echo $user->user_email ?>
                         </td>
                         <td class="text-end">
-                            <button class="btn border btn-secondary 5star_btn" data-action='set_skus' data-user_id='<?php echo $user->ID; ?>'>SKUs</button>
                             <button class="btn border btn-primary 5star_btn" data-action='make_admin' data-user_id='<?php echo $user->ID; ?>'>Promote</button>
                         </td>
                     </tr>
@@ -137,30 +135,4 @@
             </tbody>
         </table>
     </div>
-</div>
-
-<div class="modal fade set_skus_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
-	<div class="modal-dialog" id="dxmodal">
-		<div class="modal-content modal-ajax">
-			<div class="modal-header bg-dark text-white">
-				<h5 class="modal-title">
-					User SKUs
-				</h5>
-    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
-					X
-				</button>
-			</div>
-                <div class="" id="view_card_form_box">
-                    <div class="modal-body py-2 px-3">
-                        <forn id="user_skus_form">
-                            <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn border btn-danger 5star_btn" data-action="add_new_sku" data-user_id="<?php echo $user_id ?>">Add SKU</button>
-                        <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                    </div>
-                </div>
-		</div>
-	</div>
 </div>
