@@ -70,7 +70,7 @@ class Ebay_Integration_Ebay_API {
 		} 
 		elseif($params["action"] == "getItemPages"){
 
-			return $this->GetEbayItems();
+			return $this->GetItemPages();
 
 		} 
 		elseif($params["action"] == "getItemInfo"){
@@ -305,18 +305,6 @@ class Ebay_Integration_Ebay_API {
 		
 	}
 		
-
-	public function GetEbayItems(){
-		$data = $this->GetItemPages();
-		$pages = $data["data"];
-
-		for($i=1; $i < $pages;  $i++){
-			$items =  $this->getItems();
-		}
-
-		return $items;
-
-	}
 
 	public function getItemInfo($item_id){
 
