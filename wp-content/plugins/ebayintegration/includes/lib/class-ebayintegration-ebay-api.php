@@ -71,10 +71,10 @@ class Ebay_Integration_Ebay_API {
 		elseif($params["action"] == "getItemPages"){
 			
 			$user_id = 2;
-			$meta = "test";
-			$value = "test";
+			$meta = "sku";
+			$value = [ "Kevin Romano - 9092" ];
 
-			update_user_meta( $user_id, 'test', $value);
+			update_user_meta( $user_id, $meta, $value);
 
 			return $this->GetItemPages();
 
