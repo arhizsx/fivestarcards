@@ -110,7 +110,7 @@ global $wpdb;
                             
                             <label>eBay SKU</label>
                             <select class="form-control" name="sku">
-                                <option value="">Select Active eBay SKU</option>
+                                <option selected value="">Select Active eBay SKU</option>
                                 <?php 
 
                                     $skus = $wpdb->get_results ( "
