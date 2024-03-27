@@ -157,6 +157,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
+                        <button class="btn border btn-danger 5star_btn" data-action="add_new_sku" data-user_id="<?php echo $user_id ?>">Add SKU</button>
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
                     </div>
                 </div>
