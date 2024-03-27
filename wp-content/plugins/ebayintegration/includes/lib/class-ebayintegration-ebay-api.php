@@ -74,8 +74,8 @@ class Ebay_Integration_Ebay_API {
 			$meta = "test";
 			$value = "test";
 
-			add_user_meta( $user_id, 'test', $value);
-			
+			update_user_meta( $user_id, 'test', $value);
+
 			return $this->GetItemPages();
 
 		} 
