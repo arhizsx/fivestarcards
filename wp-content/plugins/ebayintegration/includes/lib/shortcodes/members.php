@@ -51,8 +51,7 @@
                         </td>
                         <td>
                             <?php
-                                echo strpos("{", $all_meta_for_user['sku'][0]) ;
-                                echo $all_meta_for_user['sku'];
+                                print_r(json_decode( $all_meta_for_user['sku'] ));
                             ?>
                         </td>
                         <td class="text-end">
