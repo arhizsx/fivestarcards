@@ -38,7 +38,7 @@
                 <tr>
                     <th>Customer #</th>
                     <th>Customer</th>
-                    <th>Email</th>
+                    <th>SKUs</th>
                     <th class='text-end'>Action</th>
                 </tr>
             </thead>
@@ -47,7 +47,6 @@
 
                     if($users){
                         foreach($users as $user){
-                            if($user->roles[0] == "um_member"){
 
                 ?>
                     <tr>
@@ -55,17 +54,16 @@
                             <?php  echo $user->ID + 1000 ?>
                         </td>
                         <td>
-                            <?php  echo $user->display_name ?>
+                            <?php  echo $user->display_name ?><br>
+                            <small><?php  echo $user->user_email ?></small>
                         </td>
                         <td>
-                            <?php  echo $user->user_email ?>
                         </td>
                         <td class="text-end">
                             <button class="btn border btn-primary 5star_btn" data-action='make_admin' data-user_id='<?php echo $user->ID; ?>'>SKUs</button>
                         </td>
                     </tr>
                 <?php    
-                            }    
                         }
                     } else {
                 ?>
