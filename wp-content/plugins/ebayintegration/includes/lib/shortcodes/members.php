@@ -8,7 +8,7 @@ $skus = $wpdb->get_results ( "
 " );
 
 
-print_r($skus);
+print_r($skus[0]);
 
 ?>
 <div class="m-0 p-0">
