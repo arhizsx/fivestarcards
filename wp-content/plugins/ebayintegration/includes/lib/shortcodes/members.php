@@ -54,7 +54,7 @@
                             <?php  echo $user->ID + 1000 ?>
                         </td>
                         <td>
-                            <?php  echo $user->display_name ?><br>
+                            <strong><?php  echo $user->display_name ?></strong><br>
                             <small><?php  echo $user->user_email ?></small>
                         </td>
                         <td>
