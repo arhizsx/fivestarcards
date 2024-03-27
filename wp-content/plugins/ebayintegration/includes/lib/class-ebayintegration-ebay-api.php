@@ -318,7 +318,7 @@ class Ebay_Integration_Ebay_API {
 		
 		global $wpdb;     
 
-		return print_r($items);
+		return $items[0]["item"];
 
 		foreach($items["item"] as $item){
 
