@@ -36,7 +36,6 @@
         <table class='table 5star_my_orders table-bordered table-striped' id="members_table">
             <thead>
                 <tr>
-                    <th>Customer #</th>
                     <th>Customer</th>
                     <th>SKUs</th>
                     <th class='text-end'>Action</th>
@@ -51,11 +50,9 @@
                 ?>
                     <tr>
                         <td>
-                            <?php  echo $user->ID + 1000 ?>
-                        </td>
-                        <td>
                             <strong><?php  echo $user->display_name ?></strong><br>
-                            <small><?php  echo $user->user_email ?></small>
+                            <small><?php  echo $user->user_email ?></small><br>
+                            <small><?php  echo $user->ID + 1000 ?></small>
                         </td>
                         <td>
                         </td>
