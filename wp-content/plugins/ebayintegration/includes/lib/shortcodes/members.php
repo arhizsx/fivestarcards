@@ -114,7 +114,7 @@ global $wpdb;
                                 <?php 
 
                                     $skus = $wpdb->get_results ( "
-                                        SELECT DISTINCT sku FROM ebay
+                                        SELECT DISTINCT sku FROM ebay ORDER BY sku ASC
                                     " );
 
                                     foreach($skus as $sku){
