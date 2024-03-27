@@ -28,9 +28,15 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 				if(resp.error != true){	
 
 					var loops = parseInt(resp["data"]);				
-					for(var i=1; i <= loops; i++){
-						getItems(i);
+					var current = 0;
+
+					for(var i=1; i <= loops; i++){						
+						if(getItems(i)){
+							current = current+1;
+						}
 					}
+
+					console.log("CURRENT" + current);
 
 				} else {
 
@@ -184,19 +190,8 @@ function getItems(page){
 
 			if(resp.error != true){
 
-				console.log(resp);
-
-				// var data = [];
-
-				// jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){							
-				// 	data.push(v);					
-				// 	// jQuery(document).find(".ebayintegration-items_box").append(eBayItemTemplate(v));
-				// 	// getItemInfo(v.ItemID);
-				// });	
-
-				// processItems( JSON.stringify(data) );
-
 				console.log("Items on " + page + " processed");
+				return true;
 
 			} else {
 
@@ -205,6 +200,8 @@ function getItems(page){
 				} else {
 					console.log(resp.data);
 				}
+
+				return false;
 
 			}
 
