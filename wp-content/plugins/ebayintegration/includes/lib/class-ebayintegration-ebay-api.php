@@ -325,7 +325,7 @@ class Ebay_Integration_Ebay_API {
 
 			return $wpdb->insert("ebay", array(
 				"item_id" => $item["ItemID"],
-				"data" => $item,
+				"data" => json_encode($item),
 				"status" => "active"
 			));
 		}
