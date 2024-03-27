@@ -33,7 +33,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 					for(var i=1; i <= loops; i++){						
 						if(getItems(i)){
 							current = current+1;
-							console.log("CURRENT " + current);
+							console.log("CURRENT: " + current);
 						}
 					}
 
