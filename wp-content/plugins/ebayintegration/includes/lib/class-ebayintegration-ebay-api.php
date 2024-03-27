@@ -72,11 +72,9 @@ class Ebay_Integration_Ebay_API {
 			
 			$user_id = 2;
 			$meta = "sku";
-			$value = array (
-				'sku' => 'Kevin Romano - 9092',
-			);  
+			$value = array ('Kevin Romano - 9092');  
 
-			add_user_meta( $user_id, $meta, $value);
+			update_user_meta( $user_id, $meta, $value);
 
 			return $this->GetItemPages();
 
