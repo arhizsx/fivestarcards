@@ -4,6 +4,11 @@
 global $wpdb;
 
 ?>
+<style>
+    input {padding: 3px;}
+    select {padding: 3px;}
+</style>
+
 <div class="m-0 p-0">
     <div class="row">
         <div class="col-6">
