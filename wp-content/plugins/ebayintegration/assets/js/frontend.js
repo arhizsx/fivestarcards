@@ -184,6 +184,8 @@ function getItems(page){
 
 			if(resp.error != true){
 
+				console.log(resp);
+
 				// var data = [];
 
 				// jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){							
