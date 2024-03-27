@@ -88,6 +88,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 		});
 
 	}
+	else if( jQuery(this).data("action") == "addSKU" ){
+
+		$(document).find(".add_sku").modal("show");
+
+
+	}
 
 
 });

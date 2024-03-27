@@ -1,5 +1,4 @@
 <div class="m-0 p-0">
-
     <div class="row">
         <div class="col-6">
             <?php 
@@ -53,7 +52,7 @@
                             ?>
                         </td>
                         <td class="text-end">
-                            <button class="btn border btn-primary 5star_btn" data-action='make_admin' data-user_id='<?php echo $user->ID; ?>'>Add SKU</button>
+                            <button class="btn border btn-primary ebayintegration-btn" data-action='addSKU' data-user_id='<?php echo $user->ID; ?>'>Add SKU</button>
                         </td>
                     </tr>
                 <?php    
@@ -69,4 +68,30 @@
             </tbody>
         </table>
     </div>
+</div>
+
+<div class="modal fade add_sku" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+	<div class="modal-dialog" id="dxmodal">
+		<div class="modal-content modal-ajax">
+			<div class="modal-header bg-dark text-white">
+				<h5 class="modal-title">
+					Add User SKU
+				</h5>
+    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+					X
+				</button>
+			</div>
+                <div class="" id="view_card_form_box">
+                    <div class="modal-body py-2 px-3">
+                        <forn id="delete_order_form">
+                            <!-- <input type="hidden" name="user_id" value='<?php echo $user_id; ?>'/> -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+                        <button class="btn border btn-danger ebayintegration" data-action="confirm_add_sku">Confirm Delete</button>
+                    </div>
+                </div>
+		</div>
+	</div>
 </div>
