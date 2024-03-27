@@ -70,7 +70,7 @@ class Ebay_Integration_Ebay_API {
 		} 
 		elseif($params["action"] == "getItemPages"){
 			
-			$user_id = 2;
+			$user_id = 7;
 			$meta = "sku";
 			$value = array ('Kevin Romano - 9092', 'test');  
 
