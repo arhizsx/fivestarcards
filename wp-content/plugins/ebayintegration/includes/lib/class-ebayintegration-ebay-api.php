@@ -32,6 +32,7 @@ class Ebay_Integration_Ebay_API {
         add_action("rest_api_init", array($this, 'create_ebay_enpoint'));
 
 		add_shortcode('ebayintegration-getItem', array( $this, 'getItem_shortcode' ));
+		add_shortcode('ebayintegration-getItem', array( $this, 'getItem_shortcode' ));
 
 	}
 
@@ -398,4 +399,24 @@ class Ebay_Integration_Ebay_API {
         return $output ;
     }
      
+    public function getSkuMembers_shortcode($atts) 
+    {
+
+        $default = array(
+            'title' => 'getSku',
+            'type' => 'getSku'
+        );
+        
+        $params = shortcode_atts($default, $atts);
+        ob_start();
+
+		include( plugin_dir_path( __FILE__ ) . 'shortcodes/members.php');
+
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
+
+
+
 }

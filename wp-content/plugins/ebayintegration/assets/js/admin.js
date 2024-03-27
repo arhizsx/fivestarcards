@@ -24,7 +24,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 				console.log("Error in AJAX");
 			}
 		});
-
 	
 	}
 
