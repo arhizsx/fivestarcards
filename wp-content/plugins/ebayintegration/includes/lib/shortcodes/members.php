@@ -50,7 +50,7 @@
                         <td>
                         </td>
                         <td class="text-end">
-                            <button class="btn border btn-primary 5star_btn" data-action='make_admin' data-user_id='<?php echo $user->ID; ?>'>SKUs</button>
+                            <button class="btn border btn-primary 5star_btn" data-action='make_admin' data-user_id='<?php echo $user->ID; ?>'>Add SKU</button>
                         </td>
                     </tr>
                 <?php    
