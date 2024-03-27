@@ -95,7 +95,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 		$(document).find(".add_sku").find("input[name='iser_name']").val( $(this).data("user_name") );
 		$(document).find(".add_sku").find("input[name='iser_email']").val( $(this).data("user_email") );
-		$(document).find(".add_sku").find("input[name='id']").val( $(this).data("user_id") );
+		$(document).find(".add_sku").find("input[name='id']").val( parseInt($(this).data("user_id")) + 1000 );
 
 	}
 
