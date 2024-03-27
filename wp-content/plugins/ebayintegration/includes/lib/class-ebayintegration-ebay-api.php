@@ -310,7 +310,11 @@ class Ebay_Integration_Ebay_API {
 		$data = $this->GetItemPages();
 		$pages = $data["data"];
 
-		return $pages;
+		for($i=1; $i < $pages;  $i++){
+			$items =  $this->getItems();
+		}
+
+		return $items;
 
 	}
 
