@@ -31,6 +31,8 @@ class Ebay_Integration_Ebay_API {
 
         add_action("rest_api_init", array($this, 'create_ebay_enpoint'));
 
+		add_shortcode('ebayintegration-shortcode', array( $this, 'shortcode' ));
+		
 		add_shortcode('ebayintegration-getSkuMembersList', array( $this, 'getSkuMembers_shortcode' ));
 		add_shortcode('ebayintegration-getItem', array( $this, 'getItem_shortcode' ));
 
@@ -374,6 +376,31 @@ class Ebay_Integration_Ebay_API {
 		}
 		
 	}
+
+    public function shortcode($atts) 
+    {
+
+        $default = array(
+            'title' => 'Shortcode',
+            'type' => ''
+        );
+        
+        $params = shortcode_atts($default, $atts);
+
+
+        ob_start();
+
+
+		if($atts["type"] == "GetEbayItemButtons"){
+			include( plugin_dir_path( __FILE__ ) . 'shortcodes/getitem.php');			
+		}
+
+
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
+	
 
     public function getItem_shortcode($atts) 
     {
