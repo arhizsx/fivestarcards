@@ -215,9 +215,9 @@ function getItems(page){
 					// getItemInfo(v.ItemID);
 				});	
 
-				processItems(data);
+				// processItems(data);
 
-				console.log("Processing Data");
+				console.log(data);
 
 			} else {
 
