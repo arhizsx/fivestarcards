@@ -118,6 +118,7 @@
                             <?php  echo $user->user_email ?>
                         </td>
                         <td class="text-end">
+                            <button class="btn border btn-secondary 5star_btn" data-action='set_skus' data-user_id='<?php echo $user->ID; ?>'>SKUs</button>
                             <button class="btn border btn-primary 5star_btn" data-action='make_admin' data-user_id='<?php echo $user->ID; ?>'>Promote</button>
                         </td>
                     </tr>
