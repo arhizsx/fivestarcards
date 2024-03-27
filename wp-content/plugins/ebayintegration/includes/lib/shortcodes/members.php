@@ -1,8 +1,3 @@
-<?php 
-
-    print_r($atts);
-?>
-
 <div class="m-0 p-0">
 
     <div class="row">
@@ -20,9 +15,7 @@
 
                 if($users){
                     foreach($users as $user){
-                        if($user->roles[0] == "um_member"){
                             $total_users++;
-                        }
                     }
                 }
             ?>
