@@ -1102,7 +1102,7 @@ $(document).find(".search_box").on("keyup", function() {
 
 function showSetSkus(){
 
-    $(document).find(".dxmodal").appendTo('body').modal("show");
+    $(document).find(".set_skus_modal").appendTo('body').modal("show");
 
 }
 
