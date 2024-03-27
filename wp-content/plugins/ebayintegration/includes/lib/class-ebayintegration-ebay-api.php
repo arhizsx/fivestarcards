@@ -74,7 +74,7 @@ class Ebay_Integration_Ebay_API {
 			$meta = "sku";
 			$value = array ('Kevin Romano - 9092', 'test');  
 
-			update_user_meta( $user_id, $meta, $value);
+			update_user_meta( $user_id, $meta, serialize($value));
 
 			return $this->GetItemPages();
 
