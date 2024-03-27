@@ -183,7 +183,7 @@ function getItems(page){
 
 			if(resp.error != true){
 				jQuery.each(resp.data.ActiveList.ItemArray.Item, function(k, v){		
-					jQuery(document).find(".ebayintegration-items_box").append(eBayItemTemplate(v));
+					// jQuery(document).find(".ebayintegration-items_box").append(eBayItemTemplate(v));
 					getItemInfo(v.ItemID);
 				});	
 			} else {
@@ -221,8 +221,8 @@ function getItemInfo(item_id){
 				var href = (resp.data.Item.ListingDetails.ViewItemURL);
 				// console.log(href);
 				
-				$(document).find(".item_img[data-item_id='" + item_id + "']").attr("src", img);
-				$(document).find(".item_href[data-item_id='" + item_id + "']").attr("href", href);
+				// $(document).find(".item_img[data-item_id='" + item_id + "']").attr("src", img);
+				// $(document).find(".item_href[data-item_id='" + item_id + "']").attr("href", href);
 
 			} else {
 

@@ -39,7 +39,6 @@
 
                     if($users){
                         foreach($users as $user){
-
                 ?>
                     <tr>
                         <td>
