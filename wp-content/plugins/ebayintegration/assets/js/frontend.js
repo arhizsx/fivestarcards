@@ -181,13 +181,14 @@ function processItems(data){
 		},
 		success: function(resp){
 
-			console.log(resp);
+			return resp;
 
 		},
 		error: function(){
 			console.log("Error in AJAX");
 		}
 	});
+
 
 
 }
@@ -216,6 +217,7 @@ function getItems(page){
 
 				processItems(data);
 
+				console.log("Processing Data");
 
 			} else {
 
