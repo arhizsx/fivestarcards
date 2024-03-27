@@ -2,24 +2,7 @@
 
     <div class="row">
         <div class="col-6">
-            <?php 
-
-                $args = array(
-                    'orderby'    => 'display_name',
-                    'order'      => 'ASC'
-                );
-
-                $users = get_users( $args );
-
-                $total_users = 0;
-
-                if($users){
-                    foreach($users as $user){
-                            $total_users++;
-                    }
-                }
-            ?>
-            <H1 style="color: black;">Members (<?php echo $total_users;?>)</H1>            
+            <H1 style="color: black;">User SKU</H1>            
         </div>
         <div class="col-6 text-end">
             <input class="btn mt-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target="#members_table">
