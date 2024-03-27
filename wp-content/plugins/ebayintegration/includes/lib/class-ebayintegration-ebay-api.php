@@ -303,7 +303,7 @@ class Ebay_Integration_Ebay_API {
 
 				
 
-				return array("error" => false, "data"=> $this->processItems($json["ActiveList"]["ItemArray"]["Items"]["Item"]) );
+				return array("error" => false, "data"=> $this->processItems($json["ActiveList"]["ItemArray"]) );
 				
 			}
 	
@@ -318,7 +318,7 @@ class Ebay_Integration_Ebay_API {
 		
 		global $wpdb;     
 
-		return $items;
+		return $items["Item"];
 
 		foreach($items as $item){
 
