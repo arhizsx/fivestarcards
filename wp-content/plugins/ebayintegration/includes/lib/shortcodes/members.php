@@ -40,7 +40,7 @@
                     if($users){                        
                         foreach($users as $user){
 
-                        $all_meta_for_user = get_user_meta( $user->ID, "sku", true );
+                        $skus = get_user_meta( $user->ID, "sku", true );
 
                 ?>
                     <tr>
@@ -51,7 +51,11 @@
                         </td>
                         <td>
                             <?php
-                                print_r( $all_meta_for_user  ) ;
+                                if(count($skus) > 0){
+                                    foreach($skus as $sku){
+                                        echo "<li>". $sku . "</li>";
+                                    }    
+                                }
                             ?>
                         </td>
                         <td class="text-end">
