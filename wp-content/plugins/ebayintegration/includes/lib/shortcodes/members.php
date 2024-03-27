@@ -109,7 +109,7 @@ global $wpdb;
                             <input type="text" name="id" disabled  class="form-control mb-2"/>
                             
                             <label>eBay SKU</label>
-                            <select class="form-control" name="sku">
+                            <select class="form-control mb-2" name="sku">
                                 <option selected value="">Select Active eBay SKU</option>
                                 <option value="ebayitegration_manual_set">Set SKU Manually</option>
                                 <?php 
