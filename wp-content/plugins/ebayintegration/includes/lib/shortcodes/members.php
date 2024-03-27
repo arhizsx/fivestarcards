@@ -85,7 +85,8 @@
                     <div class="modal-body py-2 px-3">
                         <forn id="delete_order_form">
                             <input type="hidden" name="user_id" value=''/>
-                            <input type="text" name="sku" />
+                            <label>eBay SKU</label>
+                            <input type="text" name="sku"  class="form-control"/>
                         </form>
                     </div>
                     <div class="modal-footer">
