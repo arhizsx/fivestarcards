@@ -318,7 +318,7 @@ class Ebay_Integration_Ebay_API {
 		
 		global $wpdb;     
 
-		return json_encode($items);
+		return json_decode(json_encode($items), true);
 
 		foreach($items["item"] as $item){
 
