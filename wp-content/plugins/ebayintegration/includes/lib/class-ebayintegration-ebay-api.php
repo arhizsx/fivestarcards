@@ -50,6 +50,7 @@ class Ebay_Integration_Ebay_API {
         $params = $data->get_params();
         $nonce = $headers["x_wp_nonce"][0];
 
+
 		if( !isset($params["action"]) ){
 			return array("error"=> true, "error_message" => "Action Not Set");
 		}
@@ -69,7 +70,7 @@ class Ebay_Integration_Ebay_API {
 		} 
 		elseif($params["action"] == "getItemPages"){
 
-			return $this->GetItemPages();
+			return $this->GetEbayItems();
 
 		} 
 		elseif($params["action"] == "getItemInfo"){
@@ -304,6 +305,14 @@ class Ebay_Integration_Ebay_API {
 		
 	}
 		
+
+	public function GetEbayItems(){
+		$data = $this->GetItemPages();
+		$pages = $data["data"];
+
+		return $pages;
+
+	}
 
 	public function getItemInfo($item_id){
 
