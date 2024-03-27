@@ -123,6 +123,8 @@ global $wpdb;
                                     }
                                 ?>
                             </select>
+                            <input type="text" name="sku_manual" class="form-control d-none"/>
+
                         </form>
                     </div>
                     <div class="modal-footer">
