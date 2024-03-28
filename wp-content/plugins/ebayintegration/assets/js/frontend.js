@@ -90,19 +90,19 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 	}
 	else if( jQuery(this).data("action") == "addSKU" ){
 
-		$(document).find(".add_sku").appendTo('body').modal("show");
-		$(document).find(".add_sku").find("input[name='iser_id']").val( $(this).data("user_id") );
+		jQuery(document).find(".add_sku").appendTo('body').modal("show");
+		jQuery(document).find(".add_sku").find("input[name='iser_id']").val( $(this).data("user_id") );
 
-		$(document).find(".add_sku").find("input[name='user_name']").val( $(this).data("user_name") );
-		$(document).find(".add_sku").find("input[name='user_email']").val( $(this).data("user_email") );
-		$(document).find(".add_sku").find("input[name='id']").val( parseInt($(this).data("user_id")) + 1000 );
+		jQuery(document).find(".add_sku").find("input[name='user_name']").val( $(this).data("user_name") );
+		jQuery(document).find(".add_sku").find("input[name='user_email']").val( $(this).data("user_email") );
+		jQuery(document).find(".add_sku").find("input[name='id']").val( parseInt($(this).data("user_id")) + 1000 );
 
 	}
 	else if( jQuery(this).data("action") == "confirmAddSKU" ){
 		
-		var action = $(document).find(".add_sku").find(".add_sku_form").find("[name='action']");
-		var user_id = $(document).find(".add_sku").find(".add_sku_form").find("[name='user_id']");
-		var sku = $(document).find(".add_sku").find(".add_sku_form").find("[name='sku']");
+		var action = jQuery(document).find(".add_sku").find(".add_sku_form").find("[name='action']");
+		var user_id = jQuery(document).find(".add_sku").find(".add_sku_form").find("[name='user_id']");
+		var sku = jQuery(document).find(".add_sku").find(".add_sku_form").find("[name='sku']");
 
 		jQuery.ajax({
 			method: 'get',
