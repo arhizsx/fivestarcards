@@ -118,14 +118,9 @@ class Ebay_Integration_Ebay_API {
 
 			$in = rtrim($in, ',');
 
-			return $in;
-
-
 			$ebay = $wpdb->get_results ( "
 				SELECT * FROM ebay WHERE sku IN (" . $in . ") ORDER BY sku ASC
 			" );
-
-			$skus = get_user_meta( $user_id, "sku", true );
 
 			return array("error"=> false, "skus" => $skus, "ebay" => $ebay);
 
