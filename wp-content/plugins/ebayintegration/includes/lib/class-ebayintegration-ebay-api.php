@@ -73,12 +73,6 @@ class Ebay_Integration_Ebay_API {
 		} 
 		elseif($params["action"] == "getItemPages"){
 			
-			$user_id = 463;
-			$meta = "sku";
-			$value = array ('Kevin Romano - 9092', 'test');  
-
-			update_user_meta( $user_id, $meta, $value);
-
 			return $this->GetItemPages();
 
 		} 
@@ -93,6 +87,13 @@ class Ebay_Integration_Ebay_API {
 
 		} 
 		elseif($params["action"] == "confirmAddSKU"){
+
+			$user_id =  $params["user_id"];
+			$meta = "sku";
+			$value = array ('Kevin Romano - 9092', 'test');  
+
+			update_user_meta( $user_id, $meta, $value);
+
 
 			return $params;
 
