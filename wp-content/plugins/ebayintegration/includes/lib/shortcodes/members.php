@@ -136,7 +136,7 @@ global $wpdb;
                     </div>
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                        <button class="btn border btn-primary ebayintegration" data-action="confirmAddSKU">Add SKU</button>
+                        <button class="btn border btn-primary ebayintegration-btn" data-action="confirmAddSKU">Add SKU</button>
                     </div>
                 </div>
 		</div>
