@@ -117,20 +117,19 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 			},
 			success: function(resp){
 
-				$skus = "<ul>"
+				var skus = "<ul>"
 				$.each(resp.skus, function(k, v){
-					$skus = $skus + "<li>" + v + "</li>"
+					skus = skus + "<li>" + v + "</li>"
 				});
-				$skus = $skus + "</ul>"
+				skus = skus + "</ul>"
 
 				jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.skus").html(
-					$skus
+					skus
 				)
 
-				// console.log( jQuery(document).find(".user_row [data-user_id='" + user_id + "'") );
-
-
-				jQuery(document).find(".user_row [data-user_id='" + user_id + "'").find(".ebay").html( resp.ebay.length );
+				jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.skus").html(
+					resp.ebay.length
+				)
 
 				// console.log(resp);
 
