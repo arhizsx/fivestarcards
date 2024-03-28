@@ -125,14 +125,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 				jQuery(document).find(".user_row [data-user_id='" + user_id + "'").find(".skus").html( $skus );
 
-				$ebay = "<ul>"
-				$.each(resp.ebay, function(k, v){
-					$ebay = $ebay + "<li>" + v + "</li>"
-				});
-				$ebay = $ebay + "</ul>"
+				console.log( jQuery(document).find(".user_row [data-user_id='" + user_id + "'").find(".skus") );
 
 
-				jQuery(document).find(".user_row [data-user_id='" + user_id + "'").find(".ebay").html( $ebay );
+				jQuery(document).find(".user_row [data-user_id='" + user_id + "'").find(".ebay").html( resp.ebay.length() );
 
 				console.log(resp);
 
