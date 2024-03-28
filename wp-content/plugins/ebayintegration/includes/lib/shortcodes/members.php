@@ -104,7 +104,7 @@ global $wpdb;
 			</div>
                 <div class="" id="view_card_form_box">
                     <div class="modal-body py-2 px-3">
-                        <forn id="add_sku_form mb-3">
+                        <forn id="add_sku_form" class=" mb-3">
                             <input type="hidden" name="user_id" value=''/>
                             <input type="hidden" name="action" value=''/>
                             

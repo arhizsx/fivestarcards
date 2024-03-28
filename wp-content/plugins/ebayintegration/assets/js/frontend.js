@@ -100,7 +100,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 	}
 	else if( jQuery(this).data("action") == "confirmAddSKU" ){
 		
-		var action = jQuery(document).find(".add_sku").find(".add_sku_form").find("[name='action']");
+		var action = jQuery(document).find(".add_sku").find("#add_sku_form").find("[name='action']");
 		var user_id = jQuery(document).find(".add_sku").find(".add_sku_form").find("[name='user_id']");
 		var sku = jQuery(document).find(".add_sku").find(".add_sku_form").find("[name='sku']");
 
