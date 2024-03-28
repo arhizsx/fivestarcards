@@ -57,9 +57,11 @@ global $wpdb;
                         <td class="skus">
                             <?php
                                 if(count($skus) > 0){
+                                    echo "<ul>";
                                     foreach($skus as $sku){
                                         echo "<li>". $sku . "</li>";
                                     }    
+                                    echo "</ul>";
                                 }
                             ?>
                         </td>
