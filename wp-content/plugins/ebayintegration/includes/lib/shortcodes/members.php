@@ -31,7 +31,7 @@ global $wpdb;
             <H1 style="color: black;">User SKUs</H1>            
         </div>
         <div class="col-6 text-end">
-            <input class="btn mt-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target="#members_table">
+            <input class="btn mt-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target="#members_skus_table">
         </div>
     </div>
     <div class="table-responsive">    
