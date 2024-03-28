@@ -104,8 +104,9 @@ global $wpdb;
 			</div>
                 <div class="" id="view_card_form_box">
                     <div class="modal-body py-2 px-3">
-                        <forn id="delete_order_form mb-3">
+                        <forn id="add_sku_form mb-3">
                             <input type="hidden" name="user_id" value=''/>
+                            <input type="hidden" name="action" value=''/>
                             
                             <label>Name</label>
                             <input type="text" name="user_name" disabled class="form-control mb-2"/>
@@ -135,7 +136,7 @@ global $wpdb;
                     </div>
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                        <button class="btn border btn-primary ebayintegration" data-action="confirm_add_sku">Add SKU</button>
+                        <button class="btn border btn-primary ebayintegration" data-action="confirmAddSKU">Add SKU</button>
                     </div>
                 </div>
 		</div>

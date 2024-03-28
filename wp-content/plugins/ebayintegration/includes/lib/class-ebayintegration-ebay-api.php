@@ -92,6 +92,11 @@ class Ebay_Integration_Ebay_API {
 			return $this->refreshToken();
 
 		} 
+		elseif($params["action"] == "confirmAddSKU"){
+
+			return $params;
+
+		} 
 		else {
 			return array("error"=> true, "error_message" => $params["action"] . " - Action Not Defined");
 		}

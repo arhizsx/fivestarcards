@@ -98,7 +98,55 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 		$(document).find(".add_sku").find("input[name='id']").val( parseInt($(this).data("user_id")) + 1000 );
 
 	}
+	else if( jQuery(this).data("action") == "confirmAddSKU" ){
+		var action = $(document).find(".add_sku").find(".add_sku_form").find("[name='action']");
+		var user_id = $(document).find(".add_sku").find(".add_sku_form").find("[name='user_id']");
+		var sku = $(document).find(".add_sku").find(".add_sku_form").find("[name='sku']");
 
+		jQuery.ajax({
+			method: 'get',
+			url: "/wp-json/ebayintegration/v1/ajax",
+			data: {
+				action : action,
+				user_id : user_id,
+				sku : sku,
+			},
+			success: function(resp){
+
+
+				if(resp.error != true){	
+
+					var loops = parseInt(resp["data"]);				
+					var current = 0;
+
+					for(var i=1; i <= loops; i++){						
+						if(getItems(i)){
+							current = current+1;
+							console.log("CURRENT: " + current);
+						}
+					}
+
+
+				} else {
+
+					if(resp.data == "Refresh Access Token"){
+						console.log("Do Refresh Access Token");
+					} else {
+						console.log(resp.data);
+					}
+
+				}
+
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});
+
+
+	}
+
+	
 
 });
 
