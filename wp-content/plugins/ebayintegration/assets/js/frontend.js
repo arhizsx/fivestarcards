@@ -99,6 +99,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 	}
 	else if( jQuery(this).data("action") == "confirmAddSKU" ){
+
+
 		var action = $(document).find(".add_sku").find(".add_sku_form").find("[name='action']");
 		var user_id = $(document).find(".add_sku").find(".add_sku_form").find("[name='user_id']");
 		var sku = $(document).find(".add_sku").find(".add_sku_form").find("[name='sku']");
@@ -107,9 +109,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 			method: 'get',
 			url: "/wp-json/ebayintegration/v1/ajax",
 			data: {
-				action : action,
-				user_id : user_id,
-				sku : sku,
+				action : "confirmAddSKU",
 			},
 			success: function(resp){
 
