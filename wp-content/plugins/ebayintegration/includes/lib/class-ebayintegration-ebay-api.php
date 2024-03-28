@@ -93,6 +93,8 @@ class Ebay_Integration_Ebay_API {
 
 			$skus = get_user_meta( $user_id, "sku", true );
 
+			return $skus;
+
 			if(count($skus) > 0){
 
 				if( in_array( $params["sku"], $skus ) == false ){
@@ -111,9 +113,6 @@ class Ebay_Integration_Ebay_API {
 
 
 			$skus = get_user_meta( $user_id, "sku", true );
-
-
-
 			return array("error"=> false, "skus" => $skus, "ebay" => "");
 
 		} 
