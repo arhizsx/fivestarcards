@@ -105,8 +105,8 @@ global $wpdb;
                 <div class="" id="view_card_form_box">
                     <div class="modal-body py-2 px-3">
                         <forn id="add_sku_form" class=" mb-3">
-                            <input type="text" name="user_id" value='' class="d-none"/>
-                            <input type="text" name="action" value='' class="d-none"/>
+                            <input type="hidden" name="user_id" value=''/>
+                            <input type="hidden" name="action" value=''/>
                             
                             <label>Name</label>
                             <input type="text" name="user_name" disabled class="form-control mb-2" value=''/>
