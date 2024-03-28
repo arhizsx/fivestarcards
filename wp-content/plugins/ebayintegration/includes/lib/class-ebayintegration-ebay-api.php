@@ -90,22 +90,29 @@ class Ebay_Integration_Ebay_API {
 
 			$user_id =  $params["user_id"];
 			$meta = "sku";
-			$value = array ('Kevin Romano - 9092', 'test');  
 
 			$skus = get_user_meta( $user_id, "sku", true );
 
+			if(count($skus) > 0){
 
+				if( in_array( $params["sku"], $skus ) == false ){
+					array_push($skus, $params["sku"]);
+				}
+	
+				update_user_meta( $user_id, $meta, $skus);	
 
-			if( in_array( $params["sku"], $skus ) == false ){
-				array_push($skus, $params["sku"]);
+			} else {
+
+				$value = array ( $params["sku"] );  
+				
+				update_user_meta( $user_id, $meta, $value);					
 			}
 
-			update_user_meta( $user_id, $meta, $skus);
 
 
 			$skus = get_user_meta( $user_id, "sku", true );
 
-			
+
 
 			return array("error"=> false, "skus" => $skus, "ebay" => "");
 
