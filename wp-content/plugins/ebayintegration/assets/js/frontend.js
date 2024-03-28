@@ -123,9 +123,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 				});
 				$skus = $skus + "</ul>"
 
+				console.log( jQuery(document).find(".user_row [data-user_id='" + user_id + "'") );
+
 				jQuery(document).find(".user_row [data-user_id='" + user_id + "'").find(".skus").html( $skus );
 
-				console.log( "RESTR" + jQuery(document).find(".user_row [data-user_id='" + user_id + "'").find(".skus") );
+				console.log( jQuery(document).find(".user_row [data-user_id='" + user_id + "'") );
 
 
 				jQuery(document).find(".user_row [data-user_id='" + user_id + "'").find(".ebay").html( resp.ebay.length );
