@@ -100,29 +100,29 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 	}
 	else if( jQuery(this).data("action") == "confirmAddSKU" ){
 		
-		var action = jQuery(document).find(".add_sku").find("#add_sku_form").find("[name='action']");
-		var user_id = jQuery(document).find(".add_sku").find(".add_sku_form").find("[name='user_id']");
-		var sku = jQuery(document).find(".add_sku").find(".add_sku_form").find("[name='sku']");
+		var action = jQuery(document).find(".add_sku").find("#add_sku_form").find("[name='action']").val();
+		var user_id = jQuery(document).find(".add_sku").find("#add_sku_form").find("[name='user_id']").val();
+		var sku = jQuery(document).find(".add_sku").find("#add_sku_form").find("[name='sku']").val();
 
-		console.log(action);
+		// console.log(action);
 
-		// jQuery.ajax({
-		// 	method: 'get',
-		// 	url: "/wp-json/ebayintegration/v1/ajax",
-		// 	data: {
-		// 		action : action,
-		// 		user_id : user_id,
-		// 		sku : sku,
-		// 	},
-		// 	success: function(resp){
+		jQuery.ajax({
+			method: 'get',
+			url: "/wp-json/ebayintegration/v1/ajax",
+			data: {
+				action : action,
+				user_id : user_id,
+				sku : sku,
+			},
+			success: function(resp){
 
-		// 		console.log(resp);
+				console.log(resp);
 
-		// 	},
-		// 	error: function(){
-		// 		console.log("Error in AJAX");
-		// 	}
-		// });
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});
 
 
 	}
