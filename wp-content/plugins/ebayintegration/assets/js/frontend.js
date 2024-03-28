@@ -90,6 +90,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 	}
 	else if( jQuery(this).data("action") == "addSKU" ){
 
+		console.log(jQuery(this).data("user_id"));
+
 		jQuery(document).find(".add_sku").find("[name='action']").attr( "value", "confirmAddSKU" );
 		jQuery(document).find(".add_sku").find("[name='iser_id']").attr( "value", jQuery(this).data("user_id") );
 		jQuery(document).find(".add_sku").find("[name='user_name']").attr( "value", jQuery(this).data("user_name") );
@@ -97,7 +99,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 		jQuery(document).find(".add_sku").find("[name='id']").attr( "value", parseInt( jQuery(this).data("user_id")) + 1000 );
 
 		jQuery(document).find(".add_sku").appendTo('body').modal("show");
-		console.log( jQuery(this).data("user_name") );
 
 	}
 	else if( jQuery(this).data("action") == "confirmAddSKU" ){
