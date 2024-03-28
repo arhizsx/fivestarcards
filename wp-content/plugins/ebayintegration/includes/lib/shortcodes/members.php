@@ -6,7 +6,12 @@ global $wpdb;
 ?>
 <style>
     input {padding: 3px;}
-    select {padding: 3px;}
+    select {
+        padding: 3px;
+    }
+    .ebayintegration-btn {
+        text-decoration: none; 
+    }
 </style>
 
 <div class="m-0 p-0">
