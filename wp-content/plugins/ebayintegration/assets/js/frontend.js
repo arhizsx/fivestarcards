@@ -117,6 +117,22 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 			},
 			success: function(resp){
 
+				$skus = "<ul>"
+				$.each(resp.skus, function(k, v){
+					$skus = $skus + "<li>" + v + "</li>"
+				});
+				$skus = $skus + "</ul>"
+
+				jQuery(document).find(".user_row [data-user_id='" + user_id + "'").find(".skus").html( $skus );
+
+				$ebay = "<ul>"
+				$.each(resp.ebay, function(k, v){
+					$ebay = $ebay + "<li>" + v + "</li>"
+				});
+				$ebay = $ebay + "</ul>"
+
+
+				jQuery(document).find(".user_row [data-user_id='" + user_id + "'").find(".ebay").html( $ebay );
 
 				console.log(resp);
 

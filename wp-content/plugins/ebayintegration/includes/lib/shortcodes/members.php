@@ -48,13 +48,13 @@ global $wpdb;
                         $skus = get_user_meta( $user->ID, "sku", true );
 
                 ?>
-                    <tr>
-                        <td>
+                    <tr class="user_row" data-user_id="<?php  echo $user->ID + 1000 ?>">
+                        <td class="info">
                             <strong><?php  echo $user->display_name ?></strong><br>
                             <small><?php  echo $user->user_email ?></small><br>
                             <small><?php  echo $user->ID + 1000 ?></small>
                         </td>
-                        <td>
+                        <td class="skus">
                             <?php
                                 if(count($skus) > 0){
                                     foreach($skus as $sku){
@@ -63,9 +63,9 @@ global $wpdb;
                                 }
                             ?>
                         </td>
-                        <td>
+                        <td class="ebay">
                         </td>
-                        <td class="text-end">
+                        <td class="text-end action">
                             <button class="btn border btn-primary ebayintegration-btn" 
                                 data-action='addSKU' 
                                 data-user_name='<?php  echo $user->display_name ?>' 
