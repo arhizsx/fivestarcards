@@ -94,8 +94,9 @@ class Ebay_Integration_Ebay_API {
 
 			update_user_meta( $user_id, $meta, $value);
 
+			$skus = get_user_meta( $user_id, "sku", true );
 
-			return $params;
+			return $skus;
 
 		} 
 		else {
