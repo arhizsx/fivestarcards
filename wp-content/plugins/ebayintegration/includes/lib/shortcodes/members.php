@@ -128,7 +128,7 @@ global $wpdb;
                                     " );
 
                                     foreach($skus as $sku){
-                                        echo "<option>" . $sku->sku . "</option>";
+                                        echo "<option value='" . $sku->sku . "'>" . $sku->sku . "</option>";
                                     }
                                 ?>
                             </select>
