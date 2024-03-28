@@ -48,7 +48,7 @@ global $wpdb;
                         $skus = get_user_meta( $user->ID, "sku", true );
 
                 ?>
-                    <tr class="user_row" data-user_id="<?php  echo $user->ID + 1000 ?>">
+                    <tr class="user_row" data-user_id="<?php  echo $user->ID ?>">
                         <td class="info">
                             <strong><?php  echo $user->display_name ?></strong><br>
                             <small><?php  echo $user->user_email ?></small><br>
