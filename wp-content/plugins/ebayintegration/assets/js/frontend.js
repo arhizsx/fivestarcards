@@ -123,11 +123,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 				});
 				skus = skus + "</ul>"
 
+				console.log(skus);
+
 				jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.skus").html(
 					skus
 				)
 
-				jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.skus").html(
+				jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.ebay").html(
 					resp.ebay.length
 				)
 
