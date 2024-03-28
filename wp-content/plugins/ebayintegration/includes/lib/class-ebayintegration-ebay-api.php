@@ -111,8 +111,9 @@ class Ebay_Integration_Ebay_API {
 
 			$skus = get_user_meta( $user_id, "sku", true );
 
+			$in = "";
 			foreach($skus as $sku){
-				$in = "'" . $sku . "',";
+				$in = $in . "'" . $sku . "',";
 			}
 
 			$in = rtrim($in, ',');
