@@ -87,6 +87,7 @@ class Ebay_Integration_Ebay_API {
 
 		} 
 		elseif($params["action"] == "confirmAddSKU"){
+			global $wpdb;
 
 			$user_id =  $params["user_id"];
 			$meta = "sku";
@@ -104,14 +105,18 @@ class Ebay_Integration_Ebay_API {
 			} else {
 
 				$value = array ( $params["sku"] );  
-
 				add_user_meta( $user_id, $meta, $value);					
 			}
 
 
-
 			$skus = get_user_meta( $user_id, "sku", true );
-			return array("error"=> false, "skus" => $skus, "ebay" => "");
+
+			
+			$ebay = $wpdb->get_results ( "
+				SELECT * FROM ebay WHERE sku='" . $params["sku"] ."' ORDER BY sku ASC
+			" );
+
+			return array("error"=> false, "skus" => $skus, "ebay" => $ebay);
 
 		} 
 		else {
