@@ -128,6 +128,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 					skus
 				)
 
+				jQuery(document).find(".add_sku").modal("hide");
+
 			},
 			error: function(){
 				// console.log("Error in AJAX");
