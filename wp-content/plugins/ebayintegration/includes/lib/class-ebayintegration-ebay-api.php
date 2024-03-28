@@ -117,7 +117,7 @@ class Ebay_Integration_Ebay_API {
 
 			$in = rtrim($in, ',');
 
-			return $skus;
+			return $in;
 
 
 			$ebay = $wpdb->get_results ( "
