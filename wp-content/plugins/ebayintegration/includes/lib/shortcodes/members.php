@@ -30,7 +30,7 @@ global $wpdb;
         </div>
     </div>
     <div class="table-responsive">    
-        <table class='table 5star_my_orders table-bordered table-striped' id="members_table">
+        <table class='table table-bordered table-striped' id="members_skus_table">
             <thead>
                 <tr>
                     <th>Customer</th>
