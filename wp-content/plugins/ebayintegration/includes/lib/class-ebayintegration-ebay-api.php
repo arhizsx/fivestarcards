@@ -104,8 +104,8 @@ class Ebay_Integration_Ebay_API {
 			} else {
 
 				$value = array ( $params["sku"] );  
-				
-				update_user_meta( $user_id, $meta, $value);					
+
+				add_user_meta( $user_id, $meta, $value);					
 			}
 
 
