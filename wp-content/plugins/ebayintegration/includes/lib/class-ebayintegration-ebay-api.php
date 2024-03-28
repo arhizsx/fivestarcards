@@ -94,16 +94,20 @@ class Ebay_Integration_Ebay_API {
 
 			$skus = get_user_meta( $user_id, "sku", true );
 
+
+
 			if( in_array( $params["sku"], $skus ) == false ){
 				array_push($skus, $params["sku"]);
 			}
 
 			update_user_meta( $user_id, $meta, $skus);
 
-			
+
 			$skus = get_user_meta( $user_id, "sku", true );
 
-			return $skus;
+			
+
+			return array("error"=> false, "skus" => $skus, "ebay" => "");
 
 		} 
 		else {
