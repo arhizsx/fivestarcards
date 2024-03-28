@@ -108,7 +108,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 		// console.log(action);
 
 		jQuery.ajax({
-			method: 'POST',
+			method: 'get',
 			url: "/wp-json/ebayintegration/v1/ajax",
 			data: {
 				action : action,
