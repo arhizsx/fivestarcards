@@ -59,7 +59,7 @@ global $wpdb;
                                 if(count($skus) > 0){
                                     echo "<ul>";
                                     foreach($skus as $sku){
-                                        echo "<li>". $sku . " <a class='ebayintegration-btn' action='removeSKU' data-sku='" . $sku . "'>X</a></li>";
+                                        echo "<li>". $sku . " <a href='#' class='ebayintegration-btn' action='removeSKU' data-sku='" . $sku . "'> X </a></li>";
                                     }    
                                     echo "</ul>";
 
