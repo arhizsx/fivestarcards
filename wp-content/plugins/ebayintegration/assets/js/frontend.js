@@ -123,9 +123,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 				});
 				$skus = $skus + "</ul>"
 
-				console.log( jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "']").html() );
-
-				jQuery(document).find(".user_row [data-user_id='" + user_id + "'").find(".skus").html( $skus );
+				jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.skus").html(
+					$skus
+				)
 
 				// console.log( jQuery(document).find(".user_row [data-user_id='" + user_id + "'") );
 
