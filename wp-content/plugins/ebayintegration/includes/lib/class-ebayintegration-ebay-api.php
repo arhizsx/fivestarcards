@@ -111,9 +111,14 @@ class Ebay_Integration_Ebay_API {
 
 			$skus = get_user_meta( $user_id, "sku", true );
 
-			
+			foreach($skus as $sku){
+				$in = "' . $sku .',";
+			}
+
+			$in = rtrim($in, ',');
+
 			$ebay = $wpdb->get_results ( "
-				SELECT * FROM ebay WHERE sku='" . $params["sku"] ."' ORDER BY sku ASC
+				SELECT * FROM ebay WHERE sku IN (" . $in . ") ORDER BY sku ASC
 			" );
 
 			return array("error"=> false, "skus" => $skus, "ebay" => $ebay);
