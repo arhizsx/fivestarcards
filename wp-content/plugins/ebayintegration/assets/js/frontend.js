@@ -119,11 +119,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 				var skus = "<ul>"
 				$.each(resp.skus, function(k, v){
-					skus = skus + "<li>" + v + "</li>"
+					skus = skus + "<li>" + v + " <a class='ebayintegration-btn' action='removeSKU' data-sku='" + sku + "'>X</a></li>"
 				});
 				skus = skus + "</ul>"
 
-				console.log(skus);
 
 				jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.skus").html(
 					skus
