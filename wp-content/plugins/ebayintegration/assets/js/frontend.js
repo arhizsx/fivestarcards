@@ -127,16 +127,16 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 				jQuery(document).find(".user_row [data-user_id='" + user_id + "'").find(".skus").html( $skus );
 
-				console.log( jQuery(document).find(".user_row [data-user_id='" + user_id + "'") );
+				// console.log( jQuery(document).find(".user_row [data-user_id='" + user_id + "'") );
 
 
 				jQuery(document).find(".user_row [data-user_id='" + user_id + "'").find(".ebay").html( resp.ebay.length );
 
-				console.log(resp);
+				// console.log(resp);
 
 			},
 			error: function(){
-				console.log("Error in AJAX");
+				// console.log("Error in AJAX");
 			}
 		});
 
