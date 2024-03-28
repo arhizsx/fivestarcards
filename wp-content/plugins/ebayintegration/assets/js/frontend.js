@@ -90,13 +90,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 	}
 	else if( jQuery(this).data("action") == "addSKU" ){
 
-		jQuery(document).find(".add_sku").appendTo('body').modal("show");
 		jQuery(document).find(".add_sku").find("input[name='iser_id']").val( jQuery(this).data("user_id") );
-
 		jQuery(document).find(".add_sku").find("input[name='user_name']").val( jQuery(this).data("user_name") );
 		jQuery(document).find(".add_sku").find("input[name='user_email']").val( jQuery(this).data("user_email") );
 		jQuery(document).find(".add_sku").find("input[name='id']").val( parseInt( jQuery(this).data("user_id")) + 1000 );
 
+		jQuery(document).find(".add_sku").appendTo('body').modal("show");
 		console.log( jQuery(this).data("user_name") );
 
 	}

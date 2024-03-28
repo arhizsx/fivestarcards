@@ -109,13 +109,13 @@ global $wpdb;
                             <input type="hidden" name="action" value=''/>
                             
                             <label>Name</label>
-                            <input type="text" name="user_name" disabled class="form-control mb-2"/>
+                            <input type="text" name="user_name" disabled class="form-control mb-2" value=''/>
                             
                             <label>Email</label>
-                            <input type="text" name="user_email" disabled  class="form-control mb-2"/>
+                            <input type="text" name="user_email" disabled  class="form-control mb-2" value=''/>
                             
                             <label>User ID</label>
-                            <input type="text" name="id" disabled  class="form-control mb-2"/>
+                            <input type="text" name="id" disabled  class="form-control mb-2" value=''/>
                             
                             <label>eBay SKU</label>
                             <select class="form-control mb-2" name="sku">
