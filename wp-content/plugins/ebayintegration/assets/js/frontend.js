@@ -97,6 +97,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 		jQuery(document).find(".add_sku").find("input[name='user_email']").val( jQuery(this).data("user_email") );
 		jQuery(document).find(".add_sku").find("input[name='id']").val( parseInt( jQuery(this).data("user_id")) + 1000 );
 
+		console.log( jQuery(this).data("user_name") );
+
 	}
 	else if( jQuery(this).data("action") == "confirmAddSKU" ){
 		
