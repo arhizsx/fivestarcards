@@ -99,8 +99,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 	}
 	else if( jQuery(this).data("action") == "confirmAddSKU" ){
-
-
+		
 		var action = $(document).find(".add_sku").find(".add_sku_form").find("[name='action']");
 		var user_id = $(document).find(".add_sku").find(".add_sku_form").find("[name='user_id']");
 		var sku = $(document).find(".add_sku").find(".add_sku_form").find("[name='sku']");
@@ -109,33 +108,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 			method: 'get',
 			url: "/wp-json/ebayintegration/v1/ajax",
 			data: {
-				action : "confirmAddSKU",
+				action : action,
+				user_id : user_id,
+				sku : sku,
 			},
 			success: function(resp){
 
-
-				if(resp.error != true){	
-
-					var loops = parseInt(resp["data"]);				
-					var current = 0;
-
-					for(var i=1; i <= loops; i++){						
-						if(getItems(i)){
-							current = current+1;
-							console.log("CURRENT: " + current);
-						}
-					}
-
-
-				} else {
-
-					if(resp.data == "Refresh Access Token"){
-						console.log("Do Refresh Access Token");
-					} else {
-						console.log(resp.data);
-					}
-
-				}
+				console.log(resp);
 
 			},
 			error: function(){
