@@ -111,18 +111,18 @@ class Ebay_Integration_Ebay_API {
 
 			$skus = get_user_meta( $user_id, "sku", true );
 
-			$in = "";
-			foreach($skus as $sku){
-				$in = $in . "'" . $sku . "',";
-			}
+			// $in = "";
+			// foreach($skus as $sku){
+			// 	$in = $in . "'" . $sku . "',";
+			// }
 
-			$in = rtrim($in, ',');
+			// $in = rtrim($in, ',');
 
-			$ebay = $wpdb->get_results ( "
-				SELECT * FROM ebay WHERE sku IN (" . $in . ") ORDER BY sku ASC
-			" );
+			// $ebay = $wpdb->get_results ( "
+			// 	SELECT * FROM ebay WHERE sku IN (" . $in . ") ORDER BY sku ASC
+			// " );
 
-			return array("error"=> false, "skus" => $skus, "ebay" => $ebay);
+			return array("error"=> false, "skus" => $skus );
 
 		} 
 		else {

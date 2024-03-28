@@ -128,12 +128,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 					skus
 				)
 
-				jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.ebay").html(
-					resp.ebay.length
-				)
-
-				// console.log(resp);
-
 			},
 			error: function(){
 				// console.log("Error in AJAX");

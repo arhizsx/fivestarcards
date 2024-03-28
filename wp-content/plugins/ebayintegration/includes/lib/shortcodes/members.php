@@ -40,7 +40,6 @@ global $wpdb;
                 <tr>
                     <th>Customer</th>
                     <th>SKUs</th>
-                    <th>eBay Items</th>
                     <th class='text-end'>Action</th>
                 </tr>
             </thead>
@@ -70,8 +69,6 @@ global $wpdb;
 
                                 }
                             ?>
-                        </td>
-                        <td class="ebay">
                         </td>
                         <td class="text-end action">
                             <button class="btn border btn-primary ebayintegration-btn" 
