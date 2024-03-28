@@ -90,6 +90,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 	}
 	else if( jQuery(this).data("action") == "addSKU" ){
 
+		jQuery(document).find(".add_sku").find("[name='action']").attr( "value", "confirmAddSKU" );
 		jQuery(document).find(".add_sku").find("[name='iser_id']").attr( "value", jQuery(this).data("user_id") );
 		jQuery(document).find(".add_sku").find("[name='user_name']").attr( "value", jQuery(this).data("user_name") );
 		jQuery(document).find(".add_sku").find("[name='user_email']").attr( "value", jQuery(this).data("user_email") );
