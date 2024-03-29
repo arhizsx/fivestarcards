@@ -248,7 +248,7 @@ function itemtemplate(data){
 		template = template + "<td>" + v.SKU + "</td>";
 		template = template + "<td>" + v.ListingType + "</td>";
 		template = template + "<td>" + v.ListingDuration + "</td>";
-		template = template + "<td>" + v.CurrentPrice + "</td>";
+		template = template + "<td>" + v.SellingStatus.CurrentPrice + "</td>";
 		template = template + "</tr>";
 	});
 
