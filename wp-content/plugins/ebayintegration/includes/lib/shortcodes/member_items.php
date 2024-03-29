@@ -48,7 +48,7 @@ $results = $wpdb->get_results("
     }
 </style>
 
-<div class="m-0 p-0">
+<div class="mt-4 p-0">
     <div class="row">
         <div class="col-12">
             <H1 style="color: black;">eBay Items</H1>            
