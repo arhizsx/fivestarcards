@@ -161,7 +161,7 @@ function getItemPages(){
 function getItemsRoutine(){
 
 	var token = refreshAccessToken();
-	var items = [];	
+	var items = [];
 
 	$.when(token).done(function(response){
 
@@ -191,9 +191,8 @@ function getItemsRoutine(){
 
 				}
 
-				$.when( ...page_items ).done(  function( all_items ){
-
-					console.log(all_items);
+				$.when( ...page_items ).then( function( ){
+					console.log(items);
 				});
 
 			});
