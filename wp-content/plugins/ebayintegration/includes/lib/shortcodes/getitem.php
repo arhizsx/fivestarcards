@@ -3,9 +3,9 @@
     <button class="ebayintegration-btn" data-action="refreshToken">Reconnect to eBay</button>
 </div>		
 <div class="ebayintegration-items_box">
-    <div class="row mt-3"> 
-        </div class="col-6">
-            <input class="btn mb-3 px-2 search_box" style="text-align: left;" placeholder="Search SKU" type="text" data-target="#skus_table">
+    <div class="row">
+        <div class="col-6">
+            <H1 style="color: black;">Active SKUs</H1>            
             <table class='table table-border table-striped' id="skus_table"> 
                 <thead>
                     <tr>
@@ -17,20 +17,8 @@
                 </tbody>
             </table>
         </div>
-        </div class="col-6">
-            <input class="btn mb-3 px-2 search_box" style="text-align: left;" placeholder="Search SKU" type="text" data-target="#ebay_items_table">
-            <table class='table table-border table-striped' id="ebay_items_table"> 
-                <thead>
-                    <tr>
-                        <th>eBay Items</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
+        <div class="col-6 text-end">
+            <input class="btn mt-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target="#members_skus_table">
         </div>
     </div>
-
-
 </div>		
