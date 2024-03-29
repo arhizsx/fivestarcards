@@ -34,8 +34,7 @@ $results = $wpdb->get_results("
         font-size: .8em;
     }
     .ebay-img {
-        min-height: 350px;
-        height: 350px;
+        min-height: 300px;
     }
 </style>
 
