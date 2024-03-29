@@ -217,7 +217,7 @@ function getItemsRoutine(){
 
 					});
 
-					
+
 					jQuery(document).find(".ebayintegration-items_box").append(
 						"<table class='table table-sm table-bordered table-striped'>"
 					);
@@ -247,13 +247,10 @@ function SKUtemplate(data){
 
 	var template = '';
 
-	template = template + "<tr>";
 
 	$.each(data,function(k, v ){
-		template = template + "<td>" + v + "</td>";
+		template = template + "<tr><td>" + v + "</td></tr>";
 	});
-
-	template = template + "</tr>";
 
 	return template;
 
