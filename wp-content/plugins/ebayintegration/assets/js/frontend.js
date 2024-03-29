@@ -44,7 +44,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 	}
 
-
 	// /////////////////// //
 	//  User SKUs Button   //
 	// /////////////////// //
@@ -101,6 +100,17 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 	}	
 
+	else if( jQuery(this).data("action") == "removeSKU" ){
+
+
+
+	}
+	else {
+
+		console.log("Action Not Set: " + jQuery(this).data("action") );
+
+	}
+	
 });
 
 
