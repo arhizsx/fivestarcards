@@ -33,6 +33,9 @@ $results = $wpdb->get_results("
     .sku {
         font-size: .8em;
     }
+    .ebay-img {
+        min-height: 350px;
+    }
 </style>
 
 <div class="m-0 p-0">
@@ -48,8 +51,8 @@ $results = $wpdb->get_results("
                     $data = json_decode($result->data);
 
 
-                    echo "<div class='col-3 border mb-3' data-item_id='" . $data->ItemID . "' style='min-height: 350px;'>";
-                        echo "<img class='ebay-img' src='' style='min-height: 280px;' />";
+                    echo "<div class='col-3 border mb-3' data-item_id='" . $data->ItemID . "'";
+                        echo "<img class='ebay-img' src='' />";
                         echo "<div class='title'>" . $data->Title . "</div>";
                         echo "<div class='sku'>" . $data->SKU . "</div>";
                     echo "</div>";
