@@ -225,8 +225,8 @@ function getItemsRoutine(){
 					jQuery(document).find(".ebayintegration-items_box").append( SKUtemplate(SKU) );
 
 					jQuery(document).find(".ebayintegration-items_box").append(
-						"</div></div>" + 
-						"</table>"
+						"</table>" +
+						"</div></div>"
 					);
 
 					
