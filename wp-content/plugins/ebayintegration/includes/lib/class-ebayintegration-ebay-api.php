@@ -253,7 +253,9 @@ class Ebay_Integration_Ebay_API {
 	}				
 
 	public function getItems($page_number = null,  $per_page = null){
-		
+
+		global $wpdb;     
+
 		$apiURL = "https://api.ebay.com/ws/api.dll";
 		
 		if($page_number == null){
@@ -327,9 +329,19 @@ class Ebay_Integration_Ebay_API {
 	
 			} else {
 
+				foreach($json["ActiveList"]["ItemArray"]["Item"] as $item){
+
+					$wpdb->insert("ebay", array(
+						"item_id" => $item["ItemID"],
+						"sku" => $item["SKU"],
+						"data" => json_encode($item),
+						"status" => "active"
+					));
+				}
+		
 				
 
-				return array("error" => false, "page" => $page_number, "data"=> $this->processItems($json["ActiveList"]["ItemArray"]), "items" => $json["ActiveList"]["ItemArray"]["Item"] );
+				return array("error" => false, "page" => $page_number, "data"=> $json["ActiveList"]["ItemArray"], "items" => $json["ActiveList"]["ItemArray"]["Item"] );
 				
 			}
 	
@@ -339,24 +351,6 @@ class Ebay_Integration_Ebay_API {
 		
 	}
 		
-
-	public function processItems($items){
-		
-		global $wpdb;     
-
-		foreach($items["Item"] as $item){
-
-			return $wpdb->replace("ebay", array(
-				"item_id" => $item["ItemID"],
-				"sku" => $item["SKU"],
-				"data" => json_encode($item),
-				"status" => "active"
-			));
-		}
-
-		return "Processed Items " . $items;
-
-	}
 
 
 	public function getItemInfo($item_id){
