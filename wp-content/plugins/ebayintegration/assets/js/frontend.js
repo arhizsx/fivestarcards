@@ -116,7 +116,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			},
 			success: function(resp){	
 
-				console.log(resp);
+				// console.log(resp);
 
 				var skus = "<ul>"
 				$.each(resp.skus, function(k, v){
@@ -124,7 +124,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				});
 				skus = skus + "</ul>"
 
-				console.log(jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.skus"));
+				console.log(jQuery(document).find("#members_skus_table tbody tr.user_row"));
 
 				jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.skus").html(
 					skus
