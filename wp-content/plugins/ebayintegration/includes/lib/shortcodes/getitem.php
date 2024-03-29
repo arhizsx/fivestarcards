@@ -18,7 +18,17 @@
             </table>
         </div>
         </div class="col-xl-6 col-lg-6">
-        &nbsp;
+            <input class="btn mb-3 px-2 search_box" style="text-align: left;" placeholder="Search SKU" type="text" data-target="#ebay_items_table">
+            <table class='table table-border table-striped' id="ebay_items_table"> 
+                <thead>
+                    <tr>
+                        <th>eBay Items</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
         </div>
     </div>
 
