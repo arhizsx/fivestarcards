@@ -40,7 +40,6 @@ $results = $wpdb->get_results("
 
             <?php 
                 foreach($results as $result){
-                    echo $result;
                     echo "<hr>";
                 }
             ?>
