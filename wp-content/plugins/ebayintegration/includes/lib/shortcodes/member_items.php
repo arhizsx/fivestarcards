@@ -36,6 +36,9 @@ $results = $wpdb->get_results("
     .ebay-img {
         min-height: 300px;
     }
+    .ebay-img-box {
+        text-align: center;
+    }
 </style>
 
 <div class="m-0 p-0">
@@ -52,7 +55,9 @@ $results = $wpdb->get_results("
 
 
                     echo "<div class='col-3 border mb-3' data-item_id='" . $data->ItemID . "'>";
-                        echo "<img class='ebay-img' src='https://34.72.7.108/wp-content/uploads/2023/09/5-star-cards-logo-1.png'>";
+                        echo "<div class='ebay-img-box'>";
+                        echo "<img class='ebay-img' src='/wp-content/uploads/2023/09/5-star-cards-logo-1.png'>";
+                        echo "</div>";
                         echo "<div class='title'>" . $data->Title . "</div>";
                         echo "<div class='sku'>" . $data->SKU . "</div>";
                     echo "</div>";
