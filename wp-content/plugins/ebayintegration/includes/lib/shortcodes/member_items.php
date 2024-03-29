@@ -97,7 +97,7 @@ $(document).ready(function(){
 
             $.each(items, function(k, v){
 
-                console.log( v.attr("data-item_id") );
+                console.log( $(v).attr("data-item_id") );
 
                 var item_id = v.attr("data-item_id");
 
