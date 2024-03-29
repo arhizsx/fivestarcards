@@ -107,6 +107,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		console.log("Removing SKU: " + jQuery(this).data("sku") + " from user_id: " + jQuery(this).data("user_id"));
 
 		var user_id = jQuery(this).data("user_id");
+		var sku = jQuery(this).data("sku");
 
 		jQuery.ajax({
 			method: 'get',
@@ -114,7 +115,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			data: {
 				action : jQuery(this).data("action"),
 				user_id : user_id,
-				sku : jQuery(this).data("sku"),
+				sku : sku,
 			},
 			success: function(resp){	
 
