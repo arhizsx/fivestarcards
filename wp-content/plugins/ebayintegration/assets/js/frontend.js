@@ -211,24 +211,13 @@ function getItems(page){
 			page_number: page
 		},
 		success: function(resp){
-
-			if(resp.error != true){
-
-				defObject.resolve(resp);    //resolve promise and pass the response.
-				console.log("Items on " + page + " processed");
-
-			} else {				
-
-					console.log(resp.data);
-
-			}
-
+			defObject.resolve(resp);    //resolve promise and pass the response.
 		},
 		error: function(){
 			console.log("Error in AJAX");
 		}
 	});
-	
+
 	return defObject.promise();
 
 }
