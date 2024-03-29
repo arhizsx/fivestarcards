@@ -43,11 +43,9 @@ $results = $wpdb->get_results("
 
 
                     echo "<div class='col-3 border mb-3' data-item_id='" . $data->ItemID . "' style='min-height: 350px;'>";
-                    echo "<img class='ebay-img' src='' style='min-height: 280px;' />";
-                    echo "<div class='title'>";
-                        echo  $data->Title ;
-                        // print_r($result->data["ItemID"]);
-                        echo "</div>";
+                        echo "<img class='ebay-img' src='' style='min-height: 280px;' />";
+                        echo "<div class='title'>" . $data->Title . "</div>";
+                        echo "<div class='sku'>" . $data->SKU . "</div>";
                     echo "</div>";
                 }
             ?>
