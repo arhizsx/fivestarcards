@@ -158,7 +158,7 @@ function refreshAccessToken(){
 		},
 		success: function(resp){
 
-			defObject.resolve(response);    //resolve promise and pass the response.
+			defObject.resolve(resp);    //resolve promise and pass the response.
 
 		},
 		error: function(){
