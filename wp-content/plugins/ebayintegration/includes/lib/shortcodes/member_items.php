@@ -82,7 +82,11 @@ $results = $wpdb->get_results("
 
     var items;
 
-    $(document).ready(function(){
+$(document).ready(function(){
+
+    var token = refreshAccessToken();
+
+    $.when(token).done(function(response){
 
         items = $(document).find(".ebay-item");
 
@@ -91,23 +95,23 @@ $results = $wpdb->get_results("
             var item_id = v.ItemID;
 
             jQuery.ajax({
-			method: 'get',
-			url: "/wp-json/ebayintegration/v1/ajax",
-			data: {
-				action : "getItemInfo",
-				item_id : item_id,
-			},
-			success: function(resp){
-                console.log(resp);
-			},
-			error: function(){
-			}
-		});
-
+                method: 'get',
+                url: "/wp-json/ebayintegration/v1/ajax",
+                data: {
+                    action : "getItemInfo",
+                    item_id : item_id,
+                },
+                success: function(resp){
+                    console.log(resp.);
+                },
+                error: function(){
+                }
+            });
 
         });
 
-        console.log(items);
+    });
+
 
 });
 </script>
