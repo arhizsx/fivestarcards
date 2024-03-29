@@ -217,7 +217,15 @@ function getItemsRoutine(){
 
 					});
 
+					
+					jQuery(document).find(".ebayintegration-items_box").append(
+						"<table class='table table-sm table-bordered table-striped'>"
+					);
 					jQuery(document).find(".ebayintegration-items_box").append( SKUtemplate(SKU) );
+
+					jQuery(document).find(".ebayintegration-items_box").append(
+						"</table>"
+					);
 
 					
 
@@ -239,10 +247,6 @@ function SKUtemplate(data){
 
 	var template = '';
 
-	template = template + "<div class='row mt-3'><div class='col-12'>";
-	template = template + "<H3 style='color: black;'>Active SKUs</H3>";
-
-	template = template + "<table class='table table-sm table-border table-striped'>";
 	template = template + "<tr>";
 
 	$.each(data,function(k, v ){
@@ -250,8 +254,6 @@ function SKUtemplate(data){
 	});
 
 	template = template + "</tr>";
-	template = template + "</table>";
-	template = template + "</div></div>";
 
 	return template;
 
