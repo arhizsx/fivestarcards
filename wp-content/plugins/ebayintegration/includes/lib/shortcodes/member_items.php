@@ -77,3 +77,9 @@ $results = $wpdb->get_results("
 
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        alert("Get Images");
+    });
+</script>
