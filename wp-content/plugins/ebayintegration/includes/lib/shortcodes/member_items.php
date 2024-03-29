@@ -27,6 +27,12 @@ $results = $wpdb->get_results("
     .ebayintegration-btn {
         text-decoration: none; 
     }
+    .title {
+        font-size: 1em;
+    }
+    .sku {
+        font-size: .8em;
+    }
 </style>
 
 <div class="m-0 p-0">
