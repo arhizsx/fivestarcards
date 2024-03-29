@@ -78,6 +78,8 @@ class Ebay_Integration_Ebay_API {
 		} 
 		elseif($params["action"] == "getItemInfo"){
 
+			return "TEST " . $params["item_id"];
+
 			return $this->getItemInfo($params["item_id"]);
 
 		} 
