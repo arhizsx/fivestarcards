@@ -46,18 +46,18 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 						var loops = parseInt(resp["data"]);				
 						var processed = [];
 						var items;
-						
+
 						for(var i=1; i <= loops; i++){						
 							items = getItems(i);
 							processed.push(  );
 							console.log(i);
 						}
 
-						$.when(...processed).done(function(all_items){
+						// $.when(...processed).done(function(all_items){
 
-							console.log(all_items);
+						// 	console.log(all_items);
 
-						});
+						// });
 
 
 					} else {	
