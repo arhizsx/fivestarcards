@@ -10,84 +10,72 @@ jQuery( document ).ready(
 	}
 );
 
+
+
+// /////////////////// //
+//   Button Handlers   //
+// /////////////////// //
+
 jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
+	// /////////////////// //
+	//  eBay API buttons   //
+	// /////////////////// //
+
 	if( jQuery(this).data("action") == "getItems" ){
-		
-		jQuery(document).find(".ebayintegration-items_box").html("");
 
-		jQuery.ajax({
-			method: 'get',
-			url: "/wp-json/ebayintegration/v1/ajax",
-			data: { 
-				action: "getItemPages"
-			},
-			success: function(resp){
+		if( refreshAccessToken() == "Reconnected to eBay" ){
 
+			jQuery(document).find(".ebayintegration-items_box").html("");
 
-				if(resp.error != true){	
-
-					var loops = parseInt(resp["data"]);				
-					var current = 0;
-
-					for(var i=1; i <= loops; i++){						
-						if(getItems(i)){
-							current = current+1;
-							console.log("CURRENT: " + current);
-						}
-					}
-
-
-				} else {
-
-					if(resp.data == "Refresh Access Token"){
-						console.log("Do Refresh Access Token");
-					} else {
-						console.log(resp.data);
-					}
-
-				}
-
-			},
-			error: function(){
-				console.log("Error in AJAX");
-			}
-		});
-
+			jQuery.ajax({
+				method: 'get',
+				url: "/wp-json/ebayintegration/v1/ajax",
+				data: { 
+					action: "getItemPages"
+				},
+				success: function(resp){
+					if(resp.error != true){	
 	
+						var loops = parseInt(resp["data"]);				
+						var current = 0;
+	
+						for(var i=1; i <= loops; i++){						
+							if(getItems(i)){
+								current = current+1;
+								console.log("CURRENT: " + current);
+							}
+						}
+
+					} else {	
+						console.log(resp.data);	
+					}
+				},
+				error: function(){
+					console.log("Error in AJAX");
+				}
+			});
+		} else {
+			alert("Press Reconnect to eBay Button");
+		}
+			
 	} 
+
 	else if( jQuery(this).data("action") == "refreshToken" ){
 
-		jQuery.ajax({
-			method: 'get',
-			url: "/wp-json/ebayintegration/v1/ajax",
-			data: { 
-				action: "refreshToken"
-			},
-			success: function(resp){
-
-
-				if(resp.error != true){	
-
-					alert("Reconnected to eBay");
-
-				} else {
-
-					if(resp.data == "Refresh Access Token"){
-						console.log("Do Refresh Access Token");
-					} else {
-						console.log(resp.data);
-					}
-
-				}
-
-			},
-			error: function(){
-				console.log("Error in AJAX");
-			}
-		});
+		if( refreshAccessToken() == "Reconnected to eBay" ){
+			alert("New Access Token Generated");
+		} else {
+			alert("Failed Getting Access Token");
+		}
 
 	}
+
+
+	// /////////////////// //
+	//  User SKUs Button   //
+	// /////////////////// //
+
 	else if( jQuery(this).data("action") == "addSKU" ){
 
 		jQuery(document).find(".add_sku").find("[name='action']").attr( "value", "confirmAddSKU" );
@@ -99,6 +87,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 		jQuery(document).find(".add_sku").appendTo('body').modal("show");
 
 	}
+
 	else if( jQuery(this).data("action") == "confirmAddSKU" ){
 		
 		var action = jQuery(document).find(".add_sku").find("#add_sku_form").find("[name='action']").val();
@@ -137,11 +126,40 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 		});
 
 
-	}
-
-	
+	}	
 
 });
+
+
+
+
+// ////////////////////// //
+//   eBay API functions   //
+// ////////////////////// //
+
+function refreshAccessToken(){
+
+	jQuery.ajax({
+		method: 'get',
+		url: "/wp-json/ebayintegration/v1/ajax",
+		data: { 
+			action: "refreshToken"
+		},
+		success: function(resp){
+
+			if(resp.error != true){	
+				return "Reconnected to eBay";
+			} else {
+				return "Failed Refreshing Access Token"
+			}
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
+
+}
 
 function eBayItemTemplate(data){
 
@@ -227,7 +245,6 @@ function eBayItemTemplate(data){
 		
 }
 
-
 function getItems(page){
 
 	jQuery.ajax({
@@ -244,10 +261,11 @@ function getItems(page){
 				console.log("Items on " + page + " processed");
 				return true;
 
-			} else {
+			} else {				
 
 				if(resp.data == "Refresh Access Token"){
 					console.log("Do Refresh Access Token");
+					
 				} else {
 					console.log(resp.data);
 				}
@@ -263,7 +281,6 @@ function getItems(page){
 	});
 
 }
-
 
 function getItemInfo(item_id){
 

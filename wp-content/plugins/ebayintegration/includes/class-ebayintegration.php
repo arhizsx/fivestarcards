@@ -124,7 +124,7 @@ class Ebay_Integration {
 	 * @param string $version Plugin version.
 	 */
 	public function __construct( $file = '', $version = '1.0.0' ) {
-		$this->_version = '1.0.134';
+		$this->_version = '1.0.135';
 		$this->_token   = 'Ebay_Integration';
 
 		// Load plugin environment variables.
