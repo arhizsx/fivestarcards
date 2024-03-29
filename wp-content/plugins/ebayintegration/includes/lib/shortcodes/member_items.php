@@ -79,7 +79,16 @@ $results = $wpdb->get_results("
 </div>
 
 <script>
+
+    var items;
+
     $(document).ready(function(){
-        alert("Get Images");
-    });
+
+        
+
+        items = $(document).find(".ebay-item");
+
+        console.log(items);
+
+});
 </script>
