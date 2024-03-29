@@ -26,9 +26,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 		var token = refreshAccessToken();
 
+		console.log(token);
 
-
-		if( token.type == "User Access Token" ){
+		if( token == "User Access Token" ){
 
 			jQuery(document).find(".ebayintegration-items_box").html("");
 
@@ -59,9 +59,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 					console.log("Error in AJAX");
 				}
 			});
-		} else {
-			alert("Press Reconnect to eBay Button");
-		}
+		} 
+		// else {
+		// 	alert("Press Reconnect to eBay Button");
+		// }
 			
 	} 
 
