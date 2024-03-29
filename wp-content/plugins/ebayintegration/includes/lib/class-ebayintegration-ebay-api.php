@@ -30,7 +30,7 @@ class Ebay_Integration_Ebay_API {
 		$this->refresh_token = get_option("wpt_refresh_token");
 		$this->authorization = get_option("wpt_authorization");
 		$this->content_type = "application/x-www-form-urlencoded";
-		$this->per_page = 50;
+		$this->per_page = 200;
 
         add_action("rest_api_init", array($this, 'create_ebay_enpoint'));
 
