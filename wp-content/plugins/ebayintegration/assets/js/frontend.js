@@ -196,6 +196,13 @@ function getItemsRoutine(){
 				}
 
 				$.when( ...page_items ).then( function( ){
+
+					$.each( items, function( k, v ){
+
+						jQuery(document).find(".ebayintegration-items_box").append( eBayItemTemplate(v) );
+
+					});
+
 					console.log(items);
 				});
 
