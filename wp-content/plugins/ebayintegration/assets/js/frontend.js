@@ -30,7 +30,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 		$.when(token).done(function(response){
 
 
-			var tkn = JSON.parse(response);
+			var tkn = response;
 
 			console.log(tkn);
 
