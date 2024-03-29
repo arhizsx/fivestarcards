@@ -44,21 +44,14 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 					if(resp.error != true){	
 	
 						var loops = parseInt(resp["data"]);				
-						var processed = [];
-						var items;
-
+						var current = 0;
+	
 						for(var i=1; i <= loops; i++){						
-							items = getItems(i);
-							processed.push(  );
-							console.log(i);
+							if(getItems(i)){
+								current = current+1;
+								console.log("CURRENT: " + current);
+							}
 						}
-
-						// $.when(...processed).done(function(all_items){
-
-						// 	console.log(all_items);
-
-						// });
-
 
 					} else {	
 						console.log(resp.data);	
@@ -202,28 +195,6 @@ function getItemPages(){
 
 }
 
-function getItems(page){
-
-	// var defObject = $.Deferred();  // create a deferred object.
-
-	jQuery.ajax({
-		method: 'get',
-		url: "/wp-json/ebayintegration/v1/ajax",
-		data: { 
-			action: "getItems",
-			page_number: page
-		},
-		success: function(resp){
-			// defObject.resolve(resp);    //resolve promise and pass the response.
-		},
-		error: function(){
-			console.log("Error in AJAX");
-		}
-	});
-
-	// return defObject.promise();
-
-}
 
 function eBayItemTemplate(data){
 
@@ -309,6 +280,42 @@ function eBayItemTemplate(data){
 		
 }
 
+function getItems(page){
+
+	jQuery.ajax({
+		method: 'get',
+		url: "/wp-json/ebayintegration/v1/ajax",
+		data: { 
+			action: "getItems",
+			page_number: page
+		},
+		success: function(resp){
+
+			if(resp.error != true){
+
+				console.log("Items on " + page + " processed");
+				return true;
+
+			} else {				
+
+				if(resp.data == "Refresh Access Token"){
+					console.log("Do Refresh Access Token");
+					
+				} else {
+					console.log(resp.data);
+				}
+
+				return false;
+
+			}
+
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
+}
 
 function getItemInfo(item_id){
 
