@@ -35,7 +35,7 @@ $results = $wpdb->get_results("
     }
     .ebay-img {
         min-height: 350px;
-        min-width: 200px;
+        max-width: 200px;
         object-fit: contain;
     }
     .ebay-img-box {
