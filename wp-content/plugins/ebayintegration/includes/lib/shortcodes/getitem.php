@@ -4,7 +4,7 @@
 </div>		
 <div class="ebayintegration-items_box">
 
-    <div class="row mt-3">
+    <div class="row mt-4">
         <div class="col-4">
             <H3 style="color: black;">Active SKUs</H3>            
             <input class="btn mb-3 px-2 search_box" style="text-align: left;" placeholder="Search SKU" type="text" data-target="#members_skus_table">
