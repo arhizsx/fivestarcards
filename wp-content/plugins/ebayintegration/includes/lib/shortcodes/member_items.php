@@ -95,9 +95,13 @@ $(document).ready(function(){
 
             items = $(document).find(".ebay-item");
 
+            
+
+
             $.each(items, function(k, v){
 
-                console.log( $(v).attr("data-item_id") );
+                console.log(tems.eq(k).attr("data-item_id"));
+
 
                 var item_id = v.attr("data-item_id");
 
