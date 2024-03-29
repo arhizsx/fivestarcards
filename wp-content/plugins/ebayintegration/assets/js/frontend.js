@@ -290,24 +290,6 @@ function getItems(page){
 
 			defObject.resolve(resp);    //resolve promise and pass the response.
 
-			// if(resp.error != true){
-
-			// 	console.log("Items on " + page + " processed");
-			// 	return true;
-
-			// } else {				
-
-			// 	if(resp.data == "Refresh Access Token"){
-			// 		console.log("Do Refresh Access Token");
-					
-			// 	} else {
-			// 		console.log(resp.data);
-			// 	}
-
-			// 	return false;
-
-			// }
-
 		},
 		error: function(){
 			console.log("Error in AJAX");
