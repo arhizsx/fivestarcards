@@ -24,7 +24,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 	if( jQuery(this).data("action") == "getItems" ){
 
-		if( refreshAccessToken() == "Reconnected to eBay" ){
+		var token = refreshAccessToken();
+
+		if( token == "User Access Token" ){
 
 			jQuery(document).find(".ebayintegration-items_box").html("");
 
@@ -147,7 +149,9 @@ function refreshAccessToken(){
 		},
 		success: function(resp){
 
-			if(resp.token_type ==  "User Access Token" ){	
+
+
+			if(resp.error != true){	
 				return "Reconnected to eBay";
 			} else {
 				return "Failed Refreshing Access Token"
