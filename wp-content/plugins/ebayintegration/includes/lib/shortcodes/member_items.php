@@ -39,8 +39,7 @@ $results = $wpdb->get_results("
             <?php 
                 foreach($results as $result){
                     echo "<div class='col-6 border mb-3' style='min-height: 350px;'>";
-                    echo $result->data->Title;
-                    // print_r($result);
+                    print_r($result->data);
                     echo "</div>";
                 }
             ?>
