@@ -97,7 +97,9 @@ $(document).ready(function(){
 
             $.each(items, function(k, v){
 
-                var item_id = v.ItemID;
+                console.log(v);
+
+                var item_id = v.data("item_id");
 
                 jQuery.ajax({
                     method: 'get',
