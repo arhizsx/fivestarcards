@@ -331,7 +331,7 @@ class Ebay_Integration_Ebay_API {
 
 				foreach($json["ActiveList"]["ItemArray"]["Item"] as $item){
 
-					$wpdb->insert("ebay", array(
+					$wpdb->replace("ebay", array(
 						"item_id" => $item["ItemID"],
 						"sku" => $item["SKU"],
 						"data" => json_encode($item),
