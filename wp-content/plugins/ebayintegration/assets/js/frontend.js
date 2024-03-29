@@ -198,11 +198,21 @@ function getItemsRoutine(){
 				$.when( ...page_items ).then( function( ){
 
 					var ListingDuration = [];
+					var ListingType = [];
+					var SKU = [];
 
 					$.each( items, function( k, v ){
 
 						if(jQuery.inArray( v.ListingDuration, ListingDuration) == -1)	{
 							ListingDuration.push(v.ListingDuration);
+						}					
+
+						if(jQuery.inArray( v.ListingType, ListingType) == -1)	{
+							ListingType.push(v.ListingType);
+						}					
+
+						if(jQuery.inArray( v.SKU, SKU) == -1){
+							SKU.push(v.SKU);
 						}					
 
 						jQuery(document).find(".ebayintegration-items_box").append( eBayItemTemplate(v) );
@@ -213,6 +223,8 @@ function getItemsRoutine(){
 
 					console.log(items);
 					console.log(ListingDuration);
+					console.log(ListingType);
+					console.log(SKU);
 				});
 
 			});
