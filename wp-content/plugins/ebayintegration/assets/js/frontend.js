@@ -26,7 +26,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 		var token = refreshAccessToken();
 
-
 		$.when(token).done(function(response){
 
 			if( response["token_type"] == "User Access Token" ){
@@ -70,11 +69,17 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 	else if( jQuery(this).data("action") == "refreshToken" ){
 
-		if( refreshAccessToken() == "Reconnected to eBay" ){
-			alert("New Access Token Generated");
-		} else {
-			alert("Failed Getting Access Token");
-		}
+		var token = refreshAccessToken();
+
+		$.when(token).done(function(response){
+
+			if( response["token_type"] == "User Access Token" ){
+				alert("New Access Token Generated");
+			} else {
+				alert("Failed Getting Access Token");
+			}
+	
+		});
 
 	}
 
