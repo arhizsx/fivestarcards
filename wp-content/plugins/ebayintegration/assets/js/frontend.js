@@ -147,7 +147,7 @@ function refreshAccessToken(){
 		},
 		success: function(resp){
 
-			if(resp.error != true){	
+			if(resp.token_type ==  "User Access Token" ){	
 				return "Reconnected to eBay";
 			} else {
 				return "Failed Refreshing Access Token"
