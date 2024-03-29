@@ -84,9 +84,28 @@ $results = $wpdb->get_results("
 
     $(document).ready(function(){
 
-        
-
         items = $(document).find(".ebay-item");
+
+        $.each(items, function(k, v){
+
+            var item_id = v.ItemID;
+
+            jQuery.ajax({
+			method: 'get',
+			url: "/wp-json/ebayintegration/v1/ajax",
+			data: {
+				action : "getItemInfo",
+				item_id : item_id,
+			},
+			success: function(resp){
+                console.log(resp);
+			},
+			error: function(){
+			}
+		});
+
+
+        });
 
         console.log(items);
 
