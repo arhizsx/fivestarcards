@@ -52,7 +52,7 @@ $results = $wpdb->get_results("
                     $data = json_decode($result->data);
 
 
-                    echo "<div class='col-3 border mb-3' data-item_id='" . $data->ItemID . "'";
+                    echo "<div class='col-3 border mb-3' data-item_id='" . $data->ItemID . "'>";
                         echo "<img src='https://34.72.7.108/wp-content/uploads/2023/09/5-star-cards-logo-1.png'>";
                         echo "<div class='title'>" . $data->Title . "</div>";
                         echo "<div class='sku'>" . $data->SKU . "</div>";
