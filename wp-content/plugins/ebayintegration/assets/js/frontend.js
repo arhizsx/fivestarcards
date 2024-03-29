@@ -32,7 +32,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 			var tkn = response;
 
-			console.log(tkn);
+			console.log(tkn["token_type"]);
 
 			if( response.type == "User Access Token" ){
 
