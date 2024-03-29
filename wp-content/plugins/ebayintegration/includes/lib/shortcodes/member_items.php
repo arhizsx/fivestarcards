@@ -36,15 +36,14 @@ $results = $wpdb->get_results("
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
-
             <?php 
                 foreach($results as $result){
                     print_r($result);
-                    echo "<hr>";
+                    echo "<div class='col-2 border mb-3'>";
+                    echo $result->Title;
+                    echo "</div>";
                 }
             ?>
-    
-        </div>
+
     </div>
 </div>
