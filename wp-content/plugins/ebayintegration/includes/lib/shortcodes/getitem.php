@@ -20,7 +20,9 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    <tr>
+                        <td colspan="6" class="my-5 text-center">Refresh eBay Items</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
