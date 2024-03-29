@@ -47,7 +47,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 						page_items[i] = getItems(i);
 						
 						$.when( page_items[i] ).done(  function( page_items ){
-							items.push(page_items.items);
+
+							$.each(page_items.items, function(v){
+								items.push(v);
+							})
+							
 						});
 					}
 
