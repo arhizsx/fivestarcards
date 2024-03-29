@@ -28,10 +28,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 
 		$.when(token).done(function(response){
+			
+			console.log("Start Getting Items");
 
 			if( token.type == "User Access Token" ){
 
-				console.log("Start Getting Items");
 
 				jQuery(document).find(".ebayintegration-items_box").html("");
 
