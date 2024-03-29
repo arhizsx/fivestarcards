@@ -95,12 +95,10 @@ $(document).ready(function(){
 
             items = $(document).find(".ebay-item");
 
-            
-
 
             $.each(items, function(k, v){
 
-                console.log(items.eq(k).attr("data-item_id"));
+                console.log(v.attr("data-item_id"));
 
 
                 var item_id = items.eq(k).attr("data-item_id");
@@ -114,7 +112,7 @@ $(document).ready(function(){
                     },
                     success: function(resp){
                         console.log(resp);
-                        console.log(resp.data.Item.PictureDetails.PictureURL[0]);
+                        var img = resp.data.Item.PictureDetails.PictureURL[0];
                     },
                     error: function(){
                     }
