@@ -240,10 +240,13 @@ function SKUtemplate(data){
 	var template = '';
 
 	template = template + "<div class='row'><div class='col-12'><table class='table table-border table-striped'>" ;
+	template = template + "<thead><tr><th>SKU</th></tr></thead>" ;
+	template = template + "<tbody>" ;
+
 	$.each(data,function(k, v ){
 		template = template + "<tr><td>" + v + "</td></tr>";
 	});
-
+	template = template + "<tbody>" ;
 	template = template + "</table></div></div>";
 
 	return template;
