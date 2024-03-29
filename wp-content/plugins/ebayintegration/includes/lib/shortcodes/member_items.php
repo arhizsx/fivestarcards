@@ -42,7 +42,7 @@ $results = $wpdb->get_results("
                     $data = json_decode($result->data);
 
 
-                    echo "<div class='col-3 border mb-3' style='min-height: 350px;'>";
+                    echo "<div class='col-3 border mb-3' data-item_id='" . $data->ItemID . "' style='min-height: 350px;'>";
                     echo "<img class='ebay-img' src='' style='min-height: 280px;' />";
                     echo "<div class='title'>";
                         echo  $data->Title ;
