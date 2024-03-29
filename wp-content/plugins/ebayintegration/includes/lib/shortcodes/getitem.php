@@ -18,6 +18,7 @@
             </table>
         </div>
         </div class="col-xl-6">
+        &nbsp;
         </div>
     </div>
 
