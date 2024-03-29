@@ -26,43 +26,47 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 		var token = refreshAccessToken();
 
-		console.log(token);
 
-		if( token == "User Access Token" ){
+		$.when(token).done(function(response){
 
-			jQuery(document).find(".ebayintegration-items_box").html("");
+			if( token.type == "User Access Token" ){
 
-			jQuery.ajax({
-				method: 'get',
-				url: "/wp-json/ebayintegration/v1/ajax",
-				data: { 
-					action: "getItemPages"
-				},
-				success: function(resp){
-					if(resp.error != true){	
-	
-						var loops = parseInt(resp["data"]);				
-						var current = 0;
-	
-						for(var i=1; i <= loops; i++){						
-							if(getItems(i)){
-								current = current+1;
-								console.log("CURRENT: " + current);
+				console.log("Start Getting Items");
+
+				jQuery(document).find(".ebayintegration-items_box").html("");
+
+				jQuery.ajax({
+					method: 'get',
+					url: "/wp-json/ebayintegration/v1/ajax",
+					data: { 
+						action: "getItemPages"
+					},
+					success: function(resp){
+						if(resp.error != true){	
+		
+							var loops = parseInt(resp["data"]);				
+							var current = 0;
+		
+							for(var i=1; i <= loops; i++){						
+								if(getItems(i)){
+									current = current+1;
+									console.log("CURRENT: " + current);
+								}
 							}
+	
+						} else {	
+							console.log(resp.data);	
 						}
-
-					} else {	
-						console.log(resp.data);	
+					},
+					error: function(){
+						console.log("Error in AJAX");
 					}
-				},
-				error: function(){
-					console.log("Error in AJAX");
-				}
-			});
-		} 
-		// else {
-		// 	alert("Press Reconnect to eBay Button");
-		// }
+				});
+	
+			}
+
+		});
+
 			
 	} 
 
@@ -144,6 +148,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 function refreshAccessToken(){
 
+	var defObject = $.Deferred();  // create a deferred object.
+
 	jQuery.ajax({
 		method: 'get',
 		url: "/wp-json/ebayintegration/v1/ajax",
@@ -152,19 +158,15 @@ function refreshAccessToken(){
 		},
 		success: function(resp){
 
-			return resp;
+			defObject.resolve(response);    //resolve promise and pass the response.
 
-			// if(resp.error != true){	
-			// 	return "Reconnected to eBay";
-			// } else {
-			// 	return "Failed Refreshing Access Token"
-			// }
 		},
 		error: function(){
 			console.log("Error in AJAX");
 		}
 	});
 
+	return defObject.promise();
 
 }
 
