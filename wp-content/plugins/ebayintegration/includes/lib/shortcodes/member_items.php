@@ -88,30 +88,35 @@ $(document).ready(function(){
 
 
     $.when(token).done(function(response){
-        
-        console.log(response);
 
-        items = $(document).find(".ebay-item");
+		console.log("Refreshed Access Token");
 
-        $.each(items, function(k, v){
+		if( response["token_type"] == "User Access Token" ){
 
-            var item_id = v.ItemID;
+            items = $(document).find(".ebay-item");
 
-            jQuery.ajax({
-                method: 'get',
-                url: "/wp-json/ebayintegration/v1/ajax",
-                data: {
-                    action : "getItemInfo",
-                    item_id : item_id,
-                },
-                success: function(resp){
-                    console.log(resp);
-                },
-                error: function(){
-                }
+            $.each(items, function(k, v){
+
+                var item_id = v.ItemID;
+
+                jQuery.ajax({
+                    method: 'get',
+                    url: "/wp-json/ebayintegration/v1/ajax",
+                    data: {
+                        action : "getItemInfo",
+                        item_id : item_id,
+                    },
+                    success: function(resp){
+                        console.log(resp);
+                    },
+                    error: function(){
+                    }
+                });
+
             });
 
-        });
+        }
+
 
     });
 
