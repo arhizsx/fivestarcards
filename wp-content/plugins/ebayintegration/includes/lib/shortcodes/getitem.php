@@ -5,6 +5,7 @@
 <div class="ebayintegration-items_box">
     <div class="row mt-3"> 
         </div class="col-xl-6">
+            <input class="btn mt-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target="#skus_table">
             <table class='table table-border table-striped' id="skus_table">
                 <thead>
                     <tr>
