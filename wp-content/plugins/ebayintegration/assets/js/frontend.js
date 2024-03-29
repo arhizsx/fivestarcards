@@ -29,6 +29,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 		$.when(token).done(function(response){
 
+
+			console.log(response.type);
+			
 			if( response.type == "User Access Token" ){
 
 
