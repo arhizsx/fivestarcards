@@ -215,13 +215,11 @@ function getItemsRoutine(){
 
 					});
 
+					jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").clear();
+
 
 					jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").append( itemtemplate(items) );
-					
-					$.each(items, function(k, v){
-						jQuery(document).find(".ebayintegration-items_box").find("#active_items_box").append( eBayItemTemplate(v) );
-					});
-
+				
 					
 					console.log(items);
 					console.log(ListingDuration);
