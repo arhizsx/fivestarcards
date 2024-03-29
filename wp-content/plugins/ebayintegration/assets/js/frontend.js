@@ -48,6 +48,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 	
 						for(var i=1; i <= loops; i++){						
 							processed.push( getItems(i) );
+							console.log(i);
 						}
 
 						$.when(...processed).done(function(all_items){
