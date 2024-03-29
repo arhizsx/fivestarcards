@@ -50,6 +50,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 							console.log("Fetched Page " + response_page_items.page);
 
 							$.each(response_page_items.items, function(v){
+								console.log(v);
 								items.push(v);
 							})
 
