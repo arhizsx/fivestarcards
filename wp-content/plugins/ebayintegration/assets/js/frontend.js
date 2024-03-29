@@ -171,7 +171,7 @@ function getItemsRoutine(){
 
 			var item_pages = getItemPages();
 
-			$.when(item_pages).then( function(pages){
+			$.when(item_pages).done( function(pages){
 
 				var loops = parseInt(pages.data);				
 				var page_items = [];
@@ -180,7 +180,7 @@ function getItemsRoutine(){
 
 					page_items[i] = getItems(i);
 					
-					$.when( page_items[i] ).then(  function( response_page_items ){
+					$.when( page_items[i] ).done(  function( response_page_items ){
 
 						console.log("Fetched Page " + response_page_items.page);
 
