@@ -41,6 +41,10 @@ $results = $wpdb->get_results("
     .ebay-img-box {
         text-align: center;
     }
+    .ebay-price {
+        font-weight: bold;
+        text-align: right;
+    }
 </style>
 
 <div class="m-0 p-0">
