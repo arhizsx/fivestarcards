@@ -240,7 +240,7 @@ function SKUtemplate(data){
 	var template = '';
 
 	template = template + "<div class='row mt-3'><div class='col-12'>";
-	template = template + "<H3>Active SKUs</H3>";
+	template = template + "<H3 style='color: black;'>Active SKUs</H3>";
 
 	template = template + "<ul>";
 
