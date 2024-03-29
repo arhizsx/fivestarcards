@@ -169,8 +169,6 @@ function getItemsRoutine(){
 
 		if( response["token_type"] == "User Access Token" ){
 
-			jQuery(document).find(".ebayintegration-items_box").html("");
-
 			var item_pages = getItemPages();
 
 			$.when(item_pages).done( function(pages){
