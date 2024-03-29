@@ -86,7 +86,10 @@ $(document).ready(function(){
 
     var token = refreshAccessToken();
 
+
     $.when(token).done(function(response){
+        
+        console.log(response);
 
         items = $(document).find(".ebay-item");
 
