@@ -47,12 +47,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 						page_items[i] = getItems(i);
 						
 						$.when( page_items[i] ).done(  function( page_items ){
-							console.log( page_items );
+							items.push(page_items.items);
 						});
 					}
 
 					$.when( ...page_items ).done(  function( page_items ){
-						console.log( "All Items Fetched" );
+						console.log(items);
 					});
 			});
 	
