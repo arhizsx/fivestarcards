@@ -379,7 +379,7 @@ class Ebay_Integration_Ebay_API {
 
 		$apiURL = "https://api.ebay.com/ws/api.dll";
 
-		return $item_id;
+		return "test";
 		
 		$post_data = 
 		'<?xml version="1.0" encoding="utf-8"?>' .
