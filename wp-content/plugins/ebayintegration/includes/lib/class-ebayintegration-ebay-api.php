@@ -378,6 +378,8 @@ class Ebay_Integration_Ebay_API {
 	public function getItemInfo($item_id){
 
 		$apiURL = "https://api.ebay.com/ws/api.dll";
+
+		return $item_id;
 		
 		$post_data = 
 		'<?xml version="1.0" encoding="utf-8"?>' .
