@@ -42,8 +42,8 @@ $results = $wpdb->get_results("
                     $data = json_decode($result->data);
 
 
-                    echo "<div class='col-6 border mb-3' style='min-height: 350px;'>";
-                    print_r($data->ItemID);
+                    echo "<div class='col-3 border mb-3' style='min-height: 350px;'>";
+                    print_r($data->Title);
                     // print_r($result->data["ItemID"]);
                     echo "</div>";
                 }
