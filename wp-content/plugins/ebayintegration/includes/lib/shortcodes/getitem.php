@@ -7,7 +7,7 @@
     <div class="row mt-4">
         <div class="col-12">
             <H3 style="color: black;">Active eBay Items</H3>            
-            <input class="btn mb-3 px-2 search_box" style="text-align: left;" placeholder="Search SKU" type="text" data-target="#skus_table">
+            <input class="btn mb-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target="#skus_table">
             <table class='table table-border table-striped' id="skus_table"> 
                 <thead>
                     <tr>
