@@ -24,47 +24,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 	if( jQuery(this).data("action") == "getItems" ){
 
-		var token = refreshAccessToken();
-		var items = [];	
-
-		$.when(token).done(function(response){
-
-			if( response["token_type"] == "User Access Token" ){
-
-				jQuery(document).find(".ebayintegration-items_box").html("");
-
-
-				var item_pages = getItemPages();
-
-				$.when(item_pages).done( function(pages){
-
-					var loops = parseInt(pages.data);				
-					var page_items = [];
-
-					for(var i=1; i <= loops; i++){			
-						
-						page_items[i] = getItems(i);
-						
-						$.when( page_items[i] ).done(  function( response_page_items ){
-
-							console.log("Fetched Page " + response_page_items.page);
-
-							$.each(response_page_items.items, function(k, v){
-								items.push(v);
-							})
-
-						});
-					}
-
-					$.when( ...page_items ).done(  function( v ){
-						console.log(items);
-					});
-			});
-	
-			}
-
-		});
-
+		getItemsRoutine();
 			
 	} 
 
@@ -195,6 +155,48 @@ function getItemPages(){
 	});
 
 	return defObject.promise();
+
+}
+
+function getItemsRoutine(){
+
+	var token = refreshAccessToken();
+	var items = [];	
+
+	$.when(token).done(function(response){
+
+		if( response["token_type"] == "User Access Token" ){
+
+			jQuery(document).find(".ebayintegration-items_box").html("");
+
+			var item_pages = getItemPages();
+
+			$.when(item_pages).done( function(pages){
+
+				var loops = parseInt(pages.data);				
+				var page_items = [];
+
+				for(var i=1; i <= loops; i++){			
+					
+					page_items[i] = getItems(i);
+					
+					$.when( page_items[i] ).done(  function( response_page_items ){
+
+						console.log("Fetched Page " + response_page_items.page);
+
+						$.each(response_page_items.items, function(k, v){
+							items.push(v);
+						})
+					});
+				}
+				$.when( ...page_items ).done(  function( v ){
+					console.log(items);
+				});
+			});
+
+		}
+
+	});
 
 }
 
