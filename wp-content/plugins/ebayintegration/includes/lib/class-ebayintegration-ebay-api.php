@@ -341,7 +341,7 @@ class Ebay_Integration_Ebay_API {
 		
 				
 
-				return array("error" => false, "page" => $page_number, "data"=> $json["ActiveList"]["ItemArray"], "items" => $json["ActiveList"]["ItemArray"]["Item"] );
+				return array("error" => false, "page" => $page_number, "data"=> $json, "items" => $json["ActiveList"]["ItemArray"]["Item"] );
 				
 			}
 	
