@@ -115,6 +115,28 @@ class Ebay_Integration_Ebay_API {
 			return array("error"=> false, "skus" => $skus );
 
 		} 
+
+		elseif($params["action"] == "removeSKU"){
+
+
+			$skus = get_user_meta( $params["user_id"], "sku", true );
+
+			$new_skus = [];
+
+			foreach( $skus as $sku ){
+
+				if($sku != $params["sku"]){
+					array_push( $new_skus, $sku );
+				}
+
+			}
+
+			update_user_meta(  $params["user_id"], "sku", $new_skus);	
+
+			return array("error"=> false, "skus" => $new_skus );
+
+
+		}
 		else {
 			return array("error"=> true, "error_message" => $params["action"] . " - Action Not Defined");
 		}

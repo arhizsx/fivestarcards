@@ -106,6 +106,25 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		console.log("Removing SKU: " + jQuery(this).data("sku") + " from user_id: " + jQuery(this).data("user_id"));
 
+		jQuery.ajax({
+			method: 'get',
+			url: "/wp-json/ebayintegration/v1/ajax",
+			data: {
+				action : jQuery(this).data("action"),
+				user_id : jQuery(this).data("user_id"),
+				sku : jQuery(this).data("sku"),
+			},
+			success: function(resp){	
+
+				console.log(resp);
+
+			},
+			error: function(){
+				// console.log("Error in AJAX");
+			}
+		});
+
+
 	}
 	else {
 
