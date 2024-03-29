@@ -197,13 +197,22 @@ function getItemsRoutine(){
 
 				$.when( ...page_items ).then( function( ){
 
+					var ListingDuration = [];
+
 					$.each( items, function( k, v ){
 
+						if(jQuery.inArray( v.ListingDuration, ListingDuration) == -1)	{
+							ListingDuration.push(v.ListingDuration);
+						}					
+
 						jQuery(document).find(".ebayintegration-items_box").append( eBayItemTemplate(v) );
+
+
 
 					});
 
 					console.log(items);
+					console.log(ListingDuration);
 				});
 
 			});
