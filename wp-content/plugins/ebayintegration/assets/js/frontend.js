@@ -165,6 +165,8 @@ function getItemsRoutine(){
 
 	$.when(token).done(function(response){
 
+		console.log("Refreshed Access Token");
+
 		if( response["token_type"] == "User Access Token" ){
 
 			jQuery(document).find(".ebayintegration-items_box").html("");
@@ -172,6 +174,8 @@ function getItemsRoutine(){
 			var item_pages = getItemPages();
 
 			$.when(item_pages).done( function(pages){
+
+				console.log( pages.data + " pages needs to be processed..." );
 
 				var loops = parseInt(pages.data);				
 				var page_items = [];
