@@ -239,7 +239,10 @@ function SKUtemplate(data){
 
 	var template = '';
 
-	template = template + "<div class='row'><div class='col-12'><table class='table table-border table-striped'>" ;
+
+	template = template + "<div class='row'><div class='col-12'>";
+	template = template + '<input class="btn mt-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target="#skus_table">';
+	template = template + "<table id='skus_table' class='table table-border table-striped'>" ;
 	template = template + "<thead><tr><th>SKU</th></tr></thead>" ;
 	template = template + "<tbody>" ;
 
