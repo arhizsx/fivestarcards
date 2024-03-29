@@ -5,17 +5,19 @@ global $wpdb;
 
 $skus = get_user_meta( get_current_user_id(), "sku", true );
 
-echo implode( ",", $skus);
-
 $in = "(";
 foreach($skus as $sku){
     $in = $in . '"' . $sku . '",';
 }
 
+$in = rtrim($in, ',');
+
+$in = $in . ")";
+
 echo $in;
 
 $results = $wpdb->get_results("
-    SELECT * FROM ebay WHERE sku IN (" . implode( ",", $skus) . ")
+    SELECT * FROM ebay WHERE sku IN " . $in . "
 ");
 
 
