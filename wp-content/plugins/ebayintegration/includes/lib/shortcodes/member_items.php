@@ -102,7 +102,7 @@ $(document).ready(function(){
                     item_id : item_id,
                 },
                 success: function(resp){
-                    console.log(resp.);
+                    console.log(resp);
                 },
                 error: function(){
                 }
