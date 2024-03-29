@@ -218,7 +218,7 @@ function getItemsRoutine(){
 					});
 
 
-					jQuery(document).find(".ebayintegration-items_box").append( SKUtemplate(SKU) );
+					jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").append( SKUtemplate(SKU) );
 					
 
 					console.log(items);
@@ -240,19 +240,9 @@ function SKUtemplate(data){
 	var template = '';
 
 
-	template = template + "<div class='row'><div class='col-12'>";
-	template = template + '<input class="btn mt-3 px-2 search_box" style="text-align: left;" placeholder="Search SKU" type="text" data-target="#skus_table">';
-	template = template + "</div></div>";
-	template = template + "<div class='row'><div class='col-12'>";
-	template = template + "<table id='skus_table' class='table table-border table-striped'>" ;
-	template = template + "<thead><tr><th>SKU</th></tr></thead>" ;
-	template = template + "<tbody>" ;
-
 	$.each(data,function(k, v ){
 		template = template + "<tr><td>" + v + "</td></tr>";
 	});
-	template = template + "<tbody>" ;
-	template = template + "</table></div></div>";
 
 	return template;
 
