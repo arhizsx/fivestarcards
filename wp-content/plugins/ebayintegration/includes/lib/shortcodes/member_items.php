@@ -103,7 +103,7 @@ $(document).ready(function(){
                 console.log(items.eq(k).attr("data-item_id"));
 
 
-                var item_id = v.attr("data-item_id");
+                var item_id = items.eq(k).attr("data-item_id");
 
                 jQuery.ajax({
                     method: 'get',
