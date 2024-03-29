@@ -106,12 +106,14 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		console.log("Removing SKU: " + jQuery(this).data("sku") + " from user_id: " + jQuery(this).data("user_id"));
 
+		var user_id = jQuery(this).data("user_id");
+
 		jQuery.ajax({
 			method: 'get',
 			url: "/wp-json/ebayintegration/v1/ajax",
 			data: {
 				action : jQuery(this).data("action"),
-				user_id : jQuery(this).data("user_id"),
+				user_id : user_id,
 				sku : jQuery(this).data("sku"),
 			},
 			success: function(resp){	
@@ -124,9 +126,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				});
 				skus = skus + "</ul>"
 
-				console.log(jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + jQuery(this).data("user_id") + "'] td.skus"));
+				console.log(jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.skus"));
 
-				jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + jQuery(this).data("user_id") + "'] td.skus").html(
+				jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.skus").html(
 					skus
 				)
 
