@@ -16,7 +16,9 @@ jQuery( document ).ready(
 //   Button Handlers   //
 // /////////////////// //
 
-jQuery( document ).on("click", ".ebayintegration-btn", function(){
+jQuery( document ).on("click", ".ebayintegration-btn", function(e){
+
+	e.preventDefault();
 
 	// /////////////////// //
 	//  eBay API buttons   //
