@@ -35,6 +35,7 @@ $results = $wpdb->get_results("
     }
     .ebay-img {
         min-height: 350px;
+        height: 350px;
     }
 </style>
 
