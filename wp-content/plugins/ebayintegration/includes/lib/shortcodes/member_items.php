@@ -43,7 +43,7 @@ $results = $wpdb->get_results("
 
 
                     echo "<div class='col-6 border mb-3' style='min-height: 350px;'>";
-                    print_r($data);
+                    print_r($data->ItemID);
                     // print_r($result->data["ItemID"]);
                     echo "</div>";
                 }
