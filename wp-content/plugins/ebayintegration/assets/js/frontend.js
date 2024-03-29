@@ -242,13 +242,15 @@ function SKUtemplate(data){
 	template = template + "<div class='row mt-3'><div class='col-12'>";
 	template = template + "<H3 style='color: black;'>Active SKUs</H3>";
 
-	template = template + "<ul>";
+	template = template + "<table class='table table-sm table-border table-striped'>";
+	template = template + "<tr>";
 
 	$.each(data,function(k, v ){
-		template = template + "<li>" + v + "</li>";
+		template = template + "<td>" + v + "</td>";
 	});
 
-	template = template + "</ul>";
+	template = template + "</tr>";
+	template = template + "</table>";
 	template = template + "</div></div>";
 
 	return template;
