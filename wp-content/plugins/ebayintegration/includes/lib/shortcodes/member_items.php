@@ -28,8 +28,8 @@ $results = $wpdb->get_results("
         text-decoration: none; 
     }
     .title {
-        font-size: 1.2em;
-        font-weight: 800;
+        font-size: 1em;
+        font-weight: 500;
     }
     .sku {
         font-size: .8em;
@@ -43,6 +43,7 @@ $results = $wpdb->get_results("
         text-align: center;
     }
     .ebay-price {
+        font-size: 1.2em;
         font-weight: bold;
         text-align: right;
     }
