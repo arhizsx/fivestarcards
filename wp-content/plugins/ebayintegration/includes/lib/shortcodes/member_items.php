@@ -5,6 +5,8 @@ global $wpdb;
 
 $skus = get_user_meta( get_current_user_id(), "sku", true );
 
+echo implode( ",", $skus);
+
 $results = $wpdb->get_results("
     SELECT * FROM ebay WHERE sku IN (" . implode( ",", $skus) . ")
 ");
