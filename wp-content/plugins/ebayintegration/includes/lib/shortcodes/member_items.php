@@ -62,7 +62,7 @@ $results = $wpdb->get_results("
 
                     echo "<div class='col-3 border mb-3' data-item_id='" . $data->ItemID . "'>";
                         echo "<div class='ebay-price'>";
-                        echo $data->SellingStatus->CurrentPrice;
+                        echo "$" . $data->SellingStatus->CurrentPrice;
                         echo "</div>";
                         echo "<div class='ebay-img-box'>";
                         echo "<img class='ebay-img' src='/wp-content/uploads/2023/09/5-star-cards-logo-1.png'>";
