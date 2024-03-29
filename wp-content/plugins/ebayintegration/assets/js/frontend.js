@@ -29,13 +29,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 		$.when(token).done(function(response){
 
-
-			var tkn = response;
-
-			console.log(tkn["token_type"]);
-
-			if( response.type == "User Access Token" ){
-
+			if( response["token_type"] == "User Access Token" ){
 
 				jQuery(document).find(".ebayintegration-items_box").html("");
 
