@@ -176,8 +176,8 @@ function getItemsRoutine(){
 				var loops = parseInt(pages.data);				
 				var page_items = [];
 
-				for(var i=1; i <= loops; i++){			
-					
+				for(var i=1; i < loops; i++){
+
 					page_items[i] = getItems(i);
 					
 					$.when( page_items[i] ).done(  function( response_page_items ){
@@ -188,10 +188,13 @@ function getItemsRoutine(){
 							items.push(v);
 						})
 					});
+
 				}
+
 				$.when( ...page_items ).done(  function( v ){
 					console.log(items);
 				});
+
 			});
 
 		}
