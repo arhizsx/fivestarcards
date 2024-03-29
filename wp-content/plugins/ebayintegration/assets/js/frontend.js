@@ -104,7 +104,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	else if( jQuery(this).data("action") == "removeSKU" ){
 
-		console.log("Removing SKU: " + jQuery(this).data("sku") );
+		console.log("Removing SKU: " + jQuery(this).data("sku") + " from user_id: " + jQuery(this).data("user_id"));
 
 	}
 	else {
