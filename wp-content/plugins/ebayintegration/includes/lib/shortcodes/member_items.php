@@ -63,7 +63,7 @@ $results = $wpdb->get_results("
                     $data = json_decode($result->data);
 
 
-                    echo "<div class='ebay-item col-3 border mb-3 p-2' data-item_id='" . $data->ItemID . "'>";
+                    echo "<div class='ebay-item col-xl-3 border mb-3 p-2' data-item_id='" . $data->ItemID . "'>";
                         echo "<div class='ebay-price'>";
                         echo "$" . $data->SellingStatus->CurrentPrice;
                         echo "</div>";
