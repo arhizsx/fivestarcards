@@ -114,7 +114,7 @@ $(document).ready(function(){
                     },
                     success: function(resp){
                         console.log(resp);
-                        console.log(resp.data.Item.PictureDetails);
+                        console.log(resp.data.Item.PictureDetails.PictureURL[0]);
                     },
                     error: function(){
                     }
