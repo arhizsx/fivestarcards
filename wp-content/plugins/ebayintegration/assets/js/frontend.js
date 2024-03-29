@@ -204,7 +204,7 @@ function getItemPages(){
 
 function getItems(page){
 
-	var defObject = $.Deferred();  // create a deferred object.
+	// var defObject = $.Deferred();  // create a deferred object.
 
 	jQuery.ajax({
 		method: 'get',
@@ -214,14 +214,14 @@ function getItems(page){
 			page_number: page
 		},
 		success: function(resp){
-			defObject.resolve(resp);    //resolve promise and pass the response.
+			// defObject.resolve(resp);    //resolve promise and pass the response.
 		},
 		error: function(){
 			console.log("Error in AJAX");
 		}
 	});
 
-	return defObject.promise();
+	// return defObject.promise();
 
 }
 
