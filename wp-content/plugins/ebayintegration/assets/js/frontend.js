@@ -36,41 +36,18 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 				var item_pages = getItemPages();
 
 				$.when(item_pages).done( function(pages){
-					pages = parseInt(pages.data);
 
-					for(var i = 1; i < pages; i++){
-						console.log(i);
+					var loops = parseInt(pages.data);				
+					var current = 0;
+
+					for(var i=1; i <= loops; i++){						
+						if(getItems(i)){
+							current = current+1;
+							console.log("CURRENT: " + current);
+						}
 					}
 
 				});
-
-				// jQuery.ajax({
-				// 	method: 'get',
-				// 	url: "/wp-json/ebayintegration/v1/ajax",
-				// 	data: { 
-				// 		action: "getItemPages"
-				// 	},
-				// 	success: function(resp){
-				// 		if(resp.error != true){	
-		
-				// 			var loops = parseInt(resp["data"]);				
-				// 			var current = 0;
-		
-				// 			for(var i=1; i <= loops; i++){						
-				// 				if(getItems(i)){
-				// 					current = current+1;
-				// 					console.log("CURRENT: " + current);
-				// 				}
-				// 			}
-	
-				// 		} else {	
-				// 			console.log(resp.data);	
-				// 		}
-				// 	},
-				// 	error: function(){
-				// 		console.log("Error in AJAX");
-				// 	}
-				// });
 	
 			}
 
