@@ -122,17 +122,17 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				// console.log(resp);
 
 				var skus = "<ul>"
-				$.each(resp.skus, function(k, v){
-					skus = skus + "<li><a href='#' class='ebayintegration-btn' data-action='removeSKU' data-sku='" + sku + "' data-user_id='" + user_id + " '> X </a> " + v + "</li>"
+				$.each(resp.skus, function(k, v){				
+					skus = skus + "<li><a href='#' class='ebayintegration-btn' data-action='removeSKU' data-sku='" + v + "' data-user_id='" + user_id + "'> X </a> " + v + "</li>"
 				});
 				skus = skus + "</ul>"
 
-				console.log(jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.skus"));
 
 				jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.skus").html(
 					skus
 				)
 
+				console.log(jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.skus"));
 
 			},
 			error: function(){
