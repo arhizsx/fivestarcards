@@ -30,6 +30,7 @@ $results = $wpdb->get_results("
     .title {
         font-size: 1em;
         font-weight: 500;
+        margin-top: 10px;
     }
     .sku {
         font-size: .8em;
