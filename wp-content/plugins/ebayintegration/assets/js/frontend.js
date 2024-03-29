@@ -36,7 +36,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 				var item_pages = getItemPages();
 
 				$.when(item_pages).done( function(pages){
-					console.log(pages);
+					pages = parseInt(pages.data);
+
+					for(var i = 1; i < pages; i++){
+						console.log(i);
+					}
+
 				});
 
 				// jQuery.ajax({
