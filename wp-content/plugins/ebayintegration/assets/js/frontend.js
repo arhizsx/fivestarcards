@@ -48,8 +48,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 						
 						$.when( page_items[i] ).done(  function( page_items ){
 
-							console.log("Fetched Page " + i);
-							
+							console.log("Fetched Page " + page_items.page);
+
 							$.each(page_items.items, function(v){
 								items.push(v);
 							})
