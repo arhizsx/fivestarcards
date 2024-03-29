@@ -5,12 +5,13 @@
 <div class="ebayintegration-items_box">
 
     <div class="row mt-4">
-        <div class="col-8">
-            <H3 style="color: black;">Active SKUs</H3>            
+        <div class="col-12">
+            <H3 style="color: black;">Active eBay Items</H3>            
             <input class="btn mb-3 px-2 search_box" style="text-align: left;" placeholder="Search SKU" type="text" data-target="#skus_table">
             <table class='table table-border table-striped' id="skus_table"> 
                 <thead>
                     <tr>
+                        <th>ItemID</th>
                         <th>Title</th>
                         <th>eBay SKU</th>
                         <th>ListingType</th>
@@ -22,12 +23,6 @@
 
                 </tbody>
             </table>
-        </div>
-        <div class="col-4">
-            <H3 style="color: black;">Active Items</H3>            
-            <div id="active_items_box">
-
-            </div>
         </div>
     </div>
 </div>		

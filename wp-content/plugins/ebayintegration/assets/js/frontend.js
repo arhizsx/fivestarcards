@@ -244,6 +244,7 @@ function itemtemplate(data){
 
 	$.each(data,function(k, v ){
 		template = template + "<tr>"; 
+		template = template + "<td>" + v.ItemID + "</td>";
 		template = template + "<td>" + v.Title + "</td>";
 		template = template + "<td>" + v.SKU + "</td>";
 		template = template + "<td>" + v.ListingType + "</td>";
