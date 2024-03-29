@@ -25,6 +25,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 	if( jQuery(this).data("action") == "getItems" ){
 
 		var token = refreshAccessToken();
+		var items = [];	
 
 		$.when(token).done(function(response){
 
@@ -46,12 +47,14 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 						page_items[i] = getItems(i);
 						
 						$.when( page_items[i] ).done(  function( page_items ){
-
 							console.log( page_items );
 						});
 					}
 
-				});
+					$.when( ...page_items ).done(  function( page_items ){
+						console.log( "All Items Fetched" );
+					});
+			});
 	
 			}
 
