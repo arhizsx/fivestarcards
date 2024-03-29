@@ -26,8 +26,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 		var token = refreshAccessToken();
 
-		console.log(token);
-
 		if( token == "User Access Token" ){
 
 			jQuery(document).find(".ebayintegration-items_box").html("");
@@ -152,13 +150,13 @@ function refreshAccessToken(){
 		},
 		success: function(resp){
 
+			return resp;
 
-
-			if(resp.error != true){	
-				return "Reconnected to eBay";
-			} else {
-				return "Failed Refreshing Access Token"
-			}
+			// if(resp.error != true){	
+			// 	return "Reconnected to eBay";
+			// } else {
+			// 	return "Failed Refreshing Access Token"
+			// }
 		},
 		error: function(){
 			console.log("Error in AJAX");
