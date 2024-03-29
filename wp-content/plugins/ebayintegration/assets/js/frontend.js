@@ -191,7 +191,7 @@ function getItemsRoutine(){
 
 				}
 
-				$.when( page_items ).done(  function( v ){
+				$.when( ...page_items ).done(  function( v ){
 					console.log(items);
 				});
 
