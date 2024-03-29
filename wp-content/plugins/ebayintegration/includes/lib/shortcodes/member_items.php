@@ -14,14 +14,9 @@ $in = rtrim($in, ',');
 
 $in = $in . ")";
 
-echo $in;
-
 $results = $wpdb->get_results("
     SELECT * FROM ebay WHERE sku IN " . $in . "
 ");
-
-
-print_r($results);
 
 ?>
 <style>
@@ -42,6 +37,13 @@ print_r($results);
     </div>
     <div class="row">
         <div class="col-12">
+
+            <?php 
+                foreach($results as $result){
+                    echo $result;
+                    echo "<hr>";
+                }
+            ?>
     
         </div>
     </div>
