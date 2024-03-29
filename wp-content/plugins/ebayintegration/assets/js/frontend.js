@@ -39,25 +39,24 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 				$.when(item_pages).done( function(pages){
 
 					var loops = parseInt(pages.data);				
-					var current = 0;
 					var page_items = [];
 
 					for(var i=1; i <= loops; i++){			
 						
 						page_items[i] = getItems(i);
 						
-						$.when( page_items[i] ).done(  function( page_items ){
+						$.when( page_items[i] ).done(  function( response_page_items ){
 
-							console.log("Fetched Page " + page_items.page);
+							console.log("Fetched Page " + response_page_items.page);
 
-							$.each(page_items.items, function(v){
+							$.each(response_page_items.items, function(v){
 								items.push(v);
 							})
 
 						});
 					}
 
-					$.when( ...page_items ).done(  function( page_items ){
+					$.when( ...page_items ).done(  function( v ){
 						console.log(items);
 					});
 			});
