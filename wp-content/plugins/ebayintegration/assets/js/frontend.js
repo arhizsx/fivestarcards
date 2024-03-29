@@ -243,7 +243,13 @@ function itemtemplate(data){
 
 
 	$.each(data,function(k, v ){
-		template = template + "<tr><td>" + v.SKU + "</td></tr>";
+		template = template + "<tr>"; 
+		template = template + "<td>" + v.Title + "</td>";
+		template = template + "<td>" + v.SKU + "</td>";
+		template = template + "<td>" + v.ListingType + "</td>";
+		template = template + "<td>" + v.ListingDuration + "</td>";
+		template = template + "<td>" + v.CurrentPrice + "</td>";
+		template = template + "</tr>";
 	});
 
 	return template;

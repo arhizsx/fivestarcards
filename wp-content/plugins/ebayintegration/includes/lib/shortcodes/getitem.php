@@ -11,7 +11,11 @@
             <table class='table table-border table-striped' id="skus_table"> 
                 <thead>
                     <tr>
+                        <th>Title</th>
                         <th>eBay SKU</th>
+                        <th>ListingType</th>
+                        <th>ListingDuration</th>
+                        <th>CurrentPrice</th>
                     </tr>
                 </thead>
                 <tbody>
