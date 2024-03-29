@@ -26,6 +26,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 
 		var token = refreshAccessToken();
 
+		console.log(token);
+
 		if( token == "User Access Token" ){
 
 			jQuery(document).find(".ebayintegration-items_box").html("");
