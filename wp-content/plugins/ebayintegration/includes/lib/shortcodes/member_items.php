@@ -35,6 +35,7 @@ $results = $wpdb->get_results("
     }
     .ebay-img {
         min-height: 300px;
+        object-fit: cover;
     }
     .ebay-img-box {
         text-align: center;
