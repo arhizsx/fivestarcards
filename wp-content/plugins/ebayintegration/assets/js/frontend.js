@@ -45,9 +45,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(){
 	
 						var loops = parseInt(resp["data"]);				
 						var processed = [];
-	
+						var items;
+						
 						for(var i=1; i <= loops; i++){						
-							processed.push( getItems(i) );
+							items = getItems(i);
+							processed.push(  );
 							console.log(i);
 						}
 
