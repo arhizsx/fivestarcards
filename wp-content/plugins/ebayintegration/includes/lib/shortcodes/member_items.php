@@ -98,8 +98,6 @@ $(document).ready(function(){
 
             $.each(items, function(k, v){
 
-                console.log(v.attr("data-item_id"));
-
 
                 var item_id = items.eq(k).attr("data-item_id");
 
@@ -113,6 +111,8 @@ $(document).ready(function(){
                     success: function(resp){
                         console.log(resp);
                         var img = resp.data.Item.PictureDetails.PictureURL[0];
+                        $(document).find(".ebay-item[data-item_id='" + item_id +"']").find("img").attr("src", img);
+
                     },
                     error: function(){
                     }
