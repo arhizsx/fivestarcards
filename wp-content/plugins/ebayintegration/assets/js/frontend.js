@@ -122,7 +122,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				var skus = "<ul>"
 				$.each(resp.skus, function(k, v){
-					skus = skus + "<li><a href='#" + sku + "' class='ebayintegration-btn' action='removeSKU' data-sku='" + sku + "' data-user_id='" + user_id + " '> X </a> " + v + "</li>"
+					skus = skus + "<li><a href='#" + sku + "' class='ebayintegration-btn' data-action='removeSKU' data-sku='" + sku + "' data-user_id='" + user_id + " '> X </a> " + v + "</li>"
 				});
 				skus = skus + "</ul>"
 
