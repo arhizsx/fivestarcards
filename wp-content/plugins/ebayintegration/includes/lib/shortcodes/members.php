@@ -8,7 +8,7 @@ SELECT * FROM `wp_usermeta` WHERE meta_key = 'sku' ORDER BY `user_id` ASC;
 
 
 foreach($user_skus as $sk){
-    print_r($sk);
+    print_r($sk->user_id);
 
 }
 
