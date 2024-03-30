@@ -1,6 +1,13 @@
 <?php
 global $wpdb;
 
+
+$user_skus = $wpdb->get_results ( "
+SELECT * FROM `wp_usermeta` WHERE meta_key = 'sku' ORDER BY `user_id` ASC;
+");
+
+print_r($user_skus);
+
 ?>
 <style>
     input {padding: 3px;}
@@ -128,7 +135,7 @@ global $wpdb;
 
                                     $skus = $wpdb->get_results ( "
                                         SELECT DISTINCT sku FROM ebay ORDER BY sku ASC
-                                    " );
+                                    " );                                    
 
                                     foreach($skus as $sku){
                                         echo "<option value='" . $sku->sku . "'>" . $sku->sku . "</option>";
