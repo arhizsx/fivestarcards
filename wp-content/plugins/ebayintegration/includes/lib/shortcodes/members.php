@@ -14,8 +14,6 @@ foreach($user_skus as $sk){
 
 }
 
-print_r($active_skus);
-
 ?>
 <style>
     input {padding: 3px;}
@@ -138,7 +136,6 @@ print_r($active_skus);
                             <label>eBay SKU</label>
                             <select class="form-control mb-2" name="sku">
                                 <option selected value="">Select Active eBay SKU</option>
-                                <option value="ebayitegration_manual_set">Set SKU Manually</option>
                                 <?php 
 
                                     $skus = $wpdb->get_results ( "
@@ -146,7 +143,9 @@ print_r($active_skus);
                                     " );                                    
 
                                     foreach($skus as $sku){
-                                        echo "<option value='" . $sku->sku . "'>" . $sku->sku . "</option>";
+                                        if(in_array( $sku->sku, $active_skus ) === false ){
+                                            echo "<option value='" . $sku->sku . "'>" . $sku->sku . "</option>";
+                                        }
                                     }
                                 ?>
                             </select>
