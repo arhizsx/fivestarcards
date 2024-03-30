@@ -6,10 +6,15 @@ $user_skus = $wpdb->get_results ( "
 SELECT * FROM `wp_usermeta` WHERE meta_key = 'sku' ORDER BY `user_id` ASC;
 ");
 
+$active_skus = [];
+
 foreach($user_skus as $sk){
-    print_r($sk->user_id);
-    echo "<br>";
+
+     array_push( $active_skus, get_user_meta( $sk->user_id, "sku", true ));
+
 }
+
+print_r($active_skus);
 
 ?>
 <style>
