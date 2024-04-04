@@ -153,7 +153,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		var selected_items = "";
 		
 		$.each( $(document).find(".ebay-item[data-sku='Matt Meister']"), function( k, v ){
-			selected_items = selected_items + v.html();
+			selected_items = selected_items + $(v).html();
 		} );
 
 		jQuery(document).find(".set_sku_user").find("#items_with_sku").html(
