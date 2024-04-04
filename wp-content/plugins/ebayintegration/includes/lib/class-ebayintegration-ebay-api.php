@@ -433,7 +433,7 @@ class Ebay_Integration_Ebay_API {
 					]
 				]
 			);	
-			
+
 			curl_multi_add_handle($mh, $multiCurl[$i]);
 
 		}
@@ -442,7 +442,7 @@ class Ebay_Integration_Ebay_API {
 
 		do {
 
-			return curl_multi_exec( $mh, $index );
+			curl_multi_exec( $mh, $index );
 
 		} 
 		while($index > 0);		
@@ -458,6 +458,8 @@ class Ebay_Integration_Ebay_API {
 		}
 
 		curl_multi_close($mh);		
+
+		return $result;
 
 
 	}	
