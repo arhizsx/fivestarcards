@@ -59,7 +59,7 @@
                 </button>
             </div>
             <div class="row">
-                <div class="col-12" id="items_with_sku">
+                <div class="col-12 p-3" id="items_with_sku">
 
                 </div>
             </div>
