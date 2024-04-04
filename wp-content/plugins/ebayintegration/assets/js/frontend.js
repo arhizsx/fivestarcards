@@ -254,65 +254,6 @@ function getItemsRoutine(){
 				jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").append( itemtemplate(pages.undefined_items) );
 				
 
-				// $.each(pages.items, function(k, v){
-				// 	console.log(v);
-				// });
-
-
-				// console.log( pages.data + " pages needs to be processed..." );
-
-				// var loops = parseInt(pages.data);				
-				// var page_items = [];
-
-				// for(var i=1; i <= loops; i++){
-
-				// 	page_items[i] = getItems(i);
-					
-				// 	$.when( page_items[i] ).done(  function( response_page_items ){
-
-				// 		console.log("Fetched Page " + response_page_items.page);
-
-				// 		$.each(response_page_items.items, function(k, v){
-				// 			items.push(v);
-				// 		})
-				// 	});
-
-				// }
-
-				// $.when( ...page_items ).then( function( ){
-
-				// 	var ListingDuration = [];
-				// 	var ListingType = [];
-				// 	var SKU = [];
-
-				// 	$.each( items, function( k, v ){
-
-				// 		if(jQuery.inArray( v.ListingDuration, ListingDuration) == -1)	{
-				// 			ListingDuration.push(v.ListingDuration);
-				// 		}					
-
-				// 		if(jQuery.inArray( v.ListingType, ListingType) == -1)	{
-				// 			ListingType.push(v.ListingType);
-				// 		}					
-
-				// 		if(jQuery.inArray( v.SKU, SKU) == -1){
-				// 			SKU.push(v.SKU);
-				// 		}					
-
-				// 	});
-
-				// 	jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").empty();
-
-
-				// 	jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").append( itemtemplate(items) );
-				
-					
-				// 	console.log(items);
-				// 	console.log(ListingDuration);
-				// 	console.log(ListingType);
-				// 	console.log(SKU);
-				// });
-
 			});
 
 		}
@@ -327,7 +268,7 @@ function itemtemplate(data){
 
 
 	$.each(data,function(k, v ){
-		template = template + "<tr class='ebay_item' data-item_id='" + v.ItemID + "' data-sku='" + v.SKU + "'>"; 
+		template = template + "<tr class='ebayintegration-btn' data-action='set_item_sku' data-item_id='" + v.ItemID + "' data-sku='" + v.SKU + "'>"; 
 		template = template + "<td>" + v.ItemID + "</td>";
 		template = template + "<td>" + v.Title + "</td>";
 		template = template + "<td>" + v.SKU + "</td>";
