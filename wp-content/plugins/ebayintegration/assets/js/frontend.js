@@ -220,59 +220,62 @@ function getItemsRoutine(){
 
 			$.when(item_pages).done( function(pages){
 
-				console.log( pages.data + " pages needs to be processed..." );
+				console.log(pages);
 
-				var loops = parseInt(pages.data);				
-				var page_items = [];
 
-				for(var i=1; i <= loops; i++){
+				// console.log( pages.data + " pages needs to be processed..." );
 
-					page_items[i] = getItems(i);
+				// var loops = parseInt(pages.data);				
+				// var page_items = [];
+
+				// for(var i=1; i <= loops; i++){
+
+				// 	page_items[i] = getItems(i);
 					
-					$.when( page_items[i] ).done(  function( response_page_items ){
+				// 	$.when( page_items[i] ).done(  function( response_page_items ){
 
-						console.log("Fetched Page " + response_page_items.page);
+				// 		console.log("Fetched Page " + response_page_items.page);
 
-						$.each(response_page_items.items, function(k, v){
-							items.push(v);
-						})
-					});
+				// 		$.each(response_page_items.items, function(k, v){
+				// 			items.push(v);
+				// 		})
+				// 	});
 
-				}
+				// }
 
-				$.when( ...page_items ).then( function( ){
+				// $.when( ...page_items ).then( function( ){
 
-					var ListingDuration = [];
-					var ListingType = [];
-					var SKU = [];
+				// 	var ListingDuration = [];
+				// 	var ListingType = [];
+				// 	var SKU = [];
 
-					$.each( items, function( k, v ){
+				// 	$.each( items, function( k, v ){
 
-						if(jQuery.inArray( v.ListingDuration, ListingDuration) == -1)	{
-							ListingDuration.push(v.ListingDuration);
-						}					
+				// 		if(jQuery.inArray( v.ListingDuration, ListingDuration) == -1)	{
+				// 			ListingDuration.push(v.ListingDuration);
+				// 		}					
 
-						if(jQuery.inArray( v.ListingType, ListingType) == -1)	{
-							ListingType.push(v.ListingType);
-						}					
+				// 		if(jQuery.inArray( v.ListingType, ListingType) == -1)	{
+				// 			ListingType.push(v.ListingType);
+				// 		}					
 
-						if(jQuery.inArray( v.SKU, SKU) == -1){
-							SKU.push(v.SKU);
-						}					
+				// 		if(jQuery.inArray( v.SKU, SKU) == -1){
+				// 			SKU.push(v.SKU);
+				// 		}					
 
-					});
+				// 	});
 
-					jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").empty();
+				// 	jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").empty();
 
 
-					jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").append( itemtemplate(items) );
+				// 	jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").append( itemtemplate(items) );
 				
 					
-					console.log(items);
-					console.log(ListingDuration);
-					console.log(ListingType);
-					console.log(SKU);
-				});
+				// 	console.log(items);
+				// 	console.log(ListingDuration);
+				// 	console.log(ListingType);
+				// 	console.log(SKU);
+				// });
 
 			});
 
