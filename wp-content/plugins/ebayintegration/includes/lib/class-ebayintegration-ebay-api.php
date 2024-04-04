@@ -76,8 +76,8 @@ class Ebay_Integration_Ebay_API {
 		elseif($params["action"] == "getItemPages"){
 			
 			$pages = $this->GetItemPages();
-
-			return $pages["data"];
+			
+			return $this->getItemsMulti( $pages["data"], $this->$per_page );
 
 
 		} 
@@ -93,7 +93,7 @@ class Ebay_Integration_Ebay_API {
 			return $this->refreshToken();
 
 		} 
-		
+
 		elseif($params["action"] == "confirmAddSKU"){
 			global $wpdb;
 
