@@ -220,11 +220,11 @@ function getItemsRoutine(){
 
 			$.when(item_pages).done( function(pages){
 
-				console.log(pages);
+				console.log(pages.skus);
 
-				$.each(pages.items, function(k, v){
-					console.log(v);
-				});
+				// $.each(pages.items, function(k, v){
+				// 	console.log(v);
+				// });
 
 
 				// console.log( pages.data + " pages needs to be processed..." );
