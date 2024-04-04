@@ -58,7 +58,7 @@
                 <div class="row mt-4">
                     <div class="col-12">
                         <H5 style="color: black;">Active eBay Items</H5>
-                        <div  id="items_with_sku" style="overflow:auto;">
+                        <div  id="items_with_sku" style="overflow:auto;" class="border">
 
                         </div>
                     </div>
