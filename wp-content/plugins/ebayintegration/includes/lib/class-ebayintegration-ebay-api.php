@@ -394,6 +394,8 @@ class Ebay_Integration_Ebay_API {
 
 		$mh = curl_multi_init();
 
+		// Setup Multi Curl Requests
+
 		for( $i = 1; $i <= $pages; $i++ ){
 
 			$post_data = 
@@ -442,6 +444,7 @@ class Ebay_Integration_Ebay_API {
 
 		$index = null;
 
+		// Execute Multi Curl
 		do {
 
 			curl_multi_exec( $mh, $index );
@@ -449,18 +452,19 @@ class Ebay_Integration_Ebay_API {
 		} 
 		while($index > 0);		
 
-
+		// Save Result of Each Curl Pass
 		foreach($multiCurl as $k => $ch) {
 
 			$result[$k] = curl_multi_getcontent($ch);
 			curl_multi_remove_handle($mh, $ch);
 
-
-
 		}
 
+		// Close Multi Curl
 		curl_multi_close($mh);		
 
+
+		// Get All Items From All Results
 		$items = array();
 
 		foreach( $result as $k => $v ){
@@ -497,19 +501,28 @@ class Ebay_Integration_Ebay_API {
 	
 		}
 
+		// Get All User SKUs
+
 		$users_with_sku = $this->wpdb->get_results ( "
 			SELECT user_id 
 			FROM  wp_usermeta
 			WHERE meta_key = 'sku'
 		" );
 
-
 		$all_skus = array();
 
 		foreach($users_with_sku as $user){
-
 			$skus = get_user_meta( $user->user_id, "sku", true );		
 			array_push( $all_skus, ...$skus );
+		}
+
+		
+		// Remove Items With SKUs
+
+		foreach($items as $item){
+
+			return $item["SKU"];
+
 
 		}
 
