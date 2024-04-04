@@ -479,9 +479,7 @@ class Ebay_Integration_Ebay_API {
 	
 			} else {
 
-				return $json["ActiveList"];
-
-				// return array("error" => false, "data"=> $json, "items" => $json["ActiveList"]["ItemArray"]["Item"] );
+				return $json["ActiveList"]["ItemArray"]["Item"];
 				
 			}
 	
