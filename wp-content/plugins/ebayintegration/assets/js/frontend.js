@@ -148,9 +148,18 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		console.log("Set SKU User");
 		console.log( $(document).find(".ebay-item[data-sku='Matt Meister']") );
 		jQuery(document).find(".set_sku_user").appendTo('body').modal("show");
+
+
+		var selected_items = "";
 		
+		$.each( $(document).find(".ebay-item[data-sku='Matt Meister']"), function( k, v ){
+			selected_items = selected_items + v;
+		} );
+
 		jQuery(document).find(".set_sku_user").find(".items_with_sku").html(
-			$(document).find(".ebay-item[data-sku='Matt Meister']").html()
+			"<table>" +
+			selected_items +
+			"</table>"
 		);
 	}
 
