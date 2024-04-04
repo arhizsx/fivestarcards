@@ -220,7 +220,7 @@ function getItemsRoutine(){
 
 			$.when(item_pages).done( function(pages){
 
-				console.log( JSON.parse(pages) );
+				console.log(pages);
 
 
 				// console.log( pages.data + " pages needs to be processed..." );

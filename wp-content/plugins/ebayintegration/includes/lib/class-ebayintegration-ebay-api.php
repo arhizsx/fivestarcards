@@ -459,7 +459,7 @@ class Ebay_Integration_Ebay_API {
 
 		curl_multi_close($mh);		
 
-		return $result;
+		return json_encode($result);
 
 
 	}	
