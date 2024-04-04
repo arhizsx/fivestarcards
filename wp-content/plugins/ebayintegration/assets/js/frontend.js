@@ -155,7 +155,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find("[name='clicked_sku']").val( $(this).data("sku") );
 
 		$.each( $(document).find(".ebay-item[data-sku='" + $(this).data("sku") + "']"), function( k, v ){
-			selected_items = selected_items + "<tr><td>" + $(v).find("td").eq(1).html() + "</td><td>" + $(v).find("td").eq(2).html() + "</td></tr>";
+			selected_items = selected_items + "<tr><td>" + $(v).find("td").eq(1).html() + "</td><td>" + $(v).find("td").eq(5).html() + "</td></tr>";
 		} );
 
 		jQuery(document).find(".set_sku_user").find("#items_with_sku").html(
