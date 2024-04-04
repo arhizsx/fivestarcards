@@ -496,7 +496,7 @@ class Ebay_Integration_Ebay_API {
 		}
 
 
-		return json_encode(["count" => count( $items ), "items" => $items]);
+		return ["count" => count( $items ), "items" => $items];
 
 
 	}	
