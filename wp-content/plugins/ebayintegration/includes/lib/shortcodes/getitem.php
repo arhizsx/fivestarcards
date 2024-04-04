@@ -68,7 +68,7 @@
             <div class="row mb-5">
                 <div class="col-12">
                     <H5 style="color: black;">Active eBay Items</H5>
-                    <div  id="items_with_sku" style="max-height: 600px; overflow-y: scroll !important;">
+                    <div  id="items_with_sku" style="height: 600px; max-height: 600px; overflow-y: scroll !important;">
 
                     </div>
                 </div>
