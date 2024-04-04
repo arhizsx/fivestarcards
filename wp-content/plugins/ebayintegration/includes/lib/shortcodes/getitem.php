@@ -55,6 +55,14 @@
                         </div>
                     </div>
                 </form>
+                <div class="row">
+                    <div class="col-12">
+                        <H5 style="color: black;">Active eBay Items</H5>
+                        <div  id="items_with_sku" style="overflow:auto;">
+
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
@@ -64,14 +72,6 @@
                 >
                     Set SKU to User
                 </button>
-            </div>
-            <div class="row mb-5">
-                <div class="col-12">
-                    <H5 style="color: black;">Active eBay Items</H5>
-                    <div  id="items_with_sku" style="overflow:auto;">
-
-                    </div>
-                </div>
             </div>
 
 		</div>

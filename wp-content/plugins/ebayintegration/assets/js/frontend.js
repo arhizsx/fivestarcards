@@ -164,7 +164,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			"</table>"
 		);
 
-		jQuery(document).find(".set_sku_user").find("#items_with_sku").css("height", "400px");
+		jQuery(document).find(".set_sku_user").find("#items_with_sku").css("height", "300px");
 
 	}
 
