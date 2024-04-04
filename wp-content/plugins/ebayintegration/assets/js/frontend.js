@@ -220,7 +220,7 @@ function getItemsRoutine(){
 
 			$.when(item_pages).done( function(pages){
 
-				console.log(pages.skus);
+				console.log(pages);
 
 				// $.each(pages.items, function(k, v){
 				// 	console.log(v);
