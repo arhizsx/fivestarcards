@@ -48,6 +48,10 @@
                     <label>SKU</label>
                     <input type="text" name="user_name" disabled class="form-control mb-2" value=''/>                            
                 </form>
+                <div id="items_with_sku">
+
+                </div>
+
             </div>
             <div class="modal-footer">
                 <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
