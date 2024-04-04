@@ -503,7 +503,6 @@ class Ebay_Integration_Ebay_API {
 			WHERE meta_key = 'sku'
 		" );
 
-		return $result;
 
 		$all_skus = array();
 
