@@ -157,7 +157,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		} );
 
 		jQuery(document).find(".set_sku_user").find("#items_with_sku").html(
-			"<table>" +
+			"<table class='table table-sm table-border table-striped'>" +
 			selected_items +
 			"</table>"
 		);
