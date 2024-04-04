@@ -210,6 +210,12 @@ function getItemsRoutine(){
 	var token = refreshAccessToken();
 	var items = [];
 
+	jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").html(
+		'<tr>' +
+			'<td colspan="6" class="my-5 text-center">Getting Items From eBay</td>' +
+		'</tr>'
+	);
+
 	$.when(token).done(function(response){
 
 		console.log("Refreshed Access Token");
