@@ -222,6 +222,10 @@ function getItemsRoutine(){
 
 				console.log(pages);
 
+				$.each(pages.items, function(k, v){
+					console.log(v);
+				});
+
 
 				// console.log( pages.data + " pages needs to be processed..." );
 
