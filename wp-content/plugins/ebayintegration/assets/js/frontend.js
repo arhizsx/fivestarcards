@@ -142,6 +142,14 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 
 	}
+
+	else if( jQuery(this).data("action") == "set_sku_user" ){
+
+		jQuery(document).find(".set_sku_user").appendTo('body').modal("show");
+
+	}
+
+
 	else {
 
 		console.log("Action Not Set: " + jQuery(this).data("action") );
@@ -268,7 +276,7 @@ function itemtemplate(data){
 
 
 	$.each(data,function(k, v ){
-		template = template + "<tr class='ebayintegration-btn' data-action='set_item_sku' data-item_id='" + v.ItemID + "' data-sku='" + v.SKU + "'>"; 
+		template = template + "<tr class='ebayintegration-btn' data-action='set_sku_user' data-item_id='" + v.ItemID + "' data-sku='" + v.SKU + "'>"; 
 		template = template + "<td>" + v.ItemID + "</td>";
 		template = template + "<td>" + v.Title + "</td>";
 		template = template + "<td>" + v.SKU + "</td>";
