@@ -145,6 +145,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	else if( jQuery(this).data("action") == "set_sku_user" ){
 
+		console.log("Set SKU User");
+
 		jQuery(document).find(".set_sku_user").appendTo('body').modal("show");
 
 	}
