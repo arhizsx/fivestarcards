@@ -77,7 +77,7 @@ class Ebay_Integration_Ebay_API {
 			
 			$pages = $this->GetItemPages();
 			
-			return $this->getItemsMulti( $pages["data"], $this->$per_page );
+			return $this->getItemsMulti( $pages["data"], 200);
 
 
 		} 
