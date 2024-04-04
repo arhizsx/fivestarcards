@@ -156,7 +156,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			selected_items = selected_items + v;
 		} );
 
-		jQuery(document).find(".set_sku_user").find(".items_with_sku").html(
+		jQuery(document).find(".set_sku_user").find("#items_with_sku").html(
 			"<table>" +
 			selected_items +
 			"</table>"
