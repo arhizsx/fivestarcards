@@ -519,17 +519,16 @@ class Ebay_Integration_Ebay_API {
 		
 		// Remove Items With SKUs
 
-		$items_undefined = array();
-
+		$undefined_items = array();
 		foreach($items as $item){
 			if( ! in_array( $item["SKU"], $all_skus ) ) {
-				array_push( $items_undefined, $item );
+				array_push( $undefined_items, $item );
 			}
 		}
 
 
 
-		return ["count" => count( $items ), "items" => $items, "skus" => $all_skus, "undefined" => $items_undefined ];
+		return ["count" => count( $items ), "items" => $items, "active_skus" => $all_skus, "undefined_items" => $undefined_items ];
 
 
 	}	
