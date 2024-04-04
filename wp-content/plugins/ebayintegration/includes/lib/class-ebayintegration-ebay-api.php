@@ -411,6 +411,8 @@ class Ebay_Integration_Ebay_API {
 					'</ActiveList>' .
 				'</GetMyeBaySellingRequest> ';
 
+			return $post_data;
+
 			$multiCurl[$i] = curl_init();			
 
 			curl_setopt_array(
