@@ -21,10 +21,15 @@ class Ebay_Integration_Ebay_API {
 	public $refresh_token;
     public $authorization;		
     public $content_type;		
-    public $per_page;		
+    public $per_page;	
+	public $wpdb;	
 
 	
 	public function __construct( ) {
+
+		global $wpdb;
+
+		$this->wpdb = $wpdb;
 
 		$this->access_token = get_option("wpt_access_token");
 		$this->refresh_token = get_option("wpt_refresh_token");
@@ -52,7 +57,6 @@ class Ebay_Integration_Ebay_API {
         $headers = $data->get_headers();
         $params = $data->get_params();
         $nonce = $headers["x_wp_nonce"][0];
-
 
 		if( !isset($params["action"]) ){
 			return array("error"=> true, "error_message" => "Action Not Set");
@@ -95,7 +99,6 @@ class Ebay_Integration_Ebay_API {
 		} 
 
 		elseif($params["action"] == "confirmAddSKU"){
-			global $wpdb;
 
 			$user_id =  $params["user_id"];
 			$meta = "sku";
@@ -284,7 +287,6 @@ class Ebay_Integration_Ebay_API {
 
 	public function getItems($page_number = null,  $per_page = null){
 
-		global $wpdb;     
 
 		$apiURL = "https://api.ebay.com/ws/api.dll";
 		
@@ -361,7 +363,7 @@ class Ebay_Integration_Ebay_API {
 
 				foreach($json["ActiveList"]["ItemArray"]["Item"] as $item){
 
-					$wpdb->replace("ebay", array(
+					$this->wpdb->replace("ebay", array(
 						"item_id" => $item["ItemID"],
 						"sku" => $item["SKU"],
 						"data" => json_encode($item),
@@ -494,6 +496,20 @@ class Ebay_Integration_Ebay_API {
 			}
 	
 		}
+
+		$users_with_sku = $this->wpdb->get_results ( "
+			SELECT user_id 
+			FROM  wp_usermeta
+			WHERE meta_key = 'sku'
+		" );
+
+		return $result;
+
+		foreach($users_with_sku as $user){
+			$skus = get_user_meta( $user->user_id, "sku", true );		
+			return $skus;	
+		}
+
 
 
 		return ["count" => count( $items ), "items" => $items];
