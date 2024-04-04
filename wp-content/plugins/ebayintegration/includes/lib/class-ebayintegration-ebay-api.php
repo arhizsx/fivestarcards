@@ -482,7 +482,10 @@ class Ebay_Integration_Ebay_API {
 		
 				} else {
 	
-					array_push( $items, $json["ActiveList"]["ItemArray"]["Item"] );
+					foreach( $json["ActiveList"]["ItemArray"]["Item"] as $item ){
+						array_push( $items, $item );
+					}
+
 					
 				}
 		
