@@ -505,14 +505,18 @@ class Ebay_Integration_Ebay_API {
 
 		return $result;
 
+		$all_skus = array();
+
 		foreach($users_with_sku as $user){
+
 			$skus = get_user_meta( $user->user_id, "sku", true );		
-			return $skus;	
+			array_push( $all_skus, ...$skus );
+
 		}
 
 
 
-		return ["count" => count( $items ), "items" => $items];
+		return [ "count" => count( $items ), "items" => $items, "skus" => $all_skus ];
 
 
 	}	
