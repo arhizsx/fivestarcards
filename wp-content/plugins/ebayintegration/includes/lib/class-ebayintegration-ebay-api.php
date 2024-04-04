@@ -496,7 +496,7 @@ class Ebay_Integration_Ebay_API {
 		}
 
 
-		return $items;
+		return ["count" => count( $items ), "items" => $items];
 
 
 	}	
