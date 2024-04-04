@@ -44,9 +44,16 @@
                 <forn id="add_sku_form" class=" mb-3">
                     <input type="hidden" name="user_id" value=''/>
                     <input type="hidden" name="action" value=''/>
-                    
-                    <label>SKU</label>
-                    <input type="text" name="user_name" disabled class="form-control mb-2" value=''/>                            
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <label>SKU</label>
+                            <input type="text" name="user_name" disabled class="form-control mb-2" value=''/>                            
+                        </div>
+                        <div class="col-xl-6">
+                            <label>SKU</label>
+                            <input type="text" name="user_name" disabled class="form-control mb-2" value=''/>                            
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -55,7 +62,7 @@
                 <button class="btn border btn-primary ebayintegration-btn" 
                     data-action='confirmAddSKU' 
                 >
-                    Set SKU User
+                    Set SKU to User
                 </button>
             </div>
             <div class="row">
