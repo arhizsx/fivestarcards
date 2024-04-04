@@ -66,9 +66,11 @@
                 </button>
             </div>
             <div class="row mb-5">
-                <H5>Active eBay Items</H5>
-                <div class="col-12 p-5" id="items_with_sku">
+                <div class="col-12">
+                    <H5 style="color: black;">Active eBay Items</H5>
+                    <div  id="items_with_sku">
 
+                    </div>
                 </div>
             </div>
 
