@@ -40,29 +40,24 @@
 					X
 				</button>
 			</div>
-                <div class="" id="view_card_form_box">
-                    <div class="modal-body py-2 px-3">
-                        <forn id="add_sku_form" class=" mb-3">
-                            <input type="hidden" name="user_id" value=''/>
-                            <input type="hidden" name="action" value=''/>
-                            
-                            <label>SKU</label>
-                            <input type="text" name="user_name" disabled class="form-control mb-2" value=''/>                            
-                        </form>
-                        <div id="items_with_sku">
+            <div class="modal-body py-2 px-3">
+                <forn id="add_sku_form" class=" mb-3">
+                    <input type="hidden" name="user_id" value=''/>
+                    <input type="hidden" name="action" value=''/>
+                    
+                    <label>SKU</label>
+                    <input type="text" name="user_name" disabled class="form-control mb-2" value=''/>                            
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
 
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-
-                        <button class="btn border btn-primary ebayintegration-btn" 
-                            data-action='confirmAddSKU' 
-                        >
-                            Set SKU User
-                        </button>
-                    </div>
-                </div>
+                <button class="btn border btn-primary ebayintegration-btn" 
+                    data-action='confirmAddSKU' 
+                >
+                    Set SKU User
+                </button>
+            </div>
 		</div>
 	</div>
 </div>
