@@ -459,33 +459,42 @@ class Ebay_Integration_Ebay_API {
 
 		curl_multi_close($mh);		
 
+		$items = array();
 
-		$xml=simplexml_load_string( $result[1] ) or die("Error: Cannot create object");
-		$json = json_decode(json_encode($xml), true);
-		
-		if(array_key_exists( "Ack", $json )){
+		foreach( $result as $k => $v ){
 
-			if($json["Ack"] == "Failure"){
-
-				if( $json["Errors"]["ShortMessage"] == "Auth token is hard expired." ){
-					
-					return array("error" => true, "data"=> "Refresh Access Token");
-
-				} else {
-
-					return array("error" => true, "data"=> $json);
-
-				}
+			$xml=simplexml_load_string( $result[$k] ) or die("Error: Cannot create object");
+			$json = json_decode(json_encode($xml), true);
+			
+			if(array_key_exists( "Ack", $json )){
 	
+				if($json["Ack"] == "Failure"){
+	
+					if( $json["Errors"]["ShortMessage"] == "Auth token is hard expired." ){
+						
+						return array("error" => true, "data"=> "Refresh Access Token");
+	
+					} else {
+	
+						return array("error" => true, "data"=> $json);
+	
+					}
+		
+				} else {
+	
+					array_push( $items, $json["ActiveList"]["ItemArray"]["Item"] );
+					
+				}
+		
 			} else {
-
-				return $json["ActiveList"]["ItemArray"]["Item"];
-				
+				return "Not Valid JSON";
 			}
 	
-		} else {
-			return "Not Valid JSON";
 		}
+
+
+		return $items;
+
 
 	}	
 
