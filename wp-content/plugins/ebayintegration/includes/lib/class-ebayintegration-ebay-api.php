@@ -466,6 +466,7 @@ class Ebay_Integration_Ebay_API {
 
 		// Get All Items From All Results
 		$items = array();
+		$ebay_skus = array();
 
 		foreach( $result as $k => $v ){
 
@@ -490,6 +491,12 @@ class Ebay_Integration_Ebay_API {
 	
 					foreach( $json["ActiveList"]["ItemArray"]["Item"] as $item ){
 						array_push( $items, $item );
+
+						if( ! in_array($item["SKU"], $ebay_skus) ){
+							array_push( $ebay_skus, $item["SKU"]);
+						}
+
+
 					}
 
 					
@@ -528,7 +535,7 @@ class Ebay_Integration_Ebay_API {
 
 
 
-		return ["count" => count( $items ), "ebay_items" => $items, "active_skus" => $all_skus, "undefined_items" => $undefined_items ];
+		return ["count" => count( $items ), "ebay_items" => $items, "active_skus" => $all_skus, "undefined_items" => $undefined_items, "ebay_skus" => $ebay_skus ];
 
 
 	}	
