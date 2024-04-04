@@ -438,7 +438,7 @@ class Ebay_Integration_Ebay_API {
 
 		do {
 
-			curl_multi_exec( $mh, $index );
+			return curl_multi_exec( $mh, $index );
 
 		} 
 		while($index > 0);		
@@ -449,11 +449,12 @@ class Ebay_Integration_Ebay_API {
 			$result[$k] = curl_multi_getcontent($ch);
 			curl_multi_remove_handle($mh, $ch);
 
+
+
 		}
 
 		curl_multi_close($mh);		
 
-		return $result;
 
 	}	
 
