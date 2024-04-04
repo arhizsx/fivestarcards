@@ -28,3 +28,45 @@
         </div>
     </div>
 </div>		
+
+<div class="modal fade set_sku_user" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+	<div class="modal-dialog" id="dxmodal">
+		<div class="modal-content modal-ajax">
+			<div class="modal-header bg-dark text-white">
+				<h5 class="modal-title">
+					Add User SKU
+				</h5>
+    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+					X
+				</button>
+			</div>
+                <div class="" id="view_card_form_box">
+                    <div class="modal-body py-2 px-3">
+                        <forn id="add_sku_form" class=" mb-3">
+                            <input type="hidden" name="user_id" value=''/>
+                            <input type="hidden" name="action" value=''/>
+                            
+                            <label>Name</label>
+                            <input type="text" name="user_name" disabled class="form-control mb-2" value=''/>
+                            
+                            <label>Email</label>
+                            <input type="text" name="user_email" disabled  class="form-control mb-2" value=''/>
+                            
+                            <label>User ID</label>
+                            <input type="text" name="id" disabled  class="form-control mb-2" value=''/>
+                            
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+
+                        <button class="btn border btn-primary ebayintegration-btn" 
+                            data-action='confirmAddSKU' 
+                        >
+                            Set SKU User
+                        </button>
+                    </div>
+                </div>
+		</div>
+	</div>
+</div>
