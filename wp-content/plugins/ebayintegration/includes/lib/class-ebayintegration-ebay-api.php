@@ -516,7 +516,7 @@ class Ebay_Integration_Ebay_API {
 
 
 
-		return [ "count" => count( $items ), "items" => $items, "skus" => $all_skus ];
+		return [ "count" => count( $items ), "items" => $items, "skus" => "" ];
 
 
 	}	
