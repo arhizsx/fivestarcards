@@ -61,6 +61,7 @@ class Ebay_Integration_Ebay_API {
 		if($params["action"] == ""){
 			return array("error"=> true, "error_message" => "Action Not Defined");
 		} 
+
 		elseif($params["action"] == "getItems"){
 
 			if( isset( $params["page_number"] ) ){
@@ -71,21 +72,28 @@ class Ebay_Integration_Ebay_API {
 
 			return $this->getItems($page_number);
 		} 
+
 		elseif($params["action"] == "getItemPages"){
 			
-			return $this->GetItemPages();
+			$pages = $this->GetItemPages();
+
+			return $pages["data"];
+
 
 		} 
+
 		elseif($params["action"] == "getItemInfo"){
 
 			return $this->getItemInfo($params["item_id"]);
 
 		} 
+
 		elseif($params["action"] == "refreshToken"){
 
 			return $this->refreshToken();
 
 		} 
+		
 		elseif($params["action"] == "confirmAddSKU"){
 			global $wpdb;
 
@@ -373,6 +381,82 @@ class Ebay_Integration_Ebay_API {
 		
 	}
 		
+	public function getItemsMulti($pages = null,  $per_page = null){
+
+		$apiURL = "https://api.ebay.com/ws/api.dll";
+
+
+		$multiCurl = array();
+
+		$result = array();
+
+		$mh = curl_multi_init();
+
+		for( $i = 1; $i <= $pages; $i++ ){
+
+			$post_data = 
+				'<?xml version="1.0" encoding="utf-8"?>' .
+				'<GetMyeBaySellingRequest xmlns="urn:ebay:apis:eBLBaseComponents">' .
+				'<RequesterCredentials>' .
+					'<eBayAuthToken>' . $this->access_token  . '</eBayAuthToken>' .
+					'</RequesterCredentials>' .
+					'<ErrorLanguage>en_US</ErrorLanguage>' .
+					'<WarningLevel>High</WarningLevel>' .
+					'<ActiveList>' .
+					'<Sort>TimeLeft</Sort>' .
+					'<Pagination>' .
+					'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
+						'<PageNumber>' . $i . '</PageNumber>' .
+						'</Pagination>' .
+					'</ActiveList>' .
+				'</GetMyeBaySellingRequest> ';
+
+			$multiCurl[$i] = curl_init();			
+
+			curl_setopt_array(
+				$multiCurl[$i],
+				[
+					CURLOPT_URL => $apiURL,
+					CURLOPT_RETURNTRANSFER => true,
+					CURLOPT_ENCODING => '',
+					CURLOPT_MAXREDIRS => 10,
+					CURLOPT_TIMEOUT => 0,
+					CURLOPT_FOLLOWLOCATION => true,
+					CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+					CURLOPT_CUSTOMREQUEST => 'POST',
+					CURLOPT_POSTFIELDS =>$post_data,
+					CURLOPT_HTTPHEADER => [
+						'X-EBAY-API-SITEID:0',
+						'X-EBAY-API-COMPATIBILITY-LEVEL:967',
+						'X-EBAY-API-CALL-NAME:GetMyeBaySelling',
+					]
+				]
+			);	
+		}
+
+		$index = null;
+
+		do {
+
+			curl_multi_exec( $mh, $index );
+
+		} 
+		while($index > 0);		
+
+
+		foreach($multiCurl as $k => $ch) {
+
+			$result[$k] = curl_multi_getcontent($ch);
+			curl_multi_remove_handle($mh, $ch);
+
+		}
+
+		curl_multi_close($mh);		
+
+		return $result;
+
+	}	
+
 
 
 	public function getItemInfo($item_id){
