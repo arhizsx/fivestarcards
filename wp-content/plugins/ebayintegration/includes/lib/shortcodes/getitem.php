@@ -59,9 +59,9 @@
                             <td><?php echo $item_data["ItemID"]; ?></td>
                             <td><?php echo $item_data["Title"]; ?></td>
                             <td><?php echo $item_data["SKU"]; ?></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><?php echo $item_data["ListingType"]; ?></td>
+                            <td><?php echo $item_data["ListingDuration"]; ?></td>
+                            <td><?php echo $item_data["SellingStatus"]["CurrentPrice"]; ?></td>
                         </tr>
                     <?php 
                         }
