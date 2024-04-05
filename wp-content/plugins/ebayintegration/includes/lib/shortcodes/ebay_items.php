@@ -151,9 +151,12 @@ $(document).ready(function(){
 });
 
 $(document).on("click", ".ebay-item", function(){
-    var url = $(this).data("view_url");
-
     console.log( url );
+
+    var url = $(this).data("view_url");
+    window.open(url);
+    return false;
+
 });
 
 </script>
