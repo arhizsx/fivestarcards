@@ -61,8 +61,8 @@ $results = $wpdb->get_results("
                     <tr>
                         <th>Item Number</th>
                         <th>Title</th>
-                        <th>Current Price</th>
-                        <th>Days Left</th>
+                        <th class="text-end">Current Price</th>
+                        <th class="text-end">Days Left</th>
                     </tr>
                 </thead>
                 <tbody> 
@@ -75,8 +75,8 @@ $results = $wpdb->get_results("
                 <tr>
                     <td><?php echo $data->ItemID ?></td>
                     <td><?php echo $data->Title ?></td>
-                    <td><?php echo $data->SellingStatus->CurrentPrice ?></td>
-                    <td><?php echo $data->SellingStatus->CurrentPrice ?></td>
+                    <td class="text-end"><?php echo $data->SellingStatus->CurrentPrice ?></td>
+                    <td class="text-end"><?php echo $data->SellingStatus->CurrentPrice ?></td>
 
                 </tr>
             <?php 
