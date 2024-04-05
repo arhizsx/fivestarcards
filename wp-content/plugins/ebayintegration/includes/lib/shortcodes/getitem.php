@@ -27,7 +27,7 @@
     " );
 
 
-    print_r($ebay);
+    print_r(  json_decode($ebay->data ) );
 
 
 ?>
