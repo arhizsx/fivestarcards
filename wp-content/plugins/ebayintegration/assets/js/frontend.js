@@ -68,8 +68,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		var user_id = jQuery(document).find(".add_sku").find("#add_sku_form").find("[name='user_id']").val();
 		var sku = jQuery(document).find(".add_sku").find("#add_sku_form").find("[name='sku']").val();
 
-		// console.log(action);
-
 		jQuery.ajax({
 			method: 'get',
 			url: "/wp-json/ebayintegration/v1/ajax",
@@ -86,10 +84,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				});
 				skus = skus + "</ul>"
 
-
+				
 				jQuery(document).find("#members_skus_table tbody tr.user_row[data-user_id='" + user_id + "'] td.skus").html(
 					skus
 				)
+
+				jQuery(document).find(".ebay-item[data-sku='" + sku + "']").remove();				
 
 				jQuery(document).find(".add_sku").modal("hide");
 
