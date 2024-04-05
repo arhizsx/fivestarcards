@@ -146,7 +146,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	else if( jQuery(this).data("action") == "set_sku_user" ){
 
 
-		jQuery(document).find(".set_sku_user").appendTo('body').modal("show");
+		jQuery(document).find(".add_sku").appendTo('body').modal("show");
 
 		var action = jQuery(document).find(".add_sku").find("#add_sku_form").find("[name='action']").val();
 		var user_id = jQuery(document).find(".add_sku").find("#add_sku_form").find("[name='user_id']").val();
@@ -160,13 +160,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			selected_items = selected_items + "<tr><td>" + $(v).find("td").eq(1).html() + "</td><td>" + $(v).find("td").eq(5).html() + "</td></tr>";
 		} );
 
-		jQuery(document).find(".set_sku_user").find("#items_with_sku").html(
+		jQuery(document).find(".add_sku").find("#items_with_sku").html(
 			"<table class='table table-sm table-border table-striped'>" +
 			selected_items +
 			"</table>"
 		);
 
-		jQuery(document).find(".set_sku_user").find("#items_with_sku").css("height", "300px");
+		jQuery(document).find(".add_sku").find("#items_with_sku").css("height", "300px");
 
 	}
 
