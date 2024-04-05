@@ -73,8 +73,8 @@ $results = $wpdb->get_results("
             ?>
                 <tr class="ebay-item" data-item_id="<?php echo $data->ItemID ?>">
                     <td><?php echo $data->Title ?></td>
-                    <td class="text-end"></td>
-                    <td class="text-end"></td>
+                    <td class="text-end ebay-item-current_price" data-item_id="<?php echo $data->ItemID ?>"></td>
+                    <td class="text-end ebay-item-days_left" data-item_id="<?php echo $data->ItemID ?>"></td>
 
                 </tr>
             <?php 
@@ -146,9 +146,8 @@ $(document).ready(function(){
                         // Show the final number of days between dates     
                         var daysLeft =  Math.round(Math.abs(days));  
 
-                        console.log(currentPrice);
-                        console.log(daysLeft);
-
+                        $(document).find(".ebay-item-current_price[data-item_id='" + item_id + "']").text(currentPrice);
+                        $(document).find(".ebay-item-days_left[data-item_id='" + item_id + "']").text(daysLeft);
 
                     },
                     error: function(){
