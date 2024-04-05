@@ -52,10 +52,12 @@
                 <tbody>
                     <?php 
                         foreach($ebay as $item){
+
+                            $item_data = json_decode( $item->data, true );
                     ?>
                         <tr>
                             <td><?php echo $item->item_id; ?></td>
-                            <td></td>
+                            <td><?php echo $item_data["SKU"]; ?></td>
                             <td></td>
                             <td></td>
                             <td></td>
