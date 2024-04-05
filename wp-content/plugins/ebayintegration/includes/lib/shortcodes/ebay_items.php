@@ -35,6 +35,7 @@ $results = $wpdb->get_results("
                 <thead>
                     <tr>
                         <th>Title</th>
+                        <th class="text-end">Bids</th>
                         <th class="text-end">Current Price</th>
                         <th class="text-end">Days Left</th>
                     </tr>
@@ -48,6 +49,7 @@ $results = $wpdb->get_results("
             ?>
                 <tr class="ebay-item" data-item_id="<?php echo $data->ItemID ?>" data-view_url="" data-view_image="">
                     <td><?php echo $data->Title ?></td>
+                    <td class="text-end ebay-item-bids" data-item_id="<?php echo $data->ItemID ?>"></td>
                     <td class="text-end ebay-item-current_price" data-item_id="<?php echo $data->ItemID ?>"></td>
                     <td class="text-end ebay-item-days_left" data-item_id="<?php echo $data->ItemID ?>"></td>
 
@@ -97,12 +99,14 @@ $(document).ready(function(){
                         var endTime = "";
                         var startTime = "";
                         var viewURL = "";
+                        var bids = "";
 
                         console.log(resp);
 
                         if( resp.data.Item.SellingStatus.QuantitySold == "0" ){
 
                             currentPrice = resp.data.Item.SellingStatus.CurrentPrice;
+                            bids = resp.data.Item.SellingStatus.BidCount;
                             startTime = resp.data.Item.ListingDetails.StartTime;
                             endTime = resp.data.Item.ListingDetails.EndTime;
                             viewURL = resp.data.Item.ListingDetails.ViewItemURL;
@@ -125,6 +129,7 @@ $(document).ready(function(){
                         // Show the final number of days between dates     
                         var daysLeft =  Math.round(Math.abs(days));  
 
+                        $(document).find(".ebay-item-bids[data-item_id='" + item_id + "']").text( "$" + bids);
                         $(document).find(".ebay-item-current_price[data-item_id='" + item_id + "']").text( "$" + currentPrice);
                         $(document).find(".ebay-item-days_left[data-item_id='" + item_id + "']").text(daysLeft);
                         $(document).find(".ebay-item[data-item_id='" + item_id + "']").attr("data-view_url", viewURL);
