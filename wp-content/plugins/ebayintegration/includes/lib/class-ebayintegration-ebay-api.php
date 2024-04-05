@@ -371,8 +371,6 @@ class Ebay_Integration_Ebay_API {
 					));
 				}
 		
-				
-
 				return array("error" => false, "page" => $page_number, "data"=> $json, "items" => $json["ActiveList"]["ItemArray"]["Item"] );
 				
 			}
@@ -496,10 +494,14 @@ class Ebay_Integration_Ebay_API {
 							array_push( $ebay_skus, $item["SKU"]);
 						}
 
-
-					}
-
-					
+						$this->wpdb->replace("ebay", array(
+							"item_id" => $item["ItemID"],
+							"sku" => $item["SKU"],
+							"data" => json_encode($item),
+							"status" => "active"
+						));
+						
+					}					
 				}
 		
 			} else {
