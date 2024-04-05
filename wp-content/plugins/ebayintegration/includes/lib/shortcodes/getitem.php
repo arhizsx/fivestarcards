@@ -52,8 +52,10 @@
                 <tbody>
                     <?php 
                         foreach($ebay as $item){
-
                             $item_data = json_decode( $item->data, true );
+
+                            if( ! in_array($item_data["SKU"], $all_skus) ){
+
                     ?>
                         <tr  class='ebayintegration-btn ebay-item' data-action='set_sku_user' data-item_id='<?php echo $item_data["ItemID"]; ?>' data-sku='<?php echo $item_data["SKU"]; ?>'>
                             <td><?php echo $item_data["ItemID"]; ?></td>
@@ -64,6 +66,7 @@
                             <td><?php echo $item_data["SellingStatus"]["CurrentPrice"]; ?></td>
                         </tr>
                     <?php 
+                            }
                         }
                     ?>
                     <tr>
