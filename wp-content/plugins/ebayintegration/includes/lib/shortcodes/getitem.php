@@ -1,14 +1,39 @@
 <?php 
+    global $wpdb;
+
     $args = array(
         'orderby'    => 'display_name',
         'order'      => 'ASC'
     );
 
     $users = get_users( $args );
+
+    $users_with_sku = $this->wpdb->get_results ( "
+        SELECT user_id 
+        FROM  wp_usermeta
+        WHERE meta_key = 'sku'
+    " );
+
+    $all_skus = array();
+
+    foreach($users_with_sku as $user){
+        $skus = get_user_meta( $user->user_id, "sku", true );		
+        array_push( $all_skus, ...$skus );
+    }
+
+    $ebay = $this->wpdb->get_results ( "
+        SELECT * 
+        FROM  ebay
+    " );
+
+
+    print_r($ebay);
+
+
 ?>
 
 <div>
-    <button class="ebayintegration-btn" data-action="getItems" data-per_page="<?php echo $this->per_page ?><">Get Active eBay Items</button>
+    <button class="ebayintegration-btn" data-action="getItems" data-per_page="<?php echo $this->per_page ?><">Refresh Active eBay Items</button>
     <!-- <button class="ebayintegration-btn" data-action="refreshToken">Reconnect to eBay</button> -->
 </div>		
 <div class="ebayintegration-items_box">
@@ -80,21 +105,6 @@
                     <div class="col-12">
                         <H5 style="color: black;">Active eBay Items</H5>
                         <div  id="items_with_sku" style="overflow:auto;" class="border">
-                            <table id="skus_table" class="table table-border table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>ItemID</th>
-                                        <th>Title</th>
-                                        <th>eBay SKU</th>
-                                        <th>ListingType</th>
-                                        <th>ListingDuration</th>
-                                        <th>CurrentPrice</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
