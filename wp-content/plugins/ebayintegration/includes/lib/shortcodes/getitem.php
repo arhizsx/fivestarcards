@@ -56,9 +56,9 @@
                             $item_data = json_decode( $item->data, true );
                     ?>
                         <tr>
-                            <td><?php echo $item->item_id; ?></td>
+                            <td><?php echo $item_data["ItemID"]; ?></td>
+                            <td><?php echo $item_data["Title"]; ?></td>
                             <td><?php echo $item_data["SKU"]; ?></td>
-                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
