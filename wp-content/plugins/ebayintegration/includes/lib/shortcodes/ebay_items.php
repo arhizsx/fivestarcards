@@ -35,7 +35,7 @@ $results = $wpdb->get_results("
                 <thead>
                     <tr>
                         <th>Title</th>
-                        <th class="text-end">Bids</th>
+                        <th class="text-center">Bids</th>
                         <th class="text-end">Current Price</th>
                         <th class="text-end">Days Left</th>
                     </tr>
@@ -50,7 +50,7 @@ $results = $wpdb->get_results("
                 <tr class="ebay-item" data-item_id="<?php echo $data->ItemID ?>" data-view_url="" data-view_image="">
                     <td><?php echo $data->Title ?></td>
                     <td class="text-end ebay-item-bids" data-item_id="<?php echo $data->ItemID ?>"></td>
-                    <td class="text-end ebay-item-current_price" data-item_id="<?php echo $data->ItemID ?>"></td>
+                    <td class="text-center ebay-item-current_price" data-item_id="<?php echo $data->ItemID ?>"></td>
                     <td class="text-end ebay-item-days_left" data-item_id="<?php echo $data->ItemID ?>"></td>
 
                 </tr>
