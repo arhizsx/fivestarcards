@@ -100,7 +100,7 @@ $(document).ready(function(){
 
 		if( response["token_type"] == "User Access Token" ){
 
-            items = $(document).find("tr.ebay-item");
+            items = $(document).find("table tbody .ebay-item");
 
             console.log(items);
 
