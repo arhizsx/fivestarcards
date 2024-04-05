@@ -26,10 +26,6 @@
         FROM  ebay
     " );
 
-
-    print_r(  json_decode($ebay->data ) );
-
-
 ?>
 
 <div>
@@ -54,6 +50,20 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php 
+                        foreach($ebay as $item){
+                    ?>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    <?php 
+                        }
+                    ?>
                     <tr>
                         <td colspan="6" class="my-5 text-center">Refresh eBay Items</td>
                     </tr>
