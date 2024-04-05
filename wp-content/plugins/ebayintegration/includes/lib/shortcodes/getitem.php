@@ -80,7 +80,21 @@
                     <div class="col-12">
                         <H5 style="color: black;">Active eBay Items</H5>
                         <div  id="items_with_sku" style="overflow:auto;" class="border">
+                            <table id="skus_table" class="table table-border table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ItemID</th>
+                                        <th>Title</th>
+                                        <th>eBay SKU</th>
+                                        <th>ListingType</th>
+                                        <th>ListingDuration</th>
+                                        <th>CurrentPrice</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
