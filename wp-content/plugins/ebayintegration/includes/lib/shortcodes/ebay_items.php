@@ -100,33 +100,34 @@ $(document).ready(function(){
 
 		if( response["token_type"] == "User Access Token" ){
 
-            items = $(document).find("table tbody .ebay-item");
 
-            console.log(items);
-
-            $.each(items, function(k, v){
-
-
-                var item_id = items.eq(k).attr("data-item_id");
-
-                jQuery.ajax({
-                    method: 'get',
-                    url: "/wp-json/ebayintegration/v1/ajax",
-                    data: {
-                        action : "getItemInfo",
-                        item_id : item_id,
-                    },
-                    success: function(resp){
-                        console.log(resp);
-                        var img = resp.data.Item.PictureDetails.PictureURL[0];
-                        $(document).find(".ebay-item[data-item_id='" + item_id +"']").find("img").attr("src", img);
-
-                    },
-                    error: function(){
-                    }
-                });
-
+            $(document).find(".ebay-item").each(function(k, v){
+                console.log( v );
             });
+
+            // $.each(items, function(k, v){
+
+
+            //     var item_id = items.eq(k).attr("data-item_id");
+
+            //     jQuery.ajax({
+            //         method: 'get',
+            //         url: "/wp-json/ebayintegration/v1/ajax",
+            //         data: {
+            //             action : "getItemInfo",
+            //             item_id : item_id,
+            //         },
+            //         success: function(resp){
+            //             console.log(resp);
+            //             var img = resp.data.Item.PictureDetails.PictureURL[0];
+            //             $(document).find(".ebay-item[data-item_id='" + item_id +"']").find("img").attr("src", img);
+
+            //         },
+            //         error: function(){
+            //         }
+            //     });
+
+            // });
 
         }
 
