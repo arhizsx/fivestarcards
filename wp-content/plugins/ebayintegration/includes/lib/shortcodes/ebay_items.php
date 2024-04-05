@@ -102,6 +102,7 @@ $(document).ready(function(){
 
             items = $(document).find(".ebay-item");
 
+            console.log(items);
 
             $.each(items, function(k, v){
 
