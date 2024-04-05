@@ -90,7 +90,7 @@
                 <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
 
                 <button class="btn border btn-primary ebayintegration-btn" 
-                    data-action='add_sku_to_user' 
+                    data-action='confirmAddSKU' 
                 >
                     Set SKU to User
                 </button>
