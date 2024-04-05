@@ -59,7 +59,6 @@ $results = $wpdb->get_results("
             <table class="table table-sm table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>Item Number</th>
                         <th>Title</th>
                         <th class="text-end">Current Price</th>
                         <th class="text-end">Days Left</th>
@@ -72,8 +71,7 @@ $results = $wpdb->get_results("
                     $data = json_decode($result->data);
 
             ?>
-                <tr>
-                    <td><?php echo $data->ItemID ?></td>
+                <tr class=".ebay-item" data-item_id="<?php echo $data->ItemID ?>">
                     <td><?php echo $data->Title ?></td>
                     <td class="text-end"><?php echo $data->SellingStatus->CurrentPrice ?></td>
                     <td class="text-end"><?php echo $data->SellingStatus->CurrentPrice ?></td>
