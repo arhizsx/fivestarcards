@@ -46,7 +46,7 @@ $results = $wpdb->get_results("
                     $data = json_decode($result->data);
 
             ?>
-                <tr class="ebay-item" data-item_id="<?php echo $data->ItemID ?>">
+                <tr class="ebay-item" data-item_id="<?php echo $data->ItemID ?>" data-view_url="" data-view_image="">
                     <td><?php echo $data->Title ?></td>
                     <td class="text-end ebay-item-current_price" data-item_id="<?php echo $data->ItemID ?>"></td>
                     <td class="text-end ebay-item-days_left" data-item_id="<?php echo $data->ItemID ?>"></td>
@@ -62,7 +62,7 @@ $results = $wpdb->get_results("
 
 <script>
 
-    var items;
+var items;
 
 $(document).ready(function(){
 
@@ -144,6 +144,12 @@ $(document).ready(function(){
     });
 
 
+});
+
+$(document).on("click", ".ebay-item", function(){
+    var url = $(this).data("view_url");
+
+    console.log( url );
 });
 
 </script>
