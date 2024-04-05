@@ -100,7 +100,9 @@ $(document).ready(function(){
 
 		if( response["token_type"] == "User Access Token" ){
 
+            console.log($(document).find(".ebay-item"));
 
+            
             $(document).find(".ebay-item").each(function(k, v){
                 console.log( v );
             });
