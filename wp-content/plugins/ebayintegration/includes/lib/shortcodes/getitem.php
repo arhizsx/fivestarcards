@@ -56,7 +56,7 @@
                     <div class="row">
                         <div class="col-xl-6">
                             <label>SKU</label>
-                            <input type="text" name="clicked_sku" disabled class="form-control mb-2" value=''/>                            
+                            <input type="text" name="sku" disabled class="form-control mb-2 clicked_sku" value=''/>                            
                         </div>
                         <div class="col-xl-6">
 
