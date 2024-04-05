@@ -1,6 +1,15 @@
+<?php 
+    $args = array(
+        'orderby'    => 'display_name',
+        'order'      => 'ASC'
+    );
+
+    $users = get_users( $args );
+?>
+
 <div>
     <button class="ebayintegration-btn" data-action="getItems" data-per_page="<?php echo $this->per_page ?><">Get Active eBay Items</button>
-    <button class="ebayintegration-btn" data-action="refreshToken">Reconnect to eBay</button>
+    <!-- <button class="ebayintegration-btn" data-action="refreshToken">Reconnect to eBay</button> -->
 </div>		
 <div class="ebayintegration-items_box">
 
@@ -50,8 +59,20 @@
                             <input type="text" name="clicked_sku" disabled class="form-control mb-2" value=''/>                            
                         </div>
                         <div class="col-xl-6">
-                            <label>SKU</label>
-                            <input type="text" name="user_name" disabled class="form-control mb-2" value=''/>                            
+
+
+                            <label>User</label>
+                            <select name="user_id" class="form-control">
+                                <?php 
+                                if($users){                        
+                                    foreach($users as $user){
+                                ?>
+                                    <option value="<?php echo $user->ID ?>"><?php echo $user->display_name ?> - <?php echo $user->user_email ?></option>
+                                <?php 
+                                    }
+                                }
+                                ?>
+                            </select>
                         </div>
                     </div>
                 </form>
