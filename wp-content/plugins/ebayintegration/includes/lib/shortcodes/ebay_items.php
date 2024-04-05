@@ -35,7 +35,6 @@ $results = $wpdb->get_results("
                 <thead>
                     <tr>
                         <th>Title</th>
-                        <th class="text-end">Bids</th>
                         <th class="text-end">Current Price</th>
                         <th class="text-end">Days Left</th>
                     </tr>
@@ -126,7 +125,7 @@ $(document).ready(function(){
                         // Show the final number of days between dates     
                         var daysLeft =  Math.round(Math.abs(days));  
 
-                        $(document).find(".ebay-item-current_price[data-item_id='" + item_id + "']").text("$" + currentPrice);
+                        $(document).find(".ebay-item-current_price[data-item_id='" + item_id + "']").text( "$" + currentPrice);
                         $(document).find(".ebay-item-days_left[data-item_id='" + item_id + "']").text(daysLeft);
                         $(document).find(".ebay-item[data-item_id='" + item_id + "']").attr("data-view_url", viewURL);
 
