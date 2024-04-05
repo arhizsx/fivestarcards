@@ -148,10 +148,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		jQuery(document).find(".set_sku_user").appendTo('body').modal("show");
 
+		var action = jQuery(document).find(".add_sku").find("#add_sku_form").find("[name='action']").val();
+		var user_id = jQuery(document).find(".add_sku").find("#add_sku_form").find("[name='user_id']").val();
+		var sku = $(this).data("sku");
 
 		var selected_items = "";
 		
-		$(document).find(".clicked_sku").val( $(this).data("sku") );
+		$(document).find(".clicked_sku").val( sku );
 
 		$.each( $(document).find(".ebay-item[data-sku='" + $(this).data("sku") + "']"), function( k, v ){
 			selected_items = selected_items + "<tr><td>" + $(v).find("td").eq(1).html() + "</td><td>" + $(v).find("td").eq(5).html() + "</td></tr>";
