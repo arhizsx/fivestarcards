@@ -102,8 +102,6 @@ $(document).ready(function(){
 
             items = $(document).find(".ebay-item");
 
-            console.log(items);
-
 
             $.each(items, function(k, v){
 
@@ -118,16 +116,51 @@ $(document).ready(function(){
                         item_id : item_id,
                     },
                     success: function(resp){
-                        console.log(resp);
-                        var img = resp.data.Item.PictureDetails.PictureURL[0];
-                        $(document).find(".ebay-item[data-item_id='" + item_id +"']").find("img").attr("src", img);
+                        
+                        var currentPrice = 0;
+                        var daysLeft = "";
+                        var endTime = "";
+                        var startTime = "";
+
+                        if( resp.data.Item.SellingStatus.QuantitySold == "0" ){
+
+                            currentPrice = resp.data.Item.SellingStatus.CurrentPrice;
+                            startTime = resp.data.Item.ListingDetails.StartTime;
+                            endTime = resp.data.Item.ListingDetails.EndTime;
+
+                        } else {
+
+                            currentPrice = "Sold";
+
+                        }
+
+                        var startDay = new Date(startTime);  
+                        var endDay = new Date(endTime);  
+                        
+                        // Determine the time difference between two dates     
+                        var millisBetween = startDay.getTime() - endDay.getTime();  
+                        
+                        // Determine the number of days between two dates  
+                        var days = millisBetween / (1000 * 3600 * 24);  
+                        
+                        // Show the final number of days between dates     
+                        var daysLeft =  Math.round(Math.abs(days));  
+
+                        console.log(currentPrice);
+                        console.log(daysLeft);
+
 
                     },
                     error: function(){
                     }
                 });
 
+
+
             });
+
+
+            
 
         }
 
