@@ -63,7 +63,7 @@
 
                             <label>User</label>
                             <select name="user_id" class="form-control">
-                                <option value="" selected>Select User</option>
+                                <option value="">Select User</option>
                                 <?php 
                                 if($users){                        
                                     foreach($users as $user){
