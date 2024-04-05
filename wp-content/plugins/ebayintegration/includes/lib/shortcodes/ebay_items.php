@@ -127,7 +127,7 @@ $(document).ready(function(){
 
                         $(document).find(".ebay-item-current_price[data-item_id='" + item_id + "']").text(currentPrice);
                         $(document).find(".ebay-item-days_left[data-item_id='" + item_id + "']").text(daysLeft);
-                        $(document).find(".ebay-itemt[data-item_id='" + item_id + "']").attr("data-view_url", viewURL);
+                        $(document).find(".ebay-item[data-item_id='" + item_id + "']").attr("data-view_url", viewURL);
 
 
                     },
