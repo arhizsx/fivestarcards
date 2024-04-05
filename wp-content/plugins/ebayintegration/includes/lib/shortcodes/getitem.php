@@ -55,7 +55,7 @@
 
                             $item_data = json_decode( $item->data, true );
                     ?>
-                        <tr>
+                        <tr  class='ebayintegration-btn ebay-item' data-action='set_sku_user' data-item_id='<?php echo $item_data["ItemID"]; ?>' data-sku='<?php echo $item_data["SKU"]; ?>'>
                             <td><?php echo $item_data["ItemID"]; ?></td>
                             <td><?php echo $item_data["Title"]; ?></td>
                             <td><?php echo $item_data["SKU"]; ?></td>
