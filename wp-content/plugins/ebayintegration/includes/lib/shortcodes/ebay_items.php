@@ -19,33 +19,8 @@ $results = $wpdb->get_results("
 
 ?>
 <style>
-    input {padding: 3px;}
-    select {
-        padding: 3px;
-    }
-    .ebayintegration-btn {
-        text-decoration: none; 
-    }
-    .title {
-        font-size: 1em;
-        font-weight: 500;
-        margin-top: 10px;
-    }
-    .sku {
-        font-size: .8em;
-    }
-    .ebay-img {
-        min-height: 350px;
-        max-width: 200px;
-        object-fit: contain;
-    }
-    .ebay-img-box {
-        text-align: center;
-    }
-    .ebay-price {
-        font-size: 1.2em;
-        font-weight: bold;
-        text-align: right;
+    tr {
+        cursor: pointer;
     }
 </style>
 
@@ -121,6 +96,8 @@ $(document).ready(function(){
                         var daysLeft = "";
                         var endTime = "";
                         var startTime = "";
+
+                        console.log(resp);
 
                         if( resp.data.Item.SellingStatus.QuantitySold == "0" ){
 
