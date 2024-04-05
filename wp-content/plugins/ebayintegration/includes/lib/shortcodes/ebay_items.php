@@ -73,8 +73,8 @@ $results = $wpdb->get_results("
             ?>
                 <tr class="ebay-item" data-item_id="<?php echo $data->ItemID ?>">
                     <td><?php echo $data->Title ?></td>
-                    <td class="text-end"><?php echo $data->SellingStatus->CurrentPrice ?></td>
-                    <td class="text-end"><?php echo $data->SellingStatus->CurrentPrice ?></td>
+                    <td class="text-end"></td>
+                    <td class="text-end"></td>
 
                 </tr>
             <?php 
