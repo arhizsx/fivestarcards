@@ -148,8 +148,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		jQuery(document).find(".add_sku").appendTo('body').modal("show");
 
-		var action = jQuery(document).find(".add_sku").find("#add_sku_form").find("[name='action']").val();
-		var user_id = jQuery(document).find(".add_sku").find("#add_sku_form").find("[name='user_id']").val();
 		var sku = $(this).data("sku");
 
 		var selected_items = "";
