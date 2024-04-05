@@ -50,7 +50,7 @@
                         <th>CurrentPrice</th>
                     </tr>
                 </thead>
-                <tbody style="height: 70vh; ">
+                <tbody style="height: 70vh; overflow: auto; ">
                     <?php 
                         foreach($ebay as $item){
                             $item_data = json_decode( $item->data, true );
