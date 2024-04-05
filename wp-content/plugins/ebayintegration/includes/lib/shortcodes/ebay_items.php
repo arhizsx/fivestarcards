@@ -96,6 +96,7 @@ $(document).ready(function(){
                         var daysLeft = "";
                         var endTime = "";
                         var startTime = "";
+                        var viewURL = "";
 
                         console.log(resp);
 
@@ -104,6 +105,7 @@ $(document).ready(function(){
                             currentPrice = resp.data.Item.SellingStatus.CurrentPrice;
                             startTime = resp.data.Item.ListingDetails.StartTime;
                             endTime = resp.data.Item.ListingDetails.EndTime;
+                            viewURL = resp.data.Item.ListingDetails.ViewItemURL;
 
                         } else {
 
@@ -125,6 +127,8 @@ $(document).ready(function(){
 
                         $(document).find(".ebay-item-current_price[data-item_id='" + item_id + "']").text(currentPrice);
                         $(document).find(".ebay-item-days_left[data-item_id='" + item_id + "']").text(daysLeft);
+                        $(document).find(".ebay-itemt[data-item_id='" + item_id + "']").attr("data-view_url", viewURL);
+
 
                     },
                     error: function(){
