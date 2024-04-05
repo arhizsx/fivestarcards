@@ -54,7 +54,7 @@
                         foreach($ebay as $item){
                     ?>
                         <tr>
-                            <td></td>
+                            <td><?php echo $item->item_id; ?></td>
                             <td></td>
                             <td></td>
                             <td></td>
