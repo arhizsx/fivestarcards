@@ -1551,7 +1551,7 @@
             
         if($sent) {
         //message sent!       
-            return $user->data;
+            return $user->data->user_email;
         }
         else  {
             return "not sent";
