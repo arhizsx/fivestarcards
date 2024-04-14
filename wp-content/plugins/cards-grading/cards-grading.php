@@ -1539,6 +1539,28 @@
         }
 
         update_post_meta($params["order_number"], 'status', $params["data"]["new_status"]);   
+
+
+        //user posted variables
+        $email = "arhizsx@gmail.com";
+        $message = $_POST['message_text'];
+
+        //php mailer variables
+        $to = "arhizsx@gmail.com";
+        $subject = "Some text in subject...";
+        $headers = 'From: '. $email . "\r\n" .
+            'Reply-To: ' . $email . "\r\n";
+
+        //Here put your Validation and send mail
+        $sent = wp_mail($to, $subject, strip_tags($message), $headers);
+            
+        if($sent) {
+        //message sent!       
+        }
+        else  {
+        //message wasn't sent       
+        }        
+
         return true;
 
     }
