@@ -1545,9 +1545,13 @@
 
         update_post_meta($params["order_number"], 'status', $params["data"]["new_status"]);   
 
+        $headers = array('Content-Type: text/html; charset=UTF-8');
+        $to = $user->data->user_email;
+        $body = "Hi " . $user->data->display_name . "<br><br>The status of your order is now " . $params["data"]["new_status"] ;
+        $subject = "Order # ". $params["order_number"] . " Status Update";
 
         //Here put your Validation and send mail
-        $sent = wp_mail($user->data->user_email, "Order # ". $params["order_number"] . " Status Update" , "Hi " . $user->data->display_name . "<br><br>The status of your order is now " . $params["data"]["new_status"] );
+        $sent = wp_mail($to, $subject, $body, $headers);
             
         if($sent) {
         //message sent!       
