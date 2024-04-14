@@ -1547,11 +1547,11 @@
 
 
         //Here put your Validation and send mail
-        $sent = wp_mail("arhizsx@gmail.com", "Order # ". $params["order_number"] . " Status Update" , "Message");
+        $sent = wp_mail($user->data->user_email, "Order # ". $params["order_number"] . " Status Update" , "The status of your order is now " . $params["data"]["new_status"] );
             
         if($sent) {
         //message sent!       
-            return $user->data->user_email;
+            return "notif sent";
         }
         else  {
             return "not sent";
