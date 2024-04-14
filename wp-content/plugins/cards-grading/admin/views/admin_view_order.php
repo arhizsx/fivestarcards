@@ -444,6 +444,10 @@ $processed_status = array("Processing Order", "Cards Graded");
                                         <option value="QA1">QA1</option>
                                         <option value="QA2">QA2</option>
                                         <option value="Completed - Grades Ready">Completed - Grades Ready</option>
+                                        <option value="Active Consignments">Active Consignments</option>
+                                        <option value="Pending eBay Payment">Pending eBay Payment</option>
+                                        <option value="Pending Payout">Pending Payout</option>
+                                        <option value="Paid Out">Paid Out</option>
                                     </select>
                                 </div>
                             </div>
