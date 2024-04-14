@@ -1546,10 +1546,10 @@
             
         if($sent) {
         //message sent!       
-            return $sent;
+            return "sent";
         }
         else  {
-            return $sent;
+            return "not sent";
         //message wasn't sent       
         }        
 
