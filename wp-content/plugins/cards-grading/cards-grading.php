@@ -1555,10 +1555,11 @@
         $sent = wp_mail($to, $subject, strip_tags($message), $headers);
             
         if($sent) {
-            return "Mail Sent";
+        //message sent!       
         }
         else  {
-            return "Mail Not Sent";
+            return $sent;
+        //message wasn't sent       
         }        
 
         return true;
