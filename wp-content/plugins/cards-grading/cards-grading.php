@@ -1538,15 +1538,19 @@
             return "incomple data";
         }
 
+
+        $user_id =  get_post_meta( $params["order_number"], 'user_id' , true );
+        
+
         update_post_meta($params["order_number"], 'status', $params["data"]["new_status"]);   
 
 
         //Here put your Validation and send mail
-        $sent = wp_mail("arhizsx@gmail.com", "Subject", "Message");
+        $sent = wp_mail("arhizsx@gmail.com", "Order # ". $params["order_number"] . " Status Update" , "Message");
             
         if($sent) {
         //message sent!       
-            return "sent";
+            return $user_id;
         }
         else  {
             return "not sent";
