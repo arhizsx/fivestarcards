@@ -86,7 +86,7 @@
             'cards-grading',
             plugin_dir_url(__FILE__) . 'js/cards-grading.js',
             array('jquery'),
-            170,
+            171,
             true
         );
 
@@ -1555,7 +1555,7 @@
             
         if($sent) {
         //message sent!       
-            return $user;
+            return true;
         }
         else  {
             return "not sent";

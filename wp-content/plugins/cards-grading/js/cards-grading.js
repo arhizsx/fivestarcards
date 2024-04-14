@@ -786,7 +786,7 @@ function orderAction(action, data, order_number){
 
                 if(resp ==true){
                     $(document).find(".dxmodal").modal("hide");
-                    // location.reload();
+                    location.reload();
                 }
                 else if(resp.action == "back"){
                     $(document).find(".dxmodal").modal("hide");
