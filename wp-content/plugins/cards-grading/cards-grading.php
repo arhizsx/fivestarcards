@@ -1540,6 +1540,7 @@
 
 
         $user_id =  get_post_meta( $params["order_number"], 'user_id' , true );
+        $user = get_userdata($user_id);
         
 
         update_post_meta($params["order_number"], 'status', $params["data"]["new_status"]);   
@@ -1550,7 +1551,7 @@
             
         if($sent) {
         //message sent!       
-            return $user_id;
+            return $user;
         }
         else  {
             return "not sent";
