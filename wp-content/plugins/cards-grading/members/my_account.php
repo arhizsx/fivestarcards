@@ -9,11 +9,10 @@
     <div class="col-xl-4">
     </div>
     <div class="col-xl-8">
-        <nav class="nav nav-pills flex-column flex-sm-row">
+        <nav class="nav nav-pills flex-column flex-sm-row py-5">
             <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#">Active</a>
-            <a class="flex-sm-fill text-sm-center nav-link" href="#">Longer nav link</a>
-            <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
-            <a class="flex-sm-fill text-sm-center nav-link disabled" aria-disabled="true">Disabled</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="#">Pending</a>
+            <a class="flex-sm-fill text-sm-center nav-link" href="#">Completed</a>
         </nav>
     </div>
 </div>
