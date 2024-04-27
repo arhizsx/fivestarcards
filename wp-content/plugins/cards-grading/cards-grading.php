@@ -366,7 +366,7 @@
 
         ob_start();
 
-        include( plugin_dir_path( __FILE__ ) . 'layouts/my_account.php');
+        include( plugin_dir_path( __FILE__ ) . 'members/my_account.php');
         
         $output = ob_get_clean(); 
         
