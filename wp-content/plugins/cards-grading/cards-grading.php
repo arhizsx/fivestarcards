@@ -54,6 +54,10 @@
         add_shortcode('cards-grading-dashbox_cards', array( $this, 'cards_grading_dashbox_cards_shortcode' ));
         add_shortcode('cards-grading-dashbox_orders', array( $this, 'cards_grading_dashbox_orders_shortcode' ));
 
+        // Layout
+
+        add_shortcode('cards-grading-my_account', array( $this, 'cards_grading_my_account_shortcode' ));
+        
         // Tables
 
         add_shortcode('cards-grading-orders_table', array( $this, 'cards_grading_orders_table_shortcode' ));
@@ -350,6 +354,26 @@
         return $output ;
     }
 
+    public function cards_grading_my_account_shortcode($atts) 
+    {
+
+        $default = array(
+            'title' => 'Grading Title',
+            'type' => 'grading-tyoe'
+        );
+        
+        $params = shortcode_atts($default, $atts);
+
+        ob_start();
+
+        include( plugin_dir_path( __FILE__ ) . 'layouts/my-account.php');
+        
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
+
+
     public function cards_grading_admin_shortcode($atts) 
     {
 
@@ -526,7 +550,6 @@
         
         return $output ;
     }
-
 
     public function cards_grading_dashbox_orders_shortcode($atts) 
     {
