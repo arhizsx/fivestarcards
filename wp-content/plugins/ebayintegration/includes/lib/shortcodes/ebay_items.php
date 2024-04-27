@@ -103,13 +103,14 @@ $(document).ready(function(){
 
                         console.log(resp);
 
+                        bids = resp.data.Item.SellingStatus.BidCount;
+                        startTime = resp.data.Item.ListingDetails.StartTime;
+                        endTime = resp.data.Item.ListingDetails.EndTime;
+                        viewURL = resp.data.Item.ListingDetails.ViewItemURL;
+                        
                         if( resp.data.Item.SellingStatus.QuantitySold == "0" ){
 
                             currentPrice = resp.data.Item.SellingStatus.CurrentPrice;
-                            bids = resp.data.Item.SellingStatus.BidCount;
-                            startTime = resp.data.Item.ListingDetails.StartTime;
-                            endTime = resp.data.Item.ListingDetails.EndTime;
-                            viewURL = resp.data.Item.ListingDetails.ViewItemURL;
 
                         } else {
 
