@@ -307,9 +307,9 @@ class Ebay_Integration_Ebay_API {
 		$post_data = 
 		'<?xml version="1.0" encoding="utf-8"?>' .
 		'<GetMyeBaySellingRequest xmlns="urn:ebay:apis:eBLBaseComponents">' .
-		'<RequesterCredentials>' .
-		  '<eBayAuthToken>' . get_option("wpt_access_token")  . '</eBayAuthToken>' .
-			'</RequesterCredentials>' .
+		  '<RequesterCredentials>' .
+			'<eBayAuthToken>' . get_option("wpt_access_token")  . '</eBayAuthToken>' .
+		  '</RequesterCredentials>' .
 		  '<ErrorLanguage>en_US</ErrorLanguage>' .
 			'<WarningLevel>High</WarningLevel>' .
 			'<ActiveList>' .
@@ -649,11 +649,12 @@ class Ebay_Integration_Ebay_API {
 		'<?xml version="1.0" encoding="utf-8"?>' .
 		'<GetItemTransactionsRequest xmlns="urn:ebay:apis:eBLBaseComponents">' .
 			'<RequesterCredentials>' .
-			'<eBayAuthToken>' . $this->access_token  . '</eBayAuthToken>' .
+			'<eBayAuthToken>' . get_option("wpt_access_token")  . '</eBayAuthToken>' .
+		  '</RequesterCredentials>' .
 			'<ErrorLanguage>en_US</ErrorLanguage>' .
 			'<WarningLevel>High</WarningLevel>' .
 			'<ItemID>' . $item_id .'</ItemID>' .
-		'</GetItemTransactionsRequest>';
+			'</GetItemTransactionsRequest>';
 
 		$curl = curl_init();
 		
