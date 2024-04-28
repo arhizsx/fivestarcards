@@ -673,6 +673,7 @@ class Ebay_Integration_Ebay_API {
 				CURLOPT_HTTPHEADER => [
 					'X-EBAY-API-SITEID:0',
 					'X-EBAY-API-COMPATIBILITY-LEVEL:967',
+					'X-EBAY-API-CALL-NAME:GetItemTransactions',
 					'X-EBAY-API-IAF-TOKEN::' . get_option("wpt_access_token")
 				]
 			]
