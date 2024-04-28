@@ -250,12 +250,12 @@ function getItemsRoutine(){
 		if( response["token_type"] == "User Access Token" ){
 
 			console.log("Get Item Pages - GO");
-			
+
 			var item_pages = getItemPages();
 
 			$.when(item_pages).done( function(pages){
 
-				console.log(pages);
+				console.log("XXXXXX" . pages);
 
 				var ListingDuration = [];
 				var ListingType = [];
@@ -282,6 +282,9 @@ function getItemsRoutine(){
 
 				jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").append( itemtemplate(pages.undefined_items) );
 				
+
+
+
 
 			});
 
