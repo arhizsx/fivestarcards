@@ -652,7 +652,7 @@ class Ebay_Integration_Ebay_API {
 			'<eBayAuthToken>' . $this->access_token  . '</eBayAuthToken>' .
 			'<ErrorLanguage>en_US</ErrorLanguage>' .
 			'<WarningLevel>High</WarningLevel>' .
-			  '<ItemID>1**********3</ItemID>' .
+			'<ItemID>' . $item_id .'</ItemID>' .
 		'</GetItemTransactionsRequest>';
 
 		$curl = curl_init();
