@@ -255,7 +255,7 @@ function getItemsRoutine(){
 
 			$.when(item_pages).done( function(pages){
 
-				console.log("XXXXXX" . pages);
+				console.log("XXXXXX" + pages);
 
 				var ListingDuration = [];
 				var ListingType = [];
