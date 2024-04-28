@@ -92,6 +92,12 @@ class Ebay_Integration_Ebay_API {
 
 		} 
 
+		elseif($params["action"] == "getItemTransactions"){
+
+			return $this->getItemTransactions($params["item_id"]);
+
+		} 		
+
 		elseif($params["action"] == "refreshToken"){
 
 			return $this->refreshToken();
@@ -633,5 +639,78 @@ class Ebay_Integration_Ebay_API {
         return $output ;
     }
 	
+
+	public function getItemTransactions($item_id){
+
+
+		$apiURL = "https://api.ebay.com/ws/api.dll";
+		
+		$post_data = 
+		'<?xml version="1.0" encoding="utf-8"?>' .
+		'<GetItemTransactionsRequest xmlns="urn:ebay:apis:eBLBaseComponents">' .
+			'<RequesterCredentials>' .
+			'<eBayAuthToken>' . $this->access_token  . '</eBayAuthToken>' .
+			'<ErrorLanguage>en_US</ErrorLanguage>' .
+			'<WarningLevel>High</WarningLevel>' .
+			  '<ItemID>1**********3</ItemID>' .
+		'</GetItemTransactionsRequest>';
+
+		$curl = curl_init();
+		
+		curl_setopt_array(
+			$curl,
+			[
+				CURLOPT_URL => $apiURL,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => '',
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'POST',
+				CURLOPT_POSTFIELDS =>$post_data,
+				CURLOPT_HTTPHEADER => [
+					'X-EBAY-API-SITEID:0',
+					'X-EBAY-API-COMPATIBILITY-LEVEL:967',
+					'X-EBAY-API-CALL-NAME:GetItem',
+					'X-EBAY-API-IAF-TOKEN::' . get_option("wpt_access_token")
+				]
+			]
+		);
+		
+		$response = curl_exec($curl);
+		$status = curl_getinfo($curl);
+		
+		curl_close($curl);
+		
+		$xml=simplexml_load_string($response) or die("Error: Cannot create object");
+		$json = json_decode(json_encode($xml), true);
+		
+		if(array_key_exists( "Ack", $json )){
+
+			if($json["Ack"] == "Failure"){
+
+				if( $json["Errors"]["ShortMessage"] == "Auth token is hard expired." ){
+					
+					return array("error" => true, "data"=> "Refresh Access Token");
+
+				} else {
+
+					return array("error" => true, "data"=> $json);
+
+				}
+	 
+			} else {
+
+				return array("error" => false, "data"=> $json);
+				
+			}
+	
+		} else {
+			return "Not Valid JSON";
+		}
+
+
+	}
 
 }
