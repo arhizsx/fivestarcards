@@ -249,6 +249,8 @@ function getItemsRoutine(){
 
 		if( response["token_type"] == "User Access Token" ){
 
+			console.log("Get Item Pages - GO");
+			
 			var item_pages = getItemPages();
 
 			$.when(item_pages).done( function(pages){

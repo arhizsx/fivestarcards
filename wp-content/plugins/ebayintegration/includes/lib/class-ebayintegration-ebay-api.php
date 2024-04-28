@@ -655,7 +655,6 @@ class Ebay_Integration_Ebay_API {
 		'</GetItemTransactionsRequest>';	
 
 
-
 		$curl = curl_init();
 		
 		curl_setopt_array(
