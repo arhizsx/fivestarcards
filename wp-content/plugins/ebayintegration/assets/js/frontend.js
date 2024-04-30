@@ -277,15 +277,11 @@ function getItemsRoutine(){
 
 				jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").empty();
 
-
-				jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").append( itemtemplate(pages.ebay_items) );
+				jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").append( itemtemplate(pages.undefined_items) );
 				
-				var item_rows = jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").find("tr.ebay-item");
 
-				$.each( item_rows, function( k, v ){
-
-					console.log( $(v).data("item_id") );
-
+				$.each( pages.ebay_items, function( k, v ){
+					console.log( v.ItemID );
 				});
 
 
