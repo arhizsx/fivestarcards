@@ -280,10 +280,13 @@ function getItemsRoutine(){
 
 				jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").append( itemtemplate(pages.ebay_items) );
 				
-				var item_rows = jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").find("tr.ebay-item").data("item_id");
+				var item_rows = jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").find("tr.ebay-item");
 
+				$.each( item_rows, function( k, v ){
 
-				console.log(item_rows);
+					console.log(v);
+
+				});
 
 
 			});
