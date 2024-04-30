@@ -300,7 +300,7 @@ function itemtemplate(data){
 
 	$.each(data,function(k, v ){
 		template = template + "<tr class='ebayintegration-btn ebay-item' data-action='set_sku_user' data-item_id='" + v.ItemID + "' data-sku='" + v.SKU + "'>"; 
-		template = template + "<td>" + k + " : " +  v.ItemID + "</td>";
+		template = template + "<td>" + v.ItemID + "</td>";
 		template = template + "<td>" + v.Title + "</td>";
 		template = template + "<td>" + v.SKU + "</td>";
 		template = template + "<td>" + v.ListingType + "</td>";

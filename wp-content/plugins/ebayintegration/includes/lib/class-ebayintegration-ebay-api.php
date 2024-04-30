@@ -98,6 +98,13 @@ class Ebay_Integration_Ebay_API {
 
 		} 		
 
+		elseif($params["action"] == "refreshTransactions"){
+
+			return $this->refreshTransaction();
+
+		} 		
+
+
 		elseif($params["action"] == "refreshToken"){
 
 			return $this->refreshToken();
@@ -709,6 +716,20 @@ class Ebay_Integration_Ebay_API {
 		} else {
 			return "Not Valid JSON";
 		}
+
+
+	}
+
+
+	public function refreshTransaction(){
+
+
+		$results = $this->wpdb->get_results("
+			SELECT * FROM ebay
+		");
+		
+
+		return $results;
 
 
 	}
