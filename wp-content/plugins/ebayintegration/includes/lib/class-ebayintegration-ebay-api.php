@@ -728,8 +728,15 @@ class Ebay_Integration_Ebay_API {
 			SELECT * FROM ebay
 		");
 		
+		$items = [];
 
-		return $results;
+		foreach($results as $result){
+			
+			array_push($items, $result->item_id);
+
+		}
+
+		return $items;
 
 
 	}
