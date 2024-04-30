@@ -284,7 +284,7 @@ function getItemsRoutine(){
 
 				$.each( item_rows, function( k, v ){
 
-					console.log(v);
+					console.log(v.data("item_id"));
 
 				});
 
