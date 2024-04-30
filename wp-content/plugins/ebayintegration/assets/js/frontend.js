@@ -255,8 +255,6 @@ function getItemsRoutine(){
 
 			$.when(item_pages).done( function(pages){
 
-				console.log("XXXXXX" + pages);
-
 				var ListingDuration = [];
 				var ListingType = [];
 				var SKU = [];
@@ -282,13 +280,10 @@ function getItemsRoutine(){
 
 				jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").append( itemtemplate(pages.ebay_items) );
 				
-				var item_rows = jQuery(document).find("tr.ebay-item").data("item_id");
+				var item_rows = jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").find("tr.ebay-item");
 
-				$.each( item_rows, function(k, v){
 
-					console.log(v);
-
-				} );
+				console.log(item_rows);
 
 
 			});
