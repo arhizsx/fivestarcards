@@ -27,7 +27,7 @@ FROM  ebay
                     $sold_amount = "0.00";    
                 } else {
                     $data = json_decode($item->transaction, true);
-                    $sold_amount = $data;
+                    $sold_amount = $data["Transaction"];
                 }
             ?>
             <tr>
