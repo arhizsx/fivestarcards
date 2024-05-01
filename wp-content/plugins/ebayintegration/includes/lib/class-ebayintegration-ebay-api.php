@@ -807,8 +807,12 @@ class Ebay_Integration_Ebay_API {
 				if($json["Item"]["SellingStatus"]["ListingStatus"] == "Complete") {
 					$status = "complete";
 				}
+
+				
 				if( array_key_exists("TransactionArray", $json) ) {
 					$transaction = json_encode( $json["TransactionArray"] );
+				} else {
+					$transaction = "Not Sold";
 				}
 
 				$this->wpdb->update(
