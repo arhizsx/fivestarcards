@@ -10,6 +10,11 @@ where status = 'completed'
 );
 
 ?>
+<style>
+    .text-small {
+        font-size: .7em !important;
+    }
+</style>
 
 <div class="table-responsive">
     <table>
