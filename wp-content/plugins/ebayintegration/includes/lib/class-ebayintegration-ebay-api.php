@@ -799,7 +799,7 @@ class Ebay_Integration_Ebay_API {
 			
 			$result[$k] = $json;
 
-			return $json["Ack"];
+			return $json["Item"]["SellingStatus"]["ListingStatus"];
 			// if( $json["Ack"] == "Success" ){
 
 
