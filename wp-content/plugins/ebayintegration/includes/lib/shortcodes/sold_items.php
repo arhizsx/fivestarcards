@@ -27,6 +27,9 @@ where status = 'completed'
         </thead>
         <tbody>
             <?php 
+
+            print_r( count($ebay) );
+
             if( count($ebay) > 0 ){
                 foreach($ebay as $item){ 
                     if( $item->transaction != "Not Sold" ){
@@ -46,7 +49,8 @@ where status = 'completed'
             <?php 
                     }
                 } 
-            } else {
+            } 
+            else {
             ?>
             <tr>
                 <td colspan="3" class="text-center p-5">
