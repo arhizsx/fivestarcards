@@ -18,7 +18,6 @@ where status = 'completed'
                 <th>Item</th>
                 <th>SKU</th>
                 <th>Buyer</th>
-                <th>Payment Timestamp</th>
                 <th class="text-end">Price Sold</th>
             </tr>
         </thead>
@@ -32,7 +31,6 @@ where status = 'completed'
                 <td></td>
                 <td></td>
                 <td><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["Payer"])  ; ?></td>
-                <td><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentTime"])  ; ?></td>
                 <td class="text-end"><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"])  ; ?></td>
             </tr>
             <?php 
