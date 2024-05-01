@@ -17,7 +17,7 @@ where status = 'active'
         font-size: .7em !important;
     }
 </style>
-<div class="d-flex flex-row-reverse mb-3">
+<div class="d-flex justify-content-between mb-3">
     <div>
         <i class="fa-brands fa-ebay"></i> AUCTION
     </div>
