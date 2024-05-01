@@ -400,9 +400,7 @@ class Ebay_Integration_Ebay_API {
 
 
 		$multiCurl = array();
-
 		$result = array();
-
 		$mh = curl_multi_init();
 
 		// Setup Multi Curl Requests
@@ -730,13 +728,77 @@ class Ebay_Integration_Ebay_API {
 		
 		$items = [];
 
-		foreach($results as $result){
-			
+		foreach($results as $result){			
 			array_push($items, $result->item_id);
+		}
+
+		$apiURL = "https://api.ebay.com/ws/api.dll";
+
+		$multiCurl = array();
+		$result = array();
+		$mh = curl_multi_init();
+
+		// Setup Multi Curl Requests
+
+		for( $i = 0; $i <= count($items); $i++ ){
+
+			$post_data = 
+			'<?xml version="1.0" encoding="utf-8"?>' .
+			'<GetItemTransactionsRequest xmlns="urn:ebay:apis:eBLBaseComponents">' .
+			'<RequesterCredentials>' .
+			'<eBayAuthToken>' . get_option("wpt_access_token")  . '</eBayAuthToken>' .
+			'</RequesterCredentials>' .
+			'<ItemID>' . $items[ $i ] .'</ItemID>' .
+			'</GetItemTransactionsRequest>';	
+			
+			$multiCurl[$i] = curl_init();			
+
+			curl_setopt_array(
+				$multiCurl[$i],
+				[
+					CURLOPT_URL => $apiURL,
+					CURLOPT_RETURNTRANSFER => true,
+					CURLOPT_ENCODING => '',
+					CURLOPT_MAXREDIRS => 10,
+					CURLOPT_TIMEOUT => 0,
+					CURLOPT_FOLLOWLOCATION => true,
+					CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+					CURLOPT_CUSTOMREQUEST => 'POST',
+					CURLOPT_POSTFIELDS =>$post_data,
+					CURLOPT_HTTPHEADER => [
+						'X-EBAY-API-SITEID:0',
+						'X-EBAY-API-COMPATIBILITY-LEVEL:967',
+						'X-EBAY-API-CALL-NAME:GetItemTransactions',
+						'X-EBAY-API-IAF-TOKEN::' . get_option("wpt_access_token")
+					]
+				]
+			);	
+
+			curl_multi_add_handle($mh, $multiCurl[$i]);
+		}
+
+		$index = null;
+
+		// Execute Multi Curl
+		do {
+
+			curl_multi_exec( $mh, $index );
+
+		} 
+		while($index > 0);		
+
+		// Save Result of Each Curl Pass
+		foreach($multiCurl as $k => $ch) {
+
+			$result[$k] = curl_multi_getcontent($ch);
+			curl_multi_remove_handle($mh, $ch);
 
 		}
 
-		return $items;
+		// Close Multi Curl
+		curl_multi_close($mh);		
+
+		return $result;
 
 
 	}
