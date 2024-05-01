@@ -89,7 +89,6 @@ class Ebay_Integration_Ebay_API {
 				return "Error getting item pages";
 			}
 			
-
 		} 
 
 		elseif($params["action"] == "getItemInfo"){
@@ -554,13 +553,9 @@ class Ebay_Integration_Ebay_API {
 			}
 		}
 
-
-
 		return ["count" => count( $items ), "ebay_items" => $items, "active_skus" => $all_skus, "undefined_items" => $undefined_items, "ebay_skus" => $ebay_skus ];
 
-
 	}	
-
 
 
 	public function getItemInfo($item_id){
