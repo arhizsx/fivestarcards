@@ -30,9 +30,9 @@ FROM  ebay
             <tr>
                 <td></td>
                 <td></td>
-                <td></td>
-                <td></td>
-                <td><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"])  ; ?></td>
+                <td><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["Payer"])  ; ?></td>
+                <td><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentTime"])  ; ?></td>
+                <td><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"])  ; ?></td>
             </tr>
             <?php 
                 }
