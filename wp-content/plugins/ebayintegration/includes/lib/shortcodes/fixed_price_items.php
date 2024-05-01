@@ -9,6 +9,8 @@ where status = 'completed'
 " 
 );
 
+$skus = get_user_meta( get_current_user_id(), "sku", true );		
+
 ?>
 <style>
     .text-small {
@@ -33,6 +35,8 @@ where status = 'completed'
                 $data = json_decode($item->data, true);
 
                 if( $data["ListingType"] != "Chinese"){
+                    if( in_array( $item->sku, $skus ) ){
+
             ?>
             <tr>
                 <td>
@@ -49,6 +53,7 @@ where status = 'completed'
                 ?></td>
             </tr>
             <?php 
+                    }
                 }
             }
             ?>

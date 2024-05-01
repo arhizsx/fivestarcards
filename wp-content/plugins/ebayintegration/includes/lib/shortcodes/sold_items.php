@@ -9,6 +9,8 @@ where status = 'completed'
 " 
 );
 
+$skus = get_user_meta( get_current_user_id(), "sku", true );		
+
 ?>
 <style>
     .text-small {
@@ -36,6 +38,9 @@ where status = 'completed'
                     if( $item->transaction != "Not Sold" ){
                         $transaction = json_decode($item->transaction, true);
                         $data = json_decode($item->data, true);
+
+                        if( in_array( $item->sku, $skus ) ){
+
             ?>
             <tr>
                 <td>
@@ -52,6 +57,7 @@ where status = 'completed'
                 <td class="text-end">$<?php echo number_format(( $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"]), 2, '.', ',');?></td>
             </tr>
             <?php 
+                        }
                     }
                 } 
             } 
