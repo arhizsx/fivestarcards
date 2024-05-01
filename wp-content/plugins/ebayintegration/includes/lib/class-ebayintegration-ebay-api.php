@@ -742,7 +742,7 @@ class Ebay_Integration_Ebay_API {
 
 		// Setup Multi Curl Requests
 
-		for( $i = 0; $i <= 100; $i++ ){
+		for( $i = 0; $i <= 500; $i++ ){
 
 			$post_data = 
 			'<?xml version="1.0" encoding="utf-8"?>' .
