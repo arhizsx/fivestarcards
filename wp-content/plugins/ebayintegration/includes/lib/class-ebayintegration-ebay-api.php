@@ -805,11 +805,12 @@ class Ebay_Integration_Ebay_API {
 				if( $json["Item"]["SellingStatus"]["ListingStatus"] == "Completed" ){
 					if( array_key_exists("TransactionArray", $json) ){
 
-						foreach($results as $id => $result){					
-							if($result->item_id  == $json["Item"]["ItemID"]){
-								$this->wpdb->update('ebay', array( "id", $id, "item_id" => $json["Item"]["ItemID"], "transaction" => $json));
-							}
-						}
+						$this->wpdb->query(
+							$this->wpdb->prepare("
+								UPDATE ebay SET transaction = %s WHERE item_id = %d
+							", $json, $json["Item"]["ItemID"])
+						);
+
 					}			
 				}
 			}
