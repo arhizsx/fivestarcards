@@ -90,7 +90,7 @@
             'cards-grading',
             plugin_dir_url(__FILE__) . 'js/cards-grading.js',
             array('jquery'),
-            178,
+            179,
             true
         );
 
@@ -1759,6 +1759,8 @@
         // Add role
         $u->add_role( 'um_admin' );
 
+        return true;
+
     }
 
     function doDemoteAdmin($params){
@@ -1770,6 +1772,8 @@
         
         // Add role
         $u->add_role( 'um_member' );
+
+        return true;
 
     }
     

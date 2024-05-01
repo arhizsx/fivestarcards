@@ -1135,6 +1135,9 @@ function MakeAdmin(user_id){
         }
     });
 
+    location.reload();
+
+
 }
 
 function DemoteAdmin(user_id){
@@ -1153,4 +1156,6 @@ function DemoteAdmin(user_id){
             console.log(resp);
         }
     });
+
+    location.reload();
 }
