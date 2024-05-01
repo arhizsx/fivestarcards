@@ -24,6 +24,7 @@
     $ebay = $this->wpdb->get_results ( "
         SELECT * 
         FROM  ebay
+        WHERE status <> 'completed'
         ORDER BY sku ASC
     " );
 
