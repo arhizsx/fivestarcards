@@ -80,11 +80,15 @@ class Ebay_Integration_Ebay_API {
 		elseif($params["action"] == "getItemPages"){
 			
 			$pages = $this->GetItemPages();
+
+			if($pages["error"] == false ){
+
+				return $this->getItemsMulti( $pages["data"], 200);
+
+			} else {
+				return $pages;
+			}
 			
-			return $pages;
-
-			return $this->getItemsMulti( $pages["data"], 200);
-
 
 		} 
 
