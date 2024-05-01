@@ -802,20 +802,19 @@ class Ebay_Integration_Ebay_API {
 			if( $json["Ack"] == "Success" ){
 
 				$status = "active";
+				$transaction = null;
 
 				if($json["Item"]["SellingStatus"]["ListingStatus"] == "Complete") {
-					if($json["Item"]["SellingStatus"]["QuantitySold"] > 0){
-						$status = "sold";
-					}
-					else {
-						$status = "closed";
-					}
+					$status = "complete";
+				}
+				if( array_key_exists("TransactionArray", $json) ) {
+					$transaction = json_encode( $json["TransactionArray"] );
 				}
 
 				$this->wpdb->update(
 					"ebay", 
 					array(
-						"transaction" => json_encode($json),
+						"transaction" => $transaction,
 						"status" => $status
 					),
 					array(
