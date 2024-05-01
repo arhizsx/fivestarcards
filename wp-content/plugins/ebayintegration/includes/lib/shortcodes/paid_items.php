@@ -16,6 +16,8 @@ FROM  ebay
             <tr>
                 <th>Item</th>
                 <th>SKU</th>
+                <th>Buyer</th>
+                <th>Payment Timestamp</th>
                 <th>Price Sold</th>
             </tr>
         </thead>
@@ -24,12 +26,16 @@ FROM  ebay
             foreach($ebay as $item){ 
                 if( $item->transaction != "Not Sold" ){
                     $data = json_decode($item->transaction, true);
-                    $sold_amount = $data["Transaction"]["MonetaryDetails"];
+                    $sold_amount = $data["Transaction"]["MonetaryDetails"]["PaymentAmount"];
+                    $buyer = $data["Transaction"]["MonetaryDetails"]["Payer"];
+                    $payment_time = $data["Transaction"]["MonetaryDetails"]["PaymentTime"];
             ?>
             <tr>
                 <td></td>
                 <td></td>
-                <td><?php print_r( $sold_amount ); ?></td>
+                <td><?php echo $buyer ; ?></td>
+                <td><?php echo $payment_time ; ?></td>
+                <td><?php echo $sold_amount ; ?></td>
             </tr>
             <?php 
                 }
