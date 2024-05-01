@@ -15,8 +15,11 @@ where status = 'active'
         font-size: .7em !important;
     }
 </style>
-<div class="d-flex flex-row-reverse mb-3">
-    <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_fixed_price">
+<div class="d-flex justify-content-between mb-3">
+    <div>
+        <i class="fa-brands fa-ebay fa-2xl"></i> FIXED PRICE
+    </div>
+    <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_auction">
 </div>
 
 <div class="table-responsive">
