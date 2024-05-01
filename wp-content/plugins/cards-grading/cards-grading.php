@@ -90,7 +90,7 @@
             'cards-grading',
             plugin_dir_url(__FILE__) . 'js/cards-grading.js',
             array('jquery'),
-            177,
+            178,
             true
         );
 
@@ -808,6 +808,16 @@
         elseif($params["action"] == "checkout"){
 
             return $this->doCheckout($params);
+
+        }
+        elseif($params["action"] == "make_admin"){
+
+            return "Make Admin";
+
+        }
+        elseif($params["action"] == "demote_admin"){
+
+            return "Demote Admin";
 
         }
 

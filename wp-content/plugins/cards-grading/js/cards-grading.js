@@ -1124,7 +1124,7 @@ function MakeAdmin(user_id){
 
     $.ajax({
         method: 'post',
-        url: 'https://5starcards.com/wp-json/cards-grading/v1/order-action',
+        url: 'https://5starcards.com/wp-json/cards-grading/v1/table-action',
         headers: {'X-WP-Nonce': nonce },
         data: {
             'action' : "make_admin",
