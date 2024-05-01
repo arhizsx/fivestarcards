@@ -25,7 +25,7 @@ FROM  ebay
             ?>
             <tr>
                 <td></td>
-                <td><?php echo $item->transaction; ?></td>
+                <td><?php echo $item->transaction["Transaction"]["AmountSold"]  ; ?></td>
                 <td></td>
             </tr>
             <?php 
