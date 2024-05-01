@@ -25,6 +25,7 @@ where status = 'completed'
             <tr>
                 <th>Item</th>
                 <th class="text-end">Price Sold</th>
+                <th class="text-end">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -50,9 +51,14 @@ where status = 'completed'
 
                     
                 </td>
-                <td class="text-end">$<?php 
-                echo number_format(( $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"]), 2, '.', ',');
-                ?></td>
+                <td class="text-end">
+                    $<?php 
+                    echo number_format(( $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"]), 2, '.', ',');
+                    ?>
+                </td>
+                <td>
+                    <button class="btn btn-primary">PAID</button>
+                </td>
             </tr>
             <?php
                     }
