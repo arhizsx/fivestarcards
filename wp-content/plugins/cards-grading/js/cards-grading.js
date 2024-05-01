@@ -1118,7 +1118,7 @@ function showSetSkus(){
 }
 
 
-function MakeAdmin($user_id){
+function MakeAdmin(user_id){
 
     var url = $(document).find(".5star_logged_cards").data("endpoint");
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
@@ -1129,7 +1129,7 @@ function MakeAdmin($user_id){
         headers: {'X-WP-Nonce': nonce },
         data: {
             'action' : "make_admin",
-            'user_id': post_id,
+            'user_id': user_id,
         },
         success: function(resp){
             console.log(resp);
