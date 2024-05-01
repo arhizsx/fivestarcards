@@ -9,6 +9,12 @@ where status = 'completed'
 " 
 );
 
+
+$skus = get_user_meta( get_current_user_id(), "sku", true );		
+
+print_r($skus);
+
+
 ?>
 <style>
     .text-small {
