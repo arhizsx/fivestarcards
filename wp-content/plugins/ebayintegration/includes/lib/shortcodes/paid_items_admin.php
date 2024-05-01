@@ -56,7 +56,7 @@ where status = 'completed'
                     echo number_format(( $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"]), 2, '.', ',');
                     ?>
                 </td>
-                <td>
+                <td class="text-end">
                     <button class="btn btn-primary">PAID</button>
                 </td>
             </tr>
