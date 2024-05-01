@@ -17,7 +17,7 @@ where status = 'completed'
 </style>
 
 <div class="table-responsive">
-    <table>
+    <table class="table table-bordered table-sm table-hover">
         <thead>
             <tr>
                 <th>Item</th>
