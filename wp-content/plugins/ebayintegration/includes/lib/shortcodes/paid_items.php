@@ -52,7 +52,7 @@ where status = 'completed'
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
                     
                 </td>
-                <td class="text-end"><?php 
+                <td class="text-end">$<?php 
                 echo number_format(( $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"]), 2, '.', ',');
                 ?></td>
             </tr>
