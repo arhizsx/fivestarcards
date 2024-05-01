@@ -5,12 +5,10 @@ global $wpdb;
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
-where status = 'completed'
+where status = 'active'
 " 
 );
 
-
-$skus = get_user_meta( get_current_user_id(), "sku", true );		
 
 
 ?>
@@ -38,7 +36,6 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
 
                 if( $data["ListingType"] == "Chinese"){
                     
-                    if( in_array( $item->sku, $skus ) ){
             ?>
             <tr>
                 <td>
@@ -55,7 +52,6 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                 ?></td>
             </tr>
             <?php 
-                    }
                 }
             }
             ?>

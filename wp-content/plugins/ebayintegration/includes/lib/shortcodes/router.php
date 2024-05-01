@@ -47,6 +47,31 @@
 			include( plugin_dir_path( __FILE__ ) . 'fixed_price_items.php');			
             break;
 
+        case "paid_items_admin":
+
+			include( plugin_dir_path( __FILE__ ) . 'paid_items_admin.php');			
+            break;
+
+        case "sold_items_admin":
+
+			include( plugin_dir_path( __FILE__ ) . 'sold_items_admin.php');			
+            break;
+
+        case "paid_out_admin":
+
+			include( plugin_dir_path( __FILE__ ) . 'paid_out_admin.php');			
+            break;
+
+        case "auction_items_admin":
+
+			include( plugin_dir_path( __FILE__ ) . 'auction_items_admin.php');			
+            break;
+
+        case "fixed_price_items_admin":
+
+			include( plugin_dir_path( __FILE__ ) . 'fixed_price_items_admin.php');			
+            break;
+
         case "hello":
 
 			include( plugin_dir_path( __FILE__ ) . 'hello.php');			

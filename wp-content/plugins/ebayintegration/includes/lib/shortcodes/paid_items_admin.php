@@ -5,11 +5,9 @@ global $wpdb;
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
-where status = 'paid'
+where status = 'completed'
 " 
 );
-
-$skus = get_user_meta( get_current_user_id(), "sku", true );		
 
 ?>
 <style>
@@ -37,7 +35,6 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                         $transaction = json_decode($item->transaction, true);
                         $data = json_decode($item->data, true);
 
-                        if( in_array( $item->sku, $skus ) ){
 
             ?>
             <tr>
@@ -58,7 +55,6 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                 ?></td>
             </tr>
             <?php
-                        } 
                     }
                 } 
             } 
