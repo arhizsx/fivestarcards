@@ -513,12 +513,14 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "make_admin":
 
-            return "Male Admin";
+            MakeAdmin($(this).data("user_id"));
+
+
             break;
 
         case "demote_admin":
 
-            return "Demote Admin";
+            DemoteAdmin($(this).data("user_id"));
             break;
 
 
@@ -813,7 +815,6 @@ function orderAction(action, data, order_number){
     });
     
 }
-
 
 function cardAction(action, value, post_id, parent_element ){
 
@@ -1116,3 +1117,13 @@ function showSetSkus(){
 
 }
 
+
+function MakeAdmin($user_id){
+
+    return true;
+}
+
+function DemoteAdmin($user_id){
+    
+    return true;
+}
