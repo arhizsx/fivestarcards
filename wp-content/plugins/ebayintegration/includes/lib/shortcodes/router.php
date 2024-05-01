@@ -42,6 +42,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'fixed_price_items.php');			
             break;
 
+        case "hello":
+
+			include( plugin_dir_path( __FILE__ ) . 'hello.php');			
+            break;
+
         default:
 
             echo "Shortcode Not Found";
