@@ -812,12 +812,12 @@
         }
         elseif($params["action"] == "make_admin"){
 
-            return "Make Admin";
+            return $this->doMakeAdmin($params);
 
         }
         elseif($params["action"] == "demote_admin"){
 
-            return "Demote Admin";
+            return $this->doDemoteAdmin($params);
 
         }
 
@@ -1749,6 +1749,29 @@
         return $params;
     }
 
+    function doMakeAdmin($params){
+
+        $u = new WP_User( $params["user_id"] );
+
+        // Remove role
+        $u->remove_role( 'member' );
+        
+        // Add role
+        $u->add_role( 'admin' );
+
+    }
+
+    function doDemoteAdmin($params){
+
+        $u = new WP_User( $params["user_id"] );
+
+        // Remove role
+        $u->remove_role( 'admin' );
+        
+        // Add role
+        $u->add_role( 'member' );
+
+    }
     
     //*********** HANDLER FUNCTIONS *********** //
 
