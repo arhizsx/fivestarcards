@@ -511,6 +511,16 @@ $(document).on("click", ".5star_btn", function(e){
             showSetSkus();
             break;
 
+        case "make_admin":
+
+            return "Male Admin";
+            break;
+
+        case "demote_admin":
+
+            return "Demote Admin";
+            break;
+
 
         default:
             console.log("Button not configured: " + $(this).data("action"));
