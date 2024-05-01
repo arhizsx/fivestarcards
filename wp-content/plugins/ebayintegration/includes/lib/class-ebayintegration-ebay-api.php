@@ -800,9 +800,12 @@ class Ebay_Integration_Ebay_API {
 			$result[$k] = $json;
 
 			if( $json["Ack"] == "Success" ){
-				$this->wpdb->query("
-					UPDATE ebay SET transaction = '" . $json . "' WHERE item_id = '" . $json["Item"]["ItemID"] . "'
-				");
+
+				$this->wpdb->replace("ebay", array(
+					"item_id" => $json["Item"]["ItemID"],
+					"transaction" => $json
+				));
+
 			}
 
 			curl_multi_remove_handle($mh, $ch);
