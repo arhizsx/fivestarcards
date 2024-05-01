@@ -16,11 +16,11 @@ where status = 'completed'
     }
 </style>
 <div class="d-flex flex-row-reverse mb-3">
-    <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table">
+    <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_auction">
 </div>
 
 <div class="table-responsive">
-    <table class="table table-border table-striped table-sm table-hover search_table">
+    <table class="table table-border table-striped table-sm table-hover search_table_auction">
         <thead>
             <tr>
                 <th>Item</th>
