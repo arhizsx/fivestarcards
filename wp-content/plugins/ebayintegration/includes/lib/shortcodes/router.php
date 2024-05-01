@@ -27,9 +27,19 @@
 			include( plugin_dir_path( __FILE__ ) . 'paid_items.php');			
             break;
 
+        case "sold_items":
+
+			include( plugin_dir_path( __FILE__ ) . 'sold_items.php');			
+            break;
+
         case "auction_items":
 
 			include( plugin_dir_path( __FILE__ ) . 'auction_items.php');			
+            break;
+
+        case "fixed_price_items":
+
+			include( plugin_dir_path( __FILE__ ) . 'fixed_price_items.php');			
             break;
 
         default:
