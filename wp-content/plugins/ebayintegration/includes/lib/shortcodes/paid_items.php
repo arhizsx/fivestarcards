@@ -5,6 +5,7 @@ global $wpdb;
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
+where status = 'completed'
 " 
 );
 
@@ -17,8 +18,8 @@ FROM  ebay
                 <th>Item</th>
                 <th>SKU</th>
                 <th>Buyer</th>
-                <th>Payment Timestamp</th>
                 <th>Price Sold</th>
+                <th>Payment Timestamp</th>
             </tr>
         </thead>
         <tbody>
@@ -31,8 +32,8 @@ FROM  ebay
                 <td></td>
                 <td></td>
                 <td><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["Payer"])  ; ?></td>
-                <td><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentTime"])  ; ?></td>
                 <td><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"])  ; ?></td>
+                <td><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentTime"])  ; ?></td>
             </tr>
             <?php 
                 }
