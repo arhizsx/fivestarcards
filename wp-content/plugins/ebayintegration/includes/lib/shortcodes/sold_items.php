@@ -39,7 +39,11 @@ where status = 'completed'
             ?>
             <tr>
                 <td>
-                    <div class="title"><?php print_r( $data["Title"] ); ?></div>
+                    <div class="title">
+                        <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
+                            <?php print_r( $data["Title"] ); ?>
+                        </a>
+                    </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
                     <div class="item_id text-small">Listing Type: <?php echo $data["ListingType"] ?></div>                    
