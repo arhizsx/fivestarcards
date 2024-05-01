@@ -505,14 +505,18 @@ class Ebay_Integration_Ebay_API {
 							array_push( $ebay_skus, $item["SKU"]);
 						}
 
-						$this->wpdb->replace("ebay", array(
-							"item_id" => $item["ItemID"],
-							"sku" => $item["SKU"],
-							"data" => json_encode($item),
-							"status" => "active"
-						));
+						// $this->wpdb->replace("ebay", array(
+						// 	"item_id" => $item["ItemID"],
+						// 	"sku" => $item["SKU"],
+						// 	"data" => json_encode($item),
+						// 	"status" => "active"
+						// ));
 						
-					}					
+					}
+					
+					
+					return $json;
+
 				}
 		
 			} else {
