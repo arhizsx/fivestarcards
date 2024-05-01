@@ -15,7 +15,7 @@ function showAddCardModal( what_type, per_card, max_dv ){
 $(document).on("click", ".5star_btn", function(e){
 
     console.log("button pressed");
-
+    var element = $(this);
     switch( $(this).data("action") ){		
 
         
@@ -513,14 +513,14 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "make_admin":
 
-            MakeAdmin($(this).data("user_id"));
+            MakeAdmin(element.data("user_id"));
 
 
             break;
 
         case "demote_admin":
 
-            DemoteAdmin($(this).data("user_id"));
+            DemoteAdmin(element.data("user_id"));
             break;
 
 
