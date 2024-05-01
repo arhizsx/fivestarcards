@@ -32,6 +32,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'sold_items.php');			
             break;
 
+        case "paid_out":
+
+			include( plugin_dir_path( __FILE__ ) . 'paid_out.php');			
+            break;
+
         case "auction_items":
 
 			include( plugin_dir_path( __FILE__ ) . 'auction_items.php');			
