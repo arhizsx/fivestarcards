@@ -50,8 +50,11 @@ where status = 'completed'
                     <div class="title"><?php print_r( $data["Title"] ); ?></div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
+                    
                 </td>
-                <td class="text-end"><?php print_r($transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"])  ; ?></td>
+                <td class="text-end"><?php 
+                echo number_format(( $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"] / 100), 2, '.', ',');
+                ?></td>
             </tr>
             <?php 
                 }
