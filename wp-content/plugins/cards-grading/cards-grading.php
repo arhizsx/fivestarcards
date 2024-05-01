@@ -1754,10 +1754,10 @@
         $u = new WP_User( $params["user_id"] );
 
         // Remove role
-        $u->remove_role( 'member' );
+        $u->remove_role( 'Member' );
         
         // Add role
-        $u->add_role( 'admin' );
+        $u->add_role( 'Admin' );
 
     }
 
@@ -1766,10 +1766,10 @@
         $u = new WP_User( $params["user_id"] );
 
         // Remove role
-        $u->remove_role( 'admin' );
+        $u->remove_role( 'Admin' );
         
         // Add role
-        $u->add_role( 'member' );
+        $u->add_role( 'Member' );
 
     }
     
