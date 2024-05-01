@@ -28,6 +28,8 @@
         ORDER BY sku ASC
     " );
 
+    print_r($ebay);
+
 ?>
 
 <div>
