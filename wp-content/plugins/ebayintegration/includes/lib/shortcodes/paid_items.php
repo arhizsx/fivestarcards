@@ -53,7 +53,7 @@ where status = 'completed'
                     
                 </td>
                 <td class="text-end"><?php 
-                echo number_format(( $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"] / 100), 2, '.', ',');
+                echo number_format(( $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"]), 2, '.', ',');
                 ?></td>
             </tr>
             <?php 
