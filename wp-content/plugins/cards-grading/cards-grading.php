@@ -1753,6 +1753,8 @@
 
         $u = new WP_User( $params["user_id"] );
 
+        return $u;
+
         // Remove role
         $u->remove_role( 'um_member' );
         
@@ -1764,6 +1766,8 @@
     function doDemoteAdmin($params){
 
         $u = new WP_User( $params["user_id"] );
+
+        return $u;
 
         // Remove role
         $u->remove_role( 'um_admin' );
