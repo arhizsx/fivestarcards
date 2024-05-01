@@ -799,16 +799,16 @@ class Ebay_Integration_Ebay_API {
 			
 			$result[$k] = $json;
 
-			return $json["Item"]["SellingStatus"]["ListingStatus"];
-			// if( $json["Ack"] == "Success" ){
+			if( $json["Ack"] == "Success" ){
 
 
-			// 	if( $json["Item"]["SellingStatus"]["ListingStatus"] == "Completed" ){
-			// 		if( array_key_exists("TransactionArray", $json) ){
-			// 			$this->wpdb->update('ebay', array( "item_id" => $json["Item"]["ItemID"], "transaction" => $json));
-			// 		}			
-			// 	}
-			// }
+				if( $json["Item"]["SellingStatus"]["ListingStatus"] == "Completed" ){
+					if( array_key_exists("TransactionArray", $json) ){
+						return $json["TransactionArray"];
+						$this->wpdb->update('ebay', array( "item_id" => $json["Item"]["ItemID"], "transaction" => $json));
+					}			
+				}
+			}
 
 			curl_multi_remove_handle($mh, $ch);
 
