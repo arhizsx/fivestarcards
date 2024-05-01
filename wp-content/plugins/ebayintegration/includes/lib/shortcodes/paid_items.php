@@ -25,7 +25,7 @@ FROM  ebay
             ?>
             <tr>
                 <td></td>
-                <td><?php print_r($item) ?></td>
+                <td><?php print_r($item->transaction) ?></td>
                 <td></td>
             </tr>
             <?php 
