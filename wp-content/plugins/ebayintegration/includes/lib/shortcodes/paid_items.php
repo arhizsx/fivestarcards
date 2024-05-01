@@ -32,7 +32,7 @@ FROM  ebay
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><?php print_r($data["Transaction"]["MonetaryDetails"])  ; ?></td>
+                <td><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"])  ; ?></td>
             </tr>
             <?php 
                 }
