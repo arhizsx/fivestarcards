@@ -81,6 +81,8 @@ class Ebay_Integration_Ebay_API {
 			
 			$pages = $this->GetItemPages();
 			
+			return $pages;
+
 			return $this->getItemsMulti( $pages["data"], 200);
 
 
@@ -264,8 +266,6 @@ class Ebay_Integration_Ebay_API {
 		
 		if(array_key_exists( "Ack", $json )){
 
-			return $json;
-
 
 			if($json["Ack"] == "Failure"){
 
@@ -287,7 +287,6 @@ class Ebay_Integration_Ebay_API {
 					$pages = ceil($entries / $this->per_page);
 	
 					return array("error" => false, "data"=> $pages);
-					return $pages;
 					
 				} else {
 
