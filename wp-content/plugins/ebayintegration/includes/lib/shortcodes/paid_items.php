@@ -25,7 +25,7 @@ ORDER BY sku ASC
             <tr>
                 <td></td>
                 <td></td>
-                <td><?php print_r( $item ); ?></td>
+                <td><?php print_r( $item->transaction ); ?></td>
             </tr>
             <?php } ?>
         </tbody>
