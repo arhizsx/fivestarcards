@@ -804,7 +804,7 @@ class Ebay_Integration_Ebay_API {
 				$this->wpdb->update(
 					"ebay", 
 					array(
-						"transaction" => $json
+						"transaction" => json_encode($json)
 					),
 					array(
 						"item_id" => $json["Item"]["ItemID"]
