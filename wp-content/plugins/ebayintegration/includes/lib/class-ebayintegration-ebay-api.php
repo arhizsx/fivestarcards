@@ -728,8 +728,10 @@ class Ebay_Integration_Ebay_API {
 		
 		$items = [];
 
-		foreach($results as $result){			
-			array_push($items, $result->item_id);
+		foreach($results as $result){					
+			if($result->transaction == null){
+				array_push($items, $result->item_id);
+			}
 		}
 
 		$apiURL = "https://api.ebay.com/ws/api.dll";
@@ -740,7 +742,7 @@ class Ebay_Integration_Ebay_API {
 
 		// Setup Multi Curl Requests
 
-		for( $i = 0; $i <= 99; $i++ ){
+		for( $i = 0; $i <= count($items) - 1; $i++ ){
 
 			$post_data = 
 			'<?xml version="1.0" encoding="utf-8"?>' .
@@ -794,8 +796,16 @@ class Ebay_Integration_Ebay_API {
 
 			$xml = simplexml_load_string( $curl_result ) or die("Error: Cannot create object");
 			$json = json_decode(json_encode($xml), true);
-
+			
 			$result[$k] = $json;
+
+			if( $json["Ack"] == "Success" ){
+				if( $json["Item"]["SellingStatus"]["ListingStatus"] == "Completed" ){
+					if( array_key_exists("TransactionArray", $json) ){
+						$this->wpdb->update('ebay', array( "item_id" => $json["Item"]["ItemID"], "transaction" => $json));
+					}			
+				}
+			}
 
 			curl_multi_remove_handle($mh, $ch);
 
