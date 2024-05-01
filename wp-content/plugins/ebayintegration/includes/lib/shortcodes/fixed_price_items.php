@@ -6,7 +6,7 @@ $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
 where status = 'completed'
-" 
+"  
 );
 
 $skus = get_user_meta( get_current_user_id(), "sku", true );		
@@ -31,11 +31,13 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
         </thead>
         <tbody>
             <?php 
-            foreach($ebay as $item){ 
-                $data = json_decode($item->data, true);
+            if( count($ebay) > 0 ){
 
-                if( $data["ListingType"] != "Chinese"){
-                    if( in_array( $item->sku, $skus ) ){
+                foreach($ebay as $item){ 
+                    $data = json_decode($item->data, true);
+
+                    if( $data["ListingType"] != "Chinese"){
+                        if( in_array( $item->sku, $skus ) ){
 
             ?>
             <tr>
@@ -53,8 +55,19 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                 ?></td>
             </tr>
             <?php 
+                        }
                     }
                 }
+
+            } 
+            else {
+            ?>
+            <tr>
+                <td colspan="2" class="text-center p-5">
+                    No Item
+                </td>
+            </tr>
+            <?php 
             }
             ?>
         </tbody>
