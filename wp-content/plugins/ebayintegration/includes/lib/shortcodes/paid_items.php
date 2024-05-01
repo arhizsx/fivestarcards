@@ -35,7 +35,7 @@ FROM  ebay
                 <td></td>
                 <td><?php echo $buyer ; ?></td>
                 <td><?php echo $payment_time ; ?></td>
-                <td><?php echo $sold_amount ; ?></td>
+                <td><?php print_r($sold_amount)  ; ?></td>
             </tr>
             <?php 
                 }
