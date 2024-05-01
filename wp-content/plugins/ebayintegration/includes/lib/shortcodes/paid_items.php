@@ -30,20 +30,6 @@ where status = 'paid'
                 if( $item->transaction != "Not Sold" ){
                     $transaction = json_decode($item->transaction, true);
                     $data = json_decode($item->data, true);
-
-                    if( $data["Transaction"]["Status"]["CompleteStatus"] == "Incomplete" ){
-
-                        $this->wpdb->update(
-                            "ebay", 
-                            array(
-                                "status" => "incomplete"
-                            ),
-                            array(
-                                "item_id" => $item->item_id
-                            )
-                        );
-        
-                    }
             ?>
             <tr>
                 <td>
