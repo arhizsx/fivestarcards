@@ -23,15 +23,11 @@ where status == 'completed'
         <tbody>
             <?php 
             foreach($ebay as $item){ 
-                if($item->transaction == "Not Sold"){
-                } else {
-                    $trans = json_decode( $item->transaction, true );
-                }
             ?>
             <tr>
                 <td></td>
-                <td><?php print_r($item->transaction) ?></td>
-                <td><?php echo $trans["Transaction"]["AmountPaid"] ?></td>
+                <td><?php print_r($item) ?></td>
+                <td></td>
             </tr>
             <?php 
             } 
