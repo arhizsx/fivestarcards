@@ -28,7 +28,7 @@ ORDER BY sku ASC
             <tr>
                 <td></td>
                 <td></td>
-                <td><?php echo print_r($trans) ?></td>
+                <td><?php echo print_r($trans["Transaction"]) ?></td>
             </tr>
             <?php 
             } 
