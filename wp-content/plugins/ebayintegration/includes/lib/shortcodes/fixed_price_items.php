@@ -24,7 +24,7 @@ where status = 'completed'
         <thead>
             <tr>
                 <th>Item</th>
-                <th class="text-end">Current Price</th>
+                <th class="text-end">Buy Price</th>
             </tr>
         </thead>
         <tbody>
