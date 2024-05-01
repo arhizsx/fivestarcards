@@ -399,6 +399,8 @@ class Ebay_Integration_Ebay_API {
 		$apiURL = "https://api.ebay.com/ws/api.dll";
 
 
+		return $pages;
+
 		$multiCurl = array();
 		$result = array();
 		$mh = curl_multi_init();
@@ -465,8 +467,6 @@ class Ebay_Integration_Ebay_API {
 		foreach($multiCurl as $k => $ch) {
 
 			$result[$k] = curl_multi_getcontent($ch);
-
-			return $result[$k];
 			
 			curl_multi_remove_handle($mh, $ch);
 
