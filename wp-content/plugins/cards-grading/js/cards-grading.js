@@ -1120,7 +1120,21 @@ function showSetSkus(){
 
 function MakeAdmin($user_id){
 
-    return true;
+    var url = $(document).find(".5star_logged_cards").data("endpoint");
+
+    $.ajax({
+        method: 'post',
+        url: url,
+        headers: {'X-WP-Nonce': nonce },
+        data: {
+            'action' : make_admin,
+            'user_id': post_id,
+        },
+        success: function(resp){
+            console.log(resp);
+        }
+    });
+
 }
 
 function DemoteAdmin($user_id){
