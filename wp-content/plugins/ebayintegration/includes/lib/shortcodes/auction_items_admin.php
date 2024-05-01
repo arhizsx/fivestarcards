@@ -19,7 +19,7 @@ where status = 'active'
 </style>
 <div class="d-flex justify-content-between mb-3">
     <div>
-        <i class="fa-brands fa-ebay"></i> AUCTION
+        <i class="fa-brands fa-ebay fa-xl"></i> AUCTION
     </div>
     <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_auction">
 </div>
