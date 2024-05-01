@@ -27,6 +27,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'paid_items.php');			
             break;
 
+        case "auction_items":
+
+			include( plugin_dir_path( __FILE__ ) . 'auction_items.php');			
+            break;
+
         default:
 
             echo "Shortcode Not Found";
