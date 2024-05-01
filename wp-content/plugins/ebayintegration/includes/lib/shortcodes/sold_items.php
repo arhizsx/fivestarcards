@@ -21,6 +21,7 @@ where status = 'completed'
         <thead>
             <tr>
                 <th>Item</th>
+                <th>Timestamp</th>
                 <th class="text-end">Price Sold</th>
             </tr>
         </thead>
@@ -52,6 +53,9 @@ where status = 'completed'
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
                     <div class="item_id text-small">Listing Type: <?php echo $data["ListingType"] ?></div>
                     
+                </td>
+                <td>
+                    <?php echo $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentTime"] ?>
                 </td>
                 <td class="text-end">$<?php 
                 echo number_format(( $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"]), 2, '.', ',');
