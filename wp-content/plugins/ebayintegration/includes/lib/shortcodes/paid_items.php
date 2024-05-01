@@ -22,13 +22,9 @@ FROM  ebay
         <tbody>
             <?php 
             foreach($ebay as $item){ 
-
-                if( $item->transaction == "Not Sold" ){
-                    $sold_amount = "0.00";    
-                } else {
+                if( $item->transaction != "Not Sold" ){
                     $data = json_decode($item->transaction, true);
                     $sold_amount = $data["Transaction"]["MonetaryDetails"];
-                }
             ?>
             <tr>
                 <td></td>
@@ -36,6 +32,7 @@ FROM  ebay
                 <td><?php print_r( $sold_amount ); ?></td>
             </tr>
             <?php 
+                }
             } 
             ?>
         </tbody>
