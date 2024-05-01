@@ -726,7 +726,7 @@ class Ebay_Integration_Ebay_API {
 
 
 		$results = $this->wpdb->get_results("
-			SELECT * FROM ebay
+			SELECT * FROM ebay where status = 'active'
 		");
 		
 		$items = [];
@@ -745,7 +745,7 @@ class Ebay_Integration_Ebay_API {
 
 		// Setup Multi Curl Requests
 
-		for( $i = 0; $i <= 500; $i++ ){
+		for( $i = 0; $i <= count($items) -1; $i++ ){
 
 			$post_data = 
 			'<?xml version="1.0" encoding="utf-8"?>' .
