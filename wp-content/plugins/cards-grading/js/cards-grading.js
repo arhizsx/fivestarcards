@@ -1139,5 +1139,18 @@ function MakeAdmin(user_id){
 
 function DemoteAdmin($user_id){
     
-    return true;
+    var nonce = $(document).find(".5star_table").data("nonce");
+
+    $.ajax({
+        method: 'post',
+        url: 'https://5starcards.com/wp-json/cards-grading/v1/table-action',
+        headers: {'X-WP-Nonce': nonce },
+        data: {
+            'action' : "demote_admin",
+            'user_id': user_id,
+        },
+        success: function(resp){
+            console.log(resp);
+        }
+    });
 }
