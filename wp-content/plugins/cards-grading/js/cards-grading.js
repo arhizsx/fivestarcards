@@ -1137,7 +1137,7 @@ function MakeAdmin(user_id){
 
 }
 
-function DemoteAdmin($user_id){
+function DemoteAdmin(user_id){
     
     var nonce = $(document).find(".5star_table").data("nonce");
 
