@@ -808,7 +808,7 @@ class Ebay_Integration_Ebay_API {
 					$status = "complete";
 				}
 
-				
+
 				if( array_key_exists("TransactionArray", $json) ) {
 					$transaction = json_encode( $json["TransactionArray"] );
 				} else {
@@ -819,7 +819,7 @@ class Ebay_Integration_Ebay_API {
 					"ebay", 
 					array(
 						"transaction" => $transaction,
-						"status" => $status
+						"status" => "complete"
 					),
 					array(
 						"item_id" => $json["Item"]["ItemID"]
