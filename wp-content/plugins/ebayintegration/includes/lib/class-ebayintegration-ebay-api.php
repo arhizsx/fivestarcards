@@ -808,15 +808,21 @@ class Ebay_Integration_Ebay_API {
 				$transaction = null;
 
 				if($json["Item"]["SellingStatus"]["ListingStatus"] == "Completed") {
+
 					$status = "completed";
+
+					if( array_key_exists("TransactionArray", $json) ) {
+						$transaction = json_encode( $json["TransactionArray"] );
+					} else {
+						$transaction = "Not Sold";
+					}	
+
+				}
+				elseif($json["Item"]["SellingStatus"]["ListingStatus"] == "Active") {
+					$status = "active";
+					$transaction = null;
 				}
 
-
-				if( array_key_exists("TransactionArray", $json) ) {
-					$transaction = json_encode( $json["TransactionArray"] );
-				} else {
-					$transaction = "Not Sold";
-				}
 
 				$this->wpdb->update(
 					"ebay", 
