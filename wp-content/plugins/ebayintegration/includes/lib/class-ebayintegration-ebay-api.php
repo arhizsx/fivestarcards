@@ -264,6 +264,9 @@ class Ebay_Integration_Ebay_API {
 		
 		if(array_key_exists( "Ack", $json )){
 
+			return $json;
+
+
 			if($json["Ack"] == "Failure"){
 
 				if( $json["Errors"]["ShortMessage"] == "Auth token is hard expired." ){
@@ -399,7 +402,6 @@ class Ebay_Integration_Ebay_API {
 		$apiURL = "https://api.ebay.com/ws/api.dll";
 
 
-		return $pages;
 
 		$multiCurl = array();
 		$result = array();
