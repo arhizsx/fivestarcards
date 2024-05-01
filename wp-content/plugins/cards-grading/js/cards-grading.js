@@ -1128,7 +1128,7 @@ function MakeAdmin($user_id){
         url: url,
         headers: {'X-WP-Nonce': nonce },
         data: {
-            'action' : make_admin,
+            'action' : "make_admin",
             'user_id': post_id,
         },
         success: function(resp){
