@@ -26,16 +26,13 @@ FROM  ebay
             foreach($ebay as $item){ 
                 if( $item->transaction != "Not Sold" ){
                     $data = json_decode($item->transaction, true);
-                    $sold_amount = $data["Transaction"]["MonetaryDetails"]["PaymentAmount"];
-                    $buyer = $data["Transaction"]["MonetaryDetails"]["Payer"];
-                    $payment_time = $data["Transaction"]["MonetaryDetails"]["PaymentTime"];
             ?>
             <tr>
                 <td></td>
                 <td></td>
-                <td><?php echo $buyer ; ?></td>
-                <td><?php echo $payment_time ; ?></td>
-                <td><?php print_r($sold_amount)  ; ?></td>
+                <td></td>
+                <td></td>
+                <td><?php print_r($data["Transaction"]["MonetaryDetails"])  ; ?></td>
             </tr>
             <?php 
                 }
