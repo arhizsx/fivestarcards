@@ -86,7 +86,7 @@ class Ebay_Integration_Ebay_API {
 				return $this->getItemsMulti( $pages["data"], 200);
 
 			} else {
-				return $pages;
+				return "Error getting item pages";
 			}
 			
 
