@@ -27,13 +27,13 @@ FROM  ebay
                     $sold_amount = "0.00";    
                 } else {
                     $data = json_decode($item->transaction, true);
-                    $sold_amount = $data["Transaction"]["AmountSold"];
+                    $sold_amount = $data;
                 }
             ?>
             <tr>
                 <td></td>
                 <td></td>
-                <td><?php echo $sold_amount; ?></td>
+                <td><?php print_r( $sold_amount ); ?></td>
             </tr>
             <?php 
             } 
