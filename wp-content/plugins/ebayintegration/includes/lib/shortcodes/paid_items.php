@@ -17,6 +17,7 @@ where status = 'completed'
             <tr>
                 <th>Item</th>
                 <th>SKU</th>
+                <th>Item ID</th>
                 <th>Buyer</th>
                 <th class="text-end">Price Sold</th>
             </tr>
@@ -30,6 +31,7 @@ where status = 'completed'
             <tr>
                 <td></td>
                 <td><?php echo $item->sku ?></td>
+                <td><?php echo $item->item_id ?></td>
                 <td><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["Payer"])  ; ?></td>
                 <td class="text-end"><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"])  ; ?></td>
             </tr>
