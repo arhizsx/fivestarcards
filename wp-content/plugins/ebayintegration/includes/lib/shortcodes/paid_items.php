@@ -26,10 +26,11 @@ where status = 'paid'
         </thead>
         <tbody>
             <?php 
-            foreach($ebay as $item){ 
-                if( $item->transaction != "Not Sold" ){
-                    $transaction = json_decode($item->transaction, true);
-                    $data = json_decode($item->data, true);
+            if( count($ebay) > 0 ){
+                foreach($ebay as $item){ 
+                    if( $item->transaction != "Not Sold" ){
+                        $transaction = json_decode($item->transaction, true);
+                        $data = json_decode($item->data, true);
             ?>
             <tr>
                 <td>
@@ -45,8 +46,18 @@ where status = 'paid'
                 ?></td>
             </tr>
             <?php 
-                }
+                    }
+                } 
             } 
+            else {
+            ?>
+            <tr>
+                <td colspan="2" class="text-center p-5">
+                    No Items
+                </td>
+            </tr>
+            <?php 
+            }
             ?>
         </tbody>
     </table>

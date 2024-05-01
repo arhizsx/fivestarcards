@@ -28,8 +28,6 @@ where status = 'completed'
         <tbody>
             <?php 
 
-            print_r( count($ebay) );
-
             if( count($ebay) > 0 ){
                 foreach($ebay as $item){ 
                     if( $item->transaction != "Not Sold" ){
