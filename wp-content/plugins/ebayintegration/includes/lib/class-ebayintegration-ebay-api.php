@@ -742,7 +742,7 @@ class Ebay_Integration_Ebay_API {
 
 		// Setup Multi Curl Requests
 
-		for( $i = 0; $i <= 10 - 1; $i++ ){
+		for( $i = 0; $i <= count($items) - 1; $i++ ){
 
 			$post_data = 
 			'<?xml version="1.0" encoding="utf-8"?>' .
@@ -804,8 +804,8 @@ class Ebay_Integration_Ebay_API {
 				$status = "active";
 				$transaction = null;
 
-				if($json["Item"]["SellingStatus"]["ListingStatus"] == "Complete") {
-					$status = "complete";
+				if($json["Item"]["SellingStatus"]["ListingStatus"] == "Completed") {
+					$status = "completed";
 				}
 
 
@@ -819,7 +819,7 @@ class Ebay_Integration_Ebay_API {
 					"ebay", 
 					array(
 						"transaction" => $transaction,
-						"status" => "complete"
+						"status" => $status
 					),
 					array(
 						"item_id" => $json["Item"]["ItemID"]
