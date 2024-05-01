@@ -44,7 +44,7 @@ where status = 'completed'
                     }
             ?>
             <tr>
-                <td><?php print_r( $data ); ?></td>
+                <td><?php print_r( $data["Title"] ); ?></td>
                 <td><?php echo $item->sku ?></td>
                 <td><?php echo $item->item_id ?></td>
                 <td><?php print_r($transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["Payer"])  ; ?></td>
