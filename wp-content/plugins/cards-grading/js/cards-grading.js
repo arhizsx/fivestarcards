@@ -1121,6 +1121,7 @@ function showSetSkus(){
 function MakeAdmin($user_id){
 
     var url = $(document).find(".5star_logged_cards").data("endpoint");
+    var nonce = $(document).find(".5star_logged_cards").data("nonce");
 
     $.ajax({
         method: 'post',
