@@ -801,10 +801,15 @@ class Ebay_Integration_Ebay_API {
 
 			if( $json["Ack"] == "Success" ){
 
-				$this->wpdb->replace("ebay", array(
-					"item_id" => $json["Item"]["ItemID"],
-					"transaction" => "TEST"
-				));
+				$this->wpdb->update(
+					"ebay", 
+					array(
+						"transaction" => $json
+					),
+					array(
+						"item_id" => $json["Item"]["ItemID"]
+					)
+				);
 
 			}
 
