@@ -1120,12 +1120,11 @@ function showSetSkus(){
 
 function MakeAdmin(user_id){
 
-    var url = $(document).find(".5star_logged_cards").data("endpoint");
-    var nonce = $(document).find(".5star_logged_cards").data("nonce");
+    var nonce = $(document).find(".5star_table").data("nonce");
 
     $.ajax({
         method: 'post',
-        url: url,
+        url: 'https://5starcards.com/wp-json/cards-grading/v1/order-action',
         headers: {'X-WP-Nonce': nonce },
         data: {
             'action' : "make_admin",
