@@ -818,8 +818,19 @@ class Ebay_Integration_Ebay_API {
 					}	
 
 				}
-				elseif($json["Item"]["SellingStatus"]["ListingStatus"] == "Active") {
-					$status = "active";
+				elseif( $json["Item"]["SellingStatus"]["ListingStatus"] == "Active" ) {
+
+					if( $json["Item"]["SellingStatus"]["QuantitySold"] == "0" ){
+
+						$status = "active";
+
+					}
+					elseif( $json["Item"]["SellingStatus"]["QuantitySold"] == "1" ){
+
+						$status = "awaiting";
+						
+					}
+
 					$transaction = null;
 				}
 
