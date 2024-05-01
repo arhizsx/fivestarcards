@@ -803,7 +803,7 @@ class Ebay_Integration_Ebay_API {
 
 				$this->wpdb->replace("ebay", array(
 					"item_id" => $json["Item"]["ItemID"],
-					"transaction" => $json
+					"transaction" => "TEST"
 				));
 
 			}
