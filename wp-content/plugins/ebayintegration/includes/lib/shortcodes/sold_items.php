@@ -15,7 +15,9 @@ where status = 'completed'
         font-size: .7em !important;
     }
 </style>
-<input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table">
+<div class="d-flex flex-row-reverse">
+    <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table">
+</div>
 
 <div class="table-responsive">
     <table class="table table-border table-striped table-sm table-hover search_table">
