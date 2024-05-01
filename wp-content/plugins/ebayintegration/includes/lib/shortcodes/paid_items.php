@@ -5,7 +5,7 @@ global $wpdb;
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
-ORDER BY sku ASC
+where status == 'completed'
 " 
 );
 
@@ -23,7 +23,8 @@ ORDER BY sku ASC
         <tbody>
             <?php 
             foreach($ebay as $item){ 
-                $trans = json_decode( $item->transaction, true );
+                if($item->transaction != "Not Sold"){
+                    $trans = json_decode( $item->transaction, true );
             ?>
             <tr>
                 <td></td>
@@ -31,6 +32,7 @@ ORDER BY sku ASC
                 <td><?php echo print_r($trans["Transaction"]["AmountPaid"]) ?></td>
             </tr>
             <?php 
+                }
             } 
             ?>
         </tbody>
