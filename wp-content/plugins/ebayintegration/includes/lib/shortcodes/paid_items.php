@@ -25,7 +25,7 @@ ORDER BY sku ASC
             <tr>
                 <td></td>
                 <td></td>
-                <td><?php print_r( $item->transaction ); ?></td>
+                <td><?php print_r( $item->transaction["transaction"]["AmountPaid"] ); ?></td>
             </tr>
             <?php } ?>
         </tbody>
