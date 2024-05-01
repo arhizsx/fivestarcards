@@ -50,6 +50,8 @@ where status = 'paid'
                     <div class="title"><?php print_r( $data["Title"] ); ?></div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
+                    <div class="item_id text-small">Listing Type: <?php echo $data["ListingType"] ?></div>
+
                     
                 </td>
                 <td class="text-end">$<?php 
