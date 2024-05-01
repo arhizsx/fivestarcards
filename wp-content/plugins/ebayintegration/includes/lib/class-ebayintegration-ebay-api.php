@@ -807,7 +807,7 @@ class Ebay_Integration_Ebay_API {
 
 						$this->wpdb->query(
 							$this->wpdb->prepare("
-								UPDATE ebay SET transaction = %s WHERE item_id = %d
+								UPDATE ebay SET transaction = %s WHERE item_id = %s
 							", $json, $json["Item"]["ItemID"])
 						);
 
