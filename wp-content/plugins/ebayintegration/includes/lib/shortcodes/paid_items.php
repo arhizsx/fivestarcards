@@ -21,13 +21,18 @@ ORDER BY sku ASC
             </tr>
         </thead>
         <tbody>
-            <?php foreach($ebay as $item){ ?>
+            <?php 
+            foreach($ebay as $item){ 
+                $trans = json_decode( $item->transaction, true );
+            ?>
             <tr>
                 <td></td>
                 <td></td>
-                <td><?php echo $item->transaction["transaction"]["AmountPaid"] ?></td>
+                <td><?php echo $trans["transaction"]["AmountPaid"] ?></td>
             </tr>
-            <?php } ?>
+            <?php 
+            } 
+            ?>
         </tbody>
     </table>
 </div>
