@@ -26,7 +26,8 @@ where status = 'completed'
             <?php 
             foreach($ebay as $item){ 
                 if( $item->transaction != "Not Sold" ){
-                    $data = json_decode($item->transaction, true);
+                    $transaction = json_decode($item->transaction, true);
+                    $data = json_decode($item->data, true);
 
                     if( $data["Transaction"]["Status"]["CompleteStatus"] == "Incomplete" ){
 
@@ -43,11 +44,11 @@ where status = 'completed'
                     }
             ?>
             <tr>
-                <td></td>
+                <td><?php print_r( $data ); ?></td>
                 <td><?php echo $item->sku ?></td>
                 <td><?php echo $item->item_id ?></td>
-                <td><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["Payer"])  ; ?></td>
-                <td class="text-end"><?php print_r($data["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"])  ; ?></td>
+                <td><?php print_r($transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["Payer"])  ; ?></td>
+                <td class="text-end"><?php print_r($transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"])  ; ?></td>
             </tr>
             <?php 
                 }
