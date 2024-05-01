@@ -740,7 +740,7 @@ class Ebay_Integration_Ebay_API {
 
 		// Setup Multi Curl Requests
 
-		for( $i = 0; $i <= count($items) - 5500; $i++ ){
+		for( $i = 0; $i <= 99; $i++ ){
 
 			$post_data = 
 			'<?xml version="1.0" encoding="utf-8"?>' .
@@ -790,7 +790,13 @@ class Ebay_Integration_Ebay_API {
 		// Save Result of Each Curl Pass
 		foreach($multiCurl as $k => $ch) {
 
-			$result[$k] = curl_multi_getcontent($ch);
+			$curl_result  = curl_multi_getcontent($ch);
+
+			$xml = simplexml_load_string( $curl_result ) or die("Error: Cannot create object");
+			$json = json_decode(json_encode($xml), true);
+
+			$result[$k] = $json;
+
 			curl_multi_remove_handle($mh, $ch);
 
 		}
