@@ -468,3 +468,8 @@ $(document).find(".search_box").on("keyup", function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
 });
+
+
+$(document).on("change", ".user_list_select", function(){
+	console.log( $(this) );
+});
