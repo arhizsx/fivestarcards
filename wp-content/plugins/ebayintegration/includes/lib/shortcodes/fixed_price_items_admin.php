@@ -32,9 +32,8 @@ $users = get_users( $args );
         <select class="user_list_select form-control mr-3">
         <?php 
             foreach($users as $user) {
-                $skus = get_user_meta( $user->ID, "sku", true );
         ?>
-        <option value="" data-skus="<?php echo json_encode($skus); ?>" > <?php echo $user->display_name; ?></option>
+        <option value="<?php echo $user->ID; ?>"> <?php echo $user->display_name; ?></option>
         <?php                 
             }
         ?>
@@ -44,12 +43,6 @@ $users = get_users( $args );
 </div>
 
 <div class="table-responsive">    
-        <?php 
-            foreach($users as $user) {
-                print_r( $user );
-                echo "<r>";
-            }
-        ?>
     <table class="table table-border table-striped table-sm table-hover search_table_fixed_price">
         <thead>
             <tr>
