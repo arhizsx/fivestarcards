@@ -30,7 +30,7 @@ $users = get_users( $args );
     </div>
     <div>
         <button class="btn btn-primary">Add Viewer</button>
-        <select class="user_list_select" style=" padding-left: 10px; padding-bottom:10px; padding-top: 10px;">
+        <select class="user_list_select" style=" padding-left: 10px; padding-bottom:8px; padding-top: 10px;">
         <option value="">Filter by User</option>
         <?php 
             foreach($users as $user) {
