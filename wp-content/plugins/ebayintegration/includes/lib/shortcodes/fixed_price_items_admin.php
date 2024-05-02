@@ -28,7 +28,7 @@ $users = get_users( $args );
     <div>
         <i class="fa-brands fa-ebay fa-2xl"></i> FIXED PRICE
     </div>
-    <div>
+    <div class="d-flex justify-content-between mb-3">
         <select class="user_list_select form-control">
             <?php 
                 foreach($users as $user) {
