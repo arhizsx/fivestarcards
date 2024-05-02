@@ -40,7 +40,7 @@ $users = get_users( $args );
         foreach($users as $user) {
             $skus = get_user_meta( $user->ID, "sku", true );
 
-            print_r( json_encode($skus) );
+            echo json_encode($skus) ;
             echo "<hr>";
         }
     ?>
