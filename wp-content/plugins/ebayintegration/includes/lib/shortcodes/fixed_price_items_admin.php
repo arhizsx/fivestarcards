@@ -47,7 +47,7 @@ $users = get_users( $args );
         <?php 
             foreach($users as $user) {
                 $skus = get_user_meta( $user->ID, "sku", true );
-                print_r($skus);
+                print_r( json_encode($skus) );
             }
         ?>
     <table class="table table-border table-striped table-sm table-hover search_table_fixed_price">
