@@ -34,7 +34,7 @@ $users = get_users( $args );
                 foreach($users as $user) {
                     $skus = get_user_meta( $user->ID, "sku", true );
             ?>
-            <option><?php  echo $user->display_name ?></option>
+            <option><?php  echo $user->display_name ?><?php print_r($skus) ?></option>
             <?php                    
                 }
             ?>
