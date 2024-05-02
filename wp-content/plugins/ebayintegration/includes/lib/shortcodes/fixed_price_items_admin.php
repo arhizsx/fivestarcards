@@ -30,6 +30,7 @@ $users = get_users( $args );
     </div>
     <div class="d-flex justify-content-between mb-3">
         <select class="user_list_select form-control">
+        <option value="">Filter by User</option>
         <?php 
             foreach($users as $user) {
         ?>
