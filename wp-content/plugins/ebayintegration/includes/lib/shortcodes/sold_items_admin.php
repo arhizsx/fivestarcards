@@ -23,9 +23,6 @@ $users = get_users( $args );
     }
 </style>
 <div class="d-flex flex-row-reverse mb-3">
-    <div>
-        <i class="fa-brands fa-ebay fa-2xl"></i> FIXED PRICE
-    </div>
     <div class="d-flex justify-content-between mb-3">
         <select class="user_list_select form-control">
         <option value="">Filter by User</option>
@@ -39,7 +36,9 @@ $users = get_users( $args );
         </select>
         <input class="btn pl-2 search_box" style="margin-left: 15px; text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_sold">
     </div>
-
+    <div>
+        <i class="fa-brands fa-ebay fa-2xl"></i> FIXED PRICE
+    </div>
 </div>
 
 <div class="table-responsive">
