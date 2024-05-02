@@ -29,6 +29,7 @@ $users = get_users( $args );
         <i class="fa-brands fa-ebay fa-2xl"></i> AUCTION
     </div>
     <div class="d-flex justify-content-between mb-3">
+        <button class="btn btn-primary">Add Viewer</button>
         <select class="user_list_select form-control">
         <option value="">Filter by User</option>
         <?php 
