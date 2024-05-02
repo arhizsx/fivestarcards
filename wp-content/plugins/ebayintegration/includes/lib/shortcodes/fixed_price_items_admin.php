@@ -29,7 +29,7 @@ $users = get_users( $args );
         <i class="fa-brands fa-ebay fa-2xl"></i> FIXED PRICE
     </div>
     <div class="d-flex justify-content-between mb-3">
-        <select class="user_list_select form-control mr-3">
+        <select class="user_list_select form-control">
         <?php 
             foreach($users as $user) {
         ?>
@@ -38,7 +38,7 @@ $users = get_users( $args );
             }
         ?>
         </select>
-        <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_auction">
+        <input class="btn pl-2 search_box" style="margin-left: 15px; text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_auction">
     </div>
 </div>
 
