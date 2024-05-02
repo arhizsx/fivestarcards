@@ -29,7 +29,7 @@ $users = get_users( $args );
         <i class="fa-brands fa-ebay fa-2xl"></i> FIXED PRICE
     </div>
     <div>
-        <select class="user_list_select">
+        <select class="user_list_select form-control">
             <?php 
                 foreach($users as $user) {
                     $skus = get_user_meta( $user->ID, "sku", true );
