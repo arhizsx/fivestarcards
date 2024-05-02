@@ -30,20 +30,21 @@ $users = get_users( $args );
     </div>
     <div class="d-flex justify-content-between mb-3">
         <!-- <select class="user_list_select form-control mr-3"> -->
-            <?php 
-                foreach($users as $user) {
-                    $skus = get_user_meta( $user->ID, "sku", true );
-
-                    print_r($skus);
-
-                }
-            ?>
         <!-- </select> -->
         <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_auction">
     </div>
 </div>
 
 <div class="table-responsive">
+    <?php 
+        foreach($users as $user) {
+            $skus = get_user_meta( $user->ID, "sku", true );
+
+            print_r($skus);
+            echo "<hr>";
+        }
+    ?>
+
     <table class="table table-border table-striped table-sm table-hover search_table_fixed_price">
         <thead>
             <tr>
