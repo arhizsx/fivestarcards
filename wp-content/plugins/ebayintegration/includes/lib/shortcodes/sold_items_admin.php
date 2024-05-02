@@ -8,8 +8,13 @@ FROM  ebay
 where status = 'awaiting'
 " 
 );
+$args = array(
+    'orderby'    => 'display_name',
+    'order'      => 'ASC'
+);
 
-$skus = get_user_meta( get_current_user_id(), "sku", true );		
+$users = get_users( $args );
+
 
 ?>
 <style>
