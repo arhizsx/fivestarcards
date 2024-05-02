@@ -22,7 +22,7 @@ $users = get_users( $args );
         font-size: .7em !important;
     }
 </style>
-<div class="d-flex flex-row-reverse mb-3">
+<div class="d-flex justify-content-between mb-3">
     <div class="d-flex justify-content-between mb-3">
     <div>
         <i class="fa-brands fa-ebay fa-2xl"></i> FIXED PRICE
