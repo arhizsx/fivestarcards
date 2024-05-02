@@ -25,10 +25,10 @@ $users = get_users( $args );
     }
 </style>
 <div class="d-flex justify-content-between mb-3">
-    <div>
+    <div class="col-lg-6">
         <i class="fa-brands fa-ebay fa-2xl"></i> AUCTION
     </div>
-    <div>
+    <div class="col-lg-6">
         <button class="btn btn-primary">Add Viewer</button>
         <select class="user_list_select" style="margin-left: 15px; padding-left: 10px; padding-bottom:8px; padding-top: 7px; margin-top: 10px;">
         <option value="">Filter by User</option>
