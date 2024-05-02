@@ -44,6 +44,12 @@ $users = get_users( $args );
 </div>
 
 <div class="table-responsive">    
+        <?php 
+            foreach($users as $user) {
+                $skus = get_user_meta( $user->ID, "sku", true );
+                print_r($skus);
+            }
+        ?>
     <table class="table table-border table-striped table-sm table-hover search_table_fixed_price">
         <thead>
             <tr>
