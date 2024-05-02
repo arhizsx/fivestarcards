@@ -71,7 +71,8 @@ $users = get_users( $args );
                     </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
-                    <div class="item_id text-small">Listing Type: <?php echo $data["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"]  ?></div>                    
+                    <?php $listing = $data["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"]; ?>
+                    <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
                 </td>
                 <td class="d-none d-md-table-cell"><?php echo $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentTime"] ?></td>
                 <td class="text-end">$<?php echo number_format(( $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"]), 2, '.', ',');?></td>
