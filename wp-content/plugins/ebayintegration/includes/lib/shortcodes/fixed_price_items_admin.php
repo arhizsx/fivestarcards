@@ -9,6 +9,15 @@ where status = 'active'
 "  
 );
 
+
+$args = array(
+    'orderby'    => 'display_name',
+    'order'      => 'ASC'
+);
+
+$users = get_users( $args );
+
+
 ?>
 <style>
     .text-small {
@@ -19,7 +28,19 @@ where status = 'active'
     <div>
         <i class="fa-brands fa-ebay fa-2xl"></i> FIXED PRICE
     </div>
-    <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_auction">
+    <div>
+        <select class="user_list_select">
+            <?php 
+                foreach($users as $user) {
+                    $skus = get_user_meta( $user->ID, "sku", true );
+            ?>
+            <option><?php  echo $user->display_name ?></option>
+            <?php                    
+                }
+            ?>
+        </select>
+        <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_auction">
+    </div>
 </div>
 
 <div class="table-responsive">

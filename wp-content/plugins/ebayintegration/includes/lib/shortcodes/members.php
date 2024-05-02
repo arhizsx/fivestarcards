@@ -61,7 +61,6 @@ foreach($user_skus as $sk){
                         foreach($users as $user){
 
                         $skus = get_user_meta( $user->ID, "sku", true );
-
                 ?>
                     <tr class="user_row" data-user_id="<?php  echo $user->ID ?>">
                         <td class="info">

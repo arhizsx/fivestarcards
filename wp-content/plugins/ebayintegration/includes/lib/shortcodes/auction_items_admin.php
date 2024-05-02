@@ -9,6 +9,13 @@ where status = 'active'
 " 
 );
 
+$args = array(
+    'orderby'    => 'display_name',
+    'order'      => 'ASC'
+);
+
+$users = get_users( $args );
+
 
 
 ?>
