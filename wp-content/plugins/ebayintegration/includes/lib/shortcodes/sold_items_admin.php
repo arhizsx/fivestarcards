@@ -23,10 +23,10 @@ $users = get_users( $args );
     }
 </style>
 <div class="d-flex justify-content-between mb-3">
-    <div class="d-flex justify-content-between mb-3">
     <div>
-        <i class="fa-brands fa-ebay fa-2xl"></i> FIXED PRICE
+        <i class="fa-brands fa-ebay fa-2xl"></i>
     </div>
+    <div class="d-flex justify-content-between mb-3">
         
         <select class="user_list_select form-control">
         <option value="">Filter by User</option>
