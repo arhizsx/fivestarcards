@@ -73,7 +73,7 @@ $users = get_users( $args );
                 </td>
                 <td class="text-end">
                     $<?php 
-                    echo number_format(( $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"]), 2, '.', ',');
+                    echo number_format(( $transaction["Transaction"]["TransactionPrice"]), 2, '.', ',');
                     ?>
                 </td>
                 <td class="text-end">

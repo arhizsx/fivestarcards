@@ -75,7 +75,7 @@ $users = get_users( $args );
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
                 </td>
                 <td class="d-none d-md-table-cell"><?php echo $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentTime"] ?></td>
-                <td class="text-end">$<?php echo number_format(( $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentAmount"]), 2, '.', ',');?></td>
+                <td class="text-end">$<?php echo number_format(( $transaction["Transaction"]["TransactionPrice"]), 2, '.', ',');?></td>
             </tr>
             <?php 
                         }
