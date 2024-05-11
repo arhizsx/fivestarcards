@@ -43,6 +43,26 @@ class Ebay_Integration_Ebay_API {
 		
 	}
 
+    public function shortcode($atts) 
+    {
+
+        $default = array(
+            'title' => 'Shortcode',
+            'type' => ''
+        );
+        
+        $params = shortcode_atts($default, $atts);
+
+
+        ob_start();
+
+		include( plugin_dir_path( __FILE__ ) . 'shortcodes/router.php');			
+		
+        $output = ob_get_clean(); 
+        
+        return $output ;
+    }
+	
 	 public function create_ebay_enpoint( ){
 
 		register_rest_route( '/ebayintegration/v1', '/ajax', array(
@@ -325,12 +345,19 @@ class Ebay_Integration_Ebay_API {
 		  '<ErrorLanguage>en_US</ErrorLanguage>' .
 			'<WarningLevel>High</WarningLevel>' .
 			'<ActiveList>' .
-		  '<Sort>TimeLeft</Sort>' .
-			'<Pagination>' .
-			'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
-			  '<PageNumber>' . $page_number . '</PageNumber>' .
-			  '</Pagination>' .
+		  		'<Sort>TimeLeft</Sort>' .
+				'<Pagination>' .
+					'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
+			  		'<PageNumber>' . $page_number . '</PageNumber>' .
+			  	'</Pagination>' .
 			'</ActiveList>' .
+			'<SoldList>' .
+				'<Include>true</Include>' .
+				'<Pagination>' .
+					'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
+			  		'<PageNumber>' . $page_number . '</PageNumber>' .
+			  	'</Pagination>' .
+			'</SoldList>' .
 		'</GetMyeBaySellingRequest> ';
 		
 		$curl = curl_init();
@@ -557,7 +584,6 @@ class Ebay_Integration_Ebay_API {
 
 	}	
 
-
 	public function getItemInfo($item_id){
 
 		$apiURL = "https://api.ebay.com/ws/api.dll";
@@ -626,27 +652,6 @@ class Ebay_Integration_Ebay_API {
 		}
 		
 	}
-
-    public function shortcode($atts) 
-    {
-
-        $default = array(
-            'title' => 'Shortcode',
-            'type' => ''
-        );
-        
-        $params = shortcode_atts($default, $atts);
-
-
-        ob_start();
-
-		include( plugin_dir_path( __FILE__ ) . 'shortcodes/router.php');			
-		
-        $output = ob_get_clean(); 
-        
-        return $output ;
-    }
-	
 
 	public function getItemTransactions($item_id){
 
@@ -720,7 +725,6 @@ class Ebay_Integration_Ebay_API {
 
 
 	}
-
 
 	public function refreshTransaction(){
 
