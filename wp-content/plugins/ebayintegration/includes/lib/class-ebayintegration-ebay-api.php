@@ -358,6 +358,13 @@ class Ebay_Integration_Ebay_API {
 			  		'<PageNumber>' . $page_number . '</PageNumber>' .
 			  	'</Pagination>' .
 			'</SoldList>' .
+			'<UnsoldList>' .
+				'<Include>true</Include>' .
+				'<Pagination>' .
+					'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
+			  		'<PageNumber>' . $page_number . '</PageNumber>' .
+			  	'</Pagination>' .
+			'</UnsoldList>' .
 		'</GetMyeBaySellingRequest> ';
 		
 		$curl = curl_init();
