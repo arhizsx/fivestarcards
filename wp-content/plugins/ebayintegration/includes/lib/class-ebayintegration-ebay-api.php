@@ -357,6 +357,7 @@ class Ebay_Integration_Ebay_API {
 					'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
 			  		'<PageNumber>' . $page_number . '</PageNumber>' .
 			  	'</Pagination>' .
+				'<DurationInDays>60</DurationInDays>' .
 			'</SoldList>' .
 			'<UnsoldList>' .
 				'<Include>true</Include>' .
@@ -364,6 +365,7 @@ class Ebay_Integration_Ebay_API {
 					'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
 			  		'<PageNumber>' . $page_number . '</PageNumber>' .
 			  	'</Pagination>' .
+				  '<DurationInDays>60</DurationInDays>' .
 			'</UnsoldList>' .
 		'</GetMyeBaySellingRequest> ';
 		
