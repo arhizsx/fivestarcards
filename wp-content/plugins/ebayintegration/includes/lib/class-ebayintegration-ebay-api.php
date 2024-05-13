@@ -967,7 +967,6 @@ class Ebay_Integration_Ebay_API {
 		$xml=simplexml_load_string($response) or die("Error: Cannot create object");
 		$json = json_decode(json_encode($xml), true);
 		
-		return array("response" => $json);
 
 		if(array_key_exists( "Ack", $json )){
 
@@ -976,7 +975,7 @@ class Ebay_Integration_Ebay_API {
 
 				if( $json["Errors"]["ShortMessage"] == "Auth token is hard expired." ){
 					
-					return array("error" => true, "data"=> "Refresh Access Token");
+					return array("error" => true, "response"=> "Refresh Access Token");
 
 				} else {
 
@@ -985,8 +984,43 @@ class Ebay_Integration_Ebay_API {
 				}
 	
 			} else {
+
+				$items = [];
+
+				// SOLD LIST
+				if( array_key_exists("SoldList", $json) ){
+
+					if( array_key_exists("OrderTransactionArray", $json["SoldList"]) ){
+
+						if( array_key_exists("OrderTransaction", $json["SoldList"]["OrderTransactionArray"])){
+
+							foreach( $json["SoldList"]["OrderTransactionArray"] as $order_transaction ){
+
+								if( array_key_exists( "Order", $order_transaction) ){
+
+									foreach( $order_transaction["Order"]["TransactionArray"]["Transaction"] as $transaction ){
+										array_push( $items, $transaction );
+									}
+								
+
+								}
+								elseif( array_key_exists( "Transaction", $order_transaction) ){
+
+									array_push($items, $order_transaction["Transaction"]);
+
+								}
+
+							}
+
+						}
+
+					} else {
+
+					}
+
+				}
 				
-				return array("error" => false, "response"=> $json );
+				return array("error" => false, "response"=> $json, "items" => $items );
 
 			}
 	
