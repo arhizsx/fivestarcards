@@ -904,7 +904,7 @@ class Ebay_Integration_Ebay_API {
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 		}
 
-		if( $page = null ){
+		if( $page == null ){
 			$page_number = 1;
 		}
 		else {
