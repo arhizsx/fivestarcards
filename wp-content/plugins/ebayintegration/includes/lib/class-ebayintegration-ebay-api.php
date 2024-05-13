@@ -967,6 +967,8 @@ class Ebay_Integration_Ebay_API {
 		$xml=simplexml_load_string($response) or die("Error: Cannot create object");
 		$json = json_decode(json_encode($xml), true);
 		
+		return array("response" => $json);
+
 		if(array_key_exists( "Ack", $json )){
 
 
@@ -978,13 +980,13 @@ class Ebay_Integration_Ebay_API {
 
 				} else {
 
-					return array("error" => true, "data"=> $json);
+					return array("error" => true, "response"=> $json);
 
 				}
 	
 			} else {
 				
-				return array("error" => false, "data"=> $json );
+				return array("error" => false, "response"=> $json );
 
 			}
 	
