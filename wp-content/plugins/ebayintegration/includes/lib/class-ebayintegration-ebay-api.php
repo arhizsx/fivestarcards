@@ -986,16 +986,16 @@ class Ebay_Integration_Ebay_API {
 			} else {
 
 				$items = [];
+				$requestType = "";
 
 				// SOLD LIST
 				if( array_key_exists("SoldList", $json) ){
 
+					$requestType = "SoldList";
 
 					if( array_key_exists("OrderTransactionArray", $json["SoldList"]) ){
 
-
 						if( array_key_exists("OrderTransaction", $json["SoldList"]["OrderTransactionArray"])){
-
 
 							foreach( $json["SoldList"]["OrderTransactionArray"]["OrderTransaction"] as $order_transaction ){
 
@@ -1005,7 +1005,6 @@ class Ebay_Integration_Ebay_API {
 										array_push( $items, $transaction );
 									}
 								
-
 								}
 								elseif( array_key_exists( "Transaction", $order_transaction) ){
 
@@ -1017,13 +1016,14 @@ class Ebay_Integration_Ebay_API {
 
 						}
 
-					} else {
+					} 
+					else {
 
 					}
 
 				}
 				
-				return array("error" => false, "response"=> $json, "items" => $items );
+				return array("error" => false, "response"=> $json, $requestType => $items );
 
 			}
 	
