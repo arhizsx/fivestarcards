@@ -129,7 +129,6 @@ class Ebay_Integration_Ebay_API {
 
 		} 		
 
-
 		elseif($params["action"] == "refreshToken"){
 
 			return $this->refreshToken();
@@ -186,6 +185,13 @@ class Ebay_Integration_Ebay_API {
 
 
 		}
+
+		elseif($params["action"] == "getEbayItems"){
+
+			return $this->getEbayItems($params["type"], $params["page"], $params["days"]);
+
+		} 		
+
 		else {
 			return array("error"=> true, "error_message" => $params["action"] . " - Action Not Defined");
 		}
@@ -365,7 +371,7 @@ class Ebay_Integration_Ebay_API {
 					'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
 			  		'<PageNumber>' . $page_number . '</PageNumber>' .
 			  	'</Pagination>' .
-				  '<DurationInDays>60</DurationInDays>' .
+				'<DurationInDays>60</DurationInDays>' .
 			'</UnsoldList>' .
 		'</GetMyeBaySellingRequest> ';
 		
@@ -872,5 +878,118 @@ class Ebay_Integration_Ebay_API {
 
 
 	}
+
+	// NEW ROUTINES
+
+	public function getEbayItems($type = null, $page = null, $days = null){
+
+		if( $days == null ){
+			$days_count = 60;
+		} 
+		else {
+			$days_count = $days;
+		}
+
+
+		if( $type == null || $type == "active"){
+			$switch = "ActiveList";
+			$duration = '';
+		}
+		elseif( $type == "sold" ){
+			$switch = "SoldList";
+			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
+		}
+		elseif( $type == "unsold" ){
+			$switch = "UnsoldList";
+			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
+		}
+
+		if( $page = null ){
+			$page_number = 1;
+		}
+		else {
+			$page_number = $page;
+		}
+
+
+		$per_page = 200;
+
+		$apiURL = "https://api.ebay.com/ws/api.dll";
+
+		$post_data = 
+		'<?xml version="1.0" encoding="utf-8"?>' .
+		'<GetMyeBaySellingRequest xmlns="urn:ebay:apis:eBLBaseComponents">' .
+		'<RequesterCredentials>' .
+			'<eBayAuthToken>' . $this->access_token  . '</eBayAuthToken>' .
+			'</RequesterCredentials>' .
+			'<ErrorLanguage>en_US</ErrorLanguage>' .
+			'<WarningLevel>High</WarningLevel>' .
+			'<' . $switch . '>' .
+				'<Sort>TimeLeft</Sort>' .
+				'<Pagination>' .
+					'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
+					'<PageNumber>' . $page_number . '</PageNumber>' .
+				'</Pagination>' .
+				$duration .
+			'</' . $switch . '>' .
+		'</GetMyeBaySellingRequest> ';
+		
+		$curl = curl_init();
+		
+		curl_setopt_array(
+			$curl,
+			[
+				CURLOPT_URL => $apiURL,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => '',
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'POST',
+				CURLOPT_POSTFIELDS =>$post_data,
+				CURLOPT_HTTPHEADER => [
+					'X-EBAY-API-SITEID:0',
+					'X-EBAY-API-COMPATIBILITY-LEVEL:967',
+					'X-EBAY-API-CALL-NAME:GetMyeBaySelling',
+				]
+			]
+		);
+		
+		$response = curl_exec($curl);
+		$status = curl_getinfo($curl);
+		
+		curl_close($curl);
+		
+		$xml=simplexml_load_string($response) or die("Error: Cannot create object");
+		$json = json_decode(json_encode($xml), true);
+		
+		if(array_key_exists( "Ack", $json )){
+
+
+			if($json["Ack"] == "Failure"){
+
+				if( $json["Errors"]["ShortMessage"] == "Auth token is hard expired." ){
+					
+					return array("error" => true, "data"=> "Refresh Access Token");
+
+				} else {
+
+					return array("error" => true, "data"=> $json);
+
+				}
+	
+			} else {
+				
+				return array("error" => false, "data"=> $json );
+
+			}
+	
+		} else {
+			return "Not Valid JSON";
+		}
+
+	}				
+
 
 }
