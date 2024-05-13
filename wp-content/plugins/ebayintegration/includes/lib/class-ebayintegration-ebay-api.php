@@ -996,9 +996,8 @@ class Ebay_Integration_Ebay_API {
 
 						if( array_key_exists("OrderTransaction", $json["SoldList"]["OrderTransactionArray"])){
 
-							return "OrderTransaction";
 
-							foreach( $json["SoldList"]["OrderTransactionArray"] as $order_transaction ){
+							foreach( $json["SoldList"]["OrderTransactionArray"]["OrderTransaction"] as $order_transaction ){
 
 								if( array_key_exists( "Order", $order_transaction) ){
 
