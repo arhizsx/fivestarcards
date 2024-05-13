@@ -894,14 +894,17 @@ class Ebay_Integration_Ebay_API {
 		if( $type == null || $type == "active"){
 			$switch = "ActiveList";
 			$duration = '';
+			$sort = "<Sort>TimeLeft</Sort>";
 		}
 		elseif( $type == "sold" ){
 			$switch = "SoldList";
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
+			$sort = "";
 		}
 		elseif( $type == "unsold" ){
 			$switch = "UnsoldList";
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
+			$sort = "";
 		}
 
 		if( $page == null ){
@@ -925,7 +928,7 @@ class Ebay_Integration_Ebay_API {
 			'<ErrorLanguage>en_US</ErrorLanguage>' .
 			'<WarningLevel>High</WarningLevel>' .
 			'<' . $switch . '>' .
-				'<Sort>TimeLeft</Sort>' .
+				$sort .
 				'<Pagination>' .
 					'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
 					'<PageNumber>' . $page_number . '</PageNumber>' .
