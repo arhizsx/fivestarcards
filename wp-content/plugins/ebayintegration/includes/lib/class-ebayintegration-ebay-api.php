@@ -1027,8 +1027,8 @@ class Ebay_Integration_Ebay_API {
 
 					if( array_key_exists("PaginationResult", $json[ $requestType ]) ){
 
-						$TotalNumberOfPages = $json[ $requestType ]["PaginationResult"]["TotalNumberOfPages"];
-						$TotalNumberOfEntries = $json[ $requestType ]["PaginationResult"]["TotalNumberOfEntries"];
+						$TotalNumberOfPages = $json[ $requestType ]["PaginationResult"]["TotalNumberOfPages"] * 1;
+						$TotalNumberOfEntries = $json[ $requestType ]["PaginationResult"]["TotalNumberOfEntries"] * 1;
 
 					}
 
