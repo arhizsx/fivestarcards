@@ -990,9 +990,10 @@ class Ebay_Integration_Ebay_API {
 				// SOLD LIST
 				if( array_key_exists("SoldList", $json) ){
 
-					return "SoldList";
 
 					if( array_key_exists("OrderTransactionArray", $json["SoldList"]) ){
+
+						return "OrderTransactionArray";
 
 						if( array_key_exists("OrderTransaction", $json["SoldList"]["OrderTransactionArray"])){
 
