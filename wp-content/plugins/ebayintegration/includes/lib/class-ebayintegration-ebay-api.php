@@ -987,28 +987,32 @@ class Ebay_Integration_Ebay_API {
 
 				$items = [];
 				$requestType = "";
+				$TotalNumberOfPages = 0;
+				$TotalNumberOfEntries = 0;
 
 				// SOLD LIST
-				if( array_key_exists("SoldList", $json) ){
+				if( array_key_exists( "SoldList", $json ) ){
 
 					$requestType = "SoldList";
 
-					if( array_key_exists("OrderTransactionArray", $json["SoldList"]) ){
+					if( array_key_exists( "OrderTransactionArray", $json[ $requestType ]) ){
 
-						if( array_key_exists("OrderTransaction", $json["SoldList"]["OrderTransactionArray"])){
+						if( array_key_exists("OrderTransaction", $json[ $requestType ]["OrderTransactionArray"])){
 
-							foreach( $json["SoldList"]["OrderTransactionArray"]["OrderTransaction"] as $order_transaction ){
+							foreach( $json[ $requestType ]["OrderTransactionArray"]["OrderTransaction"] as $order_transaction ){
 
 								if( array_key_exists( "Order", $order_transaction) ){
 
 									foreach( $order_transaction["Order"]["TransactionArray"]["Transaction"] as $transaction ){
+
 										array_push( $items, $transaction );
+
 									}
 								
 								}
 								elseif( array_key_exists( "Transaction", $order_transaction) ){
 
-									array_push($items, $order_transaction["Transaction"]);
+									array_push( $items, $order_transaction["Transaction"] );
 
 								}
 
@@ -1021,9 +1025,23 @@ class Ebay_Integration_Ebay_API {
 
 					}
 
+					if( array_key_exists("PaginationResults", $json[ $requestType ]) ){
+
+						$TotalNumberOfPages = $json[ $requestType ]["PaginationResults"]["TotalNumberOfPages"];
+						$TotalNumberOfEntries = $json[ $requestType ]["PaginationResults"]["TotalNumberOfEntries"];
+
+					}
+
 				}
 				
-				return array("error" => false, "response"=> $json, $requestType => $items );
+				return array(
+						"error" => false, 
+						"response"=> $json, 
+						$requestType => $items, 
+						"current_page" => $page_number,
+						"pages" =>  $TotalNumberOfPages, 
+						"entries" => $TotalNumberOfEntries 
+					);
 
 			}
 	
