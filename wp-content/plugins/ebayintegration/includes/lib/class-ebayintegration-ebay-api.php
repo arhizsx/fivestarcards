@@ -927,6 +927,7 @@ class Ebay_Integration_Ebay_API {
 			'</RequesterCredentials>' .
 			'<ErrorLanguage>en_US</ErrorLanguage>' .
 			'<WarningLevel>High</WarningLevel>' .
+			'<SellingSummary>true</SellingSummary>' .
 			'<' . $switch . '>' .
 				$sort .
 				'<Pagination>' .
@@ -996,30 +997,18 @@ class Ebay_Integration_Ebay_API {
 					$requestType = "SoldList";
 
 					if( array_key_exists( "OrderTransactionArray", $json[ $requestType ]) ){
-
 						if( array_key_exists("OrderTransaction", $json[ $requestType ]["OrderTransactionArray"])){
-
 							foreach( $json[ $requestType ]["OrderTransactionArray"]["OrderTransaction"] as $order_transaction ){
-
 								if( array_key_exists( "Order", $order_transaction) ){
-
 									foreach( $order_transaction["Order"]["TransactionArray"]["Transaction"] as $transaction ){
-
 										array_push( $items, $transaction );
-
-									}
-								
+									}								
 								}
 								elseif( array_key_exists( "Transaction", $order_transaction) ){
-
 									array_push( $items, $order_transaction["Transaction"] );
-
 								}
-
 							}
-
 						}
-
 					} 
 					else {
 
@@ -1031,17 +1020,11 @@ class Ebay_Integration_Ebay_API {
 					$requestType = "ActiveList";
 
 					if( array_key_exists( "ItemArray", $json[ $requestType ]) ){
-
 						if( array_key_exists( "Item", $json[ $requestType ]["ItemArray"]) ){
-
 							foreach( $json[ $requestType ]["ItemArray"]["Item"] as $item ){
-
 								array_push( $items, $item );
-
 							}
-
 						}
-	
 					}
 
 
@@ -1051,30 +1034,24 @@ class Ebay_Integration_Ebay_API {
 					$requestType = "UnsoldList";
 
 					if( array_key_exists( "ItemArray", $json[ $requestType ]) ){
-
 						if( array_key_exists( "Item", $json[ $requestType ]["ItemArray"]) ){
-
 							foreach( $json[ $requestType ]["ItemArray"]["Item"] as $item ){
-
 								array_push( $items, $item );
-
 							}
-
 						}
-	
 					}
 
 
 				}
 
 				if( array_key_exists("PaginationResult", $json[ $requestType ]) ){
-
 					$TotalNumberOfPages = $json[ $requestType ]["PaginationResult"]["TotalNumberOfPages"] * 1;
 					$TotalNumberOfEntries = $json[ $requestType ]["PaginationResult"]["TotalNumberOfEntries"] * 1;
-
 				}
 
-				return array(
+				
+
+				$returnArray = array(
 						"error" => false, 
 						"response"=> $json, 
 						$requestType => $items, 
