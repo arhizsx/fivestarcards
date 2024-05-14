@@ -1094,7 +1094,7 @@ class Ebay_Integration_Ebay_API {
 						$itemstatus = "SoldListPaid";							
 					}
 
-					$this->wpdb->replace("ebay", array(
+					return $this->wpdb->replace("ebay", array(
 						"item_id" => $itemID,
 						"sku" => $SKU,
 						"data" => json_encode($item),
