@@ -1063,16 +1063,20 @@ class Ebay_Integration_Ebay_API {
 
 					if( $requestType == "ActiveList" ){
 						$itemID = $item["ItemID"];
+						$SKU = $item["SKU"];
 					}
 					if( $requestType == "UnsoldList" ){
 						$itemID = $item["ItemID"];
+						$SKU = $item["SKU"];
 					}
 					elseif( $requestType == "SoldList" ){
 						$itemID = $item["Item"]["ItemID"];
+						$SKU = $item["Item"]["SKU"];
 					}
 
 					$this->wpdb->replace("ebay", array(
 						"item_id" => $itemID,
+						"sku" => $SKU,
 						"data" => json_encode($item),
 						"status" => $requestType
 					));
