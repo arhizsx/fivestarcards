@@ -924,6 +924,7 @@ class Ebay_Integration_Ebay_API {
 			$requestStatus = $switch;
 		}
 
+
 		if( $page == null ){
 			$page_number = 1;
 		}
@@ -1065,8 +1066,8 @@ class Ebay_Integration_Ebay_API {
 					$TotalNumberOfPages = $json[ $requestType ]["PaginationResult"]["TotalNumberOfPages"] * 1;
 					$TotalNumberOfEntries = $json[ $requestType ]["PaginationResult"]["TotalNumberOfEntries"] * 1;
 				}
-
 				
+				return $requestStatus;
 
 				$returnArray = array(
 						"error" => false, 
