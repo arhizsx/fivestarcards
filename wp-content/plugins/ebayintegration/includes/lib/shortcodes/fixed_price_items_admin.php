@@ -48,6 +48,7 @@ $users = get_users( $args );
         <thead>
             <tr>
                 <th>Item</th>
+                <th>Watchers</th>
                 <th class="text-end">Buy Price</th>
             </tr>
         </thead>
@@ -70,6 +71,9 @@ $users = get_users( $args );
                     </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>                    
+                </td>
+                <td class="text-end">
+                    <?php echo $data["WatchCount"]; ?>
                 </td>
                 <td class="text-end">$<?php 
                 echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
