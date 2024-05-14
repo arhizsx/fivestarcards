@@ -524,7 +524,7 @@ $(document).on("click", ".5star_btn", function(e){
             break;
 
         case "view_account":
-            $(document).find(".view_account").modal("show");
+            $(document).find(".view_account").appendTo('body').modal("show");
             break;
 
         default:
