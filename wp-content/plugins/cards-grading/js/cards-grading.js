@@ -523,6 +523,9 @@ $(document).on("click", ".5star_btn", function(e){
             DemoteAdmin(element.data("user_id"));
             break;
 
+        case "view_account":
+            $(document).find(".view_account").modal("show");
+            break;
 
         default:
             console.log("Button not configured: " + $(this).data("action"));
