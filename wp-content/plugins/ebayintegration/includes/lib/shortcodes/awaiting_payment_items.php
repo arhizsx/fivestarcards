@@ -26,7 +26,6 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
         <thead>
             <tr>
                 <th>Item</th>
-                <th class="d-none d-md-table-cell">Timestamp</th>
                 <th class="text-end">Price Sold</th>
             </tr>
         </thead>
