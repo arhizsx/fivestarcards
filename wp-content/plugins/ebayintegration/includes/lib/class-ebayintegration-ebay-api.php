@@ -919,6 +919,7 @@ class Ebay_Integration_Ebay_API {
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 			$sort = "";
 			$status_filter = "";
+			$status = $switch;
 		}
 
 		if( $page == null ){
@@ -1093,7 +1094,7 @@ class Ebay_Integration_Ebay_API {
 						"item_id" => $itemID,
 						"sku" => $SKU,
 						"data" => json_encode($item),
-						"status" => $requestType
+						"status" => $$status
 					));
 
 				}
