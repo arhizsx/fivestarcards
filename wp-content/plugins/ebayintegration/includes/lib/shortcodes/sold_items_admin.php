@@ -22,10 +22,7 @@ $users = get_users( $args );
         font-size: .7em !important;
     }
 </style>
-<div class="d-flex justify-content-between mb-3">
-    <div>
-        <i class="fa-brands fa-ebay fa-2xl"></i>
-    </div>
+<div class="d-flex flex-row-reverse mb-3">
     <div class="d-flex justify-content-between mb-3">
         <select class="user_list_select form-control">
         <option value="">Filter by User</option>
@@ -37,29 +34,24 @@ $users = get_users( $args );
             }
         ?>
         </select>
-        <input class="btn pl-2 search_box" style="margin-left: 15px; text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_auction">
+        <input class="btn pl-2 search_box" style="margin-left: 15px; text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_paid">
     </div>
 </div>
 
 <div class="table-responsive">
-    <table class="table table-border table-striped table-sm table-hover search_table_sold">
+    <table class="table table-border table-striped table-sm table-hover search_table_paid">
         <thead>
             <tr>
                 <th>Item</th>
-                <th class="d-none d-md-table-cell">Timestamp</th>
                 <th class="text-end">Price Sold</th>
+                <th class="text-end">Action</th>
             </tr>
         </thead>
         <tbody>
             <?php 
-
             if( count($ebay) > 0 ){
                 foreach($ebay as $item){ 
-                    if( $item->transaction != "Not Sold" ){
-                        $data = json_decode($item->data, true);
-
-                        if( in_array( $item->sku, $skus ) ){
-
+                    $data = json_decode($item->data, true);
             ?>
             <tr>
                 <td>
@@ -84,15 +76,13 @@ $users = get_users( $args );
                     <button class="btn btn-primary">PAID</button>
                 </td>
             </tr>
-            <?php 
-                        }
-                    }
+            <?php
                 } 
             } 
             else {
             ?>
             <tr>
-                <td colspan="3" class="text-center p-5">
+                <td colspan="2" class="text-center p-5">
                     No Items
                 </td>
             </tr>
