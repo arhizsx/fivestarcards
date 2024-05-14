@@ -1073,17 +1073,15 @@ class Ebay_Integration_Ebay_API {
 
 				foreach( $items as $item ){
 
-					return $type;
-
 					if( $type == "active" ){
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
-						$itemstatus = $requestType;
+						$itemstatus = "SoldList";
 					}
 					elseif( $type == "unsold" ){
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
-						$itemstatus = $requestType;
+						$itemstatus = "UnsoldList";
 					}
 					elseif( $type == "awaiting" ){
 						$itemID = $item["Item"]["ItemID"];
