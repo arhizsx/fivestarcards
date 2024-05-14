@@ -956,8 +956,6 @@ class Ebay_Integration_Ebay_API {
 			'</' . $switch . '>' .
 		'</GetMyeBaySellingRequest> ';
 		
-
-		return $post_data;
 		$curl = curl_init();
 		
 		curl_setopt_array(
@@ -1079,6 +1077,9 @@ class Ebay_Integration_Ebay_API {
 						"pages" =>  $TotalNumberOfPages, 
 						"entries" => $TotalNumberOfEntries 
 					);
+
+
+				return $returnArray;
 
 				foreach( $items as $item ){
 
