@@ -896,12 +896,23 @@ class Ebay_Integration_Ebay_API {
 			$duration = '';
 			$sort = "<Sort>TimeLeft</Sort>";
 			$status_filter = "";
+			$status = $switch;
+
 		}
 		elseif( $type == "sold" ){
 			$switch = "SoldList";
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 			$status_filter = '<OrderStatusFilter>PaidAndShipped</OrderStatusFilter>';
 			$sort = "";
+			$status = $switch;
+
+		}
+		elseif( $type == "awaiting" ){
+			$switch = "SoldList";
+			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
+			$status_filter = '<OrderStatusFilter>AwaitingPayment</OrderStatusFilter>';
+			$sort = "";
+			$status = $switch . "Awaiting";
 		}
 		elseif( $type == "unsold" ){
 			$switch = "UnsoldList";
