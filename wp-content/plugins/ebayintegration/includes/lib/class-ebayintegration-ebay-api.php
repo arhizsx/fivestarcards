@@ -1005,12 +1005,6 @@ class Ebay_Integration_Ebay_API {
 				if( array_key_exists( "SoldList", $json ) ){
 
 					$requestType = "SoldList";
-					if($type == "sold"){
-						$itemstatus = "SoldListPaid";
-					}
-					elseif($type == "awaiting"){
-						$itemstatus = "SoldListAwaiting";						
-					}
 
 					if( array_key_exists( "OrderTransactionArray", $json[ $requestType ]) ){
 						if( array_key_exists("OrderTransaction", $json[ $requestType ]["OrderTransactionArray"])){
@@ -1085,14 +1079,24 @@ class Ebay_Integration_Ebay_API {
 					if( $requestType == "ActiveList" ){
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
+						$itemstatus = $requestType;
 					}
 					if( $requestType == "UnsoldList" ){
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
+						$itemstatus = $requestType;
 					}
 					elseif( $requestType == "SoldList" ){
 						$itemID = $item["Item"]["ItemID"];
 						$SKU = $item["Item"]["SKU"];
+
+						if($type == "sold"){
+							$itemstatus = "SoldListPaid";
+						}
+						elseif($type == "awaiting"){
+							$itemstatus = "SoldListAwaiting";						
+						}
+	
 					}
 
 					$this->wpdb->replace("ebay", array(
