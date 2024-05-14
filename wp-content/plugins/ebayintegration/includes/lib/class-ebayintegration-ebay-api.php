@@ -904,7 +904,7 @@ class Ebay_Integration_Ebay_API {
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 			$status_filter = '<OrderStatusFilter>PaidAndShipped</OrderStatusFilter>';
 			$sort = "";
-			$status = $switch;
+			$status = $switch."Paid";
 
 		}
 		elseif( $type == "awaiting" ){
