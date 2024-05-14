@@ -42,12 +42,12 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                 <td>
                     <div class="title">
                         <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                            <?php print_r( $data["Title"] ); ?>
+                            <?php print_r( $data["Item"]["Title"] ); ?>
                         </a>
                     </div> 
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
-                    <?php $listing = $data["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"]; ?>
+                    <?php $listing = $data["Item"]["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"]; ?>
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
 
                     
