@@ -527,14 +527,14 @@ $(document).on("click", ".5star_btn", function(e){
 
             let viewurl = $(document).find(".5star_table").data("endpoint");
             let view_user_id = $(this).data("user_id");
-            let nonce = $(document).find(".5star_table").data("endpoint");
+            let view_nonce = $(document).find(".5star_table").data("endpoint");
 
             $(document).find(".view_account").appendTo('body').modal("show");
 
             $.ajax({
                 method: 'post',
                 url: viewurl,
-                headers: {'X-WP-Nonce': nonce },
+                headers: {'X-WP-Nonce': view_nonce },
                 data: {
                     'action' : "view_account",
                     'user_id': view_user_id,
