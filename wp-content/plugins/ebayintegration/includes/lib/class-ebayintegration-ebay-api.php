@@ -890,6 +890,7 @@ class Ebay_Integration_Ebay_API {
 			$days_count = $days;
 		}
 
+
 		if( $type == null || $type == "active"){
 			$switch = "ActiveList";
 			$duration = '';
@@ -901,17 +902,8 @@ class Ebay_Integration_Ebay_API {
 		elseif( $type == "sold" ){
 			$switch = "SoldList";
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
-			$status_filter = '<OrderStatusFilter>PaidAndShipped</OrderStatusFilter>';
 			$sort = "";
 			$requestStatus = $switch."Paid";
-
-		}
-		elseif( $type == "awaiting" ){
-			$switch = "SoldList";
-			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
-			$status_filter = '<OrderStatusFilter>AwaitingPayment</OrderStatusFilter>';
-			$sort = "";
-			$requestStatus = $switch . "Awaiting";
 
 		}
 		elseif( $type == "unsold" ){
@@ -921,7 +913,6 @@ class Ebay_Integration_Ebay_API {
 			$status_filter = "";
 			$requestStatus = $switch;
 		}
-
 
 		if( $page == null ){
 			$page_number = 1;
@@ -1064,34 +1055,29 @@ class Ebay_Integration_Ebay_API {
 					$TotalNumberOfPages = $json[ $requestType ]["PaginationResult"]["TotalNumberOfPages"] * 1;
 					$TotalNumberOfEntries = $json[ $requestType ]["PaginationResult"]["TotalNumberOfEntries"] * 1;
 				}
+
 				
 
 				$returnArray = array(
 						"error" => false, 
 						"response"=> $json, 
 						$requestType => $items, 
-						"status" => $requestStatus,
 						"current_page" => $page_number * 1,
 						"pages" =>  $TotalNumberOfPages, 
 						"entries" => $TotalNumberOfEntries 
 					);
 
-
 				foreach( $items as $item ){
 
-					if( $requestStatus == "ActiveList" ){
+					if( $requestType == "ActiveList" ){
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
 					}
-					if( $requestStatus == "UnsoldList" ){
+					if( $requestType == "UnsoldList" ){
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
 					}
-					elseif( $requestStatus == "SoldListPaid" ){
-						$itemID = $item["Item"]["ItemID"];
-						$SKU = $item["Item"]["SKU"];
-					}
-					elseif( $requestStatus == "SoldListAwaiting" ){
+					elseif( $requestType == "SoldList" ){
 						$itemID = $item["Item"]["ItemID"];
 						$SKU = $item["Item"]["SKU"];
 					}
