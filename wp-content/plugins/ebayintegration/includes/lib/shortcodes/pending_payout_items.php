@@ -5,7 +5,7 @@ global $wpdb;
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
-where status = 'SoldList'
+where status = 'SoldListPaid'
 " 
 );
 
@@ -33,8 +33,6 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
             <?php 
             if( count($ebay) > 0 ){
                 foreach($ebay as $item){ 
-                    if( $item->transaction != "Not Sold" ){
-                        $transaction = json_decode($item->transaction, true);
                         $data = json_decode($item->data, true);
 
                         if( in_array( $item->sku, $skus ) ){
@@ -46,7 +44,7 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                         <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
                             <?php print_r( $data["Title"] ); ?>
                         </a>
-                    </div>
+                    </div> 
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
                     <?php $listing = $data["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"]; ?>
@@ -54,12 +52,13 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
 
                     
                 </td>
-                <td class="text-end">$<?php 
-                echo number_format(( $transaction["Transaction"]["TransactionPrice"]), 2, '.', ',');
-                ?></td>
+                <td class="text-end">
+                    $<?php 
+                    echo number_format(( $data["TransactionPrice"]), 2, '.', ',');
+                    ?>
+                </td>
             </tr>
             <?php
-                        } 
                     }
                 } 
             } 
