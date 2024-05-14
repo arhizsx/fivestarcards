@@ -54,8 +54,8 @@ $users = get_users( $args );
                     
                     $data = json_decode($item->data, true);
 
-                    $dont_show = array("NotPaid");
-                    if( in_array( $data["SellerPaidStatus"], $dont_show )){
+                    $only_show = array("NotPaid");
+                    if( in_array( $data["SellerPaidStatus"], $only_show )){
 
             ?>
             <tr>
