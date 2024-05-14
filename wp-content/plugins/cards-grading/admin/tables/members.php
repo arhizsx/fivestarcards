@@ -151,9 +151,9 @@
 			</div>
                 <div class="" id="view_card_form_box">
                     <div class="modal-body py-2 px-3">
-                        <H5>User Information</H5>
-                        <H5>SKUs</H5>
-                        <H5>Active Items</H5>
+                        <H5 style="color: black;">User Information</H5>
+                        <H5 style="color: black;">SKUs</H5>
+                        <H5 style="color: black;">Active Items</H5>
                     </div>
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
