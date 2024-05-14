@@ -1061,8 +1061,18 @@ class Ebay_Integration_Ebay_API {
 
 				foreach( $items as $item ){
 
+					if( $requestType == "ActiveList" ){
+						$itemID = $item["ItemID"];
+					}
+					if( $requestType == "UnsoldList" ){
+						$itemID = $item["ItemID"];
+					}
+					elseif( $requestType == "SoldList" ){
+						$itemID = $item["Item"]["ItemID"];
+					}
+
 					$this->wpdb->replace("ebay", array(
-						"item_id" => $item["ItemID"],
+						"item_id" => $itemID,
 						"data" => json_encode($item),
 						"status" => $requestType
 					));
