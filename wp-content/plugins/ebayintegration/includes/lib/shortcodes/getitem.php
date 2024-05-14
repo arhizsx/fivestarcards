@@ -25,6 +25,7 @@
         SELECT * 
         FROM  ebay
         ORDER BY sku ASC
+        WHERE status = 'ActiveList'
     " );
 
 ?>
