@@ -895,23 +895,16 @@ class Ebay_Integration_Ebay_API {
 			$switch = "ActiveList";
 			$duration = '';
 			$sort = "<Sort>TimeLeft</Sort>";
-			$status_filter = "";
-			$requestStatus = $switch;
-
 		}
 		elseif( $type == "sold" ){
 			$switch = "SoldList";
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 			$sort = "";
-			$requestStatus = $switch."Paid";
-
 		}
 		elseif( $type == "unsold" ){
 			$switch = "UnsoldList";
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 			$sort = "";
-			$status_filter = "";
-			$requestStatus = $switch;
 		}
 
 		if( $page == null ){
@@ -941,7 +934,6 @@ class Ebay_Integration_Ebay_API {
 					'<PageNumber>' . $page_number . '</PageNumber>' .
 				'</Pagination>' .
 				$duration .
-				$status_filter .
 			'</' . $switch . '>' .
 		'</GetMyeBaySellingRequest> ';
 		
@@ -1086,7 +1078,7 @@ class Ebay_Integration_Ebay_API {
 						"item_id" => $itemID,
 						"sku" => $SKU,
 						"data" => json_encode($item),
-						"status" => $requestStatus
+						"status" => $requestType
 					));
 
 				}
