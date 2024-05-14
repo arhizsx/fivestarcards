@@ -56,7 +56,6 @@ $users = get_users( $args );
             if( count($ebay) > 0 ){
                 foreach($ebay as $item){ 
                     if( $item->transaction != "Not Sold" ){
-                        $transaction = json_decode($item->transaction, true);
                         $data = json_decode($item->data, true);
 
                         if( in_array( $item->sku, $skus ) ){
@@ -65,17 +64,25 @@ $users = get_users( $args );
             <tr>
                 <td>
                     <div class="title">
-                        <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                            <?php print_r( $data["Title"] ); ?>
+                        <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
+                            <?php print_r( $data["Item"]["Title"] ); ?>
                         </a>
                     </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
-                    <?php $listing = $data["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"]; ?>
+                    <?php $listing = $data["Item"]["ListingType"] == "Chinese" ? "Auction" : $data["Item"]["ListingType"]; ?>
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
+
+                    
                 </td>
-                <td class="d-none d-md-table-cell"><?php echo $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentTime"] ?></td>
-                <td class="text-end">$<?php echo number_format(( $transaction["Transaction"]["TransactionPrice"]), 2, '.', ',');?></td>
+                <td class="text-end">
+                    $<?php 
+                    echo number_format(( $data["TransactionPrice"]), 2, '.', ',');
+                    ?>
+                </td>
+                <td class="text-end">
+                    <button class="btn btn-primary">PAID</button>
+                </td>
             </tr>
             <?php 
                         }
