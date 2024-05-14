@@ -47,9 +47,9 @@
 			include( plugin_dir_path( __FILE__ ) . 'fixed_price_items.php');			
             break;
 
-        case "paid_items_admin":
+        case "pending_payout_items_admin":
 
-			include( plugin_dir_path( __FILE__ ) . 'paid_items_admin.php');			
+			include( plugin_dir_path( __FILE__ ) . 'pending_payout_items_admin.php');			
             break;
 
         case "sold_items_admin":
