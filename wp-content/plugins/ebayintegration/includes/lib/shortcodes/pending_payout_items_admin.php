@@ -52,7 +52,9 @@ $users = get_users( $args );
             $ctr = 0;
 
             foreach($ebay as $item){ 
+
                 $data = json_decode($item->data, true);
+                    $ctr++;
             ?>
             <tr>
                 <td>
