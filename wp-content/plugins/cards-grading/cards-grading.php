@@ -832,7 +832,7 @@
     }
 
     public function doViewAccount($params){
-        return $params;
+        return "TESTING";
     }
 
     public function handle_order_action($data){
