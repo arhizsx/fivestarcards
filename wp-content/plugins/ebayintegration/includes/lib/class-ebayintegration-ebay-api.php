@@ -927,13 +927,13 @@ class Ebay_Integration_Ebay_API {
 			'</RequesterCredentials>' .
 			'<ErrorLanguage>en_US</ErrorLanguage>' .
 			'<WarningLevel>High</WarningLevel>' .
+			'<SellingSummary>true</SellingSummary>' .
 			'<' . $switch . '>' .
 				$sort .
 				'<Pagination>' .
 					'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
 					'<PageNumber>' . $page_number . '</PageNumber>' .
 				'</Pagination>' .
-				'<SellingSummary>true</SellingSummary>' .
 				$duration .
 			'</' . $switch . '>' .
 		'</GetMyeBaySellingRequest> ';
