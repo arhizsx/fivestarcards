@@ -527,7 +527,7 @@ $(document).on("click", ".5star_btn", function(e){
 
             let viewurl = $(document).find(".5star_table").data("endpoint");
             let view_user_id = $(this).data("user_id");
-            let view_nonce = $(document).find(".5star_table").data("endpoint");
+            let view_nonce = $(document).find(".5star_table").data("nonce");
 
             $(document).find(".view_account").appendTo('body').modal("show");
 
