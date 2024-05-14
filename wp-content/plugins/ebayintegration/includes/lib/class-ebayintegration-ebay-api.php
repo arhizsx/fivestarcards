@@ -999,7 +999,6 @@ class Ebay_Integration_Ebay_API {
 				$requestType = "";
 				$TotalNumberOfPages = 0;
 				$TotalNumberOfEntries = 0;
-				$itemstatus  = "";
 
 				// SOLD LIST
 				if( array_key_exists( "SoldList", $json ) ){
