@@ -43,6 +43,7 @@ $users = get_users( $args );
         <thead>
             <tr>
                 <th>Item</th>
+                <th>SellerPaidStatus</th>
                 <th class="text-end">Price Sold</th>
             </tr>
         </thead>
@@ -65,6 +66,9 @@ $users = get_users( $args );
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
 
                     
+                </td>
+                <td>
+                    <?php echo $data["SellerPaidStatus"]; ?>
                 </td>
                 <td class="text-end">
                     $<?php 
