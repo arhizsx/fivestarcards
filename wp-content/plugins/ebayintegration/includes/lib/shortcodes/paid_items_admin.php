@@ -52,6 +52,7 @@ $users = get_users( $args );
             if( count($ebay) > 0 ){
                 foreach($ebay as $item){ 
                     $data = json_decode($item->data, true);
+                    if( $data["SellerPaidStatus"] == "MarkedAsPaid"){
             ?>
             <tr>
                 <td>
@@ -77,6 +78,7 @@ $users = get_users( $args );
                 </td>
             </tr>
             <?php
+                    }
                 } 
             } 
             else {
