@@ -5,7 +5,7 @@ global $wpdb;
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
-where status = 'awaiting'
+where status = 'SoldList'
 " 
 );
 $args = array(
