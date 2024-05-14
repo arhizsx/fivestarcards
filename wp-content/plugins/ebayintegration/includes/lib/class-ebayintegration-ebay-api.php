@@ -913,6 +913,8 @@ class Ebay_Integration_Ebay_API {
 			$status_filter = '<OrderStatusFilter>AwaitingPayment</OrderStatusFilter>';
 			$sort = "";
 			$status = $switch . "Awaiting";
+
+			return $status;
 		}
 		elseif( $type == "unsold" ){
 			$switch = "UnsoldList";
