@@ -43,7 +43,7 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                 <td>
                     <div class="title">
                         <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                            <?php print_r( $data["Title"] ); ?>
+                            <?php print_r( $data["Item"]["Title"] ); ?>
                         </a>
                     </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
