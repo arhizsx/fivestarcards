@@ -1059,6 +1059,17 @@ class Ebay_Integration_Ebay_API {
 						"entries" => $TotalNumberOfEntries 
 					);
 
+				foreach( $items as $item ){
+
+					$this->wpdb->replace("ebay", array(
+						"item_id" => $item["ItemID"],
+						"data" => json_encode($item),
+						"status" => $requestType
+					));
+
+				}
+
+
 				return $returnArray;
 
 			}
