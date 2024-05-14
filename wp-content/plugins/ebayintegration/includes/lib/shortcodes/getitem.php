@@ -28,6 +28,7 @@
         WHERE status = 'ActiveList'
     " );
 
+    print_r($ebay);
 ?>
 
 <div>
