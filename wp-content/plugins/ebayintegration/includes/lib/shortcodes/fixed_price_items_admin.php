@@ -39,7 +39,7 @@ $users = get_users( $args );
             }
         ?>
         </select>
-        <input class="btn pl-2 search_box" style="margin-left: 15px; text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_fixed_price">
+        <input class="btn pl-2 search_box" style="margin-left: 15px; text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_auction">
     </div>
 </div>
 
@@ -48,8 +48,7 @@ $users = get_users( $args );
         <thead>
             <tr>
                 <th>Item</th>
-                <th class="text-end">Sold</th>
-                <th class="text-end">Avlb</th>
+                <th class="text-end">Qty Avlb</th>
                 <th class="text-end">Watchers</th>
                 <th class="text-end">Buy Price</th>
             </tr>
@@ -75,10 +74,7 @@ $users = get_users( $args );
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>                    
                 </td>
                 <td class="text-end">
-                    <?php echo $data["SellingStatus"]["QuantitySold"] * 1; ?>
-                </td>
-                <td class="text-end">
-                    <?php echo $data["QuantityAvailable"] * 1; ?>
+                    <?php echo $data["QuantityAvailable"]; ?>
                 </td>
                 <td class="text-end">
                     <?php echo $data["WatchCount"]; ?>
