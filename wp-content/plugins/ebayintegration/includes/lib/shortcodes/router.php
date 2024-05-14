@@ -22,14 +22,14 @@
 			include( plugin_dir_path( __FILE__ ) . 'ebay_items.php');			
             break;
 
-        case "paid_items":
+        case "pending_payout_items":
 
-			include( plugin_dir_path( __FILE__ ) . 'paid_items.php');			
+			include( plugin_dir_path( __FILE__ ) . 'pending_payout_items.php');			
             break;
 
-        case "sold_items":
+        case "awaiting_payment_items":
 
-			include( plugin_dir_path( __FILE__ ) . 'sold_items.php');			
+			include( plugin_dir_path( __FILE__ ) . 'awaiting_payment_items.php');			
             break;
 
         case "paid_out":
