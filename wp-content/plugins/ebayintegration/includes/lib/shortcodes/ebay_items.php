@@ -52,7 +52,6 @@ $results = $wpdb->get_results("
                     <td class="text-end ebay-item-bids" data-item_id="<?php echo $data->ItemID ?>"></td>
                     <td class="text-end ebay-item-current_price" data-item_id="<?php echo $data->ItemID ?>"></td>
                     <td class="text-end ebay-item-days_left" data-item_id="<?php echo $data->ItemID ?>"></td>
-
                 </tr>
             <?php 
                 }

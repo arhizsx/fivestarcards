@@ -16,8 +16,11 @@ $in = $in . ")";
 
 $results = $wpdb->get_results("
     SELECT * FROM ebay WHERE sku IN " . $in . "
+    AND status = 'ActiveList'
 ");
 
+
+print_r($results);
 ?>
 <style>
     input {padding: 3px;}
@@ -61,7 +64,6 @@ $results = $wpdb->get_results("
                 foreach($results as $result){
 
                     $data = json_decode($result->data);
-
 
                     echo "<div class='ebay-item col-xl-3 col-lg-4 col-md-6 border mb-3 p-2' data-item_id='" . $data->ItemID . "'>";
                         echo "<div class='ebay-price'>";
