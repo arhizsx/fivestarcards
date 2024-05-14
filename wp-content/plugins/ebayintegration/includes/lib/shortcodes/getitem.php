@@ -24,8 +24,8 @@
     $ebay = $this->wpdb->get_results ( "
         SELECT * 
         FROM  ebay
-        ORDER BY sku ASC
         WHERE status = 'ActiveList'
+        ORDER BY sku ASC
     " );
 
     print_r($ebay);
