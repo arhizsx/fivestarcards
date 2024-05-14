@@ -896,7 +896,7 @@ class Ebay_Integration_Ebay_API {
 			$duration = '';
 			$sort = "<Sort>TimeLeft</Sort>";
 			$status_filter = "";
-			$status = $switch;
+			$requestStatus = $switch;
 
 		}
 		elseif( $type == "sold" ){
@@ -904,7 +904,7 @@ class Ebay_Integration_Ebay_API {
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 			$status_filter = '<OrderStatusFilter>PaidAndShipped</OrderStatusFilter>';
 			$sort = "";
-			$status = $switch."Paid";
+			$requestStatus = $switch."Paid";
 
 		}
 		elseif( $type == "awaiting" ){
@@ -912,7 +912,7 @@ class Ebay_Integration_Ebay_API {
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 			$status_filter = '<OrderStatusFilter>AwaitingPayment</OrderStatusFilter>';
 			$sort = "";
-			$status = $switch . "Awaiting";
+			$requestStatus = $switch . "Awaiting";
 
 		}
 		elseif( $type == "unsold" ){
@@ -920,7 +920,7 @@ class Ebay_Integration_Ebay_API {
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 			$sort = "";
 			$status_filter = "";
-			$status = $switch;
+			$requestStatus = $switch;
 		}
 
 		if( $page == null ){
@@ -1096,7 +1096,7 @@ class Ebay_Integration_Ebay_API {
 						"item_id" => $itemID,
 						"sku" => $SKU,
 						"data" => json_encode($item),
-						"status" => $status
+						"status" => $requestStatus
 					));
 
 				}
