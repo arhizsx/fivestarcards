@@ -895,16 +895,19 @@ class Ebay_Integration_Ebay_API {
 			$switch = "ActiveList";
 			$duration = '';
 			$sort = "<Sort>TimeLeft</Sort>";
+			$status_filter = "";
 		}
 		elseif( $type == "sold" ){
 			$switch = "SoldList";
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
+			$status_filter = '<OrderStatusFilter>PaidAndShipped</OrderStatusFilter>';
 			$sort = "";
 		}
 		elseif( $type == "unsold" ){
 			$switch = "UnsoldList";
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 			$sort = "";
+			$status_filter = "";
 		}
 
 		if( $page == null ){
@@ -934,6 +937,7 @@ class Ebay_Integration_Ebay_API {
 					'<PageNumber>' . $page_number . '</PageNumber>' .
 				'</Pagination>' .
 				$duration .
+				$status_filter .
 			'</' . $switch . '>' .
 		'</GetMyeBaySellingRequest> ';
 		
