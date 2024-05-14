@@ -27,8 +27,6 @@
         WHERE status = 'ActiveList'
         ORDER BY sku ASC
     " );
-
-    print_r($ebay);
 ?>
 
 <div>
@@ -57,8 +55,8 @@
                         foreach($ebay as $item){
                             $item_data = json_decode( $item->data, true );
 
+                            print_r($item_data);
                             if( ! in_array($item_data["SKU"], $all_skus) ){
-
                     ?>
                         <tr  class='ebayintegration-btn ebay-item' data-action='set_sku_user' data-item_id='<?php echo $item_data["ItemID"]; ?>' data-sku='<?php echo $item_data["SKU"]; ?>'>
                             <td><?php echo $item_data["ItemID"]; ?></td>
