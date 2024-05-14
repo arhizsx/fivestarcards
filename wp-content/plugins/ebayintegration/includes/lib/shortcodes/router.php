@@ -52,9 +52,9 @@
 			include( plugin_dir_path( __FILE__ ) . 'pending_payout_items_admin.php');			
             break;
 
-        case "sold_items_admin":
+        case "awaiting_payment_items_admin":
 
-			include( plugin_dir_path( __FILE__ ) . 'sold_items_admin.php');			
+			include( plugin_dir_path( __FILE__ ) . 'awaiting_payment_items_admin.php');			
             break;
 
         case "paid_out_admin":
