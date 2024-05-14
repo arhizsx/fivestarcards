@@ -1073,6 +1073,8 @@ class Ebay_Integration_Ebay_API {
 
 				foreach( $items as $item ){
 
+					return $type;
+
 					if( $type == "active" ){
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
