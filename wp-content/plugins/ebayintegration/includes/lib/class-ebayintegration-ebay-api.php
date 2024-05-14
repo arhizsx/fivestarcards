@@ -914,7 +914,6 @@ class Ebay_Integration_Ebay_API {
 			$sort = "";
 			$status = $switch . "Awaiting";
 
-			return $status;
 		}
 		elseif( $type == "unsold" ){
 			$switch = "UnsoldList";
@@ -1072,6 +1071,7 @@ class Ebay_Integration_Ebay_API {
 						"error" => false, 
 						"response"=> $json, 
 						$requestType => $items, 
+						"status" => $status,
 						"current_page" => $page_number,
 						"pages" =>  $TotalNumberOfPages, 
 						"entries" => $TotalNumberOfEntries 
@@ -1096,7 +1096,7 @@ class Ebay_Integration_Ebay_API {
 						"item_id" => $itemID,
 						"sku" => $SKU,
 						"data" => json_encode($item),
-						"status" => $$status
+						"status" => $status
 					));
 
 				}
