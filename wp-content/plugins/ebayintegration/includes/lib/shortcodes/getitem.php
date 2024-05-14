@@ -21,8 +21,6 @@
         array_push( $all_skus, ...$skus );
     }
 
-    print_r($all_skus);
-
     $ebay = $this->wpdb->get_results ( "
         SELECT * 
         FROM  ebay
