@@ -21,6 +21,8 @@
         array_push( $all_skus, ...$skus );
     }
 
+    print_r($all_skus);
+
     $ebay = $this->wpdb->get_results ( "
         SELECT * 
         FROM  ebay
@@ -54,9 +56,8 @@
                     <?php 
                         foreach($ebay as $item){
                             $item_data = json_decode( $item->data, true );
-
-                            print_r($item_data);
                             if( ! in_array($item_data["SKU"], $all_skus) ){
+
                     ?>
                         <tr  class='ebayintegration-btn ebay-item' data-action='set_sku_user' data-item_id='<?php echo $item_data["ItemID"]; ?>' data-sku='<?php echo $item_data["SKU"]; ?>'>
                             <td><?php echo $item_data["ItemID"]; ?></td>
