@@ -1098,7 +1098,7 @@ class Ebay_Integration_Ebay_API {
 						"item_id" => $itemID,
 						"sku" => $SKU,
 						"data" => json_encode($item),
-						"status" => $itemstatus,	
+						"status" => "SoldXX",	
 					));
 
 				}
