@@ -956,6 +956,8 @@ class Ebay_Integration_Ebay_API {
 			'</' . $switch . '>' .
 		'</GetMyeBaySellingRequest> ';
 		
+
+		return $post_data;
 		$curl = curl_init();
 		
 		curl_setopt_array(
@@ -1067,7 +1069,6 @@ class Ebay_Integration_Ebay_API {
 					$TotalNumberOfEntries = $json[ $requestType ]["PaginationResult"]["TotalNumberOfEntries"] * 1;
 				}
 				
-				return $requestStatus;
 
 				$returnArray = array(
 						"error" => false, 
@@ -1089,7 +1090,11 @@ class Ebay_Integration_Ebay_API {
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
 					}
-					elseif( $requestType == "SoldList" ){
+					elseif( $requestType == "SoldListPaid" ){
+						$itemID = $item["Item"]["ItemID"];
+						$SKU = $item["Item"]["SKU"];
+					}
+					elseif( $requestType == "SoldListAwaiting" ){
 						$itemID = $item["Item"]["ItemID"];
 						$SKU = $item["Item"]["SKU"];
 					}
