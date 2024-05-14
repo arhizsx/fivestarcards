@@ -54,7 +54,7 @@ $users = get_users( $args );
                     
                     $data = json_decode($item->data, true);
 
-                    $dont_show = array("NotPaid","Refunded");
+                    $dont_show = array("NotPaid","Refunded", "MarkedAsPaid");
                     if( in_array( $data["SellerPaidStatus"], $dont_show ) == false){
 
             ?>
