@@ -52,7 +52,7 @@ $users = get_users( $args );
             if( count($ebay) > 0 ){
                 foreach($ebay as $item){ 
                     $data = json_decode($item->data, true);
-                    if( $data["SellerPaidStatus"] == "MarkedAsPaid"){
+                    if( array_key_exists("PaidTime", $data) ){
             ?>
             <tr>
                 <td>
