@@ -822,13 +822,17 @@
         }
         elseif($params["action"] == "view_account"){
 
-            return "XX";
+            return $this->doViewAccount($params);
             
 
         }
 
         return $params;
 
+    }
+
+    public function doViewAccount($params){
+        return $params;
     }
 
     public function handle_order_action($data){
