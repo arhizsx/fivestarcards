@@ -29,7 +29,6 @@ $users = get_users( $args );
         <i class="fa-brands fa-ebay fa-2xl"></i> AUCTION
     </div>
     <div>
-        <button class="btn btn-primary">Add Viewer</button>
         <select class="user_list_select" style="margin-left: 15px; padding-left: 10px; padding-bottom:8px; padding-top: 7px; margin-top: 10px;">
         <option value="">Filter by User</option>
         <?php 
