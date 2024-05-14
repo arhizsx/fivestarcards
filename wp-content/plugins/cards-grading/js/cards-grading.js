@@ -525,7 +525,8 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "view_account":
 
-            var url = $(document).find(".5star_table").data("endpoint");
+            let url = $(document).find(".5star_table").data("endpoint");
+            let user_id = $(this).data("user_id");
 
             $(document).find(".view_account").appendTo('body').modal("show");
 
@@ -535,7 +536,7 @@ $(document).on("click", ".5star_btn", function(e){
                 headers: {'X-WP-Nonce': nonce },
                 data: {
                     'action' : "view_account",
-                    'user_id': post_id,
+                    'user_id': user_id,
                 },
                 success: function(resp){
 
