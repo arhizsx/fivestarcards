@@ -48,7 +48,7 @@ $users = get_users( $args );
         <thead>
             <tr>
                 <th>Item</th>
-                <th>Watchers</th>
+                <th class="text-end">Watchers</th>
                 <th class="text-end">Buy Price</th>
             </tr>
         </thead>

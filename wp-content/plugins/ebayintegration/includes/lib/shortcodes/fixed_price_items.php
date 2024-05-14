@@ -51,7 +51,7 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>                    
                 </td>
-                <td class="text-end">
+                <td class="text-center">
                     <?php echo $data["WatchCount"]; ?>
                 </td>
                 <td class="text-end">$<?php 
