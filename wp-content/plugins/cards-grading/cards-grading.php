@@ -820,6 +820,11 @@
             return $this->doDemoteAdmin($params);
 
         }
+        elseif($params["action"] == "view_account"){
+
+            return "TEST";
+
+        }
 
         return $params;
 
