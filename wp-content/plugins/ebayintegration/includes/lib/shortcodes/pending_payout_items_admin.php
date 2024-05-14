@@ -49,10 +49,13 @@ $users = get_users( $args );
         </thead>
         <tbody>
             <?php 
-            if( count($ebay) > 0 ){
-                foreach($ebay as $item){ 
-                    $data = json_decode($item->data, true);
-                    if( array_key_exists("SellerPaidStatus", $data) ){
+            $ctr = 0;
+
+            foreach($ebay as $item){ 
+
+                $data = json_decode($item->data, true);
+                if( array_key_exists("SellerPaidStatus", $data) ){
+                    $ctr++;
             ?>
             <tr>
                 <td>
@@ -78,17 +81,7 @@ $users = get_users( $args );
                 </td>
             </tr>
             <?php
-                    }
-                } 
-            } 
-            else {
-            ?>
-            <tr>
-                <td colspan="2" class="text-center p-5">
-                    No Items
-                </td>
-            </tr>
-            <?php 
+                }
             }
             ?>
         </tbody>
