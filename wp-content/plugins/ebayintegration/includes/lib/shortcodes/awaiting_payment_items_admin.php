@@ -44,7 +44,6 @@ $users = get_users( $args );
             <tr>
                 <th>Item</th>
                 <th class="text-end">Price Sold</th>
-                <th class="text-end">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -71,9 +70,6 @@ $users = get_users( $args );
                     $<?php 
                     echo number_format(( $data["TransactionPrice"]), 2, '.', ',');
                     ?>
-                </td>
-                <td class="text-end">
-                    <button class="btn btn-primary">PAID</button>
                 </td>
             </tr>
             <?php
