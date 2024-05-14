@@ -48,6 +48,7 @@ $users = get_users( $args );
         <thead>
             <tr>
                 <th>Item</th>
+                <th class="text-end">Bids</th>
                 <th class="text-end">Current Price</th>
             </tr>
         </thead>
@@ -69,8 +70,11 @@ $users = get_users( $args );
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
                 </td>
+                <td class="text-end">
+                    <?php echo $data["SellingStatus"]["BidCount"]?>
+                </td>
                 <td class="text-end">$<?php 
-                echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
+                    echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
                 ?></td>
             </tr>
             <?php 
