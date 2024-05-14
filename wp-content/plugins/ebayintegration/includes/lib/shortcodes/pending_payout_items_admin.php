@@ -5,7 +5,7 @@ global $wpdb;
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
-where status = 'SoldList'
+where status = 'SoldListPaid'
 " 
 );
 $args = array(
@@ -52,10 +52,7 @@ $users = get_users( $args );
             $ctr = 0;
 
             foreach($ebay as $item){ 
-
                 $data = json_decode($item->data, true);
-                if( array_key_exists("SellerPaidStatus", $data) ){
-                    $ctr++;
             ?>
             <tr>
                 <td>
@@ -81,7 +78,6 @@ $users = get_users( $args );
                 </td>
             </tr>
             <?php
-                }
             }
             ?>
         </tbody>

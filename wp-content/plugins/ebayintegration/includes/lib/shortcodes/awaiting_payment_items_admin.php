@@ -5,7 +5,7 @@ global $wpdb;
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
-where status = 'SoldList'
+where status = 'SoldListAwaiting'
 " 
 );
 $args = array(
@@ -54,9 +54,6 @@ $users = get_users( $args );
                     
                     $data = json_decode($item->data, true);
 
-                    $only_show = array("NotPaid");
-                    if( in_array( $data["SellerPaidStatus"], $only_show )){
-                    $ctr++;
             ?>
             <tr>
                 <td>
@@ -80,7 +77,6 @@ $users = get_users( $args );
                 </td>
             </tr>
             <?php
-                    }
                 } 
             } 
             else {
