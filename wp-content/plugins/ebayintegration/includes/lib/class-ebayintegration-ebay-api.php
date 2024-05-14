@@ -1046,6 +1046,26 @@ class Ebay_Integration_Ebay_API {
 
 
 				}
+				elseif( array_key_exists( "UnsoldList", $json ) ){
+
+					$requestType = "UnsoldList";
+
+					if( array_key_exists( "ItemArray", $json[ $requestType ]) ){
+
+						if( array_key_exists( "Item", $json[ $requestType ]["ItemArray"]) ){
+
+							foreach( $json[ $requestType ]["ItemArray"]["Item"] as $item ){
+
+								array_push( $items, $item );
+
+							}
+
+						}
+	
+					}
+
+
+				}
 
 				if( array_key_exists("PaginationResult", $json[ $requestType ]) ){
 
