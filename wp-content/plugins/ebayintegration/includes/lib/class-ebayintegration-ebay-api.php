@@ -1098,8 +1098,6 @@ class Ebay_Integration_Ebay_API {
 						$SKU = $item["Item"]["SKU"];
 					}
 
-					return $requestStatus;
-
 					$this->wpdb->replace("ebay", array(
 						"item_id" => $itemID,
 						"sku" => $SKU,
