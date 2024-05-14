@@ -894,16 +894,25 @@ class Ebay_Integration_Ebay_API {
 		if( $type == null || $type == "active"){
 			$switch = "ActiveList";
 			$duration = '';
+			$switch_filter = "";
 			$sort = "<Sort>TimeLeft</Sort>";
 		}
 		elseif( $type == "sold" ){
 			$switch = "SoldList";
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
+			$switch_filter = "<OrderStatusFilter>PaidAndShipped</OrderStatusFilter>";
+			$sort = "";
+		}
+		elseif( $type == "awaiting" ){
+			$switch = "SoldList";
+			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
+			$switch_filter = "<OrderStatusFilter>AwaitingPayment</OrderStatusFilter>";
 			$sort = "";
 		}
 		elseif( $type == "unsold" ){
 			$switch = "UnsoldList";
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
+			$switch_filter = "";
 			$sort = "";
 		}
 
@@ -934,6 +943,7 @@ class Ebay_Integration_Ebay_API {
 					'<PageNumber>' . $page_number . '</PageNumber>' .
 				'</Pagination>' .
 				$duration .
+				$switch_filter .
 			'</' . $switch . '>' .
 		'</GetMyeBaySellingRequest> ';
 		
@@ -989,11 +999,18 @@ class Ebay_Integration_Ebay_API {
 				$requestType = "";
 				$TotalNumberOfPages = 0;
 				$TotalNumberOfEntries = 0;
+				$itemstatus  = "";
 
 				// SOLD LIST
 				if( array_key_exists( "SoldList", $json ) ){
 
 					$requestType = "SoldList";
+					if($type == "sold"){
+						$itemstatus = "SoldListPaid";
+					}
+					elseif($type == "awaiting"){
+						$itemstatus = "SoldListAwaiting";						
+					}
 
 					if( array_key_exists( "OrderTransactionArray", $json[ $requestType ]) ){
 						if( array_key_exists("OrderTransaction", $json[ $requestType ]["OrderTransactionArray"])){
@@ -1017,6 +1034,8 @@ class Ebay_Integration_Ebay_API {
 				elseif( array_key_exists( "ActiveList", $json ) ){
 
 					$requestType = "ActiveList";
+					$itemstatus = $requestType;						
+
 
 					if( array_key_exists( "ItemArray", $json[ $requestType ]) ){
 						if( array_key_exists( "Item", $json[ $requestType ]["ItemArray"]) ){
@@ -1031,6 +1050,7 @@ class Ebay_Integration_Ebay_API {
 				elseif( array_key_exists( "UnsoldList", $json ) ){
 
 					$requestType = "UnsoldList";
+					$itemstatus = $requestType;						
 
 					if( array_key_exists( "ItemArray", $json[ $requestType ]) ){
 						if( array_key_exists( "Item", $json[ $requestType ]["ItemArray"]) ){
@@ -1055,6 +1075,7 @@ class Ebay_Integration_Ebay_API {
 						"response"=> $json, 
 						$requestType => $items, 
 						"current_page" => $page_number * 1,
+						"status" => $itemstatus,
 						"pages" =>  $TotalNumberOfPages, 
 						"entries" => $TotalNumberOfEntries 
 					);
@@ -1078,7 +1099,7 @@ class Ebay_Integration_Ebay_API {
 						"item_id" => $itemID,
 						"sku" => $SKU,
 						"data" => json_encode($item),
-						"status" => $requestType	
+						"status" => $itemstatus,	
 					));
 
 				}
