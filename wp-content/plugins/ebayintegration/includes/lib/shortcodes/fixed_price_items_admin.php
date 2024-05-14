@@ -75,10 +75,10 @@ $users = get_users( $args );
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>                    
                 </td>
                 <td class="text-end">
-                    <?php echo $data["SellingStatus"]["QuantitySold"]; ?>
+                    <?php echo $data["SellingStatus"]["QuantitySold"] * 1; ?>
                 </td>
                 <td class="text-end">
-                    <?php echo $data["QuantityAvailable"]; ?>
+                    <?php echo $data["QuantityAvailable"] * 1; ?>
                 </td>
                 <td class="text-end">
                     <?php echo $data["WatchCount"]; ?>
