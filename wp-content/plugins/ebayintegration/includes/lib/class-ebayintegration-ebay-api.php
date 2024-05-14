@@ -1079,26 +1079,26 @@ class Ebay_Integration_Ebay_API {
 					);
 
 
-				return $returnArray;
-
 				foreach( $items as $item ){
 
-					if( $requestType == "ActiveList" ){
+					if( $requestStatus == "ActiveList" ){
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
 					}
-					if( $requestType == "UnsoldList" ){
+					if( $requestStatus == "UnsoldList" ){
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
 					}
-					elseif( $requestType == "SoldListPaid" ){
+					elseif( $requestStatus == "SoldListPaid" ){
 						$itemID = $item["Item"]["ItemID"];
 						$SKU = $item["Item"]["SKU"];
 					}
-					elseif( $requestType == "SoldListAwaiting" ){
+					elseif( $requestStatus == "SoldListAwaiting" ){
 						$itemID = $item["Item"]["ItemID"];
 						$SKU = $item["Item"]["SKU"];
 					}
+
+					return $requestStatus;
 
 					$this->wpdb->replace("ebay", array(
 						"item_id" => $itemID,
