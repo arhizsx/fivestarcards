@@ -36,11 +36,9 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
             if( count($ebay) > 0 ){
                 foreach($ebay as $item){ 
                     if( $item->transaction != "Not Sold" ){
-                        $transaction = json_decode($item->transaction, true);
                         $data = json_decode($item->data, true);
 
                         if( in_array( $item->sku, $skus ) ){
-
             ?>
             <tr>
                 <td>
@@ -54,8 +52,9 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                     <?php $listing = $data["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"]; ?>
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
                 </td>
-                <td class="d-none d-md-table-cell"><?php echo $transaction["Transaction"]["MonetaryDetails"]["Payments"]["Payment"]["PaymentTime"] ?></td>
-                <td class="text-end">$<?php echo number_format(( $transaction["Transaction"]["TransactionPrice"]), 2, '.', ',');?></td>
+                <td class="text-end">
+                    $<?php echo number_format(( $data["Item"]["SellingStatus"]["CurrentPrice"]), 2, '.', ','); ?>
+                </td>
             </tr>
             <?php 
                         }
