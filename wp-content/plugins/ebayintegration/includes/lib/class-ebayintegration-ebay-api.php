@@ -927,7 +927,10 @@ class Ebay_Integration_Ebay_API {
 			'</RequesterCredentials>' .
 			'<ErrorLanguage>en_US</ErrorLanguage>' .
 			'<WarningLevel>High</WarningLevel>' .
-			'<SellingSummary>true</SellingSummary>' .
+			'<SellingSummary>' . 
+				'<Include>true</Include>' .
+			'</SellingSummary>' .
+
 			'<' . $switch . '>' .
 				$sort .
 				'<Pagination>' .
