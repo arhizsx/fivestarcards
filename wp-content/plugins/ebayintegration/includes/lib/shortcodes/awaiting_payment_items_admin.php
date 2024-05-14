@@ -43,7 +43,7 @@ $users = get_users( $args );
         <thead>
             <tr>
                 <th>Item</th>
-                <th class="text-end">Price Sold</th>
+                <th class="text-end">Amount</th>
             </tr>
         </thead>
         <tbody>
