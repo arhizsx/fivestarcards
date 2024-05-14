@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="table-responsive">    
-        <table class='table 5star_my_orders table-bordered table-striped 5star_table '  data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
+        <table class='table 5star_my_orders table-bordered table-striped 5star_table ' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
                     <th>Customer #</th>

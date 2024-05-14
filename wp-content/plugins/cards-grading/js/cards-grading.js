@@ -524,7 +524,27 @@ $(document).on("click", ".5star_btn", function(e){
             break;
 
         case "view_account":
+
+            var url = $(document).find(".5star_table").data("endpoint");
+
             $(document).find(".view_account").appendTo('body').modal("show");
+
+            $.ajax({
+                method: 'post',
+                url: url,
+                headers: {'X-WP-Nonce': nonce },
+                data: {
+                    'action' : "view_account",
+                    'user_id': post_id,
+                },
+                success: function(resp){
+
+                    console.log(resp);
+        
+                }
+            });
+        
+
             break;
 
         default:
