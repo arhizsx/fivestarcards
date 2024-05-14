@@ -890,8 +890,6 @@ class Ebay_Integration_Ebay_API {
 			$days_count = $days;
 		}
 
-		$requestStatus =  "";
-
 		if( $type == null || $type == "active"){
 			$switch = "ActiveList";
 			$duration = '';
