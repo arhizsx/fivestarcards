@@ -1076,7 +1076,7 @@ class Ebay_Integration_Ebay_API {
 					if( $type == "active" ){
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
-						$itemstatus = "SoldList";
+						$itemstatus = "ActivedList";
 					}
 					elseif( $type == "unsold" ){
 						$itemID = $item["ItemID"];
