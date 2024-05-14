@@ -890,6 +890,7 @@ class Ebay_Integration_Ebay_API {
 			$days_count = $days;
 		}
 
+		$requestStatus =  "";
 
 		if( $type == null || $type == "active"){
 			$switch = "ActiveList";
@@ -1072,7 +1073,7 @@ class Ebay_Integration_Ebay_API {
 						"response"=> $json, 
 						$requestType => $items, 
 						"status" => $requestStatus,
-						"current_page" => $page_number,
+						"current_page" => $page_number * 1,
 						"pages" =>  $TotalNumberOfPages, 
 						"entries" => $TotalNumberOfEntries 
 					);
