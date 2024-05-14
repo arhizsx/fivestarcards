@@ -24,6 +24,7 @@
     $ebay = $this->wpdb->get_results ( "
         SELECT * 
         FROM  ebay
+        WHERE status = 'ActiveList'
         ORDER BY sku ASC
     " );
 ?>
