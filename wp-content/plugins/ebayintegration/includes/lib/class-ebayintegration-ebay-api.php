@@ -901,18 +901,8 @@ class Ebay_Integration_Ebay_API {
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 			$sort = "";
 		}
-		elseif( $type == "deletedsold" ){
-			$switch = "DeletedFromSoldList";
-			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
-			$sort = "";
-		}
 		elseif( $type == "unsold" ){
 			$switch = "UnsoldList";
-			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
-			$sort = "";
-		}
-		elseif( $type == "deletedunsold" ){
-			$switch = "DeletedFromUnsoldList";
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 			$sort = "";
 		}
@@ -1043,7 +1033,25 @@ class Ebay_Integration_Ebay_API {
 					}
 
 				}
-				
+				elseif( array_key_exists( "ActiveList", $json ) ){
+
+					$requestType = "ActiveList";
+
+					if( array_key_exists( "ItemArray", $json[ $requestType ]) ){
+
+						if( array_key_exists( "Item", $json[ $requestType ]["ItemArray"]) ){
+
+							foreach( $json[ $requestType ]["ItemArray"]["Item"] as $item ){
+
+								array_push( $items, $item );
+
+							}
+
+						}
+	
+					}
+				}
+
 				return array(
 						"error" => false, 
 						"response"=> $json, 
