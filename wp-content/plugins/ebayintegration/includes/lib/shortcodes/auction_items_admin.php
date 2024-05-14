@@ -6,6 +6,7 @@ $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
 where status = 'ActiveList'
+LIMIT 100
 " 
 );
 
