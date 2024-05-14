@@ -1027,7 +1027,6 @@ class Ebay_Integration_Ebay_API {
 				elseif( array_key_exists( "ActiveList", $json ) ){
 
 					$requestType = "ActiveList";
-					$itemstatus = $requestType;						
 
 
 					if( array_key_exists( "ItemArray", $json[ $requestType ]) ){
@@ -1043,7 +1042,6 @@ class Ebay_Integration_Ebay_API {
 				elseif( array_key_exists( "UnsoldList", $json ) ){
 
 					$requestType = "UnsoldList";
-					$itemstatus = $requestType;						
 
 					if( array_key_exists( "ItemArray", $json[ $requestType ]) ){
 						if( array_key_exists( "Item", $json[ $requestType ]["ItemArray"]) ){
@@ -1067,35 +1065,33 @@ class Ebay_Integration_Ebay_API {
 						"error" => false, 
 						"response"=> $json, 
 						$requestType => $items, 
+						"type" => $type,
 						"current_page" => $page_number * 1,
-						"status" => $itemstatus,
 						"pages" =>  $TotalNumberOfPages, 
 						"entries" => $TotalNumberOfEntries 
 					);
 
 				foreach( $items as $item ){
 
-					if( $requestType == "ActiveList" ){
+					if( $type == "active" ){
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
 						$itemstatus = $requestType;
 					}
-					if( $requestType == "UnsoldList" ){
+					elseif( $type == "unsold" ){
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
 						$itemstatus = $requestType;
 					}
-					elseif( $requestType == "SoldList" ){
+					elseif( $type == "awaiting" ){
 						$itemID = $item["Item"]["ItemID"];
 						$SKU = $item["Item"]["SKU"];
-
-						if($type == "sold"){
-							$itemstatus = "SoldListPaid";
-						}
-						elseif($type == "awaiting"){
-							$itemstatus = "SoldListAwaiting";						
-						}
-	
+						$itemstatus = "SoldListAwaiting";							
+					}
+					elseif( $type == "sold" ){
+						$itemID = $item["Item"]["ItemID"];
+						$SKU = $item["Item"]["SKU"];
+						$itemstatus = "SoldListPaid";							
 					}
 
 					$this->wpdb->replace("ebay", array(
