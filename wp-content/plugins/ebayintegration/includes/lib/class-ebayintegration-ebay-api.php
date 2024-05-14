@@ -1025,13 +1025,6 @@ class Ebay_Integration_Ebay_API {
 
 					}
 
-					if( array_key_exists("PaginationResult", $json[ $requestType ]) ){
-
-						$TotalNumberOfPages = $json[ $requestType ]["PaginationResult"]["TotalNumberOfPages"] * 1;
-						$TotalNumberOfEntries = $json[ $requestType ]["PaginationResult"]["TotalNumberOfEntries"] * 1;
-
-					}
-
 				}
 				elseif( array_key_exists( "ActiveList", $json ) ){
 
@@ -1050,6 +1043,15 @@ class Ebay_Integration_Ebay_API {
 						}
 	
 					}
+
+
+				}
+
+				if( array_key_exists("PaginationResult", $json[ $requestType ]) ){
+
+					$TotalNumberOfPages = $json[ $requestType ]["PaginationResult"]["TotalNumberOfPages"] * 1;
+					$TotalNumberOfEntries = $json[ $requestType ]["PaginationResult"]["TotalNumberOfEntries"] * 1;
+
 				}
 
 				return array(
