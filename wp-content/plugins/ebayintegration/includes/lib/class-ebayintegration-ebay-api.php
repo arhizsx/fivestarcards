@@ -1071,7 +1071,7 @@ class Ebay_Integration_Ebay_API {
 						"error" => false, 
 						"response"=> $json, 
 						$requestType => $items, 
-						"status" => $status,
+						"status" => $requestStatus,
 						"current_page" => $page_number,
 						"pages" =>  $TotalNumberOfPages, 
 						"entries" => $TotalNumberOfEntries 
