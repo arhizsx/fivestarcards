@@ -901,8 +901,18 @@ class Ebay_Integration_Ebay_API {
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 			$sort = "";
 		}
+		elseif( $type == "deletedsold" ){
+			$switch = "DeletedFromSoldList";
+			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
+			$sort = "";
+		}
 		elseif( $type == "unsold" ){
 			$switch = "UnsoldList";
+			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
+			$sort = "";
+		}
+		elseif( $type == "deletedunsold" ){
+			$switch = "DeletedFromUnsoldList";
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 			$sort = "";
 		}
@@ -922,8 +932,8 @@ class Ebay_Integration_Ebay_API {
 		$post_data = 
 		'<?xml version="1.0" encoding="utf-8"?>' .
 		'<GetMyeBaySellingRequest xmlns="urn:ebay:apis:eBLBaseComponents">' .
-		'<RequesterCredentials>' .
-			'<eBayAuthToken>' . $this->access_token  . '</eBayAuthToken>' .
+			'<RequesterCredentials>' .
+				'<eBayAuthToken>' . $this->access_token  . '</eBayAuthToken>' .
 			'</RequesterCredentials>' .
 			'<ErrorLanguage>en_US</ErrorLanguage>' .
 			'<WarningLevel>High</WarningLevel>' .
