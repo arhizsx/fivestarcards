@@ -49,17 +49,19 @@ $users = get_users( $args );
         <tbody>
             <?php 
             if( count($ebay) > 0 ){
+                $ctr = 0;
                 foreach($ebay as $item){ 
                     
                     $data = json_decode($item->data, true);
 
                     $only_show = array("NotPaid");
                     if( in_array( $data["SellerPaidStatus"], $only_show )){
-
+                    $ctr++;
             ?>
             <tr>
                 <td>
                     <div class="title">
+                        <?php echo $ctr; ?>&nbsp;
                         <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
                             <?php print_r( $data["Item"]["Title"] ); ?>
                         </a>
