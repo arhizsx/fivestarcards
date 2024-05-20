@@ -832,6 +832,9 @@
     }
 
     public function doViewAccount($params){
+
+        // DO VIEW ACCOUNT NEXT
+
         return "TESTING";
     }
 
