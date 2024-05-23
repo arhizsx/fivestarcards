@@ -1107,15 +1107,31 @@ class Ebay_Integration_Ebay_API {
 						WHERE item_id = " . $itemID 
 					);				
 
-					return count($result);
+					if( count($result) > 0 ){
+						
+						$this->wpdb->update(
+							'ebay', 
+							array(
+								'data'=> json_encode($item), 
+								'status'=>$itemstatus,
+							), 
+							array(
+								'item_id'=>$itemID)
+						);
 
-					$this->wpdb->replace("ebay", array(
-						"item_id" => $itemID,
-						"sku" => $SKU,
-						"data" => json_encode($item),
-						"status" => $itemstatus,	
-					));
+					} 
+					else {
 
+						$this->wpdb->insert(
+							'ebay',
+							array(
+								'item_id' => $itemID,
+								"sku" => $SKU,
+								"data" => json_encode($item),
+								"status" => $itemstatus,			
+							)
+						);
+					}
 				}
 
 
