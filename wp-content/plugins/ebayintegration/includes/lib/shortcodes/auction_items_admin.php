@@ -44,7 +44,7 @@ $users = get_users( $args );
         </thead>
         <tbody>
             <?php 
-            $i = 1;
+            $i = 0;
 
             foreach($ebay as $item){ 
 
