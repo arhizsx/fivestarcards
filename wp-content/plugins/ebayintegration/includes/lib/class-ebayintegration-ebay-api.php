@@ -1107,7 +1107,7 @@ class Ebay_Integration_Ebay_API {
 						WHERE item_id = " . $itemID 
 					);				
 
-					return $result;
+					return count($result);
 
 					$this->wpdb->replace("ebay", array(
 						"item_id" => $itemID,
