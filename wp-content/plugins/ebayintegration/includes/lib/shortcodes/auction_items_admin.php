@@ -65,6 +65,7 @@ $users = get_users( $args );
                     </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
+                    <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
                 </td>
                 <td class="text-end">
                     <?php echo $data["SellingStatus"]["BidCount"]?>
