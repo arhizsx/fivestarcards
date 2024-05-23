@@ -1101,11 +1101,11 @@ class Ebay_Integration_Ebay_API {
 					}
 
 
-					$result = $this->wpdb->get_results ( "
+					$result = $this->wpdb->get_results ("
 						SELECT * 
 						FROM  ebay
-						WHERE item_id = " . $itemID . "
-					" );				
+						WHERE item_id = " . $itemID 
+					);				
 
 					return $result;
 
