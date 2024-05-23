@@ -44,12 +44,15 @@ $users = get_users( $args );
         </thead>
         <tbody>
             <?php 
+            $i = 1;
+
             foreach($ebay as $item){ 
 
-                $i = 1;
+
                 $data = json_decode($item->data, true);
 
                 if( $data["ListingType"] == "Chinese"){
+                    $i++;
                     
             ?>
             <tr>
