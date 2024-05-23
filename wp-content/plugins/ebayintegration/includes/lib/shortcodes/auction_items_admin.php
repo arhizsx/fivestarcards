@@ -45,6 +45,8 @@ $users = get_users( $args );
         <tbody>
             <?php 
             foreach($ebay as $item){ 
+
+                $i = 1;
                 $data = json_decode($item->data, true);
 
                 if( $data["ListingType"] == "Chinese"){
@@ -54,7 +56,7 @@ $users = get_users( $args );
                 <td>
                     <div class="title">
                         <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                        <?php echo $data["Title"]; ?>
+                        <?php echo "<span class='pe-2'>" . $i . "</span>" . $data["Title"]; ?>
                         </a>
                     </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
