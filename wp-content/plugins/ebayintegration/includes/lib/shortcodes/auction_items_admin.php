@@ -55,7 +55,7 @@ $users = get_users( $args );
             <tr>
                 <td>
                     <div class="title">
-                        <span class='pe-2'><?php $i ?></span>
+                        <span class='pe-2'><?php echo $i ?></span>
                         <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
                         <?php echo  $data["Title"]; ?>
                         </a>
