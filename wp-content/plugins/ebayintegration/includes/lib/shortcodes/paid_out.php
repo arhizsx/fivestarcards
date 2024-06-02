@@ -56,9 +56,11 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                     <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
                     
                 </td>
-                <td class="text-end">$<?php 
-                echo number_format(( $transaction["Transaction"]["TransactionPrice"]), 2, '.', ',');
-                ?></td>
+                <td class="text-end">
+                    $<?php 
+                    echo number_format(( $data["TransactionPrice"]), 2, '.', ',');
+                    ?>
+                </td>
             </tr>
             <?php
                         } 
