@@ -58,19 +58,21 @@ $users = get_users( $args );
 
             ?>
             <tr>
-                <td>
+            <td>
                     <div class="title">
-                        <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                            <?php print_r( $data["Title"] ); ?>
+                        <?php echo $ctr;  ?>&nbsp;
+                        <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
+                            <?php print_r( $data["Item"]["Title"] ); ?>
                         </a>
                     </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
-                    <div class="item_id text-small">Listing Type: <?php echo $data["ListingType"] ?></div>
+                    <?php $listing = $data["Item"]["ListingType"] == "Chinese" ? "Auction" : $data["Item"]["ListingType"]; ?>
+                    <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
+                    <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
 
                     
-                </td>
-                <td class="text-end">$<?php 
+                </td>                <td class="text-end">$<?php 
                 echo number_format(( $transaction["Transaction"]["TransactionPrice"]), 2, '.', ',');
                 ?></td>
             </tr>
