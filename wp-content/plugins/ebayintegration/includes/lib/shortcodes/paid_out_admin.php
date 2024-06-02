@@ -55,6 +55,7 @@ $users = get_users( $args );
                     if( $item->transaction != "Not Sold" ){
                         $transaction = json_decode($item->transaction, true);
                         $data = json_decode($item->data, true);
+                        $ctr++;
 
             ?>
             <tr>
