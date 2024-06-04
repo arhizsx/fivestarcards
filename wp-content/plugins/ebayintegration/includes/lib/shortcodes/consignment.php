@@ -25,18 +25,18 @@
 
   
 <div class="shortcode_tab_box">
-    <ul class="nav nav-pills nav-fill clearfix">
-    <li class="nav-item">
-        <a class="nav-link" href="#">Much longer nav link</a>
+    <ul class="clearfix">
+    <li class="">
+        <a class="" href="#">Much longer nav link</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Active</a>
+    <li class="">
+        <a class="" aria-current="page" href="#">Active</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+    <li class="">
+        <a class="" href="#">Link</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    <li class="">
+        <a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
     </li>
     </ul>
 </div>
