@@ -18,6 +18,7 @@
         border-bottom: 1px solid #d9d9d9;
         display: block;
         height: 72px;
+        position: relative;
 
     }
 
