@@ -11,6 +11,10 @@
         background-color: #f4f4f4;
         border-bottom: none;
         height: auto !important;
+        word-wrap: break-word;
+        box-sizing: border-box;
+        margin-top: 0;
+        margin-bottom: 1rem;
     }
 
     .shortcode_tab_box li {
