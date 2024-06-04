@@ -12,8 +12,8 @@
     </thead>
     <tbody>
         <tr>
-            <td colspan="7">
-            Loading...
+            <td colspan="7" class="text-center py-5">
+                Empty
             </td>
         </tr>
     </tbody>
