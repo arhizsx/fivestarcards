@@ -18,7 +18,7 @@
     }
 
     .shortcode_tab_box li {
-        float: none;
+        float: left;
         border-right: none;
         border-bottom: none;
         border-bottom: 1px solid #d9d9d9;
