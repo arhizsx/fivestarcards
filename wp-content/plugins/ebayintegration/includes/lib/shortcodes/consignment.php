@@ -61,7 +61,7 @@
 
   
 <div class="shortcode_tab_box">
-    <ul class="">
+    <ul class="clearfix">
         <li class="">
             <a class="" href="#">Much longer nav link</a>
         </li>
