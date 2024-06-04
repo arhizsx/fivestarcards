@@ -1,22 +1,11 @@
 <style>
 
     @media (max-width: 479px) {
-        .shortcode_tab_box li {
-            float: none;
-            border-right: none;
-            border-bottom: 1px solid #d9d9d9;
-        }
         body {
             background-color: black !important;
         }
     }
     @media (max-width: 767px) {
-        .shortcode_tab_box li {
-            float: none;
-            border-right: none;
-            border-bottom: 1px solid #d9d9d9;
-            display: block;
-        } 
         body {
             background-color: black !important;
         }
