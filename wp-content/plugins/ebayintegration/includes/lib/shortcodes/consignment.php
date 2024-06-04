@@ -86,6 +86,10 @@
 
     </ul>
     <div class="content">
-        TESTING
+        <?php 
+        if(isset( $_GET['mode']) ){
+            echo $_GET['mode'];
+        }
+        ?>
     </div>
 </div>
