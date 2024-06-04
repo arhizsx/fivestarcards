@@ -16,7 +16,11 @@
         margin-top: 0;
         margin-bottom: 1rem;
     }
-
+    @media (max-width: 767px) {
+        .shortcode_tab_box li {
+            float: none;
+        }
+    }
     .shortcode_tab_box li {
         float: left;
         border-right: none;
@@ -46,17 +50,20 @@
   
 <div class="shortcode_tab_box">
     <ul class="clearfix">
-    <li class="">
-        <a class="" href="#">Much longer nav link</a>
-    </li>
-    <li class="active">
-        <a class="" aria-current="page" href="#">Active</a>
-    </li>
-    <li class="">
-        <a class="" href="#">Link</a>
-    </li>
-    <li class="">
-        <a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-    </li>
+        <li class="">
+            <a class="" href="#">Much longer nav link</a>
+        </li>
+        <li class="active">
+            <a class="" aria-current="page" href="#">Active</a>
+        </li>
+        <li class="">
+            <a class="" href="#">Link</a>
+        </li>
+        <li class="">
+            <a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
     </ul>
+    <div class="content">
+        
+    </div>
 </div>
