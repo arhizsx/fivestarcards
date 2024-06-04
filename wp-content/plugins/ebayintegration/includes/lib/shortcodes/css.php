@@ -46,3 +46,24 @@
     }
 
 </style>
+
+<?php 
+
+function Activate($page){
+    if( isset( $_GET['mode']) == false ){
+        if( $page == "new" ){
+            return "active";
+        }
+    } 
+    else {
+        if( $page == $_GET['mode'] ){
+            return "active";
+        } else {
+            return "";
+        }
+    }
+}
+
+
+
+?>
