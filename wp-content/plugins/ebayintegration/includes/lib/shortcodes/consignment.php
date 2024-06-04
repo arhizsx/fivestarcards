@@ -89,7 +89,7 @@
         </li>
 
     </ul>
-    <div class="content">
+    <div class="content p-3">
         <?php 
         if(isset( $_GET['mode']) ){
 			include( plugin_dir_path( __FILE__ ) . "consignment." . $_GET['mode'] . '.php' );			
