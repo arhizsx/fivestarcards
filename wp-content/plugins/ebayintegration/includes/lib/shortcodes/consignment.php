@@ -44,8 +44,8 @@
 
 
   
-<div class="shortcode_tab_box d-none d-lg-block">
-    <ul class="clearfix">
+<div class="shortcode_tab_box">
+    <ul class="clearfix d-none d-lg-block">
         <li class="">
             <a class="" href="#">Much longer nav link</a>
         </li>
