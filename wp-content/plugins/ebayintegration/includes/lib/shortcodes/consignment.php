@@ -3,6 +3,10 @@
     .shortcode_tab_box {
         box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.3);
     }
+
+    .shortcode_tab_box H1 {
+        color: black;
+    }
     
     .shortcode_tab_box ul {
         list-style-type: none;
