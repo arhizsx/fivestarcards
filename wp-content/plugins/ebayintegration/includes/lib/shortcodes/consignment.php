@@ -6,6 +6,8 @@
     
     .shortcode_tab_box ul {
         list-style-type: none;
+        padding: 0 !important;
+        line-height: inherit !important;        
         background-color: #f4f4f4;
         border-bottom: none;
         height: auto !important;
