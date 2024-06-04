@@ -72,6 +72,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'fixed_price_items_admin.php');			
             break;
 
+        case "consignment":
+
+			include( plugin_dir_path( __FILE__ ) . 'consignment.php');			
+            break;
+
         case "hello":
 
 			include( plugin_dir_path( __FILE__ ) . 'hello.php');			
