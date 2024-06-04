@@ -47,21 +47,21 @@
 <div class="shortcode_tab_box">
     <ul class="clearfix d-none d-lg-block">
         <li class="active">
-            <a class="/my-account/my-consignment/"  aria-current="page" href="#">New</a>
+            <a class="" href="/my-account/my-consignment">New</a>
         </li>
         <li class="">
-            <a class="/my-account/my-consignment/?mode=to_ship" href="#">To Ship</a>
+            <a class="" href="/my-account/my-consignment/?mode=to-ship">To Ship</a>
         </li>
         <li class="">
-            <a class="/my-account/my-consignment/?mode=consigned" href="#">Consigned</a>
+            <a class="" href="/my-account/my-consignment/?mode=consigned">Consigned</a>
         </li>
         <li class="">
-            <a class="/my-account/my-consignment/?mode=sold" href="#">Sold</a>
+            <a class="" href="/my-account/my-consignment/?mode=sold">Sold</a>
         </li>
     </ul>
     <ul class="clearfix d-lg-none">
         <li class="">
-            <a class="" href="#">TEST</a>
+            <a class="" href="/my-account/my-consignment">New</a>
         </li>
 
     </ul>
