@@ -45,7 +45,7 @@
 
   
 <div class="shortcode_tab_box">
-    <ul class="clearfix d-none d-md-block">
+    <ul class="clearfix d-none d-lg-block">
         <li class="">
             <a class="" href="#">Much longer nav link</a>
         </li>
@@ -59,7 +59,7 @@
             <a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
     </ul>
-    <ul class="clearfix d-md-none">
+    <ul class="clearfix d-lg-none">
         <li class="">
             <a class="" href="#">TEST</a>
         </li>
