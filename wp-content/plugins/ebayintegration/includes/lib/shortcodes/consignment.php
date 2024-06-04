@@ -46,17 +46,17 @@
   
 <div class="shortcode_tab_box">
     <ul class="clearfix d-none d-lg-block">
-        <li class="">
-            <a class="" href="#">Much longer nav link</a>
-        </li>
         <li class="active">
-            <a class="" aria-current="page" href="#">Active</a>
+            <a class=""  aria-current="page" href="#">New</a>
         </li>
         <li class="">
-            <a class="" href="#">Link</a>
+            <a class="" href="#">To Ship</a>
         </li>
         <li class="">
-            <a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a class="" href="#">Consigned</a>
+        </li>
+        <li class="">
+            <a class="" href="#">Sold</a>
         </li>
     </ul>
     <ul class="clearfix d-lg-none">
