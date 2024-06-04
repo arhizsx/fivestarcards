@@ -92,13 +92,9 @@
     <div class="content">
         <?php 
         if(isset( $_GET['mode']) ){
-            echo $_GET['mode'] . "<br>";
-
 			include( plugin_dir_path( __FILE__ ) . "consignment." . $_GET['mode'] . '.php' );			
 
         } else {
-            echo "new <br>";
-
 			include( plugin_dir_path( __FILE__ ) . 'consignment.new.php' );			
 
         }
