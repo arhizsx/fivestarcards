@@ -90,12 +90,12 @@
         if(isset( $_GET['mode']) ){
             echo $_GET['mode'] . "<br>";
 
-			echo  plugin_dir_path( __FILE__ ) . "consignment." . $_GET['mode'] . '.php';			
+			include( plugin_dir_path( __FILE__ ) . "consignment." . $_GET['mode'] . '.php' );			
 
         } else {
             echo "new <br>";
 
-			echo  plugin_dir_path( __FILE__ ) . 'consignment.new.php';			
+			include( plugin_dir_path( __FILE__ ) . 'consignment.new.php' );			
 
         }
         ?>
