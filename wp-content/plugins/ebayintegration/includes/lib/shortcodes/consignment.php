@@ -30,6 +30,7 @@
         height: 72px;
         position: relative;
         line-height: 4em;
+        font-weight: bold;
     }
     .shortcode_tab_box li a {
         text-decoration: none;
