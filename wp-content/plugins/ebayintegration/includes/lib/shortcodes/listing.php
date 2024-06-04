@@ -8,7 +8,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-xl-2 col-lg-3">
-            <a href="/my-account" class="5star_btn btn text-left form-control btn-dark mb-3" data-type="psa-value_bulk" data-action="add_card">
+            <a href="/my-account-v2" class="5star_btn btn text-left form-control btn-dark mb-3" data-type="psa-value_bulk" data-action="add_card">
                 <i class="fa-solid fa-list me-2"></i>
                 My Listing
             </a>
