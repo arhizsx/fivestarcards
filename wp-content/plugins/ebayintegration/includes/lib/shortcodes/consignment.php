@@ -38,6 +38,8 @@
     .shortcode_tab_box li.active {
         background-color: #fff;
         font-weight: bold;
+        border-bottom: none;
+
     }
 
 </style>
