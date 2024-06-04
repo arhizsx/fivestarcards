@@ -19,7 +19,7 @@
         display: block;
         height: 72px;
         position: relative;
-
+        line-height: 4em;
     }
 
 </style>
