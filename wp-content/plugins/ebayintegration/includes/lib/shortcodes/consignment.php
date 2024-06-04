@@ -89,6 +89,8 @@
         <?php 
         if(isset( $_GET['mode']) ){
             echo $_GET['mode'];
+        } else {
+            echo "new";
         }
         ?>
     </div>
