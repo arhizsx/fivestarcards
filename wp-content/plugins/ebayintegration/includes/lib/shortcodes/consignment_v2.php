@@ -71,15 +71,19 @@
     <div class="row">
         <div class="col-2">
             <a class="5star_btn btn form-control btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
+                <i class="fa-solid fa-list me-2"></i>
                 My Listing
             </a>
             <a class="5star_btn btn form-control btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
+                <i class="fa-solid fa-circle-dot me-2"></i>                
                 Grading Orders
             </a>
             <a class="5star_btn btn form-control btn-dark mb-3" data-type="psa-value_bulk" data-action="add_card">
+                <i class="fa-solid fa-handshake me-2"></i>
                 Consignment
             </a>
             <a class="5star_btn btn form-control btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
+                <i class="fa-solid fa-money-bill me-2"></i>
                 Request Cashout
             </a>
         </div>
