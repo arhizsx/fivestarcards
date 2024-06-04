@@ -35,13 +35,13 @@
                         <a class="" href="/my-account-v2/?mode=fixed_price_items">Fixed Price</a>
                     </li>
                     <li class="<?php echo ActivateListing("awaiting_payment_items"); ?>">
-                        <a class="" href="/my-account-v2/consignment/?mode=awaiting_payment_items">Awaiting Payment</a>
+                        <a class="" href="/my-account-v2/?mode=awaiting_payment_items">Awaiting Payment</a>
                     </li>
                     <li class="<?php echo ActivateListing("pending_payout_items"); ?>">
-                        <a class="" href="/my-account-v2/consignment/?mode=pending_payout_items">Pending Payout</a>
+                        <a class="" href="/my-account-v2/?mode=pending_payout_items">Pending Payout</a>
                     </li>
                     <li class="<?php echo ActivateListing("paid_out"); ?>">
-                        <a class="" href="/my-account-v2/consignment/?mode=paid_out">Paid Out</a>
+                        <a class="" href="/my-account-v2/?mode=paid_out">Paid Out</a>
                     </li>
                 </ul>
                 <ul class="clearfix d-lg-none">
