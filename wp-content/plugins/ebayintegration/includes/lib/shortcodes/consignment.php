@@ -56,7 +56,7 @@
 
   
 <div class="shortcode_tab_box">
-    <ul class="clearfix">
+    <ul class="clearfix hidden-md">
         <li class="">
             <a class="" href="#">Much longer nav link</a>
         </li>
