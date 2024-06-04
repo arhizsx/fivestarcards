@@ -47,16 +47,16 @@
 <div class="shortcode_tab_box">
     <ul class="clearfix d-none d-lg-block">
         <li class="active">
-            <a class=""  aria-current="page" href="#">New</a>
+            <a class="/my-account/my-consignment/"  aria-current="page" href="#">New</a>
         </li>
         <li class="">
-            <a class="" href="#">To Ship</a>
+            <a class="/my-account/my-consignment/?mode=to_ship" href="#">To Ship</a>
         </li>
         <li class="">
-            <a class="" href="#">Consigned</a>
+            <a class="/my-account/my-consignment/?mode=consigned" href="#">Consigned</a>
         </li>
         <li class="">
-            <a class="" href="#">Sold</a>
+            <a class="/my-account/my-consignment/?mode=sold" href="#">Sold</a>
         </li>
     </ul>
     <ul class="clearfix d-lg-none">
