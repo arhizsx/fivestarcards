@@ -24,6 +24,10 @@
         line-height: 4em;
     }
 
+    .shortcode_tab_box li.active {
+        background-color: #fff;
+    }
+
 </style>
 
 
@@ -33,7 +37,7 @@
     <li class="">
         <a class="" href="#">Much longer nav link</a>
     </li>
-    <li class="">
+    <li class="active">
         <a class="" aria-current="page" href="#">Active</a>
     </li>
     <li class="">
