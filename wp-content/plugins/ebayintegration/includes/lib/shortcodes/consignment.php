@@ -1,16 +1,5 @@
 <style>
 
-    @media (max-width: 479px) {
-        body {
-            background-color: black !important;
-        }
-    }
-    @media (max-width: 767px) {
-        body {
-            background-color: black !important;
-        }
-    }
-
     .shortcode_tab_box {
         box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.3);
     }
