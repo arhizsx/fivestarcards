@@ -59,7 +59,7 @@
             <a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
     </ul>
-    <ul class="clearfix d-lg-none">
+    <ul class="clearfix d-md-none">
         <li class="">
             <a class="" href="#">TEST</a>
         </li>
