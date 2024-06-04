@@ -1,6 +1,6 @@
 <style>
     ul {
-        list-style-type: none; /* Remove bullets */        
+        list-style-type: none !important;  /* Remove bullets */        
     }
 </style>
 
