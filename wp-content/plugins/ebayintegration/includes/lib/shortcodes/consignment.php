@@ -16,10 +16,10 @@
         margin-top: 0;
         margin-bottom: 1rem;
     }
-    @media (max-width: 400px) {
+    @media (max-width: 479px) {
         .shortcode_tab_box li {
             float: none;
-            display: block;
+            border-right: none;
             border-bottom: 1px solid red;
         }
     }
