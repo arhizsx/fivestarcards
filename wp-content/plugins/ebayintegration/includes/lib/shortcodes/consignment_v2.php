@@ -87,21 +87,21 @@
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
                     <li class="<?php echo Activate("new"); ?>">
-                        <a class="" href="/my-account/my-consignment">New</a>
+                        <a class="" href="/my-account/consignment">New</a>
                     </li>
                     <li class="<?php echo Activate("to-ship"); ?>">
-                        <a class="" href="/my-account/my-consignment/?mode=to-ship">To Ship</a>
+                        <a class="" href="/my-account/consignment/?mode=to-ship">To Ship</a>
                     </li>
                     <li class="<?php echo Activate("consigned"); ?>">
-                        <a class="" href="/my-account/my-consignment/?mode=consigned">Consigned</a>
+                        <a class="" href="/my-account/consignment/?mode=consigned">Consigned</a>
                     </li>
                     <li class="<?php echo Activate("sold"); ?>">
-                        <a class="" href="/my-account/my-consignment/?mode=sold">Sold</a>
+                        <a class="" href="/my-account/consignment/?mode=sold">Sold</a>
                     </li>
                 </ul>
                 <ul class="clearfix d-lg-none">
                     <li class="">
-                        <a class="" href="/my-account/my-consignment">New</a>
+                        <a class="" href="/my-account/consignment">New</a>
                     </li>
 
                 </ul>
