@@ -69,7 +69,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-2">
+        <div class="col-xl-2 col-lg-3">
             <a href="/my-account" class="5star_btn btn text-left form-control btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
                 <i class="fa-solid fa-list me-2"></i>
                 My Listing
@@ -87,7 +87,7 @@
                 Request Cashout
             </a>
         </div>
-        <div class="col-lg-10">
+        <div class="col-xl-10 col-lg-9">
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
                     <li class="<?php echo Activate("new"); ?>">
