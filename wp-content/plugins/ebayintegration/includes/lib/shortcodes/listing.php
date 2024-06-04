@@ -29,24 +29,24 @@
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
                     <li class="<?php echo ActivateListing("auction_items"); ?>">
-                        <a class="" href="/my-account">Auction</a>
+                        <a class="" href="/my-account-v2">Auction</a>
                     </li>
                     <li class="<?php echo ActivateListing("fixed_price_items"); ?>">
-                        <a class="" href="/my-account/?mode=fixed_price_items">Fixed Price</a>
+                        <a class="" href="/my-account-v2/?mode=fixed_price_items">Fixed Price</a>
                     </li>
                     <li class="<?php echo ActivateListing("awaiting_payment_items"); ?>">
-                        <a class="" href="/my-account/consignment/?mode=awaiting_payment_items">Awaiting Payment</a>
+                        <a class="" href="/my-account-v2/consignment/?mode=awaiting_payment_items">Awaiting Payment</a>
                     </li>
                     <li class="<?php echo ActivateListing("pending_payout_items"); ?>">
-                        <a class="" href="/my-account/consignment/?mode=pending_payout_items">Pending Payout</a>
+                        <a class="" href="/my-account-v2/consignment/?mode=pending_payout_items">Pending Payout</a>
                     </li>
                     <li class="<?php echo ActivateListing("paid_out"); ?>">
-                        <a class="" href="/my-account/consignment/?mode=paid_out">Paid Out</a>
+                        <a class="" href="/my-account-v2/consignment/?mode=paid_out">Paid Out</a>
                     </li>
                 </ul>
                 <ul class="clearfix d-lg-none">
                     <li class="">
-                        <a class="" href="/my-account">Listings</a>
+                        <a class="" href="/my-account-v2">Listings</a>
                     </li>
 
                 </ul>
