@@ -19,6 +19,7 @@
     @media (max-width: 767px) {
         .shortcode_tab_box li {
             float: none;
+            display: block;
         }
     }
     .shortcode_tab_box li {
@@ -26,7 +27,7 @@
         border-right: none;
         border-bottom: none;
         border-bottom: 1px solid #d9d9d9;
-        display: block;
+        display: table;
         height: 72px;
         position: relative;
         line-height: 4em;
