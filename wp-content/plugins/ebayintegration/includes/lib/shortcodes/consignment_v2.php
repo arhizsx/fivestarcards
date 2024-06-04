@@ -70,8 +70,17 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-2">
+            <button class="5star_btn btn form-control btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
+                My Listing
+            </button>
+            <button class="5star_btn btn form-control btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
+                Grading Orders
+            </button>
             <button class="5star_btn btn form-control btn-dark mb-3" data-type="psa-value_bulk" data-action="add_card">
-                Log Card
+                Consignment
+            </button>
+            <button class="5star_btn btn form-control btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
+                Request Cashout
             </button>
         </div>
         <div class="col-10">
