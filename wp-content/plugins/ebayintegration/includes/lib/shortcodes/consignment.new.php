@@ -19,7 +19,7 @@
     <tbody>
         <tr>
             <td colspan="7" class="text-center py-5">
-                Loading...
+                Empty
             </td>
         </tr>
     </tbody>
