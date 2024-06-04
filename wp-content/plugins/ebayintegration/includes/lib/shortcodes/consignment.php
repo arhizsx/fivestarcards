@@ -11,6 +11,15 @@
         height: auto !important;
     }
 
+    .shortcode_tab_box li {
+        float: none;
+        border-right: none;
+        border-bottom: none;
+        border-bottom: 1px solid #d9d9d9;
+        display: block;
+
+    }
+
 </style>
 
 
