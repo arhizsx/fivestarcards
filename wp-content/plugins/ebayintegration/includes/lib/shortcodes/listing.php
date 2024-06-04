@@ -1,0 +1,67 @@
+
+<?php 
+
+    include( plugin_dir_path( __FILE__ ) . "css.php" );			
+
+?>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-2 col-lg-3">
+            <a href="/my-account" class="5star_btn btn text-left form-control btn-dark mb-3" data-type="psa-value_bulk" data-action="add_card">
+                <i class="fa-solid fa-list me-2"></i>
+                My Listing
+            </a>
+            <a href="/my-account/grading-order" class="5star_btn btn text-left form-control btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
+                <i class="fa-solid fa-circle-dot me-2"></i>                
+                Grading Orders
+            </a>
+            <a href="/my-account/consignment" class="5star_btn btn text-left form-control btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
+                <i class="fa-solid fa-handshake me-2"></i>
+                Consignment
+            </a>
+            <a href="/my-account/request-cashout" class="5star_btn btn text-left form-control btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
+                <i class="fa-solid fa-money-bill me-2"></i>
+                Request Cashout
+            </a>
+        </div>
+        <div class="col-xl-10 col-lg-9">
+            <div class="shortcode_tab_box">
+                <ul class="clearfix d-none d-lg-block">
+                    <li class="<?php echo ActivateListing("auction_items"); ?>">
+                        <a class="" href="/my-account">Auction</a>
+                    </li>
+                    <li class="<?php echo ActivateListing("fixed_price_items"); ?>">
+                        <a class="" href="/my-account/?mode=fixed_price_items">Fixed Price</a>
+                    </li>
+                    <li class="<?php echo ActivateListing("awaiting_payment_items"); ?>">
+                        <a class="" href="/my-account/consignment/?mode=awaiting_payment_items">Awaiting Payment</a>
+                    </li>
+                    <li class="<?php echo ActivateListing("pending_payout_items"); ?>">
+                        <a class="" href="/my-account/consignment/?mode=pending_payout_items">Pending Payout</a>
+                    </li>
+                    <li class="<?php echo ActivateListing("paid_out"); ?>">
+                        <a class="" href="/my-account/consignment/?mode=paid_out">Paid Out</a>
+                    </li>
+                </ul>
+                <ul class="clearfix d-lg-none">
+                    <li class="">
+                        <a class="" href="/my-account">Listings</a>
+                    </li>
+
+                </ul>
+                <div class="content p-3">
+                    <?php 
+                    if(isset( $_GET['mode']) ){
+                        include( plugin_dir_path( __FILE__ ) .  $_GET['mode'] . '.php' );			
+
+                    } else {
+                        include( plugin_dir_path( __FILE__ ) . 'auction_items.php' );			
+
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
