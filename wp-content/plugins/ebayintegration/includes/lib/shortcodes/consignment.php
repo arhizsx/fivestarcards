@@ -6,12 +6,12 @@
 
   
 
-<ul class="nav nav-tabs">
+<ul class="nav nav-pills nav-fill">
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="#">Active</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">Much longer nav link</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Link</a>
