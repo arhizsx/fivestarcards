@@ -66,7 +66,7 @@ function Activate($page){
 
 function ActivateListing($page){
     if( isset( $_GET['mode']) == false ){
-        if( $page == "new" ){
+        if( $page == "auction_items" ){
             return "active";
         }
     } 

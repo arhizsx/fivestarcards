@@ -28,7 +28,7 @@
         <div class="col-xl-10 col-lg-9">
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
-                    <li class="<?php echo ActivateListing(""); ?>">
+                    <li class="<?php echo ActivateListing("auction_items"); ?>">
                         <a class="" href="/my-account-v2">Auction</a>
                     </li>
                     <li class="<?php echo ActivateListing("fixed_price_items"); ?>">
