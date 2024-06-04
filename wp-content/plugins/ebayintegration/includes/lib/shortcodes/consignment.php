@@ -1,22 +1,5 @@
 <style>
 
-    .shortcode_tab_box {
-        box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.3);
-    }
-    
-    .shortcode_tab_box ul {
-        list-style-type: none;
-        padding: 0 !important;
-        line-height: inherit !important;        
-        background-color: #f4f4f4;
-        border-bottom: none;
-        height: auto !important;
-        word-wrap: break-word;
-        box-sizing: border-box;
-        margin-top: 0;
-        margin-bottom: 1rem;
-    }
-
     @media (max-width: 479px) {
         .shortcode_tab_box li {
             float: none;
@@ -37,6 +20,23 @@
         body {
             background-color: black !important;
         }
+    }
+
+    .shortcode_tab_box {
+        box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.3);
+    }
+    
+    .shortcode_tab_box ul {
+        list-style-type: none;
+        padding: 0 !important;
+        line-height: inherit !important;        
+        background-color: #f4f4f4;
+        border-bottom: none;
+        height: auto !important;
+        word-wrap: break-word;
+        box-sizing: border-box;
+        margin-top: 0;
+        margin-bottom: 1rem;
     }
 
     .shortcode_tab_box li {
