@@ -42,20 +42,38 @@
 
 </style>
 
+<?php 
 
+    function Activate($page){
+        if( isset( $_GET['mode']) == false ){
+            if( $page == "new" ){
+                return "active";
+            }
+        } 
+        else {
+            if( $page == $_GET['mode'] ){
+                return "active";
+            } else {
+                return "";
+            }
+        }
+    }
+
+
+?>
   
 <div class="shortcode_tab_box">
     <ul class="clearfix d-none d-lg-block">
-        <li class="active">
+        <li class="<?php echo Activate("new"); ?>">
             <a class="" href="/my-account/my-consignment">New</a>
         </li>
-        <li class="">
+        <li class="<?php echo Activate("to-ship"); ?>">
             <a class="" href="/my-account/my-consignment/?mode=to-ship">To Ship</a>
         </li>
-        <li class="">
+        <li class="<?php echo Activate("consigned"); ?>">
             <a class="" href="/my-account/my-consignment/?mode=consigned">Consigned</a>
         </li>
-        <li class="">
+        <li class="<?php echo Activate("sold"); ?>">
             <a class="" href="/my-account/my-consignment/?mode=sold">Sold</a>
         </li>
     </ul>
