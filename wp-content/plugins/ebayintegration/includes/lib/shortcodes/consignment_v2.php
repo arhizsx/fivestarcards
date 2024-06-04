@@ -70,7 +70,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-2">
-            Consignment
+            <button class="5star_btn btn btn-ouline-dark mb-3" data-type="psa-value_bulk" data-action="add_card">
+                Log Card
+            </button>
         </div>
         <div class="col-10">
             <div class="shortcode_tab_box">
