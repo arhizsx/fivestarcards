@@ -16,7 +16,7 @@
         margin-top: 0;
         margin-bottom: 1rem;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 400px) {
         .shortcode_tab_box li {
             float: none;
             display: block;
