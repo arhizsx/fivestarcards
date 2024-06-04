@@ -6,6 +6,9 @@
     
     .shortcode_tab_box ul {
         list-style-type: none;
+        background-color: #f4f4f4;
+        border-bottom: none;
+        height: auto !important;
     }
 
 </style>
@@ -13,7 +16,7 @@
 
   
 <div class="shortcode_tab_box">
-    <ul class="nav nav-pills nav-fill">
+    <ul class="nav nav-pills nav-fill clearfix">
     <li class="nav-item">
         <a class="nav-link" href="#">Much longer nav link</a>
     </li>
