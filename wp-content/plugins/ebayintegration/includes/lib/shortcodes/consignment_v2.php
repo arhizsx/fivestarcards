@@ -70,7 +70,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-2">
-            Side Menu
+            Consignment
         </div>
         <div class="col-10">
             <div class="shortcode_tab_box">
