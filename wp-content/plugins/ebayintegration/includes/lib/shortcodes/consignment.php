@@ -33,7 +33,7 @@
             border-right: none;
             border-bottom: 1px solid #d9d9d9;
             display: block;
-        }
+        } 
         body {
             background-color: black !important;
         }
