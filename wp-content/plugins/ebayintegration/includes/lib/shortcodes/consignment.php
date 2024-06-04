@@ -13,7 +13,7 @@
         padding: 0 !important;
         line-height: inherit !important;        
         background-color: #f4f4f4;
-        border-bottom: none;
+        border-bottom: 1px solid #d9d9d9;
         height: auto !important;
         word-wrap: break-word;
         box-sizing: border-box;
@@ -25,7 +25,6 @@
         float: left;
         border-right: none;
         border-bottom: none;
-        border-bottom: 1px solid #d9d9d9;
         display: table;
         height: 72px;
         position: relative;
