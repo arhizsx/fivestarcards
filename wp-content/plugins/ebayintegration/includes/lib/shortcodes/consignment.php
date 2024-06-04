@@ -23,6 +23,13 @@
         position: relative;
         line-height: 4em;
     }
+    .shortcode_tab_box li a {
+        text-decoration: none;
+        padding: 4px 30px;
+        vertical-align: middle;
+        display: table-cell;
+        color: #666;
+    }
 
     .shortcode_tab_box li.active {
         background-color: #fff;
