@@ -20,6 +20,7 @@
         .shortcode_tab_box li {
             float: none;
             display: block;
+            border-bottom: 1px solid red;
         }
     }
     .shortcode_tab_box li {
