@@ -4,6 +4,7 @@
         clear: both;
         display: block;
         line-height: 1em;
+        height: auto;
 
     }
 
