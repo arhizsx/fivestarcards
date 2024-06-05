@@ -38,66 +38,24 @@
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
                     <li class="<?php echo AdministratorGrading("receiving"); ?>">
-                        <a class="" href="/administrator/grading">Receiving</a>
+                        <a class="" href="/administrator/consignment">Receiving</a>
                     </li>
-                    <li class="<?php echo AdministratorGrading("awaiting_payment"); ?>">
-                        <a class="" href="/administrator/grading/?mode=awaiting_payment">Awaiting Payment</a>
+                    <li class="<?php echo AdministratorGrading("consigned"); ?>">
+                        <a class="" href="/administrator/consignment/?mode=awaiting_payment">Consigned</a>
                     </li>
-                    <li class="<?php echo AdministratorGrading("consignment"); ?>">
-                        <a class="" href="/administrator/grading/?mode=consignment">Consignment</a>
-                    </li>
-                    <li class="<?php echo AdministratorGrading("completed"); ?>">
-                        <a class="" href="/administrator/grading/?mode=completed">Completed</a>
-                    </li>
-                    <li class="<?php echo AdministratorGrading("cancelled"); ?>">
-                        <a class="" href="/administrator/grading/?mode=cancelled">Cancelled</a>
+                    <li class="<?php echo AdministratorGrading("sold"); ?>">
+                        <a class="" href="/administrator/consignment/?mode=consignment">Sold</a>
                     </li>
                 </ul>
                 <ul class="clearfix d-lg-none">
                     <li class="">
-                        <a class="" href="/administrator/grading">Receiving</a>
+                        <a class="" href="/administrator/consignment">Receiving</a>
                     </li>
 
                 </ul>
                 <div class="content p-3">
                     <?php 
 
-                        if( isset( $_GET['mode'] )  == false){
-
-                            $shortcode = "[cards-grading-orders_table table='order_receiving']";
-                            
-                            
-                        } 
-                        else {
-
-                            switch( $_GET["mode"] ){
-
-                                case "awaiting_payment": 
-                                    $shortcode = "[cards-grading-orders_table table='awaiting_payment']";                                    
-                                    break;
-
-                                case "consignment": 
-                                    $shortcode = "[cards-grading-orders_table table='consigned_for_payment']";
-                                    break;
-
-                                case "completed": 
-                                    $shortcode = "[cards-grading-orders_table table='completed_orders']";
-                                    break;
-
-                                case "cancelled": 
-                                    $shortcode = "[cards-grading-orders_table table='cancelled_orders']";
-                                    break;
-
-                                default:
-                                    $shortcode = "[cards-grading-orders_table table='order_receiving']";
-                                    break;
-
-                            }
-
-                        }
-
-
-                        echo do_shortcode( $shortcode );                    
 
                     ?>
                 </div>
