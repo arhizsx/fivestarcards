@@ -37,16 +37,13 @@
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
-                    <li class="<?php echo AdministratorMembers("members"); ?>">
-                        <a class="" href="/administrator/members">Auction</a>
-                    </li>
-                    <li class="<?php echo AdministratorMembers("admin"); ?>">
-                        <a class="" href="/administrator/members/?mode=admin">Fixed Price</a>
+                    <li class="active">
+                        <a class="" href="/administrator/members">Users</a>
                     </li>
                 </ul>
                 <ul class="clearfix d-lg-none">
                     <li class="">
-                        <a class="" href="/administrator/members">Auction</a>
+                        <a class="" href="/administrator/members">Users</a>
                     </li>
 
                 </ul>
