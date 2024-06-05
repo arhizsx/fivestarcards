@@ -56,7 +56,12 @@
                 <div class="content p-3">
                     <?php 
 
-                        $shortcode = "[cards-grading-orders_table table='members']";                            
+                        if( isset( $_GET['mode'] )  == false){
+
+                            $shortcode = "[cards-grading-orders_table table='members']";                            
+                        
+                        } 
+ 
 
                         echo do_shortcode( $shortcode );                    
 
