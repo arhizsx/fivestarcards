@@ -38,7 +38,7 @@
                     </li>
                 </ul>
                 <div class="content p-3 text-center">
-                    <H1>Coming Soon</H1>
+                    <H1>Please wait we are brewing something cool...</H1>
                 </div>
             </div>
         </div>
