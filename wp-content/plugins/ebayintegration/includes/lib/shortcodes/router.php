@@ -113,6 +113,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'administrator.grading.php');			
             break;
 
+        case "administrator_consignment":
+
+			include( plugin_dir_path( __FILE__ ) . 'administrator.consignment.php');			
+            break;
+
         default:
 
             echo "Shortcode Not Found";
