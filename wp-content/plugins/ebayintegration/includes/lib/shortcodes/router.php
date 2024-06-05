@@ -110,7 +110,7 @@
 
         case "administrator_grading":
 
-			include( plugin_dir_path( __FILE__ ) . 'administrator.grading.php.php');			
+			include( plugin_dir_path( __FILE__ ) . 'administrator.grading.php');			
             break;
 
         default:
