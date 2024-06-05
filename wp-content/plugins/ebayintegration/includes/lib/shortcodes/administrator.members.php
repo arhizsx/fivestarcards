@@ -66,7 +66,7 @@
 
                                 case "skus":
                                     
-                                    $shortcode = "[ebayintegration-shortcode type='members']";                            
+                                    $shortcode = "[ebayintegration-shortcode type='members_list']";                            
                                     break;
 
                                 case "unmatched": 
