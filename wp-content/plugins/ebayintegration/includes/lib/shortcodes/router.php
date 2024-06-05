@@ -77,6 +77,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'consignment.php');			
             break;
 
+        case "cashout":
+
+			include( plugin_dir_path( __FILE__ ) . 'cashout.php');			
+            break;
+
         case "grading":
 
 			include( plugin_dir_path( __FILE__ ) . 'grading.php');			
