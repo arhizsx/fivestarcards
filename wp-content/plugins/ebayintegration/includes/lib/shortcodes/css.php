@@ -3,7 +3,7 @@
     .user_sku_list li{ 
         clear: both;
         display: block;
-        line-height: auto;
+        line-height: 1em;
 
     }
 
