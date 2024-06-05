@@ -94,4 +94,19 @@ function ActivateGrading($page){
     }
 }
 
+function AdministratorGrading($page){
+    if( isset( $_GET['mode']) == false ){
+        if( $page == "receiving" ){
+            return "active";
+        }
+    } 
+    else {
+        if( $page == $_GET['mode'] ){
+            return "active";
+        } else {
+            return "";
+        }
+    }
+}
+
 ?>
