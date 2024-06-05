@@ -56,9 +56,10 @@
                     <?php 
                     if(isset( $_GET['mode']) ){
                         // include( plugin_dir_path( __FILE__ ) .  $_GET['mode'] . '.php' );			
-
+                        echo plugin_dir_path( __FILE__ ) .  $_GET['mode'] . '.php';			
                     } else {
                         // include( plugin_dir_path( __FILE__ ) . 'grading.php' );			
+                        echo plugin_dir_path( __FILE__ ) . 'grading.php';			
 
                     }
                     ?>
