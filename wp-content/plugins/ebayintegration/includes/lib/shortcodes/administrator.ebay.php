@@ -46,8 +46,8 @@
                     <li class="<?php echo AdministratorEbay("awaiting_payment"); ?>">
                         <a class="" href="/administrator/ebay/?mode=awaiting_payment">Awaiting Payment</a>
                     </li>
-                    <li class="<?php echo AdministratorEbay("pending_payment"); ?>">
-                        <a class="" href="/administrator/ebay/?mode=pending_payment">Pending Payout</a>
+                    <li class="<?php echo AdministratorEbay("pending_payout"); ?>">
+                        <a class="" href="/administrator/ebay/?mode=pending_payout">Pending Payout</a>
                     </li>
                     <li class="<?php echo AdministratorEbay("paid_out"); ?>">
                         <a class="" href="/administrator/ebay/?mode=paid_out">Paid Out</a>
@@ -61,6 +61,41 @@
                 </ul>
                 <div class="content p-3">
                     <?php 
+                        if( isset( $_GET['mode'] )  == false){
+
+                            $shortcode = "[ebayintegration-shortcode type='auction_items_admin']";                            
+                            
+                        } 
+                        else {
+
+                            switch( $_GET["mode"] ){
+
+                                case "fixed_price": 
+                                    $shortcode = "[ebayintegration-shortcode type='auction_items_admin']";                            
+                                    break;
+
+                                case "awaiting_payment": 
+                                    $shortcode = "[ebayintegration-shortcode type='awaiting_payment_items_admin']";                            
+                                    break;
+
+                                case "pending_payout": 
+                                    $shortcode = "[ebayintegration-shortcode type='pending_payout_items_admin']";                            
+                                    break;
+
+                                case "paid_out": 
+                                    $shortcode = "[ebayintegration-shortcode type='paid_out_admin']";                            
+                                    break;
+
+                                default:
+                                    $shortcode = "[ebayintegration-shortcode type='auction_items_admin']";                            
+                                    break;
+
+                            }
+
+                        }
+
+
+                        echo do_shortcode( $shortcode );                    
 
                     ?>
                 </div>
