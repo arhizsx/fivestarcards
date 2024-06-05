@@ -41,10 +41,10 @@
                         <a class="" href="/administrator/members">Users</a>
                     </li>
                     <li class="">
-                        <a class="" href="/administrator/members?mode=skus">SKUs</a>
+                        <a class="" href="/administrator/members?mode=user_skus">User SKUs</a>
                     </li>
                     <li class="">
-                        <a class="" href="/administrator/members?mode=unmatched_items">Unmatched SKUs</a>
+                        <a class="" href="/administrator/members?mode=unmatched_skus">Unmatched SKUs</a>
                     </li>
                 </ul>
                 <ul class="clearfix d-lg-none">
