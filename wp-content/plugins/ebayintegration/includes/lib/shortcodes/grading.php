@@ -55,10 +55,10 @@
                 <div class="content p-3">
                     <?php 
                     if(isset( $_GET['mode']) ){
-                        include( plugin_dir_path( __FILE__ ) .  $_GET['mode'] . '.php' );			
+                        // include( plugin_dir_path( __FILE__ ) .  $_GET['mode'] . '.php' );			
 
                     } else {
-                        include( plugin_dir_path( __FILE__ ) . 'grading.php' );			
+                        // include( plugin_dir_path( __FILE__ ) . 'grading.php' );			
 
                     }
                     ?>
