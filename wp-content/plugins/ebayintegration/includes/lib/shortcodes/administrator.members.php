@@ -25,7 +25,7 @@
             </a>
             <a href="/administrator/ebay" class="5star_btn btn text-left btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
                 <i class="fa-solid fa-e me-2"></i>
-                Listings
+                Ebay
             </a>
             <a href="/administrator/members" class="5star_btn btn text-left btn-dark mb-3" data-type="psa-value_bulk" data-action="add_card">
                 <i class="fa-solid fa-users me-2"></i>
