@@ -2,7 +2,6 @@
 
     .shortcode_tab_box .user_sku_list li{ 
         clear: both;
-        display: block;
         line-height: 1em;
         height: auto;
 
