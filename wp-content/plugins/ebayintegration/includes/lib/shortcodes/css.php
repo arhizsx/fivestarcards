@@ -1,5 +1,10 @@
 <style>
 
+    .user_sku_list li{ 
+        float: none;
+
+    }
+
     .shortcode_tab_box {
         box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.3);
     }

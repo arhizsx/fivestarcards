@@ -71,7 +71,7 @@ foreach($user_skus as $sk){
                         <td class="skus">
                             <?php
                                 if(count($skus) > 0){
-                                    echo "<ul>";
+                                    echo "<ul class='user_sku_list'>";
                                     foreach($skus as $sku){
                                         echo "<li><a href='#' class='ebayintegration-btn' data-action='removeSKU' data-sku='" . $sku . "' data-user_id='" . $user->ID ."'> X </a> ". $sku . "</li>";
                                     }    
