@@ -41,10 +41,10 @@
                         <a class="" href="/administrator/consignment">Receiving</a>
                     </li>
                     <li class="<?php echo AdministratorGrading("consigned"); ?>">
-                        <a class="" href="/administrator/consignment/?mode=awaiting_payment">Consigned</a>
+                        <a class="" href="/administrator/consignment/?mode=consigned">Consigned</a>
                     </li>
                     <li class="<?php echo AdministratorGrading("sold"); ?>">
-                        <a class="" href="/administrator/consignment/?mode=consignment">Sold</a>
+                        <a class="" href="/administrator/consignment/?mode=sold">Sold</a>
                     </li>
                 </ul>
                 <ul class="clearfix d-lg-none">
