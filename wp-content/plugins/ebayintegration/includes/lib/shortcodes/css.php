@@ -4,6 +4,8 @@
         clear: both;
         line-height: 1em;
         height: auto;
+        font-size: .85em;
+        font-weight: normal;
 
     }
 
