@@ -37,7 +37,7 @@
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
-                    <li class="<?php echo AdministratorGrading("open"); ?>">
+                    <li class="<?php echo AdministratorGrading("receiving"); ?>">
                         <a class="" href="/administrator/grading">Receiving</a>
                     </li>
                     <li class="<?php echo AdministratorGrading("awaiting_payment"); ?>">
