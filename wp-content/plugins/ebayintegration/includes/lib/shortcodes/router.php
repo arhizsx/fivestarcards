@@ -77,10 +77,16 @@
 			include( plugin_dir_path( __FILE__ ) . 'consignment.php');			
             break;
 
+        case "grading":
+
+			include( plugin_dir_path( __FILE__ ) . 'grading.php');			
+            break;
+
         case "listing":
 
 			include( plugin_dir_path( __FILE__ ) . 'listing.php');			
             break;
+
 
         case "consignment_v2":
 
