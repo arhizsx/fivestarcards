@@ -79,5 +79,19 @@ function ActivateListing($page){
     }
 }
 
+function ActivateGrading($page){
+    if( isset( $_GET['mode']) == false ){
+        if( $page == "open" ){
+            return "active";
+        }
+    } 
+    else {
+        if( $page == $_GET['mode'] ){
+            return "active";
+        } else {
+            return "";
+        }
+    }
+}
 
 ?>

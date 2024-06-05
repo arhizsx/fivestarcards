@@ -33,25 +33,22 @@
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
-                    <li class="<?php echo ActivateListing("auction_items"); ?>">
-                        <a class="" href="/my-account-v2">Auction</a>
+                    <li class="<?php echo ActivateGrading("open"); ?>">
+                        <a class="" href="/my-account-v2/grading/">Open</a>
                     </li>
-                    <li class="<?php echo ActivateListing("fixed_price_items"); ?>">
-                        <a class="" href="/my-account-v2/?mode=fixed_price_items">Fixed Price</a>
+                    <li class="<?php echo ActivateGrading("for_payment"); ?>">
+                        <a class="" href="/my-account-v2/grading/?mode=for_payment">For Payment</a>
                     </li>
-                    <li class="<?php echo ActivateListing("awaiting_payment_items"); ?>">
-                        <a class="" href="/my-account-v2/?mode=awaiting_payment_items">Awaiting Payment</a>
+                    <li class="<?php echo ActivateGrading("consigned"); ?>">
+                        <a class="" href="/my-account-v2/grading/?mode=consigned">Consigned</a>
                     </li>
-                    <li class="<?php echo ActivateListing("pending_payout_items"); ?>">
-                        <a class="" href="/my-account-v2/?mode=pending_payout_items">Pending Payout</a>
-                    </li>
-                    <li class="<?php echo ActivateListing("paid_out"); ?>">
-                        <a class="" href="/my-account-v2/?mode=paid_out">Paid Out</a>
+                    <li class="<?php echo ActivateGrading("completed"); ?>">
+                        <a class="" href="/my-account-v2/grading/?mode=completed">Completed</a>
                     </li>
                 </ul>
                 <ul class="clearfix d-lg-none">
                     <li class="">
-                        <a class="" href="/my-account-v2">Listings</a>
+                        <a class="" href="/my-account-v2/grading/">Open</a>
                     </li>
 
                 </ul>
@@ -61,7 +58,7 @@
                         include( plugin_dir_path( __FILE__ ) .  $_GET['mode'] . '.php' );			
 
                     } else {
-                        include( plugin_dir_path( __FILE__ ) . 'auction_items.php' );			
+                        include( plugin_dir_path( __FILE__ ) . 'grading.php' );			
 
                     }
                     ?>
