@@ -44,7 +44,7 @@
                         <a class="" href="/administrator/members?mode=skus">SKUs</a>
                     </li>
                     <li class="">
-                        <a class="" href="/administrator/members?mode=unmatched_items">Unmatched Items</a>
+                        <a class="" href="/administrator/members?mode=unmatched_items">Unmatched SKUs</a>
                     </li>
                 </ul>
                 <ul class="clearfix d-lg-none">
