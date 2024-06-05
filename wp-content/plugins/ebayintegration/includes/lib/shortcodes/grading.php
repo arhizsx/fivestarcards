@@ -54,14 +54,15 @@
                 </ul>
                 <div class="content p-3">
                     <?php 
-                    if(isset( $_GET['mode']) ){
-                        // include( plugin_dir_path( __FILE__ ) .  $_GET['mode'] . '.php' );			
-                        echo plugin_dir_path( __FILE__ ) .  $_GET['mode'] . '.php';			
-                    } else {
-                        // include( plugin_dir_path( __FILE__ ) . 'grading.php' );			
-                        echo plugin_dir_path( __FILE__ ) . 'grading.php';			
 
+                    if(isset( $_GET['mode']) ){
+                        $shortcode = "";
+                    } else {
+                        $shorcode = $_GET["mode"];
                     }
+
+                    echo $shortcode;
+
                     ?>
                 </div>
             </div>
