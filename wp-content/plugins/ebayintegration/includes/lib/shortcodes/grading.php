@@ -61,7 +61,7 @@
                         $shorcode = $_GET["mode"];
                     }
 
-                    echo $shortcode;
+                    echo $shortcode .  $_GET["mode"];
 
                     ?>
                 </div>
