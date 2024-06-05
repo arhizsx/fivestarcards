@@ -37,13 +37,13 @@
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
-                    <li class="<?php echo AdministratorGrading("users"); ?>">
+                    <li class="<?php echo AdministratorMembers("users"); ?>">
                         <a class="" href="/administrator/members">Users</a>
                     </li>
-                    <li class="">
+                    <li class="<?php echo AdministratorMembers("user_skus"); ?>">
                         <a class="" href="/administrator/members?mode=user_skus">User SKUs</a>
                     </li>
-                    <li class="">
+                    <li class="<?php echo AdministratorMembers("unmatched_skus"); ?>">
                         <a class="" href="/administrator/members?mode=unmatched_skus">Unmatched SKUs</a>
                     </li>
                 </ul>
