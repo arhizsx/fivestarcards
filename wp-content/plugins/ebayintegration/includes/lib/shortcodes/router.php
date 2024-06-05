@@ -123,6 +123,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'administrator.ebay.php');			
             break;
 
+        case "administrator_members":
+
+			include( plugin_dir_path( __FILE__ ) . 'administrator.members.php');			
+            break;
+
         default:
 
             echo "Shortcode Not Found";
