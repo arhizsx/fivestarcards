@@ -1,7 +1,8 @@
 <style>
 
     .user_sku_list li{ 
-        float: none;
+        clear: both;
+        display: block;
 
     }
 
