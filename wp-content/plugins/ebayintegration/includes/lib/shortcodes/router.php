@@ -103,6 +103,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'hello.php');			
             break;
 
+        case "administrator":
+
+			include( plugin_dir_path( __FILE__ ) . 'administrator.php');			
+            break;
+
         default:
 
             echo "Shortcode Not Found";
