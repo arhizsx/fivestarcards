@@ -126,7 +126,7 @@ function AdministratorEbay($page){
 
 function AdministratorMembers($page){
     if( isset( $_GET['mode']) == false ){
-        if( $page == "members" ){
+        if( $page == "users" ){
             return "active";
         }
     } 
