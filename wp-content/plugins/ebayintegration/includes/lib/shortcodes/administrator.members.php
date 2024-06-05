@@ -60,7 +60,26 @@
 
                             $shortcode = "[cards-grading-orders_table table='members']";                            
                         
-                        } 
+                        } else {
+
+                            switch( $_GET["mode"] ){
+
+                                case "skus":
+                                    
+                                    $shortcode = "[ebayintegration-shortcode type='members']";                            
+                                    break;
+
+                                case "unmatched": 
+                                    $shortcode = "[ebayintegration-shortcode type='get_item_buttons']";                            
+                                    break;
+
+                                default:
+                                    $shortcode = "[cards-grading-orders_table table='members']";                            
+                                    break;
+                            }
+
+
+                        }
  
 
                         echo do_shortcode( $shortcode );                    
