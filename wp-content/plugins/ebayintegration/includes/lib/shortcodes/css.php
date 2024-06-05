@@ -109,4 +109,20 @@ function AdministratorGrading($page){
     }
 }
 
+function AdministratorEbay($page){
+    if( isset( $_GET['mode']) == false ){
+        if( $page == "auction" ){
+            return "active";
+        }
+    } 
+    else {
+        if( $page == $_GET['mode'] ){
+            return "active";
+        } else {
+            return "";
+        }
+    }
+}
+
+
 ?>

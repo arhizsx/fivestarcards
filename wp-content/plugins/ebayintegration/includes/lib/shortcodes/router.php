@@ -118,6 +118,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'administrator.consignment.php');			
             break;
 
+        case "administrator_ebay":
+
+			include( plugin_dir_path( __FILE__ ) . 'administrator.ebay.php');			
+            break;
+
         default:
 
             echo "Shortcode Not Found";
