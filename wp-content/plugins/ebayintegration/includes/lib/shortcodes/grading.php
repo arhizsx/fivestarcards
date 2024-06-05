@@ -55,10 +55,11 @@
                 <div class="content p-3">
                     <?php 
 
-                    if(isset( $_GET['mode']) ){
+                    if( isset( $_GET['mode']) ){
                         $shortcode = "";
-                    } else {
-                        $shorcode = $_GET["mode"];
+                    } 
+                    else {
+                        $shortcode = $_GET["mode"];
                     }
 
                     echo $shortcode .  $_GET["mode"];
