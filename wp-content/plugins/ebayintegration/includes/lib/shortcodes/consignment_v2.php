@@ -7,7 +7,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 text-black">
             <H3>Consignment</H3>
         </div>
         <div class="col-12">
