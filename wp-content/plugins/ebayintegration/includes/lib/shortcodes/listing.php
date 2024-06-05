@@ -11,7 +11,7 @@
             <H3 style="color: black;">My Listings</H3>
         </div>
         <div class="col-12">
-            <a href="/my-account-v2" class="5star_btn btn text-left  btn-dark mb-3" data-type="psa-value_bulk" data-action="add_card">
+            <a href="/my-account" class="5star_btn btn text-left  btn-dark mb-3" data-type="psa-value_bulk" data-action="add_card">
                 <i class="fa-solid fa-list me-2"></i>
                 My Listings
             </a>
