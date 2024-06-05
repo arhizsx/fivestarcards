@@ -7,12 +7,11 @@
             <th>Card Number</th>
             <th>Player Name</th>
             <th>Attribute S/N</th>
-            <th>Declared Value</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td colspan="7" class="text-center py-5">
+            <td colspan="6" class="text-center py-5">
                 Empty
             </td>
         </tr>
