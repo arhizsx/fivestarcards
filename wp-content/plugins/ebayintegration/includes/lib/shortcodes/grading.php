@@ -82,7 +82,6 @@
 
                             }
 
-                            $shortcode = $_GET["mode"];
                         }
 
 
