@@ -40,6 +40,12 @@
                     <li class="active">
                         <a class="" href="/administrator/members">Users</a>
                     </li>
+                    <li class="">
+                        <a class="" href="/administrator/members?mode=skus">SKUs</a>
+                    </li>
+                    <li class="">
+                        <a class="" href="/administrator/members?mode=unmatched_items">Unmatched Items</a>
+                    </li>
                 </ul>
                 <ul class="clearfix d-lg-none">
                     <li class="">
