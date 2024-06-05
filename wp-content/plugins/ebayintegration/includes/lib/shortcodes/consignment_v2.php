@@ -15,7 +15,7 @@
                 <i class="fa-solid fa-list me-2"></i>
                 My Listings
             </a>
-            <a href="/my-account/grading-order" class="5star_btn btn text-left  btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
+            <a href="/my-account/grading" class="5star_btn btn text-left  btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
                 <i class="fa-solid fa-circle-dot me-2"></i>                
                 Grading
             </a>
