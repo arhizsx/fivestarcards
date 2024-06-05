@@ -55,14 +55,38 @@
                 <div class="content p-3">
                     <?php 
 
-                    if( isset( $_GET['mode'] )  == false){
-                        $shortcode = "";
-                    } 
-                    else {
-                        $shortcode = $_GET["mode"];
-                    }
+                        if( isset( $_GET['mode'] )  == false){
 
-                    echo $shortcode .  $_GET["mode"];
+                            $shortcode = "[cards-grading-orders_table table='my_orders']";
+                            
+                        } 
+                        else {
+
+                            switch( $_GET["mode"] ){
+
+                                case "for_payment": 
+                                    $shortcode = "[cards-grading-orders_table table='my_for_payment']";
+                                    break;
+
+                                case "consigned": 
+                                    $shortcode = "[cards-grading-orders_table table='my_consigned']";
+                                    break;
+
+                                case "completed": 
+                                    $shortcode = "[cards-grading-orders_table table='my_completed']";
+                                    break;
+
+                                default:
+                                    $shortcode = "[cards-grading-orders_table table='my_orders']";
+                                    break;
+
+                            }
+
+                            $shortcode = $_GET["mode"];
+                        }
+
+
+                        echo do_shortcode( $shortcode );                    
 
                     ?>
                 </div>
