@@ -7,7 +7,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xl-2 col-lg-3">
+        <div class="col-12">
             <a href="/my-account-v2" class="5star_btn btn text-left form-control btn-dark mb-3" data-type="psa-value_bulk" data-action="add_card">
                 <i class="fa-solid fa-list me-2"></i>
                 My Listing
@@ -25,7 +25,9 @@
                 Request Cashout
             </a>
         </div>
-        <div class="col-xl-10 col-lg-9">
+    </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
                     <li class="<?php echo ActivateListing("auction_items"); ?>">
