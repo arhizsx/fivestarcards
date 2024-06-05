@@ -40,11 +40,11 @@
                     <li class="<?php echo AdministratorMembers("users"); ?>">
                         <a class="" href="/administrator/members">Users</a>
                     </li>
-                    <li class="<?php echo AdministratorMembers("user_skus"); ?>">
-                        <a class="" href="/administrator/members?mode=user_skus">User SKUs</a>
+                    <li class="<?php echo AdministratorMembers("skus"); ?>">
+                        <a class="" href="/administrator/members?mode=skus">SKUs</a>
                     </li>
-                    <li class="<?php echo AdministratorMembers("unmatched_skus"); ?>">
-                        <a class="" href="/administrator/members?mode=unmatched_skus">Unmatched SKUs</a>
+                    <li class="<?php echo AdministratorMembers("unmatched"); ?>">
+                        <a class="" href="/administrator/members?mode=unmatched">Unmatched</a>
                     </li>
                 </ul>
                 <ul class="clearfix d-lg-none">
