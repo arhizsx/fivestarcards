@@ -24,7 +24,7 @@
                 Consignment
             </a>
             <a href="/administrator/ebay" class="5star_btn btn text-left btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
-                <i class="fa-brand fa-ebay me-2"></i>
+                <i class="fa-solid fa-e me-2"></i>
                 eBay
             </a>
             <a href="/administrator/members" class="5star_btn btn text-left btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
