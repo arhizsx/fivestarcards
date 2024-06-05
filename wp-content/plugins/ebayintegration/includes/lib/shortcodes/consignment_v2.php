@@ -22,7 +22,7 @@
             </a>
             <a href="/my-account/request-cashout" class="5star_btn btn text-left btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
                 <i class="fa-solid fa-money-bill me-2"></i>
-                Request Cashout
+                Cashout
             </a>
         </div>
     </div>
