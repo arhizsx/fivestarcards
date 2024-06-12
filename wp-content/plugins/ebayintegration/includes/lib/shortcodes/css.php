@@ -53,6 +53,17 @@
         border-bottom: none;
 
     }
+    .shortcode_tab_box ul.submenu {
+        list-style-type: none;
+        padding: 0 !important;
+        line-height: inherit !important;        
+        background-color: red;
+        height: auto !important;
+        word-wrap: break-word;
+        box-sizing: border-box;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
 
 </style>
 

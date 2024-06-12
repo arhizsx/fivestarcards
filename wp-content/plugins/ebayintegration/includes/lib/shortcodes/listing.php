@@ -49,8 +49,7 @@
                         <a class="" href="/my-account-v2/?mode=paid_out">Paid Out</a>
                     </li>
                 </ul>
-            </div>
-                <ul class="d-lg-none">
+                <ul class="d-lg-none submenu">
                     <li class="<?php echo ActivateListing("auction_items"); ?>">
                         <a class="" href="/my-account-v2">Auction</a>
                     </li>
@@ -78,6 +77,7 @@
                     }
                     ?>
                 </div>
+            </div>
 
 
         </div>
