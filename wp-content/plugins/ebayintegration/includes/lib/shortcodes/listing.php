@@ -32,7 +32,7 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
-                <ul class="clearfix">
+                <ul class="">
                 <!-- <ul class="clearfix d-none d-lg-block"> -->
                     <li class="<?php echo ActivateListing("auction_items"); ?>">
                         <a class="" href="/my-account-v2">Auction</a>
