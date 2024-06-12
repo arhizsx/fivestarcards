@@ -47,12 +47,12 @@
                     </li>
                 </ul>
                 <div class="d-lg-none p-3">
-                    <label>Select Listing Type / Status</label>
+                    <label>Select Grading Order Status</label>
                     <select class="form-control" id="mobile_tab_select">
-                        <option value="/my-account/grading" <?php echo ActivateListingSelect("open") ?>>Auction</option>
-                        <option value="/my-account/grading/?mode=for_payment" <?php echo ActivateListingSelect("for_payment") ?>>Fixed Price</option>
-                        <option value="/my-account/grading/?mode=consigned" <?php echo ActivateListingSelect("consigned") ?>>Awaiting Payment</option>
-                        <option value="/my-account/grading/?mode=completed" <?php echo ActivateListingSelect("completed") ?>>Pending Payout</option>
+                        <option value="/my-account/grading" <?php echo ActivateListingSelect("open") ?>>Open</option>
+                        <option value="/my-account/grading/?mode=for_payment" <?php echo ActivateListingSelect("for_payment") ?>>For Payment</option>
+                        <option value="/my-account/grading/?mode=consigned" <?php echo ActivateListingSelect("consigned") ?>>Consigned</option>
+                        <option value="/my-account/grading/?mode=completed" <?php echo ActivateListingSelect("completed") ?>>Completed</option>
                     </select>
                 </div>
                 <div class="content p-3">
