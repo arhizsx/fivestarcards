@@ -32,8 +32,7 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
-                <ul class="clearfix">
-                <!-- <ul class="clearfix d-none d-lg-block"> -->
+                <ul class="clearfix d-none d-lg-block">
                     <li class="<?php echo ActivateListing("auction_items"); ?>">
                         <a class="" href="/my-account-v2">Auction</a>
                     </li>
@@ -50,12 +49,23 @@
                         <a class="" href="/my-account-v2/?mode=paid_out">Paid Out</a>
                     </li>
                 </ul>
-                <!-- <ul class="clearfix d-lg-none">
-                    <li class="">
-                        <a class="" href="/my-account-v2">Listings</a>
+                <ul class="d-lg-none">
+                    <li class="<?php echo ActivateListing("auction_items"); ?>">
+                        <a class="" href="/my-account-v2">Auction</a>
                     </li>
-
-                </ul> -->
+                    <li class="<?php echo ActivateListing("fixed_price_items"); ?>">
+                        <a class="" href="/my-account-v2/?mode=fixed_price_items">Fixed Price</a>
+                    </li>
+                    <li class="<?php echo ActivateListing("awaiting_payment_items"); ?>">
+                        <a class="" href="/my-account-v2/?mode=awaiting_payment_items">Awaiting Payment</a>
+                    </li>
+                    <li class="<?php echo ActivateListing("pending_payout_items"); ?>">
+                        <a class="" href="/my-account-v2/?mode=pending_payout_items">Pending Payout</a>
+                    </li>
+                    <li class="<?php echo ActivateListing("paid_out"); ?>">
+                        <a class="" href="/my-account-v2/?mode=paid_out">Paid Out</a>
+                    </li>
+                </ul>
                 <div class="content p-3">
                     <?php 
                     if(isset( $_GET['mode']) ){
