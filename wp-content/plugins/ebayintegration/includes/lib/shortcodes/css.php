@@ -53,7 +53,7 @@
         border-bottom: none;
 
     }
-    .shortcode_tab_box .submenu {
+    .submenu {
         list-style-type: none;
         padding: 0 !important;
         line-height: inherit !important;        
