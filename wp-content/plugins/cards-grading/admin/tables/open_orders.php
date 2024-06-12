@@ -86,7 +86,7 @@ $posts = get_posts($args);
 
     <div class="row">
         <div class="col-xl-6 col-md-6">
-            <H1 style="color: black;">Open Orders</H1>            
+            <H2 style="color: black;">Open Orders</H2>            
         </div>
         <div class="col-xl-6 col-md-6 text-end">
             <a href="/admin/add-customer-order/" class="5star_btn btn btn-primary">
