@@ -6,6 +6,7 @@ $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
 where status = 'SoldListPaid'
+ORDER BY id DESC
 " 
 );
 $args = array(
