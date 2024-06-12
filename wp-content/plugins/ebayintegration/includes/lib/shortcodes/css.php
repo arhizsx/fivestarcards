@@ -98,6 +98,20 @@ function ActivateListing($page){
         }
     }
 }
+function ActivateListingSelect($page){
+    if( isset( $_GET['mode']) == false ){
+        if( $page == "auction_items" ){
+            return "selected";
+        }
+    } 
+    else {
+        if( $page == $_GET['mode'] ){
+            return "selected";
+        } else {
+            return "";
+        }
+    }
+}
 
 function ActivateGrading($page){
     if( isset( $_GET['mode']) == false ){
