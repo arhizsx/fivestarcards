@@ -118,7 +118,7 @@
                             <?php  echo $user->user_email ?>
                         </td>
                         <td class="text-end">
-                            <button class="btn border btn-dark 5star_btn" data-action='view_account' data-user_id='<?php echo $user->ID; ?>'>View</button>
+                            <a class="btn border btn-dark" href="/administrator/members/view?user_id=<?php echo $user->ID; ?>">View</a>
                             <button class="btn border btn-primary 5star_btn" data-action='make_admin' data-user_id='<?php echo $user->ID; ?>'>Promote</button>
                         </td>
                     </tr>
@@ -136,38 +136,4 @@
             </tbody>
         </table>
     </div>
-</div>
-
-<div class="modal fade view_account" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
-	<div class="modal-dialog modal-xl" id="dxmodal">
-		<div class="modal-content modal-ajax">
-			<div class="modal-header bg-dark text-white">
-				<h5 class="modal-title">
-					View Account
-				</h5>
-    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
-					X
-				</button>
-			</div>
-            <div class="modal-body py-2 px-3" style="overflow: auto; height: 800px;">
-                <H5 style="color: black;">User Information</H5>
-                <div class="border-bottom mb-3">
-                    -
-                </div>
-                <H5 style="color: black;">SKUs</H5>
-                <div class="border-bottom mb-3">
-                    -
-                </div>
-                <H5 style="color: black;">Active Items</H5>
-                <div class=" mb-3" style="height: 500px;">
-                    -                            
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                <button class="btn border btn-danger 5star_btn" data-action="delete_user">Delete</button>
-                <button class="btn border btn-primary 5star_btn" data-action="update_user_info">Save Changes</button>
-            </div>
-		</div>
-	</div>
 </div>
