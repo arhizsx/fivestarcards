@@ -37,8 +37,11 @@
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
-                    <li class="<?php echo AdministratorGrading("receiving"); ?>">
-                        <a class="" href="/administrator/grading">Receiving</a>
+                    <li class="<?php echo AdministratorGrading("open"); ?>">
+                        <a class="" href="/administrator/grading">Open</a>
+                    </li>
+                    <li class="<?php echo AdministratorGrading("order_receiving"); ?>">
+                        <a class="" href="/administrator/grading?mode=receiving">Receiving</a>
                     </li>
                     <li class="<?php echo AdministratorGrading("awaiting_payment"); ?>">
                         <a class="" href="/administrator/grading/?mode=awaiting_payment">Awaiting Payment</a>
@@ -72,6 +75,10 @@
 
                             switch( $_GET["mode"] ){
 
+                                case "order_receiving": 
+                                    $shortcode = "[cards-grading-orders_table table='order_receiving']";                                    
+                                    break;
+
                                 case "awaiting_payment": 
                                     $shortcode = "[cards-grading-orders_table table='awaiting_payment']";                                    
                                     break;
@@ -89,7 +96,7 @@
                                     break;
 
                                 default:
-                                    $shortcode = "[cards-grading-orders_table table='order_receiving']";
+                                    $shortcode = "[cards-grading-orders_table table='open_orders']";
                                     break;
 
                             }
