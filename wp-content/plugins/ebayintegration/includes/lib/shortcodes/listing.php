@@ -50,7 +50,7 @@
                     </li>
                 </ul>
                 <div class="d-lg-none p-3">
-                    <select class="form-control">
+                    <select class="form-control" id="mobile_tab_select">
                         <option value="/my-account-v2" <?php echo ActivateListingSelect("auction_items") ?>>Auction</option>
                         <option value="/my-account-v2/?mode=fixed_price_items" <?php echo ActivateListingSelect("fixed_price_items") ?>>Fixed Price</option>
                         <option value="/my-account-v2/?mode=awaiting_payment_items" <?php echo ActivateListingSelect("awaiting_payment_items") ?>>Awaiting Payment</option>

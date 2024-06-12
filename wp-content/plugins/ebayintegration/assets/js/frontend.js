@@ -473,3 +473,7 @@ $(document).find(".search_box").on("keyup", function() {
 $(document).on("change", ".user_list_select", function(){
 	console.log( $(this) );
 });
+
+$(document).on("change", ".mobile_tab_select", function(){
+    window.location.href = $(this).val();
+});
