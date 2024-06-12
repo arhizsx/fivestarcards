@@ -49,23 +49,13 @@
                         <a class="" href="/my-account-v2/?mode=paid_out">Paid Out</a>
                     </li>
                 </ul>
-                <ul class="d-lg-none submenu">
-                    <li class="<?php echo ActivateListing("auction_items"); ?>">
-                        <a class="" href="/my-account-v2">Auction</a>
-                    </li>
-                    <li class="<?php echo ActivateListing("fixed_price_items"); ?>">
-                        <a class="" href="/my-account-v2/?mode=fixed_price_items">Fixed Price</a>
-                    </li>
-                    <li class="<?php echo ActivateListing("awaiting_payment_items"); ?>">
-                        <a class="" href="/my-account-v2/?mode=awaiting_payment_items">Awaiting Payment</a>
-                    </li>
-                    <li class="<?php echo ActivateListing("pending_payout_items"); ?>">
-                        <a class="" href="/my-account-v2/?mode=pending_payout_items">Pending Payout</a>
-                    </li>
-                    <li class="<?php echo ActivateListing("paid_out"); ?>">
-                        <a class="" href="/my-account-v2/?mode=paid_out">Paid Out</a>
-                    </li>
-                </ul>
+                <select class="form-control">
+                    <option value="/my-account-v2">Auction</option>
+                    <option value="/my-account-v2/?mode=fixed_price_items">Fixed Price<</option>
+                    <option value="/my-account-v2/?mode=awaiting_payment_items">Awaiting Payment</option>
+                    <option value="/my-account-v2/?mode=pending_payout_items">Pending Payout</option>
+                    <option value="/my-account-v2/?mode=paid_out">Paid Out</option>
+                </select>
                 <div class="content p-3">
                     <?php 
                     if(isset( $_GET['mode']) ){
