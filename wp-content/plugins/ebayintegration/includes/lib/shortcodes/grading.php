@@ -46,12 +46,15 @@
                         <a class="" href="/my-account/grading/?mode=completed">Completed</a>
                     </li>
                 </ul>
-                <ul class="clearfix d-lg-none">
-                    <li class="">
-                        <a class="" href="/my-account/grading/">Open</a>
-                    </li>
-
-                </ul>
+                <div class="d-lg-none p-3">
+                    <label>Select Listing Type / Status</label>
+                    <select class="form-control" id="mobile_tab_select">
+                        <option value="/my-account/grading" <?php echo ActivateListingSelect("open") ?>>Auction</option>
+                        <option value="/my-account/grading/?mode=for_payment" <?php echo ActivateListingSelect("for_payment") ?>>Fixed Price</option>
+                        <option value="/my-account/grading/?mode=consigned" <?php echo ActivateListingSelect("consigned") ?>>Awaiting Payment</option>
+                        <option value="/my-account/grading/?mode=completed" <?php echo ActivateListingSelect("completed") ?>>Pending Payout</option>
+                    </select>
+                </div>
                 <div class="content p-3">
                     <?php 
 

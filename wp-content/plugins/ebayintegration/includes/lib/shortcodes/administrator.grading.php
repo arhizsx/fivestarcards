@@ -56,6 +56,17 @@
                         <a class="" href="/administrator/grading/?mode=cancelled">Cancelled</a>
                     </li>
                 </ul>
+                <div class="d-lg-none p-3">
+                    <label>Select Listing Type / Status</label>
+                    <select class="form-control" id="mobile_tab_select">
+                        <option value="/my-account-v2" <?php echo ActivateListingSelect("auction_items") ?>>Auction</option>
+                        <option value="/my-account-v2/?mode=fixed_price_items" <?php echo ActivateListingSelect("fixed_price_items") ?>>Fixed Price</option>
+                        <option value="/my-account-v2/?mode=awaiting_payment_items" <?php echo ActivateListingSelect("awaiting_payment_items") ?>>Awaiting Payment</option>
+                        <option value="/my-account-v2/?mode=pending_payout_items" <?php echo ActivateListingSelect("pending_payout_items") ?>>Pending Payout</option>
+                        <option value="/my-account-v2/?mode=paid_out" <?php echo ActivateListingSelect("paid_out") ?>>Paid Out</option>
+                    </select>
+                </div>
+
                 <ul class="clearfix d-lg-none">
                     <li class="">
                         <a class="" href="/administrator/grading">Receiving</a>

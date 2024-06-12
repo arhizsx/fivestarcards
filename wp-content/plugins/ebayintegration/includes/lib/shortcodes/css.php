@@ -128,6 +128,22 @@ function ActivateGrading($page){
     }
 }
 
+function ActivateGradingSelect($page){
+    if( isset( $_GET['mode']) == false ){
+        if( $page == "open" ){
+            return "selected";
+        }
+    } 
+    else {
+        if( $page == $_GET['mode'] ){
+            return "selected";
+        } else {
+            return "";
+        }
+    }
+}
+
+
 function AdministratorGrading($page){
     if( isset( $_GET['mode']) == false ){
         if( $page == "order_receiving" ){
