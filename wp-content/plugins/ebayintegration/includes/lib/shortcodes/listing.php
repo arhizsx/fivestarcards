@@ -32,7 +32,8 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
-                <ul class="clearfix d-none d-lg-block">
+                <ul class="clearfix">
+                <!-- <ul class="clearfix d-none d-lg-block"> -->
                     <li class="<?php echo ActivateListing("auction_items"); ?>">
                         <a class="" href="/my-account-v2">Auction</a>
                     </li>
@@ -49,12 +50,12 @@
                         <a class="" href="/my-account-v2/?mode=paid_out">Paid Out</a>
                     </li>
                 </ul>
-                <ul class="clearfix d-lg-none">
+                <!-- <ul class="clearfix d-lg-none">
                     <li class="">
                         <a class="" href="/my-account-v2">Listings</a>
                     </li>
 
-                </ul>
+                </ul> -->
                 <div class="content p-3">
                     <?php 
                     if(isset( $_GET['mode']) ){
