@@ -149,27 +149,25 @@
 					X
 				</button>
 			</div>
-                <div class="" id="view_card_form_box">
-                    <div class="modal-body py-2 px-3" style="overflow: auto;">
-                        <H5 style="color: black;">User Information</H5>
-                        <div class="border-bottom mb-3">
-                            -
-                        </div>
-                        <H5 style="color: black;">SKUs</H5>
-                        <div class="border-bottom mb-3">
-                            -
-                        </div>
-                        <H5 style="color: black;">Active Items</H5>
-                        <div class=" mb-3" style="height: 500px;">
-                            -                            
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                        <button class="btn border btn-danger 5star_btn" data-action="delete_user">Delete</button>
-                        <button class="btn border btn-primary 5star_btn" data-action="update_user_info">Save Changes</button>
-                    </div>
+            <div class="modal-body py-2 px-3" style="overflow: auto; height: 800px;">
+                <H5 style="color: black;">User Information</H5>
+                <div class="border-bottom mb-3">
+                    -
                 </div>
+                <H5 style="color: black;">SKUs</H5>
+                <div class="border-bottom mb-3">
+                    -
+                </div>
+                <H5 style="color: black;">Active Items</H5>
+                <div class=" mb-3" style="height: 500px;">
+                    -                            
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+                <button class="btn border btn-danger 5star_btn" data-action="delete_user">Delete</button>
+                <button class="btn border btn-primary 5star_btn" data-action="update_user_info">Save Changes</button>
+            </div>
 		</div>
 	</div>
 </div>
