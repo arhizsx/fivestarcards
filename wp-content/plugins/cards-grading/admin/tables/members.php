@@ -150,7 +150,7 @@
 				</button>
 			</div>
                 <div class="" id="view_card_form_box">
-                    <div class="modal-body py-2 px-3">
+                    <div class="modal-body py-2 px-3" style="overflow: auto;">
                         <H5 style="color: black;">User Information</H5>
                         <div class="border-bottom mb-3">
                             -
