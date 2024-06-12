@@ -52,7 +52,7 @@
                 <div class="d-lg-none p-3">
                     <select class="form-control">
                         <option value="/my-account-v2">Auction</option>
-                        <option value="/my-account-v2/?mode=fixed_price_items">Fixed Price<</option>
+                        <option value="/my-account-v2/?mode=fixed_price_items">Fixed Price</option>
                         <option value="/my-account-v2/?mode=awaiting_payment_items">Awaiting Payment</option>
                         <option value="/my-account-v2/?mode=pending_payout_items">Pending Payout</option>
                         <option value="/my-account-v2/?mode=paid_out">Paid Out</option>
