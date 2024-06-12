@@ -198,47 +198,6 @@ class Ebay_Integration_Ebay_API {
 	
 	}
 
-	public function refreshToken(){
-
-		$apiURL = "https://api.ebay.com/identity/v1/oauth2/token";
-
-		$post_data = [
-			"grant_type" => "refresh_token",
-			"refresh_token" => $this->refresh_token,
-		];
-
-		$curl = curl_init();
-
-		curl_setopt_array(
-			$curl,
-			[
-				CURLOPT_URL => $apiURL,
-				CURLOPT_RETURNTRANSFER => true,
-				CURLOPT_ENCODING => '',
-				CURLOPT_MAXREDIRS => 10,
-				CURLOPT_TIMEOUT => 0,
-				CURLOPT_FOLLOWLOCATION => true,
-				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-				CURLOPT_CUSTOMREQUEST => 'POST',
-				CURLOPT_POSTFIELDS => http_build_query($post_data),
-				CURLOPT_HTTPHEADER => [
-					'Content-Type: application/x-www-form-urlencoded',
-					'Authorization: ' .  $this->authorization
-				]
-			]
-		);
-		
-		$response = curl_exec($curl);
-		$status = curl_getinfo($curl);
-		
-		curl_close($curl);
-
-		$json = json_decode($response, true);
-		update_option("wpt_access_token", $json["access_token"]);
-
-		return $json;
-	}
-	
 	public function GetItemPages(){
 
 		$per_page = 2;
@@ -881,6 +840,48 @@ class Ebay_Integration_Ebay_API {
 
 	// NEW ROUTINES
 
+	public function refreshToken(){
+
+		$apiURL = "https://api.ebay.com/identity/v1/oauth2/token";
+
+		$post_data = [
+			"grant_type" => "refresh_token",
+			"refresh_token" => $this->refresh_token,
+		];
+
+		$curl = curl_init();
+
+		curl_setopt_array(
+			$curl,
+			[
+				CURLOPT_URL => $apiURL,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => '',
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'POST',
+				CURLOPT_POSTFIELDS => http_build_query($post_data),
+				CURLOPT_HTTPHEADER => [
+					'Content-Type: application/x-www-form-urlencoded',
+					'Authorization: ' .  $this->authorization
+				]
+			]
+		);
+		
+		$response = curl_exec($curl);
+		$status = curl_getinfo($curl);
+		
+		curl_close($curl);
+
+		$json = json_decode($response, true);
+		update_option("wpt_access_token", $json["access_token"]);
+
+		return $json;
+	}
+	
+
 	public function getEbayItems($type = null, $page = null, $days = null){
 
 		if( $days == null ){
@@ -1107,17 +1108,47 @@ class Ebay_Integration_Ebay_API {
 						WHERE item_id = " . $itemID 
 					);				
 
+
 					if( count($result) > 0 ){
 						
-						$this->wpdb->update(
-							'ebay', 
-							array(
-								'data'=> json_encode($item), 
-								'status'=>$itemstatus,
-							), 
-							array(
-								'item_id'=>$itemID)
-						);
+						if( $type == "sold" ){
+
+							$result = $this->wpdb->get_results ("
+								SELECT * 
+								FROM  ebay
+								WHERE item_id = " . $itemID . "
+								AND status = 'PaidOut'
+								"
+							);				
+
+							if ( count($result) == 0 ){
+
+								$this->wpdb->update(
+									'ebay', 
+									array(
+										'data'=> json_encode($item), 
+										'status'=>$itemstatus,
+									), 
+									array(
+										'item_id'=>$itemID)
+								);		
+
+							}
+
+						} 
+						else {
+							
+							$this->wpdb->update(
+								'ebay', 
+								array(
+									'data'=> json_encode($item), 
+									'status'=>$itemstatus,
+								), 
+								array(
+									'item_id'=>$itemID)
+							);
+	
+						}
 
 					} 
 					else {
