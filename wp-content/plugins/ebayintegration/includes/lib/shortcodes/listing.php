@@ -49,7 +49,7 @@
                         <a class="" href="/my-account-v2/?mode=paid_out">Paid Out</a>
                     </li>
                 </ul>
-                <div class=" d-lg-none">
+                <div class="d-lg-none p-3">
                     <select class="form-control">
                         <option value="/my-account-v2">Auction</option>
                         <option value="/my-account-v2/?mode=fixed_price_items">Fixed Price<</option>
