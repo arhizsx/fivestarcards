@@ -41,7 +41,7 @@
                         <a class="" href="/administrator/grading">Open</a>
                     </li>
                     <li class="<?php echo AdministratorGrading("order_receiving"); ?>">
-                        <a class="" href="/administrator/grading?mode=receiving">Receiving</a>
+                        <a class="" href="/administrator/grading?mode=order_receiving">Receiving</a>
                     </li>
                     <li class="<?php echo AdministratorGrading("awaiting_payment"); ?>">
                         <a class="" href="/administrator/grading/?mode=awaiting_payment">Awaiting Payment</a>
