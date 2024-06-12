@@ -160,7 +160,7 @@
                             -
                         </div>
                         <H5 style="color: black;">Active Items</H5>
-                        <div class="border-bottom mb-3">
+                        <div class=" mb-3">
                             -                            
                         </div>
                     </div>
