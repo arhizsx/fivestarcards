@@ -38,10 +38,12 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                         $data = json_decode($item->data, true);
 
                         if( in_array( $item->sku, $skus ) ){
+                            $ctr++;
             ?>
             <tr>
                 <td>
                     <div class="title">
+                        <strong><?php echo $ctr;  ?></strong>&nbsp;
                         <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
                             <?php print_r( $data["Item"]["Title"] ); ?>
                         </a>
