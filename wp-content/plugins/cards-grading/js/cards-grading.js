@@ -1046,7 +1046,7 @@ $(document).on("click",".card-row", function(e){
 
 $(document).on("click",".my-order-row", function(e){
 
-    window.location.href = "/my-account/grading/view-order?id=" + $(this).data("post_id") ;
+    window.location.href = "/my-account/grading/view-order-2?id=" + $(this).data("post_id") ;
 
 });
 
