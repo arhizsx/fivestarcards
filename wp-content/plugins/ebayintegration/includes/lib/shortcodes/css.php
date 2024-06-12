@@ -105,7 +105,7 @@ function ActivateGrading($page){
 
 function AdministratorGrading($page){
     if( isset( $_GET['mode']) == false ){
-        if( $page == "receiving" ){
+        if( $page == "open" ){
             return "active";
         }
     } 
