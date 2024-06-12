@@ -49,13 +49,15 @@
                         <a class="" href="/my-account-v2/?mode=paid_out">Paid Out</a>
                     </li>
                 </ul>
-                <select class="form-control">
-                    <option value="/my-account-v2">Auction</option>
-                    <option value="/my-account-v2/?mode=fixed_price_items">Fixed Price<</option>
-                    <option value="/my-account-v2/?mode=awaiting_payment_items">Awaiting Payment</option>
-                    <option value="/my-account-v2/?mode=pending_payout_items">Pending Payout</option>
-                    <option value="/my-account-v2/?mode=paid_out">Paid Out</option>
-                </select>
+                <div class=" d-lg-none">
+                    <select class="form-control">
+                        <option value="/my-account-v2">Auction</option>
+                        <option value="/my-account-v2/?mode=fixed_price_items">Fixed Price<</option>
+                        <option value="/my-account-v2/?mode=awaiting_payment_items">Awaiting Payment</option>
+                        <option value="/my-account-v2/?mode=pending_payout_items">Pending Payout</option>
+                        <option value="/my-account-v2/?mode=paid_out">Paid Out</option>
+                    </select>
+                </div>
                 <div class="content p-3">
                     <?php 
                     if(isset( $_GET['mode']) ){
