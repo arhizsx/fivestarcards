@@ -167,8 +167,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		jQuery(document).find(".add_sku").find("#items_with_sku").css("height", "300px");
 
 	}
+	else if( jQuery(this).data("action") == "show_log_consign_modal" ){
 
+		jQuery(document).find(".log_consign_modal").appendTo('body').modal("show");
 
+	}
 	else {
 
 		console.log("Action Not Set: " + jQuery(this).data("action") );
