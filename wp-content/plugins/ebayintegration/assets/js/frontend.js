@@ -169,11 +169,18 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	}
 	else if( jQuery(this).data("action") == "show_log_consign_modal" ){
 
-		console.log("log_consign_modal");
-
 		jQuery(document).find(".log_consign_modal").appendTo('body').modal("show");
 
 	}
+
+	else if( jQuery(this).data("action") == "show_ship_batch_modal" ){
+
+		jQuery(document).find(".ship_batch_modal").appendTo('body').modal("show");
+
+	}
+
+	
+
 	else {
 
 		console.log("Action Not Set: " + jQuery(this).data("action") );
@@ -484,3 +491,5 @@ $(document).on("change", "#mobile_tab_select", function(){
 
     window.location.href = $(this).val();
 });
+
+
