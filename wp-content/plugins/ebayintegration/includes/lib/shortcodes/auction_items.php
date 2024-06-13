@@ -34,35 +34,47 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
         </thead>
         <tbody>
             <?php 
-            foreach($ebay as $item){ 
-                $data = json_decode($item->data, true);
-
-                if( $data["ListingType"] == "Chinese"){
-                    
-                    if( in_array( $item->sku, $skus ) ){
+                if( count( $ebay ) > 0){
             ?>
-            <tr>
-                <td>
-                    <div class="title">
-                        <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                        <?php echo $data["Title"]; ?>
-                        </a>
-                    </div>
-                    <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
-                    <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
-                </td>
-                <td class="text-end">
-                    <?php echo $data["SellingStatus"]["BidCount"] * 1?>
-                </td>
+                    <?php 
+                    foreach($ebay as $item){ 
+                        $data = json_decode($item->data, true);
 
-                <td class="text-end">$<?php 
-                    echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
-                ?></td>
-            </tr>
-            <?php 
+                        if( $data["ListingType"] == "Chinese"){
+                            
+                            if( in_array( $item->sku, $skus ) ){
+                    ?>
+                    <tr>
+                        <td>
+                            <div class="title">
+                                <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
+                                <?php echo $data["Title"]; ?>
+                                </a>
+                            </div>
+                            <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
+                            <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
+                        </td>
+                        <td class="text-end">
+                            <?php echo $data["SellingStatus"]["BidCount"] * 1?>
+                        </td>
+
+                        <td class="text-end">$<?php 
+                            echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
+                        ?></td>
+                    </tr>
+                    <?php 
+                            }
+                        }
                     }
+                    ?>
+            <?php 
+                } else {
+            ?>
+                <tr>
+                    <td colspan="3" class="text-center p-5">Empty</td>
+                </tr>
+            <?php                     
                 }
-            }
             ?>
         </tbody>
     </table>
