@@ -76,7 +76,7 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
             ?>
             <tr>
                 <td colspan="3" class="text-center p-5">
-                    No Items
+                    Empty
                 </td>
             </tr>
             <?php 
