@@ -1,7 +1,7 @@
-<button class="5star_btn btn btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
+<button class="btn btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
     Log Card
 </button>
-<button class="5star_btn btn btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
+<button class="btn btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
     Ship Batch
 </button>
 <table class="table table-sm table-bordered">
