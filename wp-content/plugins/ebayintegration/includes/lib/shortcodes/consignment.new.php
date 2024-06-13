@@ -39,11 +39,11 @@
 			</div>
             <div class="modal-body py-2 px-3">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                         <label>Qty</label>
                         <input type="number" name="qty" class="form-control">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                         <label>Year</label>
                         <input type="number" name="year" class="form-control">
                     </div>
@@ -55,11 +55,11 @@
                         <label>Player Name</label>
                         <input type="text" name="player_name" class="form-control p-1">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                         <label>Card Number</label>
                         <input type="text" name="card_number" class="form-control p-1">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                         <label>Attribute S/N</label>
                         <input type="text" name="serial_number" class="form-control p-1">
                     </div>
