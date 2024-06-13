@@ -82,12 +82,6 @@
             <a class="" href="/my-account/consignment/?mode=sold">Sold</a>
         </li>
     </ul>
-    <ul class="clearfix d-lg-none">
-        <li class="">
-            <a class="" href="/my-account/consignment">New</a>
-        </li>
-
-    </ul>
     <div class="d-lg-none p-3">
         <label>Select Consignment Status</label>
         <select class="form-control" id="mobile_tab_select">
