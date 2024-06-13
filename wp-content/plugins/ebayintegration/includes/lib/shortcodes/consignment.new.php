@@ -4,25 +4,27 @@
 <button class="btn btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
     Ship Batch
 </button>
-<table class="table table-sm table-bordered">
-    <thead>
-        <tr>
-            <th>Qty</th>
-            <th>Year</th>
-            <th>Brand</th>
-            <th>Card Number</th>
-            <th>Player Name</th>
-            <th>Attribute S/N</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td colspan="6" class="text-center py-5">
-                Empty
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th>Qty</th>
+                <th>Year</th>
+                <th>Brand</th>
+                <th>Card Number</th>
+                <th>Player Name</th>
+                <th>Attribute S/N</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="6" class="text-center py-5">
+                    Empty
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <div class="modal fade log_consign_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
 	<div class="modal-dialog modal-xl" id="dxmodal">
