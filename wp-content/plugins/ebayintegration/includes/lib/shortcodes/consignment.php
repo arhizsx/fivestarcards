@@ -88,6 +88,16 @@
         </li>
 
     </ul>
+    <div class="d-lg-none p-3">
+        <label>Select Consignment Status</label>
+        <select class="form-control" id="mobile_tab_select">
+            <option value="/my-account/consignment" <?php echo ActivateSelect("new") ?>>New</option>
+            <option value="/my-account/consignment?mode=to-ship" <?php echo ActivateSelect("to-ship") ?>>To Ship</option>
+            <option value="/my-account/consignment?mode=consigned" <?php echo ActivateSelect("consigned") ?>>Consigned</option>
+            <option value="/my-account/consignment?mode=sold" <?php echo ActivateSelect("sold") ?>>Sold</option>
+        </select>
+    </div>
+
     <div class="content p-3">
         <?php 
         if(isset( $_GET['mode']) ){

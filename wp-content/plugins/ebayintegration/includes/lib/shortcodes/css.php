@@ -84,6 +84,22 @@ function Activate($page){
     }
 }
 
+function ActivateSelect($page){
+    if( isset( $_GET['mode']) == false ){
+        if( $page == "new" ){
+            return "selected";
+        }
+    } 
+    else {
+        if( $page == $_GET['mode'] ){
+            return "selected";
+        } else {
+            return "";
+        }
+    }
+}
+
+
 function ActivateListing($page){
     if( isset( $_GET['mode']) == false ){
         if( $page == "auction_items" ){
