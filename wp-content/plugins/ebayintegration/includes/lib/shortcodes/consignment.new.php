@@ -23,3 +23,30 @@
         </tr>
     </tbody>
 </table>
+
+<div class="modal fade log_consign_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+	<div class="modal-dialog modal-xl" id="dxmodal">
+		<div class="modal-content modal-ajax">
+			<div class="modal-header bg-dark text-white">
+				<h5 class="modal-title">
+					Log Card to Consign
+				</h5>
+    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+					X
+				</button>
+			</div>
+            <div class="modal-body py-2 px-3">
+            </div>
+            <div class="modal-footer">
+                <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+
+                <button class="btn border btn-primary ebayintegration-btn" 
+                    data-action='confirmAddConsign' 
+                >
+                    Log Card
+                </button>
+            </div>
+
+		</div>
+	</div>
+</div>
