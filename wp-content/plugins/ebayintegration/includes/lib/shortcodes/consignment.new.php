@@ -40,21 +40,27 @@
             <div class="modal-body py-2 px-3">
                 <div class="row">
                     <div class="col-2">
+                        <label>Qty</label>
                         <input type="number" name="qty" class="form-control">
                     </div>
                     <div class="col-2">
+                        <label>Year</label>
                         <input type="number" name="year" class="form-control">
                     </div>
                     <div class="col-2">
+                        <label>Brand</label>
                         <input type="text" name="brand" class="form-control p-1">
                     </div>
                     <div class="col-2">
+                        <label>Card Number</label>
                         <input type="text" name="card_number" class="form-control p-1">
                     </div>
                     <div class="col-2">
+                        <label>Player Name</label>
                         <input type="text" name="player_name" class="form-control p-1">
                     </div>
                     <div class="col-2">
+                        <label>Attribute S/N</label>
                         <input type="text" name="serial_number" class="form-control p-1">
                     </div>
                 </div>
