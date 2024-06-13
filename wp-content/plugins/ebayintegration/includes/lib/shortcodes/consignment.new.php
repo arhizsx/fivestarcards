@@ -46,16 +46,16 @@
                         <input type="number" name="year" class="form-control">
                     </div>
                     <div class="col-2">
-                        <input type="text" name="brand" class="form-control">
+                        <input type="text" name="brand" class="form-control p-1">
                     </div>
                     <div class="col-2">
-                        <input type="text" name="card_number" class="form-control p-2">
+                        <input type="text" name="card_number" class="form-control p-1">
                     </div>
                     <div class="col-2">
-                        <input type="text" name="player_name" class="form-control p-2">
+                        <input type="text" name="player_name" class="form-control p-1">
                     </div>
                     <div class="col-2">
-                        <input type="text" name="serial_number" class="form-control p-2">
+                        <input type="text" name="serial_number" class="form-control p-1">
                     </div>
                 </div>
             </div>
