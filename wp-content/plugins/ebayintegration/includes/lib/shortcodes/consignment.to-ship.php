@@ -2,6 +2,7 @@
     <table class="table table-sm table-bordered">
         <thead>
             <tr>
+                <th>Batch</th>
                 <th>Year</th>
                 <th>Brand</th>
                 <th>Card Number</th>
@@ -11,7 +12,7 @@
         </thead>
         <tbody>
             <tr>
-                <td colspan="6" class="text-center py-5">
+                <td colspan="7" class="text-center py-5">
                     Empty
                 </td>
             </tr>
