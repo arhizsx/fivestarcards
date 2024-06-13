@@ -36,6 +36,26 @@
 				</button>
 			</div>
             <div class="modal-body py-2 px-3">
+                <div class="row">
+                    <div class="col-2">
+                        <input type="number" name="qty" class="form-control">
+                    </div>
+                    <div class="col-2">
+                        <input type="number" name="year" class="form-control">
+                    </div>
+                    <div class="col-2">
+                        <input type="text" name="brand" class="form-control">
+                    </div>
+                    <div class="col-2">
+                        <input type="text" name="card_number" class="form-control">
+                    </div>
+                    <div class="col-2">
+                        <input type="text" name="player_name" class="form-control">
+                    </div>
+                    <div class="col-2">
+                        <input type="text" name="serial_number" class="form-control">
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
