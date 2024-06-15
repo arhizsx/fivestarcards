@@ -95,7 +95,7 @@
 
         case "consignment_v2":
 
-            include( plugin_dir_path( __FILE__ ) . 'members/consignment_v2.php');			
+            include( plugin_dir_path( __FILE__ ) . 'consignment_v2.php');			
             break;
 
         case "administrator":
