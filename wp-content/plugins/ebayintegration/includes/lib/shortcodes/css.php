@@ -104,6 +104,8 @@ function ActivateListing($page){
     if( isset( $_GET['type']) == false ){
         if( $page == "auction" ){
             return "btn-primary";
+        } else {
+            return "btn-secondary";
         }
     } 
     else {
