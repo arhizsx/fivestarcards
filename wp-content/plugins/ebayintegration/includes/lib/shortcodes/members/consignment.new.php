@@ -61,7 +61,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label>Attribute S/N</label>
-                        <input type="text" name="serial_number" class="form-control p-1">
+                        <input type="text" name="attribute_sn" class="form-control p-1">
                     </div>
                 </div>
                 <div class="d-none p-5 text-center loading">

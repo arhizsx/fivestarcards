@@ -215,6 +215,12 @@ function confirmAddConsign(){
 	var defObject = $.Deferred();  // create a deferred object.
 
 	var qty = parseInt( $(document).find(".log_consign_modal").find(".formbox").find("[name='qty']").val() );
+	var year = $(document).find(".log_consign_modal").find(".formbox").find("[name='year']").val();
+	var brand = $(document).find(".log_consign_modal").find(".formbox").find("[name='brand']").val();
+	var player_name = $(document).find(".log_consign_modal").find(".formbox").find("[name='player_name']").val();
+	var card_number = $(document).find(".log_consign_modal").find(".formbox").find("[name='card_number']").val();
+	var attribute_sn = $(document).find(".log_consign_modal").find(".formbox").find("[name='attribute_sn']").val();
+
 	var result = [];
 
 	for(i = 0; i < qty; i++ ){
@@ -225,7 +231,13 @@ function confirmAddConsign(){
 			method: 'post',
 			url: "/wp-json/ebayintegration/v1/post",
 			data: { 
-				action: "confirmAddConsign"
+				action: "confirmAddConsign",
+				qty: qty,
+				year: year,
+				brand: brand,
+				player_name: player_name,
+				card_number: card_number,
+				attribute_sn: attribute_sn
 			},
 			success: function(resp){		
 				
