@@ -220,31 +220,31 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					"<tr>" +
 						"<td>" +
 							"<div class='row'>" +
-								"<div class='small col-3'>Player</div>" +
+								"<div class='small text-secondary col-3'>Player</div>" +
 								"<div class='col-9'>" +
 								 	v.player_name +									
 								"</div>" +
 							"</div>" +
 							"<div class='row'>" +
-								"<div class='small col-3'>Year</div>" +
+								"<div class='small text-secondary col-3'>Year</div>" +
 								"<div class='col-9'>" +
 								 	v.year +									
 								"</div>" +
 							"</div>" +
 							"<div class='row'>" +
-								"<div class='small col-3'>Brand</div>" +
+								"<div class='small text-secondary col-3'>Brand</div>" +
 								"<div class='col-9'>" +
 								 	v.brand +									
 								"</div>" +
 							"</div>" +
 							"<div class='row'>" +
-								"<div class='small col-3'>Card #</div>" +
+								"<div class='small text-secondary col-3'>Card #</div>" +
 								"<div class='col-9'>" +
 								 	v.card_number +									
 								"</div>" +
 							"</div>" +
 							"<div class='row'>" +
-								"<div class='small col-3'>Attribute SN</div>" +
+								"<div class='small text-secondary col-3'>Attribute SN</div>" +
 								"<div class='col-9'>" +
 								 	v.attribute_sn +									
 								"</div>" +
