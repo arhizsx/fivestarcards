@@ -94,9 +94,6 @@
 
 
         case "consignment_v2":
-            print_r(  __FILE__  );
-            die();
-
 			include( plugin_dir_path( __FILE__ ) . 'members/consignment_v2.php');			
             break;
 
