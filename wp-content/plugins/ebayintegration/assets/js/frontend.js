@@ -214,7 +214,7 @@ function confirmAddConsign(){
 
 	var defObject = $.Deferred();  // create a deferred object.
 
-	var qty = $(document).find(".log_consign_modal").find(".formbox").find("[name='qty']").val();
+	var qty = parseInt( $(document).find(".log_consign_modal").find(".formbox").find("[name='qty']").val() );
 	var result = [];
 
 	for(i = 1; i <= qty; i++ ){
