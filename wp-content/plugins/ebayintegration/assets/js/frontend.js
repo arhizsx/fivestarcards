@@ -258,6 +258,8 @@ function confirmAddConsign(){
 			},
 			success: function(resp){		
 				
+				console.log( JSON.parse(resp) );
+
 				result.push( resp );
 
 				if( i == qty ){
