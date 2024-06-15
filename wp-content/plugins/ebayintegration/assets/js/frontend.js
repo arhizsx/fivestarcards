@@ -220,6 +220,16 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					"<tr>" +
 						"<td>" +
 							"<div class='row'>" +
+								"<div class='col-12 text-end'>" + 
+									"<a class='text-primary me-4' href='#'>" +
+										"<i class='fa-solid fa-md fa-pen'></i>" + 
+									"</a>" +
+									"<a class='text-danger' href='#'>" +
+										"<i class='fa-solid fa-xl fa-xmark'></i>" + 
+									"</a>" +
+								"</div>" +
+							"</div>" +
+							"<div class='row'>" +
 								"<div class='small text-secondary col-3'>Player</div>" +
 								"<div class='col-9'>" +
 								 	v.player_name +									
@@ -247,14 +257,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 								"<div class='small text-secondary col-3'>Attribute SN</div>" +
 								"<div class='col-9'>" +
 								 	v.attribute_sn +									
-								"</div>" +
-								"<div class='col-12 text-end'>" + 
-									"<a class='text-primary me-4' href='#'>" +
-										"<i class='fa-solid fa-md fa-pen'></i>" + 
-									"</a>" +
-									"<a class='text-danger' href='#'>" +
-										"<i class='fa-solid fa-xl fa-xmark'></i>" + 
-									"</a>" +
 								"</div>" +
 							"</div>" +
 						"</td>" +
