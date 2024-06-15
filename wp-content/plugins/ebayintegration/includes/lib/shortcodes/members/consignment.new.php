@@ -123,7 +123,3 @@
 	</div>
 </div>
 
-
-
-https://5starcards.com/wp-json/ebayintegration/v1/post
-
