@@ -199,7 +199,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					"<tr>" +
 						"<td>" +
 							"<a class='text-danger me-2' href='#'>" +
-								"<i class='fa-solid fa-xl fa-pen'></i>" + 
+								"<i class='fa-solid fa-lg fa-pen'></i>" + 
 							"</a>" +
 							"<a class='text-danger' href='#'>" +
 								"<i class='fa-solid fa-xl fa-xmark'></i>" + 
