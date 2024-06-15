@@ -179,7 +179,31 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 
+	else if( jQuery(this).data("action") == "confirmAddConsign" ){
+
+
+		var defObject = $.Deferred();  // create a deferred object.
+
+		jQuery.ajax({
+			method: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: { 
+				action: "confirmAddConsign"
+			},
+			success: function(resp){
 	
+				defObject.resolve(resp);    //resolve promise and pass the response.
+	
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});
+	
+		return defObject.promise();
+	
+	
+	}
 
 	else {
 

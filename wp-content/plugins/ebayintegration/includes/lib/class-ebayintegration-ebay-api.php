@@ -214,7 +214,7 @@ class Ebay_Integration_Ebay_API {
 
 	public function handle_api_post_endpoint( $data ){
 		
-		return "TEST";
+		return $data;
 		
 	}
 

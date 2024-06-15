@@ -117,4 +117,7 @@
 	</div>
 </div>
 
-https://5starcards.com/wp-json/cards-grading/v1/add-card
+
+
+https://5starcards.com/wp-json/ebayintegration/v1/post
+
