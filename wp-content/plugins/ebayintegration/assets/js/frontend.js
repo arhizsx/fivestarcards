@@ -192,7 +192,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$.when(card).done( function( cards ){
 
 			for( var key in cards ){
-				console.log( cards["key "]);
+				console.log( cards[ key ]);
 			}
 
 			// for( i=0; i < cards.length; i++ ){
