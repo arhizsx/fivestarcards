@@ -220,6 +220,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					"<tr>" +
 						"<td>" +
 							"<div class='row'>" +
+								"<div class='col-12 text-right'>Delete | Edit</div>" +
 								"<div class='small text-secondary col-3'>Player</div>" +
 								"<div class='col-9'>" +
 								 	v.player_name +									
