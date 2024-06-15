@@ -25,8 +25,6 @@
             </tr>
         </tbody>
     </table>
-</div>
-<div class="d-lg-none pb-2">
     <table class="table table-sm table-bordered" id="new_consignment_mobile">
         <thead>
             <tr>
@@ -41,6 +39,8 @@
             </tr>
         </tbody>
     </table>
+</div>
+<div class="d-lg-none pb-2">
 </div>
 
 <div class="modal fade log_consign_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
