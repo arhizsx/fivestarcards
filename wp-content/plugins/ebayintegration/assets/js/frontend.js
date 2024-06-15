@@ -194,7 +194,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			$(document).find(".log_consign_modal").find(".formbox").removeClass("d-none");
 			$(document).find(".log_consign_modal").find(".loading").addClass("d-none");
 
-			$(document).find(".log_consign_modal").modal("hide");
 	
 		});
 	
