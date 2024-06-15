@@ -189,11 +189,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".log_consign_modal").find(".loading").removeClass("d-none");
 		element.prop("disabled", "disabled");
 
-		$.when(card).done( function( card ){
+		$.when(card).done( function( x ){
 
-			$.each(card, function(k, v){
-				console.log( v )  ;
-			});
+			console.log(x);
+
 
 
 				// $(document).find("#new_consignment").find("tbody").append(
