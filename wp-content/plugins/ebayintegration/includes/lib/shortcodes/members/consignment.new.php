@@ -10,8 +10,8 @@
             <tr>
                 <th>Year</th>
                 <th>Brand</th>
-                <th>Card Number</th>
                 <th>Player Name</th>
+                <th>Card Number</th>
                 <th>Attribute S/N</th>
             </tr>
         </thead>
