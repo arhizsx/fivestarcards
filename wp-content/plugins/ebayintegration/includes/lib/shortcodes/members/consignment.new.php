@@ -8,7 +8,7 @@
     <table class="table table-sm table-bordered" id="new_consignment">
         <thead>
             <tr>
-                <th style="width: 50px;"></th>
+                <th style="width: 30px;"></th>
                 <th>Year</th>
                 <th>Brand</th>
                 <th>Player Name</th>
