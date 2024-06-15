@@ -34,7 +34,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr class="empty_consignment">
                 <td class="text-center py-5">
                     Empty
                 </td>
