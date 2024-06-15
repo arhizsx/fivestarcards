@@ -191,21 +191,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when(card).done( function( card ){
 
-			console.log( card[0] );
-
-			// for( i=0; i < cards.length; i++ ){
-			// 	$(document).find("#new_consignment tbody").append(
-			// 		"<tr>" + 
-			// 			"<td>" + cards[ i ].qty + "</td>" +
-			// 			"<td>" + cards[ i ].year + "</td>" +
-			// 			"<td>" + cards[ i ].brand + "</td>" +
-			// 			"<td>" + cards[ i ].card_number + "</td>" +
-			// 			"<td>" + cards[ i ].player_name + "</td>" +
-			// 			"<td>" + cards[ i ].attribute_sn + "</td>" +
-			// 		"</tr>"
-			// 	);	
-			// }
-
+			console.log( card );
 
 			$(document).find(".log_consign_modal").find(".formbox").removeClass("d-none");
 			$(document).find(".log_consign_modal").find(".loading").addClass("d-none");
@@ -236,44 +222,25 @@ function confirmAddConsign(){
 	var card_number = $(document).find(".log_consign_modal").find(".formbox").find("[name='card_number']").val();
 	var attribute_sn = $(document).find(".log_consign_modal").find(".formbox").find("[name='attribute_sn']").val();
 
-	var result = [];
-
-	for(i = 0; i < qty; i++ ){
-
-		console.log(i);
-
-		jQuery.ajax({
-			method: 'post',
-			url: "/wp-json/ebayintegration/v1/post",
-			data: { 
-				action: "confirmAddConsign",
-				qty: qty,
-				year: year,
-				brand: brand,
-				player_name: player_name,
-				card_number: card_number,
-				attribute_sn: attribute_sn
-			},
-			success: function(resp){		
-				
-
-				result.push( resp );
-
-				if( i == qty ){
-					
-					console.log( "RESOLVED" );
-
-					defObject.resolve(result);    //resolve promise and pass the response.
-
-
-				}
-			},
-			error: function(){
-				console.log("Error in AJAX");
-			}
-		});
-	
-	}
+	jQuery.ajax({
+		method: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: { 
+			action: "confirmAddConsign",
+			qty: qty,
+			year: year,
+			brand: brand,
+			player_name: player_name,
+			card_number: card_number,
+			attribute_sn: attribute_sn
+		},
+		success: function(resp){		
+			defObject.resolve(result);    //resolve promise and pass the response.
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
 
 		
 	return defObject.promise();
