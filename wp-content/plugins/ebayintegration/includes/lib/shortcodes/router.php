@@ -96,7 +96,9 @@
         case "consignment_v2":
 			print_r(  __DIR__ . '/members/consignment_v2.php');			
 
-			include(  __DIR__ . '/members/consignment_v2.php');			
+			// include(  __DIR__ . '/members/consignment_v2.php');	
+            
+            include "/var/www/fivestarcards/wp-content/plugins/ebayintegration/includes/lib/shortcodes/members/consignment_v2.php";
             break;
 
         case "hello":
