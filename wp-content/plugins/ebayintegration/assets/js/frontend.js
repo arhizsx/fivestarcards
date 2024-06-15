@@ -263,7 +263,7 @@ function confirmAddConsign(){
 
 				if( i == qty ){
 					
-					console.log( result );
+					console.log( "RESOLVED" );
 
 					defObject.resolve(result);    //resolve promise and pass the response.
 
