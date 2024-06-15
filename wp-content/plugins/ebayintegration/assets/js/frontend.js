@@ -191,7 +191,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when(card).done( function( x ){
 
-			console.log(x);
+			console.log(x[0]);
 
 
 
