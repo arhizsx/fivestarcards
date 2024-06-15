@@ -94,6 +94,7 @@
 
 
         case "consignment_v2":
+			print_r(  __DIR__ . '/members/consignment_v2.php');			
 
 			include(  __DIR__ . '/members/consignment_v2.php');			
             break;
