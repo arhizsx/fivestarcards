@@ -55,7 +55,7 @@
                         <option value="/my-account/consignment?mode=sold" <?php echo ActivateSelect("sold") ?>>Sold</option>
                     </select>
                 </div>
-                <div class="content p-3">
+                <div class="content px-3 py-0">
                     <?php 
                     if(isset( $_GET['mode']) ){
                         
