@@ -215,19 +215,24 @@ function confirmAddConsign(){
 	var defObject = $.Deferred();  // create a deferred object.
 
 	var qty = $(document).find(".log_consign_modal").find(".formbox").find("[name='qty']").val();
+	var result = [];
 
 	for(i = 1; i <= qty; i++ ){
 
 		console.log(i);
+
 		jQuery.ajax({
 			method: 'post',
 			url: "/wp-json/ebayintegration/v1/post",
 			data: { 
 				action: "confirmAddConsign"
 			},
-			success: function(resp){				
+			success: function(resp){		
+				
+				result.push( resp );
+
 				if( i == qty ){
-					defObject.resolve(resp);    //resolve promise and pass the response.
+					defObject.resolve(result);    //resolve promise and pass the response.
 				}
 			},
 			error: function(){
