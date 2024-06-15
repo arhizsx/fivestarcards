@@ -64,7 +64,7 @@
                         <input type="text" name="serial_number" class="form-control p-1">
                     </div>
                 </div>
-                <div class="d-none loading">
+                <div class="d-none p-5 text-center loading">
 
                     Adding card, please wait...
 
