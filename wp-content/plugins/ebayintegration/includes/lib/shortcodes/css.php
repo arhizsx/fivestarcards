@@ -115,13 +115,13 @@ function ActivateListing($page){
     }
 }
 function ActivateListingSelect($page){
-    if( isset( $_GET['mode']) == false ){
-        if( $page == "auction_items" ){
+    if( isset( $_GET['type']) == false ){
+        if( $page == "auction" ){
             return "selected";
         }
     } 
     else {
-        if( $page == $_GET['mode'] ){
+        if( $page == $_GET['type'] ){
             return "selected";
         } else {
             return "";
