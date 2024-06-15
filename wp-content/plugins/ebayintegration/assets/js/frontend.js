@@ -213,7 +213,17 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 						"<td class='text-end'>" + v.card_number + "</td>" +
 						"<td class='text-end'>" + v.attribute_sn + "</td>" +
 					"</tr>"
-				)
+				);
+
+				$(document).find("#new_consignment_mobile tbody").prepend(
+					"<tr>" +
+						"<div>" + v.player_name + "</div>" +
+						"<div>" + v.year + "</div>" +
+						"<div>" + v.brand + "</div>" +
+						"<div>" + v.card_number + "</div>" +
+						"<div>" + v.attribute_sn + "</div>" +
+					"</tr>"
+				);
 
 			} );
 
