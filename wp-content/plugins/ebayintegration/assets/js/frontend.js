@@ -191,11 +191,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when(card).done(function(card){
 
-			console.log( card );
-
 			$.each(card, function(k, v){
 
 
+				console.log( v )  ;
 				// $(document).find("#new_consignment").find("tbody").append(
 				// 	"<tr>" + 
 				// 		"<td>" + v.qty + "</td>" +
@@ -208,7 +207,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				// );	
 			});
 
-			console.log( card );
 			$(document).find(".log_consign_modal").find(".formbox").removeClass("d-none");
 			$(document).find(".log_consign_modal").find(".loading").addClass("d-none");
 
