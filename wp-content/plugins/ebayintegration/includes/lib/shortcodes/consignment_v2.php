@@ -39,7 +39,7 @@
                         <a class="" href="/my-account/consignment/?mode=consigned">Consigned</a>
                     </li>
                     <li class="<?php echo Activate("listings"); ?>">
-                        <a class="" href="/my-account/consignment/?mode=listings">Listings</a>
+                        <a class="" href="/my-account/consignment/?mode=listed">Listed</a>
                     </li>
                     <li class="<?php echo Activate("sold"); ?>">
                         <a class="" href="/my-account/consignment/?mode=sold">Sold</a>
@@ -51,7 +51,7 @@
                         <option value="/my-account/consignment" <?php echo ActivateSelect("new") ?>>New</option>
                         <option value="/my-account/consignment?mode=to-ship" <?php echo ActivateSelect("to-ship") ?>>To Ship</option>
                         <option value="/my-account/consignment?mode=consigned" <?php echo ActivateSelect("consigned") ?>>Consigned</option>
-                        <option value="/my-account/consignment?mode=listings" <?php echo ActivateSelect("listings") ?>>Listings</option>
+                        <option value="/my-account/consignment?mode=listed" <?php echo ActivateSelect("listings") ?>>Listed</option>
                         <option value="/my-account/consignment?mode=sold" <?php echo ActivateSelect("sold") ?>>Sold</option>
                     </select>
                 </div>
