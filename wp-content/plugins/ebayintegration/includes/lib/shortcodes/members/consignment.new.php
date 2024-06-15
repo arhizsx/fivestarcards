@@ -26,7 +26,7 @@
         </tbody>
     </table>
 </div>
-<div class="d-lg-none">
+<div class="d-lg-none pb-3">
     <table class="table table-sm table-bordered" id="new_consignment_mobile">
         <thead>
             <tr>
