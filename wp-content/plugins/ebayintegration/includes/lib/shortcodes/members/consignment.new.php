@@ -16,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr class="empty_consignment">
                 <td colspan="5" class="text-center py-5">
                     Empty
                 </td>

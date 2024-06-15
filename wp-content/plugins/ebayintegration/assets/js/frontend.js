@@ -191,6 +191,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when(card).done( function( card ){
 
+			$(document).find("#new_consignment tbody .empty_consignment").remove();
+			
 			$.each( card, function(k, v){
 
 				$(document).find("#new_consignment tbody").append(
