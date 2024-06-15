@@ -194,7 +194,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			$.each(card, function(k, v){
 
 
-				console.log( v )  ;
+				console.log( card )  ;
 				// $(document).find("#new_consignment").find("tbody").append(
 				// 	"<tr>" + 
 				// 		"<td>" + v.qty + "</td>" +
