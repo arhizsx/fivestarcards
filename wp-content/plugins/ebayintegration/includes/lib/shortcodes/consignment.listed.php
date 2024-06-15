@@ -11,11 +11,11 @@
         <div class="col">
             <label>Select Listing Status</label>
             <select class="form-control" id="mobile_tab_select">
-                <option value="/my-account/consignment/?mode=listed&type=auction" <?php echo ActivateListingSelect("new") ?>>Auction</option>
-                <option value="/my-account/consignment/?mode=listed&type=fixed_price" <?php echo ActivateListingSelect("to-ship") ?>>Fixed Price</option>
-                <option value="/my-account/consignment/?mode=listed&type=awaiting_payment" <?php echo ActivateListingSelect("consigned") ?>>Awaiting Payment</option>
-                <option value="/my-account/consignment/?mode=listed&type=pending_payout" <?php echo ActivateListingSelect("listed") ?>>Pending Payout</option>
-                <option value="/my-account/consignment/?mode=listed&type=paid_out" <?php echo ActivateListingSelect("sold") ?>>Paid Out</option>
+                <option value="/my-account/consignment/?mode=listed&type=auction" <?php echo ActivateListingSelect("auction") ?>>Auction</option>
+                <option value="/my-account/consignment/?mode=listed&type=fixed_price" <?php echo ActivateListingSelect("fixed_price") ?>>Fixed Price</option>
+                <option value="/my-account/consignment/?mode=listed&type=awaiting_payment" <?php echo ActivateListingSelect("awaiting_payment") ?>>Awaiting Payment</option>
+                <option value="/my-account/consignment/?mode=listed&type=pending_payout" <?php echo ActivateListingSelect("pending_payout") ?>>Pending Payout</option>
+                <option value="/my-account/consignment/?mode=listed&type=paid_out" <?php echo ActivateListingSelect("paid_out") ?>>Paid Out</option>
             </select>
 
         </div>
