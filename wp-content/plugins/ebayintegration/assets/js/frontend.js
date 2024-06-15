@@ -192,7 +192,18 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$.when(card).done( function( card ){
 
 			$.each( card, function(k, v){
-				console.log(v);
+
+				$(document).find("#new_consignment tbody").append(
+					"<tr>" +
+						"<td>" + v.qty + "</td>" +
+						"<td>" + v.year + "</td>" +
+						"<td>" + v.brand + "</td>" +
+						"<td>" + v.card_number + "</td>" +
+						"<td>" + v.player_name + "</td>" +
+						"<td>" + v.attribute_sn + "</td>" +
+					"</tr>"
+				)
+
 			} );
 
 
