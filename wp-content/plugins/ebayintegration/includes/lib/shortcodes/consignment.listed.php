@@ -2,11 +2,11 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-        <a class="btn btn-pill btn-primary" href="/my-account/consignment/?mode=listed&type=auction">Auction</a>
-        <a class="btn btn-pill btn-primary" href="/my-account/consignment/?mode=listed&type=fixed_price">Fixed Price</a>
-        <a class="btn btn-pill btn-primary" href="/my-account/consignment/?mode=listed&type=awaiting_payment">Awaiting Payment</a>
-        <a class="btn btn-pill btn-primary" href="/my-account/consignment/?mode=listed&type=pending_payout">Pending Payout</a>
-        <a class="btn btn-pill btn-primary" href="/my-account/consignment/?mode=listed&type=paid_out">Paid Out</a>
+        <a class="btn btn-pill btn-sm btn-primary" href="/my-account/consignment/?mode=listed&type=auction">Auction</a>
+        <a class="btn btn-pill btn-sm btn-primary" href="/my-account/consignment/?mode=listed&type=fixed_price">Fixed Price</a>
+        <a class="btn btn-pill btn-sm btn-primary" href="/my-account/consignment/?mode=listed&type=awaiting_payment">Awaiting Payment</a>
+        <a class="btn btn-pill btn-sm btn-primary" href="/my-account/consignment/?mode=listed&type=pending_payout">Pending Payout</a>
+        <a class="btn btn-pill btn-sm btn-primary" href="/my-account/consignment/?mode=listed&type=paid_out">Paid Out</a>
         </div>
     </div>
     <div class="row">
