@@ -219,11 +219,36 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				$(document).find("#new_consignment_mobile tbody").prepend(
 					"<tr>" +
 						"<td>" +
-							"<div>" + v.player_name + "</div>" +
-							"<div>" + v.year + "</div>" +
-							"<div>" + v.brand + "</div>" +
-							"<div>" + v.card_number + "</div>" +
-							"<div>" + v.attribute_sn + "</div>" +
+							"<div class='row'>" +
+								"<div class='col-3'>Player</div>" +
+								"<div class='col-9'>" +
+								 	v.player_name +									
+								"</div>" +
+							"</div>" +
+							"<div class='row'>" +
+								"<div class='col-3'>Year</div>" +
+								"<div class='col-9'>" +
+								 	v.year +									
+								"</div>" +
+							"</div>" +
+							"<div class='row'>" +
+								"<div class='col-3'>Brand</div>" +
+								"<div class='col-9'>" +
+								 	v.brand +									
+								"</div>" +
+							"</div>" +
+							"<div class='row'>" +
+								"<div class='col-3'>Card #</div>" +
+								"<div class='col-9'>" +
+								 	v.card_number +									
+								"</div>" +
+							"</div>" +
+							"<div class='row'>" +
+								"<div class='col-3'>Attribute SN</div>" +
+								"<div class='col-9'>" +
+								 	v.attribute_sn +									
+								"</div>" +
+							"</div>" +
 						"</td>" +
 					"</tr>"
 				);
