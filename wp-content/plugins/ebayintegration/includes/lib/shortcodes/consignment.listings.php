@@ -1,10 +1,4 @@
 
-<?php 
-
-    include( plugin_dir_path( __FILE__ ) . "css.php" );			
-
-?>
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
@@ -30,49 +24,5 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xl-12 col-lg-12">
-            <div class="shortcode_tab_box">
-                <ul class="clearfix d-none d-lg-block">
-                    <li class="<?php echo ActivateListing("auction_items"); ?>">
-                        <a class="" href="/my-account">Auction</a>
-                    </li>
-                    <li class="<?php echo ActivateListing("fixed_price_items"); ?>">
-                        <a class="" href="/my-account/?mode=fixed_price_items">Fixed Price</a>
-                    </li>
-                    <li class="<?php echo ActivateListing("awaiting_payment_items"); ?>">
-                        <a class="" href="/my-account/?mode=awaiting_payment_items">Awaiting Payment</a>
-                    </li>
-                    <li class="<?php echo ActivateListing("pending_payout_items"); ?>">
-                        <a class="" href="/my-account/?mode=pending_payout_items">Pending Payout</a>
-                    </li>
-                    <li class="<?php echo ActivateListing("paid_out"); ?>">
-                        <a class="" href="/my-account/?mode=paid_out">Paid Out</a>
-                    </li>
-                </ul>
-                <div class="d-lg-none p-3">
-                    <label>Select Listing Type / Status</label>
-                    <select class="form-control" id="mobile_tab_select">
-                        <option value="/my-account" <?php echo ActivateListingSelect("auction_items") ?>>Auction</option>
-                        <option value="/my-account/?mode=fixed_price_items" <?php echo ActivateListingSelect("fixed_price_items") ?>>Fixed Price</option>
-                        <option value="/my-account/?mode=awaiting_payment_items" <?php echo ActivateListingSelect("awaiting_payment_items") ?>>Awaiting Payment</option>
-                        <option value="/my-account/?mode=pending_payout_items" <?php echo ActivateListingSelect("pending_payout_items") ?>>Pending Payout</option>
-                        <option value="/my-account/?mode=paid_out" <?php echo ActivateListingSelect("paid_out") ?>>Paid Out</option>
-                    </select>
-                </div>
-                <div class="content p-3">
-                    <?php 
-                    if(isset( $_GET['mode']) ){
-                        include( plugin_dir_path( __FILE__ ) .  $_GET['mode'] . '.php' );			
-
-                    } else {
-                        include( plugin_dir_path( __FILE__ ) . 'auction_items.php' );			
-
-                    }
-                    ?>
-                </div>
-            </div>
-
-
-        </div>
     </div>
 </div>
