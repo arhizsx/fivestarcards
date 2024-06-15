@@ -189,12 +189,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".log_consign_modal").find(".loading").removeClass("d-none");
 		element.prop("disabled", "disabled");
 
-		$.when(card).done(function(card){
+		$.when(card).done( function( card ){
 
-			card.each(function(k, v){
+			$.each(card, function(k, v){
+				console.log( k )  ;
+			});
 
 
-				console.log( v )  ;
 				// $(document).find("#new_consignment").find("tbody").append(
 				// 	"<tr>" + 
 				// 		"<td>" + v.qty + "</td>" +
@@ -205,7 +206,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				// 		"<td>" + v.attribute_sn + "</td>" +
 				// 	"</tr>"
 				// );	
-			});
 
 			$(document).find(".log_consign_modal").find(".formbox").removeClass("d-none");
 			$(document).find(".log_consign_modal").find(".loading").addClass("d-none");
