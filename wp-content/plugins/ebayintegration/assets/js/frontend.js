@@ -219,7 +219,6 @@ function confirmAddConsign(){
 
 	for(i = 1; i <= qty; i++ ){
 
-		console.log(i);
 
 		jQuery.ajax({
 			method: 'post',
@@ -230,6 +229,7 @@ function confirmAddConsign(){
 			success: function(resp){		
 				
 				result.push( resp );
+				console.log(i);
 
 				if( i == qty ){
 					defObject.resolve(result);    //resolve promise and pass the response.
