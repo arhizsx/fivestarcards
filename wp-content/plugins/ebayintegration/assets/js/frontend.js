@@ -197,7 +197,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				$(document).find("#new_consignment tbody").prepend(
 					"<tr>" +
-						"<td><i class='fa-solid fa-circle-xmark'></i></td>" +
+						"<td><i class='fa-solid fa-2xl fa-circle-xmark'></i></td>" +
 						"<td>" + v.year + "</td>" +
 						"<td>" + v.brand + "</td>" +
 						"<td>" + v.player_name + "</td>" +
