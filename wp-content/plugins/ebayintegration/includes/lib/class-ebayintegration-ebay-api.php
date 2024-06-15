@@ -65,15 +65,23 @@ class Ebay_Integration_Ebay_API {
 	
 	 public function create_ebay_enpoint( ){
 
-		register_rest_route( '/ebayintegration/v1', '/ajax', array(
-			'methods' => 'GET',
-			'callback' => array( $this, 'handle_api_endpoint' )
-		) );        
+		register_rest_route( 
+			'/ebayintegration/v1', 
+			'ajax', 
+			array(
+				'methods' => 'GET',
+				'callback' => array( $this, 'handle_api_endpoint' )
+			) 
+		);        
 
-		register_rest_route( '/ebayintegration/v1', '/post', array(
-			'methods' => 'POST',
-			'callback' => array( $this, 'handle_api_post_endpoint' )
-		) );        
+		register_rest_route( 
+			'/ebayintegration/v1', 
+			'post', 
+			array(
+				'methods' => 'POST',
+				'callback' => array( $this, 'handle_api_post_endpoint' )
+			) 
+		);        
 
     }
 
