@@ -258,7 +258,7 @@ function confirmAddConsign(){
 			},
 			success: function(resp){		
 				
-				console.log( JSON.parse(resp) );
+				console.log( resp );
 
 				result.push( resp );
 
