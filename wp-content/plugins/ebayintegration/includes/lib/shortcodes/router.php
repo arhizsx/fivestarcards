@@ -74,17 +74,17 @@
 
         case "consignment":
 
-			include( plugin_dir_path( __FILE__ ) . 'members/consignment.php');			
+			include( plugin_dir_path( __FILE__ ) . 'consignment.php');			
             break;
 
         case "cashout":
 
-			include( plugin_dir_path( __FILE__ ) . 'members/cashout.php');			
+			include( plugin_dir_path( __FILE__ ) . 'cashout.php');			
             break;
 
         case "grading":
 
-			include( plugin_dir_path( __FILE__ ) . 'members/grading.php');			
+			include( plugin_dir_path( __FILE__ ) . 'grading.php');			
             break;
 
         case "listing":
@@ -95,7 +95,12 @@
 
         case "consignment_v2":
 
-            include( plugin_dir_path( __FILE__ ) . 'consignment_v2.php');			
+			include( plugin_dir_path( __FILE__ ) . 'consignment_v2.php');			
+            break;
+
+        case "hello":
+
+			include( plugin_dir_path( __FILE__ ) . 'hello.php');			
             break;
 
         case "administrator":
