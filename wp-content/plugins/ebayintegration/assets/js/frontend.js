@@ -191,11 +191,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when(card).done( function( cards ){
 
-			$.each( cards, function( k, v ){
+			console.log( cards );
 
-				console.log( card[ k ] );
-
-			} );
 
 
 				// $(document).find("#new_consignment").find("tbody").append(
