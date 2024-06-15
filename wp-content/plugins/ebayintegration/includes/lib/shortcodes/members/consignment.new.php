@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th style="width: 20px;"></th>
+                <th style="width: 20px;"></th>
                 <th>Year</th>
                 <th>Brand</th>
                 <th>Player Name</th>
