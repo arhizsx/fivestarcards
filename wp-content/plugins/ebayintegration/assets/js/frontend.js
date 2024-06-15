@@ -187,6 +187,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$(document).find(".log_consign_modal").find(".formbox").addClass("d-none");
 		$(document).find(".log_consign_modal").find(".loading").removeClass("d-none");
+		element.attr("disabled", "disabled");
 
 		$.when(card).done(function(response){
 
@@ -194,6 +195,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			$(document).find(".log_consign_modal").find(".formbox").removeClass("d-none");
 			$(document).find(".log_consign_modal").find(".loading").addClass("d-none");
 
+			element.attr("disabled", "");
 	
 		});
 	
