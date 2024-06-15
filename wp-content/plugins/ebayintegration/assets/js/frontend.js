@@ -20,6 +20,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	e.preventDefault();
 
+	let element = $(this);
+
 	// /////////////////// //
 	//  eBay API buttons   //
 	// /////////////////// //
@@ -181,27 +183,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	else if( jQuery(this).data("action") == "confirmAddConsign" ){
 
+		var card = confirmAddConsign();
 
-		var defObject = $.Deferred();  // create a deferred object.
+		$.when(card).done(function(response){
 
-		jQuery.ajax({
-			method: 'post',
-			url: "/wp-json/ebayintegration/v1/post",
-			data: { 
-				action: "confirmAddConsign"
-			},
-			success: function(resp){
+			console.log( response );
 	
-				defObject.resolve(resp);    //resolve promise and pass the response.
-	
-			},
-			error: function(){
-				console.log("Error in AJAX");
-			}
 		});
-	
-		return defObject.promise();
-	
 	
 	}
 
@@ -213,6 +201,30 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	
 });
 
+
+function confirmAddConsign(){
+
+	var defObject = $.Deferred();  // create a deferred object.
+
+	jQuery.ajax({
+		method: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: { 
+			action: "confirmAddConsign"
+		},
+		success: function(resp){
+	
+			defObject.resolve(resp);    //resolve promise and pass the response.
+	
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+		
+	return defObject.promise();
+	
+}
 
 
 
