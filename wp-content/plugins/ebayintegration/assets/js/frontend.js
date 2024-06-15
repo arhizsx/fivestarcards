@@ -189,19 +189,22 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".log_consign_modal").find(".loading").removeClass("d-none");
 		element.prop("disabled", "disabled");
 
-		$.when(card).done(function(response){
+		$.when(card).done(function(card){
 
-			$.each(response, function(k, v){
-				$(document).find("#new_consignment").find("tbody").append(
-					"<tr>" + 
-						"<td>" + v.qty + "</td>" +
-						"<td>" + v.year + "</td>" +
-						"<td>" + v.brand + "</td>" +
-						"<td>" + v.card_number + "</td>" +
-						"<td>" + v.player_name + "</td>" +
-						"<td>" + v.attribute_sn + "</td>" +
-					"</tr>"
-				);	
+			$.each(card, function(k, v){
+
+				console.log(v);
+
+				// $(document).find("#new_consignment").find("tbody").append(
+				// 	"<tr>" + 
+				// 		"<td>" + v.qty + "</td>" +
+				// 		"<td>" + v.year + "</td>" +
+				// 		"<td>" + v.brand + "</td>" +
+				// 		"<td>" + v.card_number + "</td>" +
+				// 		"<td>" + v.player_name + "</td>" +
+				// 		"<td>" + v.attribute_sn + "</td>" +
+				// 	"</tr>"
+				// );	
 			});
 
 			console.log( response );
