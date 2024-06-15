@@ -62,8 +62,6 @@
                         include( plugin_dir_path( __FILE__ ) . "consignment." . $_GET['mode'] . '.php' );			
 
                     } else {
-                        die();
-                        print_r(  plugin_dir_path( __FILE__ ) );
                         include( plugin_dir_path( __FILE__ ) . 'consignment.new.php' );			
 
                     }
