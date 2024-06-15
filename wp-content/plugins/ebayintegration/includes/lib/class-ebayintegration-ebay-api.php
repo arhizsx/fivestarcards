@@ -214,10 +214,17 @@ class Ebay_Integration_Ebay_API {
 
 	public function handle_api_post_endpoint( $data ){
 
-		
+
 		$params = $data->get_params();
 
-		return $params;
+		$result = [];
+
+		for( $i=0; $i < $params["qty"]; $i++ ){
+			$result[] = $params;
+		}
+
+
+		return $result;
 		
 	}
 
