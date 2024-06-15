@@ -38,7 +38,7 @@
 				</button>
 			</div>
             <div class="modal-body py-2 px-3">
-                <div class="row">
+                <div class="row formbox">
                     <div class="col-sm-6">
                         <label>Qty</label>
                         <input type="number" name="qty" class="form-control">
@@ -63,6 +63,11 @@
                         <label>Attribute S/N</label>
                         <input type="text" name="serial_number" class="form-control p-1">
                     </div>
+                </div>
+                <div class="d-none loading">
+
+                    Please wait...
+
                 </div>
             </div>
             <div class="modal-footer">
