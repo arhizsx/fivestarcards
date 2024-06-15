@@ -192,7 +192,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$.when(card).done( function( card ){
 
 			$.each(card, function(k, v){
-				console.log( k )  ;
+				console.log( v )  ;
 			});
 
 
