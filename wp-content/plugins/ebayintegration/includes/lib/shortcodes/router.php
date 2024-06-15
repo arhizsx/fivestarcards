@@ -74,7 +74,9 @@
 
         case "consignment":
 
-			include( plugin_dir_path( __FILE__ ) . '/members/consignment.php');			
+			include( plugin_dir_path( __FILE__ ) . '/members/consignment.php');	
+             print_r( plugin_dir_path( __FILE__ ))   ;
+            die();
             break;
 
         case "cashout":
