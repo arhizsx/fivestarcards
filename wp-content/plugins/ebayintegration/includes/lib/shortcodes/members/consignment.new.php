@@ -45,23 +45,23 @@
                     </div>
                     <div class="col-6">
                         <label>Year</label>
-                        <input type="number" name="year" class="form-control">
+                        <input type="number" name="year" class="form-control" value="2000">
                     </div>
                     <div class="col-md-12">
                         <label>Brand</label>
-                        <input type="text" name="brand" class="form-control p-1">
+                        <input type="text" name="brand" class="form-control p-1" value="brand">
                     </div>
                     <div class="col-md-12">
                         <label>Player Name</label>
-                        <input type="text" name="player_name" class="form-control p-1">
+                        <input type="text" name="player_name" class="form-control p-1" value="player1">
                     </div>
                     <div class="col-sm-6">
                         <label>Card Number</label>
-                        <input type="text" name="card_number" class="form-control p-1">
+                        <input type="text" name="card_number" class="form-control p-1" value="CN1100">
                     </div>
                     <div class="col-sm-6">
                         <label>Attribute S/N</label>
-                        <input type="text" name="attribute_sn" class="form-control p-1">
+                        <input type="text" name="attribute_sn" class="form-control p-1" value="SN0011SS">
                     </div>
                 </div>
                 <div class="d-none p-5 text-center loading">
