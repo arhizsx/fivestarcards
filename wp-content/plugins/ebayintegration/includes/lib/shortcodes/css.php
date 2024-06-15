@@ -101,16 +101,16 @@ function ActivateSelect($page){
 
 
 function ActivateListing($page){
-    if( isset( $_GET['mode']) == false ){
-        if( $page == "auction_items" ){
-            return "active";
+    if( isset( $_GET['type']) == false ){
+        if( $page == "auction" ){
+            return "btn-primary";
         }
     } 
     else {
-        if( $page == $_GET['mode'] ){
-            return "active";
+        if( $page == $_GET['type'] ){
+            return "btn-primary";
         } else {
-            return "";
+            return "btn-secondary";
         }
     }
 }
