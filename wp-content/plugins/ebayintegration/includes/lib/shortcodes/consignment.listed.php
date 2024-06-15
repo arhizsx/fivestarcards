@@ -9,7 +9,7 @@
                 <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("pending_payout") ?>" href="/my-account/consignment/?mode=listed&type=pending_payout">Pending Payout</a>
                 <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("paid_out") ?>" href="/my-account/consignment/?mode=listed&type=paid_out">Paid Out</a>
             </div>
-            <div class="col d-lg-none p-3">
+            <div class="col d-lg-none">
                 <label>Select Listing Status</label>
                 <select class="form-control" id="mobile_tab_select">
                     <option value="/my-account/consignment/?mode=listed&type=auction" <?php echo ActivateListingSelect("auction") ?>>Auction</option>
