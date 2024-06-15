@@ -195,7 +195,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 			$.each( card, function(k, v){
 
-				$(document).find("#new_consignment tbody").append(
+				$(document).find("#new_consignment tbody").prepend(
 					"<tr>" +
 						"<td>X</td>" +
 						"<td>" + v.year + "</td>" +
