@@ -214,21 +214,29 @@ function confirmAddConsign(){
 
 	var defObject = $.Deferred();  // create a deferred object.
 
-	jQuery.ajax({
-		method: 'post',
-		url: "/wp-json/ebayintegration/v1/post",
-		data: { 
-			action: "confirmAddConsign"
-		},
-		success: function(resp){
+	var qty = $(document).find(".log_consign_modal").find(".formbox").find("[name='qty']").val();
+
+	for(i = 0; i < qty; i++ ){
+
+
+		jQuery.ajax({
+			method: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: { 
+				action: "confirmAddConsign"
+			},
+			success: function(resp){				
+				if( i == qty ){
+					defObject.resolve(resp);    //resolve promise and pass the response.
+				}
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});
 	
-			defObject.resolve(resp);    //resolve promise and pass the response.
-	
-		},
-		error: function(){
-			console.log("Error in AJAX");
-		}
-	});
+	}
+
 		
 	return defObject.promise();
 	
