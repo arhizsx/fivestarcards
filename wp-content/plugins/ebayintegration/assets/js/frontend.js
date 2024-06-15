@@ -190,6 +190,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		element.prop("disabled", "disabled");
 
 		$.when(card).done( function( cards ){
+			console.log( cards.length );
 
 			for( i=0; i < cards.length; i++ ){
 				$(document).find("#new_consignment tbody").append(
