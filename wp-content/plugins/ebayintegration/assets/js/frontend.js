@@ -258,12 +258,16 @@ function confirmAddConsign(){
 			},
 			success: function(resp){		
 				
-				console.log( resp );
 
 				result.push( resp );
 
 				if( i == qty ){
+					
+					console.log( result );
+
 					defObject.resolve(result);    //resolve promise and pass the response.
+
+
 				}
 			},
 			error: function(){
