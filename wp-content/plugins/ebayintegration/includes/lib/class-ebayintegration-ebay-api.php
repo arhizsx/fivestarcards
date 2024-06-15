@@ -213,8 +213,11 @@ class Ebay_Integration_Ebay_API {
 
 
 	public function handle_api_post_endpoint( $data ){
+
 		
-		return $data;
+		$params = $data->get_params();
+
+		return $params;
 		
 	}
 
