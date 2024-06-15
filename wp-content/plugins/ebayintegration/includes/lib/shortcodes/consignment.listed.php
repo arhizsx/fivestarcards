@@ -16,7 +16,7 @@
                 include( plugin_dir_path( __FILE__ ) . "consignment.listed." . $_GET['type'] . '.php' );			
 
             } else {
-                include( plugin_dir_path( __FILE__ ) . 'consignment.listed.new.php' );			
+                include( plugin_dir_path( __FILE__ ) . 'consignment.listed.auction.php' );			
 
             }
             ?>
