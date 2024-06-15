@@ -5,7 +5,7 @@
     Ship Batch
 </button>
 <div class="table-responsive">
-    <table class="table table-sm table-bordered">
+    <table class="table table-sm table-bordered" id="new_consignment">
         <thead>
             <tr>
                 <th>Qty</th>
