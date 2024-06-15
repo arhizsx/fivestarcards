@@ -218,7 +218,7 @@ function confirmAddConsign(){
 
 	for(i = 1; i <= qty; i++ ){
 
-
+		console.log(i);
 		jQuery.ajax({
 			method: 'post',
 			url: "/wp-json/ebayintegration/v1/post",
