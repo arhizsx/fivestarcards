@@ -38,7 +38,7 @@
                     <li class="<?php echo Activate("consigned"); ?>">
                         <a class="" href="/my-account/consignment/?mode=consigned">Consigned</a>
                     </li>
-                    <li class="<?php echo Activate("my-listings"); ?>">
+                    <li class="<?php echo Activate("listings"); ?>">
                         <a class="" href="/my-account/consignment/?mode=listings">Listings</a>
                     </li>
                     <li class="<?php echo Activate("sold"); ?>">
