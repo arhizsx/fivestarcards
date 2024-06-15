@@ -39,11 +39,11 @@
 			</div>
             <div class="modal-body py-2 px-3">
                 <div class="row formbox">
-                    <div class="col-xs-6">
+                    <div class="col-6">
                         <label>Qty</label>
                         <input type="number" name="qty" class="form-control">
                     </div>
-                    <div class="col-xs-6">
+                    <div class="col-6">
                         <label>Year</label>
                         <input type="number" name="year" class="form-control">
                     </div>
