@@ -116,3 +116,5 @@
 		</div>
 	</div>
 </div>
+
+https://5starcards.com/wp-json/cards-grading/v1/add-card

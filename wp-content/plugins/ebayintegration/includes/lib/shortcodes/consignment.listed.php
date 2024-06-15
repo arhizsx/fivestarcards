@@ -17,7 +17,7 @@
 
             } else {
                 include( plugin_dir_path( __FILE__ ) . 'consignment.listed.auction.php' );			
-
+ 
             }
             ?>
 

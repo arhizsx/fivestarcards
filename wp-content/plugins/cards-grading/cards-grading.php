@@ -758,7 +758,7 @@
         }
 
         $user_id = get_current_user_id();
-        $user = get_user_by( "id", $user_id );
+        $user = get_user_by( "id", $user_id ); 
 
 
         $post_id = wp_insert_post([

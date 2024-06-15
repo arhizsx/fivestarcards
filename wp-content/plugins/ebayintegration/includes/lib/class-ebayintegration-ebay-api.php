@@ -70,6 +70,11 @@ class Ebay_Integration_Ebay_API {
 			'callback' => array( $this, 'handle_api_endpoint' )
 		) );        
 
+		register_rest_route( '/ebayintegration/v1', '/post', array(
+			'methods' => 'POST',
+			'callback' => array( $this, 'handle_api_post_endpoint' )
+		) );        
+
     }
 
 	public function handle_api_endpoint($data){
@@ -197,6 +202,14 @@ class Ebay_Integration_Ebay_API {
 		}
 	
 	}
+
+
+	public function handle_api_post_endpoint( $data ){
+		
+		return $data;
+		
+	}
+
 
 	public function GetItemPages(){
 
