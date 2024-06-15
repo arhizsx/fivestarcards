@@ -220,7 +220,14 @@ class Ebay_Integration_Ebay_API {
 		$result = [];
 
 		for( $i=0; $i < $params["qty"]; $i++ ){
-			$result[] = $params;
+			$result[] = [
+				"qty" => 1,
+				"year" => $params["year"],
+				"brand" => $params["brand"],
+				"card_number" => $params["card_number"],
+				"player_name" => $params["player_name"],
+				"attribute_sn" => $params["attribute_sn"],
+			];
 		}
 
 
