@@ -218,6 +218,7 @@ function confirmAddConsign(){
 
 	for(i = 0; i < qty; i++ ){
 
+		console.log( i );
 
 		jQuery.ajax({
 			method: 'post',
