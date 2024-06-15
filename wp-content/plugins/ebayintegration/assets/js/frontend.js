@@ -192,19 +192,18 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$.when(card).done( function( cards ){
 
 			for( i=0; i < cards.length; i++ ){
-				console.log( cards[ i ] );
+				$(document).find("#new_consignment tbody").append(
+					"<tr>" + 
+						"<td>" + cards[ i ].qty + "</td>" +
+						"<td>" + cards[ i ].year + "</td>" +
+						"<td>" + cards[ i ].brand + "</td>" +
+						"<td>" + cards[ i ].card_number + "</td>" +
+						"<td>" + cards[ i ].player_name + "</td>" +
+						"<td>" + cards[ i ].attribute_sn + "</td>" +
+					"</tr>"
+				);	
 			}
 
-				// $(document).find("#new_consignment").find("tbody").append(
-				// 	"<tr>" + 
-				// 		"<td>" + v.qty + "</td>" +
-				// 		"<td>" + v.year + "</td>" +
-				// 		"<td>" + v.brand + "</td>" +
-				// 		"<td>" + v.card_number + "</td>" +
-				// 		"<td>" + v.player_name + "</td>" +
-				// 		"<td>" + v.attribute_sn + "</td>" +
-				// 	"</tr>"
-				// );	
 
 			$(document).find(".log_consign_modal").find(".formbox").removeClass("d-none");
 			$(document).find(".log_consign_modal").find(".loading").addClass("d-none");
