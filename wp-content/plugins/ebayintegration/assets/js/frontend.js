@@ -217,7 +217,7 @@ function confirmAddConsign(){
 	var qty = parseInt( $(document).find(".log_consign_modal").find(".formbox").find("[name='qty']").val() );
 	var result = [];
 
-	for(i = 0; i <= qty; i++ ){
+	for(i = 0; i < qty; i++ ){
 
 
 		jQuery.ajax({
