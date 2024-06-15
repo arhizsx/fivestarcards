@@ -66,7 +66,7 @@
                 </div>
                 <div class="d-none loading">
 
-                    Please wait...
+                    Adding card, please wait...
 
                 </div>
             </div>
