@@ -41,7 +41,7 @@
                 <div class="row formbox">
                     <div class="col-6">
                         <label>Qty</label>
-                        <input type="number" name="qty" class="form-control" value="1">
+                        <input type="number" name="qty" class="form-control" value="3">
                     </div>
                     <div class="col-6">
                         <label>Year</label>
