@@ -11,8 +11,8 @@
                 <th>Year</th>
                 <th>Brand</th>
                 <th>Player Name</th>
-                <th>Card Number</th>
-                <th>Attribute S/N</th>
+                <th class="text-end">Card Number</th>
+                <th class="text-end">Attribute S/N</th>
             </tr>
         </thead>
         <tbody>

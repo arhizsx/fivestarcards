@@ -200,8 +200,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 						"<td>" + v.year + "</td>" +
 						"<td>" + v.brand + "</td>" +
 						"<td>" + v.player_name + "</td>" +
-						"<td>" + v.card_number + "</td>" +
-						"<td>" + v.attribute_sn + "</td>" +
+						"<td class='text-end'>" + v.card_number + "</td>" +
+						"<td class='text-end'>" + v.attribute_sn + "</td>" +
 					"</tr>"
 				)
 
