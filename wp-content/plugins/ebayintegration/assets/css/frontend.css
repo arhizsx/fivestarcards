@@ -7,3 +7,8 @@ label {
 .ebayintegration-btn {
     cursor: pointer;
 }
+
+.mobile-label {
+    font-size: .7em;
+    color: gray;
+}
