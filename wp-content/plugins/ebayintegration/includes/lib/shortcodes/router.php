@@ -95,7 +95,7 @@
 
         case "consignment_v2":
 
-            print_r( file_exists( plugin_dir_path( __FILE__ ) . 'members/consignment_v2.php' ) );
+            print_r(  __DIR__  );
 			include( plugin_dir_path( __FILE__ ) . 'members/consignment_v2.php');			
             break;
 
