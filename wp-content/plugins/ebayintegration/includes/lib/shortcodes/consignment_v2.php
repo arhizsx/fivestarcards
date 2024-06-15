@@ -59,10 +59,10 @@
                     <?php 
                     if(isset( $_GET['mode']) ){
                         
-                        include( plugin_dir_path( __FILE__ ) . "consignment." . $_GET['mode'] . '.php' );			
+                        include( plugin_dir_path( __FILE__ ) . "members/consignment." . $_GET['mode'] . '.php' );			
 
                     } else {
-                        include( plugin_dir_path( __FILE__ ) . 'consignment.new.php' );			
+                        include( plugin_dir_path( __FILE__ ) . 'members/consignment.new.php' );			
 
                     }
                     ?>
