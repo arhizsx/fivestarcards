@@ -190,20 +190,23 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		element.prop("disabled", "disabled");
 
 		$.when(card).done( function( cards ){
-			console.log( JSON.parse(cards));
 
-			for( i=0; i < cards.length; i++ ){
-				$(document).find("#new_consignment tbody").append(
-					"<tr>" + 
-						"<td>" + cards[ i ].qty + "</td>" +
-						"<td>" + cards[ i ].year + "</td>" +
-						"<td>" + cards[ i ].brand + "</td>" +
-						"<td>" + cards[ i ].card_number + "</td>" +
-						"<td>" + cards[ i ].player_name + "</td>" +
-						"<td>" + cards[ i ].attribute_sn + "</td>" +
-					"</tr>"
-				);	
+			for( var key in cards ){
+				console.log( cards["key "]);
 			}
+
+			// for( i=0; i < cards.length; i++ ){
+			// 	$(document).find("#new_consignment tbody").append(
+			// 		"<tr>" + 
+			// 			"<td>" + cards[ i ].qty + "</td>" +
+			// 			"<td>" + cards[ i ].year + "</td>" +
+			// 			"<td>" + cards[ i ].brand + "</td>" +
+			// 			"<td>" + cards[ i ].card_number + "</td>" +
+			// 			"<td>" + cards[ i ].player_name + "</td>" +
+			// 			"<td>" + cards[ i ].attribute_sn + "</td>" +
+			// 		"</tr>"
+			// 	);	
+			// }
 
 
 			$(document).find(".log_consign_modal").find(".formbox").removeClass("d-none");
