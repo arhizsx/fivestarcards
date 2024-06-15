@@ -235,7 +235,7 @@ function confirmAddConsign(){
 			attribute_sn: attribute_sn
 		},
 		success: function(resp){		
-			defObject.resolve(result);    //resolve promise and pass the response.
+			defObject.resolve(resp);    //resolve promise and pass the response.
 		},
 		error: function(){
 			console.log("Error in AJAX");
