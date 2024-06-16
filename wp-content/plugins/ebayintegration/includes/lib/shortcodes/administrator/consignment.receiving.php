@@ -7,8 +7,7 @@ if( ! isset( $_GET['type'] ) ){
     $consignment = $this->wpdb->get_results ( "
         SELECT * 
         FROM consignment
-        where user_id = " . get_current_user_id() . " 
-        and status = 'shipped'
+        where status = 'shipped'
         order by order_id desc, id desc
         "
     );
