@@ -299,7 +299,7 @@ function confirmConsignCardsShipping(){
 	var shipping_date = $(document).find(".ship_batch_modal").find(".formbox").find("[name='shipping_date']").val();
 
 
-	console.log(user_id);
+	console.log($(document).find(".ship_batch_modal").find(".formbox").find("[name='user_id']").val());
 
 	jQuery.ajax({
 		method: 'post',
