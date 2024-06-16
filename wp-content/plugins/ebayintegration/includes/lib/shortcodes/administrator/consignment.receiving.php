@@ -69,7 +69,7 @@ if( $show == "cards" ){
             ?>
             <tr>
                 <td>-</td>
-                <td><?php echo $card->order_id ?></td>
+                <td><?php echo $card->order_id + 1000 ?></td>
                 <td><?php echo $data["year"] ?></td>
                 <td><?php echo $data["brand"] ?></td>
                 <td><?php echo $data["player_name"] ?></td>
