@@ -6,9 +6,6 @@
 ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 text-black">
-            <H3 style="color: black;">Consignment</H3>
-        </div>
         <div class="col-12">
             <a href="/my-account/grading" class="5star_btn btn text-left  btn-secondary mb-3">
                 <i class="fa-solid fa-circle-dot me-2"></i>                
