@@ -45,9 +45,9 @@ where user_id = " . get_current_user_id()
                         $data = json_decode( $card->data, true );
 
             ?>
-            <tr class='consigned_item_row' data-id=''>
+            <tr class='consigned_item_row' data-id='<?php echo $data["id"] ?>'>
                 <td>
-                    <a class='text-dark consigned_item_view' data-id='' href='#'>
+                    <a class='text-dark consigned_item_view' data-id='<?php echo $data["id"] ?>' href='#'>
                         <i class='fa-solid fa-xl fa-bars'></i>
                     </a>
                 </td>
