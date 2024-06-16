@@ -84,7 +84,10 @@ if( $show == "cards" ){
                         $data = json_decode( $card->data, true );
             ?>
             <tr>
-                <td><?php echo $card->display_name ?></td>
+                <td>
+                    <div><?php echo $card->display_name ?></div>
+                    <div class="small"><?php echo $card->user_email ?></div>
+                </td>
                 <td><?php echo $card->order_id + 1000 ?></td>
                 <td><?php echo $data["year"] ?></td>
                 <td><?php echo $data["brand"] ?></td>
