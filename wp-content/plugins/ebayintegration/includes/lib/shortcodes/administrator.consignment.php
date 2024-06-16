@@ -60,7 +60,7 @@
                         include( plugin_dir_path( __FILE__ ) . "administrator/consignment." . $_GET['mode'] . '.php' );			
 
                     } else {
-                        include( plugin_dir_path( __FILE__ ) . 'members/consignment.receiving.php' );			
+                        include( plugin_dir_path( __FILE__ ) . 'administrator/consignment.receiving.php' );			
 
                     }
                     ?>
