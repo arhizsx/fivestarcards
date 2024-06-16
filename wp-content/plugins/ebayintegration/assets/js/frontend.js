@@ -293,7 +293,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	else if( jQuery(this).data("action") == "removeConsignedCardRow" ){
 
 		var card = removeConsignedCardRow();
-		var old_html = element.html();
+		let old_html = element.html();
 		
 		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
 
