@@ -168,7 +168,7 @@ if( ! isset( $_GET['type'] ) ){
                         </div>
                     </div>
                     <div class='row'>
-                        <div class='small text-secondary col-md-4'>Year</div>
+                        <div class='small text-secondary col-sm-4'>Year</div>
                         <div class='col-sm-8'>
                             <?php echo $data["year"] ?>
                         </div>
