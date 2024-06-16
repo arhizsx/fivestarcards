@@ -208,16 +208,16 @@ order by id desc
             <div class="modal-body py-2 px-3">
                 <div class="row">
                     <div class="col-12 small">
-                        <p>USPS</p>
-                        <p>Matt Sellers</p>
-                        <p>PO Box 263 Hartland, WI 53029</p>
+                        <div>USPS</div>
+                        <div>Matt Sellers</div>
+                        <div>PO Box 263 Hartland, WI 53029</div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 small">
-                        <p>FedEx / UPS / DHL</p>
-                        <p>Matt Sellers</p>
-                        <p>203 E Wisconsin Ave Suite 203COconomowoc, WI 53066</p>
+                        <div>FedEx / UPS / DHL</div>
+                        <div>Matt Sellers</div>
+                        <div>203 E Wisconsin Ave Suite 203COconomowoc, WI 53066</div>
                     </div>
                 </div>
 
