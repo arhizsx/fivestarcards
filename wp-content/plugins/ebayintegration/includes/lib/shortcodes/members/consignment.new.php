@@ -206,6 +206,22 @@ order by id desc
 				</button>
 			</div>
             <div class="modal-body py-2 px-3">
+                <div class="row">
+                    <div class="col-12 small">
+                        USPS
+                        Matt Sellers
+                        PO Box 263
+                        Hartland, WI 53029
+                    </div>
+                    <div class="col-12 small">
+                        FedEx / UPS / DHL
+                        Matt Sellers
+                        203 E Wisconsin Ave
+                        Suite 203C
+                        Oconomowoc, WI 53066
+                    </div>
+                </div>
+
                 <forn id="shipping_info_form">
 
                         <input type="hidden" name="user_id" value="1">
