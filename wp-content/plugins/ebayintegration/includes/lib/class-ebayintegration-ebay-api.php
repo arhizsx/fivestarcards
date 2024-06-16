@@ -246,7 +246,8 @@ class Ebay_Integration_Ebay_API {
 		$result = [];
 
 		for( $i=0; $i < $params["qty"]; $i++ ){
-			$result[] = [
+
+			$data = [
 				"qty" => 1,
 				"year" => $params["year"],
 				"brand" => $params["brand"],
@@ -254,6 +255,22 @@ class Ebay_Integration_Ebay_API {
 				"player_name" => $params["player_name"],
 				"attribute_sn" => $params["attribute_sn"],
 			];
+
+			$user_id = get_current_user_id(); 
+
+			$lastid = $this->wpdb->insert(
+						'consignment',
+						array(
+							'user_id' => $user_id,
+							"data" => $data,
+						)
+					)->insert_id;
+			
+			$data["id"] = $lastid;
+
+			$result[] = $data;
+
+
 		}
 
 
