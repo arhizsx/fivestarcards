@@ -29,7 +29,6 @@ if( ! isset( $_GET['type'] ) ){
     $orders = $this->wpdb->get_results ( "
         SELECT * 
         FROM consignment_orders
-        where user_id = " . get_current_user_id() . " 
         order by id desc
         "
     );
@@ -121,11 +120,23 @@ if( $show == "cards" ){
             </tr>
         </thead>
         <tbody>
+            <?php 
+                if( count( $orders ) == 0 ){
+            ?>
             <tr>
                 <td colspan="6" class="text-center py-5">
                     Empty
                 </td>
             </tr>
+            <?php 
+                } else {
+                    foreach( $orders as $order ) {
+                        $data = json_decode( $order->data, true );
+            ?>
+            <?php
+                    }
+                } 
+            ?>
         </tbody>
     </table>
 </div>
