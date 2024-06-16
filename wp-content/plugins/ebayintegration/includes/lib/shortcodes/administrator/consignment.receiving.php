@@ -116,7 +116,7 @@ if( $show == "cards" ){
                 <th>Tracking Number</th>
                 <th>Shipping Date</th>
                 <th>Status</th>
-                <th>Action</th>
+                <th class="fit">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -141,7 +141,7 @@ if( $show == "cards" ){
                     <td><?php echo $data["tracking_number"]; ?></td>
                     <td><?php echo $data["shipping_date"]; ?></td>
                     <td><?php echo $order->status; ?></td>
-                    <td>-</td>
+                    <td class="fit">-</td>
                 </tr>
             <?php
                     }
