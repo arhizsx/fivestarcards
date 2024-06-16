@@ -10,19 +10,27 @@ and status = 'shipped'
 order by order_id desc, id desc
 "
 );
-
+if( ! isset( $_GET['type'] ) ){
+    $show = "cards";
+    $btn_cards = 'btn-primary';
+    $btn_orders = 'btn-secondary';
+} else {
+    $show = "orders";
+    $btn_cards = 'btn-secondary';
+    $btn_orders = 'btn-primary';
+}
 ?>
+
 <div class="row">
     <div class="col">
-        <a class="btn btn-pill btn-sm mb-2 btn-primary" href="/my-account/consignment/?mode=to-ship">Cards</a>
-        <a class="btn btn-pill btn-sm mb-2 btn-secondary" href="/my-account/consignment/?mode=to-ship&type=orders">Orders</a>
+        <a class="btn btn-pill btn-sm mb-2 <?php echo $btn_cards; ?>" href="/my-account/consignment/?mode=to-ship">Cards</a>
+        <a class="btn btn-pill btn-sm mb-2 <?php echo $btn_orders; ?>" href="/my-account/consignment/?mode=to-ship&type=orders">Orders</a>
     </div>
 </div>
 
 <?php 
-    if( ! isset( $_GET['type'] ) ){
+    if( $show == 'cards' ){
 ?>
-
 <div class="table-responsive">
     <table class="table table-sm table-bordered">
         <thead>
