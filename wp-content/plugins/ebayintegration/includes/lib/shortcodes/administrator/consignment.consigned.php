@@ -14,9 +14,9 @@ if( ! isset( $_GET['type'] ) ){
 
     $consignment = $this->wpdb->get_results ( "
 		SELECT 
-        consignment.*,
-        wp_users.user_email,
-        wp_users.display_name
+            consignment.*,
+            wp_users.user_email,
+            wp_users.display_name
         FROM consignment
         	INNER JOIN wp_users
             ON consignment.user_id = wp_users.ID
@@ -31,8 +31,13 @@ if( ! isset( $_GET['type'] ) ){
 } else {
 
     $orders = $this->wpdb->get_results ( "
-        SELECT * 
+        SELECT
+            consignment_orders.*,
+            wp_users.user_email,
+            wp_users.display_name
         FROM consignment_orders
+        	INNER JOIN wp_users
+            ON consignment_orders.user_id = wp_users.ID
         where status = 'received'
         order by id desc
         "
