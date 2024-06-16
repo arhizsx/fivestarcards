@@ -199,7 +199,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				$(document).find("#new_consignment tbody").prepend(
 					"<tr>" +
 						"<td>" +
-							"<a class='text-primary' href='#'>" +
+							"<a class='text-dark' href='#'>" +
 								"<i class='fa-solid fa-xl fa-bars'></i>" + 
 							"</a>" +
 						"</td>" +
@@ -216,7 +216,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 						"<td>" +
 							"<div class='row'>" +
 								"<div class='col-12 text-end'>" + 
-									"<a class='text-primary me-4' href='#'>" +
+									"<a class='text-dark me-4' href='#'>" +
 										"<i class='fa-solid fa-xl fa-bars'></i>" + 
 									"</a>" +
 								"</div>" +
