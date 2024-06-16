@@ -267,6 +267,20 @@ class Ebay_Integration_Ebay_API {
 		$data["order_id"] = $lastid;
 		$data["user_id"] = $user_id;
 
+
+		$this->wpdb->update(
+			'consignment', 
+			array(
+				'data'=> json_encode($data), 
+				'status'=> "shipped",
+			), 
+			array(
+				'user_id' => $user_id,
+				'status' => "logged",
+			)
+		);		
+
+
 		return $data;
 
 	}
