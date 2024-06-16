@@ -187,7 +187,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	else if( jQuery(this).data("action") == "confirmConsignCardsShipping" ){
 
-		return "X";
+		return "XXXX";
 
 		var package = confirmConsignCardsShipping();
 
