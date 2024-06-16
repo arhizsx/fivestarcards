@@ -302,7 +302,22 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 			// console.log( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").html() );
 			if( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").closest("tbody").find(".consigned_item_row").length  == 2 ){
-				console.log( "PUT EMPTY");
+
+				$(document).find("#new_consignment tbody").append(
+					'<tr class="empty_consignment">' +
+						'<td colspan="7" class="text-center py-5">' +
+							'Empty' +
+						'</td>' +
+					'</tr>'
+				);
+				
+				$(document).find("#new_consignment_mobile tbody").append(
+					'<tr class="empty_consignment">' +
+						'<td class="text-center py-5">' +
+							'Empty' +
+						'</td>' +
+					'</tr>'
+				);
 			}
 
 			$(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").remove();
