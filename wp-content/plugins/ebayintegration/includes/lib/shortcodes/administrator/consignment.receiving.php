@@ -51,8 +51,8 @@ if( $show == "cards" ){
                 <th>Order ID</th>
                 <th>Year</th>
                 <th>Brand</th>
-                <th>Card Number</th>
                 <th>Player Name</th>
+                <th>Card Number</th>
                 <th>Attribute S/N</th>
                 <th>Action</th>
             </tr>
@@ -65,15 +65,16 @@ if( $show == "cards" ){
             </tr>
             <?php 
                 foreach( $consignment as $card ){
+                    $data = json_decode( $card->data, true );
             ?>
             <tr>
                 <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
+                <td><?php echo $card->order_id ?></td>
+                <td><?php echo $data["year"] ?></td>
+                <td><?php echo $data["brand"] ?></td>
+                <td><?php echo $data["player_name"] ?></td>
+                <td><?php echo $data["card_number"] ?></td>
+                <td><?php echo $data["attribute_sn"] ?></td>
                 <td>-</td>
             </tr>
             <?php 
