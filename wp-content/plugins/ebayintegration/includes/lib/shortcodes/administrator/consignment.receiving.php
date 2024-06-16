@@ -89,10 +89,10 @@ if( $show == "cards" ){
                 <td><?php echo $data["attribute_sn"] ?></td>
                 <td class="fit text-end">
                     <a class="btn btn-pill btn-sm btn-primary">
-                        Received
+                        <i class="fa-solid fa-check"></i>
                     </a>
-                    <a class="btn btn-pill btn-sm btn-secondary">
-                        Not Avlb
+                    <a class="btn btn-pill btn-sm btn-danger">
+                        <i class="fa-solid fa-xmark"></i>
                     </a>
                 </td>
             </tr>
