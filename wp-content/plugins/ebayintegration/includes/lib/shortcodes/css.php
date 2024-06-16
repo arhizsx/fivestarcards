@@ -161,6 +161,22 @@ function ActivateGradingSelect($page){
     }
 }
 
+function AdministratorConsignment($page){
+    if( isset( $_GET['mode']) == false ){
+        if( $page == "open" ){
+            return "active";
+        }
+    } 
+    else {
+        if( $page == $_GET['mode'] ){
+            return "active";
+        } else {
+            return "";
+        }
+    }
+}
+
+
 
 function AdministratorGrading($page){
     if( isset( $_GET['mode']) == false ){
