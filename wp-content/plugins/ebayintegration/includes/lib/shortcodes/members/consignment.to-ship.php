@@ -19,6 +19,10 @@ order by order_id desc, id desc
     </div>
 </div>
 
+<?php 
+    if( ! isset( $_GET['type'] ) ){
+?>
+
 <div class="table-responsive">
     <table class="table table-sm table-bordered">
         <thead>
@@ -61,3 +65,6 @@ order by order_id desc, id desc
         </tbody>
     </table>
 </div>
+<?php         
+    }
+?>
