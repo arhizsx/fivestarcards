@@ -264,7 +264,7 @@ class Ebay_Integration_Ebay_API {
 
 		$lastid = $this->wpdb->insert_id;					
 			
-		$data["id"] = $lastid;
+		$data["order_id"] = $lastid;
 		$data["user_id"] = $user_id;
 
 		return $data;
