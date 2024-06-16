@@ -301,7 +301,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$.when( card ).done( function( card ){
 
 			// console.log( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").html() );
-			console.log( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").closest("tbody").html() );
+			console.log( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").closest("tbody").find(".consigned_item_row").length );
 
 			$(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").remove();
 
