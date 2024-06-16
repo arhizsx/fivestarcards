@@ -47,7 +47,7 @@ order by id desc
                         $data = json_decode( $card->data, true );
 
             ?>
-            <tr class='consigned_item_row' data-id='<?php echo $data["id"] ?>'>
+            <tr class='consigned_item_row' data-id='<?php echo $card->id; ?>'>
                 <td>
                     <a class='text-danger  ebayintegration-btn' data-action="removeConsignedCardRow"  data-id='<?php echo $card->id ?>' href='#'>
                         <i class='fa-solid fa-lg fa-xmark'></i>
@@ -86,7 +86,7 @@ order by id desc
                 } else {
                     foreach( $consignment as $card ){
             ?>
-            <tr class='consigned_item_row' data-id='<?php echo $data["id"] ?>'>
+            <tr class='consigned_item_row' data-id='<?php echo $card->id; ?>'>
                 <td>
                     <div class='w-100 p-0 text-end' style='position: relative;'>
                         <a class='text-danger ebayintegration-btn' data-action="removeConsignedCardRow" data-id='<?php echo $card->id ?>' href='#' style='position: absolute; right: 0px;'>
