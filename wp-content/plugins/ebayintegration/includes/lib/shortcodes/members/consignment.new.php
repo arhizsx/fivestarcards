@@ -49,7 +49,7 @@ order by id desc
             ?>
             <tr class='consigned_item_row' data-id='<?php echo $data["id"] ?>'>
                 <td>
-                    <a class='text-dark consigned_item_view' data-id='<?php echo $data["id"] ?>' href='#'>
+                    <a class='text-danger consigned_item_view' data-id='<?php echo $data["id"] ?>' href='#'>
                         <i class='fa-solid fa-lg fa-xmark'></i>
                     </a>
                 </td>
