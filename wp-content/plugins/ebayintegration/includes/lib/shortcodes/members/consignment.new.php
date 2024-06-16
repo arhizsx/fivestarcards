@@ -9,10 +9,6 @@ where user_id = " . get_current_user_id()
 
 );
 
-echo get_current_user_id();
-
-print_r( $consignment );
-
 ?>
 
 <button class="btn btn-sm btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
@@ -34,11 +30,34 @@ print_r( $consignment );
             </tr>
         </thead>
         <tbody>
+            <?php
+                if( count( $consignment ) == 0 ){
+            ?>
             <tr class="empty_consignment">
                 <td colspan="7" class="text-center py-5">
                     Empty
                 </td>
             </tr>
+            <?php 
+                } else {
+                    foreach( $consignment as $card ){
+            ?>
+            <tr class='consigned_item_row' data-id=''>
+                <td>
+                    <a class='text-dark consigned_item_view' data-id='' href='#'>
+                        <i class='fa-solid fa-xl fa-bars'></i>
+                    </a>
+                </td>
+                <td>X</td>
+                <td>X</td>
+                <td></td>
+                <td class='text-end'></td>
+                <td class='text-end'></td>
+            </tr>
+            <?php 
+                    }
+                }
+            ?>  
         </tbody>
     </table>
 </div>
