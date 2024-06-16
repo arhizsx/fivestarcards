@@ -254,7 +254,7 @@ order by id desc
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
 
                         <button class="btn border btn-primary ebayintegration-btn" 
-                            data-action='confirmAddConsign' 
+                            data-action='confirmConsignCardsShipping' 
                         >
                             Card Shipped
                         </button>                    
