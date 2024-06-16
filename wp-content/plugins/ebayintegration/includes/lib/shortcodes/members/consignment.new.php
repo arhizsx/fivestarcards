@@ -205,34 +205,34 @@ order by id desc
 					X
 				</button>
 			</div>
-            <div class="modal-body py-2 px-3">
+            <div class="modal-body">
                 <div class="row">
                     <div class="col">
                         <H5 style="color: black;">Ship your items to</H5>
                     </div>
                 </div>
-                <div class="row mb-3 border-bottom pb-3">
-                    <div class="col-lg-6 small mb-3">
+                <div class="row border-bottom pb-3">
+                    <div class="col-lg-6 small pb-3">
                         <div>USPS</div>
                         <div>Matt Sellers</div>
                         <div>PO Box 263 Hartland, WI 53029</div>
                     </div>
-                    <div class="col-lg-6 small mb-3">
+                    <div class="col-lg-6 small pb-3">
                         <div>FedEx / UPS / DHL</div>
                         <div>Matt Sellers</div>
                         <div>203 E Wisconsin Ave Suite 203C Oconomowoc, WI 53066</div>
                     </div>
-                    <div class="col-lg-6 small mb-3">
+                    <div class="col-lg-6 small pb-3">
                         <div>FedEx / UPS / DHL</div>
                         <div>Matt Sellers</div>
                         <div>203 E Wisconsin Ave Suite 203C Oconomowoc, WI 53066</div>
                     </div>
-                    <div class="col-lg-6 small mb-3">
+                    <div class="col-lg-6 small pb-3">
                         <div>FedEx / UPS / DHL</div>
                         <div>Matt Sellers</div>
                         <div>203 E Wisconsin Ave Suite 203C Oconomowoc, WI 53066</div>
                     </div>
-                    <div class="col-lg-6 small mb-3">
+                    <div class="col-lg-6 small pb-3">
                         <div>FedEx / UPS / DHL</div>
                         <div>Matt Sellers</div>
                         <div>203 E Wisconsin Ave Suite 203C Oconomowoc, WI 53066</div>
