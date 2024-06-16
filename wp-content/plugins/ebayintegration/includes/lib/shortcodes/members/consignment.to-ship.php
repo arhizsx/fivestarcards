@@ -117,7 +117,7 @@ if( ! isset( $_GET['type'] ) ){
                 <td><?php echo $data["shipped_by"]; ?></td>
                 <td><?php echo $data["tracking_number"]; ?></td>
                 <td><?php echo $data["shipping_date"]; ?></td>
-                <td><?php echo $order->status; ?></td>
+                <td><?php echo strtoupper($order->status); ?></td>
             </tr>
             <?php 
                 }
