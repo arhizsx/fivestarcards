@@ -206,7 +206,7 @@ order by id desc
 				</button>
 			</div>
             <div class="modal-body py-2 px-3">
-                <div class="row mb-3 border-bottom">
+                <div class="row mb-3 border-bottom pb-3">
                     <div class="col-12 small">
                         <div>USPS</div>
                         <div>Matt Sellers</div>
