@@ -5,7 +5,8 @@ global $wpdb;
 $consignment = $this->wpdb->get_results ( "
 SELECT * 
 FROM consignment
-where user_id = " . get_current_user_id() . "
+where user_id = " . get_current_user_id() . " 
+and status = 'logged'
 order by id desc
 "
 );
