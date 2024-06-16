@@ -94,32 +94,32 @@ order by id desc
                         </a>
                     </div>
                     <div class='row'>
-                        <div class='small text-secondary col-3'>Player</div>
-                        <div class='col-9'>
+                        <div class='small text-secondary col-sm-4'>Player</div>
+                        <div class='col-sm-8'>
                             <?php echo $data["player_name"] ?>								
                         </div>
                     </div>
                     <div class='row'>
-                        <div class='small text-secondary col-3'>Year</div>
-                        <div class='col-9'>
+                        <div class='small text-secondary col-sm-4'>Year</div>
+                        <div class='col-sm-8'>
                             <?php echo $data["year"] ?>
                         </div>
                     </div>
                     <div class='row'>
-                        <div class='small text-secondary col-3'>Brand</div>
-                        <div class='col-9'>
+                        <div class='small text-secondary col-sm-4'>Brand</div>
+                        <div class='col-sm-8'>
                             <?php echo $data["brand"] ?>
                         </div>
                     </div>
                     <div class='row'>
-                        <div class='small text-secondary col-3'>Card #</div>
-                        <div class='col-9'>
+                        <div class='small text-secondary col-4'>Card #</div>
+                        <div class='col-sm-8'>
                             <?php echo $data["card_number"] ?>
                         </div>
                     </div>
                     <div class='row'>
-                        <div class='small text-secondary col-3'>Attribute SN</div>
-                        <div class='col-9'>
+                        <div class='small text-secondary col-sm-4'>Attribute SN</div>
+                        <div class='col-sm-8'>
                             <?php echo $data["attribute_sn"] ?>
                         </div>
                     </div>
