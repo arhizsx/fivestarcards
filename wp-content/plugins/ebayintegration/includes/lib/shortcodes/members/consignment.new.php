@@ -73,11 +73,61 @@ order by id desc
             </tr>
         </thead>
         <tbody>
+            <?php
+                if( count( $consignment ) == 0 ){
+            ?>
             <tr class="empty_consignment">
                 <td class="text-center py-5">
                     Empty
                 </td>
             </tr>
+            <?php 
+                } else {
+                    foreach( $consignment as $card ){
+            ?>
+            <tr class='consigned_item_row' data-id='<?php echo $data["id"] ?>'>
+                <td>
+                    <div class='w-100 p-0 text-end' style='position: relative;'>
+                        <a class='text-dark consigned_item_view' data-id='<?php echo $data["id"] ?>' href='#' style='position: absolute; right: 0px;'>
+                            <i class='fa-solid fa-xl fa-ellipsis'></i>
+                        </a>
+                    </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-3'>Player</div>
+                        <div class='col-9'>
+                            <?php echo $data["player_name"] ?>								
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-3'>Year</div>
+                        <div class='col-9'>
+                            <?php echo $data["year"] ?>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-3'>Brand</div>
+                        <div class='col-9'>
+                            <?php echo $data["brand"] ?>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-3'>Card #</div>
+                        <div class='col-9'>
+                            <?php echo $data["card_number"] ?>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-3'>Attribute SN</div>
+                        <div class='col-9'>
+                            <?php echo $data["attribute_sn"] ?>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <?php
+                    }
+                }
+            ?>
         </tbody>
     </table>
 </div>
