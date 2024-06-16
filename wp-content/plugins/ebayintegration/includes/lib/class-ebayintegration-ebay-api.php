@@ -258,13 +258,15 @@ class Ebay_Integration_Ebay_API {
 
 			$user_id = get_current_user_id(); 
 
-			$lastid = $this->wpdb->insert(
+			$this->wpdb->insert(
 						'consignment',
 						array(
 							'user_id' => $user_id,
 							"data" => $data,
 						)
-					)->insert_id;
+					);
+
+			$lastid = $this->wpdb->insert_id;					
 			
 			$data["id"] = $lastid;
 
