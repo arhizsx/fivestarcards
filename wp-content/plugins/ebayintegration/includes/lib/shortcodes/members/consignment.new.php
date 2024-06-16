@@ -53,9 +53,9 @@ where user_id = " . get_current_user_id()
                 </td>
                 <td><?php echo $data["year"] ?></td>
                 <td><?php echo $data["brand"] ?></td>
-                <td></td>
-                <td class='text-end'></td>
-                <td class='text-end'></td>
+                <td><?php echo $data["player_name"] ?></td>
+                <td class='text-end'><?php echo $data["serial_number"] ?></td>
+                <td class='text-end'><?php echo $data["attribute_sn"] ?></td>
             </tr>
             <?php 
                     }
