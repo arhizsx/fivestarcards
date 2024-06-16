@@ -58,14 +58,18 @@ if( $show == "cards" ){
             </tr>
         </thead>
         <tbody>
+            <?php 
+                if( count( $counsignment ) == 0 ){
+            ?>
             <tr>
                 <td colspan="6" class="text-center py-5">
                     Empty
                 </td>
             </tr>
             <?php 
-                foreach( $consignment as $card ){
-                    $data = json_decode( $card->data, true );
+                } else {
+                    foreach( $consignment as $card ) {
+                        $data = json_decode( $card->data, true );
             ?>
             <tr>
                 <td>-</td>
@@ -78,6 +82,7 @@ if( $show == "cards" ){
                 <td>-</td>
             </tr>
             <?php 
+                    }
                 }
             ?>
         </tbody>
