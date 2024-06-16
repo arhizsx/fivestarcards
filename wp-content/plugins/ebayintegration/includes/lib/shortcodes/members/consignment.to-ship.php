@@ -14,8 +14,8 @@ order by order_id desc, id desc
 ?>
 <div class="row">
     <div class="col">
-        <a class="btn btn-pill btn-sm mb-2 btn-primary" href="/my-account/consignment/?mode=listed&type=auction">Cards</a>
-        <a class="btn btn-pill btn-sm mb-2 btn-secondary" href="/my-account/consignment/?mode=listed&type=fixed_price">Orders</a>
+        <a class="btn btn-pill btn-sm mb-2 btn-primary" href="/my-account/consignment/?mode=to-ship">Cards</a>
+        <a class="btn btn-pill btn-sm mb-2 btn-secondary" href="/my-account/consignment/?mode=to-ship&type=orders">Orders</a>
     </div>
 </div>
 
