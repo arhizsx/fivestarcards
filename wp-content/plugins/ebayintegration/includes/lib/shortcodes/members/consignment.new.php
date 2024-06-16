@@ -195,8 +195,8 @@ order by id desc
 
 
 <div class="modal fade ship_batch_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
-	<div class="modal-dialog">
-		<div class="modal-content modal-dialog-scrollable modal-ajax">
+	<div class="modal-dialog modal-dialog-scrollable ">
+		<div class="modal-content modal-ajax">
 			<div class="modal-header bg-dark text-white">
 				<h5 class="modal-title">
 					Ship Cards
