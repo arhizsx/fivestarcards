@@ -1,3 +1,18 @@
+<?php 
+
+global $wpdb;
+
+$consignment = $this->wpdb->get_results ( "
+SELECT * 
+FROM consignment
+where user_id = " . get_current_user()
+
+);
+
+print_r( $consignment );
+
+?>
+
 <button class="btn btn-sm btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
     Log Card
 </button>
@@ -55,8 +70,7 @@
 			</div>
             <div class="modal-body py-2 px-3">
                 <div class="row formbox">
-                    <div class="col-6">
-                        
+                    <div class="col-6">                        
                         <input type="hidden" name="user_id" value="<?php echo get_current_user_id(); ?>">
                         
                         <label>Qty</label>
