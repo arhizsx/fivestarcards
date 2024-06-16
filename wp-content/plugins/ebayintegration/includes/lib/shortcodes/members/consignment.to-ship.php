@@ -12,6 +12,12 @@ order by order_id desc, id desc
 );
 
 ?>
+<div class="row">
+    <div class="col">
+        <a class="btn btn-pill btn-sm mb-2 btn-primary" href="/my-account/consignment/?mode=listed&type=auction">Cards</a>
+        <a class="btn btn-pill btn-sm mb-2 btn-secodary" href="/my-account/consignment/?mode=listed&type=fixed_price">Orders</a>
+    </div>
+</div>
 
 <div class="table-responsive">
     <table class="table table-sm table-bordered">
