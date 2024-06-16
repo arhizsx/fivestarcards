@@ -163,7 +163,7 @@ function ActivateGradingSelect($page){
 
 function AdministratorConsignment($page){
     if( isset( $_GET['mode']) == false ){
-        if( $page == "open" ){
+        if( $page == "receing" ){
             return "active";
         }
     } 
