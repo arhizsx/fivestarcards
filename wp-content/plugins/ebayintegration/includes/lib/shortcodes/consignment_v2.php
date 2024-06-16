@@ -46,7 +46,6 @@
                         <option value="/my-account/consignment?mode=to-ship" <?php echo ActivateSelect("to-ship") ?>>Shipped</option>
                         <option value="/my-account/consignment?mode=consigned" <?php echo ActivateSelect("consigned") ?>>Consigned</option>
                         <option value="/my-account/consignment?mode=listed" <?php echo ActivateSelect("listed") ?>>Listed</option>
-                        <option value="/my-account/consignment?mode=sold" <?php echo ActivateSelect("sold") ?>>Sold</option>
                     </select>
                 </div>
                 <div class="content px-3 py-0">
