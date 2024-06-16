@@ -2,6 +2,7 @@
     <table class="table table-sm table-bordered">
         <thead>
             <tr>
+                <th>User</th>
                 <th>Order ID</th>
                 <th>Year</th>
                 <th>Brand</th>
@@ -13,7 +14,7 @@
         </thead>
         <tbody>
             <tr>
-                <td colspan="7" class="text-center py-5">
+                <td colspan="8" class="text-center py-5">
                     Empty
                 </td>
             </tr>
