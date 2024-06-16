@@ -294,7 +294,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		var card = removeConsignedCardRow();
 
-		console.log(element.text());
+		console.log(element.html());
 
 	}
 	
