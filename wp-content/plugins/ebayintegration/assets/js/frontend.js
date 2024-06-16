@@ -215,7 +215,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					"<tr>" +
 						"<td>" +
 							"<div class='w-100 p-0 text-end'>" +
-									"<a class='text-dark me-4' href='#'>" +
+									"<a class='text-dark' href='#'>" +
 										"<i class='fa-solid fa-xl fa-bars'></i>" + 
 									"</a>" +
 							"</div>" +
