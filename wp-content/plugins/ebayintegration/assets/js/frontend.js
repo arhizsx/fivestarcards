@@ -292,6 +292,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	else if( jQuery(this).data("action") == "removeConsignedCardRow" ){
 
+		console.log( element.data() );
+
 		var card = removeConsignedCardRow();
 		
 		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
@@ -316,6 +318,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 function removeConsignedCardRow(){
 
 	var defObject = $.Deferred();  // create a deferred object.
+
+
 
 	jQuery.ajax({
 		method: 'post',
