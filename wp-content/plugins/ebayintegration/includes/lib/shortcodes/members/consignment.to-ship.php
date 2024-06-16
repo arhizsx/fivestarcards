@@ -156,6 +156,12 @@ if( ! isset( $_GET['type'] ) ){
             <tr>
                 <td>
                     <div class='row'>
+                        <div class='small text-secondary col-3'>Order ID</div>
+                        <div class='col-9'>
+                            <?php echo $card->order_id + 1000; ?>
+                        </div>
+                    </div>
+                    <div class='row'>
                         <div class='small text-secondary col-3'>Player</div>
                         <div class='col-9'>
                             <?php echo $data["player_name"] ?>								
