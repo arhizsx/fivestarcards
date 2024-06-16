@@ -298,7 +298,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when( card ).done( function( card ){
 
-			console.log( element.html() );
+			element.html('<i class="fa-solid fa-xl fa-xmark"></i>');
 
 		});
 
