@@ -50,7 +50,7 @@ order by id desc
             <tr class='consigned_item_row' data-id='<?php echo $data["id"] ?>'>
                 <td>
                     <a class='text-dark consigned_item_view' data-id='<?php echo $data["id"] ?>' href='#'>
-                        <i class='fa-solid fa-xl fa-bars'></i>
+                        <i class='fa-solid fa-lg fa-xmark'></i>
                     </a>
                 </td>
                 <td><?php echo $data["year"] ?></td>
@@ -90,7 +90,7 @@ order by id desc
                 <td>
                     <div class='w-100 p-0 text-end' style='position: relative;'>
                         <a class='text-dark consigned_item_view' data-id='<?php echo $data["id"] ?>' href='#' style='position: absolute; right: 0px;'>
-                            <i class='fa-solid fa-xl fa-ellipsis'></i>
+                            <i class='fa-solid fa-xl fa-xmark'></i>
                         </a>
                     </div>
                     <div class='row'>
