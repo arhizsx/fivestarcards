@@ -37,7 +37,7 @@
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
-                    <li class="<?php echo AdministratorConsignment("order_receiving"); ?>">
+                    <li class="<?php echo AdministratorConsignment("receiving"); ?>">
                         <a class="" href="/administrator/consignment">Receiving</a>
                     </li>
                     <li class="<?php echo AdministratorConsignment("consigned"); ?>">
