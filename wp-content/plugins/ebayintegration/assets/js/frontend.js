@@ -294,7 +294,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		var card = removeConsignedCardRow();
 
-		element.html('<i class="fa-solid fa-lg fa-spinner fa-spin"></i>');
+		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
 
 		$.when( card ).done( function( card ){
 
