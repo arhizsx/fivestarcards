@@ -266,19 +266,15 @@ order by id desc
                                 <input type="date" name="shipping_date" class="form-control" data-field_check="required">
                             </div>
                         </div>
-                    
+                        <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+
+                        <button class="btn border btn-primary ebayintegration-btn" 
+                            data-action='confirmAddConsign' 
+                        >
+                            Card Shipped
+                        </button>                    
                 </forn>
             </div>
-            <div class="modal-footer">
-                <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-
-                <button class="btn border btn-primary ebayintegration-btn" 
-                    data-action='confirmAddConsign' 
-                >
-                    Card Shipped
-                </button>
-            </div>
-
 		</div>
 	</div>
 </div>
