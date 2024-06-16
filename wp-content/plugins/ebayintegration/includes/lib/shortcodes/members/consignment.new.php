@@ -17,7 +17,7 @@ order by id desc
     Log Card
 </button>
 <button class="btn btn-sm btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
-    Ship Batch
+    Ship Cards
 </button>
 <div class="table-responsive d-none d-lg-block">
     <table class="table table-sm table-bordered" id="new_consignment">
