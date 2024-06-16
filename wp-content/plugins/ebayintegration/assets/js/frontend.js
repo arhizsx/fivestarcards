@@ -297,7 +297,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		
 		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
 
-		$.when( card ).done( function( card ){
+		$.when( card ).done( function( card, old_html ){
 
 			element.html( old_html );
 
