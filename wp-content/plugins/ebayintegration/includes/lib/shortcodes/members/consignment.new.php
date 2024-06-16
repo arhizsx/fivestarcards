@@ -243,11 +243,11 @@ order by id desc
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-12 mb-3">
                                 <label for="tracking_number">Tracking Number</label>
-                                <input type="text" name="tracking_number" class="form-control" data-field_check="required">
+                                <input type="text" name="tracking_number" class="form-control p-2" data-field_check="required">
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-12 mb-3">
                                 <label for="shipping_date">Shipping Date</label>
-                                <input type="date" name="shipping_date" class="form-control" data-field_check="required">
+                                <input type="date" name="shipping_date" class="form-control p-2" data-field_check="required">
                             </div>
                         </div>
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
