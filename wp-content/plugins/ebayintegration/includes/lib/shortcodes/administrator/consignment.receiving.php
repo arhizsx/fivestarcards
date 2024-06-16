@@ -88,11 +88,11 @@ if( $show == "cards" ){
                 <td><?php echo $data["card_number"] ?></td>
                 <td><?php echo $data["attribute_sn"] ?></td>
                 <td class="fit text-end">
-                    <a class="btn btn-pill btn-sm btn-primary">
-                        <i class="fa-solid fa-check"></i>
-                    </a>
                     <a class="btn btn-pill btn-sm btn-danger">
                         <i class="fa-solid fa-xmark"></i>
+                    </a>
+                    <a class="btn btn-pill btn-sm btn-success">
+                        <i class="fa-solid fa-check"></i>
                     </a>
                 </td>
             </tr>
