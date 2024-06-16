@@ -298,6 +298,9 @@ function confirmConsignCardsShipping(){
 	var tracking_number = $(document).find(".ship_batch_modal").find(".formbox").find("[name='tracking_number']").val();
 	var shipping_date = $(document).find(".ship_batch_modal").find(".formbox").find("[name='shipping_date']").val();
 
+
+	console.log(user_id);
+
 	jQuery.ajax({
 		method: 'post',
 		url: "/wp-json/ebayintegration/v1/post",
