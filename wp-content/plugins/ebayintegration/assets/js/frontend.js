@@ -300,7 +300,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when( card ).done( function( card ){
 
-			element.html('<i class="fa-solid fa-xl fa-xmark"></i>');
+			$(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").remove();
 
 		});
 
