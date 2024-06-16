@@ -7,6 +7,7 @@
                 <th>Card Number</th>
                 <th>Player Name</th>
                 <th>Attribute S/N</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
