@@ -225,8 +225,7 @@ order by id desc
                 </div>
                 <forn id="shipping_info_form">
 
-                        <input type="hidden" name="user_id" value="1">
-                        <input type="hidden" name="order_number" value="7834">
+                        <input type="hidden" name="user_id" value="<?php echo get_current_user_id() ?>">
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-12 mb-3">
                                 <label for="carrier">Carrier</label>
