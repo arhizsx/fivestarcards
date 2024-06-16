@@ -207,7 +207,7 @@ order by id desc
 			</div>
             <div class="modal-body">
                 <div class="formbox">
-                    
+
                     <div class="row">
                         <div class="col">
                             <H5 style="color: black;">Ship your items to</H5>
@@ -253,13 +253,6 @@ order by id desc
                                     <input type="date" name="shipping_date" class="form-control p-2" data-field_check="required">
                                 </div>
                             </div>
-                            <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-
-                            <button class="btn border btn-primary ebayintegration-btn" 
-                                data-action='confirmConsignCardsShipping' 
-                            >
-                                Card Shipped
-                            </button>                    
                     </forn>
                 </div>
                 <div class="d-none p-5 text-center loading">
@@ -267,7 +260,15 @@ order by id desc
                     Processing cards, please wait...
 
                 </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
 
+                <button class="btn border btn-primary ebayintegration-btn" 
+                    data-action='confirmConsignCardsShipping' 
+                >
+                    Card Shipped
+                </button>                    
             </div>
 		</div>
 	</div>
