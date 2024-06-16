@@ -1,3 +1,11 @@
+<style>
+.table td.fit, 
+.table th.fit {
+   white-space: nowrap;
+   width: 1%;
+}    
+</style>
+
 <?php 
 
 global $wpdb;
@@ -54,7 +62,7 @@ if( $show == "cards" ){
                 <th>Player Name</th>
                 <th>Card Number</th>
                 <th>Attribute S/N</th>
-                <th class="text-end">Action</th>
+                <th class="fit text-end">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -79,7 +87,7 @@ if( $show == "cards" ){
                 <td><?php echo $data["player_name"] ?></td>
                 <td><?php echo $data["card_number"] ?></td>
                 <td><?php echo $data["attribute_sn"] ?></td>
-                <td class="text-end">
+                <td class="fit text-end">
                     <a class="btn btn-pill btn-sm btn-primary">
                         Received
                     </a>
