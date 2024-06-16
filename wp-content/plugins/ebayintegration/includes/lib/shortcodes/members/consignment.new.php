@@ -48,8 +48,8 @@ where user_id = " . get_current_user_id()
                         <i class='fa-solid fa-xl fa-bars'></i>
                     </a>
                 </td>
-                <td>X</td>
-                <td>X</td>
+                <td><?php echo $card["year"] ?></td>
+                <td><?php echo $card["brand"] ?></td>
                 <td></td>
                 <td class='text-end'></td>
                 <td class='text-end'></td>
