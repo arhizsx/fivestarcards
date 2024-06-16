@@ -213,6 +213,8 @@ order by id desc
                         PO Box 263
                         Hartland, WI 53029
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-12 small">
                         FedEx / UPS / DHL
                         Matt Sellers
