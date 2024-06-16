@@ -64,6 +64,22 @@ if( $show == "cards" ){
                     Empty
                 </td>
             </tr>
+            <?php 
+                foreach( $cards as $card ){
+            ?>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <?php 
+                }
+            ?>
         </tbody>
     </table>
 </div>
