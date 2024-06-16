@@ -42,7 +42,7 @@ where user_id = " . get_current_user_id()
                 } else {
                     foreach( $consignment as $card ){
 
-                        $data = json_decode( $card, true );
+                        $data = json_decode( $card->data, true );
 
             ?>
             <tr class='consigned_item_row' data-id=''>
