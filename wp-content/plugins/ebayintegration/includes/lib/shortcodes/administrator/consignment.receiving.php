@@ -64,7 +64,7 @@ if( $show == "cards" ){
                 </td>
             </tr>
             <?php 
-                foreach( $cards as $card ){
+                foreach( $consignment as $card ){
             ?>
             <tr>
                 <td>-</td>
