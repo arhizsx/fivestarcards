@@ -264,7 +264,7 @@ class Ebay_Integration_Ebay_API {
 						'consignment',
 						array(
 							'user_id' => $user_id,
-							"data" => $data,
+							"data" => json_encode($data),
 						)
 					);
 
