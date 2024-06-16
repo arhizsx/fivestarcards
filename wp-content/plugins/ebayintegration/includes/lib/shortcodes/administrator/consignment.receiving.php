@@ -111,11 +111,11 @@ if( $show == "cards" ){
             <tr>
                 <th>User</th>
                 <th>Order ID</th>
-                <th>Year</th>
-                <th>Brand</th>
-                <th>Card Number</th>
-                <th>Player Name</th>
-                <th>Attribute S/N</th>
+                <th>Carrier</th>
+                <th>Shipped By</th>
+                <th>Tracking Number</th>
+                <th>Shipping Date</th>
+                <th>Status</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -124,7 +124,7 @@ if( $show == "cards" ){
                 if( count( $orders ) == 0 ){
             ?>
             <tr>
-                <td colspan="6" class="text-center py-5">
+                <td colspan="8" class="text-center py-5">
                     Empty
                 </td>
             </tr>
@@ -135,11 +135,12 @@ if( $show == "cards" ){
             ?>
                 <tr>
                     <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td><?php echo $order->id + 1000; ?></td>
+                    <td><?php echo $data["carrier"]; ?></td>
+                    <td><?php echo $data["shipped_by"]; ?></td>
+                    <td><?php echo $data["tracking_number"]; ?></td>
+                    <td><?php echo $data["shipping_date"]; ?></td>
+                    <td><?php echo $order->status; ?></td>
                     <td>-</td>
                 </tr>
             <?php
