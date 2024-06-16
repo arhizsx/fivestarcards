@@ -2,6 +2,7 @@
     <table class="table table-sm table-bordered">
         <thead>
             <tr>
+                <th>Order ID</th>
                 <th>Year</th>
                 <th>Brand</th>
                 <th>Card Number</th>
