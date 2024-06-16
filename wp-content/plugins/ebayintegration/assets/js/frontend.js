@@ -175,6 +175,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 
+	// ////////////////////////// //
+	//  Add Consignment Buttons   //
+	// ////////////////////////// //
+
 	else if( jQuery(this).data("action") == "show_ship_batch_modal" ){
 
 		jQuery(document).find(".ship_batch_modal").appendTo('body').modal("show");
@@ -278,6 +282,7 @@ function confirmAddConsign(){
 
 	var defObject = $.Deferred();  // create a deferred object.
 
+	var user_id = parseInt( $(document).find(".log_consign_modal").find(".formbox").find("[name='user_id']").val() );
 	var qty = parseInt( $(document).find(".log_consign_modal").find(".formbox").find("[name='qty']").val() );
 	var year = $(document).find(".log_consign_modal").find(".formbox").find("[name='year']").val();
 	var brand = $(document).find(".log_consign_modal").find(".formbox").find("[name='brand']").val();
@@ -290,6 +295,7 @@ function confirmAddConsign(){
 		url: "/wp-json/ebayintegration/v1/post",
 		data: { 
 			action: "confirmAddConsign",
+			user_id: user_id,
 			qty: qty,
 			year: year,
 			brand: brand,
