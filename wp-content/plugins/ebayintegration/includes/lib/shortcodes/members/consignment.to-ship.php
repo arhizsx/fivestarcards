@@ -40,7 +40,7 @@ order by order_id desc, id desc
                         $data = json_decode( $card->data, true );
             ?>
                 <tr>
-                    <td><?php echo $data['order_id'] + 1000; ?></td>
+                    <td><?php echo $card->order_id + 1000; ?></td>
                     <td><?php echo $data["year"] ?></td>
                     <td><?php echo $data["brand"] ?></td>
                     <td><?php echo $data["player_name"] ?></td>
