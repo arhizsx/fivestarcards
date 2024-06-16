@@ -228,22 +228,48 @@ class Ebay_Integration_Ebay_API {
 
 	public function handle_api_post_endpoint( $data ){
 
-
 		$params = $data->get_params();
-
 
 		if( $params["action"] == "confirmAddConsign"){
 			return $this->confirmAddConsign( $params );
 		}
 		
 		elseif( $params["action"] == "confirmConsignCardsShipping"){
-			return $data;
+			return $this->confirmConsignCardsShipping( $params );
 		}
 
 	}
 
 
 	// CONSIGNMENT
+
+	public function confirmConsignCardsShipping( $params ){
+
+		$user_id = (int) $params["user_id"]; 
+
+		$data = [
+			"carrier" => $params["carrier"],
+			"shipped_by" => $params["shipped_by"],
+			"tracking_number" => $params["tracking_number"],
+			"shipping_date" => $params["shipping_date"],
+		];
+
+		$this->wpdb->insert(
+			'consignment_orders',
+			array(
+				'user_id' => $user_id,
+				"data" => json_encode($data),
+			)
+		);
+
+		$lastid = $this->wpdb->insert_id;					
+			
+		$data["id"] = $lastid;
+		$data["user_id"] = $user_id;
+
+		return $data;
+
+	}
 
 	public function confirmAddConsign( $params ){
 
