@@ -33,7 +33,7 @@
                         <a class="" href="/my-account/consignment">New</a>
                     </li>
                     <li class="<?php echo Activate("to-ship"); ?>">
-                        <a class="" href="/my-account/consignment/?mode=to-ship">To Ship</a>
+                        <a class="" href="/my-account/consignment/?mode=to-ship">Shipped</a>
                     </li>
                     <li class="<?php echo Activate("consigned"); ?>">
                         <a class="" href="/my-account/consignment/?mode=consigned">Consigned</a>
@@ -49,7 +49,7 @@
                     <label>Select Consignment Status</label>
                     <select class="form-control" id="mobile_tab_select">
                         <option value="/my-account/consignment" <?php echo ActivateSelect("new") ?>>New</option>
-                        <option value="/my-account/consignment?mode=to-ship" <?php echo ActivateSelect("to-ship") ?>>To Ship</option>
+                        <option value="/my-account/consignment?mode=to-ship" <?php echo ActivateSelect("to-ship") ?>>Shipped</option>
                         <option value="/my-account/consignment?mode=consigned" <?php echo ActivateSelect("consigned") ?>>Consigned</option>
                         <option value="/my-account/consignment?mode=listed" <?php echo ActivateSelect("listed") ?>>Listed</option>
                         <option value="/my-account/consignment?mode=sold" <?php echo ActivateSelect("sold") ?>>Sold</option>
