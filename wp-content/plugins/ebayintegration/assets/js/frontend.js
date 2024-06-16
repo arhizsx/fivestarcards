@@ -302,6 +302,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 			// console.log( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").html() );
 			$(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").remove();
+
+			console.log( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").closest("tbody").find("tr").lenght() );
 			// element.html('<i class="fa-solid fa-xl fa-xmark"></i>');
 
 		});
