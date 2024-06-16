@@ -211,7 +211,7 @@ order by id desc
                         <H5 style="color: black;">Ship your items to</H5>
                     </div>
                 </div>
-                <div class="row border-bottom pb-3">
+                <div class="row border-bottom mb-3">
                     <div class="col-lg-6 small pb-3">
                         <div>USPS</div>
                         <div>Matt Sellers</div>
