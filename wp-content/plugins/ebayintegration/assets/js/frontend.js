@@ -187,14 +187,16 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	else if( jQuery(this).data("action") == "confirmConsignCardsShipping" ){
 
+		return "X";
+
 		var package = confirmConsignCardsShipping();
 
-		return "X";
 
 	}
 
 	else if( jQuery(this).data("action") == "confirmAddConsign" ){
 
+		
 		var card = confirmAddConsign();
 
 		$(document).find(".log_consign_modal").find(".formbox").addClass("d-none");
