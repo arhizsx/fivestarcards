@@ -224,7 +224,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				$(document).find("#new_consignment tbody").prepend(
 					"<tr class='consigned_item_row' data-id='" + v.id + "'>" +
 						"<td>" +
-							"<a class='text-danger consigned_item_view' data-id='" + v.id + "' href='#'>" +
+							"<a class='text-danger   ebayintegration-btn' data-action='removeConsignedCardRow' data-id='" + v.id + "' href='#'>" +
 								"<i class='fa-solid fa-lg fa-xmark'></i>" + 
 							"</a>" +
 						"</td>" +
@@ -240,7 +240,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					"<tr class='consigned_item_row' data-id='" + v.id + "'>" +
 						"<td>" +
 							"<div class='w-100 p-0 text-end' style='position: relative;'>" +
-								"<a class='text-danger consigned_item_view' data-id='" + v.id + "' href='#' style='position: absolute; right: 0px;'>" +
+								"<a class='text-danger  ebayintegration-btn' data-action='removeConsignedCardRow' data-id='" + v.id + "' href='#' style='position: absolute; right: 0px;'>" +
 									"<i class='fa-solid fa-xl fa-xmark'></i>" + 
 								"</a>" +
 							"</div>" +
