@@ -206,24 +206,26 @@ order by id desc
 				</button>
 			</div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col">
-                        <H5 style="color: black;">Ship your items to</H5>
+                <div class="formbox">
+                    
+                    <div class="row">
+                        <div class="col">
+                            <H5 style="color: black;">Ship your items to</H5>
+                        </div>
                     </div>
-                </div>
-                <div class="row border-bottom mb-3">
-                    <div class="col-lg-6 small pb-3">
-                        <div>USPS</div>
-                        <div>Matt Sellers</div>
-                        <div>PO Box 263 Hartland, WI 53029</div>
+                    <div class="row border-bottom mb-3">
+                        <div class="col-lg-6 small pb-3">
+                            <div>USPS</div>
+                            <div>Matt Sellers</div>
+                            <div>PO Box 263 Hartland, WI 53029</div>
+                        </div>
+                        <div class="col-lg-6 small pb-3">
+                            <div>FedEx / UPS / DHL</div>
+                            <div>Matt Sellers</div>
+                            <div>203 E Wisconsin Ave Suite 203C Oconomowoc, WI 53066</div>
+                        </div>
                     </div>
-                    <div class="col-lg-6 small pb-3">
-                        <div>FedEx / UPS / DHL</div>
-                        <div>Matt Sellers</div>
-                        <div>203 E Wisconsin Ave Suite 203C Oconomowoc, WI 53066</div>
-                    </div>
-                </div>
-                <div class="row formbox">
+                    
                     <forn id="shipping_info_form">
 
                             <input type="hidden" name="user_id" value="<?php echo get_current_user_id() ?>">
