@@ -44,7 +44,7 @@
                         <a class="" href="/administrator/consignment/?mode=consigned">Consigned</a>
                     </li>
                     <li class="<?php echo AdministratorConsignment("sold"); ?>">
-                        <a class="" href="/administrator/consignment/?mode=sold">Sold</a>
+                        <a class="" href="/administrator/consignment/?mode=for_listing">For Listing</a>
                     </li>
                 </ul>
                 <ul class="clearfix d-lg-none">
