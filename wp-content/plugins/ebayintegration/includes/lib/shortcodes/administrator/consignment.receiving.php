@@ -133,6 +133,15 @@ if( $show == "cards" ){
                     foreach( $orders as $order ) {
                         $data = json_decode( $order->data, true );
             ?>
+                <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
             <?php
                     }
                 } 
