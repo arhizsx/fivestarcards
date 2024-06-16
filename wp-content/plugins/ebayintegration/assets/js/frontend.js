@@ -293,13 +293,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	else if( jQuery(this).data("action") == "removeConsignedCardRow" ){
 
 		var card = removeConsignedCardRow();
-		let old_html = $(element).html();
 		
 		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
 
-		$.when( card ).done( function( card, old_html ){
+		$.when( card ).done( function( card ){
 
-			console.log( old_html );
+			console.log( element );
 			element.html( old_html );
 
 		});
