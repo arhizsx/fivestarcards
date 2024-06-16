@@ -196,6 +196,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$.when( package ).done( function( package ){
 
 			console.log( "Done confirmConsignCardsShipping");
+
+			$(document).find(".ship_batch_modal").find(".formbox").removeClass("d-none");
+			$(document).find(".ship_batch_modal").find(".loading").addClass("d-none");
+			element.prop("disabled", "");
+	
 		});
 
 	}
