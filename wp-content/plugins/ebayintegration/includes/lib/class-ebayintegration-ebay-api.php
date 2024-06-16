@@ -238,10 +238,17 @@ class Ebay_Integration_Ebay_API {
 			return $this->confirmConsignCardsShipping( $params );
 		}
 
+		elseif( $params["action"] == "removeConsignedCardRow"){
+			return $this->removeConsignedCardRow( $params );
+		}
 	}
 
 
 	// CONSIGNMENT
+
+	public function removeConsignedCardRow( $params ){
+		return $params;
+	}
 
 	public function confirmConsignCardsShipping( $params ){
 
