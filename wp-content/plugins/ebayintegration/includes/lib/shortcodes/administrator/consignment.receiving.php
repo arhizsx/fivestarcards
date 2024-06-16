@@ -59,7 +59,7 @@ if( $show == "cards" ){
         </thead>
         <tbody>
             <?php 
-                if( count( $counsignment ) == 0 ){
+                if( count( $consignment ) == 0 ){
             ?>
             <tr>
                 <td colspan="6" class="text-center py-5">
