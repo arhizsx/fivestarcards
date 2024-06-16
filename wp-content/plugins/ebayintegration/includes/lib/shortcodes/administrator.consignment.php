@@ -43,8 +43,11 @@
                     <li class="<?php echo AdministratorConsignment("consigned"); ?>">
                         <a class="" href="/administrator/consignment/?mode=consigned">Consigned</a>
                     </li>
-                    <li class="<?php echo AdministratorConsignment("sold"); ?>">
+                    <li class="<?php echo AdministratorConsignment("for_listing"); ?>">
                         <a class="" href="/administrator/consignment/?mode=for_listing">For Listing</a>
+                    </li>
+                    <li class="<?php echo AdministratorConsignment("listed"); ?>">
+                        <a class="" href="/administrator/consignment/?mode=listed">Listed</a>
                     </li>
                 </ul>
                 <ul class="clearfix d-lg-none">
