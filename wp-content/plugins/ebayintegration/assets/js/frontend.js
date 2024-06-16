@@ -200,7 +200,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					"<tr>" +
 						"<td>" +
 							"<a class='text-primary' href='#'>" +
-								"<i class='fa-solid fa-xl fa-ellipsis-vertical'></i>" + 
+								"<i class='fa-solid fa-xl fa-bars'></i>" + 
 							"</a>" +
 						"</td>" +
 						"<td>" + v.year + "</td>" +
@@ -217,7 +217,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 							"<div class='row'>" +
 								"<div class='col-12 text-end'>" + 
 									"<a class='text-primary me-4' href='#'>" +
-										"<i class='fa-solid fa-xl fa-ellipsis-vertical'></i>" + 
+										"<i class='fa-solid fa-xl fa-bars'></i>" + 
 									"</a>" +
 								"</div>" +
 							"</div>" +
