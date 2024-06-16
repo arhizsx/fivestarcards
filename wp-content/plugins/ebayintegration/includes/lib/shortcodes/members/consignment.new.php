@@ -222,6 +222,21 @@ order by id desc
                         <div>Matt Sellers</div>
                         <div>203 E Wisconsin Ave Suite 203C Oconomowoc, WI 53066</div>
                     </div>
+                    <div class="col-lg-6 small mb-3">
+                        <div>FedEx / UPS / DHL</div>
+                        <div>Matt Sellers</div>
+                        <div>203 E Wisconsin Ave Suite 203C Oconomowoc, WI 53066</div>
+                    </div>
+                    <div class="col-lg-6 small mb-3">
+                        <div>FedEx / UPS / DHL</div>
+                        <div>Matt Sellers</div>
+                        <div>203 E Wisconsin Ave Suite 203C Oconomowoc, WI 53066</div>
+                    </div>
+                    <div class="col-lg-6 small mb-3">
+                        <div>FedEx / UPS / DHL</div>
+                        <div>Matt Sellers</div>
+                        <div>203 E Wisconsin Ave Suite 203C Oconomowoc, WI 53066</div>
+                    </div>
                 </div>
                 <forn id="shipping_info_form">
 
