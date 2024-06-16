@@ -147,7 +147,10 @@ if( $show == "cards" ){
                         $data = json_decode( $order->data, true );
             ?>
                 <tr>
-                    <td>-</td>
+                    <td>
+                        <div><?php echo $card->display_name ?></div>
+                        <div class="small"><?php echo $card->user_email ?></div>
+                    </td>
                     <td><?php echo $order->id + 1000; ?></td>
                     <td><?php echo $data["carrier"]; ?></td>
                     <td><?php echo $data["shipped_by"]; ?></td>
