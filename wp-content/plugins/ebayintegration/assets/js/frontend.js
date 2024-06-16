@@ -299,6 +299,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when( card ).done( function( card, old_html ){
 
+			console.log('DONE');
 			element.html( old_html );
 
 		});
