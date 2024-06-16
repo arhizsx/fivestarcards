@@ -206,9 +206,9 @@ order by id desc
 				</button>
 			</div>
             <div class="modal-body py-2 px-3">
-                <div class="row mb-3">
+                <div class="row">
                     <div class="col">
-                        <H5>Ship your cards to 5starcards</H5>
+                        <H5 style="color: black;">Ship your cards to 5starcards</H5>
                     </div>
                 </div>
                 <div class="row mb-3 border-bottom pb-3">
