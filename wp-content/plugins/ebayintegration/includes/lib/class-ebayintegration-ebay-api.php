@@ -236,6 +236,10 @@ class Ebay_Integration_Ebay_API {
 			return $this->confirmAddConsign( $params );
 		}
 		
+		elseif( $params["action"] == "confirmConsignCardsShipping"){
+			return $data;
+		}
+
 	}
 
 

@@ -185,6 +185,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 
+	else if( jQuery(this).data("action") == "confirmConsignCardsShipping" ){
+
+		var package = confirmConsignCardsShipping();
+
+	}
+
 	else if( jQuery(this).data("action") == "confirmAddConsign" ){
 
 		var card = confirmAddConsign();
@@ -269,6 +275,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	
 	}
 
+
+
 	else {
 
 		console.log("Action Not Set: " + jQuery(this).data("action") );
@@ -276,6 +284,40 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	}
 	
 });
+
+function confirmConsignCardsShipping(){
+
+	var defObject = $.Deferred();  // create a deferred object.
+
+	var user_id = parseInt( $(document).find(".ship_batch_modal").find(".formbox").find("[name='user_id']").val() );
+	var carrier = $(document).find(".ship_batch_modal").find(".formbox").find("[name='carrier']").val();
+	var shipped_by = $(document).find(".ship_batch_modal").find(".formbox").find("[name='shipped_by']").val();
+	var tracking_number = $(document).find(".ship_batch_modal").find(".formbox").find("[name='tracking_number']").val();
+	var shipping_date = $(document).find(".ship_batch_modal").find(".formbox").find("[name='shipping_date']").val();
+
+	jQuery.ajax({
+		method: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: { 
+			action: "confirmConsignCardsShipping",
+			user_id: user_id,
+			carrier: carrier,
+			shipped_by: shipped_by,
+			tracking_number: tracking_number,
+			shipping_date: shipping_date,
+		},
+		success: function(resp){		
+			defObject.resolve(resp);    //resolve promise and pass the response.
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
+		
+	return defObject.promise();
+	
+}
 
 
 function confirmAddConsign(){
