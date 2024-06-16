@@ -56,6 +56,7 @@
             <div class="modal-body py-2 px-3">
                 <div class="row formbox">
                     <div class="col-6">
+                        <?php echo get_current_user_id(); ?>
                         <label>Qty</label>
                         <input type="number" name="qty" class="form-control" value="3">
                     </div>
