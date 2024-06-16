@@ -239,7 +239,7 @@ order by id desc
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-12 mb-3">
                                 <label for="shipped_by">Shipped By</label>
-                                <input type="text" name="shipped_by" class="form-control" data-field_check="required">
+                                <input type="text" name="shipped_by" class="form-control p-2" data-field_check="required">
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-12 mb-3">
                                 <label for="tracking_number">Tracking Number</label>
