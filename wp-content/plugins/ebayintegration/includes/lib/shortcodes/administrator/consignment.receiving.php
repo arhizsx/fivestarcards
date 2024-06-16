@@ -29,6 +29,7 @@ if( ! isset( $_GET['type'] ) ){
     $orders = $this->wpdb->get_results ( "
         SELECT * 
         FROM consignment_orders
+        where status = 'shipped'
         order by id desc
         "
     );
