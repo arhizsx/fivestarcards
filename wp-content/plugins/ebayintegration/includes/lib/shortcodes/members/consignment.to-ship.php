@@ -156,38 +156,38 @@ if( ! isset( $_GET['type'] ) ){
             <tr>
                 <td>
                     <div class='row'>
-                        <div class='small text-secondary col-md-4'>Order ID</div>
-                        <div class='col-md-8'>
+                        <div class='small text-secondary col-sm-4'>Order ID</div>
+                        <div class='col-sm-8'>
                             <?php echo $card->order_id + 1000; ?>
                         </div>
                     </div>
                     <div class='row'>
-                        <div class='small text-secondary col-md-4'>Player</div>
-                        <div class='col-md-8'>
+                        <div class='small text-secondary col-sm-4'>Player</div>
+                        <div class='col-sm-8'>
                             <?php echo $data["player_name"] ?>								
                         </div>
                     </div>
                     <div class='row'>
                         <div class='small text-secondary col-md-4'>Year</div>
-                        <div class='col-md-8'>
+                        <div class='col-sm-8'>
                             <?php echo $data["year"] ?>
                         </div>
                     </div>
                     <div class='row'>
-                        <div class='small text-secondary col-md-4'>Brand</div>
-                        <div class='col-md-8'>
+                        <div class='small text-secondary col-sm-4'>Brand</div>
+                        <div class='col-sm-8'>
                             <?php echo $data["brand"] ?>
                         </div>
                     </div>
                     <div class='row'>
-                        <div class='small text-secondary col-md-4'>Card #</div>
-                        <div class='col-md-8'>
+                        <div class='small text-secondary col-sm-4'>Card #</div>
+                        <div class='col-sm-8'>
                             <?php echo $data["card_number"] ?>
                         </div>
                     </div>
                     <div class='row'>
-                        <div class='small text-secondary col-md-4'>Attribute SN</div>
-                        <div class='col-md-8'>
+                        <div class='small text-secondary col-sm-4'>Attribute SN</div>
+                        <div class='col-sm-8'>
                             <?php echo $data["attribute_sn"] ?>
                         </div>
                     </div>
