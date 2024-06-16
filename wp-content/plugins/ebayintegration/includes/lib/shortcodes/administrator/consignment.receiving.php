@@ -141,7 +141,11 @@ if( $show == "cards" ){
                     <td><?php echo $data["tracking_number"]; ?></td>
                     <td><?php echo $data["shipping_date"]; ?></td>
                     <td><?php echo $order->status; ?></td>
-                    <td class="fit">-</td>
+                    <td class="fit">
+                        <a class="btn btn-pill btn-sm btn-success">
+                            <i class="fa-solid fa-check"></i>
+                        </a>
+                    </td>
                 </tr>
             <?php
                     }
