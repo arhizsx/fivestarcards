@@ -217,10 +217,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 							"<div class='row'>" +
 								"<div class='col-12 text-end'>" + 
 									"<a class='text-primary me-4' href='#'>" +
-										"<i class='fa-solid fa-md fa-pen'></i>" + 
-									"</a>" +
-									"<a class='text-danger' href='#'>" +
-										"<i class='fa-solid fa-xl fa-xmark'></i>" + 
+										"<i class='fa-solid fa-xl fa-ellipsis-vertical'></i>" + 
 									"</a>" +
 								"</div>" +
 							"</div>" +
