@@ -41,6 +41,9 @@ where user_id = " . get_current_user_id()
             <?php 
                 } else {
                     foreach( $consignment as $card ){
+
+                        $data = json_decode( $card, true );
+
             ?>
             <tr class='consigned_item_row' data-id=''>
                 <td>
@@ -48,8 +51,8 @@ where user_id = " . get_current_user_id()
                         <i class='fa-solid fa-xl fa-bars'></i>
                     </a>
                 </td>
-                <td><?php echo $card->year ?></td>
-                <td><?php echo $card->brand ?></td>
+                <td><?php echo $data["year"] ?></td>
+                <td><?php echo $data["brand"] ?></td>
                 <td></td>
                 <td class='text-end'></td>
                 <td class='text-end'></td>
