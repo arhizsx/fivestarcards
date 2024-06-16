@@ -292,14 +292,14 @@ function confirmConsignCardsShipping(){
 
 	var defObject = $.Deferred();  // create a deferred object.
 
-	var user_id = parseInt( $(document).find(".ship_batch_modal").find(".formbox").find("[name='user_id']").val() );
-	var carrier = $(document).find(".ship_batch_modal").find(".formbox").find("[name='carrier']").val();
-	var shipped_by = $(document).find(".ship_batch_modal").find(".formbox").find("[name='shipped_by']").val();
-	var tracking_number = $(document).find(".ship_batch_modal").find(".formbox").find("[name='tracking_number']").val();
-	var shipping_date = $(document).find(".ship_batch_modal").find(".formbox").find("[name='shipping_date']").val();
+	var user_id = parseInt( $(document).find(".ship_batch_modal").find("[name='user_id']").val() );
+	var carrier = $(document).find(".ship_batch_modal").find("[name='carrier']").val();
+	var shipped_by = $(document).find(".ship_batch_modal").find("[name='shipped_by']").val();
+	var tracking_number = $(document).find(".ship_batch_modal").find("[name='tracking_number']").val();
+	var shipping_date = $(document).find(".ship_batch_modal").find("[name='shipping_date']").val();
 
 
-	console.log($(document).find(".ship_batch_modal").find(".formbox").find("[name='user_id']").val());
+	console.log($(document).find(".ship_batch_modal").find("[name='user_id']").val());
 
 	jQuery.ajax({
 		method: 'post',
