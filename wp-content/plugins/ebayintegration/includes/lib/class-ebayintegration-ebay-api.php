@@ -243,7 +243,7 @@ class Ebay_Integration_Ebay_API {
 
 	public function confirmAddConsign( $params ){
 
-		$user_id = $params["user_id"]; 
+		$user_id = (int) $params["user_id"]; 
 		$result = [];
 
 		for( $i=0; $i < $params["qty"]; $i++ ){
