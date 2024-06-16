@@ -300,10 +300,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when( card ).done( function( card ){
 
-			console.log( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").html() );
-
-			// $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").remove();
-			element.html('<i class="fa-solid fa-xl fa-xmark"></i>');
+			// console.log( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").html() );
+			$(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").remove();
+			// element.html('<i class="fa-solid fa-xl fa-xmark"></i>');
 
 		});
 
