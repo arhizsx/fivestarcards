@@ -2,19 +2,30 @@
 
 global $wpdb;
 
-$consignment = $this->wpdb->get_results ( "
-SELECT * 
-FROM consignment
-where user_id = " . get_current_user_id() . " 
-and status = 'shipped'
-order by order_id desc, id desc
-"
-);
 if( ! isset( $_GET['type'] ) ){
+
+    $consignment = $this->wpdb->get_results ( "
+        SELECT * 
+        FROM consignment
+        where user_id = " . get_current_user_id() . " 
+        and status = 'shipped'
+        order by order_id desc, id desc
+        "
+    );
+
     $show = "cards";
     $btn_cards = 'btn-primary';
     $btn_orders = 'btn-secondary';
 } else {
+
+    $orders = $this->wpdb->get_results ( "
+        SELECT * 
+        FROM consignment_orders
+        where user_id = " . get_current_user_id() . " 
+        order by id desc
+        "
+    );
+
     $show = "orders";
     $btn_cards = 'btn-secondary';
     $btn_orders = 'btn-primary';
@@ -27,11 +38,11 @@ if( ! isset( $_GET['type'] ) ){
         <a class="btn btn-pill btn-sm mb-2 <?php echo $btn_orders; ?>" href="/my-account/consignment/?mode=to-ship&type=orders">Orders</a>
     </div>
 </div>
+<div class="table-responsive">
 
 <?php 
     if( $show == 'cards' ){
 ?>
-<div class="table-responsive">
     <table class="table table-sm table-bordered">
         <thead>
             <tr>
@@ -72,7 +83,47 @@ if( ! isset( $_GET['type'] ) ){
 
         </tbody>
     </table>
-</div>
+<?php         
+    } else {
+?>
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Carrier</th>
+                <th>Shipped By</th>
+                <th>Tracking Number</th>
+                <th>Shipping Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            if( count( $orders ) == 0 ) { 
+            ?>
+            <tr>
+                <td colspan="5" class="text-center py-5">
+                    Empty
+                </td>
+            </tr>
+            <?php 
+            } else {
+                foreach( $orders as $order ){
+                    $data = json_decode($order->data, true);
+            ?>
+            <tr>
+                <td><?php echo $order->id + 1000; ?></td>
+                <td><?php echo $data["carrier"]; ?></td>
+                <td><?php echo $data["shipped_by"]; ?></td>
+                <td><?php echo $data["tracking_number"]; ?></td>
+                <td><?php echo $data["shipping_date"]; ?></td>
+            </tr>
+            <?php 
+                }
+            } 
+            ?>
+        </tbody>
+    </table>
 <?php         
     }
 ?>
+</div>
