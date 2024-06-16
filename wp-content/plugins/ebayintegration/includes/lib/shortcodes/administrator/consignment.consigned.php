@@ -13,12 +13,16 @@ global $wpdb;
 if( ! isset( $_GET['type'] ) ){
 
     $consignment = $this->wpdb->get_results ( "
-        SELECT * 
+		SELECT 
+        consignment.*,
+        wp_users.user_email,
+        wp_users.display_name
         FROM consignment
+        	INNER JOIN wp_users
+            ON consignment.user_id = wp_users.ID
         where status = 'received'
-        order by order_id desc, id desc
-        "
-    );
+        order by order_id desc, consignment.id desc;
+    ");
 
     $show = "cards";
     $btn_cards = 'btn-primary';
