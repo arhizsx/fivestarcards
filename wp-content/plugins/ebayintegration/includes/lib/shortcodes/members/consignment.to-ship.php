@@ -94,6 +94,7 @@ if( ! isset( $_GET['type'] ) ){
                 <th>Shipped By</th>
                 <th>Tracking Number</th>
                 <th>Shipping Date</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
@@ -116,6 +117,7 @@ if( ! isset( $_GET['type'] ) ){
                 <td><?php echo $data["shipped_by"]; ?></td>
                 <td><?php echo $data["tracking_number"]; ?></td>
                 <td><?php echo $data["shipping_date"]; ?></td>
+                <td><?php echo $order->status; ?></td>
             </tr>
             <?php 
                 }
