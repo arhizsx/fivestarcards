@@ -301,9 +301,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$.when( card ).done( function( card ){
 
 			// console.log( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").html() );
+			console.log( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").closest("tbody").html() );
+
 			$(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").remove();
 
-			console.log( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").closest("tbody").html() );
 			// element.html('<i class="fa-solid fa-xl fa-xmark"></i>');
 
 		});
