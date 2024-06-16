@@ -270,7 +270,8 @@ class Ebay_Integration_Ebay_API {
 		$this->wpdb->update(
 			'consignment', 
 			array(
-				'status'=> "shipped",
+				'order_id' => $data["order_id"],
+				'status' => "shipped",
 			), 
 			array(
 				'user_id' => $user_id,
