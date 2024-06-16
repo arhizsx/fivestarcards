@@ -182,7 +182,7 @@ order by id desc
             <div class="modal-footer">
                 <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
 
-                <button class="btn border btn-primary ebayintegration-btn" 
+                <button class="btn border btn-success ebayintegration-btn" 
                     data-action='confirmAddConsign' 
                 >
                     Log Card
