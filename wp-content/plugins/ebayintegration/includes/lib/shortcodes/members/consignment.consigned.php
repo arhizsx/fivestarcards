@@ -2,12 +2,12 @@
     <table class="table table-sm table-bordered">
         <thead>
             <tr>
+                <th>Status</th>
                 <th>Year</th>
                 <th>Brand</th>
                 <th>Card Number</th>
                 <th>Player Name</th>
                 <th>Attribute S/N</th>
-                <th>Status</th>
             </tr>
         </thead>
         <tbody>
