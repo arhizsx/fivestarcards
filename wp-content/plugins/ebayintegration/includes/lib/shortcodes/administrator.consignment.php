@@ -37,13 +37,13 @@
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
-                    <li class="<?php echo AdministratorGrading("receiving"); ?>">
+                    <li class="<?php echo AdministratorConsignment("order_receiving"); ?>">
                         <a class="" href="/administrator/consignment">Receiving</a>
                     </li>
-                    <li class="<?php echo AdministratorGrading("consigned"); ?>">
+                    <li class="<?php echo AdministratorConsignment("consigned"); ?>">
                         <a class="" href="/administrator/consignment/?mode=consigned">Consigned</a>
                     </li>
-                    <li class="<?php echo AdministratorGrading("sold"); ?>">
+                    <li class="<?php echo AdministratorConsignment("sold"); ?>">
                         <a class="" href="/administrator/consignment/?mode=sold">Sold</a>
                     </li>
                 </ul>

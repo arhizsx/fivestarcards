@@ -100,37 +100,6 @@ function ActivateSelect($page){
 }
 
 
-function ActivateListing($page){
-    if( isset( $_GET['type']) == false ){
-        if( $page == "auction" ){
-            return "btn-primary";
-        } else {
-            return "btn-secondary";
-        }
-    } 
-    else {
-        if( $page == $_GET['type'] ){
-            return "btn-primary";
-        } else {
-            return "btn-secondary";
-        }
-    }
-}
-function ActivateListingSelect($page){
-    if( isset( $_GET['type']) == false ){
-        if( $page == "auction" ){
-            return "selected";
-        }
-    } 
-    else {
-        if( $page == $_GET['type'] ){
-            return "selected";
-        } else {
-            return "";
-        }
-    }
-}
-
 function ActivateGrading($page){
     if( isset( $_GET['mode']) == false ){
         if( $page == "open" ){
@@ -155,6 +124,22 @@ function ActivateGradingSelect($page){
     else {
         if( $page == $_GET['mode'] ){
             return "selected";
+        } else {
+            return "";
+        }
+    }
+}
+
+
+function AdministratorConsignment($page){
+    if( isset( $_GET['mode']) == false ){
+        if( $page == "order_receiving" ){
+            return "active";
+        }
+    } 
+    else {
+        if( $page == $_GET['mode'] ){
+            return "active";
         } else {
             return "";
         }
