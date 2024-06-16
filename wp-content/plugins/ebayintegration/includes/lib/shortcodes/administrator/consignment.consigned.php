@@ -71,6 +71,7 @@ if( $show == "cards" ){
                 <th>Player Name</th>
                 <th>Card Number</th>
                 <th>Attribute S/N</th>
+                <th>Status</th>
                 <th class="fit text-end">Action</th>
             </tr>
         </thead>
@@ -99,6 +100,7 @@ if( $show == "cards" ){
                 <td><?php echo $data["player_name"] ?></td>
                 <td><?php echo $data["card_number"] ?></td>
                 <td><?php echo $data["attribute_sn"] ?></td>
+                <td><?php echo $card->status ?></td>
                 <td class="fit">
                     <a class="btn btn-pill btn-sm btn-danger ebayintegration-btn" data-action="confirmConsignedCardNotAvailable" data-id="<?php echo $card->id ?>">
                         <i class="fa-solid fa-xmark"></i>
