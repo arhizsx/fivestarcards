@@ -9,6 +9,8 @@ where user_id = " . get_current_user()
 
 );
 
+echo get_current_user();
+
 print_r( $consignment );
 
 ?>
