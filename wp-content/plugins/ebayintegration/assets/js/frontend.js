@@ -189,7 +189,14 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		var package = confirmConsignCardsShipping();
 
-		console.log( package );
+		$(document).find(".ship_batch_modal").find(".formbox").addClass("d-none");
+		$(document).find(".ship_batch_modal").find(".loading").removeClass("d-none");
+		element.prop("disabled", "disabled");
+
+		$.when( package ).done( function( package ){
+
+			console.log( "Done confirmConsignCardsShipping");
+		});
 
 	}
 
@@ -292,14 +299,11 @@ function confirmConsignCardsShipping(){
 
 	var defObject = $.Deferred();  // create a deferred object.
 
-	var user_id = parseInt( $(document).find(".ship_batch_modal").find("[name='user_id']").val() );
-	var carrier = $(document).find(".ship_batch_modal").find("[name='carrier']").val();
-	var shipped_by = $(document).find(".ship_batch_modal").find("[name='shipped_by']").val();
-	var tracking_number = $(document).find(".ship_batch_modal").find("[name='tracking_number']").val();
-	var shipping_date = $(document).find(".ship_batch_modal").find("[name='shipping_date']").val();
-
-
-	console.log($(document).find(".ship_batch_modal").find("[name='user_id']").val());
+	var user_id = parseInt( $(document).find(".ship_batch_modal").find(".formbox").find("[name='user_id']").val() );
+	var carrier = $(document).find(".ship_batch_modal").find(".formbox").find("[name='carrier']").val();
+	var shipped_by = $(document).find(".ship_batch_modal").find(".formbox").find("[name='shipped_by']").val();
+	var tracking_number = $(document).find(".ship_batch_modal").find(".formbox").find("[name='tracking_number']").val();
+	var shipping_date = $(document).find(".ship_batch_modal").find(".formbox").find("[name='shipping_date']").val();
 
 	jQuery.ajax({
 		method: 'post',
