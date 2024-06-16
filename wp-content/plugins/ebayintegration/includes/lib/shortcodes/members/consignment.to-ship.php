@@ -17,6 +17,7 @@ order by order_id desc, id desc
     <table class="table table-sm table-bordered">
         <thead>
             <tr>
+                <th style="width: 20px;"></th>
                 <th>Order ID</th>
                 <th>Year</th>
                 <th>Brand</th>
@@ -40,6 +41,11 @@ order by order_id desc, id desc
                         $data = json_decode( $card->data, true );
             ?>
                 <tr>
+                    <td>
+                        <a class='text-dark consigned_item_view' data-id='<?php echo $card->id ?>' href='#'>
+                            <i class='fa-solid fa-xl fa-bars'></i>
+                        </a>
+                    </td>
                     <td><?php echo $card->order_id + 1000; ?></td>
                     <td><?php echo $data["year"] ?></td>
                     <td><?php echo $data["brand"] ?></td>
