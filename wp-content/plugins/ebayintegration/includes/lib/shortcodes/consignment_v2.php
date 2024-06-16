@@ -41,9 +41,6 @@
                     <li class="<?php echo Activate("listed"); ?>">
                         <a class="" href="/my-account/consignment/?mode=listed">Listed</a>
                     </li>
-                    <li class="<?php echo Activate("sold"); ?>">
-                        <a class="" href="/my-account/consignment/?mode=sold">Sold</a>
-                    </li>
                 </ul>
                 <div class="d-lg-none p-3">
                     <label>Select Consignment Status</label>
