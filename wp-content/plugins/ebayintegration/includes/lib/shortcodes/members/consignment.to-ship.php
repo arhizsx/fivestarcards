@@ -38,7 +38,7 @@ if( ! isset( $_GET['type'] ) ){
         <a class="btn btn-pill btn-sm mb-2 <?php echo $btn_orders; ?>" href="/my-account/consignment/?mode=to-ship&type=orders">Orders</a>
     </div>
 </div>
-<div class="table-responsive">
+<div class="table-responsive  d-none d-lg-block">
 
 <?php 
     if( $show == 'cards' ){
@@ -129,3 +129,75 @@ if( ! isset( $_GET['type'] ) ){
     }
 ?>
 </div>
+<div class="d-lg-none pb-2">
+<?php 
+    if( $show == 'cards' ){
+?>
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th>Cards</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                if( count( $consignment ) == 0 ){
+            ?>
+            <tr>
+                <td class="text-center py-5">
+                    Empty
+                </td>
+            </tr>
+            <?php 
+                } else {
+                    foreach( $consignment as $card ){
+                        $data = json_decode( $card->data, true );
+            ?>
+            <tr>
+                <td>
+                    <div class='row'>
+                        <div class='small text-secondary col-3'>Player</div>
+                        <div class='col-9'>
+                            <?php echo $data["player_name"] ?>								
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-3'>Year</div>
+                        <div class='col-9'>
+                            <?php echo $data["year"] ?>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-3'>Brand</div>
+                        <div class='col-9'>
+                            <?php echo $data["brand"] ?>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-3'>Card #</div>
+                        <div class='col-9'>
+                            <?php echo $data["card_number"] ?>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-3'>Attribute SN</div>
+                        <div class='col-9'>
+                            <?php echo $data["attribute_sn"] ?>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <?php 
+                    }
+                }
+            ?>
+        </tbody>
+    </table>
+<?php         
+    } else {
+?>
+<?php         
+    }
+?>
+</div>
+
