@@ -214,9 +214,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				$(document).find("#new_consignment_mobile tbody").prepend(
 					"<tr>" +
 						"<td>" +
-							"<a class='float-right text-dark me-4' href='#'>" +
-								"<i class='fa-solid fa-xl fa-bars'></i>" + 
-							"</a>" +
+							"<div class='w-100 p-0 text-end'>" +
+									"<a class='text-dark me-4' href='#'>" +
+										"<i class='fa-solid fa-xl fa-bars'></i>" + 
+									"</a>" +
+							"</div>" +
 							"<div class='row'>" +
 								"<div class='small text-secondary col-3'>Player</div>" +
 								"<div class='col-9'>" +
