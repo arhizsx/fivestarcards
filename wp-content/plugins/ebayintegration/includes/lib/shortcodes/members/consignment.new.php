@@ -5,11 +5,11 @@ global $wpdb;
 $consignment = $this->wpdb->get_results ( "
 SELECT * 
 FROM consignment
-where user_id = " . get_current_user()
+where user_id = " . get_current_user_id()
 
 );
 
-echo get_current_user();
+echo get_current_user_id();
 
 print_r( $consignment );
 
