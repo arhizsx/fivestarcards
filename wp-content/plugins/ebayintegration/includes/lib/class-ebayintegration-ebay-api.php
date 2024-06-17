@@ -252,13 +252,24 @@ class Ebay_Integration_Ebay_API {
 		
 		elseif( $params["action"] == "confirmUnvailableConsignedCard"){
 			return $this->confirmUnvailableConsignedCard( $params );
-		}
+		} 
+
+		elseif( $params["action"] == "showConsignedCardDetailsModal"){
+			return $this->showConsignedCardDetailsModal( $params );
+		} 
 		
+		else {
+			return $params;
+		}		
 
 	}
 
 
 	// CONSIGNMENT
+
+	public function showConsignedCardDetailsModal( $params ){
+		return $params;
+	}
 
 	public function confirmUnvailableConsignedCard( $params ){
 

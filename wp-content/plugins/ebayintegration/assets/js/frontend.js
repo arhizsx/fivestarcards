@@ -446,7 +446,26 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	else if( jQuery(this).data("action") == "showConsignedCardDetailsModal" ){
 
-		jQuery(document).find(".consigned_card_details_modal").appendTo('body').modal("show");
+		var id = element.data("id");
+		var user_id = element.data("user_id");
+
+		var card = showConsignedCardDetailsModal(id, user_id);
+		
+		$.when( card ).done( function( card ){
+			
+			if( card.error == false ){
+
+				console.log( card );
+				jQuery(document).find(".consigned_card_details_modal").appendTo('body').modal("show");
+
+			} else {
+				alert("Error encountered");
+			}
+
+		});
+
+
+
 		
 	}
 
@@ -473,6 +492,30 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	
 });
 
+function showConsignedCardDetailsModal(id, user_id){
+
+	var defObject = $.Deferred();  // create a deferred object.
+
+	jQuery.ajax({
+		method: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: { 
+			action: "showConsignedCardDetailsModal",
+			id: id,
+			user_id: user_id
+		},
+		success: function(resp){		
+			defObject.resolve(resp);    //resolve promise and pass the response.
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+		
+	return defObject.promise();
+
+}
+
 function confirmUpdateConsignedCardDetails(){
 
 	var defObject = $.Deferred();  // create a deferred object.
@@ -482,7 +525,7 @@ function confirmUpdateConsignedCardDetails(){
 		url: "/wp-json/ebayintegration/v1/post",
 		data: { 
 			action: "confirmUpdateConsignedCardDetails",
-			
+
 		},
 		success: function(resp){		
 			defObject.resolve(resp);    //resolve promise and pass the response.
@@ -569,7 +612,6 @@ function consignedCardNotReceived(id, user_id){
 
 		
 	return defObject.promise();
-
 
 }
 
