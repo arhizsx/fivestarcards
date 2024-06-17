@@ -53,7 +53,6 @@ if( ! isset( $_GET['type'] ) ){
                 <th>Card Number</th>
                 <th>Attribute S/N</th>
                 <th>Status</th>
-                <th class="fit"></th>
             </tr>
         </thead>
         <tbody>
@@ -77,9 +76,16 @@ if( ! isset( $_GET['type'] ) ){
                     <td><?php echo $data["player_name"] ?></td>
                     <td class='text-end'><?php echo $data["card_number"] ?></td>
                     <td class='text-end'><?php echo $data["attribute_sn"] ?></td>
-                    <td><?php echo strtoupper($card->status); ?></td>
-                    <td class="fit">
+                    <td>
+                        <?php 
+                            echo strtoupper($card->status); 
 
+                            if( $card->status == "unavailable" ){
+                        ?>
+                            <div class="small"><a href="#">Confirm</a></div>
+                        <?php                                 
+                            }
+                        ?>
                     </td>
                 </tr>
             <?php 
