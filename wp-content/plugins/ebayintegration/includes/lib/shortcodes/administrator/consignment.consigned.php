@@ -102,7 +102,7 @@ if( $show == "cards" ){
                 <td><?php echo $data["attribute_sn"] ?></td>
                 <td><?php echo strtoupper($card->status) ?></td>
                 <td class="fit">
-                    <a class="btn btn-pill btn-sm btn-danger ebayintegration-btn" data-action="" data-id="<?php echo $card->id ?>">
+                    <a class="btn btn-pill btn-sm btn-primary ebayintegration-btn" data-action="" data-id="<?php echo $card->id ?>">
                         <i class="fa-solid fa-paper-plane"></i>
                     </a>
                 </td>
