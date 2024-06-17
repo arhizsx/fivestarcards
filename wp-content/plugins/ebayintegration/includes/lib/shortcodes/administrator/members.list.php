@@ -172,12 +172,12 @@
                                 <label>Email</label>
                                 <input type="text" class="form-control p-2 mb-3">
                             </div>
-                            <div class="col-md-12 text-end">
-                                <button class="btn btn-primary">Update</button>
-                                <button class="btn btn-primary">Update</button>
-                            </div>
                         </div>
                     </div>          
+                    <div class="text-end">
+                        <button class="btn btn-primary">Update</button>
+                        <button class="btn btn-primary">Update</button>
+                    </div>
                 </div>
                 <div class="d-none p-5 text-center loading">
 
