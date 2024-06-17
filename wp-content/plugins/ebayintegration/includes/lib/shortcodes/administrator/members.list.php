@@ -154,9 +154,9 @@
                         <button type="button" class="btn btn-outline-dark ebayintegration-btn" data-action="getViewMemberEbay" data-user_id="">
                             <i class="fa-brands fa-ebay fa-2xl"></i>
                         </button>
-                        <button type="button" class="btn btn-outline-dark ebayintegration-btn" data-action="getViewMemberSKU" data-user_id="">
+                        <!-- <button type="button" class="btn btn-outline-dark ebayintegration-btn" data-action="getViewMemberSKU" data-user_id="">
                             SKU
-                        </button>
+                        </button> -->
                     </div>          
                     <div class="member_details_box boxes">
                         <div class="border p-3 mb-3">
