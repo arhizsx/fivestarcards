@@ -497,6 +497,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		});
 	}
 
+	else if( jQuery(this).data("action") == "showMemberInfoModal" ){
+
+		jQuery(document).find(".member_info_modal").appendTo('body').modal("show");
+
+	}
+	
+
 	else {
 
 		console.log("Action Not Set: " + jQuery(this).data("action") );
