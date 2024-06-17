@@ -4,13 +4,20 @@ global $wpdb;
 
 $maxpage = 200;
 
+if( isset( $_GET['i'] ) ){
+    $multiplier = $_GET['i'];
+    $page = $_GET['i'];
+} else {
+    $multiplier = 0;
+    $page = 1;
+}
+
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
 where status = 'PaidOut'
 ORDER BY id DESC
-LIMIT " . $maxpage . " OFFSET 0
-" 
+LIMIT " . $maxpage . " OFFSET " . $multiplier * $page
 );
 
 $ebay_count = $this->wpdb->get_results ( "
