@@ -511,6 +511,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".member_view_menu").find("button").removeClass("active");
 		element.addClass("active");
 
+		var user_id = element.data("user_id");
+
 		$(document).find(".formbox").find(".boxes").addClass("d-none");
 		$(document).find(".formbox").find(".member_details_box").removeClass("d-none");
 		
@@ -520,9 +522,28 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		
 		$(document).find(".member_view_menu").find("button").removeClass("active");
 		element.addClass("active");
+
+		var user_id = element.data("user_id");
 	
 		$(document).find(".formbox").find(".boxes").addClass("d-none");
 		$(document).find(".formbox").find(".member_ebay_box").removeClass("d-none");
+
+		jQuery.ajax({
+			method: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: { 
+				action: "getViewMemberEbay",
+				user_id: user_id,
+			},
+			success: function(resp){		
+				defObject.resolve(resp);    //resolve promise and pass the response.
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});
+	
+
 
 	}
 	
