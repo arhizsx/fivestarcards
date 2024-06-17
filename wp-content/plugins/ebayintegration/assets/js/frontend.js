@@ -292,16 +292,17 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	else if( jQuery(this).data("action") == "removeConsignedCardRow" ){
 
-		console.log( element.data() );
-
-		var card = removeConsignedCardRow();
+		var id = element.data("id");
+		var user_id = element.data("user_id");
+	
+		var card = removeConsignedCardRow(id, user_id);
 		
 		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
 
 		$.when( card ).done( function( card ){
 
 			// console.log( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").html() );
-			if( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").closest("tbody").find(".consigned_item_row").length  == 2 ){
+			if( $(document).find(".consigned_item_row[data-id='" + id + "']").closest("tbody").find(".consigned_item_row").length  == 2 ){
 
 				$(document).find("#new_consignment tbody").append(
 					'<tr class="empty_consignment">' +
@@ -320,7 +321,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				);
 			}
 
-			$(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").remove();
+			$(document).find(".consigned_item_row[data-id='" + id + "']").remove();
 
 			// element.html('<i class="fa-solid fa-xl fa-xmark"></i>');
 
@@ -328,6 +329,44 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 	
+	else if( jQuery(this).data("action") == "consignedCardNotReceived" ){
+	
+		var id = element.data("id");
+		var user_id = element.data("user_id");
+
+		var card = consignedCardNotReceived(id, user_id);
+
+		
+		$.when( card ).done( function( card ){
+
+		});
+	}
+
+	else if( jQuery(this).data("action") == "confirmConsignedCardReceived" ){
+	
+		var id = element.data("id");
+		var user_id = element.data("user_id");
+
+		var card = confirmConsignedCardReceived(id, user_id);
+		
+		$.when( card ).done( function( card ){
+
+		});
+
+	}
+
+	else if( jQuery(this).data("action") == "confirmConsignedCardReceivedAll" ){
+	
+		var id = element.data("id");
+		var user_id = element.data("user_id");
+
+		var order = confirmConsignedCardReceivedAll(id, user_id);
+		
+		$.when( order ).done( function( order ){
+
+		});
+
+	}
 
 	else {
 
@@ -337,17 +376,94 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	
 });
 
-function removeConsignedCardRow(){
+function confirmConsignedCardReceivedAll(id, user_id){
 
 	var defObject = $.Deferred();  // create a deferred object.
 
+	jQuery.ajax({
+		method: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: { 
+			action: "confirmConsignedCardReceivedAll",
+			id: id,
+			user_id: user_id
+		},
+		success: function(resp){		
+			defObject.resolve(resp);    //resolve promise and pass the response.
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
 
+		
+	return defObject.promise();
+
+}
+
+function consignedCardNotReceived(id, user_id){
+
+	var defObject = $.Deferred();  // create a deferred object.
+
+	jQuery.ajax({
+		method: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: { 
+			action: "consignedCardNotReceived",
+			id: id,
+			user_id: user_id
+		},
+		success: function(resp){		
+			defObject.resolve(resp);    //resolve promise and pass the response.
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
+		
+	return defObject.promise();
+
+
+}
+
+function confirmConsignedCardReceived(id, user_id){
+
+	var defObject = $.Deferred();  // create a deferred object.
+
+	jQuery.ajax({
+		method: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: { 
+			action: "confirmConsignedCardReceived",
+			id: id,
+			user_id: user_id
+		},
+		success: function(resp){		
+			defObject.resolve(resp);    //resolve promise and pass the response.
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
+		
+	return defObject.promise();
+
+
+}
+
+function removeConsignedCardRow(id, user_id){
+
+	var defObject = $.Deferred();  // create a deferred object.
 
 	jQuery.ajax({
 		method: 'post',
 		url: "/wp-json/ebayintegration/v1/post",
 		data: { 
 			action: "removeConsignedCardRow",
+			id: id,
+			user_id: user_id
 		},
 		success: function(resp){		
 			defObject.resolve(resp);    //resolve promise and pass the response.

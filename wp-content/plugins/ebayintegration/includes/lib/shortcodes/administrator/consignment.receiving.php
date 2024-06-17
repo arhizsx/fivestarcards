@@ -90,7 +90,7 @@ if( $show == "cards" ){
                     foreach( $consignment as $card ) {
                         $data = json_decode( $card->data, true );
             ?>
-            <tr>
+            <tr class="consigned_item_row" data-id="<?php echo $card->id ?>">
                 <td>
                     <div><?php echo $card->display_name ?></div>
                     <div class="small"><?php echo $card->user_email ?></div>
@@ -102,10 +102,10 @@ if( $show == "cards" ){
                 <td><?php echo $data["card_number"] ?></td>
                 <td><?php echo $data["attribute_sn"] ?></td>
                 <td class="fit">
-                    <a class="btn btn-pill btn-sm btn-danger ebayintegration-btn" data-action="consignedCardNotReceived" data-id="<?php echo $card->id ?>">
+                    <a class="btn btn-pill btn-sm btn-danger ebayintegration-btn" data-action="consignedCardNotReceived" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id(); ?>">
                         <i class="fa-solid fa-xmark"></i>
                     </a>
-                    <a class="btn btn-pill btn-sm btn-success ebayintegration-btn" data-action="confirmConsignedCardReceived" data-id="<?php echo $card->id ?>">
+                    <a class="btn btn-pill btn-sm btn-success ebayintegration-btn" data-action="confirmConsignedCardReceived" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id(); ?>">
                         <i class="fa-solid fa-check"></i>
                     </a>
                 </td>
@@ -148,7 +148,7 @@ if( $show == "cards" ){
                     foreach( $orders as $order ) {
                         $data = json_decode( $order->data, true );
             ?>
-                <tr>
+                <tr class="consigned_order_row" data-id="<?php echo $order->id ?>">
                     <td>
                         <div><?php echo $order->display_name ?></div>
                         <div class="small"><?php echo $order->user_email ?></div>
@@ -160,7 +160,7 @@ if( $show == "cards" ){
                     <td><?php echo $data["shipping_date"]; ?></td>
                     <td><?php echo strtoupper($order->status); ?></td>
                     <td class="fit">
-                        <a class="btn btn-pill btn-sm btn-success ebayintegration-btn" data-action="confirmConsignedCardReceivedAll" data-id="<?php echo $order->id ?>">
+                        <a class="btn btn-pill btn-sm btn-success ebayintegration-btn" data-action="confirmConsignedCardReceivedAll" data-id="<?php echo $order->id ?>" data-user_id="<?php echo get_current_user_id(); ?>">
                             <i class="fa-solid fa-check me-2"></i>All
                         </a>
                     </td>
