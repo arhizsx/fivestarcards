@@ -38,7 +38,7 @@ $users = get_users( $args );
         font-size: .7em !important;
     }
 </style>
-    <div class="d-flex justify-content-center mb-3">
+    <div class="d-flex justify-content-between mb-3">
         <select class="p-2">
             <?php 
             for( $i = 1; $i <= $total_pages; $i++ ){
