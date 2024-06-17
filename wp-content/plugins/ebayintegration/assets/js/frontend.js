@@ -500,6 +500,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	else if( jQuery(this).data("action") == "showMemberInfoModal" ){
 
 		$(document).find("#main-header").css("z-index", 99998)
+		$(document).find("#wpadminbar").css("z-index", 99998)		
 
 		jQuery(document).find(".member_info_modal").prependTo('body').modal("show");
 
