@@ -39,6 +39,8 @@ $users = get_users( $args );
     }
 </style>
     <div class="d-flex justify-content-between mb-3">
+        <div>
+        Page: 
         <select class="p-2">
             <?php 
             for( $i = 1; $i <= $total_pages; $i++ ){
@@ -49,7 +51,7 @@ $users = get_users( $args );
             ?>
             <option></option>
         </select>
-
+        </div>
         <input class="btn pl-2 search_box" style="margin-left: 15px; text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_paid">
     </div>
 
