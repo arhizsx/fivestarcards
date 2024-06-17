@@ -49,7 +49,7 @@ order by id desc
             ?>
             <tr class='consigned_item_row' data-id='<?php echo $card->id; ?>'>
                 <td>
-                    <a class='text-danger  ebayintegration-btn' data-action="removeConsignedCardRow"  data-id='<?php echo $card->id ?>' href='#'>
+                    <a class='text-danger  ebayintegration-btn' data-action="removeConsignedCardRow"  data-id='<?php echo $card->id ?>' data-user_id="<?php echo get_current_user_id(); ?>" href='#'>
                         <i class='fa-solid fa-lg fa-xmark'></i>
                     </a>
                 </td>
@@ -89,7 +89,7 @@ order by id desc
             <tr class='consigned_item_row' data-id='<?php echo $card->id; ?>'>
                 <td>
                     <div class='w-100 p-0 text-end' style='position: relative;'>
-                        <a class='text-danger ebayintegration-btn' data-action="removeConsignedCardRow" data-id='<?php echo $card->id ?>' href='#' style='position: absolute; right: 0px;'>
+                        <a class='text-danger ebayintegration-btn' data-action="removeConsignedCardRow" data-id='<?php echo $card->id ?>' data-user_id="<?php echo get_current_user_id(); ?>" href='#' style='position: absolute; right: 0px;'>
                             <i class='fa-solid fa-xl fa-xmark'></i>
                         </a>
                     </div>
