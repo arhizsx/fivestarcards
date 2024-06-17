@@ -339,7 +339,21 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		
 		$.when( card ).done( function( card ){
 
+			if( $(document).find(".consigned_item_row[data-id='" + id + "']").closest("tbody").find(".consigned_item_row").length  == 1 ){
+
+				$(document).find("#receiving_consignment tbody").append(
+					'<tr class="empty_consignment">' +
+						'<td colspan="8" class="text-center py-5">' +
+							'Empty' +
+						'</td>' +
+					'</tr>'
+				);
+				
+			}
+
 			$(document).find(".consigned_item_row[data-id='" + id + "']").remove();
+
+
 
 		});
 	}
