@@ -281,7 +281,7 @@ class Ebay_Integration_Ebay_API {
 		");
 
 		if( $card != null ){
-			return ["error" => false, "params" => $params, "card" => $card ];
+			return ["error" => false, "params" => $params, "card" => $card[0] ];
 		} else {
 			return ["error" => true, "params" => $params ];
 		}
