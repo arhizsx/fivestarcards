@@ -1060,3 +1060,9 @@ $(document).on("change", "#mobile_tab_select", function(){
 });
 
 
+$(document).on("change", ".mobile_tab_select", function(){
+	console.log($(this).val());
+
+    window.location.href = $(this).val();
+});
+
