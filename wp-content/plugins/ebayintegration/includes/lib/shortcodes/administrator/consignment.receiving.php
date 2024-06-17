@@ -70,7 +70,7 @@ if( $show == "cards" ){
                 if( count( $consignment ) == 0 ){
             ?>
             <tr>
-                <td colspan="6" class="text-center py-5">
+                <td colspan="8" class="text-center py-5">
                     Empty
                 </td>
             </tr>
