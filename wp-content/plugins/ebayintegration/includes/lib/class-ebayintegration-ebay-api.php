@@ -280,11 +280,11 @@ class Ebay_Integration_Ebay_API {
 
 		$array = implode("','",$skus);
 
-		$cards = $this->wpdb->get_results ("
-			SELECT * FROM ebay WHERE status = 'ActiveList' AND IN (" . $array . ")
-		");
+		$sql = "SELECT * FROM ebay WHERE status = 'ActiveList' AND IN (" . $array . ")";
 
-		return ["card" => $cards, "skus" => $skus];
+		$cards = $this->wpdb->get_results ( $sql );
+
+		return ["card" => $cards, "skus" => $skus, "sql" => $sql ];
 	}
 
 	// CONSIGNMENT
