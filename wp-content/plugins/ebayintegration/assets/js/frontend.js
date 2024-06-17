@@ -541,6 +541,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				user_id: user_id,
 			},
 			success: function(resp){		
+
+				$.each(resp.card, function( k, v ){
+					console.log( v );
+				});
+
 				// defObject.resolve(resp);    //resolve promise and pass the response.
 			},
 			error: function(){
