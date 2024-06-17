@@ -276,7 +276,7 @@ class Ebay_Integration_Ebay_API {
 
 	public function getViewMemberEbay( $params ){
 
-		$skus = get_user_meta( get_current_user_id(), "sku", true );		
+		$skus = get_user_meta( $params["user_id"], "sku", true );		
 
 		return $skus;
 
