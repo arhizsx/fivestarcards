@@ -82,7 +82,7 @@ if( ! isset( $_GET['type'] ) ){
 
                             if( $card->status == "unavailable" ){
                         ?>
-                            <div class="small"><a href="#">Confirm</a></div>
+                            <div class="small"><a class="btn btn-pill btn-sm btn-info" href="#">Confirm</a></div>
                         <?php                                 
                             }
                         ?>
