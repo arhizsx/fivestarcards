@@ -29,7 +29,9 @@ where status = 'PaidOut'
 
 $total_pages = ceil($ebay_count[0]->total / $maxpage ) ;
 
+print_r( $total_pages );
 
+print_r( $ebay_count[0]->total );
 
 $args = array(
     'orderby'    => 'display_name',
