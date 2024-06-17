@@ -53,7 +53,7 @@ if( ! isset( $_GET['type'] ) ){
                 <th>Card Number</th>
                 <th>Attribute S/N</th>
                 <th>Status</th>
-                <th class="fit">Status</th>
+                <th class="fit"></th>
             </tr>
         </thead>
         <tbody>
