@@ -195,8 +195,8 @@ if( $show == "cards" ){
 			</div>
             <div class="modal-body py-2 px-3">
                 <div class="row formbox">
-                    <H1>Post to eBay</H1>
-                    <p>coming soon</p>
+                <H1 style="color: black !important;">Post to eBay</H1>
+                <p>coming soon</p>
                 </div>
                 <div class="d-none p-5 text-center loading">
 
@@ -224,8 +224,6 @@ if( $show == "cards" ){
 			</div>
             <div class="modal-body py-2 px-3">
                 <div class="row formbox text-center">
-                    <H1 style="color: black !important;">Post to eBay</H1>
-                    <p>coming soon</p>
                 </div>
                 <div class="d-none p-5 text-center loading">
  
