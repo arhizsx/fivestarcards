@@ -20,7 +20,7 @@ if( ! isset( $_GET['type'] ) ){
         FROM consignment
         	INNER JOIN wp_users
             ON consignment.user_id = wp_users.ID
-        where status IN ('received', 'unavailable', 'processing')
+        where status IN ('received', 'unavailable', 'processing', 'listed', 'sold', 'unsold')
         order by order_id desc, status asc, consignment.id desc;
     ");
 
