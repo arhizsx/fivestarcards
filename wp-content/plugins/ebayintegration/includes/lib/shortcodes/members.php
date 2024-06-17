@@ -1,7 +1,7 @@
 <div class="m-0 p-0">
     <div class="row">
         <div class="col-xl-6">
-            <H1 style="color: black;">Administrators</H1>            
+            <H2 style="color: black;">Administrators</H2>            
         </div>
         <div class="col-xl-6 text-end">
             
