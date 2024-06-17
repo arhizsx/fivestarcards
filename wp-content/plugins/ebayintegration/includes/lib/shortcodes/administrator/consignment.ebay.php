@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col pt-3">
             <?php 
             if(isset( $_GET['type']) ){
                 include( plugin_dir_path( __FILE__ ) . "consignment.ebay." . $_GET['type'] . '.php' );			
