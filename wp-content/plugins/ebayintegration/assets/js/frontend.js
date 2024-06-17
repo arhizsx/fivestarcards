@@ -506,6 +506,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		alert( element.data("user_id") );
 
+		$(document).find(".member_info_modal").find(".member_view_menu").find("button").attr("data-user_id", "");
 		$(document).find(".member_info_modal").find(".member_view_menu").find("button").attr("data-user_id", element.data("user_id"));
 
 	}
