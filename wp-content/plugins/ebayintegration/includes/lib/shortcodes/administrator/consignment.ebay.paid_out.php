@@ -21,7 +21,7 @@ SELECT *
 FROM  ebay
 where status = 'PaidOut'
 ORDER BY id DESC
-LIMIT " . $maxpage . " OFFSET " . ($multiplier * $maxpage)
+LIMIT " . $maxpage . " OFFSET " . ($page * $maxpage)
 );
 
 print_r(
