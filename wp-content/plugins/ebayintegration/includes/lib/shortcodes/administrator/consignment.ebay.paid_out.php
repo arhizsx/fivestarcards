@@ -11,6 +11,16 @@ LIMIT 100 OFFSET 0
 " 
 );
 
+$ebay_count = $this->wpdb->get_results ( "
+SELECT * 
+FROM  ebay
+where status = 'PaidOut'
+ORDER BY id DESC
+" 
+);
+
+print_r( count( $ebay_count ) );
+
 $args = array(
     'orderby'    => 'display_name',
     'order'      => 'ASC'
