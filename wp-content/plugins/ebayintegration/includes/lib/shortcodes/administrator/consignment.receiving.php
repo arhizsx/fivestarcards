@@ -102,10 +102,10 @@ if( $show == "cards" ){
                 <td><?php echo $data["card_number"] ?></td>
                 <td><?php echo $data["attribute_sn"] ?></td>
                 <td class="fit">
-                    <a class="btn btn-pill btn-sm btn-danger ebayintegration-btn" data-action="confirmConsignedCardReceived" data-id="<?php echo $card->id ?>">
+                    <a class="btn btn-pill btn-sm btn-danger ebayintegration-btn" data-action="consignedCardNotReceived" data-id="<?php echo $card->id ?>">
                         <i class="fa-solid fa-xmark"></i>
                     </a>
-                    <a class="btn btn-pill btn-sm btn-success ebayintegration-btn" data-action="consignedCardNotReceived" data-id="<?php echo $card->id ?>">
+                    <a class="btn btn-pill btn-sm btn-success ebayintegration-btn" data-action="confirmConsignedCardReceived" data-id="<?php echo $card->id ?>">
                         <i class="fa-solid fa-check"></i>
                     </a>
                 </td>
