@@ -32,7 +32,7 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
-                <ul class="clearfix">
+                <ul class="clearfix d-none d-lg-block">
                     <li class="<?php echo AdministratorConsignment("receiving"); ?>">
                         <a class="" href="/administrator/consignment">Receiving</a>
                     </li>
@@ -46,6 +46,15 @@
                         <a class="" href="/administrator/consignment/?mode=ebay"><i class="fa-brands fa-ebay fa-2xl"></i></a>
                     </li>
                 </ul>
+                <div class="d-lg-none p-3">
+                    <label>Select Consignment Status</label>
+                    <select class="form-control" id="mobile_tab_select">
+                        <option value="/administrator/consignment" <?php echo AdministratorConsignmentSelect("receiving") ?>>New</option>
+                        <option value="/administrator/consignment?mode=consigned" <?php echo ActivateSelect("consigned") ?>>Shipped</option>
+                        <option value="/administrator/consignment?mode=listed" <?php echo ActivateSelect("listed") ?>>Consigned</option>
+                        <option value="/administrator/consignment?mode=ebay" <?php echo ActivateSelect("ebay") ?>>Listed</option>
+                    </select>
+                </div>
                 <div class="content px-3 py-0">
                     <?php 
                     if(isset( $_GET['mode']) ){

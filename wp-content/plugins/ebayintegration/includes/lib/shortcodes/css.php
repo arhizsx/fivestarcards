@@ -176,6 +176,23 @@ function AdministratorConsignment($page){
     }
 }
 
+function AdministratorConsignmentSelect($page){
+    if( isset( $_GET['mode']) == false ){
+        if( $page == "receiving" ){
+            return "selected";
+        } else {
+            return "";
+        }
+    } 
+    else {
+        if( $page == $_GET['mode'] ){
+            return "selected";
+        } else {
+            return "";
+        }
+    }
+}
+
 
 
 function AdministratorGrading($page){
