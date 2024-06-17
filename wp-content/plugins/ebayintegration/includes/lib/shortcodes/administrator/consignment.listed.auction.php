@@ -10,9 +10,6 @@ where status = 'ActiveList'
 );
 
 
-$skus = get_user_meta( get_current_user_id(), "sku", true );		
-
-
 ?>
 <style>
     .text-small {
@@ -22,17 +19,6 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
 <div class="d-flex flex-row-reverse mb-3">
     <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_auction">
 </div>
-<?php 
-    $available = 0;
-    foreach($ebay as $item){ 
-        $data = json_decode($item->data, true);
-        if( $data["ListingType"] == "Chinese"){
-            if( in_array( $item->sku, $skus ) ){
-                $available++;
-            }
-        }
-    }
-?>
 <div class="table-responsive">
     <table class="table table-border table-striped table-sm table-hover search_table_auction">
         <thead>
@@ -52,7 +38,6 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
 
                         if( $data["ListingType"] == "Chinese"){
                             
-                            if( in_array( $item->sku, $skus ) ){
                     ?>
                     <tr>
                         <td>
@@ -73,7 +58,6 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                         ?></td>
                     </tr>
                     <?php 
-                            }
                         }
                     }
                     ?>
