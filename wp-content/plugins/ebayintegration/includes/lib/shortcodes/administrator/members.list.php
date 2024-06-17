@@ -145,7 +145,7 @@
 				<strong>View Member</strong>
     			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
 			</div>
-            <div class="modal-body py-2 px-3">
+            <div class="modal-body py-3 px-3">
                 <div class="formbox">
                     <div class="btn-group w-100 mb-2" role="group" aria-label="Basic outlined example">
                         <button type="button" class="btn btn-outline-dark active">
@@ -158,7 +158,7 @@
                             SKU
                         </button>
                     </div>          
-                    <div class="border p-2 mb-3">
+                    <div class="border p-2">
                         <div class="row">
                             <div class="col-md-12">
                                 <label>Display Name</label>
