@@ -505,7 +505,27 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		jQuery(document).find(".member_info_modal").prependTo('body').modal("show");
 
 	}
+
+	else if( jQuery(this).data("action") == "getViewMemberDetails" ){
+
+		$(document).find(".member_view_menu").find("button").removeClass("active");
+		element.addClass("active");
+		
+	}
 	
+	else if( jQuery(this).data("action") == "getViewMemberEbay" ){
+		
+		$(document).find(".member_view_menu").find("button").removeClass("active");
+		element.addClass("active");
+	
+	}
+	
+	else if( jQuery(this).data("action") == "getViewMemberSKU" ){
+		
+		$(document).find(".member_view_menu").find("button").removeClass("active");
+		element.addClass("active");
+	
+	}
 
 	else {
 
