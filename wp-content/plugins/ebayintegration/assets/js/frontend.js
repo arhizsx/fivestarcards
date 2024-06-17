@@ -294,8 +294,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		var id = element.data("id");
 		var user_id = element.data("user_id");
-
-		alert(user_id);
 	
 		var card = removeConsignedCardRow(id, user_id);
 		
