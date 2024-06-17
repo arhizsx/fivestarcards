@@ -571,8 +571,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				$(document).find(".member_ebay_box").find("table tbody").empty();
 
-				$.each(resp.card, function( k, v ){
+				if( resp.card.length > 0 ){
 
+					$.each(resp.card, function( k, v ){
 
 						var data = JSON.parse(v.data);
 
@@ -586,8 +587,18 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 							"</tr>"
 						)
 	
+					});
 
-				});
+				} else {
+
+
+					$(document).find(".member_ebay_box").find("table tbody").append(
+						"<tr>" +
+							"<td colspan='2'>Empty</td>" + 
+						"</tr>"
+					)
+
+				}
 
 				// defObject.resolve(resp);    //resolve promise and pass the response.
 			},
