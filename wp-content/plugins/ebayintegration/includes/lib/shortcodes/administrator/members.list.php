@@ -175,7 +175,7 @@
                         </div>
                     </div>          
                     <div class="text-end">
-                        <button class="btn btn-danger">Deactive</button>
+                        <button class="btn btn-danger">Deactivate</button>
                         <button class="btn btn-primary">Save Changes</button>
                     </div>
                 </div>
