@@ -510,6 +510,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$(document).find(".member_view_menu").find("button").removeClass("active");
 		element.addClass("active");
+
+		$(document).find(".formbox").find(".boxes").addClass("d-none");
+		$(document).find(".formbox").find(".member_details_box").removeClass("d-none");
 		
 	}
 	
@@ -518,6 +521,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".member_view_menu").find("button").removeClass("active");
 		element.addClass("active");
 	
+		$(document).find(".formbox").find(".boxes").addClass("d-none");
+		$(document).find(".formbox").find(".member_ebay_box").removeClass("d-none");
+
 	}
 	
 	else if( jQuery(this).data("action") == "getViewMemberSKU" ){
@@ -525,6 +531,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".member_view_menu").find("button").removeClass("active");
 		element.addClass("active");
 	
+		$(document).find(".formbox").find(".boxes").addClass("d-none");
+		$(document).find(".formbox").find(".member_sku_box").removeClass("d-none");
+
 	}
 
 	else {
