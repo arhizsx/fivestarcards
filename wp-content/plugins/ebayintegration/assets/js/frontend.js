@@ -544,11 +544,18 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				$.each(resp.card, function( k, v ){
 
-					$(document).find(".member_ebay_box").find("table tbody").append(
-						"<tr>" +
-							"<td>" + JSON.stringify( v ) + "</td>" + 
-						"</tr>"
-					)
+					if( v.status == 'PaidOut' ){
+
+						var data = JSON.parse(v.data);
+
+						$(document).find(".member_ebay_box").find("table tbody").append(
+							"<tr>" +
+								"<td>" + JSON.stringify( data ) + "</td>" + 
+							"</tr>"
+						)
+	
+					}
+
 				});
 
 				// defObject.resolve(resp);    //resolve promise and pass the response.
