@@ -228,7 +228,7 @@ if( $show == "cards" ){
                     <p>coming soon</p>
                 </div>
                 <div class="d-none p-5 text-center loading">
-
+ 
                     posting item to eBay, please wait...
 
                 </div>
