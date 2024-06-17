@@ -45,7 +45,7 @@ $users = get_users( $args );
             <?php 
             for( $i = 1; $i <= $total_pages; $i++ ){
             ?>
-            <option value="/administrator/consignment/?mode=ebay&type=paid_out&i=<?php echo $i ?>"><?php echo $i ?></option>
+            <option value="/administrator/consignment/?mode=ebay&type=paid_out&i=<?php echo $i ?>" <?php $_GET["i"] == $i ? "selected" : ""; ?>><?php echo $i ?></option>
             <?php    
             }
             ?>
