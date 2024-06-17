@@ -175,8 +175,8 @@
                         </div>
                     </div>          
                     <div class="text-end">
-                        <button class="btn btn-primary">Update</button>
-                        <button class="btn btn-primary">Update</button>
+                        <button class="btn btn-danger">Deactive</button>
+                        <button class="btn btn-primary">Save Changes</button>
                     </div>
                 </div>
                 <div class="d-none p-5 text-center loading">
