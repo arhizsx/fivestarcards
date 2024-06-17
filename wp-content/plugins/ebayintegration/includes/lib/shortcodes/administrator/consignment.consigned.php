@@ -128,7 +128,7 @@ if( $show == "cards" ){
                 <th>Tracking Number</th>
                 <th>Shipping Date</th>
                 <th>Status</th>
-                <th class="fit">Action</th>
+                <th class="fit"></th>
             </tr>
         </thead>
         <tbody>
