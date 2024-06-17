@@ -284,7 +284,7 @@ class Ebay_Integration_Ebay_API {
 			SELECT * FROM ebay WHERE status = 'ActiveList' AND IN (" . $array . ")
 		");
 
-		return $cards;
+		return ["card" => $cards, "skus" => $skus];
 	}
 
 	// CONSIGNMENT
