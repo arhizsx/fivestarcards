@@ -8,9 +8,6 @@ if( isset( $_GET['i'] ) ){
     $multiplier = $_GET['i'];
     $page = $_GET['i'] - 1;
 
-    echo $multiplier . "<br>";
-    echo $page . "<br>";
-
 } else {
     $multiplier = 0;
     $page = 1;
@@ -22,14 +19,6 @@ FROM  ebay
 where status = 'PaidOut'
 ORDER BY id DESC
 LIMIT " . $maxpage . " OFFSET " . ($page * $maxpage)
-);
-
-print_r(
-    "SELECT * 
-    FROM  ebay
-    where status = 'PaidOut'
-    ORDER BY id DESC
-    LIMIT " . $maxpage . " OFFSET " . ( $page * $maxpage )
 );
 
 $ebay_count = $this->wpdb->get_results ( "
