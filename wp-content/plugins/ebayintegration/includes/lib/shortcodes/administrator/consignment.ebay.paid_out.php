@@ -7,6 +7,10 @@ $maxpage = 200;
 if( isset( $_GET['i'] ) ){
     $multiplier = $_GET['i'];
     $page = $_GET['i'] - 1;
+
+    echo $multiplier . "<br>";
+    echo $page . "<br>";
+
 } else {
     $multiplier = 0;
     $page = 1;
