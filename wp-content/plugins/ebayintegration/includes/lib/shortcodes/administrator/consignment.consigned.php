@@ -250,6 +250,16 @@ if( $show == "cards" ){
                         <label>Attribute S/N</label>
                         <input type="text" name="attribute_sn" class="form-control p-1" value="" disabled>
                     </div>
+                    <div class="col-md-12">
+                        <label>Status</label>
+                        <select class="form-control" name="new_status">
+                            <option value='received'>RECEIVED</option>
+                            <option value='processing'>PROCESSING</option>
+                            <option value='listed'>LISTED</option>
+                            <option value='sold'>SOLD</option>
+                            <option value='unsold'>UNSOLD</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="d-none p-5 text-center loading">
  
