@@ -180,10 +180,10 @@
                             <button class="btn btn-primary">Save Changes</button>
                         </div>
                     </div>
-                    <div class="member_ebaybox boxes">
+                    <div class="member_ebaybox boxes d-none">
                         ebay
                     </div>
-                    <div class="member_sku_box boxes">
+                    <div class="member_sku_box boxes d-none">
                         sku
                     </div>
                 </div>
