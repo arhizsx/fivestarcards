@@ -19,7 +19,7 @@ ORDER BY id DESC
 " 
 );
 
-print_r( $ebay_count->total );
+print_r( $ebay_count );
 
 $args = array(
     'orderby'    => 'display_name',
