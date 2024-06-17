@@ -148,9 +148,9 @@
             <div class="modal-body py-2 px-3">
                 <div class="formbox">
                     <div class="btn-group w-100" role="group" aria-label="Basic outlined example">
-                        <button type="button" class="btn btn-outline-primary active">Left</button>
-                        <button type="button" class="btn btn-outline-primary">Middle</button>
-                        <button type="button" class="btn btn-outline-primary">Right</button>
+                        <button type="button" class="btn btn-outline-dark active">Left</button>
+                        <button type="button" class="btn btn-outline-dark">Middle</button>
+                        <button type="button" class="btn btn-outline-dark">Right</button>
                     </div>                    
                 </div>
                 <div class="d-none p-5 text-center loading">
