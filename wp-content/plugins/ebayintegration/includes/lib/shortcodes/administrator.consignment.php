@@ -21,8 +21,7 @@
                 Consignment
             </a>
             <a href="/administrator/ebay" class="5star_btn btn text-left btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
-                <i class="fa-solid fa-e me-2"></i>
-                eBay
+                <i class="fa-brands fa-ebay fa-2xl"></i>
             </a>
             <a href="/administrator/members" class="5star_btn btn text-left btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
                 <i class="fa-solid fa-users me-2"></i>
@@ -42,6 +41,9 @@
                     </li>
                     <li class="<?php echo AdministratorConsignment("listed"); ?>">
                         <a class="" href="/administrator/consignment/?mode=listed">Listed</a>
+                    </li>
+                    <li class="<?php echo AdministratorConsignment("ebay"); ?>">
+                        <a class="" href="/administrator/consignment/?mode=ebay"></a>
                     </li>
                 </ul>
                 <div class="content px-3 py-0">
