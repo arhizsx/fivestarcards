@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
-                <ul class="clearfix d-none d-lg-block">
+                <ul class="clearfix">
                     <li class="<?php echo AdministratorConsignment("receiving"); ?>">
                         <a class="" href="/administrator/consignment">Receiving</a>
                     </li>
@@ -43,12 +43,6 @@
                     <li class="<?php echo AdministratorConsignment("listed"); ?>">
                         <a class="" href="/administrator/consignment/?mode=listed">Listed</a>
                     </li>
-                </ul>
-                <ul class="clearfix d-lg-none">
-                    <li class="">
-                        <a class="" href="/administrator/consignment">Receiving</a>
-                    </li>
-
                 </ul>
                 <div class="content px-3 py-0">
                     <?php 
