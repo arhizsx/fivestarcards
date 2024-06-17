@@ -29,7 +29,7 @@ print_r(
     FROM  ebay
     where status = 'PaidOut'
     ORDER BY id DESC
-    LIMIT " . $maxpage . " OFFSET " . ( $multiplier * $maxpage )
+    LIMIT " . $maxpage . " OFFSET " . ( $page * $maxpage )
 );
 
 $ebay_count = $this->wpdb->get_results ( "
