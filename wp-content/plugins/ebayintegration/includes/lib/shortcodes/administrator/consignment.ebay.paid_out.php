@@ -7,7 +7,7 @@ SELECT *
 FROM  ebay
 where status = 'PaidOut'
 ORDER BY id DESC
-LIMIT 500 OFFSET 0 
+LIMIT 500 OFFSET 500 
 " 
 );
 
