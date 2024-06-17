@@ -52,7 +52,7 @@
                         <option value="/administrator/consignment" <?php echo AdministratorConsignmentSelect("receiving") ?>>Receiving</option>
                         <option value="/administrator/consignment?mode=consigned" <?php echo ActivateSelect("consigned") ?>>Consigned</option>
                         <option value="/administrator/consignment?mode=listed" <?php echo ActivateSelect("listed") ?>>Listed</option>
-                        <option value="/administrator/consignment?mode=ebay" <?php echo ActivateSelect("ebay") ?>><i class="fa-brands fa-ebay fa-2xl"></i></option>
+                        <option value="/administrator/consignment?mode=ebay" <?php echo ActivateSelect("ebay") ?>>eBay</option>
                     </select>
                 </div>
                 <div class="content px-3 py-0">
