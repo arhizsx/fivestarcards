@@ -7,9 +7,14 @@
 			include( plugin_dir_path( __FILE__ ) . 'getitem.php');			
             break;
 
-        case "members_list":
+        case "members":
 
 			include( plugin_dir_path( __FILE__ ) . 'members.php');			
+            break;
+
+        case "members_list":
+
+			include( plugin_dir_path( __FILE__ ) . 'members_list.php');			
             break;
 
         case "member_items":
