@@ -543,7 +543,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			success: function(resp){		
 
 				$.each(resp.card, function( k, v ){
-					console.log( v );
+
+					$(document).find(".member_ebay_box").append(
+						v	
+					)
 				});
 
 				// defObject.resolve(resp);    //resolve promise and pass the response.
