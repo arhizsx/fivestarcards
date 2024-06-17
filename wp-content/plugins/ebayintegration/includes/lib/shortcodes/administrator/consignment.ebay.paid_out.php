@@ -38,8 +38,7 @@ $users = get_users( $args );
         font-size: .7em !important;
     }
 </style>
-<div class="d-flex flex-row-reverse mb-3">
-    <div class="d-flex justify-content-between mb-3">
+    <div class="d-flex justify-content-center mb-3">
         <select class="p-2">
             <?php 
             for( $i = 1; $i <= $total_pages; $i++ ){
@@ -53,7 +52,6 @@ $users = get_users( $args );
 
         <input class="btn pl-2 search_box" style="margin-left: 15px; text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_paid">
     </div>
-</div>
 
 <div class="table-responsive">
     <table class="table table-border table-striped table-sm table-hover search_table_paid">
