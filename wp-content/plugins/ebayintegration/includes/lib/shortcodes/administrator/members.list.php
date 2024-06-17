@@ -147,7 +147,7 @@
 			</div>
             <div class="modal-body py-2 px-3">
                 <div class="formbox">
-                    <div class="btn-group w-100 mb-3" role="group" aria-label="Basic outlined example">
+                    <div class="btn-group w-100 mb-2" role="group" aria-label="Basic outlined example">
                         <button type="button" class="btn btn-outline-dark active">
                             Member Details
                         </button>
