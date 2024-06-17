@@ -118,7 +118,7 @@
                             <?php  echo $user->user_email ?>
                         </td>
                         <td class="text-end">
-                            <a class="btn border btn-dark ebayintegration-btn" data-action="showMemberInfoModal" data-id="<?php echo $user->ID; ?>">View</a>
+                            <a class="btn border btn-dark ebayintegration-btn" data-action="showMemberInfoModal" data-user_id="<?php echo $user->ID; ?>">View</a>
                             <button class="btn border btn-primary 5star_btn" data-action='make_admin' data-user_id='<?php echo $user->ID; ?>'>Promote</button>
                         </td>
                     </tr>
