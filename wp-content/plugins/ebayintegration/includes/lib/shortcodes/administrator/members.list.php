@@ -163,21 +163,21 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <label>Display Name</label>
-                                    <input type="text" class="form-control p-2 mb-3">
+                                    <input type="text" name="display_name" class="form-control p-2 mb-3">
                                 </div>
                                 <div class="col-md-6">
                                     <label>Customer Number</label>
-                                    <input type="text" class="form-control p-2 mb-3">
+                                    <input type="text" name="customer_number" class="form-control p-2 mb-3">
                                 </div>
                                 <div class="col-md-6">
                                     <label>Email</label>
-                                    <input type="text" class="form-control p-2 mb-3">
+                                    <input type="text" name="user_email" class="form-control p-2 mb-3">
                                 </div>
                             </div>
                         </div>          
                         <div class="text-end">
-                            <button class="btn btn-danger">Deactivate</button>
-                            <button class="btn btn-primary">Save Changes</button>
+                            <button class="btn btn-danger ebayintegration-btn" data-action="deactivateMember"  data-user_id="">Deactivate</button>
+                            <button class="btn btn-primary ebayintegration-btn" data-action="saveMemberDetailsChanges" data-user_id="">Save Changes</button>
                         </div>
                     </div>
                     <div class="member_ebay_box boxes d-none">
