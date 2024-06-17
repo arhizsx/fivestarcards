@@ -39,7 +39,7 @@ foreach($user_skus as $sk){
 
                 $total_users = 0;
             ?>
-            <H1 style="color: black;">User SKUs</H1>            
+            <H2 style="color: black;">User SKUs</H2>            
         </div>
         <div class="col-6 text-end">
             <input class="btn mt-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target="#members_skus_table">
