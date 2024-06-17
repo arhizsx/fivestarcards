@@ -150,8 +150,8 @@ if( $show == "cards" ){
             ?>
                 <tr>
                     <td>
-                        <div><?php echo $card->display_name ?></div>
-                        <div class="small"><?php echo $card->user_email ?></div>
+                        <div><?php echo $order->display_name ?></div>
+                        <div class="small"><?php echo $order->user_email ?></div>
                     </td>
                     <td><?php echo $order->id + 1000; ?></td>
                     <td><?php echo $data["carrier"]; ?></td>
