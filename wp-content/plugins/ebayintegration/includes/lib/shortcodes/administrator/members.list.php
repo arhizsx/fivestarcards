@@ -181,12 +181,12 @@
                         </div>
                     </div>
                     <div class="member_ebay_box boxes d-none">
-                        <div class="border p-3 mb-3">
+                        <div class="border p-3">
                             ebay Integration
                         </div>
                     </div>
                     <div class="member_sku_box boxes d-none">
-                        <div class="border p-3 mb-3">
+                        <div class="border p-3">
                             SKU
                         </div>
                     </div>
