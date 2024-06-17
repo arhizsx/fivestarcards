@@ -20,6 +20,14 @@ ORDER BY id DESC
 LIMIT " . $maxpage . " OFFSET " . $multiplier * $page
 );
 
+print_r(
+    "SELECT * 
+    FROM  ebay
+    where status = 'PaidOut'
+    ORDER BY id DESC
+    LIMIT " . $maxpage . " OFFSET " . $multiplier * $page   
+);
+
 $ebay_count = $this->wpdb->get_results ( "
 SELECT COUNT(id) as total 
 FROM  ebay
