@@ -542,6 +542,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			},
 			success: function(resp){		
 
+				$(document).find(".member_ebay_box").find("table tbody").empty();
+				
 				$.each(resp.card, function( k, v ){
 
 
