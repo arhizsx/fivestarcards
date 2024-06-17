@@ -102,22 +102,12 @@ if( $show == "cards" ){
                 <td><?php echo $data["attribute_sn"] ?></td>
                 <td><?php echo strtoupper($card->status) ?></td>
                 <td class="fit">
-                    <?php 
-                        if( $card->status == "received" ){
-                    ?>
                     <a class="btn btn-pill btn-sm btn-dark ebayintegration-btn" data-action="showConsignedCardDetailsModal" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id()?>">
                         <i class="fa-solid fa-gear"></i>
                     </a>
-                    <?php 
-                        }
-                        elseif( $card->status == "processing" ){
-                    ?>
                     <a class="btn btn-pill btn-sm btn-primary ebayintegration-btn" data-action="postToEbayEditor" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id()?>">
                         <i class="fa-solid fa-paper-plane"></i>
                     </a>
-                    <?php 
-                        }
-                    ?>
                 </td>
             </tr>
             <?php 
