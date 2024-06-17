@@ -22,9 +22,7 @@ where status = 'PaidOut'
 
 $total_pages = ceil($ebay_count[0]->total / $maxpage ) ;
 
-for( $i = 1; $i <= $total_pages; $i++ ){
-    echo "<a class='p-1 bg-primary small text-white me-2' href='/administrator/consignment/?mode=ebay&type=paid_out&i=" . $i . "'>" . $i . "</a>";
-}
+
 
 $args = array(
     'orderby'    => 'display_name',
@@ -42,6 +40,16 @@ $users = get_users( $args );
 </style>
 <div class="d-flex flex-row-reverse mb-3">
     <div class="d-flex justify-content-between mb-3">
+        <select>
+            <?php 
+            for( $i = 1; $i <= $total_pages; $i++ ){
+            ?>
+            <option value=""><?php echo $i ?></option>
+            <?php    
+            }
+            ?>
+            <option></option>
+        </select>
 
         <input class="btn pl-2 search_box" style="margin-left: 15px; text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_paid">
     </div>
