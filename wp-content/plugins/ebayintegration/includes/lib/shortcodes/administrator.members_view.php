@@ -74,7 +74,7 @@
                                     break;
 
                                 default:
-                                    $shortcode = "[cards-grading-orders_table table='members']";                            
+                                    $shortcode = "[ebayintegration-shortcode type='members']";                            
                                     break;
                             }
 
