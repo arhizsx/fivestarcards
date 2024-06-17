@@ -22,7 +22,7 @@ where status = 'PaidOut'
 
 $total_pages = ceil($ebay_count[0]->total / $maxpage ) ;
 
-for( $i = 1; $i < $total_pages; $i++ ){
+for( $i = 1; $i <= $total_pages; $i++ ){
     echo "<a href='/administrator/consignment/?mode=ebay&type=paid_out&page=" . $i . "'>" . $i . "</a>";
 }
 
