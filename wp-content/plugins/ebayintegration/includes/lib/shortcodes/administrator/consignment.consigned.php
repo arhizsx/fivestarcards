@@ -131,6 +131,7 @@ if( $show == "cards" ){
                 <th>Tracking Number</th>
                 <th>Shipping Date</th>
                 <th>Status</th>
+                <th class="fit"></th>
             </tr>
         </thead>
         <tbody>
@@ -158,6 +159,11 @@ if( $show == "cards" ){
                     <td><?php echo $data["tracking_number"]; ?></td>
                     <td><?php echo $data["shipping_date"]; ?></td>
                     <td><?php echo strtoupper($order->status); ?></td>
+                    <td class="fit">
+                        <a class="btn btn-pill btn-sm btn-dark ebayintegration-btn" data-action="" data-id="<?php echo $card->id ?>">
+                            <i class="fa-solid fa-gear"></i>
+                        </a>
+                    </td>
                 </tr>
             <?php
                     }
