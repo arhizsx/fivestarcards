@@ -38,7 +38,6 @@ if( ! isset( $_GET['type'] ) ){
         FROM consignment_orders
         	INNER JOIN wp_users
             ON consignment_orders.user_id = wp_users.ID
-        where status = 'received'
         order by id desc
         "
     );
