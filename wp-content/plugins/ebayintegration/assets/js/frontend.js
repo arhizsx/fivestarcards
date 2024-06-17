@@ -594,7 +594,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 					$(document).find(".member_ebay_box").find("table tbody").append(
 						"<tr>" +
-							"<td colspan='2'>Empty</td>" + 
+							"<td class='text-center p-5' colspan='2'>Empty</td>" + 
 						"</tr>"
 					)
 
