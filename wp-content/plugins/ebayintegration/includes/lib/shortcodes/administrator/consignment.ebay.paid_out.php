@@ -18,7 +18,7 @@ where status = 'PaidOut'
 " 
 );
 
-print_r( $ebay_count->total );
+print_r( $ebay_count[0]->total );
 
 $args = array(
     'orderby'    => 'display_name',
