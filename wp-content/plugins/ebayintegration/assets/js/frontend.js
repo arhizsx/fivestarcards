@@ -488,6 +488,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			
 			if( card.error == false ){
 
+				location.reload();
+
 			} else {
 				alert("Error encountered");
 			}
