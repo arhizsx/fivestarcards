@@ -469,8 +469,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				jQuery(document).find(".consigned_card_details_modal").appendTo('body').modal("show");
 
-
-
 			} else {
 				alert("Error encountered");
 			}
@@ -533,12 +531,18 @@ function confirmUpdateConsignedCardDetails(){
 
 	var defObject = $.Deferred();  // create a deferred object.
 
+	var id = $(document).find(".consigned_card_details_modal").find("[name='id']").val();
+	var user_id = $(document).find(".consigned_card_details_modal").find("[name='user_id']").val();
+	var new_status = $(document).find(".consigned_card_details_modal").find("[name='new_status']").val();
+
 	jQuery.ajax({
 		method: 'post',
 		url: "/wp-json/ebayintegration/v1/post",
 		data: { 
 			action: "confirmUpdateConsignedCardDetails",
-
+			new_status: new_status,
+			id: id,
+			user_id: user_id
 		},
 		success: function(resp){		
 			defObject.resolve(resp);    //resolve promise and pass the response.
