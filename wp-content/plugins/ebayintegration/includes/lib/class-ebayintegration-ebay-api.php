@@ -280,7 +280,7 @@ class Ebay_Integration_Ebay_API {
 			where consignment.id = " . $params["id"] . "
 		");
 
-		if( $card != false ){
+		if( $card != null ){
 			return ["error" => false, "params" => $params, "card" => $card ];
 		} else {
 			return ["error" => true, "params" => $params ];
