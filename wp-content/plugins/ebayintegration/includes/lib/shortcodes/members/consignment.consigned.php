@@ -9,7 +9,7 @@ if( ! isset( $_GET['type'] ) ){
         FROM consignment
         where user_id = " . get_current_user_id() . " 
         and status IN ('received', 'unavailable')
-        order by order_id desc, id desc
+        order by order_id desc, status asc, id desc
         "
     );
 
