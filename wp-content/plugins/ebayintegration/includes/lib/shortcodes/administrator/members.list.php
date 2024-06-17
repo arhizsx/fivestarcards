@@ -160,7 +160,7 @@
                     </div>          
                     <div class="border p-2">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-12 p-2">
                                 <label>Display Name</label>
                                 <input type="text" class="form-control p-2 mb-3">
                             </div>
