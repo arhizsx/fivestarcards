@@ -21,7 +21,7 @@ if( ! isset( $_GET['type'] ) ){
         	INNER JOIN wp_users
             ON consignment.user_id = wp_users.ID
         where status IN ('received', 'unavailable')
-        order by order_id desc, consignment.id desc;
+        order by order_id desc, status asc, consignment.id desc;
     ");
 
     $show = "cards";
