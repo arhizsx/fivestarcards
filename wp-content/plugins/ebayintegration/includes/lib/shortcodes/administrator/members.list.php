@@ -159,7 +159,14 @@
                         </button>
                     </div>          
                     <div class="border p-2">
-                        Member
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
                     </div>          
                 </div>
                 <div class="d-none p-5 text-center loading">
