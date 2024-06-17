@@ -55,33 +55,43 @@
                 <div class="content p-3">
                     <?php 
 
-                        if( isset( $_GET['mode'] )  == false){
+                        if(isset( $_GET['mode']) ){
+                                                
+                            include( plugin_dir_path( __FILE__ ) . "administrator/members." . $_GET['mode'] . '.php' );			
 
-                            $shortcode = "[cards-grading-orders_table table='members']";                            
-                        
                         } else {
-
-                            switch( $_GET["mode"] ){
-
-                                case "skus":
-                                    
-                                    $shortcode = "[ebayintegration-shortcode type='members_list']";                            
-                                    break;
-
-                                case "unmatched": 
-                                    $shortcode = "[ebayintegration-shortcode type='get_item_buttons']";                            
-                                    break;
-
-                                default:
-                                    $shortcode = "[cards-grading-orders_table table='members']";                            
-                                    break;
-                            }
-
+                            include( plugin_dir_path( __FILE__ ) . 'administrator/members.list.php' );			
 
                         }
+
+
+                        // if( isset( $_GET['mode'] )  == false){
+
+                        //     $shortcode = "[cards-grading-orders_table table='members']";                            
+                        
+                        // } else {
+
+                        //     switch( $_GET["mode"] ){
+
+                        //         case "skus":
+                                    
+                        //             $shortcode = "[ebayintegration-shortcode type='members_list']";                            
+                        //             break;
+
+                        //         case "unmatched": 
+                        //             $shortcode = "[ebayintegration-shortcode type='get_item_buttons']";                            
+                        //             break;
+
+                        //         default:
+                        //             $shortcode = "[ebayintegration-shortcode type='members']";                            
+                        //             break;
+                        //     }
+
+
+                        // }
  
 
-                        echo do_shortcode( $shortcode );                    
+                        // echo do_shortcode( $shortcode );                    
 
                     ?>
                 </div>
