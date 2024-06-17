@@ -247,7 +247,17 @@ class Ebay_Integration_Ebay_API {
 	// CONSIGNMENT
 
 	public function removeConsignedCardRow( $params ){
+
+		$this->wpdb->delete(
+			'consignment',
+			array(
+				'user_id' => $params["user_id"],
+				"id" => $params["id"],
+			)
+		);
+
 		return $params;
+
 	}
 
 	public function confirmConsignCardsShipping( $params ){
