@@ -239,7 +239,7 @@ $(document).on("click", ".5star_btn", function(e){
             }
             break;
         
-        case "set_grade":
+        case "set_grade": 
 
 
             showSetGrade( $(this).closest("tr").data() );
@@ -1121,7 +1121,7 @@ $(document).on("change", ".select_filter", function(){
     var data = $(this).data();
     var val = $(this).val();
 
-    var url = location.protocol + '//' + location.host + location.pathname + '/?filtered=true&show=open&' + data['filter'] + '=' + val ;
+    var url = window.location.href + '&filtered=true&show=open&' + data['filter'] + '=' + val ;
     location.href = url;
 
 
