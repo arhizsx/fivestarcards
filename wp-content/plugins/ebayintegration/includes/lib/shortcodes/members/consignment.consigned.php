@@ -69,7 +69,7 @@ if( ! isset( $_GET['type'] ) ){
                     foreach( $consignment as $card ){
                         $data = json_decode( $card->data, true );
             ?>
-                <tr>
+                <tr class="consigned_item_row" data-id="<?php echo $card->id ?>" >
                     <td><?php echo $card->order_id + 1000; ?></td>
                     <td><?php echo $data["year"] ?></td>
                     <td><?php echo $data["brand"] ?></td>
@@ -125,7 +125,7 @@ if( ! isset( $_GET['type'] ) ){
                 foreach( $orders as $order ){
                     $data = json_decode($order->data, true);
             ?>
-            <tr>
+            <tr class="consigned_item_row" data-id="<?php echo $order->id ?>">
                 <td><?php echo $order->id + 1000; ?></td>
                 <td><?php echo $data["carrier"]; ?></td>
                 <td><?php echo $data["shipped_by"]; ?></td>
