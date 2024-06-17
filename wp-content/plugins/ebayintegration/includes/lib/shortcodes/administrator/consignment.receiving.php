@@ -13,10 +13,16 @@ global $wpdb;
 if( ! isset( $_GET['type'] ) ){
 
     $consignment = $this->wpdb->get_results ( "
-        SELECT * 
+
+		SELECT 
+            consignment.*,
+            wp_users.user_email,
+            wp_users.display_name
         FROM consignment
+        	INNER JOIN wp_users
+            ON consignment.user_id = wp_users.ID
         where status = 'shipped'
-        order by order_id desc, id desc
+        order by order_id desc, consignment.id desc;
         "
     );
 
@@ -27,8 +33,13 @@ if( ! isset( $_GET['type'] ) ){
 } else {
 
     $orders = $this->wpdb->get_results ( "
-        SELECT * 
+        SELECT
+            consignment_orders.*,
+            wp_users.user_email,
+            wp_users.display_name
         FROM consignment_orders
+        	INNER JOIN wp_users
+            ON consignment_orders.user_id = wp_users.ID
         where status = 'shipped'
         order by id desc
         "
@@ -80,7 +91,10 @@ if( $show == "cards" ){
                         $data = json_decode( $card->data, true );
             ?>
             <tr>
-                <td>-</td>
+                <td>
+                    <div><?php echo $card->display_name ?></div>
+                    <div class="small"><?php echo $card->user_email ?></div>
+                </td>
                 <td><?php echo $card->order_id + 1000 ?></td>
                 <td><?php echo $data["year"] ?></td>
                 <td><?php echo $data["brand"] ?></td>
@@ -135,7 +149,10 @@ if( $show == "cards" ){
                         $data = json_decode( $order->data, true );
             ?>
                 <tr>
-                    <td>-</td>
+                    <td>
+                        <div><?php echo $card->display_name ?></div>
+                        <div class="small"><?php echo $card->user_email ?></div>
+                    </td>
                     <td><?php echo $order->id + 1000; ?></td>
                     <td><?php echo $data["carrier"]; ?></td>
                     <td><?php echo $data["shipped_by"]; ?></td>
