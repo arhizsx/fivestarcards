@@ -2,12 +2,14 @@
 
 global $wpdb;
 
+$maxpage = 200;
+
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
 where status = 'PaidOut'
 ORDER BY id DESC
-LIMIT 500 OFFSET 500 
+LIMIT " . $maxpage . " OFFSET 0
 " 
 );
 
@@ -18,7 +20,7 @@ where status = 'PaidOut'
 " 
 );
 
-$total_pages = ceil($ebay_count[0]->total / 500) ;
+$total_pages = ceil($ebay_count[0]->total / $maxpage ) ;
 
 echo $total_pages;
 
