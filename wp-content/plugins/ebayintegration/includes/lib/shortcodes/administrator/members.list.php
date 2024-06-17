@@ -148,13 +148,13 @@
             <div class="modal-body py-3 px-3">
                 <div class="formbox">
                     <div class="btn-group w-100 mb-2 member_view_menu" role="group" aria-label="">
-                        <button type="button" class="btn btn-outline-dark active ebayintegration-btn" action="getViewMemberDetails">
+                        <button type="button" class="btn btn-outline-dark active ebayintegration-btn" data-action="getViewMemberDetails">
                             Member Details
                         </button>
-                        <button type="button" class="btn btn-outline-dark ebayintegration-btn" action="getViewMemberEbay">
+                        <button type="button" class="btn btn-outline-dark ebayintegration-btn" data-action="getViewMemberEbay">
                             <i class="fa-brands fa-ebay fa-2xl"></i>
                         </button>
-                        <button type="button" class="btn btn-outline-dark ebayintegration-btn" action="getViewMemberSKU">
+                        <button type="button" class="btn btn-outline-dark ebayintegration-btn" data-action="getViewMemberSKU">
                             SKU
                         </button>
                     </div>          
