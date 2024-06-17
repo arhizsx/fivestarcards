@@ -52,6 +52,7 @@ if( ! isset( $_GET['type'] ) ){
                 <th>Player Name</th>
                 <th>Card Number</th>
                 <th>Attribute S/N</th>
+                <th>Status</th>
                 <th class="fit">Status</th>
             </tr>
         </thead>
@@ -76,6 +77,7 @@ if( ! isset( $_GET['type'] ) ){
                     <td><?php echo $data["player_name"] ?></td>
                     <td class='text-end'><?php echo $data["card_number"] ?></td>
                     <td class='text-end'><?php echo $data["attribute_sn"] ?></td>
+                    <td><?php echo $card->status; ?></td>
                     <td class="fit">
 
                     </td>
