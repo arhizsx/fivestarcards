@@ -203,6 +203,12 @@ if( ! isset( $_GET['type'] ) ){
                             <?php echo $data["attribute_sn"] ?>
                         </div>
                     </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-sm-4'>Status</div>
+                        <div class='col-sm-8'>
+                            <?php echo $card->status ?>
+                        </div>
+                    </div>
                 </td>
             </tr>
             <?php 
