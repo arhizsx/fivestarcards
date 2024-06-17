@@ -142,9 +142,7 @@
 	<div class="modal-dialog modal-fullscreen" id="dxmodal">
 		<div class="modal-content modal-ajax">
 			<div class="modal-header bg-dark text-white">
-				<h5 class="modal-title">
 					User Information
-				</h5>
     			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
 					X
 				</button>
