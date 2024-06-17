@@ -1,139 +1,139 @@
-<div class="m-0 p-0">
-    <div class="row">
-        <div class="col-xl-6">
-            <H2 style="color: black;">Administrators</H2>            
-        </div>
-        <div class="col-xl-6 text-end">
-            
-        </div>
-    </div>
-    <div class="table-responsive">    
-        <table class='table 5star_my_orders table-bordered table-striped 5star_table ' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/table-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
-            <thead>
-                <tr>
-                    <th>Customer #</th>
-                    <th>Customer</th>
-                    <th>Email</th>
-                    <th class='text-end'>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
+<?php 
+    global $wpdb;
 
-                    $args = array(
-                        'orderby'    => 'display_name',
-                        'order'      => 'ASC'
-                    );   
+    $args = array(
+        'orderby'    => 'display_name',
+        'order'      => 'ASC'
+    );
 
-                    $users = get_users( $args );
+    $users = get_users( $args );
 
+    $users_with_sku = $this->wpdb->get_results ( "
+        SELECT user_id 
+        FROM  wp_usermeta
+        WHERE meta_key = 'sku'
+    " );
 
-                    if($users){
-                        foreach($users as $user){
-                            if($user->roles[0] == "um_admin"){
+    $all_skus = array();
 
-                ?>
+    foreach($users_with_sku as $user){
+        $skus = get_user_meta( $user->user_id, "sku", true );		
+        array_push( $all_skus, ...$skus );
+    }
+
+    $ebay = $this->wpdb->get_results ( "
+        SELECT * 
+        FROM  ebay
+        WHERE status = 'ActiveList'
+        ORDER BY sku ASC
+    " );
+?>
+
+<div>
+    <!-- <button class="ebayintegration-btn" data-action="getItems" data-per_page="<?php echo $this->per_page ?><">Refresh Active eBay Items</button> -->
+    <!-- <button class="ebayintegration-btn" data-action="refreshToken">Reconnect to eBay</button> -->
+</div>		
+<div class="ebayintegration-items_box">
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <H3 style="color: black;">Active eBay Items</H3>            
+            <input class="btn mb-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target="#skus_table">
+            <table class='table table-border table-striped' id="skus_table"> 
+                <thead>
                     <tr>
-                        <td>
-                            <?php  echo $user->ID + 1000 ?>
-                        </td>
-                        <td>
-                            <?php  echo $user->display_name ?>
-                        </td>
-                        <td>
-                            <?php  echo $user->user_email ?>
-                        </td>
-                        <td class="text-end">
-                            <button class="btn border btn-success 5star_btn" data-action='demote_admin' data-user_id='<?php echo $user->ID; ?>'>Demote</button>
-                        </td>
+                        <th>ItemID</th>
+                        <th>Title</th>
+                        <th>eBay SKU</th>
+                        <th>ListingType</th>
+                        <th>ListingDuration</th>
+                        <th>CurrentPrice</th>
                     </tr>
-                <?php    
-                            }    
+                </thead>
+                <tbody style="height: 70vh; overflow: auto; ">
+                    <?php 
+                        foreach($ebay as $item){
+                            $item_data = json_decode( $item->data, true );
+                            if( ! in_array($item_data["SKU"], $all_skus) ){
+
+                    ?>
+                        <tr  class='ebayintegration-btn ebay-item' data-action='set_sku_user' data-item_id='<?php echo $item_data["ItemID"]; ?>' data-sku='<?php echo $item_data["SKU"]; ?>'>
+                            <td><?php echo $item_data["ItemID"]; ?></td>
+                            <td><?php echo $item_data["Title"]; ?></td>
+                            <td><?php echo $item_data["SKU"]; ?></td>
+                            <td><?php echo $item_data["ListingType"]; ?></td>
+                            <td><?php echo $item_data["ListingDuration"]; ?></td>
+                            <td><?php echo $item_data["SellingStatus"]["CurrentPrice"]; ?></td>
+                        </tr>
+                    <?php 
+                            }
                         }
-                    } else {
-                ?>
+                    ?>
                     <tr>
-                        <td class="text-center" colspan="4">Empty</td>
+                        <td colspan="6" class="my-5 text-center">Refresh eBay Items</td>
                     </tr>
-                <?php                  
-                    }
-                ?>                
-            </tbody>
-        </table>
-    </div>
-
-    <div class="row">
-        <div class="col-6">
-            <?php 
-
-                $args = array(
-                    'orderby'    => 'display_name',
-                    'order'      => 'ASC'
-                );
-
-                $users = get_users( $args );
-
-                $total_users = 0;
-
-                if($users){
-                    foreach($users as $user){
-                        if($user->roles[0] == "um_member"){
-                            $total_users++;
-                        }
-                    }
-                }
-            ?>
-            <H2 style="color: black;">Members (<?php echo $total_users;?>)</H2>            
-        </div>
-        <div class="col-6 text-end">
-            <input class="btn mt-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target="#members_table">
+                </tbody>
+            </table>
         </div>
     </div>
-    <div class="table-responsive">    
-        <table class='table 5star_my_orders table-bordered table-striped' id="members_table">
-            <thead>
-                <tr>
-                    <th>Customer #</th>
-                    <th>Customer</th>
-                    <th>Email</th>
-                    <th class='text-end'>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
+</div>		
 
-                    if($users){
-                        foreach($users as $user){
-                            if($user->roles[0] == "um_member"){
+<div class="modal fade add_sku" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+	<div class="modal-dialog modal-xl" id="dxmodal">
+		<div class="modal-content modal-ajax">
+			<div class="modal-header bg-dark text-white">
+				<h5 class="modal-title">
+					Add User SKU
+				</h5>
+    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+					X
+				</button>
+			</div>
+            <div class="modal-body py-2 px-3">
+                <forn id="add_sku_form" class=" mb-3">
+                    <input type="hidden" name="action" value='confirmAddSKU'/>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <label>SKU</label>
+                            <input type="text" name="sku" disabled class="form-control mb-2 clicked_sku" value=''/>                            
+                        </div>
+                        <div class="col-xl-6">
 
-                ?>
-                    <tr>
-                        <td>
-                            <?php  echo $user->ID + 1000 ?>
-                        </td>
-                        <td>
-                            <?php  echo $user->display_name ?>
-                        </td>
-                        <td>
-                            <?php  echo $user->user_email ?>
-                        </td>
-                        <td class="text-end">
-                            <a class="btn border btn-dark ebayintegration-btn" data-action="viewMemberAdmin" data-id="<?php echo $user->ID; ?>">View</a>
-                            <button class="btn border btn-primary 5star_btn" data-action='make_admin' data-user_id='<?php echo $user->ID; ?>'>Promote</button>
-                        </td>
-                    </tr>
-                <?php    
-                            }    
-                        }
-                    } else {
-                ?>
-                    <tr>
-                        <td class="text-center" colspan="4">Empty</td>
-                    </tr>
-                <?php                  
-                    }
-                ?>                
-            </tbody>
-        </table>
-    </div>
+
+                            <label>User</label>
+                            <select name="user_id" class="form-control">
+                                <option value="">Select User</option>
+                                <?php 
+                                if($users){                        
+                                    foreach($users as $user){
+                                ?>
+                                    <option value="<?php echo $user->ID ?>"><?php echo $user->display_name ?> - <?php echo $user->user_email ?></option>
+                                <?php 
+                                    }
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="row mt-4 mb-3">
+                    <div class="col-12">
+                        <H5 style="color: black;">Active eBay Items</H5>
+                        <div  id="items_with_sku" style="overflow:auto;" class="border">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+
+                <button class="btn border btn-primary ebayintegration-btn" 
+                    data-action='confirmAddSKU' 
+                >
+                    Set SKU to User
+                </button>
+            </div>
+
+		</div>
+	</div>
 </div>
