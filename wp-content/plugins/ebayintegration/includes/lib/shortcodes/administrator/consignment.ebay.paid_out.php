@@ -73,8 +73,13 @@ $users = get_users( $args );
         <tbody>
             <?php 
             if( count($ebay) > 0 ){
+
+                $ctr = $page * $maxpage;
+
                 foreach($ebay as $item){ 
                     if( $item->transaction != "Not Sold" ){
+
+
                         $transaction = json_decode($item->transaction, true);
                         $data = json_decode($item->data, true);
                         $ctr++;
