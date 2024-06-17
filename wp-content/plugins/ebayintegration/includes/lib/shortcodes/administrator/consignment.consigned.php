@@ -223,16 +223,48 @@ if( $show == "cards" ){
 				</button>
 			</div>
             <div class="modal-body py-2 px-3">
-                <div class="row formbox text-center">
+            <div class="row formbox">
+                    <input type="hidden" name="user_id" value="">
+                    <input type="hidden" name="id" value="">
+                    <div class="col-6">                        
+                        <label>Qty</label>
+                        <input type="number" name="qty" class="form-control" value="">
+                    </div>
+                    <div class="col-6">
+                        <label>Year</label>
+                        <input type="number" name="year" class="form-control" value="">
+                    </div>
+                    <div class="col-md-12">
+                        <label>Brand</label>
+                        <input type="text" name="brand" class="form-control p-1" value="">
+                    </div>
+                    <div class="col-md-12">
+                        <label>Player Name</label>
+                        <input type="text" name="player_name" class="form-control p-1" value="">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Card Number</label>
+                        <input type="text" name="card_number" class="form-control p-1" value="">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Attribute S/N</label>
+                        <input type="text" name="attribute_sn" class="form-control p-1" value="">
+                    </div>
                 </div>
                 <div class="d-none p-5 text-center loading">
  
-                    posting item to eBay, please wait...
+                    Updating card details, please wait...
 
                 </div>
             </div>
             <div class="modal-footer">
                 <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+                <button class="btn border btn-dark ebayintegration-btn" 
+                    data-action='confirmUpdateConsignedCardDetails' 
+                >
+                    Update
+                </button>
+
             </div>
 		</div>
 	</div>
