@@ -280,7 +280,7 @@ class Ebay_Integration_Ebay_API {
 
 		$array = implode("','",$skus);
 
-		$sql = "SELECT * FROM ebay WHERE status = 'ActiveList' AND sku IN ('" . $array . "')";
+		$sql = "SELECT * FROM ebay WHERE sku IN ('" . $array . "')";
 
 		$cards = $this->wpdb->get_results ( $sql );
 
