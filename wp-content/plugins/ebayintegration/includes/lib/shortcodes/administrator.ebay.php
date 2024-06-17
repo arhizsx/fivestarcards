@@ -36,7 +36,7 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
-                <ul class="clearfix d-none d-lg-block">
+                <ul class="clearfix">
                     <li class="<?php echo AdministratorEbay("auction"); ?>">
                         <a class="" href="/administrator/ebay">Auction</a>
                     </li>
@@ -52,12 +52,6 @@
                     <li class="<?php echo AdministratorEbay("paid_out"); ?>">
                         <a class="" href="/administrator/ebay/?mode=paid_out">Paid Out</a>
                     </li>
-                </ul>
-                <ul class="clearfix d-lg-none">
-                    <li class="">
-                        <a class="" href="/administrator/ebay">Auction</a>
-                    </li>
-
                 </ul>
                 <div class="content p-3">
                     <?php 
