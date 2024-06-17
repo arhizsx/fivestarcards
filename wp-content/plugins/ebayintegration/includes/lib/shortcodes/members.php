@@ -83,7 +83,7 @@
                     }
                 }
             ?>
-            <H1 style="color: black;">Members (<?php echo $total_users;?>)</H1>            
+            <H2 style="color: black;">Members (<?php echo $total_users;?>)</H2>            
         </div>
         <div class="col-6 text-end">
             <input class="btn mt-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target="#members_table">
