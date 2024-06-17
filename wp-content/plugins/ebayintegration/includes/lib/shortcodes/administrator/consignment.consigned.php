@@ -105,6 +105,9 @@ if( $show == "cards" ){
                     <a class="btn btn-pill btn-sm btn-primary ebayintegration-btn" data-action="" data-id="<?php echo $card->id ?>">
                         <i class="fa-solid fa-paper-plane"></i>
                     </a>
+                    <a class="btn btn-pill btn-sm btn-light ebayintegration-btn" data-action="" data-id="<?php echo $card->id ?>">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
                 </td>
             </tr>
             <?php 
