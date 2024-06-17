@@ -544,7 +544,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				$.each(resp.card, function( k, v ){
 
-					if( v.status == 'PaidOut' ){
 
 						var data = JSON.parse(v.data);
 
@@ -554,7 +553,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 							"</tr>"
 						)
 	
-					}
 
 				});
 
