@@ -544,7 +544,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				user_id: user_id,
 			},
 			success: function(resp){		
-				defObject.resolve(resp);    //resolve promise and pass the response.
+				// defObject.resolve(resp);    //resolve promise and pass the response.
 			},
 			error: function(){
 				console.log("Error in AJAX");
