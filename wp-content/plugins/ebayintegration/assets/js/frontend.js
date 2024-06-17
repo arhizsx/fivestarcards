@@ -340,7 +340,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$.when( card ).done( function( card ){
 
 			if( card.error == false ){
-				
+
 				if( $(document).find(".consigned_item_row[data-id='" + id + "']").closest("tbody").find(".consigned_item_row").length  == 1 ){
 
 					$(document).find("#receiving_consignment tbody").append(
@@ -408,6 +408,38 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 
+	
+
+	else if( jQuery(this).data("action") == "confirmUnvailableConsignedCard" ){
+	
+		var id = element.data("id");
+		var user_id = element.data("user_id");
+
+		var card = confirmUnvailableConsignedCard(id, user_id);
+		
+		$.when( card ).done( function( card ){
+
+			if( card.error == false ){
+				if( $(document).find(".consigned_item_row[data-id='" + id + "']").closest("tbody").find(".consigned_item_row").length  == 1 ){
+
+					$(document).find("#receiving_consignment tbody").append(
+						'<tr class="empty_consignment">' +
+							'<td colspan="8" class="text-center py-5">' +
+								'Empty' +
+							'</td>' +
+						'</tr>'
+					);
+					
+				}
+
+				$(document).find(".consigned_item_row[data-id='" + id + "']").remove();
+			} else {
+				alert("Error encountered");
+			}
+
+		});
+	}
+
 	else {
 
 		console.log("Action Not Set: " + jQuery(this).data("action") );
@@ -415,6 +447,35 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	}
 	
 });
+
+
+
+function confirmUnvailableConsignedCard(id, user_id){
+
+	var defObject = $.Deferred();  // create a deferred object.
+
+	jQuery.ajax({
+		method: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: { 
+			action: "confirmUnvailableConsignedCard",
+			id: id,
+			user_id: user_id
+		},
+		success: function(resp){		
+			defObject.resolve(resp);    //resolve promise and pass the response.
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
+		
+	return defObject.promise();
+
+
+}
+
 
 function confirmConsignedCardReceivedAll(id, user_id){
 

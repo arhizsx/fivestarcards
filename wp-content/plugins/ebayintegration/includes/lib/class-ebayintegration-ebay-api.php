@@ -250,10 +250,36 @@ class Ebay_Integration_Ebay_API {
 			return $this->consignedCardNotReceived( $params );
 		}
 		
+		elseif( $params["action"] == "confirmUnvailableConsignedCard"){
+			return $this->confirmUnvailableConsignedCard( $params );
+		}
+		
+
 	}
 
 
 	// CONSIGNMENT
+
+	public function confirmUnvailableConsignedCard( $params ){
+
+		$rows = $this->wpdb->update(
+			'consignment',
+			array(
+				'status' => "confirmed-not-available",
+			), 
+			array(
+				'user_id' => $params["user_id"],
+				"id" => $params["id"],
+			)
+		);
+
+		if( $rows != false ){
+			return ["error" => false, "params" => $params ];
+		} else {
+			return ["error" => true, "params" => $params ];
+		}
+
+	}
 
 	public function consignedCardNotReceived( $params ){
 
