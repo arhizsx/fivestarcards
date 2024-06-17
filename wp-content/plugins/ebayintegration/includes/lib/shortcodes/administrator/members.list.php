@@ -162,15 +162,15 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <label>Display Name</label>
-                                <input type="text" class="form-control p-2">
+                                <input type="text" class="form-control p-2 mb-3">
                             </div>
                             <div class="col-md-6">
                                 <label>Customer Number</label>
-                                <input type="text" class="form-control p-2">
+                                <input type="text" class="form-control p-2 mb-3">
                             </div>
                             <div class="col-md-6">
                                 <label>Email</label>
-                                <input type="text" class="form-control p-2">
+                                <input type="text" class="form-control p-2 mb-3">
                             </div>
                         </div>
                     </div>          
