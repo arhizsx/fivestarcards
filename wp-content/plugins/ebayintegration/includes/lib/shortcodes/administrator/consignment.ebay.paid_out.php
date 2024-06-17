@@ -41,7 +41,7 @@ $users = get_users( $args );
     <div class="d-flex justify-content-between mb-3">
         <div>
         Page: 
-        <select class="p-2">
+        <select class="ps-2">
             <?php 
             for( $i = 1; $i <= $total_pages; $i++ ){
             ?>
