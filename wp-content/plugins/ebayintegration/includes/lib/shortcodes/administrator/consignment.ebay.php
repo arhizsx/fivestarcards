@@ -12,10 +12,10 @@
         <div class="col">
             <?php 
             if(isset( $_GET['type']) ){
-                include( plugin_dir_path( __FILE__ ) . "consignment.listed." . $_GET['type'] . '.php' );			
+                include( plugin_dir_path( __FILE__ ) . "consignment.ebay." . $_GET['type'] . '.php' );			
 
             } else {
-                include( plugin_dir_path( __FILE__ ) . 'consignment.listed.auction.php' );			
+                include( plugin_dir_path( __FILE__ ) . 'consignment.ebay.auction.php' );			
  
             }
             ?>
