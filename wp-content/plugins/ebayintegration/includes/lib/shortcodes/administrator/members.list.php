@@ -181,7 +181,7 @@
                         </div>
                     </div>
                     <div class="member_ebay_box boxes d-none">
-                        ebay
+                        ebay Integration
                     </div>
                     <div class="member_sku_box boxes d-none">
                         sku
