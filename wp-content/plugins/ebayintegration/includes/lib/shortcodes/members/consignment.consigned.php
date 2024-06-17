@@ -206,7 +206,14 @@ if( ! isset( $_GET['type'] ) ){
                     <div class='row'>
                         <div class='small text-secondary col-sm-4'>Status</div>
                         <div class='col-sm-8'>
-                            <?php echo $card->status ?>
+                            <?php 
+                                echo strtoupper($card->status);
+                                if( $card->status == "unavailable" ){
+                            ?>
+                                <div class="small"><a class="btn btn-pill btn-sm btn-dark" href="#">Confirm</a></div>
+                            <?php                                 
+                                }
+                            ?>            
                         </div>
                     </div>
                 </td>
