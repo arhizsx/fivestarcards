@@ -34,8 +34,8 @@ if( ! isset( $_GET['type'] ) ){
 
 <div class="row">
     <div class="col">
-        <a class="btn btn-pill btn-sm mb-2 <?php echo $btn_cards; ?>" href="/my-account/consignment/?mode=to-ship">Cards</a>
-        <a class="btn btn-pill btn-sm mb-2 <?php echo $btn_orders; ?>" href="/my-account/consignment/?mode=to-ship&type=orders">Orders</a>
+        <a class="btn btn-pill btn-sm mb-2 <?php echo $btn_cards; ?>" href="/my-account/consignment/?mode=cconsigned">Cards</a>
+        <a class="btn btn-pill btn-sm mb-2 <?php echo $btn_orders; ?>" href="/my-account/consignment/?mode=consigned&type=orders">Orders</a>
     </div>
 </div>
 <div class="table-responsive  d-none d-lg-block">
