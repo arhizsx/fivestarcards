@@ -131,7 +131,6 @@ if( $show == "cards" ){
                 <th>Tracking Number</th>
                 <th>Shipping Date</th>
                 <th>Status</th>
-                <th class="fit"></th>
             </tr>
         </thead>
         <tbody>
@@ -139,7 +138,7 @@ if( $show == "cards" ){
                 if( count( $orders ) == 0 ){
             ?>
             <tr>
-                <td colspan="8" class="text-center py-5">
+                <td colspan="7" class="text-center py-5">
                     Empty
                 </td>
             </tr>
@@ -159,11 +158,6 @@ if( $show == "cards" ){
                     <td><?php echo $data["tracking_number"]; ?></td>
                     <td><?php echo $data["shipping_date"]; ?></td>
                     <td><?php echo strtoupper($order->status); ?></td>
-                    <td class="fit">
-                        <a class="btn btn-pill btn-sm btn-success ebayintegration-btn" data-action="confirmReceiveConsignedCardAll" data-id="<?php echo $order->id; ?>">
-                            <i class="fa-solid fa-check me-2"></i>All
-                        </a>
-                    </td>
                 </tr>
             <?php
                     }
