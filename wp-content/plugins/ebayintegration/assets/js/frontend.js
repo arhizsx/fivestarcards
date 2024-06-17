@@ -406,9 +406,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		});
 
-	}
-
-	
+	}	
 
 	else if( jQuery(this).data("action") == "confirmUnvailableConsignedCard" ){
 	
@@ -438,6 +436,16 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			}
 
 		});
+	}
+	else if( jQuery(this).data("action") == "postToEbayEditor" ){
+
+		jQuery(document).find(".post_to_ebay_editor_modal").appendTo('body').modal("show");
+		
+	}
+	else if( jQuery(this).data("action") == "showConsignedCardDetailsModal" ){
+
+		jQuery(document).find(".consigned_card_details_modal").appendTo('body').modal("show");
+		
 	}
 
 	else {

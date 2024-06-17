@@ -105,10 +105,10 @@ if( $show == "cards" ){
                     <?php 
                         if( $card->status == "received" ){
                     ?>
-                    <a class="btn btn-pill btn-sm btn-primary ebayintegration-btn" data-action="" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id()?>">
+                    <a class="btn btn-pill btn-sm btn-primary ebayintegration-btn" data-action="postToEbayEditor" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id()?>">
                         <i class="fa-solid fa-paper-plane"></i>
                     </a>
-                    <a class="btn btn-pill btn-sm btn-dark ebayintegration-btn" data-action="" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id()?>">
+                    <a class="btn btn-pill btn-sm btn-dark ebayintegration-btn" data-action="showConsignedCardDetailsModal" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id()?>">
                         <i class="fa-solid fa-gear"></i>
                     </a>
                     <?php 
@@ -181,3 +181,61 @@ if( $show == "cards" ){
 <?php     
 }
 ?>
+
+<div class="modal fade post_to_ebay_editor_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+	<div class="modal-dialog" id="dxmodal">
+		<div class="modal-content modal-ajax">
+			<div class="modal-header bg-dark text-white">
+				<h5 class="modal-title">
+					Post to eBay
+				</h5>
+    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+					X
+				</button>
+			</div>
+            <div class="modal-body py-2 px-3">
+                <div class="row formbox">
+                    <H1>Post to eBay</H1>
+                    <p>coming soon</p>
+                </div>
+                <div class="d-none p-5 text-center loading">
+
+                    posting item to eBay, please wait...
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+            </div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade consigned_card_details_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+	<div class="modal-dialog" id="dxmodal">
+		<div class="modal-content modal-ajax">
+			<div class="modal-header bg-dark text-white">
+				<h5 class="modal-title">
+					Consigned Card Details
+				</h5>
+    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+					X
+				</button>
+			</div>
+            <div class="modal-body py-2 px-3">
+                <div class="row formbox">
+                    <H1>Post to eBay</H1>
+                    <p>coming soon</p>
+                </div>
+                <div class="d-none p-5 text-center loading">
+
+                    posting item to eBay, please wait...
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+            </div>
+		</div>
+	</div>
+</div>
