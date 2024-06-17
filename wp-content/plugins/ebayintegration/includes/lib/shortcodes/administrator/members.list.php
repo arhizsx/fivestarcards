@@ -148,9 +148,15 @@
             <div class="modal-body py-2 px-3">
                 <div class="formbox">
                     <div class="btn-group w-100" role="group" aria-label="Basic outlined example">
-                        <button type="button" class="btn btn-outline-dark active">Left</button>
-                        <button type="button" class="btn btn-outline-dark">Middle</button>
-                        <button type="button" class="btn btn-outline-dark">Right</button>
+                        <button type="button" class="btn btn-outline-dark active">
+                            Member Details
+                        </button>
+                        <button type="button" class="btn btn-outline-dark">
+                            <i class="fa-brands fa-ebay fa-2xl"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-dark">
+                            SKU
+                        </button>
                     </div>                    
                 </div>
                 <div class="d-none p-5 text-center loading">
