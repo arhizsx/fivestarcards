@@ -40,7 +40,7 @@ $users = get_users( $args );
 </style>
 <div class="d-flex flex-row-reverse mb-3">
     <div class="d-flex justify-content-between mb-3">
-        <select>
+        <select class="p-2">
             <?php 
             for( $i = 1; $i <= $total_pages; $i++ ){
             ?>
