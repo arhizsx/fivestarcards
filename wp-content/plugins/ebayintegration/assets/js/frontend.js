@@ -507,6 +507,32 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".member_info_modal").find(".member_view_menu").find("button").data("user_id", "");
 		$(document).find(".member_info_modal").find(".member_view_menu").find("button").data("user_id", element.data("user_id"));
 
+		jQuery.ajax({
+			method: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: { 
+				action: "getViewMemberDetails",
+				user_id: element.data("user_id"),
+			},
+			success: function(resp){		
+
+				display_name = resp.user[0].display_name;
+				customer_number =  parseInt( resp.user[0].ID ) + 1000;
+				user_email = resp.user[0].user_email;
+
+				$(document).find(".member_details_box").find("[name='display_name']").val( display_name );
+				$(document).find(".member_details_box").find("[name='customer_number']").val( customer_number );
+				$(document).find(".member_details_box").find("[name='user_email']").val( user_email );
+
+
+				console.log( resp );
+
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});
+
 	}
 
 	else if( jQuery(this).data("action") == "getViewMemberDetails" ){
@@ -546,7 +572,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				console.log("Error in AJAX");
 			}
 		});
-
 		
 	}
 	
