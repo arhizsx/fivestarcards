@@ -260,7 +260,7 @@ class Ebay_Integration_Ebay_API {
 		$rows = $this->wpdb->update(
 			'consignment',
 			array(
-				'status' => "not available",
+				'status' => "unavailable",
 			), 
 			array(
 				'user_id' => $params["user_id"],
