@@ -253,6 +253,7 @@ if( $show == "cards" ){
                     <div class="col-md-12">
                         <label>Status</label>
                         <select class="form-control" name="new_status">
+                            <option value=''>--</option>
                             <option value='received'>RECEIVED</option>
                             <option value='processing'>PROCESSING</option>
                             <option value='listed'>LISTED</option>
