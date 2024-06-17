@@ -514,7 +514,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".member_view_menu").find("button").removeClass("active");
 		element.addClass("active");
 
-		alert($(this).attr("data-user_id"));
+		console.log( element );
 
 		var user_id = element.data("user_id");
 
