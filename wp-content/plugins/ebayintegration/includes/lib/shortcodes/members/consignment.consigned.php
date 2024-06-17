@@ -82,7 +82,9 @@ if( ! isset( $_GET['type'] ) ){
 
                             if( $card->status == "unavailable" ){
                         ?>
-                            <div class="small"><a class="btn btn-pill btn-sm btn-dark" href="#">Confirm</a></div>
+                            <div class="small">
+                                <a class="btn btn-pill btn-sm btn-dark  ebayintegration-btn" data-action="confirmUnvailableConsignedCard" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id()?>" href="#">Confirm</a>
+                            </div>
                         <?php                                 
                             }
                         ?>
@@ -210,7 +212,9 @@ if( ! isset( $_GET['type'] ) ){
                                 echo strtoupper($card->status);
                                 if( $card->status == "unavailable" ){
                             ?>
-                                <div class="small"><a class="btn btn-pill btn-sm btn-dark" href="#">Confirm</a></div>
+                                <div class="small">
+                                    <a class="btn btn-pill btn-sm btn-dark  ebayintegration-btn" data-action="confirmUnvailableConsignedCard" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id()?>" href="#">Confirm</a>
+                                </div>
                             <?php                                 
                                 }
                             ?>            

@@ -105,10 +105,10 @@ if( $show == "cards" ){
                     <?php 
                         if( $card->status == "received" ){
                     ?>
-                    <a class="btn btn-pill btn-sm btn-primary ebayintegration-btn" data-action="" data-id="<?php echo $card->id ?>">
+                    <a class="btn btn-pill btn-sm btn-primary ebayintegration-btn" data-action="" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id()?>">
                         <i class="fa-solid fa-paper-plane"></i>
                     </a>
-                    <a class="btn btn-pill btn-sm btn-dark ebayintegration-btn" data-action="" data-id="<?php echo $card->id ?>">
+                    <a class="btn btn-pill btn-sm btn-dark ebayintegration-btn" data-action="" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id()?>">
                         <i class="fa-solid fa-gear"></i>
                     </a>
                     <?php 
