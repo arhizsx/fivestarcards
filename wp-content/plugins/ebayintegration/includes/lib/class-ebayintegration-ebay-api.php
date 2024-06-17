@@ -278,7 +278,9 @@ class Ebay_Integration_Ebay_API {
 
 		$skus = get_user_meta( $params["user_id"], "sku", true );		
 
-		return $skus;
+		$array = implode("','",$skus);
+
+			return $array;
 
 		$cards = $this->wpdb->get_results ("
 			SELECT * FROM ebay WHERE status = 'ActiveList'
