@@ -157,7 +157,10 @@
                         <button type="button" class="btn btn-outline-dark">
                             SKU
                         </button>
-                    </div>                    
+                    </div>          
+                    <div class="border p-2">
+                        Member
+                    </div>          
                 </div>
                 <div class="d-none p-5 text-center loading">
 
