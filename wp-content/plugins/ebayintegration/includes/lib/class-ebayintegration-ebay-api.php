@@ -257,7 +257,11 @@ class Ebay_Integration_Ebay_API {
 		elseif( $params["action"] == "showConsignedCardDetailsModal"){
 			return $this->showConsignedCardDetailsModal( $params );
 		} 
-		
+
+		elseif( $params["action"] == "confirmUpdateConsignedCardDetails"){
+			return $this->confirmUpdateConsignedCardDetails( $params );
+		} 
+				
 		else {
 			return $params;
 		}		
@@ -266,6 +270,26 @@ class Ebay_Integration_Ebay_API {
 
 
 	// CONSIGNMENT
+
+	public function confirmUpdateConsignedCardDetails( $params ){
+
+		$rows = $this->wpdb->update(
+			'consignment',
+			array(
+				'status' => $params["new_status"],
+			), 
+			array(
+				"id" => $params["id"],
+			)
+		);
+
+		if( $rows != false ){
+			return ["error" => false, "params" => $params ];
+		} else {
+			return ["error" => true, "params" => $params ];
+		}
+
+	}
 
 	public function showConsignedCardDetailsModal( $params ){
 
@@ -318,7 +342,6 @@ class Ebay_Integration_Ebay_API {
 				'status' => "unavailable",
 			), 
 			array(
-				'user_id' => $params["user_id"],
 				"id" => $params["id"],
 			)
 		);
@@ -339,7 +362,6 @@ class Ebay_Integration_Ebay_API {
 				'status' => "received",
 			), 
 			array(
-				'user_id' => $params["user_id"],
 				"id" => $params["id"],
 			)
 		);
