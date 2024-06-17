@@ -548,6 +548,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 						var data = JSON.parse(v.data);
 
 						console.log( data.Item.Title );
+						console.log( v.status );
 
 						$(document).find(".member_ebay_box").find("table tbody").append(
 							"<tr>" +
