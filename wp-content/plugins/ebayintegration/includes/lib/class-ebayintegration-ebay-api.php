@@ -280,12 +280,11 @@ class Ebay_Integration_Ebay_API {
 
 		$array = implode("','",$skus);
 
-			return $array;
-
 		$cards = $this->wpdb->get_results ("
-			SELECT * FROM ebay WHERE status = 'ActiveList'
+			SELECT * FROM ebay WHERE status = 'ActiveList' AND IN (" . $array . ")
 		");
 
+		return $cards;
 	}
 
 	// CONSIGNMENT
