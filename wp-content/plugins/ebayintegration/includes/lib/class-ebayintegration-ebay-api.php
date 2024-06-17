@@ -262,14 +262,33 @@ class Ebay_Integration_Ebay_API {
 			return $this->confirmUpdateConsignedCardDetails( $params );
 		} 
 				
+		elseif( $params["action"] == "getViewMemberEbay"){
+			return $this->getViewMemberEbay( $params );
+		} 
+
 		else {
 			return $params;
 		}		
 
 	}
 
+	// MEMBERS
+
+	public function getViewMemberEbay( $params ){
+
+		$skus = get_user_meta( get_current_user_id(), "sku", true );		
+
+		return $skus;
+
+		$cards = $this->wpdb->get_results ("
+			SELECT * FROM ebay WHERE status = 'ActiveList'
+		");
+
+	}
 
 	// CONSIGNMENT
+
+
 
 	public function confirmUpdateConsignedCardDetails( $params ){
 
