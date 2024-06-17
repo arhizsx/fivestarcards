@@ -182,7 +182,10 @@
                     </div>
                     <div class="member_ebay_box boxes d-none">
                         <div class="border p-3">
-                            ebay Integration
+                            <table class="table table-sm table-bordered table-striped">
+                                <tbody>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <div class="member_sku_box boxes d-none">

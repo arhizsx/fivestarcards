@@ -544,8 +544,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				$.each(resp.card, function( k, v ){
 
-					$(document).find(".member_ebay_box").append(
-						JSON.stringify( v )
+					$(document).find(".member_ebay_box").find("table tbody").append(
+						"<tr>" +
+							"<td>" + JSON.stringify( v ) + "</td>" + 
+						"</tr>"
 					)
 				});
 
