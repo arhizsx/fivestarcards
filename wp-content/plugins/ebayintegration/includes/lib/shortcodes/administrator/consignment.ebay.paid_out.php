@@ -7,7 +7,7 @@ SELECT *
 FROM  ebay
 where status = 'PaidOut'
 ORDER BY id DESC
-LIMIT 100 OFFSET 0 
+LIMIT 500 OFFSET 0 
 " 
 );
 
@@ -18,7 +18,9 @@ where status = 'PaidOut'
 " 
 );
 
-print_r( ceil($ebay_count[0]->total / 100) );
+$total_pages = ceil($ebay_count[0]->total / 500) ;
+
+echo $total_pages;
 
 $args = array(
     'orderby'    => 'display_name',
