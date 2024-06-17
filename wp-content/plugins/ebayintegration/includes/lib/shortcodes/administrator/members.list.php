@@ -141,7 +141,7 @@
 <div class="modal fade member_info_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 0px; z-index: 99999">
 	<div class="modal-dialog modal-xl" id="dxmodal">
 		<div class="modal-content modal-ajax">
-			<div class="modal-header bg-dark text-white">
+			<div class="modal-header bg-primary text-white">
 				<strong>View Member</strong>
     			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">X</button>
 			</div>
