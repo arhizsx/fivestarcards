@@ -545,7 +545,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				$.each(resp.card, function( k, v ){
 
 					$(document).find(".member_ebay_box").append(
-						v	
+						JSON.stringify( v )
 					)
 				});
 
