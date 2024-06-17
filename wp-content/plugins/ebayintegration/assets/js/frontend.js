@@ -418,9 +418,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		var card = confirmUnvailableConsignedCard(id, user_id);
 		
 		$.when( card ).done( function( card ){
-
-
-			alert( "here");
 			
 			if( card.error == false ){
 				if( $(document).find(".consigned_item_row[data-id='" + id + "']").closest("tbody").find(".consigned_item_row").length  == 1 ){
