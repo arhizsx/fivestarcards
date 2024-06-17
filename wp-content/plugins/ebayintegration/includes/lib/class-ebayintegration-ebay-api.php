@@ -266,6 +266,11 @@ class Ebay_Integration_Ebay_API {
 			return $this->getViewMemberEbay( $params );
 		} 
 
+		elseif( $params["action"] == "getViewMemberDetails"){
+			return $this->getViewMemberDetails( $params );
+		} 
+
+
 		else {
 			return $params;
 		}		
@@ -273,6 +278,17 @@ class Ebay_Integration_Ebay_API {
 	}
 
 	// MEMBERS
+
+	
+
+	public function getViewMemberDetails( $params ){
+
+		$sql = "SELECT * FROM wp_users WHERE ID = '" . $params["user_id"] . "'";
+		$user = $this->wpdb->get_results ( $sql );
+
+		return [ "user" => $user ];
+
+	}
 
 	public function getViewMemberEbay( $params ){
 
