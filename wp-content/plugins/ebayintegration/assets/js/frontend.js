@@ -528,7 +528,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".member_view_menu").find("button").removeClass("active");
 		element.addClass("active");
 
-		console.log( $(this).data() );
+		var user_id = element.data("user_id");
 
 		$(document).find(".formbox").find(".boxes").addClass("d-none");
 		$(document).find(".formbox").find(".member_ebay_box").removeClass("d-none");
