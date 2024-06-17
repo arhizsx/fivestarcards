@@ -15,11 +15,10 @@ $ebay_count = $this->wpdb->get_results ( "
 SELECT COUNT(id) as total 
 FROM  ebay
 where status = 'PaidOut'
-ORDER BY id DESC
 " 
 );
 
-print_r( $ebay_count );
+print_r( $ebay_count->total );
 
 $args = array(
     'orderby'    => 'display_name',
