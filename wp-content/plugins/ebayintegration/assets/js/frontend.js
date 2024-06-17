@@ -531,11 +531,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			success: function(resp){		
 
 				display_name = resp.display_name;
-				customer_number = resp.ID + 1000;
+				customer_number = user_id + 1000;
 				user_email = resp.user_email;
 
 
-				
+
 				$(document).find(".member_details_box").find("[name='display_name']").val( display_name );
 				$(document).find(".member_details_box").find("[name='customer_number']").val( customer_number );
 				$(document).find(".member_details_box").find("[name='user_email']").val( user_email );
