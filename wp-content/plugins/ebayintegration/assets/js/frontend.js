@@ -530,9 +530,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			},
 			success: function(resp){		
 
-				display_name = resp.display_name;
+				display_name = resp[0].display_name;
 				customer_number = user_id + 1000;
-				user_email = resp.user_email;
+				user_email = resp[0].user_email;
 
 
 
