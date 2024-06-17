@@ -241,14 +241,65 @@ class Ebay_Integration_Ebay_API {
 		elseif( $params["action"] == "removeConsignedCardRow"){
 			return $this->removeConsignedCardRow( $params );
 		}
+
+		elseif( $params["action"] == "confirmConsignedCardReceived"){
+			return $this->confirmConsignedCardReceived( $params );
+		}
+
+		elseif( $params["action"] == "consignedCardNotReceived"){
+			return $this->consignedCardNotReceived( $params );
+		}
+		
 	}
 
 
 	// CONSIGNMENT
 
+	public function consignedCardNotReceived( $params ){
+
+		$rows = $this->wpdb->update(
+			'consignment',
+			array(
+				'status' => "not available",
+			), 
+			array(
+				'user_id' => $params["user_id"],
+				"id" => $params["id"],
+			)
+		);
+
+		if( $rows != false ){
+			return ["error" => false, "params" => $params ];
+		} else {
+			return ["error" => true, "params" => $params ];
+		}
+
+	}
+
+	public function confirmConsignedCardReceived( $params ){
+
+		$rows = $this->wpdb->update(
+			'consignment',
+			array(
+				'status' => "received",
+			), 
+			array(
+				'user_id' => $params["user_id"],
+				"id" => $params["id"],
+			)
+		);
+
+		if( $rows != false ){
+			return ["error" => false, "params" => $params ];
+		} else {
+			return ["error" => true, "params" => $params ];
+		}
+
+	}
+
 	public function removeConsignedCardRow( $params ){
 
-		$this->wpdb->delete(
+		$rows = $this->wpdb->delete(
 			'consignment',
 			array(
 				'user_id' => $params["user_id"],
@@ -256,7 +307,11 @@ class Ebay_Integration_Ebay_API {
 			)
 		);
 
-		return $params;
+		if( $rows != false ){
+			return ["error" => false, "params" => $params ];
+		} else {
+			return ["error" => true, "params" => $params ];
+		}
 
 	}
 
