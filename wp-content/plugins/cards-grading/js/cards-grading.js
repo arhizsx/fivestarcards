@@ -1128,6 +1128,9 @@ $(document).on("change", ".select_filter", function(){
 
     if( mode ){
         url = window.location.href + '&filtered=true&show=open&' + data['filter'] + '=' + val ;
+    } 
+    else {
+        url = window.location.href + '&filtered=true&show=open&' + data['filter'] + '=' + val ;
     }
 
     location.href = url;
