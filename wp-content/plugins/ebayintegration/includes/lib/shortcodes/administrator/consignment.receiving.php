@@ -102,10 +102,10 @@ if( $show == "cards" ){
                 <td><?php echo $data["card_number"] ?></td>
                 <td><?php echo $data["attribute_sn"] ?></td>
                 <td class="fit">
-                    <a class="btn btn-pill btn-sm btn-danger">
+                    <a class="btn btn-pill btn-sm btn-danger ebayintegration-btn" data-action="" data-id="<?php echo $card->id ?>">
                         <i class="fa-solid fa-xmark"></i>
                     </a>
-                    <a class="btn btn-pill btn-sm btn-success">
+                    <a class="btn btn-pill btn-sm btn-success ebayintegration-btn" data-action="" data-id="<?php echo $card->id ?>">
                         <i class="fa-solid fa-check"></i>
                     </a>
                 </td>
@@ -160,7 +160,7 @@ if( $show == "cards" ){
                     <td><?php echo $data["shipping_date"]; ?></td>
                     <td><?php echo strtoupper($order->status); ?></td>
                     <td class="fit">
-                        <a class="btn btn-pill btn-sm btn-success">
+                        <a class="btn btn-pill btn-sm btn-success ebayintegration-btn" data-action="" data-id="<?php echo $order->id ?>">
                             <i class="fa-solid fa-check me-2"></i>All
                         </a>
                     </td>

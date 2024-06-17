@@ -248,7 +248,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 								"<div class='small text-secondary col-3'>Player</div>" +
 								"<div class='col-9'>" +
 								 	v.player_name +									
-								"</div>" +
+								"</div>" + 
 							"</div>" +
 							"<div class='row'>" +
 								"<div class='small text-secondary col-3'>Year</div>" +
