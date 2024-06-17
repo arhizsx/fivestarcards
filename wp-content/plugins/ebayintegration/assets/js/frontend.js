@@ -457,17 +457,19 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				var data = JSON.parse( card.card.data );
 
+				$(document).find(".consigned_card_details_modal").find("[name='id']").val( id );
+				$(document).find(".consigned_card_details_modal").find("[name='user_id']").val( user_id );
 				$(document).find(".consigned_card_details_modal").find("[name='qty']").val( data.qty );
 				$(document).find(".consigned_card_details_modal").find("[name='year']").val( data.year );
 				$(document).find(".consigned_card_details_modal").find("[name='brand']").val( data.brand );
 				$(document).find(".consigned_card_details_modal").find("[name='player_name']").val( data.player_name );
 				$(document).find(".consigned_card_details_modal").find("[name='card_number']").val( data.card_number );
 				$(document).find(".consigned_card_details_modal").find("[name='attribute_sn']").val( data.attribute_sn );
-
+				$(document).find(".consigned_card_details_modal").find("[name='new_status']").val( card.card.status );				
 
 				jQuery(document).find(".consigned_card_details_modal").appendTo('body').modal("show");
 
-				
+
 
 			} else {
 				alert("Error encountered");
