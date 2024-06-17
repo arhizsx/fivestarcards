@@ -1130,7 +1130,7 @@ $(document).on("change", ".select_filter", function(){
         url = window.location.href + '&filtered=true&show=open&' + data['filter'] + '=' + val ;
     } 
     else {
-        url = window.location.href + '&filtered=true&show=open&' + data['filter'] + '=' + val ;
+        url = window.location.href + '?filtered=true&show=open&' + data['filter'] + '=' + val ;
     }
 
     location.href = url;
