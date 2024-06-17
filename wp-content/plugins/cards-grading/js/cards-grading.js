@@ -1121,7 +1121,15 @@ $(document).on("change", ".select_filter", function(){
     var data = $(this).data();
     var val = $(this).val();
 
-    var url = window.location.href + '&filtered=true&show=open&' + data['filter'] + '=' + val ;
+    var urlParams = new URLSearchParams(window.location.search); //get all parameters
+    var mode = urlParams.get('mode');
+    var type = urlParams.get('type');
+    var url = "";
+
+    if( mode ){
+        url = window.location.href + '&filtered=true&show=open&' + data['filter'] + '=' + val ;
+    }
+
     location.href = url;
 
 
