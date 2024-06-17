@@ -20,7 +20,7 @@ if( ! isset( $_GET['type'] ) ){
         FROM consignment
         	INNER JOIN wp_users
             ON consignment.user_id = wp_users.ID
-        where status IN ('received', 'unavailable', 'processing')
+        where status IN ('received', 'unavailable', 'processingxw')
         order by order_id desc, status asc, consignment.id desc;
     ");
 
@@ -104,6 +104,16 @@ if( $show == "cards" ){
                 <td class="fit">
                     <?php 
                         if( $card->status == "received" ){
+                    ?>
+                    <a class="btn btn-pill btn-sm btn-primary ebayintegration-btn" data-action="postToEbayEditor" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id()?>">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </a>
+                    <a class="btn btn-pill btn-sm btn-dark ebayintegration-btn" data-action="showConsignedCardDetailsModal" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id()?>">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
+                    <?php 
+                        }
+                        elseif( $card->status == "processing" ){
                     ?>
                     <a class="btn btn-pill btn-sm btn-primary ebayintegration-btn" data-action="postToEbayEditor" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id()?>">
                         <i class="fa-solid fa-paper-plane"></i>
