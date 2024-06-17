@@ -49,10 +49,10 @@
                 <div class="d-lg-none p-3">
                     <label>Select Consignment Status</label>
                     <select class="form-control" id="mobile_tab_select">
-                        <option value="/administrator/consignment" <?php echo AdministratorConsignmentSelect("receiving") ?>>New</option>
-                        <option value="/administrator/consignment?mode=consigned" <?php echo ActivateSelect("consigned") ?>>Shipped</option>
-                        <option value="/administrator/consignment?mode=listed" <?php echo ActivateSelect("listed") ?>>Consigned</option>
-                        <option value="/administrator/consignment?mode=ebay" <?php echo ActivateSelect("ebay") ?>>Listed</option>
+                        <option value="/administrator/consignment" <?php echo AdministratorConsignmentSelect("receiving") ?>>Receiving</option>
+                        <option value="/administrator/consignment?mode=consigned" <?php echo ActivateSelect("consigned") ?>>Consigned</option>
+                        <option value="/administrator/consignment?mode=listed" <?php echo ActivateSelect("listed") ?>>Listed</option>
+                        <option value="/administrator/consignment?mode=ebay" <?php echo ActivateSelect("ebay") ?>><i class="fa-brands fa-ebay fa-2xl"></i></option>
                     </select>
                 </div>
                 <div class="content px-3 py-0">
