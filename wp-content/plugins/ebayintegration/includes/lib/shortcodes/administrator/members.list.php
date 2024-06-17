@@ -181,7 +181,7 @@
                         </div>
                     </div>
                     <div class="member_ebay_box boxes d-none">
-                        <div class="border p-3">
+                        <div class="border p-3 table-responsive">
                             <table class="table table-sm table-bordered table-striped">
                                 <tbody>
                                 </tbody>
