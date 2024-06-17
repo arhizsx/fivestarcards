@@ -2,7 +2,7 @@
 
 global $wpdb;
 
-$maxpage = 100;
+$maxpage = 200;
 
 if( isset( $_GET['i'] ) ){
     $multiplier = $_GET['i'];
