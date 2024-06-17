@@ -72,7 +72,7 @@ if( $show == "cards" ){
                 <th>Card Number</th>
                 <th>Attribute S/N</th>
                 <th>Status</th>
-                <th class="fit text-end">Action</th>
+                <th class="fit text-end"></th>
             </tr>
         </thead>
         <tbody>
