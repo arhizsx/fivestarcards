@@ -268,6 +268,24 @@ class Ebay_Integration_Ebay_API {
 	// CONSIGNMENT
 
 	public function showConsignedCardDetailsModal( $params ){
+
+		$card = $this->wpdb->get_results ( "
+			SELECT 
+				consignment.*,
+				wp_users.user_email,
+				wp_users.display_name
+			FROM consignment
+				INNER JOIN wp_users
+				ON consignment.user_id = wp_users.ID
+			where consignment.id = " . $params["id"] . "
+		");
+
+		if( $card != false ){
+			return ["error" => false, "params" => $params, "card" => $card ];
+		} else {
+			return ["error" => true, "params" => $params ];
+		}
+
 		return $params;
 	}
 
