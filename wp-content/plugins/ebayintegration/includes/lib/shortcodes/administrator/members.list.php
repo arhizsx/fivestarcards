@@ -157,6 +157,9 @@
                         <button type="button" class="btn btn-outline-dark ebayintegration-btn" data-action="getViewMemberSKU" data-user_id="">
                             SKU
                         </button>
+                        <button type="button" class="btn btn-outline-dark ebayintegration-btn" data-action="getViewUnmatchedSKU" data-user_id="">
+                            Unmatched
+                        </button>
                     </div>          
                     <div class="member_details_box boxes">
                         <div class="border p-3 mb-3">
@@ -197,6 +200,20 @@
                             <table class="table table-sm table-bordered table-striped">
                                 <thead>
                                     <th>SKU</th>
+                                    <th class="fit">Items</th>
+                                    <th class='fit'></th>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="member_unmatched_box boxes d-none">
+                        <div class="border p-3">
+                            <table class="table table-sm table-bordered table-striped">
+                                <thead>
+                                    <th>SKU</th>
+                                    <th class="fit">Items</th>
                                     <th class='fit'></th>
                                 </thead>
                                 <tbody>
