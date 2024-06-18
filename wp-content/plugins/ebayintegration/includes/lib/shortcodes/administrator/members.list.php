@@ -27,8 +27,6 @@
 
                     $users = get_users( $args );
 
-                    print_r( $users );
-
                     if($users){
                         foreach($users as $user){
                             if($user->roles[0] == "um_admin"){
@@ -73,6 +71,8 @@
                 );
 
                 $users = get_users( $args );
+
+                print_r( $users[0] );
 
                 $total_users = 0;
 
