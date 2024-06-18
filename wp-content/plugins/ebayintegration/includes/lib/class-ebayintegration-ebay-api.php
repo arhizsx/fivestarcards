@@ -345,8 +345,7 @@ class Ebay_Integration_Ebay_API {
 			}
 		}
 
-		// $users_with_sku[0]->ID;
-		$unmatched_skus = sort($unmatched_skus);
+		sort($unmatched_skus);
 
 		return [ "unmatched_skus" => $unmatched_skus ];
 	}
