@@ -72,7 +72,7 @@
 
                 $users = get_users( $args );
 
-                print_r( $users[0] );
+                print_r( $users[0]->active );
 
                 $total_users = 0;
 
