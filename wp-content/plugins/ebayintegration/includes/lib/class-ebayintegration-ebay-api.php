@@ -298,13 +298,19 @@ class Ebay_Integration_Ebay_API {
 
 		delete_user_meta( $params["user_id"], 'sku' );
 
+		$new_metas = [];
+
 		foreach( $old_metas as $meta ){
+
 			if(  $meta != $params["sku"] ){
-				update_user_meta( $params["user_id"], 'sku', $meta );
+				array_push( $new_meta, $params["sku"] );
 			}
 		}
+
+		add_user_meta( $params["user_id"], 'sku', $new_metas );
+
 		
-		return ["error" => false, "sku" => $params["sku"] ];
+		return ["error" => false, "sku" => $params["sku"], "new_sku" =>  get_user_meta( $params["user_id"], 'sku', true ) ];
 		
 
 	}
