@@ -750,7 +750,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					$(document).find(".member_unmatched_box").find("table tbody").empty();
 
 					$.each(resp.sku, function( k, v ){
-						$(document).find(".member_sku_box").find("table tbody").append(
+						$(document).find(".member_unmatched_box").find("table tbody").append(
 							"<tr class='sku_row' data-sku='" + v + "'>" +
 								"<td>" + v + "</td>" + 
 								"<td>" + v + "</td>" + 
