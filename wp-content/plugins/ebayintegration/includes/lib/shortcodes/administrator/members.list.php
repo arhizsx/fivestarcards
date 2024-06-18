@@ -207,7 +207,6 @@
                             <table class="table table-sm table-bordered table-striped">
                                 <thead>
                                     <th>SKU</th>
-                                    <th class="fit">Items</th>
                                     <th class='fit'></th>
                                 </thead>
                                 <tbody>
