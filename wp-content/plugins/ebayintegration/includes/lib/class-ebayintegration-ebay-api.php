@@ -274,6 +274,10 @@ class Ebay_Integration_Ebay_API {
 			return $this->getViewMemberSKU( $params );
 		} 
 
+		elseif( $params["action"] == "getViewUnmatchedSKU"){
+			return $this->getViewUnmatchedSKU( $params );
+		} 
+
 		else {
 			return $params;
 		}		
@@ -281,6 +285,17 @@ class Ebay_Integration_Ebay_API {
 	}
 
 	// MEMBERS
+
+	
+
+	public function getViewUnmatchedSKU( $params ){
+
+		$skus = get_user_meta( $params["user_id"], "sku", true );
+
+		return [ "sku" => $skus ];
+
+	}
+
 
 	public function getViewMemberSKU( $params ){
 
@@ -312,6 +327,20 @@ class Ebay_Integration_Ebay_API {
 
 		return ["card" => $cards, "skus" => $skus, "sql" => $sql ];
 	}
+
+	public function getViewMemberEbay( $params ){
+
+		$skus = get_user_meta( $params["user_id"], "sku", true );		
+
+		$array = implode("','",$skus);
+
+		$sql = "SELECT * FROM ebay WHERE sku IN ('" . $array . "')";
+
+		$cards = $this->wpdb->get_results ( $sql );
+
+		return ["card" => $cards, "skus" => $skus, "sql" => $sql ];
+	}
+
 
 	// CONSIGNMENT
 
