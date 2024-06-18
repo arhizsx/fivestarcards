@@ -286,7 +286,7 @@ class Ebay_Integration_Ebay_API {
 
 		$skus = get_user_meta( $params["user_id"], "sku", true );
 
-		return [ "sku" => $params ];
+		return [ "sku" => $skus ];
 
 	}
 	
