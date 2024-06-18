@@ -336,7 +336,7 @@ class Ebay_Integration_Ebay_API {
 
 		// $users_with_sku[0]->ID;
 
-		return ["skus" => $users_with_sku[0]->ID];
+		return ["skus" => $all_skus ];
 	}
 
 
