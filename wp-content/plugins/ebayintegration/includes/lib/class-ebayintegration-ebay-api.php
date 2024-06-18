@@ -282,6 +282,9 @@ class Ebay_Integration_Ebay_API {
 			return $this->removeMemberSKU( $params );
 		} 
 
+		elseif( $params["action"] == "addUnmatchedSKU"){
+			return $this->addUnmatchedSKU( $params );
+		} 
 
 		else {
 			return $params;
@@ -290,6 +293,28 @@ class Ebay_Integration_Ebay_API {
 	}
 
 	// MEMBERS
+
+	public function addUnmatchedSKU( $params ){
+
+		$old_metas = get_user_meta( $params["user_id"], 'sku', true );
+
+		$new_metas = [];
+
+		foreach( $old_metas as $meta ){
+
+			if(  $meta != $params["sku"] ){
+				array_push( $new_metas, $meta );
+			}
+		}
+
+		delete_user_meta( $params["user_id"], 'sku' );
+
+		add_user_meta( $params["user_id"], 'sku', $new_metas );
+		
+		return ["error" => false, "sku" => $params["sku"], "new_sku" =>  get_user_meta( $params["user_id"], 'sku', true ) ];
+		
+
+	}
 
 
 	public function removeMemberSKU( $params ){
