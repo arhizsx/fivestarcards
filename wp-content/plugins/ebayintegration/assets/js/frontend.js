@@ -830,6 +830,33 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 
+	else if( jQuery(this).data("action") == "saveMemberDetailsChanges" ){		
+
+		jQuery.ajax({
+			method: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: { 
+				action: "saveMemberDetailsChanges",
+				user_id: $(this).data("user_id"),
+				display_name: $(document).find(".member_details_box").find("[name='display_name']").val(),
+				user_email: $(document).find(".member_details_box").find("[name='user_email']").val()
+			},
+			success: function(resp){	
+
+				if( resp.error == false ){
+					location.reload();
+				}
+				
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});		
+
+	
+	}
+
+	
 	
 	
 	else {
