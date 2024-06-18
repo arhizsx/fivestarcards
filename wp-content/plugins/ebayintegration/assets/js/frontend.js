@@ -641,8 +641,54 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".member_view_menu").find("button").removeClass("active");
 		element.addClass("active");
 	
+		var user_id = element.data("user_id");
+
 		$(document).find(".formbox").find(".boxes").addClass("d-none");
 		$(document).find(".formbox").find(".member_sku_box").removeClass("d-none");
+
+		jQuery.ajax({
+			method: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: { 
+				action: "getViewMemberSKU",
+				user_id: user_id,
+			},
+			success: function(resp){	
+				
+				console.log( resp );
+
+				$(document).find(".member_sku_box").find("table tbody").empty();
+
+				if( resp.card.length > 0 ){
+
+					$.each(resp.card, function( k, v ){
+
+						$(document).find(".member_sku_box").find("table tbody").append(
+							"<tr>" +
+								"<td>" + v + "</td>" + 
+							"</tr>"
+						)
+	
+					});
+
+				} else {
+
+
+					$(document).find(".member_ebay_box").find("table tbody").append(
+						"<tr>" +
+							"<td class='text-center p-5' colspan='1'>Empty</td>" + 
+						"</tr>"
+					)
+
+				}
+
+				// defObject.resolve(resp);    //resolve promise and pass the response.
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});
+
 
 	}
 

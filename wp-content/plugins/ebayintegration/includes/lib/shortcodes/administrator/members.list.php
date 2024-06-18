@@ -194,7 +194,13 @@
                     </div>
                     <div class="member_sku_box boxes d-none">
                         <div class="border p-3">
-                            SKU
+                            <table class="table table-sm table-bordered table-striped">
+                                <thead>
+                                    <th>SKU</th>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

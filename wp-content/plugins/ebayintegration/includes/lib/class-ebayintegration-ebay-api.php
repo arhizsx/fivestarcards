@@ -270,6 +270,9 @@ class Ebay_Integration_Ebay_API {
 			return $this->getViewMemberDetails( $params );
 		} 
 
+		elseif( $params["action"] == "getViewMemberSKU"){
+			return $this->getViewMemberSKU( $params );
+		} 
 
 		else {
 			return $params;
@@ -279,6 +282,13 @@ class Ebay_Integration_Ebay_API {
 
 	// MEMBERS
 
+	public function getViewMemberSKU( $params ){
+
+		$skus = get_user_meta( $params["user_id"], "sku", true );
+
+		return [ "sku" => $params ];
+
+	}
 	
 
 	public function getViewMemberDetails( $params ){
