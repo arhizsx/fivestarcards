@@ -735,7 +735,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 						$(document).find(".member_unmatched_box").find("table tbody").append(
 							"<tr class='sku_row' data-sku='" + v + "'>" +
 								"<td>" + v + "</td>" + 
-								"<td class='fit'>Add</td>" + 
+								"<td class='fit'>" + 
+									"<a href='#' class='ebayintegration-btn'>Add SKU</a>" +
+								"</td>" + 
 							"</tr>"
 						);
 					});
