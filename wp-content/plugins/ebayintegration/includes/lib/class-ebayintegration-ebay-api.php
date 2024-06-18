@@ -294,15 +294,18 @@ class Ebay_Integration_Ebay_API {
 
 	public function removeMemberSKU( $params ){
 
-		return get_user_meta( $params["user_id"], 'sku', true );
-		
-		if( delete_user_meta( $params["user_id"], 'sku', $params['sku'] ) ) {
+		$old_metas = get_user_meta( $params["user_id"], 'sku', true );
 
-			return ["error" => false, "sku" => $params["sku"] ];
+		delete_user_meta( $params["user_id"], 'sku' );
 
+		foreach( $old_metas as $meta ){
+			if(  $meta != $params["sku"] ){
+				update_user_meta( $params["user_id"], 'sku', $meta );
+			}
 		}
-
+		
 		return ["error" => false, "sku" => $params["sku"] ];
+		
 
 	}
 
