@@ -736,7 +736,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 							"<tr class='sku_row' data-sku='" + v + "'>" +
 								"<td>" + v + "</td>" + 
 								"<td class='fit text-end' style='width: 50px;'>" + 
-									"<button class='btn btn-primary btn-sm ebayintegration-btn' data-sku='" + v + "' data-action='addUnmatchedSKU'>" +
+									"<button class='btn btn-primary btn-sm ebayintegration-btn'data-user_id='" + resp.user_id + "'  data-sku='" + v + "' data-action='addUnmatchedSKU'>" +
 										"<i class='fa-solid fa-plus'></i>" +
 									"</button>" +
 								"</td>" + 
@@ -755,9 +755,31 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}	
 
-	else if( jQuery(this).data("action") == "removeMemberSKU" ){
+	else if( jQuery(this).data("action") == "removeMemberSKU" ){		
 
-		
+		jQuery.ajax({
+			method: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: { 
+				action: "removeMemberSKU",
+				sku: $(this).data("sku"),
+				user_id: $(this).data("user_id")
+			},
+			success: function(resp){	
+
+				if( resp.error == false ){
+					$(document).find(".member_sku_box").find("tbody tr.sku_row[data-sku='" + resp.sku + "']").remove();
+				}
+				
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});		
+
+	}
+	
+	else if( jQuery(this).data("action") == "addUnmatchedSKU" ){
 
 		jQuery.ajax({
 			method: 'post',

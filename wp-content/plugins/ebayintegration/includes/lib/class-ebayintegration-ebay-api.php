@@ -371,7 +371,7 @@ class Ebay_Integration_Ebay_API {
 
 		sort($unmatched_skus);
 
-		return [ "unmatched_skus" => $unmatched_skus ];
+		return [ "user_id" => $params["user_id"] ,"unmatched_skus" => $unmatched_skus ];
 	}
 
 
