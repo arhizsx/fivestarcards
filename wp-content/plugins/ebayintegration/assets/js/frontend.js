@@ -794,7 +794,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			},
 			success: function(resp){	
 
-				console.log( resp );
+				if( resp.error == false ){
+					location.reload();
+				}
 				
 			},
 			error: function(){
