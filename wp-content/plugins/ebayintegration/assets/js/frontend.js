@@ -736,7 +736,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 							"<tr class='sku_row' data-sku='" + v + "'>" +
 								"<td>" + v + "</td>" + 
 								"<td class='fit text-end' style='width: 50px;'>" + 
-									"<button class='btn btn-primary btn-sm ebayintegration-btn' data-action=''>" +
+									"<button class='btn btn-primary btn-sm ebayintegration-btn' data-action='addUnmatchedSKU'>" +
 										"<i class='fa-solid fa-plus'></i>" +
 									"</button>" +
 								"</td>" + 
