@@ -591,6 +591,14 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".formbox").find(".boxes").addClass("d-none");
 		$(document).find(".formbox").find(".member_ebay_box").removeClass("d-none");
 
+		$(document).find(".member_ebay_box").find("table tbody").empty();
+
+		$(document).find(".member_ebay_box").find("table tbody").append(
+			"<tr>" +
+				"<td class='text-center p-5' colspan='2'>Empty</td>" + 
+			"</tr>"
+		)
+
 		jQuery.ajax({
 			method: 'post',
 			url: "/wp-json/ebayintegration/v1/post",
@@ -600,9 +608,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			},
 			success: function(resp){		
 
-				$(document).find(".member_ebay_box").find("table tbody").empty();
 
 				if( resp.card.length > 0 ){
+
+					$(document).find(".member_ebay_box").find("table tbody").empty();
+
 
 					$.each(resp.card, function( k, v ){
 
