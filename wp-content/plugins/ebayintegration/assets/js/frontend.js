@@ -795,7 +795,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			success: function(resp){	
 
 				if( resp.error == false ){
-					location.reload();
+					$(document).find(".member_unmatched_box").find("tbody tr.sku_row[data-sku='" + resp.sku + "']").remove();
 				}
 				
 			},
@@ -818,7 +818,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			success: function(resp){	
 
 				if( resp.error == false ){
-					$(document).find(".member_unmatched_box").find("tbody tr.sku_row[data-sku='" + resp.sku + "']").remove();
+					location.reload();
 				}
 				
 			},
