@@ -727,11 +727,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			},
 			success: function(resp){	
 				
-				if( resp.sku.length > 0 ){
+				if( resp.unmatched_skus.length > 0 ){
 					
 					$(document).find(".member_unmatched_box").find("table tbody").empty();
 
-					$.each(resp.sku, function( k, v ){
+					$.each(resp.unmatched_skus, function( k, v ){
 						$(document).find(".member_unmatched_box").find("table tbody").append(
 							"<tr class='sku_row' data-sku='" + v + "'>" +
 								"<td>" + v + "</td>" + 
