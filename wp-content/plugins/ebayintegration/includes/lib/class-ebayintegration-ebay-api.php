@@ -294,7 +294,7 @@ class Ebay_Integration_Ebay_API {
 
 	public function removeMemberSKU( $params ){
 
-		return $params['sku'];
+		// return $params['sku'];
 		
 		if( delete_user_meta( 534, 'sku', 'Adam Guilbault MLP' ) ) {
 
