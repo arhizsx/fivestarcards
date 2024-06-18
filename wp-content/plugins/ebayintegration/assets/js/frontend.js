@@ -769,7 +769,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			},
 			success: function(resp){	
 
-				console.log( resp );
+				if( resp.error == false ){
+					$(document).find(".member_sku_box").find("tbody tr.sku_row[data-sku='" + resp.sku + "']").remove();
+				}
 				
 			},
 			error: function(){
