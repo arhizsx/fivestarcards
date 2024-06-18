@@ -290,9 +290,10 @@ class Ebay_Integration_Ebay_API {
 			return $this->deactivateMember( $params );
 		} 
 
+		elseif( $params["action"] == "saveMemberDetailsChanges"){
+			return $this->saveMemberDetailsChanges( $params );
+		} 
 		
-
-
 		else {
 			return $params;
 		}		
@@ -302,6 +303,22 @@ class Ebay_Integration_Ebay_API {
 	// MEMBERS
 
 	
+	public function saveMemberDetailsChanges( $params ){
+
+		$rows = $this->wpdb->update(
+			'wp_users',
+			array(
+				'display_name' => $params["display_name"],
+				'user_email' => $params["user_email"],
+			), 
+			array(
+				"ID" => $params["user_id"],
+			)
+		);
+
+		return [ "error" => false, "user_id" => $params["user_id"] ];
+
+	}
 
 	public function deactivateMember( $params ){
 
