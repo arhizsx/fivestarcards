@@ -337,10 +337,17 @@ class Ebay_Integration_Ebay_API {
 			SELECT DISTINCT sku FROM ebay
 		");
 
+		$unmatched_skus = [];
+
+		foreach( $ebay_skus as $esku ){
+			if (!in_array( $esku->sku , $all_skus )) {
+				array_push($unmatched_skus, $esku->sku );
+			}
+		}
 
 		// $users_with_sku[0]->ID;
 
-		return ["user_skus" => $all_skus, "ebay_skus" => $ebay_skus ];
+		return ["user_skus" => $all_skus, "ebay_skus" => $ebay_skus, "unmatched_skus" => $unmatched_skus ];
 	}
 
 
