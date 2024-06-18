@@ -296,7 +296,7 @@ class Ebay_Integration_Ebay_API {
 
 		return $params['sku'];
 		
-		if( delete_user_meta( $params["user_id"], 'sku', $params['sku'] ) ) {
+		if( delete_user_meta( 534, 'sku', 'Adam Guilbault MLP' ) ) {
 
 			return ["error" => false, "sku" => $params["sku"] ];
 
