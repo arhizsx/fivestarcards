@@ -510,6 +510,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".member_view_menu").find("button").removeClass("active");
 		$(document).find(".member_view_menu").find("button[data-action='getViewMemberDetails']").addClass("active");
 
+		$(document).find(".formbox").find(".boxes").addClass("d-none");
+		$(document).find(".formbox").find(".member_details_box").removeClass("d-none");
+
 		jQuery.ajax({
 			method: 'post',
 			url: "/wp-json/ebayintegration/v1/post",
