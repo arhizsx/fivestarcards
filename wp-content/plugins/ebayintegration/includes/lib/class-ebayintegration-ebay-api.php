@@ -326,6 +326,14 @@ class Ebay_Integration_Ebay_API {
 			'meta_key' => 'sku',
 		));
 
+		$all_skus = [];
+
+		foreach( $users_with_sku as $u ){
+			$skus = get_user_meta( $u->ID, "sku", true );		
+
+			array_push( $all_skus, ...$skus );
+		}
+
 		// $users_with_sku[0]->ID;
 
 		return ["skus" => $users_with_sku[0]->ID];
