@@ -530,6 +530,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				$(document).find(".member_details_box").find("[name='customer_number']").val( customer_number );
 				$(document).find(".member_details_box").find("[name='user_email']").val( user_email );
 
+				$(document).find("[data-action='deactivateMember']").data("user_id", resp.user[0].ID );
+				$(document).find("[data-action='saveMemberDetailsChanges']").data("user_id", resp.user[0].ID );
+
 
 				console.log( resp );
 
@@ -791,6 +794,27 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			},
 			success: function(resp){	
 
+				console.log( resp );
+				
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});		
+
+	}
+	
+	else if( jQuery(this).data("action") == "deactivateMember" ){		
+
+		jQuery.ajax({
+			method: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: { 
+				action: "deactivateMember",
+				user_id: $(this).data("user_id")
+			},
+			success: function(resp){	
+
 				if( resp.error == false ){
 					$(document).find(".member_unmatched_box").find("tbody tr.sku_row[data-sku='" + resp.sku + "']").remove();
 				}
@@ -801,7 +825,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			}
 		});		
 
+
 	}
+
 	
 	
 	else {
