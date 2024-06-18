@@ -166,15 +166,15 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <label>Display Name</label>
-                                    <input type="text" name="display_name" class="form-control p-2 mb-3">
+                                    <input type="text" name="display_name" class="form-control p-2 mb-3" value="">
                                 </div>
                                 <div class="col-md-6">
                                     <label>Customer Number</label>
-                                    <input type="text" name="customer_number" class="form-control p-2 mb-3">
+                                    <input type="text" name="customer_number" class="form-control p-2 mb-3" value="">
                                 </div>
                                 <div class="col-md-6">
                                     <label>Email</label>
-                                    <input type="text" name="user_email" class="form-control p-2 mb-3">
+                                    <input type="text" name="user_email" class="form-control p-2 mb-3" value="">
                                 </div>
                             </div>
                         </div>          
