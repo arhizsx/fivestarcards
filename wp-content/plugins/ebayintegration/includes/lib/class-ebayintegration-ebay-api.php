@@ -326,7 +326,9 @@ class Ebay_Integration_Ebay_API {
 			'meta_key' => 'sku',
 		));
 
-		return ["skus" => $users_with_sku];
+		// $users_with_sku[0]->ID;
+
+		return ["skus" => $users_with_sku[0]->ID];
 	}
 
 
