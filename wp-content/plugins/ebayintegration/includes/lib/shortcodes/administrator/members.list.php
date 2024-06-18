@@ -27,6 +27,7 @@
 
                     $users = get_users( $args );
 
+                    print_r( $users );
 
                     if($users){
                         foreach($users as $user){
