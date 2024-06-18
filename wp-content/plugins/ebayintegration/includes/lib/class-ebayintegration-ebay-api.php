@@ -303,7 +303,7 @@ class Ebay_Integration_Ebay_API {
 		foreach( $old_metas as $meta ){
 
 			if(  $meta != $params["sku"] ){
-				array_push( $new_meta, $params["sku"] );
+				array_push( $new_meta, $meta );
 			}
 		}
 
