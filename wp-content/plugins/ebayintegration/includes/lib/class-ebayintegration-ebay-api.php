@@ -288,14 +288,6 @@ class Ebay_Integration_Ebay_API {
 
 	
 
-	public function getViewUnmatchedSKU( $params ){
-
-		$skus = get_user_meta( $params["user_id"], "sku", true );
-
-		return [ "sku" => $skus ];
-
-	}
-
 
 	public function getViewMemberSKU( $params ){
 
@@ -328,7 +320,7 @@ class Ebay_Integration_Ebay_API {
 		return ["card" => $cards, "skus" => $skus, "sql" => $sql ];
 	}
 
-	public function getViewMemberEbay( $params ){
+	public function getViewUnmatchedSKU( $params ){
 
 		$skus = get_user_meta( $params["user_id"], "sku", true );		
 
