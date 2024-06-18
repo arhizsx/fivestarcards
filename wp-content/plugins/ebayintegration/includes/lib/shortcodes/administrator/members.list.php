@@ -72,13 +72,12 @@
 
                 $users = get_users( $args );
 
-                print_r( $users[0]->active );
 
                 $total_users = 0;
 
                 if($users){
                     foreach($users as $user){
-                        if($user->roles[0] == "um_member"){
+                        if($user->roles[0] == "um_member" && $user->active == 0 ){
                             $total_users++;
                         }
                     }
@@ -105,7 +104,7 @@
 
                     if($users){
                         foreach($users as $user){
-                            if($user->roles[0] == "um_member"){
+                            if($user->roles[0] == "um_member" && $user->active == 0 ){
 
                 ?>
                     <tr>
