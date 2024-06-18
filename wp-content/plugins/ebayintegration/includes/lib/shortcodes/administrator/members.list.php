@@ -136,6 +136,62 @@
             </tbody>
         </table>
     </div>
+    <div class="row">
+        <div class="col-6">
+        
+            <H2 style="color: black;">Deactivated Members</H2>            
+        </div>
+        <div class="col-6 text-end">
+            <input class="btn mt-3 px-2 search_box" style="text-align: left;" placeholder="Search" type="text" data-target="#members_table">
+        </div>
+    </div>
+
+    <div class="table-responsive">    
+        <table class='table 5star_my_orders table-bordered table-striped' id="deactivated_members_table">
+            <thead>
+                <tr>
+                    <th>Customer #</th>
+                    <th>Customer</th>
+                    <th>Email</th>
+                    <th class='text-end'>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+
+                    if($users){
+                        foreach($users as $user){
+                            if($user->roles[0] == "um_member" && $user->active == 1 ){
+                ?>
+                    <tr>
+                        <td>
+                            <?php  echo $user->ID + 1000 ?>
+                        </td>
+                        <td>
+                            <?php  echo $user->display_name ?>
+                        </td>
+                        <td>
+                            <?php  echo $user->user_email ?>
+                        </td>
+                        <td class="text-end">
+                            <a class="btn border btn-dark ebayintegration-btn" data-action="showMemberInfoModal" data-user_id="<?php echo $user->ID; ?>">View</a>
+                            <button class="btn border btn-primary 5star_btn" data-action='make_admin' data-user_id='<?php echo $user->ID; ?>'>Promote</button>
+                        </td>
+                    </tr>
+                <?php    
+                            }    
+                        }
+                    } else {
+                ?>
+                    <tr>
+                        <td class="text-center" colspan="4">Empty</td>
+                    </tr>
+                <?php                  
+                    }
+                ?>                
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <div class="modal fade member_info_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 0px; z-index: 99999">
