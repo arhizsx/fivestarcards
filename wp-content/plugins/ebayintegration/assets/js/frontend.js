@@ -655,13 +655,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			},
 			success: function(resp){	
 				
-				console.log( resp );
 
 				$(document).find(".member_sku_box").find("table tbody").empty();
 
-				if( resp.card.length > 0 ){
+				if( resp.sku.length > 0 ){
 
-					$.each(resp.card, function( k, v ){
+					$.each(resp.sku, function( k, v ){
 
 						$(document).find(".member_sku_box").find("table tbody").append(
 							"<tr>" +
