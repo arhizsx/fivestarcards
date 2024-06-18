@@ -785,7 +785,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			method: 'post',
 			url: "/wp-json/ebayintegration/v1/post",
 			data: { 
-				action: "removeMemberSKU",
+				action: "addUnmatchedSKU",
 				sku: $(this).data("sku"),
 				user_id: $(this).data("user_id")
 			},
