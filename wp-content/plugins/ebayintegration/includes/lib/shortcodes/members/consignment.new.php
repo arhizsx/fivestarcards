@@ -150,27 +150,27 @@ order by id desc
                         <input type="hidden" name="user_id" value="<?php echo get_current_user_id(); ?>">
                         
                         <label>Qty</label>
-                        <input type="number" name="qty" class="form-control" value="3">
+                        <input type="number" name="qty" class="form-control" value="">
                     </div>
                     <div class="col-6">
                         <label>Year</label>
-                        <input type="number" name="year" class="form-control" value="2000">
+                        <input type="number" name="year" class="form-control" value="">
                     </div>
                     <div class="col-md-12">
                         <label>Brand</label>
-                        <input type="text" name="brand" class="form-control p-1" value="brand">
+                        <input type="text" name="brand" class="form-control p-1" value="">
                     </div>
                     <div class="col-md-12">
                         <label>Player Name</label>
-                        <input type="text" name="player_name" class="form-control p-1" value="player1">
+                        <input type="text" name="player_name" class="form-control p-1" value="">
                     </div>
                     <div class="col-sm-6">
                         <label>Card Number</label>
-                        <input type="text" name="card_number" class="form-control p-1" value="CN1100">
+                        <input type="text" name="card_number" class="form-control p-1" value="">
                     </div>
                     <div class="col-sm-6">
                         <label>Attribute S/N</label>
-                        <input type="text" name="attribute_sn" class="form-control p-1" value="SN0011SS">
+                        <input type="text" name="attribute_sn" class="form-control p-1" value="">
                     </div>
                 </div>
                 <div class="d-none p-5 text-center loading">
