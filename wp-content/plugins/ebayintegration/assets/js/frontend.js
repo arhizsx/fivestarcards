@@ -654,7 +654,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$(document).find(".member_sku_box").find("table tbody").empty();
 
-		$(document).find(".member_ebay_box").find("table tbody").append(
+		$(document).find(".member_sku_box").find("table tbody").append(
 			"<tr>" +
 				"<td class='text-center p-5' colspan='1'>Empty</td>" + 
 			"</tr>"
@@ -692,7 +692,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				} else {
 
 
-					$(document).find(".member_ebay_box").find("table tbody").append(
+					$(document).find(".member_sku_box").find("table tbody").append(
 						"<tr>" +
 							"<td class='text-center p-5' colspan='1'>Empty</td>" + 
 						"</tr>"
