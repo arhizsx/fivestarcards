@@ -757,13 +757,15 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	else if( jQuery(this).data("action") == "removeMemberSKU" ){
 
-		$(this).data("sku")
+		
 
 		jQuery.ajax({
 			method: 'post',
 			url: "/wp-json/ebayintegration/v1/post",
 			data: { 
 				action: "removeMemberSKU",
+				sku: $(this).data("sku"),
+				user_id: $(this).data("user_id")
 			},
 			success: function(resp){	
 
