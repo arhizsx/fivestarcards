@@ -207,7 +207,7 @@
                             <table class="table table-sm table-bordered table-striped">
                                 <thead>
                                     <th>SKU</th>
-                                    <th class='fit'></th>
+                                    <th class='fit text-end' style="width: 50px;"></th>
                                 </thead>
                                 <tbody>
                                 </tbody>
