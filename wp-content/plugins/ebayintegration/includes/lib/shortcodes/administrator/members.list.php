@@ -184,7 +184,6 @@
                         </div>
                     </div>
                     <div class="member_ebay_box boxes d-none">
-                        <div class="border p-3 table-responsive">
                             <table class="table table-sm table-bordered table-striped">
                                 <thead>
                                     <th>Status</th>
@@ -193,10 +192,8 @@
                                 <tbody>
                                 </tbody>
                             </table>
-                        </div>
                     </div>
                     <div class="member_sku_box boxes d-none">
-                        <div class="border p-3">
                             <table class="table table-sm table-bordered table-striped">
                                 <thead>
                                     <th>SKU</th>
@@ -205,10 +202,8 @@
                                 <tbody>
                                 </tbody>
                             </table>
-                        </div>
                     </div>
                     <div class="member_unmatched_box boxes d-none">
-                        <div class="border p-3">
                             <table class="table table-sm table-bordered table-striped">
                                 <thead>
                                     <th>SKU</th>
@@ -218,7 +213,6 @@
                                 <tbody>
                                 </tbody>
                             </table>
-                        </div>
                     </div>
                 </div>
                 <div class="d-none p-5 text-center loading">
