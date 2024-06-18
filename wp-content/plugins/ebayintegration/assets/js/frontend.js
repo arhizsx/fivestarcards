@@ -507,6 +507,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".member_info_modal").find(".member_view_menu").find("button").data("user_id", "");
 		$(document).find(".member_info_modal").find(".member_view_menu").find("button").data("user_id", element.data("user_id"));
 
+		$(document).find(".member_view_menu").find("button").removeClass("active");
+		$(document).find(".member_view_menu").find("button[data-action='getViewMemberDetails']").addClass("active");
+
 		jQuery.ajax({
 			method: 'post',
 			url: "/wp-json/ebayintegration/v1/post",
