@@ -647,8 +647,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				console.log("Error in AJAX");
 			}
 		});
-	
-
 
 	}
 	
@@ -720,6 +718,58 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 
+	else if( jQuery(this).data("action") == "getViewUnmatchedSKU" ){
+		
+		$(document).find(".member_view_menu").find("button").removeClass("active");
+		element.addClass("active");
+	
+		var user_id = element.data("user_id");
+
+		$(document).find(".formbox").find(".boxes").addClass("d-none");
+		$(document).find(".formbox").find(".member_unmatched_box").removeClass("d-none");
+
+		$(document).find(".member_unmatched_box").find("table tbody").empty();
+
+		$(document).find(".member_unmatched_box").find("table tbody").append(
+			"<tr>" +
+				"<td class='text-center p-5' colspan='3'>Empty</td>" + 
+			"</tr>"
+		)
+
+		jQuery.ajax({
+			method: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: { 
+				action: "getViewUnmatchedSKU",
+				user_id: user_id,
+			},
+			success: function(resp){	
+				
+				if( resp.sku.length > 0 ){
+					
+					$(document).find(".member_unmatched_box").find("table tbody").empty();
+
+					$.each(resp.sku, function( k, v ){
+						$(document).find(".member_sku_box").find("table tbody").append(
+							"<tr class='sku_row' data-sku='" + v + "'>" +
+								"<td>" + v + "</td>" + 
+								"<td>" + v + "</td>" + 
+								"<td>" + v + "</td>" + 
+							"</tr>"
+						);
+					});
+				}
+
+				// defObject.resolve(resp);    //resolve promise and pass the response.
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});
+
+
+	}	
+	
 	else {
 
 		console.log("Action Not Set: " + jQuery(this).data("action") );
