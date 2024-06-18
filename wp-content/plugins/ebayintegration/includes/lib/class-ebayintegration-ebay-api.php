@@ -330,13 +330,17 @@ class Ebay_Integration_Ebay_API {
 
 		foreach( $users_with_sku as $u ){
 			$skus = get_user_meta( $u->ID, "sku", true );		
-
 			array_push( $all_skus, ...$skus );
 		}
 
+		$ebay_skus  = $this->wpdb->get_results ("
+			SELECT DISTINCT sku FROM ebay
+		");
+
+
 		// $users_with_sku[0]->ID;
 
-		return ["skus" => $all_skus ];
+		return ["user_skus" => $all_skus, "ebay_skus" => $ebay_skus ];
 	}
 
 
