@@ -286,6 +286,13 @@ class Ebay_Integration_Ebay_API {
 			return $this->addUnmatchedSKU( $params );
 		} 
 
+		elseif( $params["action"] == "deactivateMember"){
+			return $this->deactivateMember( $params );
+		} 
+
+		
+
+
 		else {
 			return $params;
 		}		
@@ -293,6 +300,26 @@ class Ebay_Integration_Ebay_API {
 	}
 
 	// MEMBERS
+
+	
+
+	public function deactivateMember( $params ){
+
+
+		$rows = $this->wpdb->update(
+			'wp_users',
+			array(
+				'active' => 1,
+			), 
+			array(
+				"ID" => $params["user_id"],
+			)
+		);
+
+		return [ "error" => false, "user_id" => $params["user_id"] ];
+
+	}
+
 
 	public function addUnmatchedSKU( $params ){
 
@@ -306,11 +333,9 @@ class Ebay_Integration_Ebay_API {
 
 		add_user_meta( $params["user_id"], 'sku', $old_metas );
 		
-		return ["error" => false, "sku" => $params["sku"], "new_sku" =>  get_user_meta( $params["user_id"], 'sku', true ) ];
-		
+		return ["error" => false, "sku" => $params["sku"], "new_sku" =>  get_user_meta( $params["user_id"], 'sku', true ) ];		
 
 	}
-
 
 	public function removeMemberSKU( $params ){
 
