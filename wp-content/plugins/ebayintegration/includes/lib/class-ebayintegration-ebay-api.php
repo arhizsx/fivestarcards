@@ -344,12 +344,14 @@ class Ebay_Integration_Ebay_API {
 
 		$old_metas = get_user_meta( $params["user_id"], 'sku', true );
 
-		return $old_metas;
 
 		if( ! in_array( $params["sku"], $old_metas ) ){
 			array_push( $old_metas, $params["sku"] );
 		} 
 
+		if( $old_metas == "" ){
+			array_push( $old_metas, $params["sku"] );			
+		} 
 
 		delete_user_meta( $params["user_id"], 'sku' );
 
