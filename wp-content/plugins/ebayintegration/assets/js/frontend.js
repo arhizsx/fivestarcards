@@ -679,7 +679,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 							"<tr class='sku_row' data-sku='" + v + "'>" +
 								"<td>" + v + "</td>" + 
 								"<td class='fit text-center'>" +
-									"<a href='#' class='ebayintegration-btn  text-danger' data-action='removeMemberSKU' data-sku='" + v + "'>" +
+									"<a href='#' class='ebayintegration-btn  text-danger' data-action='removeMemberSKU' data-user_id='" + resp.user_id + "' data-sku='" + v + "'>" +
 										"<i class='fa-solid fa-lg fa-xmark'></i>" +
 									"</a>" +
 								"</td>" + 
