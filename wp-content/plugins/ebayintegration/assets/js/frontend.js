@@ -671,9 +671,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 						$(document).find(".member_sku_box").find("table tbody").append(
 							"<tr>" +
 								"<td>" + v + "</td>" + 
-								"<td class='fit'>" +
+								"<td class='fit text-center'>" +
 									"<a href='#' class='ebayintegration-btn' data-action='removeMemberSKU' data-sku='" + v + "'>" +
-										"<i class='fa-solid fa-xmark'></i>" +
+										"<i class='fa-solid fa-lg fa-xmark'></i>" +
 									"</a>" +
 								"</td>" + 
 							"</tr>"
