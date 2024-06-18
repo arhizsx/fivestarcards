@@ -278,6 +278,11 @@ class Ebay_Integration_Ebay_API {
 			return $this->getViewUnmatchedSKU( $params );
 		} 
 
+		elseif( $params["action"] == "removeMemberSKU"){
+			return $this->removeMemberSKU( $params );
+		} 
+
+
 		else {
 			return $params;
 		}		
@@ -286,7 +291,19 @@ class Ebay_Integration_Ebay_API {
 
 	// MEMBERS
 
-	
+
+	public function removeMemberSKU( $params ){
+
+		
+		if( delete_user_meta( $params["user_id"], 'sku', $params['sku'] ) ) {
+
+			return ["error" => false, "sku" => $params["sku"] ];
+
+		}
+
+		return ["error" => false, "sku" => $params["sku"] ];
+
+	}
 
 
 	public function getViewMemberSKU( $params ){
@@ -296,7 +313,6 @@ class Ebay_Integration_Ebay_API {
 		return [ "user_id" => $params["user_id"], "sku" => $skus ];
 
 	}
-	
 
 	public function getViewMemberDetails( $params ){
 
