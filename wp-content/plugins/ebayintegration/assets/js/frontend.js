@@ -630,15 +630,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	
 					});
 
-				} else {
-
-
-					$(document).find(".member_ebay_box").find("table tbody").append(
-						"<tr>" +
-							"<td class='text-center p-5' colspan='2'>Empty</td>" + 
-						"</tr>"
-					)
-
 				}
 
 				// defObject.resolve(resp);    //resolve promise and pass the response.
@@ -696,15 +687,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 						)
 	
 					});
-
-				} else {
-
-
-					$(document).find(".member_sku_box").find("table tbody").append(
-						"<tr>" +
-							"<td class='text-center p-5' colspan='2'>Empty</td>" + 
-						"</tr>"
-					)
 
 				}
 
