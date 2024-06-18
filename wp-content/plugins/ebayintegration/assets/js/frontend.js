@@ -526,9 +526,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				customer_number =  parseInt( resp.user[0].ID ) + 1000;
 				user_email = resp.user[0].user_email;
 
-				$(document).find(".member_details_box").find("[name='display_name']").val( display_name ).trigger("change");;
-				$(document).find(".member_details_box").find("[name='customer_number']").val( customer_number ).trigger("change");;
-				$(document).find(".member_details_box").find("[name='user_email']").val( user_email ).trigger("change");;
+				$(document).find(".member_details_box").find("[name='display_name']").val( display_name );
+				$(document).find(".member_details_box").find("[name='customer_number']").val( customer_number );
+				$(document).find(".member_details_box").find("[name='user_email']").val( user_email );
+
+
+				console.log( resp );
 
 			},
 			error: function(){
@@ -563,9 +566,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				customer_number =  parseInt( resp.user[0].ID ) + 1000;
 				user_email = resp.user[0].user_email;
 
-				$(document).find(".member_details_box").find("[name='display_name']").val( display_name ).trigger("change");;
-				$(document).find(".member_details_box").find("[name='customer_number']").val( customer_number ).trigger("change");;
-				$(document).find(".member_details_box").find("[name='user_email']").val( user_email ).trigger("change");;
+				$(document).find(".member_details_box").find("[name='display_name']").val( display_name );
+				$(document).find(".member_details_box").find("[name='customer_number']").val( customer_number );
+				$(document).find(".member_details_box").find("[name='user_email']").val( user_email );
 
 
 				console.log( resp );
