@@ -754,6 +754,27 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 
 	}	
+
+	else if( jQuery(this).data("action") == "removeMemberSKU" ){
+
+		jQuery.ajax({
+			method: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: { 
+				action: "removeMemberSKU",
+			},
+			success: function(resp){	
+
+				console.log( resp );
+				
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});		
+
+	}
+	
 	
 	else {
 
