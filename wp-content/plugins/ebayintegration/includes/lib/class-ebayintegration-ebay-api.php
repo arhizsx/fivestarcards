@@ -322,15 +322,11 @@ class Ebay_Integration_Ebay_API {
 
 	public function getViewUnmatchedSKU( $params ){
 
-		$skus = get_user_meta( $params["user_id"], "sku", true );		
+		$users_with_sku = get_users(array(
+			'meta_key' => 'sku',
+		));
 
-		$array = implode("','",$skus);
-
-		$sql = "SELECT * FROM ebay WHERE sku IN ('" . $array . "')";
-
-		$cards = $this->wpdb->get_results ( $sql );
-
-		return ["card" => $cards, "skus" => $skus, "sql" => $sql ];
+		return ["skus" => $users_with_sku];
 	}
 
 
