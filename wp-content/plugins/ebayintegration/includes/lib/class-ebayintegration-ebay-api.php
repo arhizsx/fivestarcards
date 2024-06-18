@@ -348,6 +348,8 @@ class Ebay_Integration_Ebay_API {
 			array_push( $old_metas, $params["sku"] );
 		} 
 
+		return $old_metas;
+
 		delete_user_meta( $params["user_id"], 'sku' );
 
 		add_user_meta( $params["user_id"], 'sku', $old_metas );
