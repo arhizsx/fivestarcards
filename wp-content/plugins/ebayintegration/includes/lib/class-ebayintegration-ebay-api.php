@@ -340,22 +340,25 @@ class Ebay_Integration_Ebay_API {
 
 	public function addUnmatchedSKU( $params ){
 
-		$old_metas = [];
 
 		$old_metas = get_user_meta( $params["user_id"], 'sku', true );
 
-
-		if( ! in_array( $params["sku"], $old_metas ) ){
-			array_push( $old_metas, $params["sku"] );
-		} 
-
 		if( $old_metas == "" ){
-			array_push( $old_metas, $params["sku"] );			
-		} 
 
-		delete_user_meta( $params["user_id"], 'sku' );
+			add_user_meta( $params["user_id"], 'sku', array( $params["sku"] ) );
 
-		add_user_meta( $params["user_id"], 'sku', $old_metas );
+		} else {
+
+			if( ! in_array( $params["sku"], $old_metas ) ){
+				array_push( $old_metas, $params["sku"] );
+			} 
+
+			delete_user_meta( $params["user_id"], 'sku' );
+
+			add_user_meta( $params["user_id"], 'sku', $old_metas );
+		
+		}
+
 		
 		return ["error" => false, "sku" => $params["sku"], "new_sku" =>  get_user_meta( $params["user_id"], 'sku', true ) ];		
 
