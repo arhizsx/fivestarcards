@@ -298,6 +298,11 @@ class Ebay_Integration_Ebay_API {
 			return $this->consignmentPaidOut( $params );
 		} 
 
+		elseif( $params["action"] == "consignmentPaidOutQueue"){
+			return $this->consignmentPaidOutQueue( $params );
+		} 
+
+		
 		else {
 			return $params;
 		}		
@@ -305,6 +310,12 @@ class Ebay_Integration_Ebay_API {
 	}
 
 	// MEMBERS
+
+	public function consignmentPaidOutQueue( $params ){
+		
+		return [ "error" => false, "id" => $params["id"] ];
+
+	}
 
 	
 	public function consignmentPaidOut( $params ){
