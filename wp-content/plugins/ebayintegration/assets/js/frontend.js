@@ -898,7 +898,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				if( resp.error == false ){
 
-					$(document).find(".ebay_card_row[data-id='" + resp.id + "'").remove();
+					$(document).find(".ebay_card_row[data-id='" + resp.id + "'").css("background-color", "lightblue");
 
 					// location.reload();
 				}
