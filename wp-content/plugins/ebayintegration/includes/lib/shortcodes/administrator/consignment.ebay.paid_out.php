@@ -73,7 +73,7 @@ $users = get_users( $args );
             <?php 
             if( count($ebay) > 0 ){
 
-                $ctr = $page * $maxpage;
+                $ctr = 0;
 
                 foreach($ebay as $item){ 
                     if( $item->transaction != "Not Sold" ){
