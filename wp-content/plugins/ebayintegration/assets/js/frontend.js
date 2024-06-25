@@ -869,6 +869,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				console.log(resp);
 
 				if( resp.error == false ){
+
+					$(document).find(".ebay_card_row[data-id='" + resp.id + "'").remove();
+
 					// location.reload();
 				}
 				
