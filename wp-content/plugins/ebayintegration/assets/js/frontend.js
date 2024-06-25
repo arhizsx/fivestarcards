@@ -855,9 +855,30 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	
 	}
+	else if( jQuery(this).data("action") == "consignmentPaidOut" ){		
 
+		jQuery.ajax({
+			method: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: { 
+				action: "consignmentPaidOut",
+				id: $(this).data("id")
+			},
+			success: function(resp){	
+
+				console.log(resp);
+
+				if( resp.error == false ){
+					// location.reload();
+				}
+				
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});		
 	
-	
+	}
 	
 	else {
 
