@@ -294,6 +294,10 @@ class Ebay_Integration_Ebay_API {
 			return $this->saveMemberDetailsChanges( $params );
 		} 
 		
+		elseif( $params["action"] == "consignmentPaidOut"){
+			return $this->consignmentPaidOut( $params );
+		} 
+
 		else {
 			return $params;
 		}		
@@ -303,6 +307,12 @@ class Ebay_Integration_Ebay_API {
 	// MEMBERS
 
 	
+	public function consignmentPaidOut( $params ){
+		
+		return [ "error" => false, "id" => $params["id"] ];
+
+	}
+
 	public function saveMemberDetailsChanges( $params ){
 
 		$rows = $this->wpdb->update(
