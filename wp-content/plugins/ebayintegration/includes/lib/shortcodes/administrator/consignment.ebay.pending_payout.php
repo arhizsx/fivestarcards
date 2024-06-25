@@ -47,7 +47,7 @@ $users = get_users( $args );
                 $data = json_decode($item->data, true);
                     $ctr++;
             ?>
-            <tr>
+            <tr class="ebay_card_row" data-id="<?php echo $item->id ?>">
                 <td>
                     <div class="title">
                         <strong><?php echo $ctr;  ?></strong>&nbsp;
@@ -69,7 +69,7 @@ $users = get_users( $args );
                     ?>
                 </td>
                 <td class="text-end">
-                    <button class="btn btn-primary">PAID</button>
+                    <button class="btn btn-primary ebayintegration-btn" data-action="consignmentPaidOut" data-id="<?php echo $item->id ?>">PAID</button>
                 </td>
             </tr>
             <?php
