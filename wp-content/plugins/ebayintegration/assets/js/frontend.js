@@ -882,6 +882,34 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		});		
 	
 	}
+
+	else if( jQuery(this).data("action") == "consignmentPaidOutQueue" ){		
+
+		jQuery.ajax({
+			method: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: { 
+				action: "consignmentPaidOutQueue",
+				id: $(this).data("id")
+			},
+			success: function(resp){	
+
+				console.log(resp);
+
+				if( resp.error == false ){
+
+					$(document).find(".ebay_card_row[data-id='" + resp.id + "'").remove();
+
+					// location.reload();
+				}
+				
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});		
+	
+	}
 	
 	else {
 
