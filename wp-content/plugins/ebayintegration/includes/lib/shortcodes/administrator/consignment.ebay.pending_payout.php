@@ -47,7 +47,15 @@ $users = get_users( $args );
                 $data = json_decode($item->data, true);
                     $ctr++;
             ?>
-            <tr class="ebay_card_row" data-id="<?php echo $item->id ?>">
+            <?php 
+                if( $item->status == "PaidOutQueued" ) {
+                    $setStyle = 'style="border: 2px solid black;"';
+                } else {
+                    $setStyle = "";
+                }
+            ?>
+
+            <tr class="ebay_card_row" data-id="<?php echo $item->id ?>" <?php echo $setStyle; ?>>
                 <td>
                     <div class="title">
                         <strong><?php echo $ctr;  ?></strong>&nbsp;
