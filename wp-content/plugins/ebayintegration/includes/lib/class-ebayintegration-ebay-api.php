@@ -322,14 +322,45 @@ class Ebay_Integration_Ebay_API {
 
 	public function consignmentPaidOutQueue( $params ){
 		
-		return [ "error" => false, "id" => $params["id"] ];
+		$rows = $this->wpdb->update(
+			'ebay',
+			array(
+				'status' => "PaidOutQueued"
+			), 
+			array(
+				"id" => $params["id"],
+			)
+		);
+
+		if( $rows != false ){
+			return [ "error" => false, "id" => $params["id"] ];
+		} 
+		else {
+			return [ "error" => false, "id" => $params["id"] ];
+
+		}
 
 	}
 
 	
 	public function consignmentPaidOut( $params ){
-		
-		return [ "error" => false, "id" => $params["id"] ];
+
+		$rows = $this->wpdb->update(
+			'ebay',
+			array(
+				'status' => "PaidOut"
+			), 
+			array(
+				"id" => $params["id"],
+			)
+		);
+
+		if( $rows != false ){
+			return [ "error" => false, "id" => $params["id"] ];
+		} 
+		else {
+			return [ "error" => false, "id" => $params["id"] ];
+		}
 
 	}
 
