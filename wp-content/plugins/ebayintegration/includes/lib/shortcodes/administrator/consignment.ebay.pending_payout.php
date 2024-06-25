@@ -70,6 +70,7 @@ $users = get_users( $args );
                 </td>
                 <td class="text-end">
                     <button class="btn btn-primary ebayintegration-btn" data-action="consignmentPaidOut" data-id="<?php echo $item->id ?>">PAID</button>
+                    <button class="btn btn-primary ebayintegration-btn" data-action="consignmentPaidOutQueue" data-id="<?php echo $item->id ?>">QUEUE</button>
                 </td>
             </tr>
             <?php
