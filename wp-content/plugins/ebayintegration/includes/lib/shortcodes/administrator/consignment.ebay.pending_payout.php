@@ -69,8 +69,8 @@ $users = get_users( $args );
                     ?>
                 </td>
                 <td class="text-end">
-                    <button class="btn btn-primary btn-sm ebayintegration-btn" data-action="consignmentPaidOut" data-id="<?php echo $item->id ?>">PAID</button>
-                    <button class="btn btn-dark btn-sm ms-3 ebayintegration-btn" data-action="consignmentPaidOutQueue" data-id="<?php echo $item->id ?>">QUEUE</button>
+                    <button class="btn btn-primary btn-sm mb-2 ebayintegration-btn" data-action="consignmentPaidOut" data-id="<?php echo $item->id ?>">PAID</button>
+                    <button class="btn btn-dark btn-sm ms-2 mb-2 ebayintegration-btn" data-action="consignmentPaidOutQueue" data-id="<?php echo $item->id ?>">QUEUE</button>
                 </td>
             </tr>
             <?php
