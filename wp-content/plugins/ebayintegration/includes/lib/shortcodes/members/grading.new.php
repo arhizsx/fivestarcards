@@ -23,6 +23,44 @@
 
 <?php 
     if( ! isset( $_GET["type"] ) ){
+
+        switch( $_GET["type"] ){
+
+            case "psa-value_bulk": 
+
+                $max_dv = 499;
+                $per_card = 19;
+                break;
+
+            case "psa-value_plus": 
+
+                $max_dv = 499;
+                $per_card = 40;
+                break;
+
+            case "psa-regular": 
+
+                $max_dv = 1499;
+                $per_card = 75;
+                break;
+
+            case "psa-express": 
+
+                $max_dv = 2499;
+                $per_card = 165;
+                break;
+
+            case "psa-super_express": 
+
+                $max_dv = 4999;
+                $per_card = 330;
+                break;
+
+            default: 
+                $max_dv = 0;
+                $per_card = 0;
+            
+        }
 ?>
 
 <div class="row mx-3">
