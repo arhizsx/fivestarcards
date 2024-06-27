@@ -10,18 +10,18 @@
 
 <div class="row">
     <div class="col text-center grading_box">
-        <H2>Value Bulk</H2>
+        <H3>Value Bulk</H3>
     </div>
     <div class="col text-center grading_box">
-        <H2>Value Plus</H2>
+        <H3>Value Plus</H3>
     </div>
     <div class="col text-center grading_box">
-        <H2>Regular</H2>
+        <H3>Regular</H3>
     </div>
     <div class="col text-center grading_box">
-        <H2>Express</H2>
+        <H3>Express</H3>
     </div>
     <div class="col text-center grading_box">
-        <H2>Super Express</H2>
+        <H3>Super Express</H3>
     </div>
 </div>
