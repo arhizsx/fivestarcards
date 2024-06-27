@@ -13,7 +13,6 @@
         height: 100px;
         vertical-align: middle;
         font-size: 1.5em;
-        color: white !important;
         font-weight: bold;
     }
 </style>
@@ -22,7 +21,7 @@
     <div class="col text-center grading_box">
         <table class="table table-bordered">
             <tr>
-                <td class='grading_title' style="background-color: #1ba01d;">Value Bulk</td>
+                <td class='grading_title' style="background-color: #1ba01d; color: #ffffff;">Value Bulk</td>
             </tr>
         </table>
     </div>
@@ -36,7 +35,7 @@
     <div class="col text-center grading_box">
         <table class="table table-bordered">
             <tr>
-                <td class='grading_title' style="background-color: #0c71c3;">Regular</td>
+                <td class='grading_title' style="background-color: #0c71c3; color: #ffffff;">Regular</td>
             </tr>
         </table>
     </div>
