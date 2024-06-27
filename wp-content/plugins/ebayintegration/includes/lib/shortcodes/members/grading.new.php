@@ -10,41 +10,44 @@
         margin: 0px;
         margin-bottom: 0px;
     }
+    .grading_title {
+        height: 100px;
+    }
 </style>
 
 <div class="row">
     <div class="col text-center grading_box">
         <table class="table table-bordered">
             <tr>
-                <td>Value Bulk</td>
+                <td class='grading_title'>Value Bulk</td>
             </tr>
         </table>
     </div>
     <div class="col text-center grading_box">
         <table class="table table-bordered">
             <tr>
-                <td>Value Plus</td>
+                <td class='grading_title'>Value Plus</td>
             </tr>
         </table>
     </div>
     <div class="col text-center grading_box">
         <table class="table table-bordered">
             <tr>
-                <td>Regular</td>
+                <td class='grading_title'>Regular</td>
             </tr>
         </table>
     </div>
     <div class="col text-center grading_box">
         <table class="table table-bordered">
             <tr>
-                <td>Express</td>
+                <td class='grading_title'>Express</td>
             </tr>
         </table>
     </div>
     <div class="col text-center grading_box">
         <table class="table table-bordered">
             <tr>
-                <td>Super Express</td>
+                <td class='grading_title'>Super Express</td>
             </tr>
         </table>
     </div>
