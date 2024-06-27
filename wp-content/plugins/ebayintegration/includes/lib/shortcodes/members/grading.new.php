@@ -12,7 +12,7 @@
     .grading_title {
         height: 100px;
         vertical-align: middle;
-        font-size: 2em;
+        font-size: 1.5em;
     }
 </style>
 
