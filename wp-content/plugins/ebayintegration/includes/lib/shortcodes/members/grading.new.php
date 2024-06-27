@@ -8,6 +8,7 @@
     }
     .grading_box table {
         margin: 0px;
+        margin-bottom: 0px;
     }
 </style>
 
