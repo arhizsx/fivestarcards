@@ -133,7 +133,7 @@ function ActivateListingSelect($page){
 
 function ActivateGrading($page){
     if( isset( $_GET['mode']) == false ){
-        if( $page == "open" ){
+        if( $page == "log" ){
             return "active";
         }
     } 
@@ -148,7 +148,7 @@ function ActivateGrading($page){
 
 function ActivateGradingSelect($page){
     if( isset( $_GET['mode']) == false ){
-        if( $page == "open" ){
+        if( $page == "log" ){
             return "selected";
         }
     } 
