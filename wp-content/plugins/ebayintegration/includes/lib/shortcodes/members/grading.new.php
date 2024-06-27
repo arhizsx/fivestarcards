@@ -16,7 +16,7 @@
         font-weight: bold;
     }
     .pricing {
-        font-size: 2em !important;
+        font-size: 4em !important;
     }
 </style>
 
