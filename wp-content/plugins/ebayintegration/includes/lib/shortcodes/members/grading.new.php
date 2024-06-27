@@ -488,7 +488,7 @@
 ?>
     <div class="row mx-3">
         <div class="col-12">
-            <H2><a style="text-decoration: none; color: lightgray;" href='?grader=sgc'>PSA Grading</a> &emsp; SGC Grading</H2>
+            <H2><a style="text-decoration: none; color: lightgray;" href='?grader=psa'>PSA Grading</a> &emsp; SGC Grading</H2>
         </div>
         <div class="col-md-3 text-center grading_box">
             <table class="table table-bordered">
