@@ -488,7 +488,7 @@
     <div class="col-md-4 text-center grading_box">
         <table class="table table-bordered">
             <tr>
-                <td class='grading_title' style="background-color: #1ba01d; color: #ffffff;">Value Bulk</td>
+                <td class='grading_title' style="background-color: #0c71c3; color: #ffffff;">Value Bulk</td>
             </tr>
             <tr>
                 <td class="">
