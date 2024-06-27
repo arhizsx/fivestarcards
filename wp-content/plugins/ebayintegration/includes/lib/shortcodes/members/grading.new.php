@@ -157,6 +157,14 @@ order by id desc
                         </select>
                     </div>
                     <div class="col-6">                        
+                        <label>Per Card</label>
+                        <input type="number" name="per_card" class="form-control" value="">
+                    </div>
+                    <div class="col-6">
+                        <label>Max DV</label>
+                        <input type="number" name="max_dv" class="form-control" value="">
+                    </div>
+                    <div class="col-6">                        
                         <input type="hidden" name="user_id" value="<?php echo get_current_user_id(); ?>">
                         
                         <label>Qty</label>
