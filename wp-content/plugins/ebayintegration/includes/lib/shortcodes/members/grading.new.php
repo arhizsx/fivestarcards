@@ -485,7 +485,7 @@
     <div class="col-12">
         <H2>SGC Grading</H2>
     </div>
-    <div class="col-md-4 text-center grading_box">
+    <div class="col-md-3 text-center grading_box">
         <table class="table table-bordered">
             <tr>
                 <td class='grading_title' style="background-color: #0c71c3; color: #ffffff;">Value Bulk</td>
