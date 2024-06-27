@@ -4,7 +4,7 @@
     }
     .grading_box {
         border: 1px solid black;
-        padding-top: 0px;
+        padding: 0px;
     }
     .grading_box table {
         margin: 0px;
