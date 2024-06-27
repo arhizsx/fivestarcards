@@ -392,7 +392,7 @@
                 </tr>
                 <tr>
                     <td>
-                    <a href="?type=psa-value_bulk" class="btn btn-sm btn-outline-primary">Log Cards</a>
+                    <a href="?grader=psa&type=psa-value_bulk" class="btn btn-sm btn-outline-primary">Log Cards</a>
                     </td>
                 </tr>
             </table>
@@ -413,7 +413,7 @@
                 </tr>
                 <tr>
                     <td>
-                    <a href="?type=psa-value_plus" class="btn btn-sm btn-outline-primary">Log Cards</a>
+                    <a href="?grader=psa&type=psa-value_plus" class="btn btn-sm btn-outline-primary">Log Cards</a>
                     </td>
                 </tr>
             </table>
@@ -434,7 +434,7 @@
                 </tr>
                 <tr>
                     <td>
-                    <a href="?type=psa-regular" class="btn btn-sm btn-outline-primary">Log Cards</a>
+                    <a href="?grader=psa&type=psa-regular" class="btn btn-sm btn-outline-primary">Log Cards</a>
                     </td>
                 </tr>
             </table>
@@ -455,7 +455,7 @@
                 </tr>
                 <tr>
                     <td>
-                    <a href="?type=psa-express" class="btn btn-sm btn-outline-primary">Log Cards</a>
+                    <a href="?grader=psa&type=psa-express" class="btn btn-sm btn-outline-primary">Log Cards</a>
                     </td>
                 </tr>
             </table>
@@ -476,7 +476,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <a  href="?type=psa-super_express" class="btn btn-sm btn-outline-primary">Log Cards</a>
+                        <a  href="?grader=psa&type=psa-super_express" class="btn btn-sm btn-outline-primary">Log Cards</a>
                     </td>
                 </tr>
             </table>
@@ -509,7 +509,7 @@
                 </tr>
                 <tr>
                     <td>
-                    <a href="?type=sgc-bulk" class="btn btn-sm btn-outline-primary">Log Cards</a>
+                    <a href="?grader=sgc&type=sgc-bulk" class="btn btn-sm btn-outline-primary">Log Cards</a>
                     </td>
                 </tr>
             </table>
