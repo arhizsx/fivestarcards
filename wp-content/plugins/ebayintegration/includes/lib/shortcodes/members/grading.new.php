@@ -481,7 +481,7 @@
         </table>
     </div>
 </div>
-<div class="row">
+<div class="row mx-3">
     <div class="col-12">
         <H2>SGC Grading</H2>
     </div>
