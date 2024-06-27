@@ -10,23 +10,38 @@
 
 <div class="row">
     <div class="col text-center grading_box">
-        <H3>Value Bulk</H3>
-        <hr>
+        <table class="table table-bordered">
+            <tr>
+                <td>Value Bulk</td>
+            </tr>
+        </table>
     </div>
     <div class="col text-center grading_box">
-        <H3>Value Plus</H3>
-        <hr>
+        <table class="table table-bordered">
+            <tr>
+                <td>Value Plus</td>
+            </tr>
+        </table>
     </div>
     <div class="col text-center grading_box">
-        <H3>Regular</H3>
-        <hr>
+        <table class="table table-bordered">
+            <tr>
+                <td>Regular</td>
+            </tr>
+        </table>
     </div>
     <div class="col text-center grading_box">
-        <H3>Express</H3>
-        <hr>
+        <table class="table table-bordered">
+            <tr>
+                <td>Express</td>
+            </tr>
+        </table>
     </div>
     <div class="col text-center grading_box">
-        <H3>Super Express</H3>
-        <hr>
+        <table class="table table-bordered">
+            <tr>
+                <td>Super Express</td>
+            </tr>
+        </table>
     </div>
 </div>
