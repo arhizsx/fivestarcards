@@ -1,3 +1,9 @@
+<style>
+    h2 {
+        color: black;
+    }
+</style>
+
 <div class="row">
     <div class="col text-center">
         <H2>Value Bulk</H2>
