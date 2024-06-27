@@ -21,7 +21,7 @@
     <div class="col text-center grading_box">
         <table class="table table-bordered">
             <tr>
-                <td class='grading_title'>Value Bulk</td>
+                <td class='grading_title' style="background-color: green;">Value Bulk</td>
             </tr>
         </table>
     </div>
