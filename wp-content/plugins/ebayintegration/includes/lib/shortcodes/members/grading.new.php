@@ -76,20 +76,26 @@
         }
 ?>
 
-<a href="/my-account/grading/" class="btn btn-sm btn-secondary mb-3 ">Back to Grading Types</a>
+<!-- Grading Title -->
+<div class="">
+    <H3><?php echo $grading_title; ?></H3>
+</div>
 
-<button class="btn btn-sm btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
-    Log Card
-</button>
+<!-- Buttons -->
+<div>
+    <a href="/my-account/grading/" class="btn btn-sm btn-secondary mb-3 ">Back to Grading Types</a>
 
-<button class="btn btn-sm btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
-    Ship Cards
-</button>
+    <button class="btn btn-sm btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
+        Log Card
+    </button>
+
+    <button class="btn btn-sm btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
+        Ship Cards
+    </button>
+</div>
+
 <!-- DESKTOP VIEW -->
 <div class="table-responsive d-none d-lg-block">
-    <div class="">
-        <H3><?php echo $grading_title; ?></H3>
-    </div>
     <table class="table table-sm table-bordered" id="new_consignment">
         <thead>
             <tr>
