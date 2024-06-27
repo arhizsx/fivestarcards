@@ -36,14 +36,14 @@
     <div class="col text-center grading_box">
         <table class="table table-bordered">
             <tr>
-                <td class='grading_title'>Regular</td>
+                <td class='grading_title' style="background-color: #0c71c3;">Regular</td>
             </tr>
         </table>
     </div>
     <div class="col text-center grading_box">
         <table class="table table-bordered">
             <tr>
-                <td class='grading_title'>Express</td>
+                <td class='grading_title'  style="background-color: #000000;">Express</td>
             </tr>
         </table>
     </div>
