@@ -22,6 +22,10 @@
         <table class="table table-bordered">
             <tr>
                 <td class='grading_title' style="background-color: #1ba01d; color: #ffffff;">Value Bulk</td>
+                <td>
+                    <h1>1</h1>
+                    <p>per card</p>
+                </td>
             </tr>
         </table>
     </div>
