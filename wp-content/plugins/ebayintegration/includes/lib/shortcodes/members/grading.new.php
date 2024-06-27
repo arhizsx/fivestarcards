@@ -40,31 +40,31 @@
         switch( $_GET["type"] ){
 
             case "psa-value_bulk": 
-
+                $grading_title = "PSA Value Bulk";
                 $max_dv = 499;
                 $per_card = 19;
                 break;
 
             case "psa-value_plus": 
-
+                $grading_title = "PSA Value Plus";
                 $max_dv = 499;
                 $per_card = 40;
                 break;
 
             case "psa-regular": 
-
+                $grading_title = "PSA Regular";
                 $max_dv = 1499;
                 $per_card = 75;
                 break;
 
             case "psa-express": 
-
+                $grading_title = "PSA Express";
                 $max_dv = 2499;
                 $per_card = 165;
                 break;
 
             case "psa-super_express": 
-
+                $grading_title = "PSA Super Express";
                 $max_dv = 4999;
                 $per_card = 330;
                 break;
@@ -87,6 +87,7 @@
 </button>
 <!-- DESKTOP VIEW -->
 <div class="table-responsive d-none d-lg-block">
+    <div class="grading_title"><?php echo $grading_title; ?></div>
     <table class="table table-sm table-bordered" id="new_consignment">
         <thead>
             <tr>
