@@ -17,7 +17,7 @@
     }
 </style>
 
-<div class="row">
+<div class="row mx-3">
     <div class="col text-center grading_box">
         <table class="table table-bordered">
             <tr>
