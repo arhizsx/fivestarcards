@@ -75,7 +75,7 @@
             
         }
 ?>
-    <a href="/my-account/grading/" class="btn btn-sm btn-primary">Back to Grading Types</a>
+    <a href="/my-account/grading/" class="btn btn-sm btn-primary mb-3 ">Back to Grading Types</a>
 
 <button class="btn btn-sm btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
     Log Card
