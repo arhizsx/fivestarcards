@@ -33,6 +33,9 @@
                     <div>per card</div>
                 </td>
             </tr>
+            <tr>
+                <td>DV < $499</td>
+            </tr>
         </table>
     </div>
     <div class="col-lg col-md-4 text-center grading_box">
@@ -45,6 +48,9 @@
                     <div class="pricing">40</div>
                     <div>per card</div>
                 </td>
+            </tr>
+            <tr>
+                <td>DV < $499</td>
             </tr>
         </table>
     </div>
@@ -59,6 +65,9 @@
                     <div>per card</div>
                 </td>
             </tr>
+            <tr>
+                <td>DV < $1499</td>
+            </tr>
         </table>
     </div>
     <div class="col-lg col-md-4 text-center grading_box">
@@ -72,6 +81,9 @@
                     <div>per card</div>
                 </td>
             </tr>
+            <tr>
+                <td>DV < $2499</td>
+            </tr>
         </table>
     </div>
     <div class="col-lg col-md-4 text-center grading_box">
@@ -84,6 +96,9 @@
                     <div class="pricing">330</div>
                     <div>per card</div>
                 </td>
+            </tr>
+            <tr>
+                <td>DV < $4999</td>
             </tr>
         </table>
     </div>
