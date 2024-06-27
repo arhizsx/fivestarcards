@@ -22,7 +22,7 @@
 </style>
 
 <div class="row mx-3">
-    <div class="col col-md-4 text-center grading_box">
+    <div class="col-lg col-md-4 text-center grading_box">
         <table class="table table-bordered">
             <tr>
                 <td class='grading_title' style="background-color: #1ba01d; color: #ffffff;">Value Bulk</td>
@@ -35,28 +35,28 @@
             </tr>
         </table>
     </div>
-    <div class="col col-md-4 text-center grading_box">
+    <div class="col-lg col-md-4 text-center grading_box">
         <table class="table table-bordered">
             <tr>
                 <td class='grading_title' style="background-color: #e02b20; color: #ffffff;">Value Plus</td>
             </tr>
         </table>
     </div>
-    <div class="col col-md-4 text-center grading_box">
+    <div class="col-lg col-md-4 text-center grading_box">
         <table class="table table-bordered">
             <tr>
                 <td class='grading_title' style="background-color: #0c71c3; color: #ffffff;">Regular</td>
             </tr>
         </table>
     </div>
-    <div class="col col-md-4 text-center grading_box">
+    <div class="col-lg col-md-4 text-center grading_box">
         <table class="table table-bordered">
             <tr>
                 <td class='grading_title' style="background-color: #000000; color:  #e09900;">Express</td>
             </tr>
         </table>
     </div>
-    <div class="col col-md-4 text-center grading_box">
+    <div class="col-lg col-md-4 text-center grading_box">
         <table class="table table-bordered">
             <tr>
                 <td class='grading_title'  style="background-color: #e09900;">Super Express</td>
