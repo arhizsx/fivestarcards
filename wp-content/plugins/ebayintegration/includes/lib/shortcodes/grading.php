@@ -26,8 +26,11 @@
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
+                    <li class="<?php echo ActivateGrading("log"); ?>">
+                        <a class="" href="/my-account/grading/">Log Cards</a>
+                    </li>
                     <li class="<?php echo ActivateGrading("open"); ?>">
-                        <a class="" href="/my-account/grading/">Open</a>
+                        <a class="" href="/my-account/grading/?mode=open">Open</a>
                     </li>
                     <li class="<?php echo ActivateGrading("for_payment"); ?>">
                         <a class="" href="/my-account/grading/?mode=for_payment">For Payment</a>
@@ -42,7 +45,8 @@
                 <div class="d-lg-none p-3">
                     <label>Select Grading Order Status</label>
                     <select class="form-control" id="mobile_tab_select">
-                        <option value="/my-account/grading" <?php echo ActivateListingSelect("open") ?>>Open</option>
+                        <option value="/my-account/grading/" <?php echo ActivateListingSelect("log") ?>>Log Cards</option>
+                        <option value="/my-account/grading/?mode=open" <?php echo ActivateListingSelect("open") ?>>Open</option>
                         <option value="/my-account/grading/?mode=for_payment" <?php echo ActivateListingSelect("for_payment") ?>>For Payment</option>
                         <option value="/my-account/grading/?mode=consigned" <?php echo ActivateListingSelect("consigned") ?>>Consigned</option>
                         <option value="/my-account/grading/?mode=completed" <?php echo ActivateListingSelect("completed") ?>>Completed</option>
@@ -53,7 +57,7 @@
 
                         if( isset( $_GET['mode'] )  == false){
 
-                            $shortcode = "[cards-grading-orders_table table='my_orders']";
+                            include( plugin_dir_path( __FILE__ ) . "members/grading.new.php" );			
                             
                         } 
                         else {
@@ -78,10 +82,9 @@
 
                             }
 
+                            echo do_shortcode( $shortcode );                    
+
                         }
-
-
-                        echo do_shortcode( $shortcode );                    
 
                     ?>
                 </div>
