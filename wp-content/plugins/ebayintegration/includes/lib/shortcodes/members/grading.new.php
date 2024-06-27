@@ -42,7 +42,7 @@
             </tr>
             <tr>
                 <td class="">
-                    <div class="pricing">1</div>
+                    <div class="pricing">40</div>
                     <div>per card</div>
                 </td>
             </tr>
@@ -55,7 +55,7 @@
             </tr>
             <tr>
                 <td class="">
-                    <div class="pricing">1</div>
+                    <div class="pricing">75</div>
                     <div>per card</div>
                 </td>
             </tr>
@@ -68,7 +68,7 @@
             </tr>
             <tr>
                 <td class="">
-                    <div class="pricing">1</div>
+                    <div class="pricing">165</div>
                     <div>per card</div>
                 </td>
             </tr>
@@ -81,7 +81,7 @@
             </tr>
             <tr>
                 <td class="">
-                    <div class="pricing">1</div>
+                    <div class="pricing">330</div>
                     <div>per card</div>
                 </td>
             </tr>
