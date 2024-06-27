@@ -13,7 +13,7 @@
         height: 100px;
         vertical-align: middle;
         font-size: 1.5em;
-        color: white;
+        color: white !important;
         font-weight: bold;
     }
 </style>
