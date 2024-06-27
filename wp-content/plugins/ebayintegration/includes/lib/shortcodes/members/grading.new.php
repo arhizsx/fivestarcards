@@ -13,6 +13,7 @@
         height: 100px;
         vertical-align: middle;
         font-size: 1.5em;
+        font-weight: bold;
     }
 </style>
 
