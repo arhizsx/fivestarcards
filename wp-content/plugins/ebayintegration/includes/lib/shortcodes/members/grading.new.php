@@ -38,7 +38,7 @@
             </tr>
             <tr>
                 <td>
-                <button class="btn btn-sm btn-outline-primary">Log Cards</button>
+                <a class="btn btn-sm btn-outline-primary">Log Cards</a>
                 </td>
             </tr>
         </table>
@@ -59,7 +59,7 @@
             </tr>
             <tr>
                 <td>
-                <button class="btn btn-sm btn-outline-primary">Log Cards</button>
+                <a class="btn btn-sm btn-outline-primary">Log Cards</a>
                 </td>
             </tr>
         </table>
@@ -80,7 +80,7 @@
             </tr>
             <tr>
                 <td>
-                <button class="btn btn-sm btn-outline-primary">Log Cards</button>
+                <a class="btn btn-sm btn-outline-primary">Log Cards</a>
                 </td>
             </tr>
         </table>
@@ -101,7 +101,7 @@
             </tr>
             <tr>
                 <td>
-                <button class="btn btn-sm btn-outline-primary">Log Cards</button>
+                <a class="btn btn-sm btn-outline-primary">Log Cards</a>
                 </td>
             </tr>
         </table>
@@ -122,7 +122,7 @@
             </tr>
             <tr>
                 <td>
-                    <button class="btn btn-sm btn-outline-primary">Log Cards</button>
+                    <a class="btn btn-sm btn-outline-primary">Log Cards</a>
                 </td>
             </tr>
         </table>
