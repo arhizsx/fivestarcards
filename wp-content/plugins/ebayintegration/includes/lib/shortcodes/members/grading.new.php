@@ -104,7 +104,7 @@
                 if( count( $consignment ) == 0 ){
             ?>
             <tr class="empty_consignment">
-                <td colspan="7" class="text-center py-5">
+                <td colspan="6" class="text-center py-5">
                     Empty
                 </td>
             </tr>
@@ -124,8 +124,9 @@
                 <td><?php echo $data["year"] ?></td>
                 <td><?php echo $data["brand"] ?></td>
                 <td><?php echo $data["player_name"] ?></td>
-                <td class='text-end'><?php echo $data["card_number"] ?></td>
-                <td class='text-end'><?php echo $data["attribute_sn"] ?></td>
+                <td><?php echo $data["card_number"] ?><br><?php echo $data["attribute_sn"] ?></td>
+                <td class='text-end'></td>
+                <td class='text-end'></td>
             </tr>
             <?php 
                     }
