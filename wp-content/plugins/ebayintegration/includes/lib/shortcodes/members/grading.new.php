@@ -146,6 +146,16 @@ order by id desc
 			</div>
             <div class="modal-body py-2 px-3">
                 <div class="row formbox">
+                    <div class="col-12">
+                        <label>Grading Type</label>
+                        <select class="form-control">
+                            <option value="psa-value_bulk" data-max_dv="499" data-per_card="19">PSA - Value Bulk</option>
+                            <option value="psa-value_plus" data-max_dv="499" data-per_card="40">PSA - Value Plus</option>
+                            <option value="psa-regular" data-max_dv="1499" data-per_card="75">PSA - Regular</option>
+                            <option value="psa-express" data-max_dv="2499" data-per_card="165">PSA - Express</option>
+                            <option value="psa-super_express" data-max_dv="4999" data-per_card="330">PSA - Super Express</option>
+                        </select>
+                    </div>
                     <div class="col-6">                        
                         <input type="hidden" name="user_id" value="<?php echo get_current_user_id(); ?>">
                         
