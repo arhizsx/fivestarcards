@@ -22,7 +22,8 @@
 </style>
 
 <?php 
-    if( ! isset( $_GET["type"] ) ){
+
+    if( isset( $_GET["type"] ) ){
 
         switch( $_GET["type"] ){
 
@@ -62,7 +63,10 @@
             
         }
 ?>
-<a href="/my-account/grading/" class="btn btn-sm btn-outline-primary">Choose Grading Type</a>
+    <a href="?type=psa-value_bulk" class="btn btn-sm btn-outline-primary">Log Cards</a>
+<?php
+    } else {
+?>
 
 <div class="row mx-3">
     <div class="col-lg col-md-4 text-center grading_box">
