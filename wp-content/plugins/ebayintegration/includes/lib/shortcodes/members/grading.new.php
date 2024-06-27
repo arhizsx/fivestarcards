@@ -21,6 +21,10 @@
     }
 </style>
 
+<?php 
+    if( ! isset( $_GET["type"] ) ){
+?>
+
 <div class="row mx-3">
     <div class="col-lg col-md-4 text-center grading_box">
         <table class="table table-bordered">
@@ -128,3 +132,7 @@
         </table>
     </div>
 </div>
+
+<?php 
+    }
+?>
