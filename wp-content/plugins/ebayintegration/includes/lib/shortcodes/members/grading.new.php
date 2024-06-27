@@ -488,7 +488,10 @@
     <div class="col-md-3 text-center grading_box">
         <table class="table table-bordered">
             <tr>
-                <td class='grading_title' style="background-color: #0c71c3; color: #ffffff;">Value Bulk</td>
+                <td class='grading_title' style="background-color: #0c71c3; color: #ffffff;">
+                    Bulk<br>
+                    <small>20+ Cards</small>
+                </td>
             </tr>
             <tr>
                 <td class="">
