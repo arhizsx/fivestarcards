@@ -485,6 +485,27 @@
     <div class="col-12">
         <H2>SGC Grading</H2>
     </div>
+    <div class="col-lg col-md-4 text-center grading_box">
+        <table class="table table-bordered">
+            <tr>
+                <td class='grading_title' style="background-color: #1ba01d; color: #ffffff;">Value Bulk</td>
+            </tr>
+            <tr>
+                <td class="">
+                    <div class="pricing">19</div>
+                    <div>per card</div>
+                </td>
+            </tr>
+            <tr>
+                <td>DV < $499</td>
+            </tr>
+            <tr>
+                <td>
+                <a href="?type=psa-value_bulk" class="btn btn-sm btn-outline-primary">Log Cards</a>
+                </td>
+            </tr>
+        </table>
+    </div>    
 </div>
 
 
