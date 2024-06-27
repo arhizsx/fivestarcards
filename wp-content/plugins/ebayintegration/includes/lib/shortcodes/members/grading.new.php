@@ -28,7 +28,7 @@
     <div class="col text-center grading_box">
         <table class="table table-bordered">
             <tr>
-                <td class='grading_title'>Value Plus</td>
+                <td class='grading_title' style="background-color: #e02b20; color: #ffffff;">Value Plus</td>
             </tr>
         </table>
     </div>
