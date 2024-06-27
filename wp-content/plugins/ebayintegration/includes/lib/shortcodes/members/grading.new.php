@@ -75,14 +75,17 @@
             
         }
 ?>
-    <a href="/my-account/grading/" class="btn btn-sm btn-dark mb-3 ">Back to Grading Types</a>
+
+<a href="/my-account/grading/" class="btn btn-sm btn-secondary mb-3 ">Back to Grading Types</a>
 
 <button class="btn btn-sm btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
     Log Card
 </button>
+
 <button class="btn btn-sm btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
     Ship Cards
 </button>
+
 <div class="table-responsive d-none d-lg-block">
     <table class="table table-sm table-bordered" id="new_consignment">
         <thead>
