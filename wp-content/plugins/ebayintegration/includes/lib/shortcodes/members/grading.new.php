@@ -23,7 +23,19 @@
 
 <?php 
 
+
     if( isset( $_GET["type"] ) ){
+
+        global $wpdb;
+
+        $consignment = $this->wpdb->get_results ( "
+        SELECT * 
+        FROM consignment
+        where user_id = " . get_current_user_id() . " 
+        and status = 'logged'
+        order by id desc
+        "
+        );        
 
         switch( $_GET["type"] ){
 
@@ -64,6 +76,127 @@
         }
 ?>
     <a href="/my-account/grading/" class="btn btn-sm btn-primary">Back to Grading Types</a>
+
+<button class="btn btn-sm btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
+    Log Card
+</button>
+<button class="btn btn-sm btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
+    Ship Cards
+</button>
+<div class="table-responsive d-none d-lg-block">
+    <table class="table table-sm table-bordered" id="new_consignment">
+        <thead>
+            <tr>
+                <th style="width: 20px;"></th>
+                <th>Year</th>
+                <th>Brand</th>
+                <th>Player Name</th>
+                <th class="text-end">Card Number</th>
+                <th class="text-end">Attribute S/N</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                if( count( $consignment ) == 0 ){
+            ?>
+            <tr class="empty_consignment">
+                <td colspan="7" class="text-center py-5">
+                    Empty
+                </td>
+            </tr>
+            <?php 
+                } else {
+                    foreach( $consignment as $card ){
+
+                        $data = json_decode( $card->data, true );
+
+            ?>
+            <tr class='consigned_item_row' data-id='<?php echo $card->id; ?>'>
+                <td>
+                    <a class='text-danger  ebayintegration-btn' data-action="removeConsignedCardRow"  data-id='<?php echo $card->id ?>' data-user_id="<?php echo get_current_user_id(); ?>" href='#'>
+                        <i class='fa-solid fa-lg fa-xmark'></i>
+                    </a>
+                </td>
+                <td><?php echo $data["year"] ?></td>
+                <td><?php echo $data["brand"] ?></td>
+                <td><?php echo $data["player_name"] ?></td>
+                <td class='text-end'><?php echo $data["card_number"] ?></td>
+                <td class='text-end'><?php echo $data["attribute_sn"] ?></td>
+            </tr>
+            <?php 
+                    }
+                }
+            ?>  
+        </tbody>
+    </table>
+</div>
+<div class="d-lg-none pb-2">
+    <table class="table table-sm table-bordered" id="new_consignment_mobile">
+        <thead>
+            <tr>
+                <th>Items</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                if( count( $consignment ) == 0 ){
+            ?>
+            <tr class="empty_consignment">
+                <td class="text-center py-5">
+                    Empty
+                </td>
+            </tr>
+            <?php 
+                } else {
+                    foreach( $consignment as $card ){
+            ?>
+            <tr class='consigned_item_row' data-id='<?php echo $card->id; ?>'>
+                <td>
+                    <div class='w-100 p-0 text-end' style='position: relative;'>
+                        <a class='text-danger ebayintegration-btn' data-action="removeConsignedCardRow" data-id='<?php echo $card->id ?>' data-user_id="<?php echo get_current_user_id(); ?>" href='#' style='position: absolute; right: 0px;'>
+                            <i class='fa-solid fa-xl fa-xmark'></i>
+                        </a>
+                    </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-sm-4'>Player</div>
+                        <div class='col-sm-8'>
+                            <?php echo $data["player_name"] ?>								
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-sm-4'>Year</div>
+                        <div class='col-sm-8'>
+                            <?php echo $data["year"] ?>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-sm-4'>Brand</div>
+                        <div class='col-sm-8'>
+                            <?php echo $data["brand"] ?>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-4'>Card #</div>
+                        <div class='col-sm-8'>
+                            <?php echo $data["card_number"] ?>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='small text-secondary col-sm-4'>Attribute SN</div>
+                        <div class='col-sm-8'>
+                            <?php echo $data["attribute_sn"] ?>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <?php
+                    }
+                }
+            ?>
+        </tbody>
+    </table>
+</div>
+
 <?php
     } else {
 ?>
