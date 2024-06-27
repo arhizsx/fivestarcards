@@ -4,6 +4,7 @@
     }
     .grading_box {
         border: 1px solid black;
+        padding-top: 20px;
     }
 </style>
 
