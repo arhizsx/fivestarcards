@@ -38,7 +38,7 @@
             </tr>
             <tr>
                 <td>
-                <a class="btn btn-sm btn-outline-primary">Log Cards</a>
+                <a href="?type=psa-value_bulk" class="btn btn-sm btn-outline-primary">Log Cards</a>
                 </td>
             </tr>
         </table>
@@ -59,7 +59,7 @@
             </tr>
             <tr>
                 <td>
-                <a class="btn btn-sm btn-outline-primary">Log Cards</a>
+                <a href="?type=psa-value_plus" class="btn btn-sm btn-outline-primary">Log Cards</a>
                 </td>
             </tr>
         </table>
@@ -101,7 +101,7 @@
             </tr>
             <tr>
                 <td>
-                <a class="btn btn-sm btn-outline-primary">Log Cards</a>
+                <a href="?type=psa-express" class="btn btn-sm btn-outline-primary">Log Cards</a>
                 </td>
             </tr>
         </table>
@@ -122,7 +122,7 @@
             </tr>
             <tr>
                 <td>
-                    <a class="btn btn-sm btn-outline-primary">Log Cards</a>
+                    <a  href="?type=psa-super_express" class="btn btn-sm btn-outline-primary">Log Cards</a>
                 </td>
             </tr>
         </table>
