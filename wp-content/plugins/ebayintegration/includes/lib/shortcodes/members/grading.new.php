@@ -85,7 +85,7 @@
 <button class="btn btn-sm btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
     Ship Cards
 </button>
-
+<!-- DESKTOP VIEW -->
 <div class="table-responsive d-none d-lg-block">
     <table class="table table-sm table-bordered" id="new_consignment">
         <thead>
@@ -135,6 +135,8 @@
         </tbody>
     </table>
 </div>
+
+<!-- MOBILE VIEW -->
 <div class="d-lg-none pb-2">
     <table class="table table-sm table-bordered" id="new_consignment_mobile">
         <thead>
@@ -214,12 +216,13 @@
     </table>
 </div>
 
+<!-- LOG MODAL -->
 <div class="modal fade log_consign_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
 	<div class="modal-dialog" id="dxmodal">
 		<div class="modal-content modal-ajax">
 			<div class="modal-header bg-dark text-white">
 				<h5 class="modal-title">
-					Log Card to Consign
+					Log Card to Grade
 				</h5>
     			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
 					X
@@ -274,7 +277,7 @@
 	</div>
 </div>
 
-
+<!-- SHIP MODAL -->
 <div class="modal fade ship_batch_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px">
 	<div class="modal-dialog modal-lg" style="margin-bottom: 150px;">
 		<div class="modal-content modal-ajax">
@@ -354,7 +357,6 @@
 		</div>
 	</div>
 </div>
-
 
 <?php
     } else {
