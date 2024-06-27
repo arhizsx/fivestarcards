@@ -87,7 +87,9 @@
 </button>
 <!-- DESKTOP VIEW -->
 <div class="table-responsive d-none d-lg-block">
-    <div class=""><?php echo $grading_title; ?></div>
+    <div class="">
+        <H3><?php echo $grading_title; ?></H3>
+    </div>
     <table class="table table-sm table-bordered" id="new_consignment">
         <thead>
             <tr>
