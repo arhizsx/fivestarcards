@@ -1,4 +1,4 @@
-<div class="flex">
+<div class="row">
     <div class="col">
         Value Bulk
     </div>
