@@ -148,7 +148,7 @@ order by id desc
                 <div class="row formbox">
                     <div class="col-12">
                         <label>Grading Type</label>
-                        <select class="form-control">
+                        <select class="form-control" name="grading_type_selector">
                             <option value="psa-value_bulk" data-max_dv="499" data-per_card="19">PSA - Value Bulk</option>
                             <option value="psa-value_plus" data-max_dv="499" data-per_card="40">PSA - Value Plus</option>
                             <option value="psa-regular" data-max_dv="1499" data-per_card="75">PSA - Regular</option>
