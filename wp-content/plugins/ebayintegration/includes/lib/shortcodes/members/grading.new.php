@@ -80,7 +80,7 @@
             </tr>
             <tr>
                 <td>
-                <a class="btn btn-sm btn-outline-primary">Log Cards</a>
+                <a href="?type=psa-regular" class="btn btn-sm btn-outline-primary">Log Cards</a>
                 </td>
             </tr>
         </table>
