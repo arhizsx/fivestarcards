@@ -10,7 +10,7 @@
         margin: 0px !important;
     }
     .grading_title {
-        height: 100px;
+        height: 80px;
         vertical-align: middle;
         font-size: 1.5em;
         font-weight: bold;
