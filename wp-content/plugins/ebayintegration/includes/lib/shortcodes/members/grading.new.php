@@ -29,7 +29,7 @@
             </tr>
             <tr>
                 <td class="">
-                    <div class="pricing">1</div>
+                    <div class="pricing">19</div>
                     <div>per card</div>
                 </td>
             </tr>
