@@ -15,6 +15,9 @@
         font-size: 1.2em;
         font-weight: bold;
     }
+    .pricing {
+        font-size: 1.5em;
+    }
 </style>
 
 <div class="row mx-3">
@@ -24,9 +27,9 @@
                 <td class='grading_title' style="background-color: #1ba01d; color: #ffffff;">Value Bulk</td>
             </tr>
             <tr>
-                <td>
-                    <h1>1</h1>
-                    <p>per card</p>
+                <td class="">
+                    <div class="pricing">1</div>
+                    <div>per card</div>
                 </td>
             </tr>
         </table>
