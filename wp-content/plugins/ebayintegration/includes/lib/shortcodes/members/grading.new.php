@@ -504,7 +504,7 @@
             </tr>
             <tr>
                 <td>
-                <a href="?type=psa-value_bulk" class="btn btn-sm btn-outline-primary">Log Cards</a>
+                <a href="?type=sgc-bulk" class="btn btn-sm btn-outline-primary">Log Cards</a>
                 </td>
             </tr>
         </table>
