@@ -6,6 +6,9 @@
         border: 1px solid black;
         padding-top: 0px;
     }
+    .grading_box table {
+        margin: 0px;
+    }
 </style>
 
 <div class="row">
