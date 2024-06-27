@@ -12,6 +12,7 @@
     }
     .grading_title {
         height: 100px;
+        vertical-align: center;
     }
 </style>
 
