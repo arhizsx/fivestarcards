@@ -7,8 +7,7 @@
         padding: 0px;
     }
     .grading_box table {
-        margin: 0px;
-        margin-bottom: 0px;
+        margin: 0px !important;
     }
     .grading_title {
         height: 100px;
