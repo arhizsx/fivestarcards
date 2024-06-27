@@ -63,7 +63,7 @@
             
         }
 ?>
-    <a href="?type=psa-value_bulk" class="btn btn-sm btn-outline-primary">Log Cards</a>
+    <a href="/my-account/grading/" class="btn btn-sm btn-outline-primary">Back to Grading Types</a>
 <?php
     } else {
 ?>
