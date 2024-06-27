@@ -63,7 +63,7 @@
             
         }
 ?>
-    <a href="/my-account/grading/" class="btn btn-sm btn-outline-primary">Back to Grading Types</a>
+    <a href="/my-account/grading/" class="btn btn-sm btn-primary">Back to Grading Types</a>
 <?php
     } else {
 ?>
