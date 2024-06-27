@@ -36,6 +36,11 @@
             <tr>
                 <td>DV < $499</td>
             </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-sm">Log Cards</button>
+                </td>
+            </tr>
         </table>
     </div>
     <div class="col-lg col-md-4 text-center grading_box">
@@ -51,6 +56,11 @@
             </tr>
             <tr>
                 <td>DV < $499</td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-sm">Log Cards</button>
+                </td>
             </tr>
         </table>
     </div>
@@ -68,6 +78,11 @@
             <tr>
                 <td>DV < $1499</td>
             </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-sm">Log Cards</button>
+                </td>
+            </tr>
         </table>
     </div>
     <div class="col-lg col-md-4 text-center grading_box">
@@ -84,6 +99,11 @@
             <tr>
                 <td>DV < $2499</td>
             </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-sm">Log Cards</button>
+                </td>
+            </tr>
         </table>
     </div>
     <div class="col-lg col-md-4 text-center grading_box">
@@ -99,6 +119,11 @@
             </tr>
             <tr>
                 <td>DV < $4999</td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-sm">Log Cards</button>
+                </td>
             </tr>
         </table>
     </div>
