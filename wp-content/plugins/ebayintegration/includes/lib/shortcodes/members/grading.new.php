@@ -1,5 +1,5 @@
 <style>
-    h2 {
+    h3 {
         color: black;
     }
     .grading_box {
