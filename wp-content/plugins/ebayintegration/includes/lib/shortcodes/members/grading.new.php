@@ -371,7 +371,7 @@
     } else {
 ?>
 
-<div class="row mx-3">
+<div class="row mx-3 mb-3">
     <div class="col-12">
         <H2>PSA Grading</H2>
     </div>
