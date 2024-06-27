@@ -372,6 +372,9 @@
 ?>
 
 <div class="row mx-3">
+    <div class="col-12">
+        <H2>PSA Grading</H2>
+    </div>
     <div class="col-lg col-md-4 text-center grading_box">
         <table class="table table-bordered">
             <tr>
