@@ -62,6 +62,7 @@
             
         }
 ?>
+<a href="/my-account/grading/" class="btn btn-sm btn-outline-primary">Choose Grading Type</a>
 
 <div class="row mx-3">
     <div class="col-lg col-md-4 text-center grading_box">
