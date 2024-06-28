@@ -155,6 +155,16 @@
                 }
             ?>  
         </tbody>
+        <tfoot>
+            <tr>
+                <td colspan='6'>Total DV</td>
+                <td colspan='1'></td>
+            </tr>
+            <tr>
+                <td colspan='6'>Grading Charge</td>
+                <td colspan='1'></td>
+            </tr>
+        </tfoot>
     </table>
 </div>
 
