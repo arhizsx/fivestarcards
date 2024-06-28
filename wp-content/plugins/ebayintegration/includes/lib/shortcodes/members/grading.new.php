@@ -148,7 +148,7 @@
                 <td><?php echo $data["year"] ?></td>
                 <td><?php echo $data["brand"] ?></td>
                 <td><?php echo $data["player_name"] ?></td>
-                <td><?php echo $data["card_number"] ?><br><?php echo $data["attribute_sn"] ?></td>
+                <td><?php echo $data["card_number"] ?><br><small><?php echo $data["attribute_sn"] ?></small></td>
                 <td class='text-end'></td>
                 <td class='text-end'></td>
             </tr>
