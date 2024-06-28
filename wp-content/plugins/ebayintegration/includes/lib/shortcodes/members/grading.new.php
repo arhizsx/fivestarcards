@@ -104,12 +104,8 @@
     ?>
     <a href="/my-account/grading/<?php echo $grd; ?>" class="btn btn-sm btn-secondary mb-3 ">Back to Grading Types</a>
 
-    <button class="btn btn-sm btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
+    <button class="btn btn-lg btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
         Log Card
-    </button>
-
-    <button class="btn btn-sm btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
-        Ship Cards
     </button>
 </div>
 
@@ -176,8 +172,18 @@
                 <th colspan='7' class="text-end">Grading Charge</th>
                 <th colspan='1' class="text-end">$0.00</th>
             </tr>
-        </tfoot>
+        </tfoot>        
     </table>
+    <div class="">
+
+    <button class="btn btn-sm btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
+        Clear List
+    </button>
+    <button class="btn btn-sm btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
+        Checkout
+    </button>
+
+    </div>
 </div>
 
 <!-- MOBILE VIEW -->
