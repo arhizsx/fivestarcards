@@ -132,7 +132,7 @@
                 if( count( $consignment ) == 0 ){
             ?>
             <tr class="empty_consignment">
-                <td colspan="7" class="text-center py-5">
+                <td colspan="8" class="text-center py-5">
                     Empty
                 </td>
             </tr>
