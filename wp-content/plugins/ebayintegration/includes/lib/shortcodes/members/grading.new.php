@@ -150,7 +150,7 @@
                     </a>
                 </td>
                 <td style="width: 100px; padding: 0px;">
-                    <div class="d-flex justify-content-center align-items-center picture_box">
+                    <div class="d-flex justify-content-center align-items-center picture_box ebayintegration-btn" data-action="grading_picture_box_click"  data-id='<?php echo $card->id ?>'>
                         <i class="fa-solid fa-file-image fa-2x"></i>
                     </div>
                 </td>
@@ -179,10 +179,10 @@
     </table>
     <div class="d-flex justify-content-end">
 
-    <button class="btn btn-danger mb-3 me-2 ebayintegration-btn" data-action="show_ship_batch_modal">
+    <button class="btn btn-danger mb-3 me-2 ebayintegration-btn" data-action="grading_table_clear_List" data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>">
         Clear List
     </button>
-    <button class="btn btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
+    <button class="btn btn-primary mb-3  ebayintegration-btn" data-action="grading_table_checkout" data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>">
         Checkout
     </button>
 
