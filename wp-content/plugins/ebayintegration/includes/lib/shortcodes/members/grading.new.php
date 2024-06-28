@@ -102,9 +102,9 @@
             $grd = "";
         }
     ?>
-    <a href="/my-account/grading/<?php echo $grd; ?>" class="btn btn-sm btn-secondary mb-3 ">Back to Grading Types</a>
+    <a href="/my-account/grading/<?php echo $grd; ?>" class="btn btn-secondary mb-3 ">Back to Grading Types</a>
 
-    <button class="btn btn-sm btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
+    <button class="btn btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
         Log Card
     </button>
 </div>
@@ -176,10 +176,10 @@
     </table>
     <div class="d-flex justify-content-end">
 
-    <button class="btn btn-sm btn-danger mb-3 me-2 ebayintegration-btn" data-action="show_ship_batch_modal">
+    <button class="btn btn-danger mb-3 me-2 ebayintegration-btn" data-action="show_ship_batch_modal">
         Clear List
     </button>
-    <button class="btn btn-sm btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
+    <button class="btn btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
         Checkout
     </button>
 
