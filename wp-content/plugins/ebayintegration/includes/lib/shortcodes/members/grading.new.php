@@ -159,11 +159,11 @@
         </tbody>
         <tfoot>
             <tr>
-                <th colspan='6' class="text-end">Total DV</th>
+                <th colspan='7' class="text-end">Total DV</th>
                 <th colspan='1' class="text-end">$0.00</th>
             </tr>
             <tr>
-                <th colspan='6' class="text-end">Grading Charge</th>
+                <th colspan='7' class="text-end">Grading Charge</th>
                 <th colspan='1' class="text-end">$0.00</th>
             </tr>
         </tfoot>
