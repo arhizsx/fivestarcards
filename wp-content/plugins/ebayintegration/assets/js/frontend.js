@@ -255,6 +255,17 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 								"</div>" +
 							"</div>" +
 							"<div class='row'>" +
+								"<div class='small text-secondary col-4'>Declared Value</div>" +
+								"<div class='col-8'>$0.00" +
+								 	
+								"</div>" +
+							"</div>" +
+							"<div class='row'>" +
+								"<div class='small text-secondary col-4'>Grading</div>" +
+								"<div class='col-8'>$0.00" +
+								"</div>" +
+							"</div>" +
+							"<div class='row'>" +
 								"<div class='small text-secondary col-sm-4'>Photo</div>" +
 								"<div class='col-sm-8'>" +
 									"<div class='d-flex justify-content-center align-items-center picture_box'>" +
