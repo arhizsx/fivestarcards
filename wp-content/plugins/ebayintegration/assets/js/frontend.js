@@ -204,6 +204,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		jQuery(document).find(".clear_grading_modal").appendTo('body').modal("show");
 
 	}
+
+	else if( jQuery(this).data("action") == "grading_table_checkout" ){
+
+		jQuery(document).find(".checkout_grading_modal").appendTo('body').modal("show");
+
+	}
+	
 	
 	
 	else if( jQuery(this).data("action") == "confirmAddGrading" ){
