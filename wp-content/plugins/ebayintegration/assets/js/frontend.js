@@ -186,7 +186,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 
-
 	else if( jQuery(this).data("action") == "show_log_grading_modal" ){
 
 		jQuery(document).find(".log_grading_modal").appendTo('body').modal("show");
@@ -359,6 +358,20 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 
+	else if( jQuery(this).data("action") == "show_grading_table_clear_list" ){
+
+		jQuery(document).find(".clear_grading_modal").appendTo('body').modal("show");
+
+	}
+
+
+	else if( jQuery(this).data("action") == "show_grading_table_checkout" ){
+
+		jQuery(document).find(".checkout_grading_modal").appendTo('body').modal("show");
+
+	}
+
+
 	else if( jQuery(this).data("action") == "confirmGradingTableClearList" ){
 
 		var grading_type = element.data("grading_type");
@@ -369,13 +382,26 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
 
 		$.when( card ).done( function( card ){
-
 			location.reload();
+		});
+	}
 
+	else if( jQuery(this).data("action") == "confirmGradingTableCheckout" ){
+
+		var grading_type = element.data("grading_type");
+		var user_id = element.data("user_id");
+	
+		var card = confirmGradingTableCheckout(grading_type, user_id);
+		
+		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
+
+		$.when( card ).done( function( card ){
+			console.log(card);
 		});
 
-
 	}
+	
+
 	
 	// ////////////////////////// //
 	//  Add Consignment Buttons   //
@@ -1139,7 +1165,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	
 	}
 	
-
 	
 	else {
 
@@ -1499,6 +1524,31 @@ function confirmGradingTableClearList(type, user_id){
 	return defObject.promise();
 
 }
+
+function confirmGradingTableCheckout(type, user_id){
+
+	var defObject = $.Deferred();  // create a deferred object.
+
+	jQuery.ajax({
+		method: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: { 
+			action: "confirmGradingTableCheckout",
+			type: type,
+			user_id: user_id
+		},
+		success: function(resp){		
+			defObject.resolve(resp);    //resolve promise and pass the response.
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+		
+	return defObject.promise();
+
+}
+
 
 
 

@@ -281,10 +281,10 @@
 
         <!-- TABLE LOWER BUTTONS -->
         <div class="d-flex justify-content-end">
-            <button class="btn btn-danger mb-3 me-2 ebayintegration-btn" data-action="confirmGradingTableClearList" data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>">
+            <button class="btn btn-danger mb-3 me-2 ebayintegration-btn" data-action="show_grading_table_clear_list" data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>">
                 Clear List
             </button>
-            <button class="btn btn-primary mb-3  ebayintegration-btn" data-action="grading_table_checkout" data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>">
+            <button class="btn btn-primary mb-3  ebayintegration-btn" data-action="show_grading_table_checkout" data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>">
                 Checkout
             </button>
         </div>
@@ -479,7 +479,7 @@
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Cancel</button>
 
                         <button class="btn border btn-danger ebayintegration-btn" 
-                            data-action='confirm_grading_table_clear_List' 
+                            data-action='confirmGradingTableClearList'  data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>"
                         >
                             Yes
                         </button>
@@ -515,7 +515,7 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Cancel</button>
-                        <button class="btn border btn-primary ebayintegration-btn" data-action='confirm_grading_table_checkout' >
+                        <button class="btn border btn-primary ebayintegration-btn" data-action='confirmGradingTableCheckout'  data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>" >
                             Yes
                         </button>
                     </div>
