@@ -107,6 +107,9 @@
     <button class="btn btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
         Log Card
     </button>
+    <button class="btn btn-dark mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
+        Import XLSX
+    </button>
 </div>
 
 <!-- DESKTOP VIEW -->
