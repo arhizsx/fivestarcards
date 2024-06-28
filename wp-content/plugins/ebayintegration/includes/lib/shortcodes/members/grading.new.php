@@ -157,12 +157,12 @@
         </tbody>
         <tfoot>
             <tr>
-                <th colspan='6'>Total DV</th>
-                <th colspan='1'>$0.00</th>
+                <th colspan='6' class="text-end">Total DV</th>
+                <th colspan='1' class="text-end">$0.00</th>
             </tr>
             <tr>
-                <th colspan='6'>Grading Charge</th>
-                <th colspan='1'>$0.00</th>
+                <th colspan='6' class="text-end">Grading Charge</th>
+                <th colspan='1' class="text-end">$0.00</th>
             </tr>
         </tfoot>
     </table>
