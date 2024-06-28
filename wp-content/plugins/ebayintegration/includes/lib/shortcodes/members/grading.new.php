@@ -365,13 +365,13 @@
 	</div>
 </div>
 
-<!-- LOG MODAL -->
+<!-- IMPORT MODAL -->
 <div class="modal fade import_grading_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
 	<div class="modal-dialog" id="dxmodal">
 		<div class="modal-content modal-ajax">
 			<div class="modal-header bg-dark text-white">
 				<h5 class="modal-title">
-					Log Card to Grade
+					Import Cards List
 				</h5>
     			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
 					X
@@ -381,12 +381,15 @@
                 <div class="row formbox">
                     <div class="col-12">
                         <label>Select Import Template</label>
-                        <input type="file" name="import_file" class="form-control">
+                        <input type="file" name="import_file" class="form-control mb-3">
+                    </div>
+                    <div class="col-12">
+                        <a href="#">Download Import Template</a>
                     </div>
                 </div>
                 <div class="d-none p-5 text-center loading">
 
-                    Adding card, please wait...
+                    Importing cards list, please wait...
 
                 </div>
             </div>
