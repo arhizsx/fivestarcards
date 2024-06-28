@@ -742,7 +742,7 @@ class Ebay_Integration_Ebay_API {
 			];
 
 
-			$this->wpdb->insert(
+			return $this->wpdb->insert(
 						'grading',
 						array(							
 							'user_id' => $user_id,
