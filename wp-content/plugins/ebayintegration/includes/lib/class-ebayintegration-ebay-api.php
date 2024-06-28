@@ -741,8 +741,8 @@ class Ebay_Integration_Ebay_API {
 				"grading_type" => $params["grading_type"],
 			];
 
-
-			return $this->wpdb->insert(
+			return $type;
+			$this->wpdb->insert(
 						'grading',
 						array(							
 							'user_id' => $user_id,
