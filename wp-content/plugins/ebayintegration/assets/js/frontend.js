@@ -313,7 +313,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				
 				$(document).find("#new_consignment_mobile tbody").append(
 					'<tr class="empty_consignment">' +
-						'<td class="text-center py-5">' +
+						'<td colspan="2" class="text-center py-5">' +
 							'Empty' +
 						'</td>' +
 					'</tr>'
