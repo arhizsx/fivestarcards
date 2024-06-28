@@ -113,7 +113,7 @@
         <thead>
             <tr>
                 <th style="width: 20px;"></th>
-                <th style="width: 100px;">Photo</th>
+                <th style="width: 110px;">Photo</th>
                 <th>Year</th>
                 <th>Brand</th>
                 <th>Player Name</th>
@@ -144,7 +144,7 @@
                         <i class='fa-solid fa-lg fa-xmark'></i>
                     </a>
                 </td>
-                <td style="width: 100px; padding: 9px;">
+                <td style="width: 110px; padding: 0px;">
                     <div style="width: 100%; height: 120px; background-color: lightgray;">
 
                     </div>
