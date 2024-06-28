@@ -384,7 +384,7 @@
                         <label>Select Import Template</label>
                         <input type="file" name="import_file" class="form-control mb-3">
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 mb-3">
                         <a href="#">Download Import Template</a>
                     </div>
                 </div>
