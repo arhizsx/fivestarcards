@@ -108,7 +108,7 @@
         Log Card
     </button>
     <button class="btn btn-dark mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
-        Import Excel Template
+        Import Cards List
     </button>
 </div>
 
