@@ -113,6 +113,7 @@
         <thead>
             <tr>
                 <th style="width: 20px;"></th>
+                <th style="width: 80px;">Photo</th>
                 <th>Year</th>
                 <th>Brand</th>
                 <th>Player Name</th>
@@ -143,6 +144,7 @@
                         <i class='fa-solid fa-lg fa-xmark'></i>
                     </a>
                 </td>
+                <td style="width: 80px;"></td>
                 <td><?php echo $data["year"] ?></td>
                 <td><?php echo $data["brand"] ?></td>
                 <td><?php echo $data["player_name"] ?></td>
