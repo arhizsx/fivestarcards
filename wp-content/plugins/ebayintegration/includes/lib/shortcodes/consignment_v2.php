@@ -29,7 +29,7 @@
                     <li class="<?php echo Activate("new"); ?>">
                         <a class="" href="/my-account/consignment">New</a>
                     </li>
-\                    <li class="<?php echo Activate("orders"); ?>">
+                    <li class="<?php echo Activate("orders"); ?>">
                         <a class="" href="/my-account/consignment/?mode=orders">Orders</a>
                     </li>
                     <li class="<?php echo Activate("listed"); ?>">
