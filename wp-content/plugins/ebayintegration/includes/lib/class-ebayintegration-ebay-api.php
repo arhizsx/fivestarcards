@@ -306,9 +306,13 @@ class Ebay_Integration_Ebay_API {
 			return $this->consignmentPaidOutRelease( $params );
 		} 
 		
-		if( $params["action"] == "confirmAddGrading"){
+		elseif( $params["action"] == "confirmAddGrading"){
 			return $this->confirmAddGrading( $params );
 		}
+
+		elseif( $params["action"] == "removeGradingCardRow"){
+			return $this->removeGradingCardRow( $params );
+		}		
 
 		else {
 			return $params;
@@ -618,24 +622,6 @@ class Ebay_Integration_Ebay_API {
 
 	}
 
-	public function removeConsignedCardRow( $params ){
-
-		$rows = $this->wpdb->delete(
-			'consignment',
-			array(
-				'user_id' => $params["user_id"],
-				"id" => $params["id"],
-			)
-		);
-
-		if( $rows != false ){
-			return ["error" => false, "params" => $params ];
-		} else {
-			return ["error" => true, "params" => $params ];
-		}
-
-	}
-
 	public function confirmConsignCardsShipping( $params ){
 
 		$user_id = (int) $params["user_id"]; 
@@ -718,11 +704,31 @@ class Ebay_Integration_Ebay_API {
 
 	}	
 
+	public function removeConsignedCardRow( $params ){
+
+		$rows = $this->wpdb->delete(
+			'consignment',
+			array(
+				'user_id' => $params["user_id"],
+				"id" => $params["id"],
+			)
+		);
+
+		if( $rows != false ){
+			return ["error" => false, "params" => $params ];
+		} else {
+			return ["error" => true, "params" => $params ];
+		}
+
+	}
+
+
 	// GRADING
 
 	public function confirmAddGrading( $params ){
 
 		$user_id = (int) $params["user_id"]; 
+		$type = $params["type"];
 		$result = [];
 
 		for( $i=0; $i < $params["qty"]; $i++ ){
@@ -763,6 +769,24 @@ class Ebay_Integration_Ebay_API {
 		return $result;
 
 	}		
+
+	public function removeGradingCardRow( $params ){
+
+		$rows = $this->wpdb->delete(
+			'grading',
+			array(
+				'user_id' => $params["user_id"],
+				"id" => $params["id"],
+			)
+		);
+
+		if( $rows != false ){
+			return ["error" => false, "params" => $params ];
+		} else {
+			return ["error" => true, "params" => $params ];
+		}
+
+	}
 
 
 	// EBAY ROUTINES
