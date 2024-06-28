@@ -211,8 +211,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 	
-	
-	
 	else if( jQuery(this).data("action") == "confirmAddGrading" ){
 		
 		var card = confirmAddGrading();
@@ -223,12 +221,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when(card).done( function( card ){
 
-			$(document).find("#new_consignment tbody .empty_consignment").remove();
-			$(document).find("#new_consignment_mobile tbody .empty_consignment").remove();
+			$(document).find("#new_grading tbody .empty_consignment").remove();
+			$(document).find("#new_grading_mobile tbody .empty_consignment").remove();
 
 			$.each( card, function(k, v){
 
-				$(document).find("#new_consignment tbody").prepend(
+				$(document).find("#new_grading tbody").prepend(
 					"<tr class='consigned_item_row' data-id='" + v.id + "'>" +
 						"<td>" +
 							"<a class='text-danger   ebayintegration-btn' data-action='removeGradingCardRow' data-id='" + v.id + "' href='#'>" +
@@ -249,7 +247,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					"</tr>"
 				);
 
-				$(document).find("#new_consignment_mobile tbody").prepend(
+				$(document).find("#newgrading_mobile tbody").prepend(
 					"<tr class='consigned_item_row' data-id='" + v.id + "'>" +
 						"<td colspan='2'>" +
 							"<div class='w-100 p-0 text-end' style='position: relative;'>" +
@@ -336,16 +334,16 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			// console.log( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").html() );
 			if( $(document).find(".consigned_item_row[data-id='" + id + "']").closest("tbody").find(".consigned_item_row").length  == 2 ){
 
-				$(document).find("#new_consignment tbody").append(
-					'<tr class="empty_consignment">' +
+				$(document).find("#new_grading tbody").append(
+					'<tr class="empty_grading">' +
 						'<td colspan="8" class="text-center py-5">' +
 							'Empty' +
 						'</td>' +
 					'</tr>'
 				);
 				
-				$(document).find("#new_consignment_mobile tbody").append(
-					'<tr class="empty_consignment">' +
+				$(document).find("#new_grading_mobile tbody").append(
+					'<tr class="empty_grading">' +
 						'<td colspan="2" class="text-center py-5">' +
 							'Empty' +
 						'</td>' +
