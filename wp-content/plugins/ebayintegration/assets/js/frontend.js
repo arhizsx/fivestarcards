@@ -203,8 +203,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		
 		var card = confirmAddGrading();
 
-		$(document).find(".log_consign_modal").find(".formbox").addClass("d-none");
-		$(document).find(".log_consign_modal").find(".loading").removeClass("d-none");
+		$(document).find(".log_grading_modal").find(".formbox").addClass("d-none");
+		$(document).find(".log_grading_modal").find(".loading").removeClass("d-none");
 		element.prop("disabled", "disabled");
 
 		$.when(card).done( function( card ){
@@ -1378,13 +1378,13 @@ function confirmAddGrading(){
 
 	var defObject = $.Deferred();  // create a deferred object.
 
-	var user_id = parseInt( $(document).find(".log_consign_modal").find(".formbox").find("[name='user_id']").val() );
-	var qty = parseInt( $(document).find(".log_consign_modal").find(".formbox").find("[name='qty']").val() );
-	var year = $(document).find(".log_consign_modal").find(".formbox").find("[name='year']").val();
-	var brand = $(document).find(".log_consign_modal").find(".formbox").find("[name='brand']").val();
-	var player_name = $(document).find(".log_consign_modal").find(".formbox").find("[name='player_name']").val();
-	var card_number = $(document).find(".log_consign_modal").find(".formbox").find("[name='card_number']").val();
-	var attribute_sn = $(document).find(".log_consign_modal").find(".formbox").find("[name='attribute_sn']").val();
+	var user_id = parseInt( $(document).find(".log_grading_modal").find(".formbox").find("[name='user_id']").val() );
+	var qty = parseInt( $(document).find(".log_grading_modal").find(".formbox").find("[name='qty']").val() );
+	var year = $(document).find(".log_grading_modal").find(".formbox").find("[name='year']").val();
+	var brand = $(document).find(".log_grading_modal").find(".formbox").find("[name='brand']").val();
+	var player_name = $(document).find(".log_grading_modal").find(".formbox").find("[name='player_name']").val();
+	var card_number = $(document).find(".log_grading_modal").find(".formbox").find("[name='card_number']").val();
+	var attribute_sn = $(document).find(".log_grading_modal").find(".formbox").find("[name='attribute_sn']").val();
 
 	jQuery.ajax({
 		method: 'post',
