@@ -310,7 +310,7 @@
 
                             <div class="col-md-12">
                                 <label>Grading</label>
-                                <input type="text" name="brand" class="form-control p-1" value="<?php echo $grading_title; ?>" disabled>
+                                <input type="text" name="grading" class="form-control p-1" value="<?php echo $grading_title; ?>" disabled>
                             </div>
                             <div class="col-sm-6">
                                 <label>Grading Charge Per Card</label>
