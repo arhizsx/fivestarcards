@@ -104,7 +104,7 @@
     ?>
     <a href="/my-account/grading/<?php echo $grd; ?>" class="btn btn-sm btn-secondary mb-3 ">Back to Grading Types</a>
 
-    <button class="btn btn-lg btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
+    <button class="btn btn-sm btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
         Log Card
     </button>
 </div>
