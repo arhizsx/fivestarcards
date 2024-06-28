@@ -198,6 +198,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		jQuery(document).find(".import_grading_modal").appendTo('body').modal("show");
 
 	}
+
+	else if( jQuery(this).data("action") == "grading_table_clear_List" ){
+
+		jQuery(document).find(".clear_grading_modal").appendTo('body').modal("show");
+
+	}
+	
 	
 	else if( jQuery(this).data("action") == "confirmAddGrading" ){
 		
@@ -346,6 +353,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		});
 
 	}
+
+	
 
 
 	// ////////////////////////// //
