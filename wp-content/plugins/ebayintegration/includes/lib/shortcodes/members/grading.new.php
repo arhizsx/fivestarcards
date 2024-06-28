@@ -303,15 +303,23 @@
                 <div class="row formbox">
                     <div class="col-md-12">
                         <label>Grading</label>
-                        <input type="text" name="brand" class="form-control p-1" value="<?php echo $grading_title; ?>">
+                        <input type="text" name="brand" class="form-control p-1" value="<?php echo $grading_title; ?>" disabled>
                     </div>
-
+                    <div class="col-sm-6">
+                        <label>Grading Charge Per Card</label>
+                        <input type="text" name="per_card" class="form-control p-1" value="<?php echo $per_card; ?>" disabled>
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Max Declared Value</label>
+                        <input type="text" name="per_card" class="form-control p-1" value="<?php echo $max_dv; ?>" disabled>
+                    </div>
                     <div class="col-6">                        
                         <input type="hidden" name="user_id" value="<?php echo get_current_user_id(); ?>">
                         
                         <label>Qty</label>
                         <input type="number" name="qty" class="form-control" value="">
                     </div>
+                    
                     <div class="col-6">
                         <label>Year</label>
                         <input type="number" name="year" class="form-control" value="">
@@ -332,13 +340,9 @@
                         <label>Attribute S/N</label>
                         <input type="text" name="attribute_sn" class="form-control p-1" value="">
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <label>Declared Value</label>
                         <input type="text" name="dv" class="form-control p-1" value="">
-                    </div>
-                    <div class="col-sm-6">
-                        <label>Grading Charge</label>
-                        <input type="text" name="per_card" class="form-control p-1" value="<?php echo $per_card; ?>">
                     </div>
                 </div>
                 <div class="d-none p-5 text-center loading">
