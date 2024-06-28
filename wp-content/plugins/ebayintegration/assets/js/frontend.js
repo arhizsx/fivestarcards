@@ -179,6 +179,14 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	//  Add Grading Buttons   //
 	// ////////////////////////// //
 
+
+	else if( jQuery(this).data("action") == "grading_picture_box_click" ){
+
+		jQuery(document).find(".picture_box_modal").appendTo('body').modal("show");
+
+	}
+
+
 	else if( jQuery(this).data("action") == "show_log_grading_modal" ){
 
 		jQuery(document).find(".log_grading_modal").appendTo('body').modal("show");
