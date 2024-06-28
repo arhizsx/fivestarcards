@@ -182,7 +182,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	else if( jQuery(this).data("action") == "confirmAddGrading" ){
 		
-		var card = confirmAddConsign();
+		var card = confirmAddGrading();
 
 		$(document).find(".log_consign_modal").find(".formbox").addClass("d-none");
 		$(document).find(".log_consign_modal").find(".loading").removeClass("d-none");
@@ -274,7 +274,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		var id = element.data("id");
 		var user_id = element.data("user_id");
 	
-		var card = removeConsignedCardRow(id, user_id);
+		var card = removeGradingdCardRow(id, user_id);
 		
 		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
 
@@ -1330,6 +1330,71 @@ function confirmAddConsign(){
 		
 	return defObject.promise();
 	
+}
+
+
+// GRADING
+
+function confirmAddGrading(){
+
+	var defObject = $.Deferred();  // create a deferred object.
+
+	var user_id = parseInt( $(document).find(".log_consign_modal").find(".formbox").find("[name='user_id']").val() );
+	var qty = parseInt( $(document).find(".log_consign_modal").find(".formbox").find("[name='qty']").val() );
+	var year = $(document).find(".log_consign_modal").find(".formbox").find("[name='year']").val();
+	var brand = $(document).find(".log_consign_modal").find(".formbox").find("[name='brand']").val();
+	var player_name = $(document).find(".log_consign_modal").find(".formbox").find("[name='player_name']").val();
+	var card_number = $(document).find(".log_consign_modal").find(".formbox").find("[name='card_number']").val();
+	var attribute_sn = $(document).find(".log_consign_modal").find(".formbox").find("[name='attribute_sn']").val();
+
+	jQuery.ajax({
+		method: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: { 
+			action: "confirmAddConsign",
+			user_id: user_id,
+			qty: qty,
+			year: year,
+			brand: brand,
+			player_name: player_name,
+			card_number: card_number,
+			attribute_sn: attribute_sn
+		},
+		success: function(resp){		
+			defObject.resolve(resp);    //resolve promise and pass the response.
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
+		
+	return defObject.promise();
+	
+}
+
+function removeGradingCardRow(id, user_id){
+
+	var defObject = $.Deferred();  // create a deferred object.
+
+	jQuery.ajax({
+		method: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: { 
+			action: "removeConsignedCardRow",
+			id: id,
+			user_id: user_id
+		},
+		success: function(resp){		
+			defObject.resolve(resp);    //resolve promise and pass the response.
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
+		
+	return defObject.promise();
 }
 
 
