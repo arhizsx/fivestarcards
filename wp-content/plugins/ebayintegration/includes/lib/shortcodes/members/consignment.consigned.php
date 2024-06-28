@@ -16,6 +16,7 @@ if( ! isset( $_GET['type'] ) ){
     $show = "cards";
     $btn_cards = 'btn-primary';
     $btn_orders = 'btn-secondary';
+    
 } else {
 
     $orders = $this->wpdb->get_results ( "
