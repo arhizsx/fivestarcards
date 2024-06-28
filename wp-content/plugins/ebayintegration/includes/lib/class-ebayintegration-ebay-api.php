@@ -306,6 +306,10 @@ class Ebay_Integration_Ebay_API {
 			return $this->consignmentPaidOutRelease( $params );
 		} 
 		
+		if( $params["action"] == "confirmAddGrading"){
+			return $this->confirmAddGrading( $params );
+		}
+
 		else {
 			return $params;
 		}		
@@ -511,7 +515,6 @@ class Ebay_Integration_Ebay_API {
 	// CONSIGNMENT
 
 
-
 	public function confirmUpdateConsignedCardDetails( $params ){
 
 		$rows = $this->wpdb->update(
@@ -714,6 +717,54 @@ class Ebay_Integration_Ebay_API {
 
 
 	}	
+
+	// GRADING
+
+	public function confirmAddGrading( $params ){
+
+		$user_id = (int) $params["user_id"]; 
+		$type = $params["type"];
+		$result = [];
+
+		for( $i=0; $i < $params["qty"]; $i++ ){
+
+			$data = [
+				"qty" => 1,
+				"year" => $params["year"],
+				"brand" => $params["brand"],
+				"card_number" => $params["card_number"],
+				"player_name" => $params["player_name"],
+				"attribute_sn" => $params["attribute_sn"],
+				"max_dv" => $params["max_dv"],
+				"dv" => $params["dv"],
+				"per_card" => $params["per_card"],
+				"grading_type" => $params["grading_type"],
+			];
+
+
+			$this->wpdb->insert(
+						'grading',
+						array(							
+							'user_id' => $user_id,
+							'type' => $type,
+							"data" => json_encode($data),
+						)
+					);
+
+			$lastid = $this->wpdb->insert_id;					
+			
+			$data["id"] = $lastid;
+			$data["user_id"] = $user_id;
+
+			$result[] = $data;
+
+
+		}
+
+
+		return $result;
+
+	}		
 
 
 	// EBAY ROUTINES

@@ -1399,19 +1399,27 @@ function confirmAddGrading(){
 	var player_name = $(document).find(".log_grading_modal").find(".formbox").find("[name='player_name']").val();
 	var card_number = $(document).find(".log_grading_modal").find(".formbox").find("[name='card_number']").val();
 	var attribute_sn = $(document).find(".log_grading_modal").find(".formbox").find("[name='attribute_sn']").val();
+	var dv = $(document).find(".log_grading_modal").find(".formbox").find("[name='dv']").val();
+	var max_dv = $(document).find(".log_grading_modal").find(".formbox").find("[name='max_dv']").val();
+	var per_card = $(document).find(".log_grading_modal").find(".formbox").find("[name='per_card']").val();
+	var grading_type = $(document).find(".log_grading_modal").find(".formbox").find("[name='grading_type']").val();
 
 	jQuery.ajax({
 		method: 'post',
 		url: "/wp-json/ebayintegration/v1/post",
 		data: { 
-			action: "confirmAddConsign",
+			action: "confirmAddGrading",
 			user_id: user_id,
 			qty: qty,
 			year: year,
 			brand: brand,
 			player_name: player_name,
 			card_number: card_number,
-			attribute_sn: attribute_sn
+			attribute_sn: attribute_sn,
+			dv: dv,
+			max_dv: max_dv,
+			per_card: per_card,
+			grading_type: grading_type
 		},
 		success: function(resp){		
 			defObject.resolve(resp);    //resolve promise and pass the response.

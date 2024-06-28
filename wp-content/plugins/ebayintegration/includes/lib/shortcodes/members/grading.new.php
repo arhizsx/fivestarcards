@@ -37,9 +37,10 @@
 
         $consignment = $this->wpdb->get_results ( "
         SELECT * 
-        FROM consignment
+        FROM grading
         where user_id = " . get_current_user_id() . " 
         and status = 'logged'
+        and type = '" . $_GET['type']  . "'
         order by id desc
         "
         );        
@@ -303,6 +304,10 @@
                     </div>
                     <div class="modal-body py-2 px-3">
                         <div class="row formbox">
+
+                            <input type="hidden" name="user_id" value="<?php echo get_current_user_id(); ?>">
+                            <input type="hidden" name="grading_type" value="<?php echo $_GET["type"]; ?>">
+
                             <div class="col-md-12">
                                 <label>Grading</label>
                                 <input type="text" name="brand" class="form-control p-1" value="<?php echo $grading_title; ?>" disabled>
@@ -313,11 +318,9 @@
                             </div>
                             <div class="col-sm-6">
                                 <label>Max Declared Value</label>
-                                <input type="text" name="per_card" class="form-control p-1" value="<?php echo $max_dv; ?>" disabled>
+                                <input type="text" name="max_dv" class="form-control p-1" value="<?php echo $max_dv; ?>" disabled>
                             </div>
-                            <div class="col-6">                        
-                                <input type="hidden" name="user_id" value="<?php echo get_current_user_id(); ?>">
-                                
+                            <div class="col-6">                                                        
                                 <label>Qty</label>
                                 <input type="number" name="qty" class="form-control" value="">
                             </div>
