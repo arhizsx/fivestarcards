@@ -160,8 +160,8 @@
                         <td><?php echo $data["year"] ?></td>
                         <td><?php echo $data["brand"] ?></td>
                         <td><?php echo $data["card_number"] ?><br><small><?php echo $data["attribute_sn"] ?></small></td>
-                        <td class='text-end'>$0.00</td>
-                        <td class='text-end'>$0.00</td>
+                        <td class='text-end'>$<?php echo $data["dv"] ?></td>
+                        <td class='text-end'>$<?php echo $data["per_card]"] ?></td>
                     </tr>
                     <?php 
                             }

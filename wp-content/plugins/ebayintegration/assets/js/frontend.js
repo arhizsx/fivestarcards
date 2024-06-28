@@ -242,8 +242,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 						"<td>" + v.year + "</td>" +
 						"<td>" + v.brand + "</td>" +
 						"<td>" + v.card_number + "<br><small>" + v.attribute_sn + "</small></td>" +
-						"<td class='text-end'>$0.00</td>" +
-						"<td class='text-end'>$0.00</td>" +
+						"<td class='text-end'>$" + v.dv + "</td>" +
+						"<td class='text-end'>$" + v.per_card + "</td>" +
 					"</tr>"
 				);
 
