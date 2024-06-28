@@ -176,6 +176,140 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	}
 
 	// ////////////////////////// //
+	//  Add Grading Buttons   //
+	// ////////////////////////// //
+
+
+	else if( jQuery(this).data("action") == "confirmAddGrading" ){
+		
+		var card = confirmAddConsign();
+
+		$(document).find(".log_consign_modal").find(".formbox").addClass("d-none");
+		$(document).find(".log_consign_modal").find(".loading").removeClass("d-none");
+		element.prop("disabled", "disabled");
+
+		$.when(card).done( function( card ){
+
+			$(document).find("#new_consignment tbody .empty_consignment").remove();
+			$(document).find("#new_consignment_mobile tbody .empty_consignment").remove();
+
+			$.each( card, function(k, v){
+
+				$(document).find("#new_consignment tbody").prepend(
+					"<tr class='consigned_item_row' data-id='" + v.id + "'>" +
+						"<td>" +
+							"<a class='text-danger   ebayintegration-btn' data-action='removeGradingdCardRow' data-id='" + v.id + "' href='#'>" +
+								"<i class='fa-solid fa-lg fa-xmark'></i>" + 
+							"</a>" +
+						"</td>" +
+						"<td style='width: 100px; padding: 0px;'>" +
+							"<div class='d-flex justify-content-center align-items-center picture_box'>" +
+								"<i class='fa-solid fa-file-image fa-2x'></i>" +
+							"</div>" +
+						"</td>" +
+						"<td>" + v.player_name + "</td>" +
+						"<td>" + v.year + "</td>" +
+						"<td>" + v.brand + "</td>" +
+						"<td class='text-end'>" + v.card_number + "</td>" +
+						"<td class='text-end'>" + v.attribute_sn + "</td>" +
+					"</tr>"
+				);
+
+				$(document).find("#new_consignment_mobile tbody").prepend(
+					"<tr class='consigned_item_row' data-id='" + v.id + "'>" +
+						"<td>" +
+							"<div class='w-100 p-0 text-end' style='position: relative;'>" +
+								"<a class='text-danger  ebayintegration-btn' data-action='removeConsignedCardRow' data-id='" + v.id + "' href='#' style='position: absolute; right: 0px;'>" +
+									"<i class='fa-solid fa-xl fa-xmark'></i>" + 
+								"</a>" +
+							"</div>" +
+							"<div class='row'>" +
+								"<div class='small text-secondary col-3'>Player</div>" +
+								"<div class='col-9'>" +
+								 	v.player_name +									
+								"</div>" + 
+							"</div>" +
+							"<div class='row'>" +
+								"<div class='small text-secondary col-3'>Year</div>" +
+								"<div class='col-9'>" +
+								 	v.year +									
+								"</div>" +
+							"</div>" +
+							"<div class='row'>" +
+								"<div class='small text-secondary col-3'>Brand</div>" +
+								"<div class='col-9'>" +
+								 	v.brand +									
+								"</div>" +
+							"</div>" +
+							"<div class='row'>" +
+								"<div class='small text-secondary col-3'>Card #</div>" +
+								"<div class='col-9'>" +
+								 	v.card_number +									
+								"</div>" +
+							"</div>" +
+							"<div class='row'>" +
+								"<div class='small text-secondary col-3'>Attribute SN</div>" +
+								"<div class='col-9'>" +
+								 	v.attribute_sn +									
+								"</div>" +
+							"</div>" +
+						"</td>" +
+					"</tr>"
+				);
+
+			} );
+
+
+			$(document).find(".log_consign_modal").find(".formbox").removeClass("d-none");
+			$(document).find(".log_consign_modal").find(".loading").addClass("d-none");
+
+			element.prop("disabled", "");
+	
+		});
+	
+	}
+
+	else if( jQuery(this).data("action") == "removeGradingdCardRow" ){
+
+		var id = element.data("id");
+		var user_id = element.data("user_id");
+	
+		var card = removeConsignedCardRow(id, user_id);
+		
+		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
+
+		$.when( card ).done( function( card ){
+
+			// console.log( $(document).find(".consigned_item_row[data-id='" + element.data("id") + "']").html() );
+			if( $(document).find(".consigned_item_row[data-id='" + id + "']").closest("tbody").find(".consigned_item_row").length  == 2 ){
+
+				$(document).find("#new_consignment tbody").append(
+					'<tr class="empty_consignment">' +
+						'<td colspan="7" class="text-center py-5">' +
+							'Empty' +
+						'</td>' +
+					'</tr>'
+				);
+				
+				$(document).find("#new_consignment_mobile tbody").append(
+					'<tr class="empty_consignment">' +
+						'<td class="text-center py-5">' +
+							'Empty' +
+						'</td>' +
+					'</tr>'
+				);
+			}
+
+			$(document).find(".consigned_item_row[data-id='" + id + "']").remove();
+
+			// element.html('<i class="fa-solid fa-xl fa-xmark"></i>');
+
+		});
+
+	}
+
+
+	// ////////////////////////// //
 	//  Add Consignment Buttons   //
 	// ////////////////////////// //
 
