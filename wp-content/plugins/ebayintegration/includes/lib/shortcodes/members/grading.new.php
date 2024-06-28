@@ -22,6 +22,7 @@
     .picture_box {
         width: 100%; 
         height: 120px; 
+        color: black;
         background-color: lightgray; 
         cursor: pointer;
     }
