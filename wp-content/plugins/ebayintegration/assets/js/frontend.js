@@ -285,7 +285,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				$(document).find("#new_consignment tbody").append(
 					'<tr class="empty_consignment">' +
-						'<td colspan="7" class="text-center py-5">' +
+						'<td colspan="8" class="text-center py-5">' +
 							'Empty' +
 						'</td>' +
 					'</tr>'
