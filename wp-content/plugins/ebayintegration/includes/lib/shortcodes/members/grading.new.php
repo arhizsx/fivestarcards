@@ -102,7 +102,7 @@
             $grd = "";
         }
     ?>
-    <a href="/my-account/grading/<?php echo $grd; ?>" class="btn btn-secondary mb-3 ">Back to Grading Types</a>
+    <a href="/my-account/grading/<?php echo $grd; ?>" class="btn btn-outline-secondary mb-3 ">Back to Grading Types</a>
 
     <button class="btn btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
         Log Card
