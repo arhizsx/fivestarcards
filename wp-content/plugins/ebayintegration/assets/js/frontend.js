@@ -198,7 +198,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				$(document).find("#new_consignment tbody").prepend(
 					"<tr class='consigned_item_row' data-id='" + v.id + "'>" +
 						"<td>" +
-							"<a class='text-danger   ebayintegration-btn' data-action='removeGradingdCardRow' data-id='" + v.id + "' href='#'>" +
+							"<a class='text-danger   ebayintegration-btn' data-action='removeGradingCardRow' data-id='" + v.id + "' href='#'>" +
 								"<i class='fa-solid fa-lg fa-xmark'></i>" + 
 							"</a>" +
 						"</td>" +
@@ -269,12 +269,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	
 	}
 
-	else if( jQuery(this).data("action") == "removeGradingdCardRow" ){
+	else if( jQuery(this).data("action") == "removeGradingCardRow" ){
 
 		var id = element.data("id");
 		var user_id = element.data("user_id");
 	
-		var card = removeGradingdCardRow(id, user_id);
+		var card = removeGradingCardRow(id, user_id);
 		
 		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
 
