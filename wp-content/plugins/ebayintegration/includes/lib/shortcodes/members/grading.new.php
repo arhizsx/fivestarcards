@@ -176,7 +176,7 @@
     </table>
     <div class="d-flex justify-content-end">
 
-    <button class="btn btn-sm btn-danger mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
+    <button class="btn btn-sm btn-danger mb-3 me-2 ebayintegration-btn" data-action="show_ship_batch_modal">
         Clear List
     </button>
     <button class="btn btn-sm btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
