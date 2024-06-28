@@ -177,16 +177,6 @@
             </tr>
         </tfoot>        
     </table>
-    <div class="d-flex justify-content-end">
-
-    <button class="btn btn-danger mb-3 me-2 ebayintegration-btn" data-action="grading_table_clear_List" data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>">
-        Clear List
-    </button>
-    <button class="btn btn-primary mb-3  ebayintegration-btn" data-action="grading_table_checkout" data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>">
-        Checkout
-    </button>
-
-    </div>
 </div>
 
 <!-- MOBILE VIEW -->
@@ -284,8 +274,18 @@
                 <th class="text-end">$0.00</th>
             </tr>
         </tfoot>
-    </table>
+    </table>    
 </div>
+
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-danger mb-3 me-2 ebayintegration-btn" data-action="grading_table_clear_List" data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>">
+            Clear List
+        </button>
+        <button class="btn btn-primary mb-3  ebayintegration-btn" data-action="grading_table_checkout" data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>">
+            Checkout
+        </button>
+    </div>
+
 
 <!-- LOG MODAL -->
 <div class="modal fade log_grading_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
