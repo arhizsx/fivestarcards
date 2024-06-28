@@ -122,7 +122,7 @@
                 <th style="width: 100px;">Photo</th>
                 <th>Year</th>
                 <th>Brand</th>
-                <th width="50%">Player Name</th>
+                <th width="40%">Player Name</th>
                 <th>Card Number</th>
                 <th class="text-end">DV</th>
                 <th class="text-end">Grading</th>
