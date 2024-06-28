@@ -120,7 +120,7 @@
             <tr>
                 <th style="width: 20px;"></th>
                 <th style="width: 100px;">Photo</th>
-                <th width="35%">Player Name</th>
+                <th width="30%">Player Name</th>
                 <th>Year</th>
                 <th>Brand</th>
                 <th>Card Number</th>
