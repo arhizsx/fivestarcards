@@ -161,7 +161,7 @@
                         <td><?php echo $data["brand"] ?></td>
                         <td><?php echo $data["card_number"] ?><br><small><?php echo $data["attribute_sn"] ?></small></td>
                         <td class='text-end'>$<?php echo $data["dv"] ?></td>
-                        <td class='text-end'>$<?php echo $data["per_card]"] ?></td>
+                        <td class='text-end'>$<?php echo $data["per_card"] ?></td>
                     </tr>
                     <?php 
                             }
