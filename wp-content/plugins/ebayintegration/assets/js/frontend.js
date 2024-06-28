@@ -218,9 +218,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				$(document).find("#new_consignment_mobile tbody").prepend(
 					"<tr class='consigned_item_row' data-id='" + v.id + "'>" +
-						"<td>" +
+						"<td colspan='2'>" +
 							"<div class='w-100 p-0 text-end' style='position: relative;'>" +
-								"<a class='text-danger  ebayintegration-btn' data-action='removeConsignedCardRow' data-id='" + v.id + "' href='#' style='position: absolute; right: 0px;'>" +
+								"<a class='text-danger  ebayintegration-btn' data-action='removeGradingCardRow' data-id='" + v.id + "' href='#' style='position: absolute; right: 0px;'>" +
 									"<i class='fa-solid fa-xl fa-xmark'></i>" + 
 								"</a>" +
 							"</div>" +
