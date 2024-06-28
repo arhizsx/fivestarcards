@@ -336,11 +336,11 @@
                         <label>Card Number</label>
                         <input type="text" name="card_number" class="form-control p-1" value="">
                     </div>
-                    <div class="col-sm-12">
+                    <div class="col-sm-6">
                         <label>Attribute S/N</label>
                         <input type="text" name="attribute_sn" class="form-control p-1" value="">
                     </div>
-                    <div class="col-sm-12">
+                    <div class="col-sm-6">
                         <label>Declared Value</label>
                         <input type="text" name="dv" class="form-control p-1" value="">
                     </div>
