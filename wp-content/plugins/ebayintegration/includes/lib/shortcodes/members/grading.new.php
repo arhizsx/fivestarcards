@@ -461,7 +461,7 @@
 			</div>
             <div class="modal-body py-2 px-3">
                 <div class="row formbox">
-                    <div class="col-12">
+                    <div class="col-12 p-5">
                         Are you sure want to remove all logged cards?
                     </div>
                 </div>
