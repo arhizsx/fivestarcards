@@ -210,8 +210,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 						"<td>" + v.player_name + "</td>" +
 						"<td>" + v.year + "</td>" +
 						"<td>" + v.brand + "</td>" +
-						"<td class='text-end'>" + v.card_number + "</td>" +
-						"<td class='text-end'>" + v.attribute_sn + "</td>" +
+						"<td class='text-end'>" + v.card_number + "<br><small>" + v.attribute_sn + "</small></td>" +
+						"<td class='text-end'>$0.00</td>" +
+						"<td class='text-end'>$0.00</td>" +
 					"</tr>"
 				);
 
