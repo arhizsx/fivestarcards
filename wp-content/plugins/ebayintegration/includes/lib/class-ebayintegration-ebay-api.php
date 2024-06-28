@@ -723,7 +723,6 @@ class Ebay_Integration_Ebay_API {
 	public function confirmAddGrading( $params ){
 
 		$user_id = (int) $params["user_id"]; 
-		$type = $params["type"];
 		$result = [];
 
 		for( $i=0; $i < $params["qty"]; $i++ ){
@@ -741,12 +740,11 @@ class Ebay_Integration_Ebay_API {
 				"grading_type" => $params["grading_type"],
 			];
 
-			return $type;
 			$this->wpdb->insert(
 						'grading',
 						array(							
 							'user_id' => $user_id,
-							'type' => $type,
+							'type' => $params["grading_type"],
 							"data" => json_encode($data),
 						)
 					);
