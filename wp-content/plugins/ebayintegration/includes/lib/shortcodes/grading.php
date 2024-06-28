@@ -64,6 +64,10 @@
 
                             switch( $_GET["mode"] ){
 
+                                case "open": 
+                                    $shortcode = "[cards-grading-orders_table table='my_orders']";
+                                    break;
+
                                 case "for_payment": 
                                     $shortcode = "[cards-grading-orders_table table='my_for_payment']";
                                     break;
