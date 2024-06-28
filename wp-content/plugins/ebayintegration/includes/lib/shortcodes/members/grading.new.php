@@ -144,7 +144,11 @@
                         <i class='fa-solid fa-lg fa-xmark'></i>
                     </a>
                 </td>
-                <td style="width: 150px;"></td>
+                <td style="width: 150px;">
+                    <div style="width: 100%; height: 250px;">
+
+                    </div>
+                </td>
                 <td><?php echo $data["year"] ?></td>
                 <td><?php echo $data["brand"] ?></td>
                 <td><?php echo $data["player_name"] ?></td>
