@@ -120,9 +120,9 @@
             <tr>
                 <th style="width: 20px;"></th>
                 <th style="width: 100px;">Photo</th>
+                <th width="35%">Player Name</th>
                 <th>Year</th>
                 <th>Brand</th>
-                <th width="35%">Player Name</th>
                 <th>Card Number</th>
                 <th class="text-end">DV</th>
                 <th class="text-end">Grading</th>
@@ -155,9 +155,9 @@
                         <i class="fa-solid fa-file-image fa-2x"></i>
                     </div>
                 </td>
+                <td><?php echo $data["player_name"] ?></td>
                 <td><?php echo $data["year"] ?></td>
                 <td><?php echo $data["brand"] ?></td>
-                <td><?php echo $data["player_name"] ?></td>
                 <td><?php echo $data["card_number"] ?><br><small><?php echo $data["attribute_sn"] ?></small></td>
                 <td class='text-end'></td>
                 <td class='text-end'></td>
