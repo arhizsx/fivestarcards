@@ -301,6 +301,11 @@
 			</div>
             <div class="modal-body py-2 px-3">
                 <div class="row formbox">
+                    <div class="col-md-12">
+                        <label>Grading</label>
+                        <input type="text" name="brand" class="form-control p-1" value="<?php echo $grading_title; ?>">
+                    </div>
+
                     <div class="col-6">                        
                         <input type="hidden" name="user_id" value="<?php echo get_current_user_id(); ?>">
                         
@@ -333,7 +338,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label>Grading Charge</label>
-                        <input type="text" name="per_card" class="form-control p-1" value="">
+                        <input type="text" name="per_card" class="form-control p-1" value="<?php echo $per_card; ?>">
                     </div>
                 </div>
                 <div class="d-none p-5 text-center loading">
