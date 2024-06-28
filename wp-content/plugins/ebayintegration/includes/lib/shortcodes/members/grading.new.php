@@ -365,6 +365,45 @@
 	</div>
 </div>
 
+<!-- LOG MODAL -->
+<div class="modal fade import_grading_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+	<div class="modal-dialog" id="dxmodal">
+		<div class="modal-content modal-ajax">
+			<div class="modal-header bg-dark text-white">
+				<h5 class="modal-title">
+					Log Card to Grade
+				</h5>
+    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+					X
+				</button>
+			</div>
+            <div class="modal-body py-2 px-3">
+                <div class="row formbox">
+                    <div class="col-12">
+                        <label>Select Import Template</label>
+                        <input type="file" name="import_file" class="form-control">
+                    </div>
+                </div>
+                <div class="d-none p-5 text-center loading">
+
+                    Adding card, please wait...
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+
+                <button class="btn border btn-success ebayintegration-btn" 
+                    data-action='confirmAddGrading' 
+                >
+                    Log Card
+                </button>
+            </div>
+
+		</div>
+	</div>
+</div>
+
 <!-- SHIP MODAL -->
 <div class="modal fade ship_batch_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px">
 	<div class="modal-dialog modal-lg" style="margin-bottom: 150px;">

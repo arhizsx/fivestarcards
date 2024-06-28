@@ -184,6 +184,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		jQuery(document).find(".log_grading_modal").appendTo('body').modal("show");
 
 	}
+
+	else if( jQuery(this).data("action") == "show_import_grading_modal" ){
+
+		jQuery(document).find(".import_grading_modal").appendTo('body').modal("show");
+
+	}
 	
 	else if( jQuery(this).data("action") == "confirmAddGrading" ){
 		
