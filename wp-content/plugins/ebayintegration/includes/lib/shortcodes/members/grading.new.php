@@ -19,6 +19,12 @@
         font-size: 3em !important;
         font-weight: bolder;
     }
+    .picture_box {
+        width: 100%; 
+        height: 120px; 
+        background-color: lightgray; 
+        cursor: pointer;
+    }
 </style>
 
 <?php 
@@ -145,7 +151,7 @@
                     </a>
                 </td>
                 <td style="width: 100px; padding: 0px;">
-                    <div class="d-flex justify-content-center align-items-center" style="width: 100%; height: 120px; background-color: lightgray; cursor: pointer;">
+                    <div class="d-flex justify-content-center align-items-center picture_box">
                         <i class="fa-solid fa-file-image fa-2x"></i>
                     </div>
                 </td>
