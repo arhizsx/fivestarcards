@@ -45,11 +45,11 @@
                 <div class="d-lg-none p-3">
                     <label>Select Grading Order Status</label>
                     <select class="form-control" id="mobile_tab_select">
-                        <option value="/my-account/grading/" <?php echo ActivateListingSelect("log") ?>>Log Cards</option>
-                        <option value="/my-account/grading/?mode=open" <?php echo ActivateListingSelect("open") ?>>Open</option>
-                        <option value="/my-account/grading/?mode=for_payment" <?php echo ActivateListingSelect("for_payment") ?>>For Payment</option>
-                        <option value="/my-account/grading/?mode=consigned" <?php echo ActivateListingSelect("consigned") ?>>Consigned</option>
-                        <option value="/my-account/grading/?mode=completed" <?php echo ActivateListingSelect("completed") ?>>Completed</option>
+                        <option value="/my-account/grading/" <?php echo ActivateGradingSelect("log") ?>>Log Cards</option>
+                        <option value="/my-account/grading/?mode=open" <?php echo ActivateGradingSelect("open") ?>>Open</option>
+                        <option value="/my-account/grading/?mode=for_payment" <?php echo ActivateGradingSelect("for_payment") ?>>For Payment</option>
+                        <option value="/my-account/grading/?mode=consigned" <?php echo ActivateGradingSelect("consigned") ?>>Consigned</option>
+                        <option value="/my-account/grading/?mode=completed" <?php echo ActivateGradingSelect("completed") ?>>Completed</option>
                     </select>
                 </div>
                 <div class="content p-3">
