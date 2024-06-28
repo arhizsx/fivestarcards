@@ -359,9 +359,24 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 
+	else if( jQuery(this).data("action") == "confirmGradingTableClearList" ){
+
+		var grading_type = element.data("grading_type");
+		var user_id = element.data("user_id");
 	
+		var card = confirmGradingTableClearList(grading_type, user_id);
+		
+		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
+
+		$.when( card ).done( function( card ){
+
+			console.log(card);
+
+		});
 
 
+	}
+	
 	// ////////////////////////// //
 	//  Add Consignment Buttons   //
 	// ////////////////////////// //
@@ -1124,6 +1139,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	
 	}
 	
+
 	
 	else {
 
@@ -1132,6 +1148,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	}
 	
 });
+
+
+
 
 function showConsignedCardDetailsModal(id, user_id){
 
@@ -1346,7 +1365,6 @@ function confirmConsignCardsShipping(){
 	
 }
 
-
 function confirmAddConsign(){
 
 	var defObject = $.Deferred();  // create a deferred object.
@@ -1457,6 +1475,31 @@ function removeGradingCardRow(id, user_id){
 		
 	return defObject.promise();
 }
+
+function confirmGradingTableClearList(type, user_id){
+
+	var defObject = $.Deferred();  // create a deferred object.
+
+	jQuery.ajax({
+		method: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: { 
+			action: "confirmGradingTableClearList",
+			type: type,
+			user_id: user_id
+		},
+		success: function(resp){		
+			defObject.resolve(resp);    //resolve promise and pass the response.
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+		
+	return defObject.promise();
+
+}
+
 
 
 
@@ -1740,6 +1783,10 @@ function getItemInfo(item_id){
 
 
 }
+
+
+
+
 
 $(document).find(".search_box").on("keyup", function() {
 	console.log($(this).val().toLowerCase());

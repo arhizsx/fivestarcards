@@ -281,7 +281,7 @@
 
         <!-- TABLE LOWER BUTTONS -->
         <div class="d-flex justify-content-end">
-            <button class="btn btn-danger mb-3 me-2 ebayintegration-btn" data-action="grading_table_clear_List" data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>">
+            <button class="btn btn-danger mb-3 me-2 ebayintegration-btn" data-action="confirmGradingTableClearList" data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>">
                 Clear List
             </button>
             <button class="btn btn-primary mb-3  ebayintegration-btn" data-action="grading_table_checkout" data-user_id="<?php echo get_current_user_id(); ?>" data-grading_type="<?php echo $_GET["type"]; ?>">
