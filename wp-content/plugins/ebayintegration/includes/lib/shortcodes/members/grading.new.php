@@ -327,6 +327,14 @@
                         <label>Attribute S/N</label>
                         <input type="text" name="attribute_sn" class="form-control p-1" value="">
                     </div>
+                    <div class="col-sm-6">
+                        <label>Declared Value</label>
+                        <input type="text" name="dv" class="form-control p-1" value="">
+                    </div>
+                    <div class="col-sm-6">
+                        <label>Grading Charge</label>
+                        <input type="text" name="per_card" class="form-control p-1" value="">
+                    </div>
                 </div>
                 <div class="d-none p-5 text-center loading">
 
