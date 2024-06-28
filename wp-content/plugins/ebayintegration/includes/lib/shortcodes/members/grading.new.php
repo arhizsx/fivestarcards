@@ -69,7 +69,7 @@
                 $per_card = 330;
                 break;
 
-            case "psa-super_express": 
+            case "sgc-bulk": 
                 $grading_title = "SGC Bulk";
                 $max_dv = 0;
                 $per_card = 19;
