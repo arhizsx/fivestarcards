@@ -145,7 +145,7 @@
                     </a>
                 </td>
                 <td style="width: 105px; padding: 0px;">
-                    <div style="width: 100%; height: 120px; background-color: lightgray;">
+                    <div style="width: 100%; height: 120px; background-color: lightgray; cursor: pointer;">
 
                     </div>
                 </td>
