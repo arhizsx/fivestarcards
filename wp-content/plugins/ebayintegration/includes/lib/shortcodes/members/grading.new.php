@@ -146,7 +146,7 @@
                 </td>
                 <td style="width: 100px; padding: 0px;">
                     <div class="d-flex justify-content-center align-items-center" style="width: 100%; height: 120px; background-color: lightgray; cursor: pointer;">
-                        <i class="fa-solid fa-circle-plus fa-xl"></i>
+                        <i class="fa-solid fa-file-image fa-3x"></i>
                     </div>
                 </td>
                 <td><?php echo $data["year"] ?></td>
