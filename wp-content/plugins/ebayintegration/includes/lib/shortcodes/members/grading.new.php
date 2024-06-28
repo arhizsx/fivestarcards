@@ -245,6 +245,16 @@
                 }
             ?>
         </tbody>
+        <tfoot>
+            <tr>
+                <th>Total DV</th>
+                <th class="text-end">$0.00</th>
+            </tr>
+            <tr>
+                <th>Grading Charge</th>
+                <th class="text-end">$0.00</th>
+            </tr>
+        </tfoot>
     </table>
 </div>
 
