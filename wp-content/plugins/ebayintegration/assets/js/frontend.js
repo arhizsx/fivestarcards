@@ -225,33 +225,41 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 								"</a>" +
 							"</div>" +
 							"<div class='row'>" +
-								"<div class='small text-secondary col-3'>Player</div>" +
-								"<div class='col-9'>" +
+								"<div class='small text-secondary col-4'>Player</div>" +
+								"<div class='col-8'>" +
 								 	v.player_name +									
 								"</div>" + 
 							"</div>" +
 							"<div class='row'>" +
-								"<div class='small text-secondary col-3'>Year</div>" +
-								"<div class='col-9'>" +
+								"<div class='small text-secondary col-4'>Year</div>" +
+								"<div class='col-8'>" +
 								 	v.year +									
 								"</div>" +
 							"</div>" +
 							"<div class='row'>" +
-								"<div class='small text-secondary col-3'>Brand</div>" +
-								"<div class='col-9'>" +
+								"<div class='small text-secondary col-4'>Brand</div>" +
+								"<div class='col-8'>" +
 								 	v.brand +									
 								"</div>" +
 							"</div>" +
 							"<div class='row'>" +
-								"<div class='small text-secondary col-3'>Card #</div>" +
-								"<div class='col-9'>" +
+								"<div class='small text-secondary col-4'>Card #</div>" +
+								"<div class='col-8'>" +
 								 	v.card_number +									
 								"</div>" +
 							"</div>" +
 							"<div class='row'>" +
-								"<div class='small text-secondary col-3'>Attribute SN</div>" +
-								"<div class='col-9'>" +
+								"<div class='small text-secondary col-4'>Attribute SN</div>" +
+								"<div class='col-8'>" +
 								 	v.attribute_sn +									
+								"</div>" +
+							"</div>" +
+							"<div class='row'>" +
+								"<div class='small text-secondary col-sm-4'>Photo</div>" +
+								"<div class='col-sm-8'>" +
+									"<div class="d-flex justify-content-center align-items-center picture_box">" +
+										"<i class="fa-solid fa-file-image fa-2x"></i>" +
+									"</div>" +
 								"</div>" +
 							"</div>" +
 						"</td>" +
