@@ -1442,7 +1442,7 @@ function removeGradingCardRow(id, user_id){
 		method: 'post',
 		url: "/wp-json/ebayintegration/v1/post",
 		data: { 
-			action: "removeConsignedCardRow",
+			action: "removeGradingCardRow",
 			id: id,
 			user_id: user_id
 		},
