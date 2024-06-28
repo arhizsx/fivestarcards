@@ -474,7 +474,7 @@
             <div class="modal-footer">
                 <button class="btn border btn-secondary" data-bs-dismiss="modal" >Cancel</button>
 
-                <button class="btn border btn-success ebayintegration-btn" 
+                <button class="btn border btn-danger ebayintegration-btn" 
                     data-action='confirm_grading_table_clear_List' 
                 >
                     Yes
