@@ -173,7 +173,7 @@
     <table class="table table-sm table-bordered" id="new_consignment_mobile">
         <thead>
             <tr>
-                <th>Items</th>
+                <th colspan="2">Items</th>
             </tr>
         </thead>
         <tbody>
@@ -181,7 +181,7 @@
                 if( count( $consignment ) == 0 ){
             ?>
             <tr class="empty_consignment">
-                <td class="text-center py-5">
+                <td colspan="2" class="text-center py-5">
                     Empty
                 </td>
             </tr>
@@ -190,7 +190,7 @@
                     foreach( $consignment as $card ){
             ?>
             <tr class='consigned_item_row' data-id='<?php echo $card->id; ?>'>
-                <td>
+                <td colspan="2">
                     <div class='w-100 p-0 text-end' style='position: relative;'>
                         <a class='text-danger ebayintegration-btn' data-action="removeConsignedCardRow" data-id='<?php echo $card->id ?>' data-user_id="<?php echo get_current_user_id(); ?>" href='#' style='position: absolute; right: 0px;'>
                             <i class='fa-solid fa-xl fa-xmark'></i>
