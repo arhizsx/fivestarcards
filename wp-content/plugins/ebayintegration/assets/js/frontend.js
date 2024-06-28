@@ -387,7 +387,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			$(document).find(".ship_batch_modal").find(".loading").addClass("d-none");
 			element.prop("disabled", "");
 
-			location.href = "/my-account/consignment/?mode=consigned";
+			location.href = "/my-account/consignment/?mode=orders";
 	
 		});
 
