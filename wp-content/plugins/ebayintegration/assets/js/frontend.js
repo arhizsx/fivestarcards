@@ -222,7 +222,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 							"</a>" +
 						"</td>" +
 						"<td style='width: 100px; padding: 0px;'>" +
-							"<div class='d-flex justify-content-center align-items-center picture_box'>" +
+							"<div class='d-flex justify-content-center align-items-center picture_box ebayintegration-btn' data-action='grading_picture_box_click'  data-id=''>" +
 								"<i class='fa-solid fa-file-image fa-2x'></i>" +
 							"</div>" +
 						"</td>" +
