@@ -370,8 +370,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when( card ).done( function( card ){
 
-			console.log(card);
-
 			location.reload();
 
 		});

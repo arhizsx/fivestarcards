@@ -314,6 +314,11 @@ class Ebay_Integration_Ebay_API {
 			return $this->removeGradingCardRow( $params );
 		}		
 
+		elseif( $params["action"] == "confirmGradingTableClearList"){
+			return $this->confirmGradingTableClearList( $params );
+		}		
+		
+
 		else {
 			return $params;
 		}		
@@ -785,6 +790,25 @@ class Ebay_Integration_Ebay_API {
 		} else {
 			return ["error" => true, "params" => $params ];
 		}
+
+	}
+
+	public function confirmGradingTableClearList( $params ){
+
+		$rows = $this->wpdb->delete(
+			'grading',
+			array(
+				'user_id' => $params["user_id"],
+				"type" => $params["type"],
+			)
+		);
+
+		if( $rows != false ){
+			return ["error" => false, "params" => $params ];
+		} else {
+			return ["error" => true, "params" => $params ];
+		}
+
 
 	}
 
