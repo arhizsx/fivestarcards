@@ -546,7 +546,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                     </div>
                     <div class="modal-footer">
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
-                        <button class="btn border btn-danger 5star_btn" data-action="confirm_admin_delete_order" data-order_number="<?php echo $params['order_number'] ?>" data-back="/admin/">Confirm Delete</button>
+                        <button class="btn border btn-danger 5star_btn" data-action="confirm_admin_delete_order" data-order_number="<?php echo $params['order_number'] ?>" data-back="/administrator/grading/">Confirm Delete</button>
                     </div>
                 </div>
 		</div>
