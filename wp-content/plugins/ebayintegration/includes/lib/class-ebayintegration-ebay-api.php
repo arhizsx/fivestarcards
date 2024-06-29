@@ -318,6 +318,9 @@ class Ebay_Integration_Ebay_API {
 			return $this->confirmGradingTableClearList( $params );
 		}		
 		
+		elseif( $params["action"] == "confirmGradingTableCheckout"){
+			return $this->confirmGradingTableCheckout( $params );
+		}		
 
 		else {
 			return $params;
@@ -807,6 +810,47 @@ class Ebay_Integration_Ebay_API {
 			return ["error" => false, "params" => $params ];
 		} else {
 			return ["error" => true, "params" => $params ];
+		}
+
+
+	}
+
+	public function confirmGradingTableCheckout( $params ){
+
+		$data = [
+			"user_id" => $params["user_id"],
+			"type" => $params["type"]
+		];
+
+		$this->wpdb->insert(
+			'grading_orders',
+			array(
+				'user_id' => $params["user_id"],
+				"type" => $params["type"],
+				"data" => json_encode($data),		
+				"status" => "checkout",		
+			)
+		);
+
+		$lastid = $this->wpdb->insert_id;					
+
+		$rows = $this->wpdb->update(
+			'grading', 
+			array(
+				'status'=>"checkout",
+				"order_id" => $lastid,
+			), 
+			array(
+				'user_id' => $params["user_id"],
+				"type" => $params["type"],
+			)
+		);		
+
+
+		if( $rows != false ){
+			return ["error" => false, "params" => $params, "order_id" => $lastid];
+		} else {
+			return ["error" => true, "params" => $params, "order_id" => $lastid ];
 		}
 
 
