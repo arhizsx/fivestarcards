@@ -78,6 +78,10 @@
 
                             switch( $_GET["mode"] ){
 
+                                case "new": 
+                                    $shortcode = "[cards-grading-admin']";                                    
+                                    break;
+
                                 case "open_orders": 
                                     $shortcode = "[cards-grading-orders_table table='open_orders']";                                    
                                     break;
