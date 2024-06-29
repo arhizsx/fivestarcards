@@ -779,7 +779,7 @@ class Ebay_Integration_Ebay_API {
 	
 			add_post_meta($post_id, "checkout_id", $params["checkout_id"] );
 			add_post_meta($post_id, "user_id", $params["user_id"] );
-			add_post_meta($post_id, "grading", $params["type"] );
+			add_post_meta($post_id, "grading", $params["grading_type"] );
 			add_post_meta($post_id, "status", "pending" );
 			add_post_meta($post_id, "card", json_encode($params) );
 	

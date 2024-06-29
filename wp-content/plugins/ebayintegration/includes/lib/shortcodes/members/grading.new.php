@@ -322,7 +322,7 @@
                             </div>
                             <div class="col-6">                                                        
                                 <label>Qty</label>
-                                <input type="number" name="qty" class="form-control" value="">
+                                <input type="number" name="quantity" class="form-control" value="">
                             </div>
                             
                             <div class="col-6">
