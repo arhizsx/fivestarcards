@@ -870,10 +870,12 @@ class Ebay_Integration_Ebay_API {
 			'post_status' => 'publish'
 		]);
 
+		add_post_meta($checkout_post_id, "user_id",  $params["user_id"] );
+		add_post_meta($checkout_post_id, "service_type", "Card Grading" );
+		add_post_meta($checkout_post_id, "grading_type", $grading_name );
+		add_post_meta($checkout_post_id, "order_number", $checkout_post_id );
 
 		return $checkout_post_id;
-
-
 
 		if( $rows != false ){
 			return ["error" => false, "params" => $params, "order_id" => $lastid];
