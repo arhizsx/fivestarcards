@@ -246,7 +246,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					"</tr>"
 				);
 
-				$(document).find("#newgrading_mobile tbody").prepend(
+				$(document).find("#new_grading_mobile tbody").prepend(
 					"<tr class='consigned_item_row' data-id='" + v.id + "'>" +
 						"<td colspan='2'>" +
 							"<div class='w-100 p-0 text-end' style='position: relative;'>" +
