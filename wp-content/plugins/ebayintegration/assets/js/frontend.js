@@ -1436,7 +1436,7 @@ function confirmAddGrading(){
 	var defObject = $.Deferred();  // create a deferred object.
 
 	var user_id = parseInt( $(document).find(".log_grading_modal").find(".formbox").find("[name='user_id']").val() );
-	var qty = parseInt( $(document).find(".log_grading_modal").find(".formbox").find("[name='qty']").val() );
+	var quantity = parseInt( $(document).find(".log_grading_modal").find(".formbox").find("[name='quantity']").val() );
 	var year = $(document).find(".log_grading_modal").find(".formbox").find("[name='year']").val();
 	var brand = $(document).find(".log_grading_modal").find(".formbox").find("[name='brand']").val();
 	var player_name = $(document).find(".log_grading_modal").find(".formbox").find("[name='player_name']").val();
@@ -1453,7 +1453,7 @@ function confirmAddGrading(){
 		data: { 
 			action: "confirmAddGrading",
 			user_id: user_id,
-			qty: qty,
+			quantity: quantity,
 			year: year,
 			brand: brand,
 			player_name: player_name,
