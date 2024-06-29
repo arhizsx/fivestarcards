@@ -35,9 +35,10 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
-                <ul class="clearfix d-none d-lg-block">
+                <!-- <ul class="clearfix d-none d-lg-block"> -->
+                <ul class="clearfix">
                     <li class="<?php echo AdministratorGrading("new"); ?>">
-                        <a class="" href="/administrator/grading/?mode=new">New</a>
+                        <a class="" href="/administrator/grading/?mode=new">Add Order</a>
                     </li>
                     <li class="<?php echo AdministratorGrading("order_receiving"); ?>">
                         <a class="" href="/administrator/grading">Receiving</a>
@@ -59,12 +60,12 @@
                     </li>
                 </ul>
 
-                <ul class="clearfix d-lg-none">
+                <!-- <ul class="clearfix d-lg-none">
                     <li class="">
                         <a class="" href="/administrator/grading">Receiving</a>
                     </li>
 
-                </ul>
+                </ul> -->
                 <div class="content p-3">
                     <?php 
 
