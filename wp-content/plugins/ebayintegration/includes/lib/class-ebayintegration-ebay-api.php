@@ -769,6 +769,8 @@ class Ebay_Integration_Ebay_API {
 			$data["user_id"] = $user_id;
 
 
+			// OLD CODE
+
 			$user = get_user_by( "id", $user_id ); 	
 	
 			$post_id = wp_insert_post([
@@ -776,6 +778,8 @@ class Ebay_Integration_Ebay_API {
 				'post_title' => $user->display_name . " - " . $params["player_name"],
 				'post_status' => 'publish'
 			]);
+
+			return $params["grading_type"];
 	
 			add_post_meta($post_id, "checkout_id", $params["checkout_id"] );
 			add_post_meta($post_id, "user_id", $params["user_id"] );
