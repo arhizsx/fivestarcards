@@ -714,8 +714,7 @@ function tableAction(what_type, action, what_modal){
                             '<tr><td class="text-center" colspan="6">Empty</td></tr>'
                         );
                         $(document).find(".bottom_buttons").addClass("d-none");
-    
-                        window.location.href = "/view-order?id=" + resp ;
+                        window.location.href = "/my-account/grading/view-order-2/?mode=open&id=" + resp ;
     
                     }
 

@@ -828,7 +828,7 @@ class Ebay_Integration_Ebay_API {
 				'user_id' => $params["user_id"],
 				"type" => $params["type"],
 				"data" => json_encode($data),		
-				"status" => "checkout",		
+				"status" => "To Ship",		
 			)
 		);
 
