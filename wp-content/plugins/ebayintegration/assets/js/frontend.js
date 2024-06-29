@@ -237,7 +237,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 								"<i class='fa-solid fa-file-image fa-2x'></i>" +
 							"</div>" +
 						"</td>" +
-						"<td>" + v.player_name + "</td>" +
+						"<td>" + v.player + "</td>" +
 						"<td>" + v.year + "</td>" +
 						"<td>" + v.brand + "</td>" +
 						"<td>" + v.card_number + "<br><small>" + v.attribute_sn + "</small></td>" +
@@ -257,7 +257,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 							"<div class='row'>" +
 								"<div class='small text-secondary col-4'>Player</div>" +
 								"<div class='col-8'>" +
-								 	v.player_name +									
+								 	v.player +									
 								"</div>" + 
 							"</div>" +
 							"<div class='row'>" +
