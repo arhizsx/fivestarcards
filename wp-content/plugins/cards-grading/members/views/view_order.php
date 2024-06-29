@@ -55,7 +55,7 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
 <div class="m-0 p-0">
     <div class="row">
         <div class="col">
-            <a href="/my-account/grading/view-order/?mode=open">Back to My Orders</a>
+            <a href="/my-account/grading/?mode=open">Back to My Orders</a>
         </div>
     </div>
 
