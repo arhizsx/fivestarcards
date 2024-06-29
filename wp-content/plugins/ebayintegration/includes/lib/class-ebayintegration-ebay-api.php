@@ -739,7 +739,7 @@ class Ebay_Integration_Ebay_API {
 		$type = $params["type"];
 		$result = [];
 
-		for( $i=0; $i < $params["qty"]; $i++ ){
+		for( $i=0; $i < $params["quantity"]; $i++ ){
 
 			$data = [
 				"quantity" => 1,
