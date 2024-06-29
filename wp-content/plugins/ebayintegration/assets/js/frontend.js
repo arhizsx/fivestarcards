@@ -220,8 +220,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when(card).done( function( card ){
 
-			$(document).find("#new_grading tbody .empty_consignment").remove();
-			$(document).find("#new_grading_mobile tbody .empty_consignment").remove();
+			$(document).find("#new_grading tbody .empty_grading").remove();
+			$(document).find("#new_grading_mobile tbody .empty_grading").remove();
 
 			$.each( card, function(k, v){
 
