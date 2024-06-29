@@ -939,14 +939,10 @@ class Ebay_Integration_Ebay_API {
 		add_post_meta($checkout_post_id, "status", "To Ship" );
 
 
-		return $checkout_post_id;
-
-
-
 		if( $rows != false ){
-			return ["error" => false, "params" => $params, "order_id" => $lastid];
+			return ["error" => false, "params" => $params, "checkout_post_id" => $checkout_post_id];
 		} else {
-			return ["error" => true, "params" => $params, "order_id" => $lastid ];
+			return ["error" => true, "params" => $params, "checkout_post_id" => $checkout_post_id ];
 		}
 
 

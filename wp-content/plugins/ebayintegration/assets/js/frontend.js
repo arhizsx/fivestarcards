@@ -396,6 +396,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
 
 		$.when( card ).done( function( card ){
+
+			window.location.href = "/my-account/grading/view-order/?mode=open&id=" + card.checkout_post_id;
 			console.log(card);
 		});
 
