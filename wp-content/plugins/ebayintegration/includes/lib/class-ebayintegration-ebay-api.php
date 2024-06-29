@@ -875,7 +875,55 @@ class Ebay_Integration_Ebay_API {
 		add_post_meta($checkout_post_id, "grading_type", $grading_name );
 		add_post_meta($checkout_post_id, "order_number", $checkout_post_id );
 
+
+		$args = array(
+			'meta_query' => array(
+				'relations' =>  'AND',    
+				array(
+					'key' => 'grading',
+					'value' => $params['type']
+				),
+				array(
+					'key' => 'user_id',
+					'value' => $params["user_id"]
+				),
+				array(
+					'key' => 'status',
+					'value' => 'pending'
+				)
+			),
+			'post_type' => 'cards-grading-card',
+			'posts_per_page' => -1
+		);
+		
+		$total_dv = 0;
+		$total_cards = 0;
+
+		$posts = get_posts($args);
+
+		foreach($posts as $post)
+		{
+
+			$card_data =  get_post_meta( $post->ID , 'card' , true );
+			$card = json_decode($card_data, true);
+
+			$total_cards = $total_cards + $card["quantity"];
+			$total_dv = $total_dv + ( $card["quantity"] * $card["dv"] );
+	
+			update_post_meta($post->ID, 'status', 'checkout');   
+			add_post_meta($post->ID, "checkout_id", $checkout_post_id );
+			update_post_meta($post->ID, "status", "To Ship" );
+
+		}
+
+		add_post_meta($checkout_post_id, "total_dv", $total_dv );
+		add_post_meta($checkout_post_id, "total_cards", $total_cards );
+		add_post_meta($checkout_post_id, "status", "To Ship" );
+
+
 		return $checkout_post_id;
+
+
 
 		if( $rows != false ){
 			return ["error" => false, "params" => $params, "order_id" => $lastid];
