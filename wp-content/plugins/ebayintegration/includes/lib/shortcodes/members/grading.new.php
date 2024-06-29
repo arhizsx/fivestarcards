@@ -156,7 +156,7 @@
                                 <i class="fa-solid fa-file-image fa-2x"></i>
                             </div>
                         </td>
-                        <td><?php echo $data["player_name"] ?></td>
+                        <td><?php echo $data["player"] ?></td>
                         <td><?php echo $data["year"] ?></td>
                         <td><?php echo $data["brand"] ?></td>
                         <td><?php echo $data["card_number"] ?><br><small><?php echo $data["attribute_sn"] ?></small></td>
@@ -212,7 +212,7 @@
                             <div class='row'>
                                 <div class='small text-secondary col-sm-4'>Player</div>
                                 <div class='col-sm-8'>
-                                    <?php echo $data["player_name"] ?>								
+                                    <?php echo $data["player"] ?>								
                                 </div>
                             </div>
                             <div class='row'>
