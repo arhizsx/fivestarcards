@@ -813,10 +813,11 @@ function orderAction(action, data, order_number){
         success: function(resp){
 
             if(action == "admin_create_order"){
-                location.href = "/admin/add-customer-order/?order_number=" + resp;
+                
+                location.href = "/administrator/grading/?mode=new&order_number=" + resp;
             } 
             else if(action == "admin_assign_order" && resp){
-                location.href = "/admin/add-customer-order";
+                location.href = "/administrator/grading/?mode=new";
             }
             else {
 
