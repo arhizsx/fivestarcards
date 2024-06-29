@@ -768,6 +768,22 @@ class Ebay_Integration_Ebay_API {
 			$data["id"] = $lastid;
 			$data["user_id"] = $user_id;
 
+
+			$user = get_user_by( "id", $user_id ); 	
+	
+			$post_id = wp_insert_post([
+				'post_type' => 'cards-grading-card',
+				'post_title' => $user->display_name . " - " . $params["player_name"],
+				'post_status' => 'publish'
+			]);
+	
+			add_post_meta($post_id, "checkout_id", $params["checkout_id"] );
+			add_post_meta($post_id, "user_id", $params["user_id"] );
+			add_post_meta($post_id, "grading", $params["type"] );
+			add_post_meta($post_id, "status", "pending" );
+			add_post_meta($post_id, "card", json_encode($params) );
+	
+
 			$result[] = $data;
 
 
