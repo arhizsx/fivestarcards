@@ -426,10 +426,16 @@
                     </div>
                     <div class="modal-body py-2 px-3">
                         <div class="row formbox">
+                            <form class="form" id="photo_upload_form">
                             <div class="col-12">
+
+                                <input type="hidden" name="user_id" value="">
+                                <input type="hidden" name="card_id" value="">
+
                                 <label>Select Card Photo</label>
                                 <input type="file" name="card_photo" class="form-control mb-3">
                             </div>
+                            </form>
                         </div>
                         <div class="d-none p-5 text-center loading">
 
