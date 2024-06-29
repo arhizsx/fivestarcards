@@ -52,12 +52,13 @@ $processed_status = array("Completed - Grades Ready");
 $consignment_status = array("Order Partial Consignment", "Order Consigned", "Ready For Payment", "Consignment Paid");
 
 ?>
-<div class="">
-    <div class="row">
-        TEST
-    </div>
-</div>
 <div class="m-0 p-0">
+    <div class="row">
+        <div class="col">
+            <a href="/my-account/grading/view-order/?mode=open">Back to My Orders</a>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12" >
             <div class="order-label"><?php echo $params['title'] ?></div>
