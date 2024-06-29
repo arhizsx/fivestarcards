@@ -742,7 +742,7 @@ class Ebay_Integration_Ebay_API {
 		for( $i=0; $i < $params["qty"]; $i++ ){
 
 			$data = [
-				"qty" => 1,
+				"quantity" => 1,
 				"year" => $params["year"],
 				"brand" => $params["brand"],
 				"card_number" => $params["card_number"],
