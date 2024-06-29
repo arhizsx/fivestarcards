@@ -683,7 +683,7 @@ class Ebay_Integration_Ebay_API {
 				"year" => $params["year"],
 				"brand" => $params["brand"],
 				"card_number" => $params["card_number"],
-				"player_name" => $params["player_name"],
+				"player" => $params["player"],
 				"attribute_sn" => $params["attribute_sn"],
 			];
 
@@ -746,7 +746,7 @@ class Ebay_Integration_Ebay_API {
 				"year" => $params["year"],
 				"brand" => $params["brand"],
 				"card_number" => $params["card_number"],
-				"player" => $params["player_name"],
+				"player" => $params["player"],
 				"attribute_sn" => $params["attribute_sn"],
 				"max_dv" => $params["max_dv"],
 				"dv" => $params["dv"],

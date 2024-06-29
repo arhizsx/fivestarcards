@@ -335,7 +335,7 @@
                             </div>
                             <div class="col-md-12">
                                 <label>Player Name</label>
-                                <input type="text" name="player_name" class="form-control p-1" value="">
+                                <input type="text" name="player" class="form-control p-1" value="">
                             </div>
                             <div class="col-sm-12">
                                 <label>Card Number</label>

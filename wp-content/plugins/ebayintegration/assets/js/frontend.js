@@ -1439,7 +1439,7 @@ function confirmAddGrading(){
 	var quantity = parseInt( $(document).find(".log_grading_modal").find(".formbox").find("[name='quantity']").val() );
 	var year = $(document).find(".log_grading_modal").find(".formbox").find("[name='year']").val();
 	var brand = $(document).find(".log_grading_modal").find(".formbox").find("[name='brand']").val();
-	var player_name = $(document).find(".log_grading_modal").find(".formbox").find("[name='player_name']").val();
+	var player = $(document).find(".log_grading_modal").find(".formbox").find("[name='player']").val();
 	var card_number = $(document).find(".log_grading_modal").find(".formbox").find("[name='card_number']").val();
 	var attribute_sn = $(document).find(".log_grading_modal").find(".formbox").find("[name='attribute_sn']").val();
 	var dv = $(document).find(".log_grading_modal").find(".formbox").find("[name='dv']").val();
@@ -1456,7 +1456,7 @@ function confirmAddGrading(){
 			quantity: quantity,
 			year: year,
 			brand: brand,
-			player_name: player_name,
+			player: player,
 			card_number: card_number,
 			attribute_sn: attribute_sn,
 			dv: dv,
