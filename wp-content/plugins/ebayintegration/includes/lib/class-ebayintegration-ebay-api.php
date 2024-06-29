@@ -846,6 +846,34 @@ class Ebay_Integration_Ebay_API {
 			)
 		);		
 
+		// OLD ROUTINE CODE
+
+		$user = get_user_by( "id", $params["user_id"] );
+
+		$args = array( 
+			'meta_query' => array(
+				array(
+					'key' => 'type',
+					'value' => $params["type"]
+				)
+			),
+			'post_type' => 'cards-grading-type',
+			'posts_per_page' => -1
+		);
+		
+		$grading_type = get_posts($args);
+		$grading_name =  get_post_meta( $grading_type[0]->ID , 'name' , true );
+
+		$checkout_post_id = wp_insert_post([
+			'post_type' => 'cards-grading-chk',
+			'post_title' => $user->display_name . " - " . $grading_name,
+			'post_status' => 'publish'
+		]);
+
+
+		return $checkout_post_id;
+
+
 
 		if( $rows != false ){
 			return ["error" => false, "params" => $params, "order_id" => $lastid];

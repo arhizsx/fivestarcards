@@ -1117,7 +1117,7 @@
             $user_id = get_current_user_id();        
             $user = get_user_by( "id", $user_id );
 
-            $args = array(
+            $args = array( 
                 'meta_query' => array(
                     array(
                         'key' => 'type',
