@@ -123,7 +123,7 @@
                     <td><?php echo $meta["grading_type"][0]; ?></td>
                     <td><?php echo $meta["status"][0]; ?></td>
                     <td class='text-end'>
-                        <a class="btn btn-primary mb-3"  href="/admin/add-customer-order/?order_number=<?php echo $post->ID; ?>">
+                        <a class="btn btn-primary mb-3"  href="/administrator/grading/?mode=new&order_number=<?php echo $post->ID; ?>">
                             ...
                         </a>           
                     </td>
@@ -276,7 +276,7 @@
                     </button>
                 </div>
                 <div class="col-6 text-end">
-                    <a href="/admin/add-customer-order" class="5star_btn btn btn-secondary">
+                    <a href="/administrator/grading/?mode=new" class="5star_btn btn btn-secondary">
                         Go Back
                     </a>           
                     <button class="btn border btn-primary 5star_btn" data-action="admin_assign_order" data-order_number="<?php echo $_GET['order_number'] ?>" >
