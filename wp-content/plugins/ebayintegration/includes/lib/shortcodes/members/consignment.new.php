@@ -53,7 +53,11 @@ order by id desc
                         <i class='fa-solid fa-lg fa-xmark'></i>
                     </a>
                 </td>
-                <td><?php echo $data["year"] ?></td>
+                <td>
+                <?php 
+                print_r($data);
+                ?>    
+                <?php echo $data["year"] ?></td>
                 <td><?php echo $data["brand"] ?></td>
                 <td><?php echo $data["player_name"] ?></td>
                 <td class='text-end'><?php echo $data["card_number"] ?></td>
