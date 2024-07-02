@@ -460,7 +460,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 						"</td>" +
 						"<td>" + v.year + "</td>" +
 						"<td>" + v.brand + "</td>" +
-						"<td>" + v.player_name + "</td>" +
+						"<td>" + v.player + "</td>" +
 						"<td class='text-end'>" + v.card_number + "</td>" +
 						"<td class='text-end'>" + v.attribute_sn + "</td>" +
 					"</tr>"
@@ -477,7 +477,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 							"<div class='row'>" +
 								"<div class='small text-secondary col-3'>Player</div>" +
 								"<div class='col-9'>" +
-								 	v.player_name +									
+								 	v.player +									
 								"</div>" + 
 							"</div>" +
 							"<div class='row'>" +
@@ -692,7 +692,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				$(document).find(".consigned_card_details_modal").find("[name='qty']").val( data.qty );
 				$(document).find(".consigned_card_details_modal").find("[name='year']").val( data.year );
 				$(document).find(".consigned_card_details_modal").find("[name='brand']").val( data.brand );
-				$(document).find(".consigned_card_details_modal").find("[name='player_name']").val( data.player_name );
+				$(document).find(".consigned_card_details_modal").find("[name='player']").val( data.player );
 				$(document).find(".consigned_card_details_modal").find("[name='card_number']").val( data.card_number );
 				$(document).find(".consigned_card_details_modal").find("[name='attribute_sn']").val( data.attribute_sn );
 				$(document).find(".consigned_card_details_modal").find("[name='new_status']").val( card.card.status );				
@@ -1400,7 +1400,7 @@ function confirmAddConsign(){
 	var qty = parseInt( $(document).find(".log_consign_modal").find(".formbox").find("[name='qty']").val() );
 	var year = $(document).find(".log_consign_modal").find(".formbox").find("[name='year']").val();
 	var brand = $(document).find(".log_consign_modal").find(".formbox").find("[name='brand']").val();
-	var player_name = $(document).find(".log_consign_modal").find(".formbox").find("[name='player_name']").val();
+	var player = $(document).find(".log_consign_modal").find(".formbox").find("[name='player']").val();
 	var card_number = $(document).find(".log_consign_modal").find(".formbox").find("[name='card_number']").val();
 	var attribute_sn = $(document).find(".log_consign_modal").find(".formbox").find("[name='attribute_sn']").val();
 
@@ -1413,7 +1413,7 @@ function confirmAddConsign(){
 			qty: qty,
 			year: year,
 			brand: brand,
-			player_name: player_name,
+			player: player,
 			card_number: card_number,
 			attribute_sn: attribute_sn
 		},

@@ -55,7 +55,7 @@ order by id desc
                 </td>
                 <td><?php echo $data["year"] ?></td>
                 <td><?php echo $data["brand"] ?></td>
-                <td><?php echo $data["player_name"] ?></td>
+                <td><?php echo $data["player"] ?></td>
                 <td class='text-end'><?php echo $data["card_number"] ?></td>
                 <td class='text-end'><?php echo $data["attribute_sn"] ?></td>
             </tr>
@@ -96,7 +96,7 @@ order by id desc
                     <div class='row'>
                         <div class='small text-secondary col-sm-4'>Player</div>
                         <div class='col-sm-8'>
-                            <?php echo $data["player_name"] ?>								
+                            <?php echo $data["player"] ?>								
                         </div>
                     </div>
                     <div class='row'>
@@ -162,7 +162,7 @@ order by id desc
                     </div>
                     <div class="col-md-12">
                         <label>Player Name</label>
-                        <input type="text" name="player_name" class="form-control p-1" value="">
+                        <input type="text" name="player" class="form-control p-1" value="">
                     </div>
                     <div class="col-sm-6">
                         <label>Card Number</label>
