@@ -149,7 +149,7 @@ class Ebay_Integration_Ebay_API {
 		// ///////////////////////
 
 
-		elseif($params["action"] == "refreshTokenizer"){
+		elseif($params["action"] == "refreshTokenr"){
 
 			return $this->refreshToken();
 
