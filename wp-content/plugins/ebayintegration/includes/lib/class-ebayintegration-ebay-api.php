@@ -995,7 +995,7 @@ class Ebay_Integration_Ebay_API {
 	public function getEbayItems($type = null, $page = null, $days = null){
 
 		if( $days == null ){
-			$days_count = 20;
+			$days_count = 15;
 		} 
 		else {
 			$days_count = $days;
