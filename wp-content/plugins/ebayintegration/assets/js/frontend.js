@@ -1676,7 +1676,6 @@ function Checker(){
 
 	if( error_cnt > 0 ){
 
-		OpenAccordion();
 		return false;
 	}
 
