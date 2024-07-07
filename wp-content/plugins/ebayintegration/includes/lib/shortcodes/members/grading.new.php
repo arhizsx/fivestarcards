@@ -429,7 +429,7 @@
                             <form class="form" id="photo_upload_form">
                             <div class="col-12">
 
-                                <input type="hidden" name="user_id" value="">
+                                <input type="hidden" name="user_id" value="<?php echo get_current_user_id(); ?>">
                                 <input type="hidden" name="card_id" value="">
 
                                 <label>Select Card Photo</label>
