@@ -254,7 +254,7 @@
                             <div class='row'>
                                 <div class='small text-secondary col-sm-4'>Photo</div>
                                 <div class='col-sm-8'>
-                                    <div class="d-flex justify-content-center align-items-center picture_box ebayintegration-btn" data-action="grading_picture_box_click"  data-id='<?php echo $card->id ?>'>
+                                    <div class="d-flex justify-content-center align-items-center picture_box ebayintegration-btn" data-action="grading_picture_box_click"  data-id='<?php echo $card->id ?>'   data-user_id="<?php echo get_current_user_id(); ?>">
                                         <i class="fa-solid fa-file-image fa-2x"></i>
                                     </div>                            
                                 </div>
