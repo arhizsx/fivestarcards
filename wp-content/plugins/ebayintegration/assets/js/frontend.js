@@ -407,7 +407,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		console.log( $(this).data() );
 
-        e.preentDefault();
+        e.preventDefault();
 
         if( Checker() ) {
 
@@ -421,7 +421,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
                 processData: false,
                 contentType: false,
                 success: function(resp){
-					
+
                 },
                 error: function(){
                     console.log("Error in AJAX");
