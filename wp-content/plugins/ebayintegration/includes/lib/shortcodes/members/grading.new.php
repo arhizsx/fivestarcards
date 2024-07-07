@@ -433,7 +433,7 @@
                                 <input type="hidden" name="card_id" value="">
 
                                 <label>Select Card Photo</label>
-                                <input type="file" name="card_photo" class="form-control mb-3">
+                                <input type="file" name="card_photo" class="form-control mb-3 checker" data-checker="required">
                             </div>
                             </form>
                         </div>
