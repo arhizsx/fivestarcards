@@ -415,7 +415,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
             $.ajax({
                 type: 'post',
-                url: "/supervendor/ajax-public",
+				url: "/wp-json/ebayintegration/v1/post",
                 data: form,
                 enctype: 'multipart/form-data',
                 processData: false,
