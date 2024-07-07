@@ -406,6 +406,31 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	else if( jQuery(this).data("action") == "confirmPhotoAdd" ){
 
 		console.log( $(this).data() );
+
+        e.preentDefault();
+
+        if( Checker() ) {
+
+            let form = new FormData( $("#photo_upload_form")[0] );
+
+            $.ajax({
+                type: 'post',
+                url: "/supervendor/ajax-public",
+                data: form,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                success: function(resp){
+					
+                },
+                error: function(){
+                    console.log("Error in AJAX");
+                }
+            });
+
+
+        }
+
 	}
 
 	
