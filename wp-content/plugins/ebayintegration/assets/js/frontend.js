@@ -183,7 +183,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	else if( jQuery(this).data("action") == "grading_picture_box_click" ){
 
 		jQuery(document).find(".picture_box_modal").appendTo('body').modal("show");
-		console.log($this).data();
+		console.log( $(this).data() );
 	}
 
 	else if( jQuery(this).data("action") == "show_log_grading_modal" ){
