@@ -148,7 +148,7 @@ function ActivateGrading($page){
 
 function ActivateGradingSelect($page){
     if( isset( $_GET['mode']) == false ){
-        if( $page == "log" ){
+        if( $page == "open" ){
             return "selected";
         }
     } 
