@@ -27,9 +27,6 @@
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
                     <li class="<?php echo ActivateGrading("open"); ?>">
-                        <a class="" href="/my-account/grading/">Log Cards</a>
-                    </li>
-                    <li class="<?php echo ActivateGrading("open"); ?>">
                         <a class="" href="/my-account/grading/?mode=open">Open</a>
                     </li>
                     <li class="<?php echo ActivateGrading("for_payment"); ?>">
