@@ -26,7 +26,7 @@
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
-                    <li class="<?php echo ActivateGrading("log"); ?>">
+                    <li class="<?php echo ActivateGrading("open"); ?>">
                         <a class="" href="/my-account/grading/">Log Cards</a>
                     </li>
                     <li class="<?php echo ActivateGrading("open"); ?>">
@@ -57,8 +57,9 @@
 
                         if( isset( $_GET['mode'] )  == false){
 
-                            include( plugin_dir_path( __FILE__ ) . "members/grading.new.php" );			
-                            
+                            // include( plugin_dir_path( __FILE__ ) . "members/grading.new.php" );			
+                            echo do_shortcode( "[cards-grading-orders_table table='my_orders']" );                    
+
                         } 
                         else {
 
