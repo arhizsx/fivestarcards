@@ -55,18 +55,14 @@ $current_user = wp_get_current_user();
             <div class="modal-body p-3">
                 <div class="row">
                     <div class="col">
-                        <button class="btn border btn-primary ebayintegration-btn form-control" 
-                            data-action='startGrading' 
-                        >
+                        <a class="btn border btn-primary form-control" href="/my-account/grading/new" >
                             Card Grading
-                        </button>
+                        </a>
                     </div>
                     <div class="col">
-                        <button class="btn border btn-danger ebayintegration-btn form-control" 
-                            data-action='startConsignment' 
-                        >
+                        <a class="btn border btn-danger form-control" href="/my-account/consignment/new" >
                             Card Consignment
-                        </button>
+                        </a>
                     </div>
                 </div>    
 
