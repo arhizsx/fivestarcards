@@ -60,7 +60,7 @@ $current_user = wp_get_current_user();
                         </a>
                     </div>
                     <div class="col">
-                        <a class="btn border btn-danger form-control" href="/my-account/consignment/new-consignment-order" >
+                        <a class="btn border btn-danger form-control" href="/consign/" >
                             Card Consignment
                         </a>
                     </div>
