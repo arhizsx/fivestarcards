@@ -120,7 +120,7 @@
     </div>
 </div>
 <div class="floating-button-container">
-    <button type="button" id="float_btn_add_ticket" class="floating-button btn btn-success lm-btn btn-shadow" data-action="add_ticket" data-toggle="tooltip" data-placement="left" data-original-title="Add a Meeting">
+    <button type="button" id="float_btn_add_ticket" class="floating-button btn btn-primary" data-action="add_grading" data-toggle="tooltip" data-placement="left" data-original-title="Add a Grading">
         <i class="fa fa-ticket fa-w-16"></i>
     </button>
 </div>
