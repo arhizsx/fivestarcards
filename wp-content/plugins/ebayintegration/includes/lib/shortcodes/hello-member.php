@@ -45,7 +45,7 @@ $current_user = wp_get_current_user();
 	<div class="modal-dialog" id="dxmodal">
 		<div class="modal-content modal-ajax">
 			<div class="modal-header bg-dark text-white">
-				<h5 class="modal-title">
+				<h5 class="modal-title mb-0">
 					New Order
 				</h5>
     			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
