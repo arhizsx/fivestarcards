@@ -55,12 +55,12 @@ $current_user = wp_get_current_user();
             <div class="modal-body p-3">
                 <div class="row">
                     <div class="col">
-                        <a class="btn border btn-primary form-control" href="/grading/" >
+                        <a class="btn border btn-primary form-control" href="/my-account/grading/new" >
                             Card Grading
                         </a>
                     </div>
                     <div class="col">
-                        <a class="btn border btn-danger form-control" href="/consign/" >
+                        <a class="btn border btn-danger form-control" href="/my-account/consignment/new" >
                             Card Consignment
                         </a>
                     </div>
