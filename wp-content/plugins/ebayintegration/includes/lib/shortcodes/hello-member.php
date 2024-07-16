@@ -25,7 +25,7 @@ $current_user = wp_get_current_user();
         height: 20px; margin-bottom:30px; margin-top: -15px; cursor: pointer;
     }
 </style>
-<div class="d-flex justify-content-between">
+<div class="d-flex justify-content-between flex-wrap">
     <div>
         <H1 style="color: black;">
             Hello, <?php echo $current_user->display_name; ?>
