@@ -55,7 +55,7 @@ $current_user = wp_get_current_user();
             <div class="modal-body p-3">
                 <div class="row">
                     <div class="col">
-                        <a class="btn border btn-primary form-control" href="/my-account/grading/new-grading-order" >
+                        <a class="btn border btn-primary form-control" href="/grading/" >
                             Card Grading
                         </a>
                     </div>
