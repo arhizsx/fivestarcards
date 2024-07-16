@@ -121,6 +121,6 @@
 </div>
 <div class="floating-button-container">
     <button type="button" id="float_btn_add_ticket" class="floating-button btn btn-primary" data-action="add_grading" data-toggle="tooltip" data-placement="left" data-original-title="Add a Grading">
-        <i class="fa fa-plus fa-2x mt-2 fa-w-16"></i>
+        <i class="fa fa-plus fa-2x mt-3 fa-w-16"></i>
     </button>
 </div>
