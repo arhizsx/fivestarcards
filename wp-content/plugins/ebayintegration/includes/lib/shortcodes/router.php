@@ -87,6 +87,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'grading.php');			
             break;
 
+        case "grading2":
+
+			include( plugin_dir_path( __FILE__ ) . 'grading2.php');			
+            break;
+
         case "listing":
 
 			include( plugin_dir_path( __FILE__ ) . 'listing.php');			
