@@ -35,8 +35,38 @@ $current_user = wp_get_current_user();
         <small style="border: 1px solid white; background-color: black; color: white; padding: 5px; margin-right: 5px;">
             NEW ORDER
         </small>
-        <button type="button" id="float_btn_add_ticket" class="floating-button btn btn-primary" data-action="add_grading" data-toggle="tooltip" data-placement="left" data-original-title="Add a Grading">
+        <button type="button" id="float_btn_add_ticket" class="floating-button btn btn-primary ebayintegration-btn" data-action="add_new_order" data-toggle="tooltip" data-placement="left" data-original-title="Add a Grading">
             <i class="fa fa-plus fa-2x fa-w-16 fa-beat" style="margin-top: 10px;"></i>
         </button>
     </div>
+</div>
+
+<div class="modal fade add_new_order_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+	<div class="modal-dialog" id="dxmodal">
+		<div class="modal-content modal-ajax">
+			<div class="modal-header bg-dark text-white">
+				<h5 class="modal-title">
+					New Order
+				</h5>
+    			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+					X
+				</button>
+			</div>
+            <div class="modal-body py-2 px-3">
+                
+                <button class="btn border btn-success ebayintegration-btn" 
+                    data-action='startGrading' 
+                >
+                    Card Grading
+                </button>
+
+                <button class="btn border btn-success ebayintegration-btn" 
+                    data-action='startConsignment' 
+                >
+                    Card Consignment
+                </button>
+
+            </div>
+		</div>
+	</div>
 </div>

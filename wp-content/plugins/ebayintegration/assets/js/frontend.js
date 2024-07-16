@@ -175,6 +175,17 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 
+
+	// ////////////////////////// //
+	//  Add Order Buttons   //
+	// ////////////////////////// //
+
+	else if( jQuery(this).data("action") == "add_new_order" ){
+
+		jQuery(document).find(".add_new_order_modal").appendTo('body').modal("show");
+
+	}
+
 	// ////////////////////////// //
 	//  Add Grading Buttons   //
 	// ////////////////////////// //
