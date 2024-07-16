@@ -22,8 +22,11 @@
             </a>
         </div>
     </div>
-
-    TEST
+<div class="floating-button-container">
+    <button type="button" id="float_btn_add_ticket" class="floating-button btn btn-success lm-btn btn-shadow" data-action="add_ticket" data-toggle="tooltip" data-placement="left" data-original-title="Add a Meeting">
+        <i class="fa fa-ticket fa-w-16 fa-2x"></i>
+    </button>
+</div>
     <div class="row">
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
