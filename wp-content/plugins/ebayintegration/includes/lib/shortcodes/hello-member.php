@@ -52,19 +52,24 @@ $current_user = wp_get_current_user();
 					X
 				</button>
 			</div>
-            <div class="modal-body py-2 px-3">
-                
-                <button class="btn border btn-success ebayintegration-btn" 
-                    data-action='startGrading' 
-                >
-                    Card Grading
-                </button>
+            <div class="modal-body p-3">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn border btn-primary ebayintegration-btn form-control" 
+                            data-action='startGrading' 
+                        >
+                            Card Grading
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="btn border btn-danger ebayintegration-btn form-control" 
+                            data-action='startConsignment' 
+                        >
+                            Card Consignment
+                        </button>
+                    </div>
+                </div>    
 
-                <button class="btn border btn-success ebayintegration-btn" 
-                    data-action='startConsignment' 
-                >
-                    Card Consignment
-                </button>
 
             </div>
 		</div>
