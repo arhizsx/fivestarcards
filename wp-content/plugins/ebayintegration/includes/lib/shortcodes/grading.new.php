@@ -766,6 +766,11 @@
     </div>
 <?php    
             }
+        } else {
+?>
+    <H1>Coming Soong</H1>
+    <a href="/grading">Log Cards for Grading</a>
+<?php 
         }
     }
 ?>
