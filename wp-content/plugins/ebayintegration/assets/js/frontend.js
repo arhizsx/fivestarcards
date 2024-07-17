@@ -439,7 +439,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					console.log(resp.params.card_id);
 
 					$(document).find(".ebayintegration-btn[data-action='grading_picture_box_click'][data-id='" + resp.params.card_id + "']").html(
-						"<img src='" + resp.data.file.baseurl + "'>"
+						"<img src='" + resp.data.file.baseurl + "' height='100%'>"
 					);
 
                 },
