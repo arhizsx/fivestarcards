@@ -970,10 +970,9 @@ class Ebay_Integration_Ebay_API {
 
 			$file = file_get_contents( $v["tmp_name"] );
 
-			return file_put_contents( $fileName, $file );
-	
+			file_put_contents( $fileName, $file );
 
-			return move_uploaded_file($file, "/wp-content/uploads");
+			return move_uploaded_file($fileName, "/wp-content/uploads");
 
 		}
 
