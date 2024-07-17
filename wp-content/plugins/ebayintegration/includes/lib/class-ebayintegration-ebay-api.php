@@ -961,6 +961,8 @@ class Ebay_Integration_Ebay_API {
 		$upload_folder = $upload_folder["basedir"];
 		$allowed_extensions = ["image/jpeg", "image/png"];
 
+		return $upload_folder;
+
 		foreach($files as $k => $v){
 
 			$extension = $v["type"];			
