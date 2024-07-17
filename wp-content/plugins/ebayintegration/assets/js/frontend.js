@@ -436,6 +436,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
                 success: function(resp){
 
 					console.log(resp.data.file.baseurl);
+					console.log(resp.params.card_id);
 
                 },
                 error: function(){
