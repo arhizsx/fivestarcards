@@ -20,7 +20,7 @@
         font-weight: bolder;
     }
     .picture_box {
-        width: 100%; 
+        width: auto; 
         height: 120px; 
         color: black;
         background-color: lightgray; 
