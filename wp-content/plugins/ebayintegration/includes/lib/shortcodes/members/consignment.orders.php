@@ -42,7 +42,7 @@ if(  $type == "cards" ){
 
 <div class="row">
     <div class="col">
-        <a class="btn btn-pill btn-sm mb-2 <?php echo $btn_cards; ?>" href="/my-account/consignment/?mode=orders">Cards</a>
+        <a class="btn btn-pill btn-sm mb-2 <?php echo $btn_cards; ?>" href="/my-account/consignment/?mode=orders&type=cards">Cards</a>
         <a class="btn btn-pill btn-sm mb-2 <?php echo $btn_orders; ?>" href="/my-account/consignment/?mode=orders&type=orders">Orders</a>
     </div>
 </div>
