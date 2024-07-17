@@ -972,7 +972,7 @@ class Ebay_Integration_Ebay_API {
 
 			file_put_contents( $fileName, $file );
 
-			return move_uploaded_file($fileName, "/wp-content/uploads");
+			return move_uploaded_file($fileName, "wp-content/uploads/cards");
 
 		}
 
