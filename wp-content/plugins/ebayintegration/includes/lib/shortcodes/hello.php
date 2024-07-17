@@ -25,13 +25,13 @@ $current_user = wp_get_current_user();
         height: 20px; margin-bottom:30px; margin-top: -15px; cursor: pointer;
     }
 </style>
-<div class="d-flex justify-content-between flex-wrap">
-    <div>
+<div class="row">
+    <div class="col-12">
         <H1 style="color: black;">
             Hello, <?php echo $current_user->display_name; ?>
         </H1>
     </div>
-    <div>
+    <div class="col-12 text-start">
         <small style="border: 1px solid white; background-color: black; color: white; padding: 5px; margin-right: 5px;">
             NEW ORDER
         </small>
