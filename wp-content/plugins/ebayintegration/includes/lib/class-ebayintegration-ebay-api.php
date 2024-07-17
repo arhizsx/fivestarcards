@@ -326,7 +326,7 @@ class Ebay_Integration_Ebay_API {
 
 		elseif( $params["action"] == "confirmPhotoAdd"){
 
-			return  $files["card_photo"];
+			return  $this->confirmPhotoAdd($params, $files);
 			
 		}
 
@@ -365,7 +365,6 @@ class Ebay_Integration_Ebay_API {
 		}
 
 	}
-
 	
 	public function consignmentPaidOut( $params ){
 
@@ -421,7 +420,6 @@ class Ebay_Integration_Ebay_API {
 		return [ "error" => false, "user_id" => $params["user_id"] ];
 
 	}
-
 
 	public function addUnmatchedSKU( $params ){
 
@@ -533,7 +531,6 @@ class Ebay_Integration_Ebay_API {
 
 
 	// CONSIGNMENT
-
 
 	public function confirmUpdateConsignedCardDetails( $params ){
 
@@ -956,6 +953,18 @@ class Ebay_Integration_Ebay_API {
 
 	}
 
+
+	function confirmPhotoAdd($params, $files) {
+		
+		$return = [];
+
+		foreach($files as $file){
+			$return = $file;
+		}
+
+		return $return;
+
+	}
 
 	// EBAY ROUTINES
 
