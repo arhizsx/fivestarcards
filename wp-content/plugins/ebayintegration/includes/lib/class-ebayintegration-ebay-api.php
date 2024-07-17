@@ -324,7 +324,7 @@ class Ebay_Integration_Ebay_API {
 
 		elseif( $params["action"] == "confirmPhotoAdd"){
 
-			return  $params->get_file_params();
+			return  $params;
 			
 		}
 
