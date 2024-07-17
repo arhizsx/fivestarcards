@@ -982,6 +982,7 @@ class Ebay_Integration_Ebay_API {
 			}
 
 		}
+
 		$query = "
 		SELECT * 
 		FROM  grading
@@ -989,8 +990,11 @@ class Ebay_Integration_Ebay_API {
 
 
 		$result = $this->wpdb->get_results ($query);				
+		$data = json_decode($result->data, true);
 
-		return $result;
+		$data["file"] = $uploads;
+
+		return $data;
 
 		return ["error"=> false, "uploads" => $uploads, "params" => $params];
 
