@@ -12,10 +12,10 @@ order by id desc
 );
 
 ?>
-<button class="btn btn-sm btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
+<button class="btn btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
     Log Card
 </button>
-<button class="btn btn-sm btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
+<button class="btn btn-primary mb-3  ebayintegration-btn" data-action="show_ship_batch_modal">
     Ship Cards
 </button>
 <div class="table-responsive d-none d-lg-block">
