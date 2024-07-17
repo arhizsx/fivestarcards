@@ -435,6 +435,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
                 contentType: false,
                 success: function(resp){
 
+					console.log(resp);
+
                 },
                 error: function(){
                     console.log("Error in AJAX");
