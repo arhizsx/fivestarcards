@@ -145,7 +145,9 @@
 
                                 $data = json_decode( $card->data, true );
 
-                                print_r($data);
+                                if(array_key_exists("file", $data)){
+                                    print_r($data);
+                                }
 
                     ?>
                     <tr class='consigned_item_row' data-id='<?php echo $card->id; ?>'>
