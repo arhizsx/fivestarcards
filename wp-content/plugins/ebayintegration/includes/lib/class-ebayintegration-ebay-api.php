@@ -230,6 +230,9 @@ class Ebay_Integration_Ebay_API {
 
 		$params = $data->get_params();
 
+		return $data;
+
+
 		if( $params["action"] == "confirmAddConsign"){
 			return $this->confirmAddConsign( $params );
 		}
