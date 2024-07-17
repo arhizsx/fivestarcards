@@ -982,8 +982,9 @@ class Ebay_Integration_Ebay_API {
 				} 
 
 
-				$v["fileName"] = $fileName;
-				$v["file"] = $k;
+				$v["filelink"] = $upload_folder . "/cards/" . $fileName;
+				$v["filename"] = $fileName;
+				$v["upload_label"] = $k;
 				$v["filesize"] = $filesize;
 				
 				$uploads[] = $v;
