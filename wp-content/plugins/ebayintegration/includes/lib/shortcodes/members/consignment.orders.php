@@ -40,7 +40,7 @@ if(  $type == "cards" ){
 }
 ?>
 
-<div class="table-responsive  d-none d-lg-block">
+<div class="table-responsive">
 
 <?php 
     if( $show == 'cards' ){
