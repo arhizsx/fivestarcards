@@ -960,7 +960,8 @@ class Ebay_Integration_Ebay_API {
 
 		foreach($files as $k => $v){
 
-			$return[ $k ] = $v;
+			$v["file"] = $k;
+			$return[] = $v;
 
 		}
 
