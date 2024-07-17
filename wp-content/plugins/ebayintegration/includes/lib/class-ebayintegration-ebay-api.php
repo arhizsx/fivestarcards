@@ -992,7 +992,7 @@ class Ebay_Integration_Ebay_API {
 		$result = $this->wpdb->get_results ($query);				
 		$data = json_decode($result->data, true);
 
-		return $result;
+		return $result[0];
 
 		$data["file"] = $uploads;
 
