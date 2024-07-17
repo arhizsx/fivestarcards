@@ -105,14 +105,14 @@ function ActivateListing($page){
         if( $page == "auction" ){
             return "btn-primary";
         } else {
-            return "btn-secondary";
+            return "btn-outline-dark";
         }
     } 
     else {
         if( $page == $_GET['type'] ){
             return "btn-primary";
         } else {
-            return "btn-secondary";
+            return "btn-outline-dark";
         }
     }
 }
