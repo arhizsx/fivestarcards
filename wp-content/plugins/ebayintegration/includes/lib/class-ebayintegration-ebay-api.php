@@ -772,7 +772,7 @@ class Ebay_Integration_Ebay_API {
 			
 			$data["id"] = $lastid;
 			$data["user_id"] = $user_id;
-			
+
 			$params["db_id"] = $lastid;
 
 			// OLD CODE
@@ -781,7 +781,7 @@ class Ebay_Integration_Ebay_API {
 	
 			$post_id = wp_insert_post([
 				'post_type' => 'cards-grading-card',
-				'post_title' => $user->display_name . " - " . $params["player_name"],
+				'post_title' => $user->display_name . " - " . $params["player"],
 				'post_status' => 'publish'
 			]);
 	
