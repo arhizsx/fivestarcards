@@ -234,8 +234,8 @@
                             </div>
                         </div>          
                         <div class="text-end">
-                            <button class="btn btn-danger ebayintegration-btn" data-action="messageUser"  data-user_id="">Message</button>
-                            <button class="btn btn-danger ebayintegration-btn" data-action="loginToAccount"  data-user_id="">Login to Account</button>
+                            <button class="btn btn-outline-dark ebayintegration-btn" data-action="messageUser"  data-user_id="">Message</button>
+                            <button class="btn btn-outline-dark ebayintegration-btn" data-action="loginToAccount"  data-user_id="">Login to Account</button>
                             <button class="btn btn-danger ebayintegration-btn" data-action="deactivateMember"  data-user_id="">Deactivate</button>
                             <button class="btn btn-primary ebayintegration-btn" data-action="saveMemberDetailsChanges" data-user_id="">Save Changes</button>
                         </div>
