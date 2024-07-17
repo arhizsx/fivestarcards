@@ -978,7 +978,7 @@ class Ebay_Integration_Ebay_API {
 
 
 
-				$v["baseurl"] = "wp-content/uploads/cards/" . $fileName;
+				$v["baseurl"] = "/wp-content/uploads/cards/" . $fileName;
 				$v["filename"] = $fileName;
 				$v["upload_label"] = $k;
 				$v["filesize"] = $filesize;
