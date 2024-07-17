@@ -431,6 +431,7 @@
 
                                 <input type="hidden" name="user_id" value="<?php echo get_current_user_id(); ?>">
                                 <input type="hidden" name="card_id" value="">
+                                <input type="hidden" name="action" value="confirmPhotoAdd">
 
                                 <label>Select Card Photo</label>
                                 <input type="file" name="card_photo" class="form-control mb-3 checker" data-checker="required">
