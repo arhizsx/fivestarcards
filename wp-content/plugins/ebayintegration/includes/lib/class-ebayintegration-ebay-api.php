@@ -229,8 +229,7 @@ class Ebay_Integration_Ebay_API {
 	public function handle_api_post_endpoint( $data ){
 
 		$params = $data->get_params();
-
-		return $data->get_file_params();
+		$files =  $data->get_file_params();
 
 
 		if( $params["action"] == "confirmAddConsign"){
@@ -327,7 +326,7 @@ class Ebay_Integration_Ebay_API {
 
 		elseif( $params["action"] == "confirmPhotoAdd"){
 
-			return  $params;
+			return  $files;
 			
 		}
 
