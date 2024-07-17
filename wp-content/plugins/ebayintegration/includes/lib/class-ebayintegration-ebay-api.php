@@ -969,6 +969,7 @@ class Ebay_Integration_Ebay_API {
 			$fileName = $k . '-' . rand( time() , 1000 ) . '-' . $v["name"];
 
 			$file = file_get_contents( $v["tmp_name"] );
+			$v["fileName"] = $fileName;
 
 			file_put_contents( $upload_folder."/cards/".$fileName, $file );
 
