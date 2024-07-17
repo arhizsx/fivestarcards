@@ -959,19 +959,27 @@ class Ebay_Integration_Ebay_API {
 		$return = [];
 		$upload_folder = wp_get_upload_dir();
 		$upload_folder = $upload_folder["basedir"];
+		$allowed_extensions = ["image/jpeg", "image/png"];
 
 		foreach($files as $k => $v){
 
-			$v["file"] = $k;
-			$return[] = $v;
-
 			$extension = $v["type"];			
-			$fileName = $k . '-' . rand( time() , 1000 ) . '-' . $v["name"];
 
-			$file = file_get_contents( $v["tmp_name"] );
-			$v["fileName"] = $fileName;
+			if( in_array( $extension, $allowed_extensions ) ){
 
-			file_put_contents( $upload_folder."/cards/".$fileName, $file );
+				$fileName = $k . '-' . $v["user_id"] . "-" . $v["card_id"] . "-" . rand( time() , 1000 );
+
+				$file = file_get_contents( $v["tmp_name"] );
+	
+				$upload_status = file_put_contents( $upload_folder."/cards/".$fileName, $file );
+
+				$v["fileName"] = $fileName;
+				$v["file"] = $k;
+				$v["upload_status"] = $upload_status;
+				
+				$return[] = $v;
+		
+			}
 
 		}
 
