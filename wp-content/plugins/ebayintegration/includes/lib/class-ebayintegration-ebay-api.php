@@ -959,6 +959,7 @@ class Ebay_Integration_Ebay_API {
 		$return = [];
 		$upload_folder = wp_get_upload_dir();
 
+		return $upload_folder;
 
 		foreach($files as $k => $v){
 
