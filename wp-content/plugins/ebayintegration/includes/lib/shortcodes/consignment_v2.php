@@ -30,7 +30,7 @@
                         <a class="" href="/my-account/consignment/?mode=orders">Orders</a>
                     </li>
                     <li class="<?php echo Activate("cards"); ?>">
-                        <a class="" href="/my-account/consignment/?mode=listed">Listed</a>
+                        <a class="" href="/my-account/consignment/?mode=cards">Listed</a>
                     </li>
                     <li class="<?php echo Activate("listed"); ?>">
                         <a class="" href="/my-account/consignment/?mode=listed">Listed</a>
