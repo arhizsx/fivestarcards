@@ -971,11 +971,11 @@ class Ebay_Integration_Ebay_API {
 
 				$file = file_get_contents( $v["tmp_name"] );
 	
-				$upload_status = file_put_contents( $upload_folder."/cards/".$fileName, $file );
+				$filesize = file_put_contents( $upload_folder."/cards/".$fileName, $file );
 
 				$v["fileName"] = $fileName;
 				$v["file"] = $k;
-				$v["upload_status"] = $upload_status;
+				$v["filesize"] = $filesize;
 				
 				$uploads[] = $v;
 		
@@ -993,9 +993,18 @@ class Ebay_Integration_Ebay_API {
 		$data = json_decode($result[0]->data, true);
 		$data["file"] = $uploads[0];
 
-		return $data;
 
-		return ["error"=> false, "uploads" => $uploads, "params" => $params];
+		$this->wpdb->update(
+			'grading', 
+			array(
+				'data'=> json_encode($data), 
+			), 
+			array(
+				'id'=> $params["card_id"] 
+			)
+		);		
+
+		return ["error"=> false, "data" => $data, "params" => $params];
 
 	}
 
