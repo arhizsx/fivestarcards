@@ -617,7 +617,9 @@
 <?php
     } else {
 
-        if( ! isset( $_GET["grader"] ) || $_GET["grader"] == "psa"  ){
+        if( get_current_user_id() == 1 ){
+
+            if( ! isset( $_GET["grader"] ) || $_GET["grader"] == "psa"  ){
 ?>
     <div class="row mx-3 mb-3">
         <div class="col-12">
@@ -731,7 +733,7 @@
     </div>
 <?php
         } 
-        elseif( isset( $_GET["grader"] ) && $_GET["grader"] == "sgc"  ){
+            elseif( isset( $_GET["grader"] ) && $_GET["grader"] == "sgc"  ){
 ?>
     <div class="row mx-3">
         <div class="col-12">
@@ -762,7 +764,8 @@
             </table>
         </div>    
     </div>
-<?php            
+<?php    
+            }
         }
     }
 ?>
