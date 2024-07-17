@@ -958,7 +958,7 @@ class Ebay_Integration_Ebay_API {
 		
 		$return = [];
 		$upload_folder = wp_get_upload_dir();
-		$upload_folder = $upload_folder["path"];
+		$upload_folder = $upload_folder["basedir"];
 
 		foreach($files as $k => $v){
 
@@ -972,7 +972,7 @@ class Ebay_Integration_Ebay_API {
 
 			file_put_contents( $fileName, $file );
 
-			return move_uploaded_file($fileName, $upload_folder);
+			return move_uploaded_file($fileName, $upload_folder."/cards");
 
 		}
 
