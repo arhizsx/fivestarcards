@@ -146,7 +146,7 @@
                                 $data = json_decode( $card->data, true );
 
                                 if(array_key_exists("file", $data)){
-                                    print_r($data["file"]);
+                                    print_r($data["file"]["baseurl"]);
                                 }
 
                     ?>
