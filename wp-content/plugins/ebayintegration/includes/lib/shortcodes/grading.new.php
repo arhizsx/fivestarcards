@@ -177,7 +177,7 @@
                         }
                     ?>  
                 </tbody>
-                <tfoot>
+                <!-- <tfoot>
                     <tr>
                         <th colspan='7' class="text-end">Total DV</th>
                         <th colspan='1' class="text-end">$0.00</th>
@@ -186,7 +186,7 @@
                         <th colspan='7' class="text-end">Grading Charge</th>
                         <th colspan='1' class="text-end">$0.00</th>
                     </tr>
-                </tfoot>        
+                </tfoot>         -->
             </table>
         </div>
 
@@ -287,7 +287,7 @@
                         }
                     ?>
                 </tbody>
-                <tfoot>
+                <!-- <tfoot>
                     <tr>
                         <th>Total DV</th>
                         <th class="text-end">$0.00</th>
@@ -296,7 +296,7 @@
                         <th>Grading Charge</th>
                         <th class="text-end">$0.00</th>
                     </tr>
-                </tfoot>
+                </tfoot> -->
             </table>    
         </div>
 
