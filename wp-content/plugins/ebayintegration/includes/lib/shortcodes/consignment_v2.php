@@ -26,9 +26,6 @@
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
-                    <li class="<?php echo Activate("new"); ?>">
-                        <a class="" href="/my-account/consignment">New</a>
-                    </li>
                     <li class="<?php echo Activate("orders"); ?>">
                         <a class="" href="/my-account/consignment/?mode=orders">Orders</a>
                     </li>
@@ -39,7 +36,6 @@
                 <div class="d-lg-none p-3">
                     <label>Select Consignment Status</label>
                     <select class="form-control" id="mobile_tab_select">
-                        <option value="/my-account/consignment" <?php echo ActivateSelect("new") ?>>New</option>
                         <option value="/my-account/consignment?mode=orders" <?php echo ActivateSelect("orders") ?>>Orders</option>
                         <option value="/my-account/consignment?mode=listed" <?php echo ActivateSelect("listed") ?>>Listed</option>
                     </select>
@@ -51,7 +47,7 @@
                         include( plugin_dir_path( __FILE__ ) . "members/consignment." . $_GET['mode'] . '.php' );			
 
                     } else {
-                        include( plugin_dir_path( __FILE__ ) . 'members/consignment.new.php' );			
+                        include( plugin_dir_path( __FILE__ ) . 'members/consignment.orders.php' );			
 
                     }
                     ?>
