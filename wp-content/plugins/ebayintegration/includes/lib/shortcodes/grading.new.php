@@ -208,6 +208,15 @@
                     <?php 
                         } else {
                             foreach( $consignment as $card ){
+
+                            $data = json_decode( $card->data, true );
+
+                            if(array_key_exists("file", $data)){
+                                $img = "<img src='" . ($data["file"]["baseurl"]) . "'>";
+                            } else {
+                                $img = '<i class="fa-solid fa-file-image fa-2x"></i>';
+                            }
+
                     ?>
                     <tr class='consigned_item_row' data-id='<?php echo $card->id; ?>'>
                         <td colspan="2">
