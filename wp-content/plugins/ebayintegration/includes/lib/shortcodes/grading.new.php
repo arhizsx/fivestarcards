@@ -619,7 +619,7 @@
 <?php
     } else {
 
-        if( get_current_user_id() == 1 ){
+        if( get_current_user_id() != 0 ){
 
             if( ! isset( $_GET["grader"] ) || $_GET["grader"] == "psa"  ){
 ?>
