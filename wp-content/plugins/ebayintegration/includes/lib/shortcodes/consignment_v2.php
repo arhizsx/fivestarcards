@@ -37,6 +37,7 @@
                     <label>Select Consignment Status</label>
                     <select class="form-control" id="mobile_tab_select">
                         <option value="/my-account/consignment?mode=orders" <?php echo ActivateSelect("orders") ?>>Orders</option>
+                        <option value="/my-account/consignment?mode=orders" <?php echo ActivateSelect("cards") ?>>Cards</option>
                         <option value="/my-account/consignment?mode=listed" <?php echo ActivateSelect("listed") ?>>Listed</option>
                     </select>
                 </div>
