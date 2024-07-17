@@ -768,7 +768,7 @@
             }
         } else {
 ?>
-    <H1>Coming Soong</H1>
+    <H1 style="color: black;">Coming Soon</H1>
     <a href="/grading">Log Cards for Grading</a>
 <?php 
         }
