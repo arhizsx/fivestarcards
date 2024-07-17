@@ -322,6 +322,12 @@ class Ebay_Integration_Ebay_API {
 			return $this->confirmGradingTableCheckout( $params );
 		}		
 
+		elseif( $params["action"] == "confirmPhotoAdd"){
+
+			return  $params->get_file_params();
+			
+		}
+
 		else {
 			return $params;
 		}		
