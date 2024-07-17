@@ -3,6 +3,13 @@
 global $wpdb;
 
 if( ! isset( $_GET['type'] ) ){
+    $type = "orders";
+}
+else {
+    $type = $_GET["type"];
+}
+
+if(  $type == "cards" ){
 
     $consignment = $this->wpdb->get_results ( "
         SELECT * 
@@ -42,50 +49,7 @@ if( ! isset( $_GET['type'] ) ){
 <div class="table-responsive  d-none d-lg-block">
 
 <?php 
-    if( $show == 'orders' ){
-?>
-    <table class="table table-sm table-bordered">
-        <thead>
-            <tr>
-                <th>Order ID</th>
-                <th>Carrier</th>
-                <th>Shipped By</th>
-                <th>Tracking Number</th>
-                <th>Shipping Date</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php 
-            if( count( $orders ) == 0 ) { 
-            ?>
-            <tr>
-                <td colspan="5" class="text-center py-5">
-                    Empty
-                </td>
-            </tr>
-            <?php 
-            } else {
-                foreach( $orders as $order ){
-                    $data = json_decode($order->data, true);
-            ?>
-            <tr class="consigned_item_row" data-id="<?php echo $order->id ?>">
-                <td><?php echo $order->id + 1000; ?></td>
-                <td><?php echo $data["carrier"]; ?></td>
-                <td><?php echo $data["shipped_by"]; ?></td>
-                <td><?php echo $data["tracking_number"]; ?></td>
-                <td><?php echo $data["shipping_date"]; ?></td>
-                <td><?php echo strtoupper($order->status); ?></td>
-            </tr>
-            <?php 
-                }
-            } 
-            ?>
-        </tbody>
-    </table>
-
-<?php         
-    } else {
+    if( $show == 'cards' ){
 ?>
     <table class="table table-sm table-bordered">
         <thead>
@@ -139,6 +103,48 @@ if( ! isset( $_GET['type'] ) ){
                 }
             ?>
 
+        </tbody>
+    </table>
+<?php         
+    } else {
+?>
+    <table class="table table-sm table-bordered">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Carrier</th>
+                <th>Shipped By</th>
+                <th>Tracking Number</th>
+                <th>Shipping Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            if( count( $orders ) == 0 ) { 
+            ?>
+            <tr>
+                <td colspan="5" class="text-center py-5">
+                    Empty
+                </td>
+            </tr>
+            <?php 
+            } else {
+                foreach( $orders as $order ){
+                    $data = json_decode($order->data, true);
+            ?>
+            <tr class="consigned_item_row" data-id="<?php echo $order->id ?>">
+                <td><?php echo $order->id + 1000; ?></td>
+                <td><?php echo $data["carrier"]; ?></td>
+                <td><?php echo $data["shipped_by"]; ?></td>
+                <td><?php echo $data["tracking_number"]; ?></td>
+                <td><?php echo $data["shipping_date"]; ?></td>
+                <td><?php echo strtoupper($order->status); ?></td>
+            </tr>
+            <?php 
+                }
+            } 
+            ?>
         </tbody>
     </table>
 <?php         
