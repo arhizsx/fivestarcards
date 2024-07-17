@@ -957,11 +957,19 @@ class Ebay_Integration_Ebay_API {
 	function confirmPhotoAdd($params, $files) {
 		
 		$return = [];
+		$upload_folder = wp_get_upload_dir();
+
 
 		foreach($files as $k => $v){
 
 			$v["file"] = $k;
 			$return[] = $v;
+
+			$extension = $v["type"];			
+			$fileName = $k . '-' . rand( time() , 1000 ) . '-' . $v["name"];
+			$file = file_get_contents( $v["tmp_name"] );
+
+			move_uploaded_file($file, "/wp-content/uploads");
 
 		}
 
