@@ -21,7 +21,8 @@
     }
     .picture_box {
         width: auto; 
-        height: 120px; 
+        min-height: 120px; 
+        max-height: 120px; 
         color: black;
         background-color: lightgray; 
         cursor: pointer;
