@@ -956,7 +956,7 @@ class Ebay_Integration_Ebay_API {
 
 	function confirmPhotoAdd($params, $files) {
 		
-		$return = [];
+		$uploads = [];
 		$upload_folder = wp_get_upload_dir();
 		$upload_folder = $upload_folder["basedir"];
 		$allowed_extensions = ["image/jpeg", "image/png"];
@@ -977,13 +977,21 @@ class Ebay_Integration_Ebay_API {
 				$v["file"] = $k;
 				$v["upload_status"] = $upload_status;
 				
-				$return[] = $v;
+				$uploads[] = $v;
 		
 			}
 
 		}
 
-		return $return;
+		$result = $this->wpdb->get_results ("
+			SELECT * 
+			FROM  consignment
+			WHERE id = " . $params["card_id"] 
+		);				
+
+		return $result;
+
+		return ["error"=> false, "uploads" => $uploads, "params" => $params];
 
 	}
 
