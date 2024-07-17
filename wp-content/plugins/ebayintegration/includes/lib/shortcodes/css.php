@@ -71,7 +71,7 @@
 
 function Activate($page){
     if( isset( $_GET['mode']) == false ){
-        if( $page == "new" ){
+        if( $page == "orders" ){
             return "active";
         }
     } 
@@ -86,7 +86,7 @@ function Activate($page){
 
 function ActivateSelect($page){
     if( isset( $_GET['mode']) == false ){
-        if( $page == "new" ){
+        if( $page == "orders" ){
             return "selected";
         }
     } 
