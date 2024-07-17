@@ -968,19 +968,14 @@ class Ebay_Integration_Ebay_API {
 
 			if( in_array( $extension, $allowed_extensions ) ){
 
-				$fileName = $k . '-' . $params["user_id"] . "-" . $params["card_id"] . "-" . rand( time() , 1000 );
+
+				$fileName = $k . '-' . $params["user_id"] . "-" . $params["card_id"] . "-" . rand( time() , 1000 ) . "" .  $v["name"];
 
 				$file = file_get_contents( $v["tmp_name"] );
 	
 				$filesize = file_put_contents( $upload_folder."/cards/".$fileName, $file );
 
 
-				if($extension == "image/jpeg"){
-					$fileName = $fileName . ".jpg";
-				} 
-				if($extension == "image/png"){
-					$fileName = $fileName . ".png";
-				} 
 
 
 				$v["baseurl"] = "wp-content/uploads/cards/" . $fileName;
