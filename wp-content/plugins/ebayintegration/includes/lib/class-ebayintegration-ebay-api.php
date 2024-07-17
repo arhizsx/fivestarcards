@@ -958,8 +958,10 @@ class Ebay_Integration_Ebay_API {
 		
 		$return = [];
 
-		foreach($files as $file){
-			$return[] = $file;
+		foreach($files as $k => $v){
+
+			$return[] = $v;
+			
 		}
 
 		return $return;
