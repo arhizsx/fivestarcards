@@ -967,7 +967,7 @@ class Ebay_Integration_Ebay_API {
 
 			if( in_array( $extension, $allowed_extensions ) ){
 
-				$fileName = $k . '-' . $v["user_id"] . "-" . $v["card_id"] . "-" . rand( time() , 1000 );
+				$fileName = $k . '-' . $params["user_id"] . "-" . $params["card_id"] . "-" . rand( time() , 1000 );
 
 				$file = file_get_contents( $v["tmp_name"] );
 	
