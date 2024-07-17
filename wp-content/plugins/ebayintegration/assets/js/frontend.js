@@ -435,7 +435,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
                 contentType: false,
                 success: function(resp){
 
-					console.log(resp);
+					console.log(resp.data.file.baseurl);
 
                 },
                 error: function(){
