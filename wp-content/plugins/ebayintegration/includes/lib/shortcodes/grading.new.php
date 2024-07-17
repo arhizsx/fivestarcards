@@ -146,7 +146,9 @@
                                 $data = json_decode( $card->data, true );
 
                                 if(array_key_exists("file", $data)){
-                                    print_r($data["file"]["baseurl"]);
+                                    $img = "<img src='"($data["file"]["baseurl"]) ."'>";
+                                } else {
+                                    $img = '<i class="fa-solid fa-file-image fa-2x"></i>';
                                 }
 
                     ?>
@@ -158,7 +160,7 @@
                         </td>
                         <td style="width: 100px; padding: 0px;">
                             <div class="d-flex justify-content-center align-items-center picture_box ebayintegration-btn" data-action="grading_picture_box_click"  data-id='<?php echo $card->id ?>'  data-user_id="<?php echo get_current_user_id(); ?>">
-                                <i class="fa-solid fa-file-image fa-2x"></i>
+                               <?php echo $img ?>
                             </div>
                         </td>
                         <td><?php echo $data["player"] ?></td>
