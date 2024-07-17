@@ -984,13 +984,13 @@ class Ebay_Integration_Ebay_API {
 		}
 		$query = "
 		SELECT * 
-		FROM  consignment
+		FROM  grading
 		WHERE id = " . $params["card_id"] ;
 
-		return $query;
 
 		$result = $this->wpdb->get_results ($query);				
 
+		return $result;
 
 		return ["error"=> false, "uploads" => $uploads, "params" => $params];
 
