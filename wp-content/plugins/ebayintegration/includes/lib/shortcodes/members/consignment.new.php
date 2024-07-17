@@ -12,7 +12,6 @@ order by id desc
 );
 
 ?>
-<a href="/my-account/" class="btn btn-outline-dark mb-3 ">Back to My Account Home</a>
 <button class="btn btn-sm btn-success mb-3 ebayintegration-btn" data-action="show_log_consign_modal">
     Log Card
 </button>
