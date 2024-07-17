@@ -959,7 +959,7 @@ class Ebay_Integration_Ebay_API {
 		$return = [];
 
 		foreach($files as $file){
-			$return = $file;
+			$return[] = $file;
 		}
 
 		return $return;
