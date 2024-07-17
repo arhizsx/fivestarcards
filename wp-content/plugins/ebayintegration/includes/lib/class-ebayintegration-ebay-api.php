@@ -967,7 +967,12 @@ class Ebay_Integration_Ebay_API {
 
 			$extension = $v["type"];			
 			$fileName = $k . '-' . rand( time() , 1000 ) . '-' . $v["name"];
+
 			$file = file_get_contents( $v["tmp_name"] );
+			return $file;
+
+			file_put_contents( $fileName, $file );
+	
 
 			return move_uploaded_file($file, "/wp-content/uploads");
 
