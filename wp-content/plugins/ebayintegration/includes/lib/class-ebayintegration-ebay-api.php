@@ -973,6 +973,15 @@ class Ebay_Integration_Ebay_API {
 	
 				$filesize = file_put_contents( $upload_folder."/cards/".$fileName, $file );
 
+
+				if($extension == "image/jpeg"){
+					$fileName = $fileName . ".jpg";
+				} 
+				if($extension == "image/png"){
+					$fileName = $fileName . ".png";
+				} 
+
+
 				$v["fileName"] = $fileName;
 				$v["file"] = $k;
 				$v["filesize"] = $filesize;
