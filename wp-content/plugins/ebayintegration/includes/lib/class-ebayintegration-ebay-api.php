@@ -970,7 +970,7 @@ class Ebay_Integration_Ebay_API {
 
 			$file = file_get_contents( $v["tmp_name"] );
 
-			return file_put_contents( $upload_folder."/cards/".$fileName, $file );
+			file_put_contents( $upload_folder."/cards/".$fileName, $file );
 
 		}
 
