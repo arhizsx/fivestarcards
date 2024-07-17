@@ -84,7 +84,7 @@
                 }
             ?>
             <H2 style="color: black;">Members (<?php echo $total_users;?>)</H2>    
-            <button class="btn btn-outline-dark ebayintegration-btn" data-action="newMember"  data-user_id="">New Member</button>
+            <button class="btn btn-outline-dark mb-3 ebayintegration-btn" data-action="newMember"  data-user_id="">New Member</button>
         
         </div>
         <div class="col-6 text-end">
