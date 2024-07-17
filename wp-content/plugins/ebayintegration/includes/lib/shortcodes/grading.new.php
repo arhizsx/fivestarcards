@@ -148,7 +148,9 @@
                                 if(array_key_exists("file", $data)){
                                     $img = "<img src='" . ($data["file"]["baseurl"]) . "'>";
                                 } else {
-                                    $img = '<i class="fa-solid fa-file-image fa-2x"></i>';
+                                    $img = '<div class="d-flex justify-content-center align-items-center picture_box ebayintegration-btn" data-action="grading_picture_box_click"  data-id="' . $card->id . '"   data-user_id="' . get_current_user_id() . '">' .
+                                            '<i class="fa-solid fa-file-image fa-2x"></i>' . 
+                                        '</div>';
                                 }
 
                     ?>
@@ -159,9 +161,7 @@
                             </a>
                         </td>
                         <td style="width: 100px; padding: 0px;">
-                            <div class="d-flex justify-content-center align-items-center picture_box ebayintegration-btn" data-action="grading_picture_box_click"  data-id='<?php echo $card->id ?>'  data-user_id="<?php echo get_current_user_id(); ?>">
                                <?php echo $img ?>
-                            </div>
                         </td>
                         <td><?php echo $data["player"] ?></td>
                         <td><?php echo $data["year"] ?></td>
@@ -214,8 +214,11 @@
                             if(array_key_exists("file", $data)){
                                 $img = "<img src='" . ($data["file"]["baseurl"]) . "'>";
                             } else {
-                                $img = '<i class="fa-solid fa-file-image fa-2x"></i>';
-                            }
+                                $img = '<div class="d-flex justify-content-center align-items-center picture_box ebayintegration-btn" data-action="grading_picture_box_click"  data-id="' . $card->id . '"   data-user_id="' . get_current_user_id() . '">' .
+                                            '<i class="fa-solid fa-file-image fa-2x"></i>' . 
+                                        '</div>';
+
+                            }   
 
                     ?>
                     <tr class='consigned_item_row' data-id='<?php echo $card->id; ?>'>
@@ -270,9 +273,7 @@
                             <div class='row'>
                                 <div class='small text-secondary col-sm-4'>Photo</div>
                                 <div class='col-sm-8'>
-                                    <div class="d-flex justify-content-center align-items-center picture_box ebayintegration-btn" data-action="grading_picture_box_click"  data-id='<?php echo $card->id ?>'   data-user_id="<?php echo get_current_user_id(); ?>">
                                     <?php echo $img ?>
-                                    </div>                            
                                 </div>
                             </div>
                         </td>
