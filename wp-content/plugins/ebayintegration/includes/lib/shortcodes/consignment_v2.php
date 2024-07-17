@@ -29,6 +29,9 @@
                     <li class="<?php echo Activate("orders"); ?>">
                         <a class="" href="/my-account/consignment/?mode=orders">Orders</a>
                     </li>
+                    <li class="<?php echo Activate("cards"); ?>">
+                        <a class="" href="/my-account/consignment/?mode=listed">Listed</a>
+                    </li>
                     <li class="<?php echo Activate("listed"); ?>">
                         <a class="" href="/my-account/consignment/?mode=listed">Listed</a>
                     </li>
