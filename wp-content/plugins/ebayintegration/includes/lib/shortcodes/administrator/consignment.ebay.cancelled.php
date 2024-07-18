@@ -59,7 +59,7 @@ $users = get_users( $args );
                 <td>
                     <div class="title">
                         <?php
-                        print_r( $data);
+                        print_r( $data[0]["Title"]);
                         ?>
 
                         <strong><?php echo $ctr;  ?></strong>&nbsp;
