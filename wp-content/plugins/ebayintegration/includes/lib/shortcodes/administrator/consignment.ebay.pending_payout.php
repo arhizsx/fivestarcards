@@ -34,6 +34,7 @@ $users = get_users( $args );
         <thead>
             <tr>
                 <th>Item</th>
+                <th>eBay Pay Date</th>
                 <th class="text-end">Price Sold</th>
                 <th class="text-end">Action</th>
             </tr>
@@ -70,6 +71,9 @@ $users = get_users( $args );
                     <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
 
                     
+                </td>
+                <td class="">
+                    ebay
                 </td>
                 <td class="text-end">
                     $<?php 
