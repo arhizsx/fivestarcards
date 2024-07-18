@@ -310,7 +310,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <label>Message</label>
-                                <textarea rows="20" class="form-control"></textarea>
+                                <textarea rows="10" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
