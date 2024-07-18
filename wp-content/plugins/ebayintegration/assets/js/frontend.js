@@ -1224,7 +1224,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		console.log($(this).data());
 
-		console.log( element.data("user_id"));
+		console.log( element );
 
 	}	
 	
