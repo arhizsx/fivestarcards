@@ -1217,8 +1217,19 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		});		
 	
 	}
+
+	else if( jQuery(this).data("action") == "loginToAccount" ){		
+
+		console.log($(this).data());
+
+	}	
 	
-	
+	else if( jQuery(this).data("action") == "messageUser" ){		
+
+		console.log($(this).data());
+
+	}	
+
 	else {
 
 		console.log("Action Not Set: " + jQuery(this).data("action") );
