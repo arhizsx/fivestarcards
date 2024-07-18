@@ -1376,6 +1376,7 @@ class Ebay_Integration_Ebay_API {
 									'ebay', 
 									array(
 										'data'=> json_encode($item), 
+										'sku' => $SKU,
 										'status'=>$itemstatus,
 									), 
 									array(
@@ -1391,6 +1392,7 @@ class Ebay_Integration_Ebay_API {
 								'ebay', 
 								array(
 									'data'=> json_encode($item), 
+									'sku' => $SKU,
 									'status'=>$itemstatus,
 								), 
 								array(
