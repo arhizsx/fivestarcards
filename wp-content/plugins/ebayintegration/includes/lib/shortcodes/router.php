@@ -148,6 +148,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'administrator.members.php');			
             break;
 
+        case "refresh":
+
+			include( plugin_dir_path( __FILE__ ) . 'refresh.php');			
+            break;
+
         default:
 
             echo "Shortcode Not Found";
