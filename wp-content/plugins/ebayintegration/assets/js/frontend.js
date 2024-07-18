@@ -1350,6 +1350,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		
 	else if( jQuery(this).data("action") == "refreshToken" ){		
 
+		$(document).find(".pagebox").html("");
+
+
 		jQuery.ajax({
 			method: 'get',
 			url: "/wp-json/ebayintegration/v1/ajax?action=refreshToken",
