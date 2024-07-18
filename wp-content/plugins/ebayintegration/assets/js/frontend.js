@@ -1281,6 +1281,15 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		jQuery(document).find(".member_info_modal").prependTo('body').modal("show");
 
 	}
+
+	else if( jQuery(this).data("action") == "sendUserMessage" ){	
+		
+		$(document).find(".message_user_modal").find(".formbox").addClass("d-none");
+		$(document).find(".message_user_modal").find(".loading").removeClass("d-none");
+		
+
+	}
+	
 	
 
 	else {
