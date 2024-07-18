@@ -1346,6 +1346,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	
 				} else {
 
+
+					$(document).find(".new_user_modal").find(".formbox").find(".error").removeClass("d-none");
+
 					$(document).find(".new_user_modal").find(".loading").addClass("d-none");
 					$(document).find(".new_user_modal").find(".formbox").removeClass("d-none");
 
