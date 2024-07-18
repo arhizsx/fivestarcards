@@ -1362,13 +1362,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 						console.log( resp );
 
 						if( resp.error == false ){
-							
+
 							var i = 0;
 							for( i = 1; i < resp.pages; i++ ){
 
 								$(document).find("#active").find(".pagebox").append(
 									"<button " +
-										"class='ebayintegration-btn form-control btn btn-primary mb-3' " +
+										"class='ebayintegration-btn btn btn-primary mb-3' " +
 										"data-action='refreshActive'  " +
 										"data-page='" + i + "'> " +
 										i +
