@@ -1298,7 +1298,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			contentType: false,
 			success: function(resp){
 
-				console.log(resp);
+				$(document).find(".message_user_modal").modal("hide");
+				jQuery(document).find(".member_info_modal").prependTo('body').modal("show");
+				
 			},
 			error: function(){
 				console.log("Error in AJAX");
