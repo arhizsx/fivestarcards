@@ -1415,6 +1415,11 @@ function refreshPage( status, page ){
 				$(document).find( "#" + status ).find(".pagebox")
 					.find(".ebayintegration-btn[data-action='refreshPage'][data-page='" + resp.current_page + "']").remove();
 
+
+				if( $(document).find( "#" + status ).find(".pagebox").find(".ebayintegration-btn[data-action='refreshPage']").length == 0 ){
+					$(document).find( "#" + status ).find(".pagebox").append("Done");					
+				}
+
 			}
 
 		},
