@@ -66,6 +66,7 @@ $users = get_users( $args );
         <thead>
             <tr>
                 <th>Item</th>
+                <th>Paid Out Date</th>
                 <th class="text-end">Amount Paid</th>
             </tr>
         </thead>
@@ -99,7 +100,9 @@ $users = get_users( $args );
                     <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
 
                     
-                </td>                
+                </td>       
+                <td class="">
+                </td>
                 <td class="text-end">
                     $<?php 
                     echo number_format(( $data["TransactionPrice"]), 2, '.', ',');
