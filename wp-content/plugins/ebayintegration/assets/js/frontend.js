@@ -1224,11 +1224,47 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	else if( jQuery(this).data("action") == "loginToAccount" ){		
 		console.log( element.data() );
+
+		jQuery.ajax({
+			method: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: { 
+				action: "loginToAccount",
+				data: element.data()
+			},
+			success: function(resp){	
+
+				console.log(resp);
+				
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});		
+
 	}	
 	
 	else if( jQuery(this).data("action") == "messageUser" ){		
 
 		console.log( element.data() );
+
+		jQuery.ajax({
+			method: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: { 
+				action: "messageUser",
+				data: element.data()
+			},
+			success: function(resp){	
+
+				console.log(resp);
+				
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});		
+
 
 	}	
 
