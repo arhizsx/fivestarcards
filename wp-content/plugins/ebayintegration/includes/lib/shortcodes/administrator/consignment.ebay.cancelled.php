@@ -43,6 +43,8 @@ $users = get_users( $args );
             foreach($ebay as $item){ 
 
                 $data = json_decode($item->data, true);
+
+                    
                     $ctr++;
             ?>
             <?php 
@@ -56,6 +58,10 @@ $users = get_users( $args );
             <tr class="ebay_card_row" data-id="<?php echo $item->id ?>" <?php echo $setStyle; ?>>
                 <td>
                     <div class="title">
+                        <?php
+                        print_r( $data);
+                        ?>
+
                         <strong><?php echo $ctr;  ?></strong>&nbsp;
                         <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
                             <?php print_r( $data["Item"]["Title"] ); ?>
