@@ -1235,7 +1235,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			success: function(resp){	
 
 				console.log("Reloading");
-				window.location.replace("http://www.google.com");
+				window.location.replace("/");
 				
 			},
 			error: function(){
