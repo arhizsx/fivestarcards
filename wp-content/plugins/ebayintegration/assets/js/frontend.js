@@ -1300,12 +1300,19 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				$(document).find(".message_user_modal").modal("hide");
 				jQuery(document).find(".member_info_modal").prependTo('body').modal("show");
-				
+
 			},
 			error: function(){
 				console.log("Error in AJAX");
 			}
 		});
+
+
+	}
+	
+	else if( jQuery(this).data("action") == "newMember" ){		
+
+		jQuery(document).find(".new_user_modal").prependTo('body').modal("show");
 
 
 	}

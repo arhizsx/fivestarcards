@@ -337,3 +337,47 @@
 		</div>
 	</div>
 </div>
+
+
+<div class="modal fade new_user_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 0px; z-index: 99999">
+	<div class="modal-dialog modal-xl" id="dxmodal">
+		<div class="modal-content modal-ajax">
+			<div class="modal-header bg-primary text-white">
+				<strong>New Member</strong>
+    			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+			</div>
+            <div class="modal-body py-3 px-3">
+                <div class="formbox">
+                    <form id="message_user_form">
+                    <div class="border p-3 mb-3">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="hidden" value="messageUser" name="action" />
+                                <label>Display Name</label>
+                                <input type="text" name="display_name" class="form-control p-2 mb-3" value="">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Nickname</label>
+                                <input type="text" name="nickaname" class="form-control p-2 mb-3" value="">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Email</label>
+                                <input type="text" name="user_email" class="form-control p-2 mb-3" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <button class="btn btn-outline-dark ebayintegration-btn" data-action="cancelSendMessage"  data-user_id="">Cancel</button>
+                        <button class="btn btn-success ebayintegration-btn" data-action="sendUserMessage"  data-user_id="">Register User</button>
+                    </div>
+                    </form>
+                </div>
+                <div class="d-none p-5 text-center loading">
+
+                    Registering user message, please wait...
+
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
