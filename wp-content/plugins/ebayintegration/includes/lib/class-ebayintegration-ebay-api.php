@@ -365,7 +365,7 @@ class Ebay_Integration_Ebay_API {
 		if( is_numeric($user_id ) ){
 			return ["error" => false, "user_id" => $user_id];
 		} else {
-			return ["error" => false, "message" => "Failed Creating New User"];
+			return ["error" => true, "message" => "Failed Creating New User"];
 		}
 
 	}
