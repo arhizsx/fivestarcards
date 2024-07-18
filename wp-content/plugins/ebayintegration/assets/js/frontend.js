@@ -1220,7 +1220,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	else if( jQuery(this).data("action") == "loginToAccount" ){		
 
+		var user_id = $(document).find(".member_details_box").find("[name='customer_number']").val();
+
 		console.log($(this).data());
+
+		console.log( element.data("user_id"));
 
 	}	
 	
