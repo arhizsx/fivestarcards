@@ -298,6 +298,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                             where id = " . $card["db_id"]
                         );
 
+                        print_r($db_card);
 
                             $db_card_data = json_decode( $db_card["data"], true );
 
