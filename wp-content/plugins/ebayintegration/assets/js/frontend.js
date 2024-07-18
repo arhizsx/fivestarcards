@@ -1375,6 +1375,15 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	
 	}
 
+	else if( jQuery(this).data("action") == "refreshStatus" ){		
+
+		var status = element.data("status");
+		var page = element.data("page");		
+
+		refreshPage(status, page);
+
+	}
+	
 	else {
 
 		console.log("Action Not Set: " + jQuery(this).data("action") );
@@ -1384,6 +1393,34 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 });
 
 // REFRESH ACTIONS 
+
+function refreshPage( status, page ){
+
+	$(document).find( "#" + status ).find(".pagebox").addClass("d-none");
+	$(document).find( "#" + status ).find(".loading").removeClass("d-none");
+
+	var url =  "/wp-json/ebayintegration/v1/ajax?action=getEbayItems&type=" + status + "&page=" + page
+
+	jQuery.ajax({
+		method: 'get',
+		url: url,
+		success: function(resp){		
+			console.log( resp );
+
+			if( resp.error == false ){
+
+				$(document).find( "#" + status ).find(".pagebox").removeClass("d-none");
+				$(document).find( "#" + status ).find(".loading").addClass("d-none");			
+
+			}
+
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
+}
 
 function refreshStatus(status, btn_color, page = null) {
 
