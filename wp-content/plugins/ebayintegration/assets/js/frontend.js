@@ -1364,7 +1364,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 						if( resp.error == false ){
 
 							var i = 0;
-							for( i = 1; i < resp.pages; i++ ){
+							for( i = 1; i <= resp.pages; i++ ){
 
 								$(document).find("#active").find(".pagebox").append(
 									"<button " +
