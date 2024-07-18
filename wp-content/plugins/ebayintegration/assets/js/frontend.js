@@ -1325,7 +1325,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".new_user_modal").find(".formbox").addClass("d-none");
 		$(document).find(".new_user_modal").find(".loading").removeClass("d-none");
 
-		let form = new FormData( $(document).find(".message_user_modal").find("#message_user_form")[0] );
+		let form = new FormData( $(document).find(".new_user_modal").find("#register_user_form")[0] );
 
 		$.ajax({
 			type: 'post',
