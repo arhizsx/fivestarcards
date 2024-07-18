@@ -295,7 +295,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                         $db_card = $this->wpdb->get_results ( "
                             SELECT * 
                             FROM  grading
-                            where id = " . $card["db_id"]
+                            where id = 274"
                         );
                     ?>
                     <td>image</td>
