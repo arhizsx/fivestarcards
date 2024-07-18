@@ -297,7 +297,10 @@ $processed_status = array("Processing Order", "Cards Graded");
                             FROM  grading
                             where id = " . $card["db_id"]
                         );
-                        print_r($db_card);
+
+                        if( count( $db_card ) > 0 ){
+                            print_r($db_card["file"]);
+                        }
                     ?>
                     <td>image</td>
                     <td><?php echo $post->ID; ?></td>
