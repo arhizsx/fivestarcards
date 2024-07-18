@@ -5,19 +5,19 @@
 </div>
 <div class="row">
     <div class="col-xl-3" id="active">
-        <button class="ebayintegration-btn form-control btn btn-primary mb-3" data-action="refreshActive">Active</button>
+        <H3>Active</H3>
         <div class="pagebox"></div>
     </div>
     <div class="col-xl-3" id="awaiting">
-        <button class="ebayintegration-btn form-control btn btn-warning mb-3" data-action="refreshAwaiting">Awaiting</button>
+        <H3>Awaiting</H3>
         <div class="pagebox"></div>
     </div>
     <div class="col-xl-3" id="sold">
-        <button class="ebayintegration-btn form-control btn btn-dark mb-3" data-action="refreshSold">Sold</button>
+        <H3>Sold</H3>
         <div class="pagebox"></div>
     </div>
     <div class="col-xl-3" id="unsold">
-        <button class="ebayintegration-btn form-control btn btn-danger mb-3" data-action="refreshUnsold">Unsold</button>
+        <H3>Unsold</H3>
         <div class="pagebox"></div>
     </div>
 </div>
