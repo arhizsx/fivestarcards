@@ -320,6 +320,10 @@
                             </div>
                         </div>
                     </div>
+                    <div class="text-end">
+                        <button class="btn btn-outline-dark ebayintegration-btn" data-action="cancelSendMessage"  data-user_id="">Cancel</button>
+                        <button class="btn btn-outline-dark ebayintegration-btn" data-action="showMessageUserModal"  data-user_id="">Send</button>
+                    </div>
                 </div>
                 <div class="d-none p-5 text-center loading">
 
