@@ -32,22 +32,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			
 	} 
 
-	else if( jQuery(this).data("action") == "refreshToken" ){
-
-		var token = refreshAccessToken();
-
-		$.when(token).done(function(response){
-
-			if( response["token_type"] == "User Access Token" ){
-				alert("New Access Token Generated");
-			} else {
-				alert("Failed Getting Access Token");
-			}
-	
-		});
-
-	}
-
 	// /////////////////// //
 	//  User SKUs Button   //
 	// /////////////////// //
@@ -1868,29 +1852,6 @@ function Checker(){
 //   eBay API functions   //
 // ////////////////////// //
 
-function refreshAccessToken(){
-
-	var defObject = $.Deferred();  // create a deferred object.
-
-	jQuery.ajax({
-		method: 'get',
-		url: "/wp-json/ebayintegration/v1/ajax",
-		data: { 
-			action: "refreshToken"
-		},
-		success: function(resp){
-
-			defObject.resolve(resp);    //resolve promise and pass the response.
-
-		},
-		error: function(){
-			console.log("Error in AJAX");
-		}
-	});
-
-	return defObject.promise();
-
-}
 
 function getItemPages(){
 
@@ -1916,66 +1877,66 @@ function getItemPages(){
 
 }
 
-function getItemsRoutine(){
+// function getItemsRoutine(){
 
-	var token = refreshAccessToken();
-	var items = [];
+// 	var token = refreshAccessToken();
+// 	var items = [];
 
-	jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").html(
-		'<tr>' +
-			'<td colspan="6" class="my-5 text-center">Getting Items From eBay</td>' +
-		'</tr>'
-	);
+// 	jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").html(
+// 		'<tr>' +
+// 			'<td colspan="6" class="my-5 text-center">Getting Items From eBay</td>' +
+// 		'</tr>'
+// 	);
 
-	$.when(token).done(function(response){
+// 	$.when(token).done(function(response){
 
-		console.log("Refreshed Access Token");
+// 		console.log("Refreshed Access Token");
 
-		if( response["token_type"] == "User Access Token" ){
+// 		if( response["token_type"] == "User Access Token" ){
 
-			console.log("Get Item Pages - GO");
+// 			console.log("Get Item Pages - GO");
 
-			var item_pages = getItemPages();
+// 			var item_pages = getItemPages();
 
-			$.when(item_pages).done( function(pages){
+// 			$.when(item_pages).done( function(pages){
 
-				var ListingDuration = [];
-				var ListingType = [];
-				var SKU = [];
+// 				var ListingDuration = [];
+// 				var ListingType = [];
+// 				var SKU = [];
 
-				$.each( items, function( k, v ){
+// 				$.each( items, function( k, v ){
 
-					if(jQuery.inArray( v.ListingDuration, ListingDuration) == -1)	{
-						ListingDuration.push(v.ListingDuration);
-					}					
+// 					if(jQuery.inArray( v.ListingDuration, ListingDuration) == -1)	{
+// 						ListingDuration.push(v.ListingDuration);
+// 					}					
 
-					if(jQuery.inArray( v.ListingType, ListingType) == -1)	{
-						ListingType.push(v.ListingType);
-					}					
+// 					if(jQuery.inArray( v.ListingType, ListingType) == -1)	{
+// 						ListingType.push(v.ListingType);
+// 					}					
 
-					if(jQuery.inArray( v.SKU, SKU) == -1){
-						SKU.push(v.SKU);
-					}					
+// 					if(jQuery.inArray( v.SKU, SKU) == -1){
+// 						SKU.push(v.SKU);
+// 					}					
 
-				});
+// 				});
 
-				jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").empty();
+// 				jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").empty();
 
-				jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").append( itemtemplate(pages.undefined_items) );
+// 				jQuery(document).find(".ebayintegration-items_box").find("#skus_table tbody").append( itemtemplate(pages.undefined_items) );
 				
 
-				$.each( pages.ebay_items, function( k, v ){
-					console.log( v.ItemID );
-				});
+// 				$.each( pages.ebay_items, function( k, v ){
+// 					console.log( v.ItemID );
+// 				});
 
 
-			});
+// 			});
 
-		}
+// 		}
 
-	});
+// 	});
 
-}
+// }
 
 function itemtemplate(data){
 
