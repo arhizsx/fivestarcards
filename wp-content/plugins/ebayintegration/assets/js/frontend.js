@@ -1320,7 +1320,24 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$(document).find(".new_user_modal").find(".formbox").addClass("d-none");
 		$(document).find(".new_user_modal").find(".loading").removeClass("d-none");
 
-		$(document).find(".new_user_modal").modal("hide");
+		let form = new FormData( $(document).find(".message_user_modal").find("#message_user_form")[0] );
+
+		$.ajax({
+			type: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: form,
+			enctype: 'multipart/form-data',
+			processData: false,
+			contentType: false,
+			success: function(resp){
+
+				$(document).find(".new_user_modal").modal("hide");
+
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});		
 
 
 	}
