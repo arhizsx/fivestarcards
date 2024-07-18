@@ -1356,10 +1356,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			success: function(resp){		
 
 				var status = 'active';
-				refreshStatus( status, "btn-danger" );
+				refreshStatus( status, "btn-success" );
 
 				var status = 'awaiting';
-				refreshStatus( status, "btn-danger" );
+				refreshStatus( status, "btn-warning" );
 
 				var status = 'sold';
 				refreshStatus( status, "btn-success" );
