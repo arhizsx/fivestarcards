@@ -354,7 +354,7 @@
             <div class="modal-body py-3 px-3">
                 <div class="formbox">                    
                     <form id="register_user_form">
-                    <div class="error d-none">
+                    <div class="error d-none mb-3 text-danger">
                         Error Creating New User
                     </div>
                     <div class="border p-3 mb-3">
