@@ -365,10 +365,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-end">
-                        <button class="btn btn-outline-dark"  data-bs-dismiss="modal">Cancel</button>
-                        <button class="btn btn-success ebayintegration-btn" data-action="sendUserMessage"  data-user_id="">Register User</button>
-                    </div>
                     </form>
                 </div>
                 <div class="d-none p-5 text-center loading">
@@ -376,6 +372,10 @@
                     Registering user message, please wait...
 
                 </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline-dark" data-bs-dismiss="modal" >Cancel</button>
+                <button class="btn btn-success ebayintegration-btn" data-action="sendUserMessage"  data-user_id="">Register User</button>
             </div>
 		</div>
 	</div>
