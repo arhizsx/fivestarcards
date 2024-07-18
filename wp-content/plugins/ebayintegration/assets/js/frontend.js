@@ -1356,7 +1356,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			success: function(resp){		
 
 				var status = 'active';
-				refreshStatus( status, "btn-success" );
+				refreshStatus( status, "btn-primary" );
 
 				var status = 'awaiting';
 				refreshStatus( status, "btn-warning" );
