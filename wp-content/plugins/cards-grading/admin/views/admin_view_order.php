@@ -298,9 +298,12 @@ $processed_status = array("Processing Order", "Cards Graded");
                             where id = " . $card["db_id"]
                         );
 
+
                         if( count( $db_card ) > 0 ){
-                            print_r($db_card);
-                            print_r($db_card);
+                            $db_card_data = json_decode( $db_card->data, true );
+
+                            print_r($db_card_data["file"]);
+                            print_r($db_card_data);
                         }
                     ?>
                     <td>image</td>
