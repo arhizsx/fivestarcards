@@ -1,5 +1,6 @@
 <?php
 
+global $wpdb;
 
 $checkout_post = get_post($params['order_number']);
 $checkout_meta = get_post_meta($checkout_post->ID);
@@ -290,6 +291,14 @@ $processed_status = array("Processing Order", "Cards Graded");
                         <?php } ?>
                     </td>
                     <?php } ?>
+                    <?php 
+                        $card = $this->wpdb->get_results ( "
+                            SELECT * 
+                            FROM  grading
+                            where id = " . $card["db_id"]
+                        );
+                        print_r($card);
+                    ?>
                     <td>image</td>
                     <td><?php echo $post->ID; ?></td>
                     <td><?php echo $card["year"]; ?></td>
