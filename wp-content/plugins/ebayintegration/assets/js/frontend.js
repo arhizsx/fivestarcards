@@ -1355,125 +1355,17 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			url: "/wp-json/ebayintegration/v1/ajax?action=refreshToken",
 			success: function(resp){		
 
-				jQuery.ajax({
-					method: 'get',
-					url: "/wp-json/ebayintegration/v1/ajax?action=getEbayItems&type=active&page=1",
-					success: function(resp){		
-						console.log( resp );
+				var status = 'active';
+				refreshStatus( status, "btn-danger" );
 
-						if( resp.error == false ){
+				var status = 'awaiting';
+				refreshStatus( status, "btn-danger" );
 
-							var i = 0;
-							for( i = 1; i <= resp.pages; i++ ){
+				var status = 'sold';
+				refreshStatus( status, "btn-success" );
 
-								$(document).find("#active").find(".pagebox").append(
-									"<button " +
-										"class='ebayintegration-btn btn btn-success mb-3' " +
-										"data-action='refreshActive'  " +
-										"data-page='" + i + "'> " +
-										i +
-									"</button> "
-								);
-
-							}
-
-						}
-
-					},
-					error: function(){
-						console.log("Error in AJAX");
-					}
-				});
-				
-				jQuery.ajax({
-					method: 'get',
-					url: "/wp-json/ebayintegration/v1/ajax?action=getEbayItems&type=awaiting&page=1",
-					success: function(resp){		
-						console.log( resp );
-
-						if( resp.error == false ){
-
-							var i = 0;
-							for( i = 1; i <= resp.pages; i++ ){
-
-								$(document).find("#awaiting").find(".pagebox").append(
-									"<button " +
-										"class='ebayintegration-btn btn btn-secondary mb-3' " +
-										"data-action='refreshAwaiting'  " +
-										"data-page='" + i + "'> " +
-										i +
-									"</button> "
-								);
-
-							}
-
-						}
-
-					},
-					error: function(){
-						console.log("Error in AJAX");
-					}
-				});
-
-				jQuery.ajax({
-					method: 'get',
-					url: "/wp-json/ebayintegration/v1/ajax?action=getEbayItems&type=sold&page=1",
-					success: function(resp){		
-						console.log( resp );
-
-						if( resp.error == false ){
-
-							var i = 0;
-							for( i = 1; i <= resp.pages; i++ ){
-
-								$(document).find("#sold").find(".pagebox").append(
-									"<button " +
-										"class='ebayintegration-btn btn btn-dark mb-3' " +
-										"data-action='refreshSold'  " +
-										"data-page='" + i + "'> " +
-										i +
-									"</button> "
-								);
-
-							}
-
-						}
-
-					},
-					error: function(){
-						console.log("Error in AJAX");
-					}
-				});
-
-				jQuery.ajax({
-					method: 'get',
-					url: "/wp-json/ebayintegration/v1/ajax?action=getEbayItems&type=unsold&page=1",
-					success: function(resp){		
-						console.log( resp );
-
-						if( resp.error == false ){
-
-							var i = 0;
-							for( i = 1; i <= resp.pages; i++ ){
-
-								$(document).find("#unsold").find(".pagebox").append(
-									"<button " +
-										"class='ebayintegration-btn btn btn-danger mb-3' " +
-										"data-action='refreshUnsold'  " +
-										"data-page='" + i + "'> " +
-										i +
-									"</button> "
-								);
-
-							}
-
-						}
-
-					},
-					error: function(){
-						console.log("Error in AJAX");
-					}
-				});
+				var status = 'unsold';
+				refreshStatus( status, "btn-danger" );
 
 			},
 			error: function(){
@@ -1493,7 +1385,46 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 // REFRESH ACTIONS 
 
+function refreshStatus(status, btn_color, page = null) {
+	
+	if( page == null ){
+		page = 1;
+	} 
+	var url =  "/wp-json/ebayintegration/v1/ajax?action=getEbayItems&type=" + status + "&page=" + page
 
+	jQuery.ajax({
+		method: 'get',
+		url: url,
+		success: function(resp){		
+			console.log( resp );
+
+			if( resp.error == false ){
+
+				var i = 0;
+				for( i = 1; i <= resp.pages; i++ ){
+
+					$(document).find("#" + status ).find(".pagebox").append(
+						"<button " +
+							"class='ebayintegration-btn btn " + btn_color + " mb-3' " +
+							"data-action='refreshStatus'  " +
+							"data-status='" + status + "'  " +
+							"data-page='" + i + "'> " +
+							i +
+						"</button> "
+					);
+
+				}
+
+			}
+
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
+
+}
 
 
 
