@@ -353,8 +353,11 @@ class Ebay_Integration_Ebay_API {
 	// MEMBERS
 
 	function messageUser( $params, $files ) {
+
+		$headers[] = 'Cc: arhizsx@gmail.com';
+		return $files;
 		
-		return wp_mail($params["user_email"], $params["subject"], $params["message"]);		
+		return wp_mail($params["user_email"], $params["subject"], $params["message"], $headers);		
 		// return $params;
 	}
 
