@@ -440,7 +440,8 @@ class Ebay_Integration_Ebay_API {
 		$rows = $this->wpdb->update(
 			'ebay',
 			array(
-				'status' => "PaidOut"
+				'status' => "PaidOut",
+				'paid_out_date' => date('Y-m-d', time())
 			), 
 			array(
 				"id" => $params["id"],
