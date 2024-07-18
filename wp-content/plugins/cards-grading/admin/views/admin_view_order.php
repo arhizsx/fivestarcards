@@ -300,7 +300,7 @@ $processed_status = array("Processing Order", "Cards Graded");
 
                             $db_card_data = json_decode( $db_card[0]->data, true );
 
-                            print_r($db_card_data);
+                            print_r($db_card_data["file"]);
                     ?>
                     <td>image</td>
                     <td><?php echo $post->ID; ?></td>
