@@ -354,6 +354,7 @@ class Ebay_Integration_Ebay_API {
 
 	function messageUser( $params, $files ) {
 		
+		return $params;
 		return wp_mail("arhizsx@gmail.com", "Subject", "Message");		
 		// return $params;
 	}
