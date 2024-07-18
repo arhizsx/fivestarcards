@@ -73,7 +73,10 @@ $users = get_users( $args );
                     
                 </td>
                 <td class="">
-                    <?php echo $data["PaidTime"]?>
+                    <?php
+                    $paid_time = explode("T",$data["PaidTime"]); 
+                    echo $paid_time[0];
+                    ?>
                 </td>
                 <td class="text-end">
                     $<?php 
