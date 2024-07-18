@@ -352,7 +352,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <input type="hidden" value="messageUser" name="action" />
-                                <label>Display Name</label>
+                                <label>Full Name</label>
                                 <input type="text" name="display_name" class="form-control p-2 mb-3" value="">
                             </div>
                             <div class="col-md-6">
@@ -366,7 +366,7 @@
                         </div>
                     </div>
                     <div class="text-end">
-                        <button class="btn btn-outline-dark ebayintegration-btn" data-action="cancelSendMessage"  data-user_id="">Cancel</button>
+                        <button class="btn btn-outline-dark"  data-bs-dismiss="modal">Cancel</button>
                         <button class="btn btn-success ebayintegration-btn" data-action="sendUserMessage"  data-user_id="">Register User</button>
                     </div>
                     </form>
