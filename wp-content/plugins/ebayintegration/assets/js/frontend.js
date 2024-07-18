@@ -1273,8 +1273,15 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			}
 		});		
 
-
 	}	
+
+	else if( jQuery(this).data("action") == "cancelSendMessage" ){		
+		
+		$(document).find(".message_user_modal").modal("hide");
+		jQuery(document).find(".member_info_modal").prependTo('body').modal("show");
+
+	}
+	
 
 	else {
 
