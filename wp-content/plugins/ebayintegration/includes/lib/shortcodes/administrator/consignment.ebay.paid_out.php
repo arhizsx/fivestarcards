@@ -102,6 +102,7 @@ $users = get_users( $args );
                     
                 </td>       
                 <td class="">
+                    <?php echo $item->paid_out_date ?>
                 </td>
                 <td class="text-end">
                     $<?php 
