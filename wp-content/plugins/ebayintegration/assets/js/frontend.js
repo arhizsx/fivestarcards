@@ -1323,6 +1323,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	else if( jQuery(this).data("action") == "registerUser" ){		
 
 		$(document).find(".new_user_modal").find(".formbox").addClass("d-none");
+		$(document).find(".new_user_modal").find(".formbox").find(".error").addClass("d-none");
 		$(document).find(".new_user_modal").find(".loading").removeClass("d-none");
 
 		let form = new FormData( $(document).find(".new_user_modal").find("#register_user_form")[0] );
