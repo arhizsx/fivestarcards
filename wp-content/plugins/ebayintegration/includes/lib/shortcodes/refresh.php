@@ -1,6 +1,6 @@
 <div class="row">
-    <div class="col-12">
-        <button class="ebayintegration-btn form-control btn btn-primary" data-action="refreshToken">Refresh Token</button>
+    <div class="col-12 mb03">
+        <button class="ebayintegration-btn form-control btn btn-success" data-action="refreshToken">Refresh Token</button>
     </div>
 </div>
 <div class="row">
