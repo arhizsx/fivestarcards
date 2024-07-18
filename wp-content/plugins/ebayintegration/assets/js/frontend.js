@@ -1360,6 +1360,24 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					url: "/wp-json/ebayintegration/v1/ajax?action=getEbayItems&type=active&page=1",
 					success: function(resp){		
 						console.log( resp );
+
+						if( resp.error == false ){
+
+							for( $i = 1; $i < resp.pages; $i++ ){
+
+								$(document).find("#active").find(".pagebox").append(
+									"<button " +
+										"class='ebayintegration-btn form-control btn btn-primary mb-3' " +
+										"data-action='refreshActive'  " +
+										"data-page='" + i + "'> " +
+										i +
+									"</button> "
+								);
+
+							}
+
+						}
+
 					},
 					error: function(){
 						console.log("Error in AJAX");
