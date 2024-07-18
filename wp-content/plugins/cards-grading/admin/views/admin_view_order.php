@@ -299,12 +299,9 @@ $processed_status = array("Processing Order", "Cards Graded");
                         );
 
 
-                        if( count( $db_card ) > 0 ){
                             $db_card_data = json_decode( $db_card->data, true );
 
-                            print_r($db_card_data["file"]);
                             print_r($db_card_data);
-                        }
                     ?>
                     <td>image</td>
                     <td><?php echo $post->ID; ?></td>
