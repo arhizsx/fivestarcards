@@ -355,7 +355,26 @@ class Ebay_Integration_Ebay_API {
 	function messageUser( $params, $files ) {
 
 		$headers[] = 'Cc: arhizsx@gmail.com';
-		$attachments[] = file_get_contents( $files[0]["tmp_name"] );
+		$attachments = [];
+
+
+		$uploads = [];
+		$upload_folder = wp_get_upload_dir();
+		$upload_folder = $upload_folder["basedir"];
+
+
+		foreach($files as $k => $v){
+
+
+				$fileName = 'attachment-' . rand( time() , 1000 ) . "" .  $v["name"];
+				$file = file_get_contents( $v["tmp_name"] );
+				$filesize = file_put_contents( $upload_folder."/cards/".$fileName, $file );
+
+				$attachments[]  = $upload_folder . "/cards/" . $fileName;		
+
+		}
+
+
 		
 		return wp_mail($params["user_email"], $params["subject"], $params["message"], $headers, $attachments);		
 		// return $params;
