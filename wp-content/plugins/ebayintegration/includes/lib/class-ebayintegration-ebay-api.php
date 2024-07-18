@@ -333,20 +333,31 @@ class Ebay_Integration_Ebay_API {
 		elseif( $params["action"] == "loginToAccount"){
 
 			return  $this->loginToAccount($params);
-
 			
 		}
 
+		elseif( $params["action"] == "messageUser"){
 
+			return $this->messageUser($params, $files);
+
+		}
 		
 
-		else {
+		else {			
+
 			return $params;
 		}		
 
 	}
 
 	// MEMBERS
+
+	function messageUser( $params, $files ) {
+		
+		wp_mail("arhizsx@gmail.com", "Subject", "Message");		
+		return $params;
+	}
+
 
 	public function loginToAccount( $params ){
 
@@ -1079,7 +1090,7 @@ class Ebay_Integration_Ebay_API {
 		return $json;
 	}
 	
-	public function getEbayItems($type = null, $page = null, $days = null){
+	public function getEbayItems($type = null, $page = null, $days = null){	
 
 		if( $days == null ){
 			$days_count = 15;
