@@ -1386,6 +1386,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 // REFRESH ACTIONS 
 
 function refreshStatus(status, btn_color, page = null) {
+
+	$(document).find( "#" + status ).find(".pagebox").addClass("d-none");
+	$(document).find( "#" + status ).find(".loading").removeClass("d-none");
 	
 	if( page == null ){
 		page = 1;
@@ -1399,6 +1402,9 @@ function refreshStatus(status, btn_color, page = null) {
 			console.log( resp );
 
 			if( resp.error == false ){
+
+				$(document).find( "#" + status ).find(".pagebox").removeClass("d-none");
+				$(document).find( "#" + status ).find(".loading").addClass("d-none");			
 
 				var i = 0;
 				for( i = 1; i <= resp.pages; i++ ){
