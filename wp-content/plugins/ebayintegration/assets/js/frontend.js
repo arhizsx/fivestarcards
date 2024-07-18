@@ -1286,7 +1286,25 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		
 		$(document).find(".message_user_modal").find(".formbox").addClass("d-none");
 		$(document).find(".message_user_modal").find(".loading").removeClass("d-none");
+
+		let form = new FormData( $(document).find(".message_user_modal").find("#message_user_form")[0] );
 		
+		$.ajax({
+			type: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: form,
+			enctype: 'multipart/form-data',
+			processData: false,
+			contentType: false,
+			success: function(resp){
+
+				console.log(resp);
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});
+
 
 	}
 	

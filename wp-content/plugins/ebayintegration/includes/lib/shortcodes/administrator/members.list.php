@@ -292,9 +292,11 @@
 			</div>
             <div class="modal-body py-3 px-3">
                 <div class="formbox">
+                    <form id="message_user_form">
                     <div class="border p-3 mb-3">
                         <div class="row">
                             <div class="col-md-12">
+                                <input type="hidden" value="messageUser" name="action" />
                                 <label>Display Name</label>
                                 <input type="text" name="display_name" class="form-control p-2 mb-3" value="">
                             </div>
@@ -324,6 +326,7 @@
                         <button class="btn btn-outline-dark ebayintegration-btn" data-action="cancelSendMessage"  data-user_id="">Cancel</button>
                         <button class="btn btn-success ebayintegration-btn" data-action="sendUserMessage"  data-user_id="">Send</button>
                     </div>
+                    </form>
                 </div>
                 <div class="d-none p-5 text-center loading">
 
