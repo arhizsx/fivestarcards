@@ -299,6 +299,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                         );
 
                             $db_card_data = json_decode( $db_card[0]->data, true );
+                            print_r($db_card_data["file"]);
 
                             print_r($db_card_data["file"]["baseurl"]);
                     ?>
