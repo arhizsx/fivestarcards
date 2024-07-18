@@ -289,6 +289,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                         <?php } ?>
                     </td>
                     <?php } ?>
+                    <td>image</td>
                     <td><?php echo $post->ID; ?></td>
                     <td><?php echo $card["year"]; ?></td>
                     <td><?php echo $card["brand"]; ?></td>
