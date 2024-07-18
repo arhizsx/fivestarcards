@@ -299,7 +299,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                         );
 
                         $db_card_data = json_decode( $db_card[0]->data, true );
-                        $image = "<img src='" . $db_card_data["file"]["filename"] . "' />";
+                        $image = "<img src='/wp-content/uploads/cards/" . $db_card_data["file"]["filename"] . "' />";
                     ?>
                     <td><?php echo $image   ?></td>
                     <td><?php echo $post->ID; ?></td>
