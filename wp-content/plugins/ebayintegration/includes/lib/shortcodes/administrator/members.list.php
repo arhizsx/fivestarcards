@@ -311,6 +311,12 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12 mb-3">
+                                <label>Subject</label>
+                                <input type="text" name="subject" class="form-control p-2 mb-3" value="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
                                 <label>Message</label>
                                 <textarea rows="5" class="form-control" name="message"></textarea>
                             </div>
