@@ -1336,11 +1336,21 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			contentType: false,
 			success: function(resp){
 
-				$(document).find(".new_user_modal").find(".formbox").removeClass("d-none");
-				$(document).find(".new_user_modal").find(".loading").addClass("d-none");
-		
+				if( resp.error == false ){
 
-				$(document).find(".new_user_modal").modal("hide");
+					$(document).find(".new_user_modal").find(".formbox").removeClass("d-none");
+					$(document).find(".new_user_modal").find(".loading").addClass("d-none");
+			
+	
+					$(document).find(".new_user_modal").modal("hide");
+	
+				} else {
+
+					$(document).find(".new_user_modal").find(".loading").addClass("d-none");
+					$(document).find(".new_user_modal").find(".formbox").removeClass("d-none");
+
+				}
+
 
 			},
 			error: function(){
