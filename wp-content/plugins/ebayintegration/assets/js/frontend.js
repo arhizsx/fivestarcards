@@ -813,6 +813,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				$(document).find(".member_details_box").find("[name='customer_number']").val( customer_number );
 				$(document).find(".member_details_box").find("[name='user_email']").val( user_email );
 
+				$(document).find("[data-action='messageUser']").data("user_id", resp.user[0].ID );
+				$(document).find("[data-action='loginToAccount']").data("user_id", resp.user[0].ID );
 				$(document).find("[data-action='deactivateMember']").data("user_id", resp.user[0].ID );
 				$(document).find("[data-action='saveMemberDetailsChanges']").data("user_id", resp.user[0].ID );
 
