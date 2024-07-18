@@ -227,6 +227,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                     <th><?php  echo $action_label; ?></th>
                     <?php } ?>
                     <th>ID</th>
+                    <th>Photo</th>
                     <th>Year</th>
                     <th>Brand</th>
                     <th>Card #</th>
