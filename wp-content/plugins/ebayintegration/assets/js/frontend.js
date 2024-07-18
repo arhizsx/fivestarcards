@@ -1314,10 +1314,17 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		jQuery(document).find(".new_user_modal").prependTo('body').modal("show");
 
+	}
+	else if( jQuery(this).data("action") == "registerUser" ){		
+
+		$(document).find(".new_user_modal").find(".formbox").addClass("d-none");
+		$(document).find(".new_user_modal").find(".loading").removeClass("d-none");
+
+		$(document).find(".new_user_modal").modal("hide");
+
 
 	}
-	
-	
+		
 
 	else {
 

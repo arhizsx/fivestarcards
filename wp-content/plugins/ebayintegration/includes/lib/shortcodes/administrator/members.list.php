@@ -375,7 +375,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-outline-dark" data-bs-dismiss="modal" >Cancel</button>
-                <button class="btn btn-success ebayintegration-btn" data-action="sendUserMessage"  data-user_id="">Register User</button>
+                <button class="btn btn-success ebayintegration-btn" data-action="registerUser"  data-user_id="">Register User</button>
             </div>
 		</div>
 	</div>
