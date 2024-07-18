@@ -1375,7 +1375,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	
 	}
 
-	else if( jQuery(this).data("action") == "refreshStatus" ){		
+	else if( jQuery(this).data("action") == "refreshPage" ){		
 
 		var status = element.data("status");
 		var page = element.data("page");		
@@ -1411,6 +1411,9 @@ function refreshPage( status, page ){
 
 				$(document).find( "#" + status ).find(".pagebox").removeClass("d-none");
 				$(document).find( "#" + status ).find(".loading").addClass("d-none");			
+
+				$(document).find( "#" + status ).find(".pagebox")
+					.find(".ebayintegration-btn[data-action='refreshPage'][data-page='" + resp.current_page + "']").remove();
 
 			}
 
@@ -1449,7 +1452,7 @@ function refreshStatus(status, btn_color, page = null) {
 					$(document).find("#" + status ).find(".pagebox").append(
 						"<button " +
 							"class='ebayintegration-btn btn " + btn_color + " mb-3' " +
-							"data-action='refreshStatus'  " +
+							"data-action='refreshPage'  " +
 							"data-status='" + status + "'  " +
 							"data-page='" + i + "'> " +
 							i +
