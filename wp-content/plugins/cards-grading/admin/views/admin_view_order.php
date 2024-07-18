@@ -292,12 +292,12 @@ $processed_status = array("Processing Order", "Cards Graded");
                     </td>
                     <?php } ?>
                     <?php 
-                        $card = $this->wpdb->get_results ( "
+                        $db_card = $this->wpdb->get_results ( "
                             SELECT * 
                             FROM  grading
                             where id = " . $card["db_id"]
                         );
-                        print_r($card);
+                        print_r($db_card);
                     ?>
                     <td>image</td>
                     <td><?php echo $post->ID; ?></td>
