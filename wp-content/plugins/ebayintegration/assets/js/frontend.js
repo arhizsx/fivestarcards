@@ -1279,6 +1279,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		
 		$(document).find(".message_user_modal").modal("hide");
 		jQuery(document).find(".member_info_modal").prependTo('body').modal("show");
+		
 
 	}
 
@@ -1300,6 +1301,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				$(document).find(".message_user_modal").modal("hide");
 				jQuery(document).find(".member_info_modal").prependTo('body').modal("show");
+
+				$(document).find(".message_user_modal").find(".formbox").removeClass("d-none");
+				$(document).find(".message_user_modal").find(".loading").addClass("d-none");
+		
 
 			},
 			error: function(){
