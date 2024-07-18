@@ -1390,6 +1390,25 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					url: "/wp-json/ebayintegration/v1/ajax?action=getEbayItems&type=awaiting&page=1",
 					success: function(resp){		
 						console.log( resp );
+
+						if( resp.error == false ){
+
+							var i = 0;
+							for( i = 1; i <= resp.pages; i++ ){
+
+								$(document).find("#awaiting").find(".pagebox").append(
+									"<button " +
+										"class='ebayintegration-btn btn btn-primary mb-3' " +
+										"data-action='refreshAwaiting'  " +
+										"data-page='" + i + "'> " +
+										i +
+									"</button> "
+								);
+
+							}
+
+						}
+
 					},
 					error: function(){
 						console.log("Error in AJAX");
@@ -1401,6 +1420,25 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					url: "/wp-json/ebayintegration/v1/ajax?action=getEbayItems&type=sold&page=1",
 					success: function(resp){		
 						console.log( resp );
+
+						if( resp.error == false ){
+
+							var i = 0;
+							for( i = 1; i <= resp.pages; i++ ){
+
+								$(document).find("#sold").find(".pagebox").append(
+									"<button " +
+										"class='ebayintegration-btn btn btn-primary mb-3' " +
+										"data-action='refreshSold'  " +
+										"data-page='" + i + "'> " +
+										i +
+									"</button> "
+								);
+
+							}
+
+						}
+
 					},
 					error: function(){
 						console.log("Error in AJAX");
@@ -1412,6 +1450,25 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					url: "/wp-json/ebayintegration/v1/ajax?action=getEbayItems&type=unsold&page=1",
 					success: function(resp){		
 						console.log( resp );
+
+						if( resp.error == false ){
+
+							var i = 0;
+							for( i = 1; i <= resp.pages; i++ ){
+
+								$(document).find("#unsold").find(".pagebox").append(
+									"<button " +
+										"class='ebayintegration-btn btn btn-primary mb-3' " +
+										"data-action='refreshUnsold'  " +
+										"data-page='" + i + "'> " +
+										i +
+									"</button> "
+								);
+
+							}
+
+						}
+
 					},
 					error: function(){
 						console.log("Error in AJAX");
