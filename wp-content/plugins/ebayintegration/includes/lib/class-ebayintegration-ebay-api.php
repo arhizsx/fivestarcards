@@ -341,6 +341,13 @@ class Ebay_Integration_Ebay_API {
 			return $this->messageUser($params, $files);
 
 		}
+
+		elseif( $params["action"] == "registerUser"){
+
+			return $this->registerUser($params);
+
+		}
+		
 		
 
 		else {			
@@ -351,6 +358,12 @@ class Ebay_Integration_Ebay_API {
 	}
 
 	// MEMBERS
+
+	function registerUser($params){
+		$user_id = wp_create_user( $params["display_name"], "5StarCardsPassword", $params["user_email"] );
+
+		return $user_id;
+	}
 
 	function messageUser( $params, $files ) {
 
