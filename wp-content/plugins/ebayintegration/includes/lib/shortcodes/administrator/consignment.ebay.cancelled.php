@@ -59,12 +59,20 @@ $users = get_users( $args );
                 <td>
                     <div class="title">
                         <?php
-                        print_r( $data["Title"]);
+
+                        if( array_key_exists("Item", $data)){
+                            $title = $data["Item"]["Title"];
+                            $url = $data["Item"]['ListingDetails']['ViewItemURL'];
+                        } else {
+                            $title = $data["Title"]; 
+                            $url = $data['ListingDetails']['ViewItemURL'];
+                        }
+
                         ?>
 
                         <strong><?php echo $ctr;  ?></strong>&nbsp;
-                        <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                            <?php print_r( $data["Item"]["Title"] ); ?>
+                        <a href="<?php echo $url ?>" target="_blank">
+                            <?php print_r( $title ); ?>
                         </a>
                     </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
