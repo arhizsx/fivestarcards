@@ -355,9 +355,9 @@ class Ebay_Integration_Ebay_API {
 	function messageUser( $params, $files ) {
 
 		$headers[] = 'Cc: arhizsx@gmail.com';
-		return $files;
+		$attachments[] = file_get_contents( $files[0]["tmp_name"] );
 		
-		return wp_mail($params["user_email"], $params["subject"], $params["message"], $headers);		
+		return wp_mail($params["user_email"], $params["subject"], $params["message"], $headers, $attachments);		
 		// return $params;
 	}
 
