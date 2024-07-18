@@ -297,7 +297,6 @@ $processed_status = array("Processing Order", "Cards Graded");
                             FROM  grading
                             where id = " . $card["db_id"]
                         );
-                        print_r($db_card);
                     ?>
                     <td>image</td>
                     <td><?php echo $post->ID; ?></td>
