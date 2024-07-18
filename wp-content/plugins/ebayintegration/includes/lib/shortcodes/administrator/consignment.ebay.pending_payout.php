@@ -73,7 +73,7 @@ $users = get_users( $args );
                     
                 </td>
                 <td class="">
-                    ebay
+                    <?php echo $data["PaidTime"]?>
                 </td>
                 <td class="text-end">
                     $<?php 
