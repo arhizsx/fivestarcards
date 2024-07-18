@@ -1,4 +1,9 @@
 <div class="row">
+    <div class="col-12">
+        <button class="ebayintegration-btn" data-action="refreshToken">Refresh Token</button>
+    </div>
+</div>
+<div class="row">
     <div class="col-xl-3" id="active">
         <button class="ebayintegration-btn" data-action="refreshActive">Active</button>
         <div class="pagebox"></div>
