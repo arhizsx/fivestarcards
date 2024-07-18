@@ -236,7 +236,7 @@
                             </div>
                         </div>          
                         <div class="text-end">
-                            <button class="btn btn-outline-dark ebayintegration-btn" data-action="messageUser"  data-user_id="">Message</button>
+                            <button class="btn btn-outline-dark ebayintegration-btn" data-action="showMessageUserModal"  data-user_id="">Message</button>
                             <button class="btn btn-outline-dark ebayintegration-btn" data-action="loginToAccount"  data-user_id="">Login to Account</button>
                             <button class="btn btn-danger ebayintegration-btn" data-action="deactivateMember"  data-user_id="">Deactivate</button>
                             <button class="btn btn-primary ebayintegration-btn" data-action="saveMemberDetailsChanges" data-user_id="">Save Changes</button>
@@ -276,6 +276,48 @@
                 <div class="d-none p-5 text-center loading">
 
                     Updating User Info, please wait...
+
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade message_user_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 0px; z-index: 99999">
+	<div class="modal-dialog modal-xl" id="dxmodal">
+		<div class="modal-content modal-ajax">
+			<div class="modal-header bg-primary text-white">
+				<strong>Message Member</strong>
+    			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+			</div>
+            <div class="modal-body py-3 px-3">
+                <div class="formbox">
+                    <div class="border p-3 mb-3">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Display Name</label>
+                                <input type="text" name="display_name" class="form-control p-2 mb-3" value="">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Customer Number</label>
+                                <input type="text" name="customer_number" class="form-control p-2 mb-3" value="">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Email</label>
+                                <input type="text" name="user_email" class="form-control p-2 mb-3" value="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Message</label>
+                                <textarea rows="20" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none p-5 text-center loading">
+
+                    Sending message, please wait...
 
                 </div>
             </div>
