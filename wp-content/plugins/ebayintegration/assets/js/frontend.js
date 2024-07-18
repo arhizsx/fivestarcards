@@ -1354,7 +1354,51 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			method: 'get',
 			url: "/wp-json/ebayintegration/v1/ajax?action=refreshToken",
 			success: function(resp){		
-				console.log( resp );
+
+				jQuery.ajax({
+					method: 'get',
+					url: "/wp-json/ebayintegration/v1/ajax?action=getEbayItems&type=active&page=1",
+					success: function(resp){		
+						console.log( resp );
+					},
+					error: function(){
+						console.log("Error in AJAX");
+					}
+				});
+				
+				jQuery.ajax({
+					method: 'get',
+					url: "/wp-json/ebayintegration/v1/ajax?action=getEbayItems&type=awaiting&page=1",
+					success: function(resp){		
+						console.log( resp );
+					},
+					error: function(){
+						console.log("Error in AJAX");
+					}
+				});
+
+				jQuery.ajax({
+					method: 'get',
+					url: "/wp-json/ebayintegration/v1/ajax?action=getEbayItems&type=sold&page=1",
+					success: function(resp){		
+						console.log( resp );
+					},
+					error: function(){
+						console.log("Error in AJAX");
+					}
+				});
+
+				jQuery.ajax({
+					method: 'get',
+					url: "/wp-json/ebayintegration/v1/ajax?action=getEbayItems&type=unsold&page=1",
+					success: function(resp){		
+						console.log( resp );
+					},
+					error: function(){
+						console.log("Error in AJAX");
+					}
+				});
+
 			},
 			error: function(){
 				console.log("Error in AJAX");
@@ -1370,6 +1414,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	}
 	
 });
+
+// REFRESH ACTIONS 
+
+
 
 
 
