@@ -454,7 +454,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	}
 
 	
-
 	
 	// ////////////////////////// //
 	//  Add Consignment Buttons   //
@@ -1365,6 +1364,20 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 		
+	else if( jQuery(this).data("action") == "refreshToken" ){		
+
+		jQuery.ajax({
+			method: 'get',
+			url: "/wp-json/ebayintegration/v1/ajax?action=refreshToken",
+			success: function(resp){		
+				console.log( resp );
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});
+	
+	}
 
 	else {
 
