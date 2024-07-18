@@ -361,11 +361,7 @@
                                 <label>Full Name</label>
                                 <input type="text" name="display_name" class="form-control p-2 mb-3" value="">
                             </div>
-                            <div class="col-md-6">
-                                <label>Nickname</label>
-                                <input type="text" name="nickaname" class="form-control p-2 mb-3" value="">
-                            </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label>Email</label>
                                 <input type="text" name="user_email" class="form-control p-2 mb-3" value="">
                             </div>
