@@ -202,7 +202,7 @@ $processed_status = array("Processing Order", "Cards Graded");
 
             ?> 
             <button class='5star_btn btn btn-primary mb-3' data-action="package_received"  data-order_number="<?php echo $params['order_number'] ?>">
-                Package Received
+                Package Received 
             </button>      
             <button class='5star_btn btn btn-secondary mb-3' data-action="view_pdf"  data-order_number="<?php echo $params['order_number'] ?>">
                 PDF
