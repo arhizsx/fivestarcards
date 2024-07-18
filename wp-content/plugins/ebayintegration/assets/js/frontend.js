@@ -1246,7 +1246,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	else if( jQuery(this).data("action") == "showMessageUserModal" ){		
 
 		$(document).find(".member_info_modal").modal("hide");
-		$(document).find(".message_user_modal").modal("show");
+		jQuery(document).find(".message_user_modal").prependTo('body').modal("show");
 
 	}
 	else if( jQuery(this).data("action") == "messageUser" ){		
