@@ -1234,9 +1234,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			},
 			success: function(resp){	
 
-				if( resp == true ){
-					window.Location.href = "/my-account";
-				}
+				window.Location.href = "/my-account";
 				
 			},
 			error: function(){
