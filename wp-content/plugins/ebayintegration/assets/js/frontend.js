@@ -1368,7 +1368,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 								$(document).find("#active").find(".pagebox").append(
 									"<button " +
-										"class='ebayintegration-btn btn btn-primary mb-3' " +
+										"class='ebayintegration-btn btn btn-success mb-3' " +
 										"data-action='refreshActive'  " +
 										"data-page='" + i + "'> " +
 										i +
@@ -1398,7 +1398,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 								$(document).find("#awaiting").find(".pagebox").append(
 									"<button " +
-										"class='ebayintegration-btn btn btn-primary mb-3' " +
+										"class='ebayintegration-btn btn btn-secondary mb-3' " +
 										"data-action='refreshAwaiting'  " +
 										"data-page='" + i + "'> " +
 										i +
@@ -1428,7 +1428,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 								$(document).find("#sold").find(".pagebox").append(
 									"<button " +
-										"class='ebayintegration-btn btn btn-primary mb-3' " +
+										"class='ebayintegration-btn btn btn-dark mb-3' " +
 										"data-action='refreshSold'  " +
 										"data-page='" + i + "'> " +
 										i +
@@ -1458,7 +1458,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 								$(document).find("#unsold").find(".pagebox").append(
 									"<button " +
-										"class='ebayintegration-btn btn btn-primary mb-3' " +
+										"class='ebayintegration-btn btn btn-danger mb-3' " +
 										"data-action='refreshUnsold'  " +
 										"data-page='" + i + "'> " +
 										i +
