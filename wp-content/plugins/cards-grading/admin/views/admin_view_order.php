@@ -299,7 +299,8 @@ $processed_status = array("Processing Order", "Cards Graded");
                         );
 
                         if( count( $db_card ) > 0 ){
-                            print_r($db_card["file"]);
+                            print_r($db_card);
+                            print_r($db_card);
                         }
                     ?>
                     <td>image</td>
