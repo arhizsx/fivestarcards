@@ -330,6 +330,15 @@ class Ebay_Integration_Ebay_API {
 			
 		}
 
+		elseif( $params["action"] == "loginToAccount"){
+
+			return  $this->loginToAccount($params);
+			
+		}
+
+
+		
+
 		else {
 			return $params;
 		}		
@@ -337,6 +346,14 @@ class Ebay_Integration_Ebay_API {
 	}
 
 	// MEMBERS
+
+	public function loginToAccount( $params ){
+
+		wp_set_auth_cookie( $params["data"]["user_id"], true );
+
+		return true;
+		
+	}
 
 	public function consignmentPaidOutRelease( $params ){
 		
