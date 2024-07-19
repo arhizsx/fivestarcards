@@ -35,7 +35,7 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
     <table class="table table-border table-striped table-sm table-hover search_table_paid">
         <thead>
             <tr>
-                <th>Item</th>
+                <th width="60%">Item</th>
                 <th>eBay Pay Date</th>
                 <th class="text-end">Price Sold</th>
             </tr>
