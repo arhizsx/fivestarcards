@@ -36,6 +36,7 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
         <thead>
             <tr>
                 <th>Item</th>
+                <th>eBay Pay Date</th>
                 <th class="text-end">Price Sold</th>
             </tr>
         </thead>
@@ -64,6 +65,12 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
 
                     
+                </td>
+                <td class="">
+                    <?php
+                    $paid_time = explode("T",$data["PaidTime"]); 
+                    echo $paid_time[0];
+                    ?>
                 </td>
                 <td class="text-end">
                     $<?php 
