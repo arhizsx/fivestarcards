@@ -43,6 +43,8 @@
                             <?php  echo $user->user_email ?>
                         </td>
                         <td class="text-end">
+                            <a class="btn border btn-dark ebayintegration-btn" data-action="showMemberInfoModal" data-user_id="<?php echo $user->ID; ?>">View</a>
+
                             <button class="btn border btn-success 5star_btn" data-action='demote_admin' data-user_id='<?php echo $user->ID; ?>'>Demote</button>
                         </td>
                     </tr>
