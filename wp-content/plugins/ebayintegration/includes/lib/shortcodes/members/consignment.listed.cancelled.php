@@ -55,9 +55,11 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
             if( array_key_exists("Item", $data)){
                 $title = $data["Item"]["Title"];
                 $url = $data["Item"]['ListingDetails']['ViewItemURL'];
+                $listing = $data["Item"]["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"];
             } else {
                 $title = $data["Title"]; 
                 $url = $data['ListingDetails']['ViewItemURL'];
+                $listing = $data["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"];
             }
 
             ?>
@@ -72,7 +74,6 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                     </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
-                    <?php $listing = $data["Item"]["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"]; ?>
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
                 </td>
                 <td class="text-end">
