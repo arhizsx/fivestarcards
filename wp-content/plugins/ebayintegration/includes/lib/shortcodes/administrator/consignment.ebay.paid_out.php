@@ -86,7 +86,7 @@ $users = get_users( $args );
 
             ?>
             <tr>
-            <td>
+                <td>
                     <div class="title">
                         <strong><?php echo $ctr;  ?></strong>&nbsp;
                         <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">

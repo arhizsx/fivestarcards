@@ -37,6 +37,7 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
         <thead>
             <tr>
                 <th>Item</th>
+                <th>Paid Out Date</th>
                 <th class="text-end">Amount Paid</th>
             </tr>
         </thead>
@@ -67,13 +68,16 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                     <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
                     
                 </td>
+                <td class="">
+                    <?php echo $item->paid_out_date ?>
+                </td>
                 <td class="text-end">
                     $<?php 
                     echo number_format(( $data["TransactionPrice"]), 2, '.', ',');
                     ?>
                 </td>
             </tr>
-            <?php
+            <?php 
                         } 
                     }
                 } 
