@@ -36,7 +36,6 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
         <thead>
             <tr>
                 <th>Item</th>
-                <th class="text-end">Price Sold</th>
             </tr>
         </thead>
         <tbody>
@@ -75,9 +74,6 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
-                </td>
-                <td class="text-end">
-                    $<?php echo number_format(( $data["Item"]["SellingStatus"]["CurrentPrice"]), 2, '.', ','); ?>
                 </td>
             </tr>
             <?php 
