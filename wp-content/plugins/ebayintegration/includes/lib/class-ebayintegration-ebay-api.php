@@ -99,54 +99,17 @@ class Ebay_Integration_Ebay_API {
 			return array("error"=> true, "error_message" => "Action Not Defined");
 		} 
 
-		// elseif($params["action"] == "getItems"){
-
-		// 	if( isset( $params["page_number"] ) ){
-		// 		$page_number = $params["page_number"];
-		// 	} else {
-		// 		$page_number = 1;
-		// 	}
-
-		// 	return $this->getItems($page_number);
-		// } 
-
-		// elseif($params["action"] == "getItemPages"){
-			
-		// 	$pages = $this->GetItemPages();
-
-		// 	if($pages["error"] == false ){
-
-		// 		return $this->getItemsMulti( $pages["data"], 200);
-
-		// 	} else {
-		// 		return "Error getting item pages";
-		// 	}
-			
-		// } 
-
-		// elseif($params["action"] == "getItemInfo"){
-
-		// 	return $this->getItemInfo($params["item_id"]);
-
-		// } 
-
-		// elseif($params["action"] == "getItemTransactions"){
-
-		// 	return $this->getItemTransactions($params["item_id"]);
-
-		// } 		
-
-		// elseif($params["action"] == "refreshTransactions"){
-
-		// 	return $this->refreshTransaction();
-
-		// } 		
-
 		// ///////////////////////
 		//
 		// EBAY ACTIONS
 		//
 		// ///////////////////////
+
+		elseif($params["action"] == "autoRefreshComplete"){
+
+			return $this->autoRefreshComplete();
+
+		} 
 
 
 		elseif($params["action"] == "refreshToken"){
@@ -1089,6 +1052,19 @@ class Ebay_Integration_Ebay_API {
 	}
 
 	// EBAY ROUTINES
+
+	public function autoRefreshComplete(){
+
+			$this->wpdb->insert(
+				'autorefresh',
+				array(
+					'refresher' => "python",
+				)
+			);
+
+			return "Logged";
+
+	}
 
 	public function refreshToken(){
 
