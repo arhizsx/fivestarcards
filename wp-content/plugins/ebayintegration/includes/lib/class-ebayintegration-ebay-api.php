@@ -1438,8 +1438,7 @@ class Ebay_Integration_Ebay_API {
 				CURLOPT_POSTFIELDS =>$post_data,
 				CURLOPT_HTTPHEADER => [
 					'X-EBAY-API-SITEID:0',
-					'X-EBAY-API-COMPATIBILITY-LEVEL:967',
-					'X-EBAY-API-CALL-NAME:GetItemRequest',
+					'X-EBAY-API-COMPATIBILITY-LEVEL:967'
 				]
 			]
 		);
