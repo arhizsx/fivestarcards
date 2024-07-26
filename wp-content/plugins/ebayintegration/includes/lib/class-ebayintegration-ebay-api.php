@@ -1418,8 +1418,6 @@ class Ebay_Integration_Ebay_API {
 				'<eBayAuthToken>' . $this->access_token  . '</eBayAuthToken>' .
 			'</RequesterCredentials>' .
 			'<ItemID>' . $item_id . '</ItemID>' .
-			'<DetailLevel>ReturnAll</DetailLevel>' .
-			'<IncludeItemSpecifics>true</IncludeItemSpecifics>' .
 		'</GetItemRequest> ';
 		
 		$curl = curl_init();
