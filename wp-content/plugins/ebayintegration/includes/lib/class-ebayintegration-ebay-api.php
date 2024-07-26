@@ -99,11 +99,18 @@ class Ebay_Integration_Ebay_API {
 			return array("error"=> true, "error_message" => "Action Not Defined");
 		} 
 
+
 		// ///////////////////////
 		//
 		// EBAY ACTIONS
 		//
 		// ///////////////////////
+
+		elseif($params["action"] == "getItemInfo"){
+
+			return $this->getItemInfo($params["item_id"]);
+
+		} 
 
 		elseif($params["action"] == "autoRefreshComplete"){
 
@@ -1061,9 +1068,6 @@ class Ebay_Integration_Ebay_API {
 					'refresher' => "python",
 				)
 			);
-
-			return "Logged";
-
 	}
 
 	public function refreshToken(){
@@ -1401,7 +1405,57 @@ class Ebay_Integration_Ebay_API {
 			return "Not Valid JSON";
 		}
 
-	}				
+	}		
+	
+	public function getItemInfo( $item_id){
+
+		$apiURL = "https://api.ebay.com/ws/api.dll";
+
+		$post_data = 
+		'<?xml version="1.0" encoding="utf-8"?>' .
+		'<GetItemRequest xmlns="urn:ebay:apis:eBLBaseComponents">' .
+			'<RequesterCredentials>' .
+				'<eBayAuthToken>' . $this->access_token  . '</eBayAuthToken>' .
+			'</RequesterCredentials>' .
+			'<ItemID>' . $item_id . '</ItemID>' .
+			'<DetailLevel>ReturnAll</DetailLevel>' .
+			'<IncludeItemSpecifics>true</IncludeItemSpecifics>' .
+		'</GetItemRequest> ';
+		
+		$curl = curl_init();
+		
+		curl_setopt_array(
+			$curl,
+			[
+				CURLOPT_URL => $apiURL,
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_ENCODING => '',
+				CURLOPT_MAXREDIRS => 10,
+				CURLOPT_TIMEOUT => 0,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST => 'POST',
+				CURLOPT_POSTFIELDS =>$post_data,
+				CURLOPT_HTTPHEADER => [
+					'X-EBAY-API-SITEID:0',
+					'X-EBAY-API-COMPATIBILITY-LEVEL:967',
+					'X-EBAY-API-CALL-NAME:GetItemRequest',
+				]
+			]
+		);
+		
+		$response = curl_exec($curl);
+		$status = curl_getinfo($curl);
+		
+		curl_close($curl);
+		
+		$xml=simplexml_load_string($response) or die("Error: Cannot create object");
+		$json = json_decode(json_encode($xml), true);
+
+		return $json;
+
+
+	}
 
 
 }
