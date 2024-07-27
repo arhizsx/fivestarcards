@@ -71,7 +71,7 @@
 
 function Activate($page){
     if( isset( $_GET['mode']) == false ){
-        if( $page == "orders" ){
+        if( $page == "listed" ){
             return "active";
         }
     } 
