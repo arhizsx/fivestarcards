@@ -118,9 +118,9 @@
 			include( plugin_dir_path( __FILE__ ) . 'hello.php');			
             break;
 
-        case "hello_member":
+        case "hello_admin":
 
-			include( plugin_dir_path( __FILE__ ) . 'hello-member.php');			
+			include( plugin_dir_path( __FILE__ ) . 'hello-admin.php');			
             break;
 
         case "administrator":
