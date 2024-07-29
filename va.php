@@ -29,7 +29,7 @@
                         type: 'GET',
                         url: 'status_script.php',
                         success: function(response) {
-                            $('#progress').text(response.progress.toFixed(2) + "%");
+                            $('#progress').text( parseFloat(response.progress).toFixed(2) + "%");
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
                             $('#progress').text('AJAX Error: ' + textStatus + ' - ' + errorThrown);
