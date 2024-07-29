@@ -61,33 +61,29 @@
     <script>
         $(document).ready(function() {
 
-            const intervalId = setInterval(function() {
-                $.ajax({
-                    type: 'GET',
-                    url: 'status_script.php',
-                    success: function(response) {
-                        const progress = parseFloat(response.progress);
+            $.ajax({
+                type: 'GET',
+                url: 'status_script.php',
+                success: function(response) {
+                    const progress = parseFloat(response.progress);
 
-                        $('.loading').addClass('hidden');
+                    $('.loading').addClass('hidden');
 
-                        if( progress <  100 ){
+                    if( progress <  100 ){
 
-                            $('.controls').addClass('hidden');
-                            $(".progress-box").removeClass("hidden");
+                        console.log("Script still running please wait")
 
-                        } else {
-                            $('.controls').removeClass('hidden');
-                            $(".progress-box").addClass("hidden");
-
-                        }
-
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        $('#progress').text('AJAX Error: ' + textStatus + ' - ' + errorThrown);
-                        clearInterval(intervalId);
+                    } else {
+                        $('.controls').removeClass('hidden');
+                        $(".progress-box").addClass("hidden");
                     }
-                });
-            }, 2000); // Poll every 2 seconds
+
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    $('#progress').text('AJAX Error: ' + textStatus + ' - ' + errorThrown);
+                    clearInterval(intervalId);
+                }
+            });
 
             $('#startButton').click(function() {
                 // Hide input and button immediately
@@ -166,7 +162,7 @@
             <small>Please input the google drive's Folder ID before clicking on GET FILES</small>
             <button id="startButton" class="btn btn-primary mt-3 form-control">GET FILES</button>
         </div>
-        <div class="controls hidden text-center">
+        <div class="loading hidden text-center">
             Loading please wait...
         </div>
     </div>
