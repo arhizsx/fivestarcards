@@ -104,6 +104,9 @@
                     success: function(response) {
                         // Hide progress box and show table with items
                         $(".progress-box").addClass("hidden");
+
+                        console.log(response);
+
                         createTable(response.items);
                     },
                     error: function(xhr, status, error) {
