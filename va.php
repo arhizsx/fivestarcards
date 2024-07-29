@@ -168,7 +168,6 @@
                                 $("#progress-box").addClass("hidden");
                                 $("#progress-db").removeClass("hidden");
 
-                                clearInterval(intervalId);
                             }
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
@@ -180,6 +179,7 @@
             });
 
             function createTable(items) {
+                clearInterval(intervalId);
 
                 $("#progress-db").addClass("hidden");
 
