@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechTeam</title>
+    <title>Process Progress</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body, html {
@@ -19,15 +19,18 @@
         }
         #progress {
             font-size: 5rem;
+            margin: 20px 0;
         }
         .progress-circle {
             position: relative;
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
             margin: auto;
         }
         .progress-circle svg {
-            transform: rotate(-90deg);
+            width: 100%;
+            height: 100%;
+            overflow: visible;
         }
         .progress-circle circle {
             fill: none;
@@ -38,8 +41,8 @@
         }
         .progress-circle .front {
             stroke: #007bff;
-            stroke-dasharray: 440; /* This should be 2 * π * radius */
-            stroke-dashoffset: 0;
+            stroke-dasharray: 534; /* Adjusted for the radius of 85 */
+            stroke-dashoffset: 534;
             transition: stroke-dashoffset 0.3s;
         }
         #startButton, #folderId {
@@ -83,7 +86,7 @@
 
                             // Update circular progress indicator
                             const circle = $('#progress-circle .front');
-                            const dashOffset = 440 - (progress / 100 * 440);
+                            const dashOffset = 534 - (progress / 100 * 534);
                             circle.css('stroke-dashoffset', dashOffset);
 
                             if (progress >= 100) {
@@ -103,14 +106,14 @@
 <body>
     <div class="container">
         <div id="progress-circle" class="progress-circle">
-            <svg width="150" height="150">
-                <circle class="behind" cx="75" cy="75" r="70"></circle>
-                <circle class="front" cx="75" cy="75" r="70"></circle>
+            <svg viewBox="0 0 200 200">
+                <circle class="behind" cx="100" cy="100" r="85"></circle>
+                <circle class="front" cx="100" cy="100" r="85"></circle>
             </svg>
         </div>
-        <p id="progress">Paid Out</p>
+        <p id="progress">Progress will be displayed here.</p>
         <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder ID" />
-        <button id="startButton" class="btn form-control btn-primary mt-3">GO</button>
+        <button id="startButton" class="btn btn-primary mt-3">Start Process</button>
     </div>
 </body>
 </html>
