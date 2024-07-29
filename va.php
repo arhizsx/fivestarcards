@@ -106,6 +106,7 @@
                         $(".progress-box").addClass("hidden");
 
                         console.log(response);
+                        $(body).css("align-items", "");
 
                         createTable(response.items);
                     },
@@ -162,7 +163,6 @@
                 table += '</tbody></table></div>';
                 $('.container').append(table);
 
-                $(body).css("align-items", "");
 
             }
         });
