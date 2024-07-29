@@ -108,9 +108,9 @@
                 <circle class="front" cx="75" cy="75" r="70"></circle>
             </svg>
         </div>
-        <p id="progress">Progress will be displayed here.</p>
+        <p id="progress">Paid Out</p>
         <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder ID" />
-        <button id="startButton" class="btn btn-primary mt-3">GO</button>
+        <button id="startButton" class="btn form-control btn-primary mt-3">GO</button>
     </div>
 </body>
 </html>
