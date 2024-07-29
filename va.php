@@ -61,9 +61,29 @@
     <script>
 
             $(document).on("click", ".ebayintegration-btn", function(e){
+
                 e.preventDefault();
+
                 console.log("Button Pressed");
                 console.log( $(this).data() ); 
+
+                $.ajax({
+                    method: 'post',
+                    url: "/wp-json/ebayintegration/v1/post",
+                    data: { 
+                        action: "consignmentPaidOutQueue",
+                        id: $(this).data("id")
+                    },
+                    success: function(resp){	
+
+                        console.log(resp);
+                        
+                    },
+                    error: function(){
+                        console.log("Error in AJAX");
+                    }
+                });		
+
             });
 
         $(document).ready(function() {
