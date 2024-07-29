@@ -60,10 +60,35 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
+
+            const intervalId = setInterval(function() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'status_script.php',
+                    success: function(response) {
+                        const progress = parseFloat(response.progress);
+                        $('#progress').text(progress.toFixed(2) + "%");
+
+                        // Update circular progress indicator
+                        const circle = $('#progress-circle .front');
+                        const dashOffset = 534 - (progress / 100 * 534);
+                        circle.css('stroke-dashoffset', dashOffset);
+
+                        if (progress >= 100) {
+                            clearInterval(intervalId);
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        $('#progress').text('AJAX Error: ' + textStatus + ' - ' + errorThrown);
+                        clearInterval(intervalId);
+                    }
+                });
+            }, 2000); // Poll every 2 seconds
+
             $('#startButton').click(function() {
                 // Hide input and button immediately
-                $('.controls').addClass('hidden');
-                $(".progress-box").removeClass("hidden");
+                // $('.controls').addClass('hidden');
+                // $(".progress-box").removeClass("hidden");
 
                 const folderId = $('#folderId').val();
 
@@ -120,7 +145,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="progress-box hidden">
+        <div class="progress-box">
             <div id="progress-circle" class="progress-circle">
                 <svg viewBox="0 0 200 200">
                     <circle class="behind" cx="100" cy="100" r="85"></circle>
