@@ -14,7 +14,6 @@
                     url: 'run_script.php',
                     type: 'POST',
                     data: { folder_id: folderId },
-                    dataType: 'json',
                     success: function(response) {
                         console.log( response )
                     },
@@ -29,7 +28,6 @@
                     $.ajax({
                         type: 'GET',
                         url: 'run_script.php',
-                        dataType: 'json',
                         success: function(response) {
                             console.log(response);
                         },
