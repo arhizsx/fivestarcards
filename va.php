@@ -143,7 +143,7 @@
             function createTable(items) {
                 let table = '<table class="table table-bordered mt-4"><thead><tr><th>Description</th></tr></thead><tbody>';
                 items.forEach(item => {
-                    if( item != 'Description' ){
+                    if( item.description != 'Description' ){
                         table += '<tr><td>' + item.description + '</td>';
                         table += '<td>' + item.filename + '</td>';
                         table += '<td><button class"btn btn-primary ebayintegration-btn" data-action="paidOutQuick"></td>';
