@@ -60,7 +60,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
 
-            $(".ebayintegration-btn").click(function(e){
+            $(document).on("click", ".ebayintegration-btn", function(e){
                 e.preventDefault();
                 console.log("Button Pressed");
                 console.log( $(this).data() ); 
