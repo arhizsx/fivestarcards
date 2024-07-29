@@ -76,8 +76,8 @@
                     },
                     success: function(resp){	
 
-                        console.log(resp);
-                        
+                        $(document).find(".item_row[data-id='" + resp.id + "'").remove();
+
                     },
                     error: function(){
                         console.log("Error in AJAX");
@@ -181,7 +181,8 @@
                     table += '<tbody>';
                 items.forEach(item => {
                     if( item.description != 'Description' ){
-                        table += '<tr><td>' + item.filename + '</td>';
+                        table += '<tr class="item_row" data-id="' + item.id+ '">';
+                        table += '<td>' + item.filename + '</td>';
                         table += '<td>' + item.description + '</td>';
                         table += '<td>';
                         table += '<button class="btn btn-primary ebayintegration-btn" data-action="paidOutQuick" data-id="' + item.id+ '">Paid Out Queue</button>';
