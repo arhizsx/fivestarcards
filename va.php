@@ -67,6 +67,13 @@
                 console.log("Button Pressed");
                 console.log( $(this).data() ); 
 
+                var action = "";
+                if( $(this).data("action") == "consignmentPaidOut" ){
+                    action = "consignmentPaidOut";
+                }
+                else if( $(this).data("action") == "consignmentPaidOutQueue" ){
+                    action = "consignmentPaidOutQueue";
+                }
                 $.ajax({
                     method: 'post',
                     url: "/wp-json/ebayintegration/v1/post",
@@ -185,7 +192,8 @@
                         table += '<td>' + item.filename + '</td>';
                         table += '<td>' + item.description + '</td>';
                         table += '<td>';
-                        table += '<button class="btn btn-primary ebayintegration-btn" data-action="paidOutQuick" data-id="' + item.id+ '">Paid Out Queue</button>';
+                        table += '<button class="btn-sm btn btn-dark ebayintegration-btn" data-action="consignmentPaidOutQueue" data-id="' + item.id+ '">Queue</button>';
+                        table += '<button class="btn-sm btn btn-primary ebayintegration-btn" data-action="consignmentPaidOut" data-id="' + item.id+ '">Paid Out</button>';
                         table += '</td>';
                         table += '</tr>';
                     }
