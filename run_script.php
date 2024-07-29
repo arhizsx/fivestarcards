@@ -11,6 +11,6 @@ if (isset($_POST['folder_id'])) {
     // Log the output to a file for debugging
     file_put_contents('/home/arhizsx/debug_output.txt', $output);
     
-    return $progress;
+    return $output;
 }
 ?>
