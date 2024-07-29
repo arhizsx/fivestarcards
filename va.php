@@ -141,7 +141,7 @@
             });
 
             function createTable(items) {
-                let table = '<H1>Pending Payout Items</H1>';
+                let table = '<div><H1>Pending Payout Items</H1>';
                     table += '<table class="table table-bordered mt-4">';
                     table += '<thead>';
                     table += '<tr>';
@@ -159,7 +159,7 @@
                         table += '</tr>';
                     }
                 });
-                table += '</tbody></table>';
+                table += '</tbody></table></div>';
                 $('.container').append(table);
             }
         });
