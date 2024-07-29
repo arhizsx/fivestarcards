@@ -63,7 +63,7 @@
             $('#startButton').click(function() {
                 // Hide input and button immediately
                 $('.controls').addClass('hidden');
-                $(".progress-circle").removeClass("hidden");
+                $(".progress-box").removeClass("hidden");
 
                 const folderId = $('#folderId').val();
 
@@ -109,12 +109,14 @@
 </head>
 <body>
     <div class="container">
-        <div id="progress-circle" class="progress-circle hidden">
-            <svg viewBox="0 0 200 200">
-                <circle class="behind" cx="100" cy="100" r="85"></circle>
-                <circle class="front" cx="100" cy="100" r="85"></circle>
-            </svg>
-            <p id="progress" class="progress-text">0%</p>
+        <div class="progress-box hidden">
+            <div id="progress-circle" class="progress-circle">
+                <svg viewBox="0 0 200 200">
+                    <circle class="behind" cx="100" cy="100" r="85"></circle>
+                    <circle class="front" cx="100" cy="100" r="85"></circle>
+                </svg>
+                <p id="progress" class="progress-text">0%</p>
+            </div>
             <div>Getting items from the excel files in the specified folder</div>
         </div>
         <div class="controls">
