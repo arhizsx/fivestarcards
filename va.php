@@ -29,7 +29,8 @@
                         type: 'GET',
                         url: 'status_script.php',
                         success: function(response) {
-                            console.log(response);
+                            console.log(response.progress);
+
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
                             $('#progress').text('AJAX Error: ' + textStatus + ' - ' + errorThrown);
