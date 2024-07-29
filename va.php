@@ -180,7 +180,7 @@
                     table += '</thead>';
                     table += '<tbody>';
                 items.forEach(item => {
-                    if( item.description != 'Description' ){
+                    if( item.description != 'Description' && item.id != null  ){
                         table += '<tr class="item_row" data-id="' + item.id+ '">';
                         table += '<td>' + item.filename + '</td>';
                         table += '<td>' + item.description + '</td>';
