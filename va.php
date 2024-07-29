@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Process Progress</title>
+    <title>TechTeam</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body, html {
@@ -110,7 +110,7 @@
         </div>
         <p id="progress">Progress will be displayed here.</p>
         <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder ID" />
-        <button id="startButton" class="btn btn-primary mt-3">Start Process</button>
+        <button id="startButton" class="btn btn-primary mt-3">GO</button>
     </div>
 </body>
 </html>
