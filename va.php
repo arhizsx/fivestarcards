@@ -182,6 +182,7 @@
                     table += '<tr>';
                     table += '<th>Filename</th>';
                     table += '<th>Description</th>';
+                    table += '<th>Price</th>';
                     table += '<th>Action</th>';
                     table += '</tr>';
                     table += '</thead>';
@@ -192,6 +193,7 @@
                         table += '<tr class="item_row" data-id="' + item.id+ '">';
                         table += '<td>' + item.filename + '</td>';
                         table += '<td>' + item.description + '</td>';
+                        table += '<td>' + item.final_price + '</td>';
                         table += '<td>';
                         if( item.id != null ){
                             table += '<button class="btn-sm btn btn-dark ebayintegration-btn mb-3 me-3" data-action="consignmentPaidOutQueue" data-id="' + item.id+ '">Queue</button>';
