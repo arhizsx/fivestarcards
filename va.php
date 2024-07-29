@@ -71,6 +71,8 @@
 
                     if( progress <  100 ){
 
+                        
+                        $('.still_running').removeClass('hidden');
                         console.log("Script still running please wait")
 
                     } else {
@@ -164,6 +166,9 @@
         </div>
         <div class="loading text-center">
             Loading please wait...
+        </div>
+        <div class="still_running hidden text-center">
+            Script still running retry after a few minutes
         </div>
     </div>
 </body>
