@@ -4,13 +4,20 @@
 if (isset($_POST['folder_id'])) {
     $folder_id = escapeshellarg($_POST['folder_id']);
     $command = "python3 /home/arhizsx/paidout.py {$folder_id}";
-    
+
     // Execute the Python script and capture output
     $output = shell_exec($command);
     
-    // Return the output as JSON
-    header('Content-Type: application/json');
-    echo $output;
+    // Log the output to a file for debugging
+    file_put_contents('/path/to/debug_output.txt', $output);
+
+    // Check for errors in command execution
+    if ($output === null) {
+        header('Content-Type: application/json');
+        echo json_encode(["error" => true, "message" => "Failed to execute Python script"]);
+    } else {
+        header('Content-Type: application/json');
+        echo $output;
+    }
 }
 ?>
-
