@@ -160,8 +160,11 @@
                     }
                 });
                 table += '</tbody></table></div>';
-                $('.output_table').removeClass("hidden")    ;
-                $('.output_table').append(table);
+                $('.container').append(table);
+
+                $(body).css("justify-content", "");
+                $(html).css("justify-content", "");
+                
             }
         });
     </script>
@@ -191,9 +194,6 @@
         <div class="still_running hidden text-center">
             Script still running. Retry after a few minutes
             <div class="still_progress"></div>
-        </div>
-        <div class="output_table hidden">
-
         </div>
     </div>
 </body>
