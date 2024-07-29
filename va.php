@@ -117,6 +117,7 @@
             <p id="progress" class="progress-text">0%</p>
         </div>
         <div class="controls">
+            <H1>Process Paid Outs</H1>
             <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder ID" />
             <button id="startButton" class="btn btn-primary mt-3  form-control">GET FILES</button>
         </div>
