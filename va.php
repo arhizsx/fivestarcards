@@ -113,7 +113,7 @@
         </div>
         <p id="progress">Paid Out Task</p>
         <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder ID" />
-        <button id="startButton" class="btn btn-primary mt-3">Start Process</button>
+        <button id="startButton" class="btn btn-primary form-control">Start Process</button>
     </div>
 </body>
 </html>
