@@ -31,17 +31,7 @@
                         url: 'run_script.php',
                         dataType: 'json',
                         success: function(response) {
-                            if (response.error) {
-                                $('#progress').text('Error: ' + response.message);
-                                clearInterval(intervalId);
-                            } else {
-                                $('#progress').text('Progress: ' + response.progress + '%');
-                                
-                                // Stop polling when done
-                                if (response.progress >= 100) {
-                                    clearInterval(intervalId);
-                                }
-                            }
+                            console.log(response);
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
                             $('#progress').text('AJAX Error: ' + textStatus + ' - ' + errorThrown);
