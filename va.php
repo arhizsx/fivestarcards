@@ -57,6 +57,10 @@
     <script>
         $(document).ready(function() {
             $('#startButton').click(function() {
+                // Hide input and button immediately
+                $('#startButton').addClass('hidden');
+                $('#folderId').addClass('hidden');
+
                 const folderId = $('#folderId').val();
 
                 $.ajax({
@@ -70,10 +74,6 @@
                         console.error('AJAX Error:', status, error);
                     }
                 });
-
-                // Hide input and button
-                $('#startButton').addClass('hidden');
-                $('#folderId').addClass('hidden');
 
                 // Poll for progress
                 const intervalId = setInterval(function() {
@@ -111,7 +111,7 @@
                 <circle class="front" cx="100" cy="100" r="85"></circle>
             </svg>
         </div>
-        <p id="progress">Progress will be displayed here.</p>
+        <p id="progress">Paid Out Task</p>
         <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder ID" />
         <button id="startButton" class="btn btn-primary mt-3">Start Process</button>
     </div>
