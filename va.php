@@ -105,7 +105,7 @@
                         // Hide progress box and show table with items
                         $(".progress-box").addClass("hidden");
 
-                        console.log(response);
+                        console.log($(document.body));
                         $(document.body).css("align-items", "");
 
                         createTable(response.items);
