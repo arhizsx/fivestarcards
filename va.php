@@ -72,7 +72,7 @@
                     if( progress <  100 ){
                         
                         $('.still_running').removeClass('hidden');
-                        $(".still_progress").text( "<H1>" + parseFloat(response.progress).toFixed(2)  + "%</H1>");
+                        $(".still_progress").html( "<H1>" + parseFloat(response.progress).toFixed(2)  + "%</H1>");
                         console.log("Script still running please wait");
 
                         const intervalId = setInterval(function() {
