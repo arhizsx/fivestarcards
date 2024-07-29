@@ -141,7 +141,7 @@
             });
 
             function createTable(items) {
-                let table = '<table class="table table-bordered mt-4"><thead><tr><th>Description</th></tr></thead><tbody>';
+                let table = '<H1>Pending Payout Items</H1><table class="table table-bordered mt-4"><thead><tr><th>Description</th></tr></thead><tbody>';
                 items.forEach(item => {
                     if( item.description != 'Description' ){
                         table += '<tr><td>' + item.description + '</td>';
