@@ -14,7 +14,7 @@ if (isset($_POST['folder_id'])) {
 
     // Prepare the response
     $response['status'] = 'success';
-    $response['output'] = $output;
+    $response['output'] = json_encode($output);
 } else {
     $response['status'] = 'error';
     $response['message'] = 'folder_id not set';
