@@ -9,7 +9,7 @@ if (isset($_POST['folder_id'])) {
     $output = shell_exec($command);
     
     // Log the output to a file for debugging
-    file_put_contents('/path/to/debug_output.txt', $output);
+    file_put_contents('/home/arhizsx/debug_output.txt', $output);
 
     // Check for errors in command execution
     if ($output === null) {
