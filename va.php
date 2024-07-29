@@ -70,10 +70,10 @@
                     $('.loading').addClass('hidden');
 
                     if( progress <  100 ){
-
                         
                         $('.still_running').removeClass('hidden');
-                        console.log("Script still running please wait")
+                        $(".still_progress").text(response.progress);
+                        console.log("Script still running please wait");
 
                     } else {
                         $('.controls').removeClass('hidden');
@@ -169,6 +169,7 @@
         </div>
         <div class="still_running hidden text-center">
             Script still running retry after a few minutes
+            <div class="still_progress"></div>
         </div>
     </div>
 </body>
