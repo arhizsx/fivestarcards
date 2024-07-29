@@ -3,21 +3,28 @@
 
 if (isset($_POST['folder_id'])) {
     $folder_id = escapeshellarg($_POST['folder_id']);
-    $command = "python3 /home/arhizsx/paidout.py {$folder_id} 2>&1"; // Capture both stdout and stderr
+    $command = "python3 /path/to/your/paidout.py {$folder_id} 2>&1"; // Capture both stdout and stderr
 
     // Execute the Python script and capture output and errors
     $output = shell_exec($command);
-    
-    // Log the output to a file for debugging
-    file_put_contents('/home/arhizsx/debug_output.txt', $output);
 
-    // Check for errors in command execution
-    if ($output === null) {
+    // Log the output to a file for debugging
+    file_put_contents('/path/to/debug_output.txt', $output);
+
+    // Check if output is empty
+    if (empty($output)) {
         header('Content-Type: application/json');
-        echo json_encode(["error" => true, "message" => "Failed to execute Python script"]);
+        echo json_encode(["error" => true, "message" => "No output from Python script"]);
     } else {
-        header('Content-Type: application/json');
-        echo $output;
+        // Try to decode the JSON output
+        $json_output = json_decode($output, true);
+        if (json_last_error() === JSON_ERROR_NONE) {
+            header('Content-Type: application/json');
+            echo $output;
+        } else {
+            header('Content-Type: application/json');
+            echo json_encode(["error" => true, "message" => "Invalid JSON output from Python script"]);
+        }
     }
 }
 ?>

@@ -11,21 +11,31 @@
                 const folderId = $('#folderId').val();
 
                 $.ajax({
-                    type: 'POST',
                     url: 'run_script.php',
+                    type: 'POST',
                     data: { folder_id: folderId },
                     dataType: 'json',
                     success: function(response) {
                         if (response.error) {
-                            $('#progress').text('Error: ' + response.message);
+                            console.error('Error:', response.message);
+                            // Handle the error message
                         } else {
-                            $('#progress').text(response.message);
+                            console.log('Success:', response);
+                            // Handle the successful response
+                            // For example, update the progress bar
+                            if (response.progress !== undefined) {
+                                $('#progress-bar').css('width', response.progress + '%');
+                            }
+                            if (response.items) {
+                                console.log('Items:', response.items);
+                            }
                         }
                     },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        $('#progress').text('AJAX Error: ' + textStatus + ' - ' + errorThrown);
+                    error: function(xhr, status, error) {
+                        console.error('AJAX Error:', status, error);
                     }
                 });
+
 
                 // Poll for progress
                 const intervalId = setInterval(function() {
@@ -51,6 +61,7 @@
                             clearInterval(intervalId);
                         }
                     });
+                    
                 }, 2000); // Poll every 2 seconds
             });
         });
