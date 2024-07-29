@@ -7,10 +7,6 @@ if (isset($_POST['folder_id'])) {
 
     // Execute the Python script and capture output and errors
     $output = shell_exec($command);
-
-    // Log the output to a file for debugging
-    file_put_contents('/home/arhizsx/debug_output.txt', $output);
-    
-    print_r($output);
+    print_r( json_encode($output) );
 }
 ?>
