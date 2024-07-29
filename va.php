@@ -160,13 +160,14 @@
                     }
                 });
                 table += '</tbody></table></div>';
-                $('.container').append(table);
+                $('.output_table').removeClass("hidden")    ;
+                $('.output_table').append(table);
             }
         });
     </script>
 </head>
 <body>
-    <div class="container" style="overflow: scroll;">
+    <div class="container">
         <div class="progress-box hidden">
             <div id="progress-circle" class="progress-circle">
                 <svg viewBox="0 0 200 200">
@@ -190,6 +191,9 @@
         <div class="still_running hidden text-center">
             Script still running. Retry after a few minutes
             <div class="still_progress"></div>
+        </div>
+        <div class="output_table hidden">
+
         </div>
     </div>
 </body>
