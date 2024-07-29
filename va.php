@@ -239,7 +239,7 @@
         </div>
         <div class="controls hidden">
             <h1 class="mb-4">Process Paid Outs</h1>
-            <label>Google Drive Folder ID</label>
+            <label>Google Drive Folder Link</label>
             <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder Link" />
             <small>Please input the Google Drive's Folder Link before clicking on GET FILES</small>
             <button id="startButton" class="btn btn-primary mt-3 form-control">GET FILES</button>
