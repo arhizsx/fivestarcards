@@ -3,5 +3,5 @@
 
     $progress_file = '/home/arhizsx/progress.txt';
     $progress = file_get_contents($progress_file);
-    echo "TEST";
+    echo $progress;
 ?>
