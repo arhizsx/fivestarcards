@@ -15,20 +15,20 @@ if (isset($_POST['folder_id'])) {
     // Log the output to a file for debugging
     file_put_contents('/home/arhizsx/debug_output.txt', $output);
 
-    // Check if output is empty
-    if (empty($output)) {
+    // Read progress from the progress.txt file
+    $progress_file = '/home/arhizsx/progress.txt';
+    $progress = file_exists($progress_file) ? file_get_contents($progress_file) : '0';
+
+    // Attempt to decode the JSON output
+    $json_output = json_decode($output, true);
+
+    if (json_last_error() === JSON_ERROR_NONE) {
+        $json_output['progress'] = trim($progress);
         header('Content-Type: application/json');
-        echo json_encode(["error" => true, "message" => "No output from Python script"]);
+        echo json_encode($json_output);
     } else {
-        // Try to decode the JSON output
-        $json_output = json_decode($output, true);
-        if (json_last_error() === JSON_ERROR_NONE) {
-            header('Content-Type: application/json');
-            echo $output;
-        } else {
-            header('Content-Type: application/json');
-            echo json_encode(["error" => true, "message" => "Invalid JSON output from Python script"]);
-        }
+        header('Content-Type: application/json');
+        echo json_encode(["error" => true, "message" => "Invalid JSON output from Python script"]);
     }
 }
 ?>
