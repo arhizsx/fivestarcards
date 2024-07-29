@@ -27,7 +27,7 @@
                 const intervalId = setInterval(function() {
                     $.ajax({
                         type: 'GET',
-                        url: 'run_script.php',
+                        url: 'status_script.php',
                         success: function(response) {
                             console.log(response);
                         },
