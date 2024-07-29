@@ -141,7 +141,7 @@
             });
 
             function createTable(items) {
-                let table = '<div><H1>Pending Payout Items</H1>';
+                let table = '<div style="margin-top: 100px;"><H1>Pending Payout Items</H1>';
                     table += '<table class="table table-bordered mt-4">';
                     table += '<thead>';
                     table += '<tr>';
