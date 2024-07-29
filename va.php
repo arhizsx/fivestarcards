@@ -67,16 +67,20 @@
                     url: 'status_script.php',
                     success: function(response) {
                         const progress = parseFloat(response.progress);
-                        $('#progress').text(progress.toFixed(2) + "%");
 
-                        // Update circular progress indicator
-                        const circle = $('#progress-circle .front');
-                        const dashOffset = 534 - (progress / 100 * 534);
-                        circle.css('stroke-dashoffset', dashOffset);
+                        $('.loading').addClass('hidden');
 
-                        if (progress >= 100) {
-                            clearInterval(intervalId);
+                        if( progress <  100 ){
+
+                            $('.controls').addClass('hidden');
+                            $(".progress-box").removeClass("hidden");
+
+                        } else {
+                            $('.controls').removeClass('hidden');
+                            $(".progress-box").addClass("hidden");
+
                         }
+
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         $('#progress').text('AJAX Error: ' + textStatus + ' - ' + errorThrown);
@@ -145,7 +149,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="progress-box">
+        <div class="progress-box hidden">
             <div id="progress-circle" class="progress-circle">
                 <svg viewBox="0 0 200 200">
                     <circle class="behind" cx="100" cy="100" r="85"></circle>
@@ -155,12 +159,15 @@
             </div>
             <div>Getting items from the excel files in the specified Google Drive folder</div>
         </div>
-        <div class="controls">
+        <div class="controls hidden">
             <H1 class="mb-4">Process Paid Outs</H1>
             <label>Google Drive Folder ID</label>
             <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder ID" />
             <small>Please input the google drive's Folder ID before clicking on GET FILES</small>
             <button id="startButton" class="btn btn-primary mt-3 form-control">GET FILES</button>
+        </div>
+        <div class="controls hidden text-center">
+            Loading please wait...
         </div>
     </div>
 </body>
