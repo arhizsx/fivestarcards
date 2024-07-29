@@ -159,7 +159,9 @@
                     if( item.description != 'Description' ){
                         table += '<tr><td>' + item.filename + '</td>';
                         table += '<td>' + item.description + '</td>';
-                        table += '<td><button class"btn btn-primary ebayintegration-btn" data-action="paidOutQuick" data-id="' + item.id+ '">Paid Out Queue</button></td>';
+                        table += '<td>';
+                        table += '<button class="btn btn-primary ebayintegration-btn" data-action="paidOutQuick" data-id="' + item.id+ '">Paid Out Queue</button>';
+                        table += '</td>';
                         table += '</tr>';
                     }
                 });
