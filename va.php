@@ -141,11 +141,20 @@
             });
 
             function createTable(items) {
-                let table = '<H1>Pending Payout Items</H1><table class="table table-bordered mt-4"><thead><tr><th>Description</th></tr></thead><tbody>';
+                let table = '<H1>Pending Payout Items</H1>";
+                    table += '<table class="table table-bordered mt-4">';
+                    table += '<thead>';
+                    table += '<tr>';
+                    table += '<th>Filename</th>';
+                    table += '<th>Description</th>';
+                    table += '<th>Action</th>';
+                    table += '</tr>';
+                    table += '</thead>';
+                    table += '<tbody>';
                 items.forEach(item => {
                     if( item.description != 'Description' ){
-                        table += '<tr><td>' + item.description + '</td>';
-                        table += '<td>' + item.filename + '</td>';
+                        table += '<tr><td>' + item.filename + '</td>';
+                        table += '<td>' + item.description + '</td>';
                         table += '<td><button class"btn btn-primary ebayintegration-btn" data-action="paidOutQuick">Paid Out Queue</button></td>';
                         table += '</tr>';
                     }
