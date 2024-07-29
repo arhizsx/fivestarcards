@@ -139,10 +139,14 @@
                     success: function(response) {
                         // Hide progress box and show table with items
                         $(".progress-box").addClass("hidden");
+                        $("#progress-db").addClass("hidden");
 
                         $('body, html').css("display", "block");
 
                         createTable(response.items);
+
+                        clearInterval(intervalId);
+
                     },
                     error: function(xhr, status, error) {
                         console.error('AJAX Error:', status, error);
@@ -179,7 +183,6 @@
             });
 
             function createTable(items) {
-                clearInterval(intervalId);
 
                 $("#progress-db").addClass("hidden");
 
