@@ -107,6 +107,7 @@
 
                         console.log($(document.body));
                         $(document.body).css("align-items", "");
+                        $(document.body).removeAttr('style');
 
                         createTable(response.items);
                     },
