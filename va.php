@@ -120,6 +120,7 @@
             <H1>Process Paid Outs</H1>
             <label>Google Drive Folder ID</label>
             <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder ID" />
+            <small>Please input the google drive's Folder ID before clicking on GET FILES</small>
             <button id="startButton" class="btn btn-primary mt-3  form-control">GET FILES</button>
         </div>
     </div>
