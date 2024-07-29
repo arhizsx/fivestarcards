@@ -75,6 +75,11 @@
                         $(".still_progress").text(response.progress + "%");
                         console.log("Script still running please wait");
 
+                        const intervalId = setInterval(function() {
+                            location.reload();
+                        }, 10000); // Poll every 2 seconds
+
+
                     } else {
                         $('.controls').removeClass('hidden');
                         $(".progress-box").addClass("hidden");
