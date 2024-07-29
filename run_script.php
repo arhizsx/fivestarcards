@@ -15,16 +15,6 @@ if (isset($_POST['folder_id'])) {
     $progress_file = '/home/arhizsx/progress.txt';
     $progress = file_exists($progress_file) ? file_get_contents($progress_file) : '0';
 
-    // Attempt to decode the JSON output
-    $json_output = json_decode($output, true);
-
-    if (json_last_error() === JSON_ERROR_NONE) {
-        $json_output['progress'] = trim($progress);
-        header('Content-Type: application/json');
-        echo json_encode($json_output);
-    } else {
-        header('Content-Type: application/json');
-        echo json_encode(["error" => true, "message" => "Invalid JSON output from Python script"]);
-    }
+    return $progress;
 }
 ?>

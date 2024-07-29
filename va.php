@@ -16,20 +16,7 @@
                     data: { folder_id: folderId },
                     dataType: 'json',
                     success: function(response) {
-                        if (response.error) {
-                            console.error('Error:', response.message);
-                            // Handle the error message
-                        } else {
-                            console.log('Success:', response);
-                            // Handle the successful response
-                            // For example, update the progress bar
-                            if (response.progress !== undefined) {
-                                $('#progress-bar').css('width', response.progress + '%');
-                            }
-                            if (response.items) {
-                                console.log('Items:', response.items);
-                            }
-                        }
+                        console.log( response )
                     },
                     error: function(xhr, status, error) {
                         console.error('AJAX Error:', status, error);
@@ -61,7 +48,7 @@
                             clearInterval(intervalId);
                         }
                     });
-                    
+
                 }, 2000); // Poll every 2 seconds
             });
         });
