@@ -106,7 +106,7 @@
                         $(".progress-box").addClass("hidden");
 
                         console.log(response);
-                        $(body).css("align-items", "");
+                        $(document.body).css("align-items", "");
 
                         createTable(response.items);
                     },
