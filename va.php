@@ -143,7 +143,9 @@
             function createTable(items) {
                 let table = '<table class="table table-bordered mt-4"><thead><tr><th>Description</th></tr></thead><tbody>';
                 items.forEach(item => {
-                    table += '<tr><td>' + item + '</td></tr>';
+                    if( item != 'Description' ){
+                        table += '<tr><td>' + item + '</td></tr>';
+                    }
                 });
                 table += '</tbody></table>';
                 $('.container').append(table);
