@@ -61,6 +61,8 @@
                 $('#startButton').addClass('hidden');
                 $('#folderId').addClass('hidden');
 
+                $(".progress-circle").removeClass("hidden");
+
                 const folderId = $('#folderId').val();
 
                 $.ajax({
@@ -105,7 +107,7 @@
 </head>
 <body>
     <div class="container">
-        <div id="progress-circle" class="progress-circle">
+        <div id="progress-circle" class="progress-circle hidden">
             <svg viewBox="0 0 200 200">
                 <circle class="behind" cx="100" cy="100" r="85"></circle>
                 <circle class="front" cx="100" cy="100" r="85"></circle>
@@ -113,7 +115,7 @@
         </div>
         <p id="progress">Paid Out Task</p>
         <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder ID" />
-        <button id="startButton" class="btn btn-primary form-control">Start Process</button>
+        <button id="startButton" class="btn btn-primary mt-3  form-control">Start Process</button>
     </div>
 </body>
 </html>
