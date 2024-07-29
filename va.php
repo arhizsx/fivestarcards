@@ -107,7 +107,7 @@
 
                         console.log(response);
 
-                        createTable(response.items);
+                        // createTable(response.items);
                     },
                     error: function(xhr, status, error) {
                         console.error('AJAX Error:', status, error);
