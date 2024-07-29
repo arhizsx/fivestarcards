@@ -69,16 +69,14 @@
 
                     $('.loading').addClass('hidden');
 
-                    if( progress <  100 ){
-                        
+                    if (progress < 100) {
                         $('.still_running').removeClass('hidden');
-                        $(".still_progress").html( "<H1>" + parseFloat(response.progress).toFixed(2)  + "%</H1>");
+                        $(".still_progress").html("<h1>" + progress.toFixed(2) + "%</h1>");
                         console.log("Script still running please wait");
 
                         const intervalId = setInterval(function() {
                             location.reload();
-                        }, 5000); // Poll every 2 seconds
-
+                        }, 5000); // Poll every 5 seconds
 
                     } else {
                         $('.controls').removeClass('hidden');
@@ -140,9 +138,9 @@
             });
 
             function createTable(items) {
-                let table = '<table class="table table-bordered mt-4"><thead><tr><th>Item</th><th>Action</th></tr></thead><tbody>';
+                let table = '<table class="table table-bordered mt-4"><thead><tr><th>Description</th></tr></thead><tbody>';
                 items.forEach(item => {
-                    table += '<tr><td>' + item.name + '</td><td><button class="btn btn-secondary action-btn">Action</button></td></tr>';
+                    table += '<tr><td>' + item + '</td></tr>';
                 });
                 table += '</tbody></table>';
                 $('.container').append(table);
@@ -163,19 +161,19 @@
             <div>Getting items from the excel files in the specified Google Drive folder</div>
         </div>
         <div class="controls hidden">
-            <H1 class="mb-4">Process Paid Outs</H1>
+            <h1 class="mb-4">Process Paid Outs</h1>
             <label>Google Drive Folder ID</label>
             <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder ID" />
-            <small>Please input the google drive's Folder ID before clicking on GET FILES</small>
+            <small>Please input the Google Drive's Folder ID before clicking on GET FILES</small>
             <button id="startButton" class="btn btn-primary mt-3 form-control">GET FILES</button>
         </div>
         <div class="loading text-center">
             Loading please wait...
         </div>
         <div class="still_running hidden text-center">
-            Script still running retry after a few minutes
+            Script still running. Retry after a few minutes
             <div class="still_progress"></div>
         </div>
     </div>
 </body>
-</html> 
+</html>
