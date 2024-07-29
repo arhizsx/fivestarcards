@@ -166,7 +166,7 @@
     </script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="overflow: scroll;">
         <div class="progress-box hidden">
             <div id="progress-circle" class="progress-circle">
                 <svg viewBox="0 0 200 200">
