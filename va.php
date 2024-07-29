@@ -17,10 +17,6 @@
         .container {
             text-align: center;
         }
-        #progress {
-            font-size: 5rem;
-            margin: 20px 0;
-        }
         .progress-circle {
             position: relative;
             width: 200px;
@@ -45,6 +41,14 @@
             stroke-dashoffset: 534;
             transition: stroke-dashoffset 0.3s;
         }
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            margin: 0;
+        }
         #startButton, #folderId {
             display: block;
         }
@@ -56,7 +60,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
-
             $('#startButton').click(function() {
                 // Hide input and button immediately
                 $('.controls').addClass('hidden');
@@ -111,11 +114,11 @@
                 <circle class="behind" cx="100" cy="100" r="85"></circle>
                 <circle class="front" cx="100" cy="100" r="85"></circle>
             </svg>
+            <p id="progress" class="progress-text">0%</p>
         </div>
-        <p id="progress">Paid Out Task</p>
         <div class="controls">
             <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder ID" />
-            <button id="startButton" class="btn btn-primary mt-3  form-control">Start Process</button>
+            <button id="startButton" class="btn btn-primary mt-3  form-control">GET FILES</button>
         </div>
     </div>
 </body>
