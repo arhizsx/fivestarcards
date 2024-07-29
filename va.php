@@ -187,13 +187,17 @@
                     table += '</thead>';
                     table += '<tbody>';
                 items.forEach(item => {
-                    if( item.description != 'Description' && item.id != null  ){
+                    if( item.description != 'Description' ){
+
+
                         table += '<tr class="item_row" data-id="' + item.id+ '">';
                         table += '<td>' + item.filename + '</td>';
                         table += '<td>' + item.description + '</td>';
                         table += '<td>';
-                        table += '<button class="btn-sm btn btn-dark ebayintegration-btn mb-3 me-3" data-action="consignmentPaidOutQueue" data-id="' + item.id+ '">Queue</button>';
-                        table += '<button class="btn-sm btn btn-primary ebayintegration-btn mb-3" data-action="consignmentPaidOut" data-id="' + item.id+ '">Paid Out</button>';
+                        if( item.id != null ){
+                            table += '<button class="btn-sm btn btn-dark ebayintegration-btn mb-3 me-3" data-action="consignmentPaidOutQueue" data-id="' + item.id+ '">Queue</button>';
+                            table += '<button class="btn-sm btn btn-primary ebayintegration-btn mb-3" data-action="consignmentPaidOut" data-id="' + item.id+ '">Paid Out</button>';
+                        }
                         table += '</td>';
                         table += '</tr>';
                     }
