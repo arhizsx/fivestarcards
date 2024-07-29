@@ -13,8 +13,7 @@ if (isset($_POST['folder_id'])) {
     $output = shell_exec($command);
 
     // Prepare the response
-    $response['status'] = 'success';
-    $response['output'] = $output;
+    $response = $output;
 } else {
     $response['status'] = 'error';
     $response['message'] = 'folder_id not set';
