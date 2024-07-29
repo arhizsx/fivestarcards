@@ -162,8 +162,7 @@
                 table += '</tbody></table></div>';
                 $('.container').append(table);
 
-                $(body).css({"justify-content": "", "align-items": "" });
-                $(html).css({"justify-content": "", "align-items": "" });
+                $(body).css("align-items", "");
 
             }
         });
