@@ -164,6 +164,10 @@
                             circle.css('stroke-dashoffset', dashOffset);
 
                             if (progress >= 100) {
+
+                                $("#progress-box").addClass("hidden");
+                                $("#progress-db").removeClass("hidden");
+
                                 clearInterval(intervalId);
                             }
                         },
@@ -176,6 +180,9 @@
             });
 
             function createTable(items) {
+
+                $("#progress-db").addClass("hidden");
+
                 let table = '<div><H1>Pending Payout Items</H1>';
                     table += '<table class="table table-bordered mt-4">';
                     table += '<thead>';
@@ -222,6 +229,10 @@
                 <p id="progress" class="progress-text">0%</p>
             </div>
             <div>Getting items from excel files in the specified Google Drive folder</div>
+        </div>
+        <div class="progress-db hidden">
+            <p class="progress-text">Hang in there!</p>
+            Cross checking items in the database...
         </div>
         <div class="controls hidden">
             <h1 class="mb-4">Process Paid Outs</h1>
