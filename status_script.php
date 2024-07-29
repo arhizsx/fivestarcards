@@ -5,6 +5,6 @@
     $progress = file_get_contents($progress_file);
     
     header('Content-type: application/json');
-    print_r( $progress);
+    print_r( ["progress" => $progress] );
     
 ?>
