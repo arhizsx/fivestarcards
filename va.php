@@ -56,12 +56,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
-            
+
             $('#startButton').click(function() {
                 // Hide input and button immediately
-                $('#startButton').addClass('hidden');
-                $('#folderId').addClass('hidden');
-
+                $('.controls').addClass('hidden');
                 $(".progress-circle").removeClass("hidden");
 
                 const folderId = $('#folderId').val();
@@ -115,8 +113,10 @@
             </svg>
         </div>
         <p id="progress">Paid Out Task</p>
-        <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder ID" />
-        <button id="startButton" class="btn btn-primary mt-3  form-control">Start Process</button>
+        <div class="controls">
+            <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder ID" />
+            <button id="startButton" class="btn btn-primary mt-3  form-control">Start Process</button>
+        </div>
     </div>
 </body>
 </html>
