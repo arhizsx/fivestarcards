@@ -90,7 +90,7 @@
                 }
             });
 
-            $(".ebayintegration-btn").on("click", function(){
+            $(document).on("click", ".ebayintegration-btn", function(){
                 console.log( $(this).data() ); 
             });
 
