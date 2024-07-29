@@ -37,7 +37,7 @@
         }
         .progress-circle .front {
             stroke: #007bff;
-            stroke-dasharray: 534; /* Adjusted for the radius of 85 */
+            stroke-dasharray: 534;
             stroke-dashoffset: 534;
             transition: stroke-dashoffset 0.3s;
         }
@@ -72,7 +72,9 @@
                     type: 'POST',
                     data: { folder_id: folderId },
                     success: function(response) {
-                        console.log(response);
+                        // Hide progress box and show table with items
+                        $(".progress-box").addClass("hidden");
+                        createTable(response.items);
                     },
                     error: function(xhr, status, error) {
                         console.error('AJAX Error:', status, error);
@@ -104,6 +106,15 @@
                     });
                 }, 2000); // Poll every 2 seconds
             });
+
+            function createTable(items) {
+                let table = '<table class="table table-bordered mt-4"><thead><tr><th>Item</th><th>Action</th></tr></thead><tbody>';
+                items.forEach(item => {
+                    table += '<tr><td>' + item.name + '</td><td><button class="btn btn-secondary action-btn">Action</button></td></tr>';
+                });
+                table += '</tbody></table>';
+                $('.container').append(table);
+            }
         });
     </script>
 </head>
@@ -124,7 +135,7 @@
             <label>Google Drive Folder ID</label>
             <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder ID" />
             <small>Please input the google drive's Folder ID before clicking on GET FILES</small>
-            <button id="startButton" class="btn btn-primary mt-3  form-control">GET FILES</button>
+            <button id="startButton" class="btn btn-primary mt-3 form-control">GET FILES</button>
         </div>
     </div>
 </body>
