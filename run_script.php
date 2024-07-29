@@ -14,12 +14,12 @@ if (isset($_POST['folder_id'])) {
 
     // Prepare the response
     $response['status'] = 'success';
-    $response['output'] = json_encode($output);
+    $response['output'] = $output;
 } else {
     $response['status'] = 'error';
     $response['message'] = 'folder_id not set';
 }
 
 // Return the JSON response
-echo json_encode($response);
+echo $output;
 ?>
