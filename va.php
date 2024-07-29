@@ -179,7 +179,7 @@
                 </svg>
                 <p id="progress" class="progress-text">0%</p>
             </div>
-            <div>Getting items from the excel files in the specified Google Drive folder</div>
+            <div>Getting items from excel files in the specified Google Drive folder</div>
         </div>
         <div class="controls hidden">
             <h1 class="mb-4">Process Paid Outs</h1>
