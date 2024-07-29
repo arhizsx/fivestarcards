@@ -162,9 +162,9 @@
                 table += '</tbody></table></div>';
                 $('.container').append(table);
 
-                $(body).css("justify-content", "");
-                $(html).css("justify-content", "");
-                
+                $(body).css({"justify-content": ""});
+                $(html).css({"justify-content": ""});
+
             }
         });
     </script>
