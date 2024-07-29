@@ -189,7 +189,6 @@
                 items.forEach(item => {
                     if( item.description != 'Description' ){
 
-
                         table += '<tr class="item_row" data-id="' + item.id+ '">';
                         table += '<td>' + item.filename + '</td>';
                         table += '<td>' + item.description + '</td>';
