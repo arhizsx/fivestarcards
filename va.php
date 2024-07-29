@@ -115,6 +115,7 @@
                 <circle class="front" cx="100" cy="100" r="85"></circle>
             </svg>
             <p id="progress" class="progress-text">0%</p>
+            <div>Getting items from the excel files in the specified folder</div>
         </div>
         <div class="controls">
             <H1 class="mb-4">Process Paid Outs</H1>
