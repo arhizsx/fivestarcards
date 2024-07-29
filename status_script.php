@@ -5,6 +5,5 @@
     $progress = file_get_contents($progress_file);
     
     header('Content-type: application/json');
-    print_r( json_encode(["progress" => $progress]) );
-    
+    print_r( json_encode(["progress" => str_replace("\n", "", $progress) ]));
 ?>
