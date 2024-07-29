@@ -72,7 +72,7 @@
                     if( progress <  100 ){
                         
                         $('.still_running').removeClass('hidden');
-                        $(".still_progress").text(response.progress);
+                        $(".still_progress").text(response.progress + "%");
                         console.log("Script still running please wait");
 
                     } else {
