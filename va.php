@@ -90,6 +90,10 @@
                 }
             });
 
+            $(".ebayintegration-btn").on("click", function(){
+                console.log( $(this).data() ); 
+            });
+
             $('#startButton').click(function() {
                 // Hide input and button immediately
                 $('.controls').addClass('hidden');
