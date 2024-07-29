@@ -56,6 +56,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
+            
             $('#startButton').click(function() {
                 // Hide input and button immediately
                 $('#startButton').addClass('hidden');
