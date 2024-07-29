@@ -12,7 +12,7 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: 'run.php',
+                    url: 'run_script.php',
                     data: { folder_id: folderId },
                     dataType: 'json',
                     success: function(response) {
@@ -22,8 +22,8 @@
                             $('#progress').text(response.message);
                         }
                     },
-                    error: function() {
-                        $('#progress').text('An error occurred.');
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        $('#progress').text('AJAX Error: ' + textStatus + ' - ' + errorThrown);
                     }
                 });
 
@@ -31,7 +31,7 @@
                 const intervalId = setInterval(function() {
                     $.ajax({
                         type: 'GET',
-                        url: 'run.php',
+                        url: 'run_script.php',
                         dataType: 'json',
                         success: function(response) {
                             if (response.error) {
@@ -45,6 +45,10 @@
                                     clearInterval(intervalId);
                                 }
                             }
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            $('#progress').text('AJAX Error: ' + textStatus + ' - ' + errorThrown);
+                            clearInterval(intervalId);
                         }
                     });
                 }, 2000); // Poll every 2 seconds
