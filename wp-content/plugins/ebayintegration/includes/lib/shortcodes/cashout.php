@@ -13,6 +13,7 @@
 
     $skus = get_user_meta( get_current_user_id(), "sku", true );		
 
+    $user_id = get_current_user_id();
 ?>
 
 <div class="container-fluid">
