@@ -3,7 +3,7 @@
 global $wpdb;
 
 $ebay = $this->wpdb->get_results ( "
-SELECT * 
+SELECT *  
 FROM  ebay
 where status IN ('SoldListPaid', 'PaidOutQueued' )
 ORDER BY id DESC

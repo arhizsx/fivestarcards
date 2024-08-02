@@ -1420,6 +1420,7 @@ class Ebay_Integration_Ebay_API {
 			'<ItemID>' . $item_id . '</ItemID>' .
 		'</GetItemRequest> ';
 		
+
 		$curl = curl_init();
 		
 		curl_setopt_array(

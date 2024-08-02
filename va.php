@@ -1,3 +1,45 @@
+<?php
+// va.php
+
+// Function to check if the Python script is running
+function isScriptRunning() {
+    $output = shell_exec("pgrep -f paidout.py");
+    return !empty($output);
+}
+
+// Function to fetch items from for_paid_out table
+function fetchPaidOutItems() {
+    // MySQL configuration
+    $host = 'localhost';
+    $user = 'python';
+    $password = 'YchangThird1!';
+    $database = 'wordpress';
+
+    $connection = new mysqli($host, $user, $password, $database);
+
+    if ($connection->connect_error) {
+        die(json_encode(array('status' => 'error', 'message' => 'Database connection failed')));
+    }
+
+    $query = "SELECT filename, description, final_price FROM for_paid_out";
+    $result = $connection->query($query);
+
+    $items = array();
+    while ($row = $result->fetch_assoc()) {
+        $items[] = $row;
+    }
+
+    $connection->close();
+    return $items;
+}
+
+$scriptRunning = isScriptRunning();
+$items = [];
+
+if (!$scriptRunning) {
+    $items = fetchPaidOutItems();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,72 +101,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-
-            $(document).on("click", ".ebayintegration-btn", function(e){
-
-                e.preventDefault();
-
-                console.log("Button Pressed");
-                console.log( $(this).data() ); 
-
-                var action = "";
-                if( $(this).data("action") == "consignmentPaidOut" ){
-                    action = "consignmentPaidOut";
-                }
-                else if( $(this).data("action") == "consignmentPaidOutQueue" ){
-                    action = "consignmentPaidOutQueue";
-                }
-                $.ajax({
-                    method: 'post',
-                    url: "/wp-json/ebayintegration/v1/post",
-                    data: { 
-                        action: "consignmentPaidOutQueue",
-                        id: $(this).data("id")
-                    },
-                    success: function(resp){	
-
-                        $(document).find(".item_row[data-id='" + resp.id + "'").remove();
-
-                    },
-                    error: function(){
-                        console.log("Error in AJAX");
-                    }
-                });		
-
-            });
-
         $(document).ready(function() {
-
-            $.ajax({
-                type: 'GET',
-                url: 'status_script.php',
-                success: function(response) {
-                    const progress = parseFloat(response.progress);
-
-                    $('.loading').addClass('hidden');
-
-                    if (progress < 100) {
-                        $('.still_running').removeClass('hidden');
-                        $(".still_progress").html("<h1>" + progress.toFixed(2) + "%</h1>");
-                        console.log("Script still running please wait");
-
-                        const intervalId = setInterval(function() {
-                            location.reload();
-                        }, 5000); // Poll every 5 seconds
-
-                    } else {
-                        $('.controls').removeClass('hidden');
-                        $(".progress-box").addClass("hidden");
-                    }
-
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    $('#progress').text('AJAX Error: ' + textStatus + ' - ' + errorThrown);
-                    clearInterval(intervalId);
-                }
-            });
-
-
             $('#startButton').click(function() {
                 // Hide input and button immediately
                 $('.controls').addClass('hidden');
@@ -137,93 +114,48 @@
                     type: 'POST',
                     data: { folder_id: folderId },
                     success: function(response) {
-                        // Hide progress box and show table with items
-                        $(".progress-box").addClass("hidden");
-                        $("#progress-db").addClass("hidden");
-
-                        $('body, html').css("display", "block");
-
-                        createTable(response.items);
-
-                        clearInterval(intervalId);
-
+                        console.log("Script started successfully.");
+                        location.reload(); // Reload the page to update the status
                     },
                     error: function(xhr, status, error) {
                         console.error('AJAX Error:', status, error);
                     }
                 });
-
-                // Poll for progress
-                const intervalId = setInterval(function() {
-                    $.ajax({
-                        type: 'GET',
-                        url: 'status_script.php',
-                        success: function(response) {
-                            const progress = parseFloat(response.progress);
-                            $('#progress').text(progress.toFixed(2) + "%");
-
-                            // Update circular progress indicator
-                            const circle = $('#progress-circle .front');
-                            const dashOffset = 534 - (progress / 100 * 534);
-                            circle.css('stroke-dashoffset', dashOffset);
-
-                            if (progress >= 100) {
-
-                                $("#progress-box").addClass("hidden");
-                                $("#progress-db").removeClass("hidden");
-
-                            }
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
-                            $('#progress').text('AJAX Error: ' + textStatus + ' - ' + errorThrown);
-                            clearInterval(intervalId);
-                        }
-                    });
-                }, 2000); // Poll every 2 seconds
             });
 
             function createTable(items) {
-
-                $("#progress-db").addClass("hidden");
-
-                let table = '<div><H1>Pending Payout Items</H1>';
-                    table += '<table class="table table-bordered mt-4">';
-                    table += '<thead>';
-                    table += '<tr>';
-                    table += '<th>Filename</th>';
-                    table += '<th>Description</th>';
-                    table += '<th>Price</th>';
-                    table += '<th>Action</th>';
-                    table += '</tr>';
-                    table += '</thead>';
-                    table += '<tbody>';
+                let table = '<div><h1>Pending Payout Items</h1>';
+                table += '<table class="table table-bordered mt-4">';
+                table += '<thead>';
+                table += '<tr>';
+                table += '<th>Filename</th>';
+                table += '<th>Description</th>';
+                table += '<th>Price</th>';
+                table += '</tr>';
+                table += '</thead>';
+                table += '<tbody>';
                 items.forEach(item => {
-                    if( item.description != 'Description' ){
-
-                        table += '<tr class="item_row" data-id="' + item.id+ '">';
+                    if (item.description !== 'Description') {
+                        table += '<tr>';
                         table += '<td>' + item.filename + '</td>';
                         table += '<td>' + item.description + '</td>';
                         table += '<td>' + item.final_price + '</td>';
-                        table += '<td>';
-                        if( item.id != null ){
-                            table += '<button class="btn-sm btn btn-dark ebayintegration-btn mb-3 me-3" data-action="consignmentPaidOutQueue" data-id="' + item.id+ '">Queue</button>';
-                            table += '<button class="btn-sm btn btn-primary ebayintegration-btn mb-3" data-action="consignmentPaidOut" data-id="' + item.id+ '">Paid Out</button>';
-                        }
-                        table += '</td>';
                         table += '</tr>';
                     }
                 });
                 table += '</tbody></table></div>';
                 $('.container').append(table);
-
-
             }
+
+            <?php if (!$scriptRunning) { ?>
+                createTable(<?php echo json_encode($items); ?>);
+            <?php } ?>
         });
     </script>
 </head>
 <body>
     <div class="container">
-        <div class="progress-box hidden">
+        <div class="progress-box <?php if (!$scriptRunning) echo 'hidden'; ?>">
             <div id="progress-circle" class="progress-circle">
                 <svg viewBox="0 0 200 200">
                     <circle class="behind" cx="100" cy="100" r="85"></circle>
@@ -231,23 +163,20 @@
                 </svg>
                 <p id="progress" class="progress-text">0%</p>
             </div>
-            <div>Getting items from excel files in the specified Google Drive folder</div>
+            <div>Getting items from Excel files in the specified Google Drive folder</div>
         </div>
         <div class="progress-db hidden">
             <p class="progress-text">Hang in there!</p>
             Cross checking items in the database...
         </div>
-        <div class="controls hidden">
+        <div class="controls <?php if ($scriptRunning) echo 'hidden'; ?>">
             <h1 class="mb-4">Process Paid Outs</h1>
             <label>Google Drive Folder Link</label>
             <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder Link" />
             <small>Please input the Google Drive's Folder Link before clicking on GET FILES</small>
             <button id="startButton" class="btn btn-primary mt-3 form-control">GET FILES</button>
         </div>
-        <div class="loading text-center">
-            Loading please wait...
-        </div>
-        <div class="still_running hidden text-center">
+        <div class="still_running <?php if (!$scriptRunning) echo 'hidden'; ?> text-center">
             Script still running. Retry after a few minutes
             <div class="still_progress"></div>
         </div>
