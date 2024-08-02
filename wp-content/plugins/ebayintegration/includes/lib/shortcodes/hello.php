@@ -35,8 +35,6 @@ $current_user = wp_get_current_user();
         <button id="float_btn_add_ticket" class="btn btn-xl btn-primary ebayintegration-btn"  data-action="add_new_order">
             <i class="fa fa-circle-plus me-2"></i> New Order
         </button>
-    </div>
-    <div class="col-12 text-start">
         <button id="float_btn_add_payout" class="btn btn-xl btn-primary ebayintegration-btn"  data-action="add_new_payout">
             <i class="fa fa-money-bill me-2"></i> Request Payout
         </button>
