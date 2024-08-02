@@ -77,9 +77,9 @@
 			include( plugin_dir_path( __FILE__ ) . 'consignment.php');			
             break;
 
-        case "cashout":
+        case "payout":
 
-			include( plugin_dir_path( __FILE__ ) . 'cashout.php');			
+			include( plugin_dir_path( __FILE__ ) . 'payout.php');			
             break;
 
         case "grading":

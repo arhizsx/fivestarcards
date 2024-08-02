@@ -39,7 +39,7 @@
                 <i class="fa-solid fa-handshake me-2"></i>
                 Consignment
             </a>
-            <a href="/my-account/cashout" class="5star_btn btn text-left btn-dark mb-3" data-type="psa-value_bulk" data-action="add_card">
+            <a href="/my-account/payout" class="5star_btn btn text-left btn-dark mb-3" data-type="psa-value_bulk" data-action="add_card">
                 <i class="fa-solid fa-money-bill me-2"></i>
                 Payout
             </a>
@@ -50,10 +50,10 @@
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
                     <li class="">
-                        <a class="" href="/my-account/cashout/requests">Payout Requests</a>
+                        <a class="" href="/my-account/payout/requests">Payout Requests</a>
                     </li>
                     <li class="active">
-                        <a class="" href="/my-account/cashout">Pending Payout</a>
+                        <a class="" href="/my-account/payout">Pending Payout</a>
                     </li>
                 </ul>
                 <div class="content p-3 text-center">
@@ -78,9 +78,6 @@
                                 <tbody>
                                     <?php 
                                     if( $available > 0 ){
-
-
-
                                         foreach($cards as $item){ 
                                             $ctr++;
                                             $data = json_decode($item->data, true);
