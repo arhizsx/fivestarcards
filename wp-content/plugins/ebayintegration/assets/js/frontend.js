@@ -888,9 +888,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					data =  JSON.parse( resp.card[i].data );
 					if( 'Item' in data ) {
 						console.log( resp.card[i].status );
-						console.log( data );
+						console.log( "With Item" );
 					} else {
-						console.log( data );
+						console.log( "No Item" );
 					}
 				}
 
