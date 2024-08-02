@@ -47,6 +47,13 @@
     </div>
     <div class="row">
         <div class="col-xl-12 col-lg-12">
+            <?php 
+
+                if( isset($_GET["mode"])  && $_GET["mode"] == "requests"){
+
+                } else {
+            ?>
+
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
                     <li class="">
@@ -146,6 +153,10 @@
                     </div>                    
                 </div>
             </div>
+
+            <?php 
+                }
+            ?>
         </div>
     </div>
 </div>
