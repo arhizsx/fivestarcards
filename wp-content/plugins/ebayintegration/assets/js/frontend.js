@@ -882,6 +882,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			},
 			success: function(resp){		
 
+				console.log(resp.card.length);
 
 				if( resp.card.length > 0 ){
 
@@ -890,7 +891,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 					$.each(resp.card, function( k, v ){
 
-						console.log(k);
+						// console.log(k);
 
 						var data = JSON.parse(v.data);
 
