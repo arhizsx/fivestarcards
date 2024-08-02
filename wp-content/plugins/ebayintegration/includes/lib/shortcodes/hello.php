@@ -14,8 +14,8 @@ $current_user = wp_get_current_user();
         margin-bottom: 5px;
         padding: 0;
         border: 1px solid white;
-        border-radius: 20px; height: 24px; width: 24px;
-        line-height: 24px;
+        border-radius: 40px; height: 44px; width: 44px;
+        line-height: 44px;
         box-shadow: -0.46875rem 0 2.1875rem rgb(4 9 20 / 3%), -0.9375rem 0 1.40625rem rgb(4 9 20 / 3%), -0.25rem 0 0.53125rem rgb(4 9 20 / 5%), -0.125rem 0 0.1875rem rgb(4 9 20 / 3%);
     }
     .floating-button:hover {
