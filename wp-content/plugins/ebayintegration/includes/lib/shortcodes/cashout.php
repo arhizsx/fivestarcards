@@ -56,6 +56,8 @@
                     <H1>Please wait we are brewing something cool...</H1>
                     <?php        
                         } else {
+
+                            $payout_total = 0;
                     ?>
                         <div class="table-responsive">
                             <table class="table table-border table-striped table-sm table-hover search_table_paid">
@@ -69,6 +71,9 @@
                                 <tbody>
                                     <?php 
                                     if( $available > 0 ){
+
+
+
                                         foreach($cards as $item){ 
                                             $ctr++;
                                             $data = json_decode($item->data, true);
@@ -101,6 +106,7 @@
                                         </td>
                                     </tr>
                                     <?php
+                                            $payout_total = $$payout_total + $data["TransactionPrice"];
                                         } 
                                     } 
                                     else {
@@ -114,6 +120,16 @@
                                     }
                                     ?>
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th class="text-end" colspan="2">Total</th>
+                                        <th class="text-end">
+                                        <?php 
+                                        echo number_format(( $payout_total ), 2, '.', ',');
+                                        ?>
+                                        </th>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
                     <?php 
