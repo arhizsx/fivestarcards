@@ -20,6 +20,13 @@
 
 ?>
 
+<style>
+    h3 {
+
+        color: black;
+
+    }
+</style>
 
 <div class="container-fluid">
     <div class="row">
@@ -123,14 +130,14 @@
                                 <tfoot>
                                     <tr>
                                         <th class="text-end" colspan="2">
-                                            <H2>Grand Total</H2>
+                                            <H3>Grand Total</H3>
                                         </th>
                                         <th class="text-end">
-                                            <H2>$
+                                            <H3>$
                                         <?php 
                                         echo number_format(( $payout_total ), 2, '.', ',');
                                         ?>
-                                            </H2>
+                                            </H3>
                                         </th>
                                     </tr>
                                 </tfoot>
