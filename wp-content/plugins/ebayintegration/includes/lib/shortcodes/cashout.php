@@ -2,19 +2,16 @@
 <?php 
 
     include( plugin_dir_path( __FILE__ ) . "css.php" );			
-    $user_id = get_current_user_id();
-
-    global $wpdb;
 
     $ebay = $this->wpdb->get_results ( "
-    SELECT * 
-    FROM  ebay
-    where status = 'SoldListPaid'
-    " 
+        SELECT * 
+        FROM  ebay
+        where status = 'SoldListPaid'
+        ORDER BY id DESC
+        " 
     );
-    
-    
-    $skus = get_user_meta( get_current_user_id(), "sku", true );		        
+
+    $skus = get_user_meta( get_current_user_id(), "sku", true );		
 
 ?>
 
@@ -51,52 +48,71 @@
                     <?php        
                         } else {
                     ?>
-                    <div class="table-responsive">
-                        <table class="table table-border table-striped table-sm table-hover search_table_auction">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th class="text-end">Amount</th>
-                                    <th class="text-end">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php 
-                                foreach($ebay as $item){ 
-                                    $data = json_decode($item->data, true);
-
-                                    if( in_array( $item->sku, $skus ) ){
-                                ?>
-                                <tr>
-                                    <td>
-                                        <div class="title">
-                                            <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                                            <?php echo $data["Title"]; ?>
-                                            </a>
-                                        </div>
-                                        <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
-                                        <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
-                                    </td>
-                                    <td class="text-end">
-                                        <?php echo $data["SellingStatus"]["BidCount"] * 1?>
-                                    </td>
-
-                                    <td class="text-end">$<?php 
-                                        echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
-                                    ?></td>
-                                </tr>
-                                <?php 
-                                    }
-                                }
-                                ?>
+                        <div class="table-responsive">
+                            <table class="table table-border table-striped table-sm table-hover search_table_paid">
+                                <thead>
                                     <tr>
-                                        <td colspan="3" class="text-center p-5">Empty</td>
+                                        <th width="60%">Item</th>
+                                        <th>eBay Pay Date</th>
+                                        <th class="text-end">Price Sold</th>
                                     </tr>
-                                <?php                     
+                                </thead>
+                                <tbody>
+                                    <?php 
+                                    if( $available > 0 ){
+                                        foreach($ebay as $item){ 
+                                                $data = json_decode($item->data, true);
+
+                                                if( in_array( $item->sku, $skus ) ){
+
+                                                    $ctr++;
+
+                                    ?>
+                                    <tr>
+                                        <td>
+                                            <div class="title">
+                                                <strong><?php echo $ctr;  ?></strong>&nbsp;
+                                                <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
+                                                    <?php print_r( $data["Item"]["Title"] ); ?>
+                                                </a>
+                                            </div> 
+                                            <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
+                                            <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
+                                            <?php $listing = $data["Item"]["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"]; ?>
+                                            <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                                        
+                                        </td>
+                                        <td class="">
+                                            <?php
+                                            $paid_time = explode("T",$data["PaidTime"]); 
+                                            echo $paid_time[0];
+                                            ?>
+                                        </td>
+                                        <td class="text-end">
+                                            $<?php 
+                                            echo number_format(( $data["TransactionPrice"]), 2, '.', ',');
+                                            ?>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                            }
+                                        } 
+                                    } 
+                                    else {
+                                    ?>
+                                    <tr>
+                                        <td colspan="3" class="text-center p-5">
+                                            No Items
+                                        </td>
+                                    </tr>
+                                    <?php 
                                     }
-                                ?>
-                            </tbody>
-                        </table>
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    <?php 
+                        }
+                    ?>
                     </div>                    
                 </div>
             </div>
