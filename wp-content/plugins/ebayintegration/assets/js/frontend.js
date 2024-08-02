@@ -890,6 +890,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 						console.log( resp.card[i].status );
 						console.log( "With Item" );
 					} else {
+						console.log( resp.card[i].status );
 						console.log( "No Item" );
 					}
 				}
