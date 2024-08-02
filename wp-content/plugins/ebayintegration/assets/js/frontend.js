@@ -884,6 +884,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				console.log(resp.card.length);
 
+				$(document).find(".member_ebay_box").find("table tbody").empty();
+
 				for( i=0; i<= resp.card.length; i++ ){
 
 					var Title = "";
