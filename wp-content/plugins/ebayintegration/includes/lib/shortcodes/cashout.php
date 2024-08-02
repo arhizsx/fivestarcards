@@ -55,9 +55,9 @@
                         <table class="table table-border table-striped table-sm table-hover search_table_auction">
                             <thead>
                                 <tr>
-                                    <th>Item</th>
-                                    <th class="text-end">Bids</th>
-                                    <th class="text-end">Current Price</th>
+                                    <th>Date</th>
+                                    <th class="text-end">Amount</th>
+                                    <th class="text-end">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
