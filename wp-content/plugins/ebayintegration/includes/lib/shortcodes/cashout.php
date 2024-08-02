@@ -79,7 +79,10 @@
                                             </div> 
                                             <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                                             <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
-                                            <?php $listing = $data["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"]; ?>
+                                            <?php 
+                                                $listing = $data["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"]; 
+                                                print_r($data);
+                                            ?>
                                             <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                                        
                                         </td>
                                         <td class="">
