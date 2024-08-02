@@ -54,10 +54,10 @@
             ?>
                 <ul class="clearfix d-none d-lg-block">
                     <li class="active">
-                        <a class="" href="/my-account/payout/?mode=requests">Payout Requests</a>
+                        <a class="" href="/my-account/payout/">Payout Requests</a>
                     </li>
                     <li class="">
-                        <a class="" href="/my-account/payout">Pending Payout</a>
+                        <a class="" href="/my-account/payout?mode=pending">Pending Payout</a>
                     </li>
                 </ul>
                 <div class="content p-3 text-center">
@@ -92,10 +92,10 @@
 
                 <ul class="clearfix d-none d-lg-block">
                     <li class="">
-                        <a class="" href="/my-account/payout/?mode=requests">Payout Requests</a>
+                        <a class="" href="/my-account/payout">Payout Requests</a>
                     </li>
                     <li class="active">
-                        <a class="" href="/my-account/payout">Pending Payout</a>
+                        <a class="" href="/my-account/payout/?mode=pending">Pending Payout</a>
                     </li>
                 </ul>
                 <div class="content p-3 text-center">
