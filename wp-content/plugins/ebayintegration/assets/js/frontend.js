@@ -883,41 +883,26 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			success: function(resp){		
 
 				console.log(resp.card.length);
+				var Title = "";
+				var URL = "";
 
 				for( i=0; i<= resp.card.length; i++ ){
 					data =  JSON.parse( resp.card[i].data );
 					if( 'Item' in data ) {
-						console.log( resp.card[i].status );
-						console.log( "With Item" );
+
+						Title = data.Item.Title;
+						URL = data.Item.ListingDetails.ViewItemURL;
 					} else {
-						console.log( resp.card[i].status );
-						console.log( "No Item" );
+						Title = data.Title;
+						URL = data.ListingDetails.ViewItemURL;
 					}
-				}
 
-
-				if( resp.card.length > 0 ){
-
-					$(document).find(".member_ebay_box").find("table tbody").empty();
-
-
-					$.each(resp.card, function( k, v ){
-
-						// console.log(k);
-
-						var data = JSON.parse(v.data);
-
-						var title = data.Item.Title;
-						var status = v.status;
-
-						$(document).find(".member_ebay_box").find("table tbody").append(
-							"<tr>" +
-								"<td>" + status + "</td>" + 
-								"<td>" + title + "</td>" + 
-							"</tr>"
-						)
-	
-					});
+					$(document).find(".member_ebay_box").find("table tbody").append(
+						"<tr>" +
+							"<td>" + data.status + "</td>" + 
+							"<td><a href='" + URL + "'" + Title + "</td>" + 
+						"</tr>"
+					)
 
 				}
 
