@@ -34,7 +34,7 @@
             </a>
             <a href="/my-account/cashout" class="5star_btn btn text-left btn-dark mb-3" data-type="psa-value_bulk" data-action="add_card">
                 <i class="fa-solid fa-money-bill me-2"></i>
-                Cashout
+                Payout
             </a>
         </div>
     </div>
