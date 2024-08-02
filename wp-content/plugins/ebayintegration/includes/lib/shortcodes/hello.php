@@ -33,7 +33,7 @@ $current_user = wp_get_current_user();
     </div>
     <div class="col-12 text-start">
     <button id="float_btn_add_ticket" class="btn btn-xl btn-primary ebayintegration-btn"  data-action="add_new_order">
-        <i class="fa fa-plus"></i> New Order
+        <i class="fa fa-circle-plus fa-2x"></i> New Order
     </button>
         <!-- <small style="border: 1px solid white; background-color: black; color: white; padding: 5px; margin-right: 5px;">
             NEW ORDER
