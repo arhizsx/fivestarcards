@@ -50,7 +50,7 @@
             <div class="shortcode_tab_box">
             <?php 
 
-                if( isset($_GET["mode"])  && $_GET["mode"] == "requests"){
+                if( !isset($_GET["mode"])){
             ?>
                 <ul class="clearfix d-none d-lg-block">
                     <li class="active">
