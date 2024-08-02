@@ -17,7 +17,10 @@
 
     $cards = $this->wpdb->get_results ( $sql );
     $available = count($cards);
+
+    print_r( $cards );
 ?>
+
 
 <div class="container-fluid">
     <div class="row">
