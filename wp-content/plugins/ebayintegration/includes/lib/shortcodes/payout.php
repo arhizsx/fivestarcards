@@ -47,6 +47,18 @@
     </div>
     <div class="row">
         <div class="col-xl-12 col-lg-12">
+            <div class="shortcode_tab_box">
+                <ul class="clearfix d-none d-lg-block">
+                    <li class="active">
+                        <a class="" href="/my-account/payout/?mode=requests">Payout Requests</a>
+                    </li>
+                    <li class="">
+                        <a class="" href="/my-account/payout">Pending Payout</a>
+                    </li>
+                </ul>
+                <div class="content p-3 text-center">
+                    requests
+                </div>
             <?php 
 
                 if( isset($_GET["mode"])  && $_GET["mode"] == "requests"){
@@ -54,7 +66,6 @@
                 } else {
             ?>
 
-            <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
                     <li class="">
                         <a class="" href="/my-account/payout/?mode=requests">Payout Requests</a>
@@ -152,11 +163,11 @@
                     ?>
                     </div>                    
                 </div>
-            </div>
 
             <?php 
                 }
             ?>
+            </div>
         </div>
     </div>
 </div>
