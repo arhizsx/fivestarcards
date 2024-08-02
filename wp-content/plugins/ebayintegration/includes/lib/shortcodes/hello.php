@@ -32,13 +32,13 @@ $current_user = wp_get_current_user();
         </H1>
     </div>
     <div class="col-12 text-start">
-    <button class="btn"><i class="fa fa-home"></i> New Order</button>
-        <small style="border: 1px solid white; background-color: black; color: white; padding: 5px; margin-right: 5px;">
+    <button class="btn"  id="float_btn_add_ticket" class="ebayintegration-btn"  data-action="add_new_order">New Order <i class="fa fa-plus"></i></button>
+        <!-- <small style="border: 1px solid white; background-color: black; color: white; padding: 5px; margin-right: 5px;">
             NEW ORDER
         </small>
         <button type="button" id="float_btn_add_ticket" class="floating-button btn btn-primary ebayintegration-btn" data-action="add_new_order" data-toggle="tooltip" data-placement="left" data-original-title="Add a Grading">
             <i class="fa fa-plus fa-2x fa-w-16 fa-beat" style="margin-top: 3px;"></i>
-        </button>
+        </button> -->
     </div>
 </div>
 
