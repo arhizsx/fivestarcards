@@ -122,11 +122,15 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th class="text-end" colspan="2">Total</th>
+                                        <th class="text-end" colspan="2">
+                                            <H2>Grand Total</H2>
+                                        </th>
                                         <th class="text-end">
+                                            <H2>$
                                         <?php 
                                         echo number_format(( $payout_total ), 2, '.', ',');
                                         ?>
+                                            </H2>
                                         </th>
                                     </tr>
                                 </tfoot>
