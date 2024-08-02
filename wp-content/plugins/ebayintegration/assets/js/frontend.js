@@ -883,10 +883,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			success: function(resp){		
 
 				console.log(resp.card.length);
-				var Title = "";
-				var URL = "";
 
 				for( i=0; i<= resp.card.length; i++ ){
+
+					var Title = "";
+					var URL = "";
+	
 					data =  JSON.parse( resp.card[i].data );
 					if( 'Item' in data ) {
 
