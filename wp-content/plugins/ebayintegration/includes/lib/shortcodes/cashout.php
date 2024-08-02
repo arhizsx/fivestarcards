@@ -43,11 +43,11 @@
                 </ul>
                 <div class="content p-3 text-center">
                     <?php 
-                        if( $user_id != 1 ){
+                        // if( $user_id != 1 ){
                     ?>
                     <H1>Please wait we are brewing something cool...</H1>
                     <?php        
-                        } else {
+                        // } else {
                     ?>
                         <div class="table-responsive">
                             <table class="table table-border table-striped table-sm table-hover search_table_paid">
@@ -112,7 +112,7 @@
                             </table>
                         </div>
                     <?php 
-                        }
+                        // }
                     ?>
                     </div>                    
                 </div>
