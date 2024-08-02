@@ -885,7 +885,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				console.log(resp.card.length);
 
 				for( i=0; i<= resp.card.length; i++ ){
-					console.log(resp.card[i]);
+					console.log( JSON.parse( resp.card[i].data ) );
 				}
 
 
