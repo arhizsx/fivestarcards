@@ -71,7 +71,7 @@
                                 <thead>
                                     <tr>
                                         <th class="text-start" width="60%">Item</th>
-                                        <th>eBay Pay Date</th>
+                                        <th class="text-end">eBay Pay Date</th>
                                         <th class="text-end">Price Sold</th>
                                     </tr>
                                 </thead>
@@ -100,7 +100,7 @@
                                             ?>
                                             <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                                        
                                         </td>
-                                        <td class="">
+                                        <td class="text-end">
                                             <?php
                                             $paid_time = explode("T",$data["PaidTime"]); 
                                             echo $paid_time[0];
