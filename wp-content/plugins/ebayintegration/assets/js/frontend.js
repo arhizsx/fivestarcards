@@ -884,6 +884,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				console.log(resp.card.length);
 
+				for( i=0; i<= resp.card.length; i++ ){
+					console.log(resp.card[i]);
+				}
+
+
 				if( resp.card.length > 0 ){
 
 					$(document).find(".member_ebay_box").find("table tbody").empty();
