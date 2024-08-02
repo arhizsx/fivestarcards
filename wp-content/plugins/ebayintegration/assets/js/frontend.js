@@ -889,9 +889,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					var Title = "";
 					var URL = "";
 	
-					data =  JSON.parse( resp.card[i].data );
+					var data =  JSON.parse( resp.card[i].data );
 					if( 'Item' in data ) {
-
 						Title = data.Item.Title;
 						URL = data.Item.ListingDetails.ViewItemURL;
 					} else {
