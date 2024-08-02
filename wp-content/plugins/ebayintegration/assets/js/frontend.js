@@ -882,7 +882,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			},
 			success: function(resp){		
 
-				console.log(resp);
+				console.log(resp.card);
 
 				if( resp.card.length > 0 ){
 
