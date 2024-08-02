@@ -81,7 +81,7 @@
                                             <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
                                             <?php 
                                                 $listing = $data["Item"]['ListingDetails']["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"]; 
-                                                print_r($data);
+                                                print_r($item->data);
                                             ?>
                                             <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                                        
                                         </td>
