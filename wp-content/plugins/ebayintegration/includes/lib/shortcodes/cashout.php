@@ -3,19 +3,20 @@
 
     include( plugin_dir_path( __FILE__ ) . "css.php" );			
 
-    $ebay = $this->wpdb->get_results ( "
+    $user_id = get_current_user_id();
+
+    $skus = get_user_meta( $user_id, "sku", true );		
+    $array = implode("','",$skus);
+
+    $sql = "
         SELECT * 
         FROM  ebay
-        where status = 'SoldListPaid'
+        where status = 'SoldListPaid' AND sku IN ('" . $array . "')
         ORDER BY id DESC
-        " 
-    );
+    ";
 
-    
-
-    $skus = get_user_meta( get_current_user_id(), "sku", true );		
-
-    $user_id = get_current_user_id();
+    $cards = $this->wpdb->get_results ( $sql );
+    $available = count($cards);
 ?>
 
 <div class="container-fluid">
@@ -45,11 +46,11 @@
                 </ul>
                 <div class="content p-3 text-center">
                     <?php 
-                        // if( $user_id != 1 ){
+                        if( $user_id != 1054 ){
                     ?>
                     <H1>Please wait we are brewing something cool...</H1>
                     <?php        
-                        // } else {
+                        } else {
                     ?>
                         <div class="table-responsive">
                             <table class="table table-border table-striped table-sm table-hover search_table_paid">
@@ -63,14 +64,8 @@
                                 <tbody>
                                     <?php 
                                     if( $available > 0 ){
-                                        foreach($ebay as $item){ 
+                                        foreach($cards as $item){ 
                                             $data = json_decode($item->data, true);
-
-                                            if( in_array( $item->sku, $skus ) ){
-
-                                                print_r( $data["Item"] );
-
-                                                $ctr++;
                                     ?>
                                     <tr>
                                         <td>
@@ -98,7 +93,6 @@
                                         </td>
                                     </tr>
                                     <?php
-                                            }
                                         } 
                                     } 
                                     else {
@@ -115,7 +109,7 @@
                             </table>
                         </div>
                     <?php 
-                        // }
+                        }
                     ?>
                     </div>                    
                 </div>
