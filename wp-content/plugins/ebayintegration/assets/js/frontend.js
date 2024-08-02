@@ -856,6 +856,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	}
 	
 	else if( jQuery(this).data("action") == "getViewMemberEbay" ){
+
+		console.log("test");
 		
 		$(document).find(".member_view_menu").find("button").removeClass("active");
 		element.addClass("active");
