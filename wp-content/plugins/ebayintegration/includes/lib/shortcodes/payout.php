@@ -61,7 +61,28 @@
                     </li>
                 </ul>
                 <div class="content p-3 text-center">
-                    requests
+                    <div class="table-responsive">
+                        <table class="table table-border table-striped table-sm table-hover search_table_paid">
+                            <thead>
+                                <tr>
+                                    <th class="text-start">Request ID</th>
+                                    <th class="text-start">Request Date</th>
+                                    <th class="text-center">Cards Count</th>
+                                    <th class="text-end">Amount Requested</th>
+                                    <th class="text-end">Request Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-start">-</td>
+                                    <td class="text-start">-</td>
+                                    <td class="text-center">-</td>
+                                    <td class="text-end">-</td>
+                                    <td class="text-end">-</td>
+                                </tr>                                    
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
             <?php
