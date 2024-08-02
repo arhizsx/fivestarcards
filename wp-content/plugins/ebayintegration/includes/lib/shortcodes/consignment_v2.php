@@ -15,7 +15,7 @@
                 <i class="fa-solid fa-handshake me-2"></i>
                 Consignment
             </a>
-            <a href="/my-account/cashout" class="5star_btn btn text-left btn-secondary mb-3">
+            <a href="/my-account/payout" class="5star_btn btn text-left btn-secondary mb-3">
                 <i class="fa-solid fa-money-bill me-2"></i>
                 Cashout
             </a>
