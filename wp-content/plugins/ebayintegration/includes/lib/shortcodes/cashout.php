@@ -67,6 +67,7 @@
                                     <?php 
                                     if( $available > 0 ){
                                         foreach($cards as $item){ 
+                                            $ctr++;
                                             $data = json_decode($item->data, true);
                                     ?>
                                     <tr>
