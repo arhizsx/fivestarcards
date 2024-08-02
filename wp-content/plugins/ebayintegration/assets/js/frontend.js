@@ -856,8 +856,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	}
 	
 	else if( jQuery(this).data("action") == "getViewMemberEbay" ){
-
-		console.log("test");
 		
 		$(document).find(".member_view_menu").find("button").removeClass("active");
 		element.addClass("active");
@@ -884,6 +882,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			},
 			success: function(resp){		
 
+				console.log(resp);
 
 				if( resp.card.length > 0 ){
 
@@ -892,7 +891,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 					$.each(resp.card, function( k, v ){
 
-						console.log(v);
 
 						var data = JSON.parse(v.data);
 
