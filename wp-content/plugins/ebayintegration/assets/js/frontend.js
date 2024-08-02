@@ -900,8 +900,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 					$(document).find(".member_ebay_box").find("table tbody").append(
 						"<tr>" +
-							"<td>XXXX" + resp.card[i].status + "</td>" + 
-							"<td><a href='" + URL + "'>" + Title + "XXXX</a></td>" + 
+							"<td>" + resp.card[i].status + "</td>" + 
+							"<td><a target='_blank' href='" + URL + "'>" + Title + "</a></td>" + 
 						"</tr>"
 					)
 
