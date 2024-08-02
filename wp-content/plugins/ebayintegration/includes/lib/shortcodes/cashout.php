@@ -11,6 +11,8 @@
         " 
     );
 
+    
+
     $skus = get_user_meta( get_current_user_id(), "sku", true );		
 
     $user_id = get_current_user_id();
@@ -62,12 +64,13 @@
                                     <?php 
                                     if( $available > 0 ){
                                         foreach($ebay as $item){ 
-                                                $data = json_decode($item->data, true);
+                                            $data = json_decode($item->data, true);
 
-                                                if( in_array( $item->sku, $skus ) ){
+                                            if( in_array( $item->sku, $skus ) ){
 
-                                                    $ctr++;
+                                                print_r( $data["Item"] );
 
+                                                $ctr++;
                                     ?>
                                     <tr>
                                         <td>
