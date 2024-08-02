@@ -29,7 +29,7 @@ $current_user = wp_get_current_user();
     <div class="col-12">
         <H1 style="color: black;">
             Hello, <?php echo $current_user->display_name; ?>
-        </H1>
+        </H1> 
     </div>
     <div class="col-12 text-start">
     <button class="btn"  id="float_btn_add_ticket" class="btn btn-xl btn-primary ebayintegration-btn"  data-action="add_new_order">New Order <i class="fa fa-plus"></i></button>
