@@ -50,7 +50,7 @@
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
                     <li class="">
-                        <a class="" href="/my-account/payout/requests">Payout Requests</a>
+                        <a class="" href="/my-account/payout/?mode=requests">Payout Requests</a>
                     </li>
                     <li class="active">
                         <a class="" href="/my-account/payout">Pending Payout</a>
