@@ -43,7 +43,7 @@
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
                     <li class="">
-                        <a class="" href="/my-account/cashout/requests">Payment Requests</a>
+                        <a class="" href="/my-account/cashout/requests">Payout Requests</a>
                     </li>
                     <li class="active">
                         <a class="" href="/my-account/cashout">Pending Payout</a>
