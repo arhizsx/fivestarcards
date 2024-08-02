@@ -58,7 +58,7 @@
                             <table class="table table-border table-striped table-sm table-hover search_table_paid">
                                 <thead>
                                     <tr>
-                                        <th width="60%">Item</th>
+                                        <th class="text-start" width="60%">Item</th>
                                         <th>eBay Pay Date</th>
                                         <th class="text-end">Price Sold</th>
                                     </tr>
