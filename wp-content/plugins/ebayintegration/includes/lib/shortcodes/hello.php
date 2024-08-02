@@ -32,6 +32,7 @@ $current_user = wp_get_current_user();
         </H1>
     </div>
     <div class="col-12 text-start">
+    <button class="btn"><i class="fa fa-home"></i> New Order</button>
         <small style="border: 1px solid white; background-color: black; color: white; padding: 5px; margin-right: 5px;">
             NEW ORDER
         </small>
