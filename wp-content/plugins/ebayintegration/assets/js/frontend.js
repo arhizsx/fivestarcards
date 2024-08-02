@@ -890,6 +890,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 					$.each(resp.card, function( k, v ){
 
+						console.log(v);
+
 						var data = JSON.parse(v.data);
 
 						var title = data.Item.Title;
