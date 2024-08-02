@@ -17,7 +17,7 @@
             </a>
             <a href="/my-account/payout" class="5star_btn btn text-left btn-secondary mb-3">
                 <i class="fa-solid fa-money-bill me-2"></i>
-                Cashout
+                Payout
             </a>
         </div>
     </div>
