@@ -14,8 +14,8 @@ $current_user = wp_get_current_user();
         margin-bottom: 5px;
         padding: 0;
         border: 1px solid white;
-        border-radius: 50px; height: 54px; width: 54px;
-        line-height: 54px;
+        border-radius: 20px; height: 24px; width: 24px;
+        line-height: 24px;
         box-shadow: -0.46875rem 0 2.1875rem rgb(4 9 20 / 3%), -0.9375rem 0 1.40625rem rgb(4 9 20 / 3%), -0.25rem 0 0.53125rem rgb(4 9 20 / 5%), -0.125rem 0 0.1875rem rgb(4 9 20 / 3%);
     }
     .floating-button:hover {
@@ -36,7 +36,7 @@ $current_user = wp_get_current_user();
             NEW ORDER
         </small>
         <button type="button" id="float_btn_add_ticket" class="floating-button btn btn-primary ebayintegration-btn" data-action="add_new_order" data-toggle="tooltip" data-placement="left" data-original-title="Add a Grading">
-            <i class="fa fa-plus fa-1x fa-w-16 fa-beat" style="margin-top: 10px;"></i>
+            <i class="fa fa-plus fa-2x fa-w-16 fa-beat" style="margin-top: 10px;"></i>
         </button>
     </div>
 </div>
