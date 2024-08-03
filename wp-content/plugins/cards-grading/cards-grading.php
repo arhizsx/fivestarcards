@@ -1030,9 +1030,6 @@
             
             $data_pull = $this->getPayoutMember( $params["key"] );
 
-            print_r( json_encode($data_pull) );
-            die();
-
             $data = [
                 "cards" => json_encode($data_pull["cards"])
             ];
