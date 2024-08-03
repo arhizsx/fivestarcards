@@ -256,7 +256,7 @@ $current_user = wp_get_current_user();
                             </div>
                             <div class="col-xl-4">
                                 <label>Total Amount</label>
-                                <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
+                                <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
                             </div>
                             <div class="col-xl-12">
                                 <label>Remarks / Message</label>
