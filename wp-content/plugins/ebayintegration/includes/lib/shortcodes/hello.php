@@ -72,8 +72,8 @@ $current_user = wp_get_current_user();
 	</div>
 </div>
 
-<div class="modal fade add_new_payment_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
-	<div class="modal-dialog modal-lg" id="dxmodal">
+<div class="modal fade add_new_payment_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal2" aria-hidden="true"  data-backdrop="" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+	<div class="modal-dialog modal-lg" id="dxmodal2">
 		<div class="modal-content modal-ajax">
 			<div class="modal-header bg-dark text-white">
 				<h5 class="modal-title mb-0 p-0">
