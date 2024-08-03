@@ -229,7 +229,7 @@ $current_user = wp_get_current_user();
                                                 }
                                             ?>
                                             <td class="text-end">
-                                                <?php echo number_format(( $fees * 100), 2, '.', ','); ?>%                                            
+                                                <?php echo number_format(( $rate * 100), 2, '.', ','); ?>%                                            
                                             </td>
                                             <td class="text-end">
                                                 $<?php 
