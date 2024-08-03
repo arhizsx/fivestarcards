@@ -245,9 +245,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					final = sold_price * rate + fees;
 				}
 
-				rate = parseFloat(rate).toFixed(2)				
-				fees = parseFloat(fees).toFixed(2)				
-				final = parseFloat(final).toFixed(2)				
+				rate = parseFloat(rate).toFixed(2) * 100;				
+				fees = parseFloat(fees).toFixed(2);				
+				final = parseFloat(final).toFixed(2);				
 
 				$(document).find("#payout_cards_table tbody").append(
 					"<tr>" +	
