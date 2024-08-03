@@ -107,6 +107,7 @@ $current_user = wp_get_current_user();
                             SELECT * 
                             FROM  ebay
                             where status = 'SoldListPaid' AND sku IN ('" . $array . "')
+                                AND request_id IS NULL
                             ORDER BY id DESC
                         ";
                     
