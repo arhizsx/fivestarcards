@@ -129,7 +129,7 @@ $current_user = wp_get_current_user();
                                                 $ctr++;
                                                 $data = json_decode($item->data, true);
 
-                                                echo $payout_total . "<br>";
+                                                echo $payout_total . " - " . $final;
 
                                         ?>
                                         <input type="hidden" name="card[<?php echo $ctr ?>]" value="<?php echo $item->item_id; ?>">
@@ -216,9 +216,6 @@ $current_user = wp_get_current_user();
                                             </td>
                                         </tr>
                                         <?php
-                                                $payout_total = $$payout_total + ($rate * $sold_price) + $fees;
-
-                                                echo ($rate * $sold_price) + $fees . "<br>";
                                             } 
                                         } 
                                         else {
