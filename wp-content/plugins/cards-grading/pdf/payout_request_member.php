@@ -4,10 +4,19 @@ $payout = $data["payout"];
 
 <html>
     <head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            @page {
+                margin: 0cm;
+            }
+            body {
+                margin: 0cm;
+                padding: 0cm;
+            }
+        </style>        
     </head>
     <body>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row mb-3 border-bottom">
                 <div class="col">
                     <img src="https://5starcards.com/wp-content/uploads/2023/09/5-star-cards-logo.png" width="150px;" alt="5 Star Cards">
