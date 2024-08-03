@@ -1030,7 +1030,7 @@
             
             $data_pull = $this->getPayoutMember( $params["key"] );
 
-            $data =[
+            $data = [
                 "cards" => $data_pull["cards"]
             ];
 
