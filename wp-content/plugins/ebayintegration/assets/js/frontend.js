@@ -189,15 +189,69 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			$.each( payout.cards, function( k, v){
 
 				var card = JSON.parse(v.data, true);
+				var sold_price = parseFloat(card.TransactionPrice).toFixed(2);
+				var rate = 0;
+				var fees = 0;
+				var final = 0;
 
+				if( sold_price < 10 ){
+					rate = 1;
+					fees = 3;
+					final = sold_price * rate + fees;
+				}
+				else if( sold_price >= 10 &&  $sold_price <= 49.99  ){
+					rate = 0.82;
+					fees = 0;
+					final = sold_price * rate + fees;
+				}
+				else if( sold_price >= 50 &&  $sold_price <= 99.99  ){
+					rate = 0.84;
+					fees = 0;
+					final = sold_price * rate + fees;
+				}
+				else if( sold_price >= 100 &&  $sold_price <= 199.99  ){
+					rate = 0.85;
+					fees = 0;
+					final = sold_price * rate + fees;
+				}
+				else if( sold_price >= 200 &&  $sold_price <= 499.99  ){
+					rate = 0.86;
+					fees = 0;
+					final = sold_price * rate + fees;
+				}
+				else if( sold_price >= 500 &&  $sold_price <= 999.99  ){
+					rate = 0.87;
+					fees = 0;
+					final = sold_price * rate + fees;
+				}
+				else if( sold_price >= 1000 &&  $sold_price <= 2999.99  ){
+					rate = 0.88;
+					fees = 0;
+					final = sold_price * rate + fees;
+				}
+				else if( sold_price >= 3000 &&  $sold_price <= 4999.99  ){
+					rate = 0.90;
+					fees = 0;
+					final = sold_price * rate + fees;
+				}
+				else if( sold_price >= 5000 &&  $sold_price <= 8999.99  ){
+					rate = 0.92;
+					fees = 0;
+					final = sold_price * rate + fees;
+				}
+				else if( sold_price >= 9000  ){
+					rate = 0.94;
+					fees = 0;
+					final = sold_price * rate + fees;
+				}
 
 				$(document).find("#payout_cards_table tbody").append(
 					"<tr>" +	
 						"<td class='text-start'>" + card.Item.Title + "</td>" +
-						"<td class='text-end'>$" + parseFloat(card.TransactionPrice).toFixed(2) + "</td>" +
-						"<td class='text-end'>0-</td>" +
-						"<td class='text-end'>0-</td>" +
-						"<td class='text-end'>0</td>" +
+						"<td class='text-end'>$" + sold_price + "</td>" +
+						"<td class='text-end'>" + rate + "-</td>" +
+						"<td class='text-end'>" + fees + "-</td>" +
+						"<td class='text-end'>" + final + "</td>" +
 					"</tr>"
 				);
 			});
