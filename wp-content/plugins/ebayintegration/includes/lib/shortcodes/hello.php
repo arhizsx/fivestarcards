@@ -158,7 +158,6 @@ $current_user = wp_get_current_user();
                                     <tr>
                                         <td class="text-start">
                                             <div class="title text-start">
-                                                <strong><?php echo $ctr;  ?></strong>&nbsp;
                                                 <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
                                                     <?php print_r( $data["Item"]["Title"] ); ?>
                                                 </a>
