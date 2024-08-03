@@ -1508,8 +1508,14 @@ class Ebay_Integration_Ebay_API {
 		$sql = "SELECT * FROM payouts WHERE id = '" . $params["payout_id"] . "'";
 		$payout = $this->wpdb->get_results ( $sql );
 
-		return json_decode( $payout[0]->data, true );
+		$data = json_decode( $payout[0]->data, true );
+		$array = implode("','",$data["cards"]);
 
-		return ["error" => false, "payout" => $payout ];
+		$sql = "SELECT * FROM ebay WHERE item_id IN ('" . $array . "')";
+		$cards = $this->wpdb->get_results ( $sql );
+
+
+
+		return ["error" => false, "payout" => $payout , "cards" => $cards ];
 	}
 }
