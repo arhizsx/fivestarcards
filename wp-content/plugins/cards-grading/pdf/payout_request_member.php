@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-3">
                     <label>Status</label>
-                    <?php print_r( $data["payout"]["status"] ) ?>
+                    <?php print_r( $data["payout"] ) ?>
                 </div>
                 <div class="col-6">
                     <label>User</label>
