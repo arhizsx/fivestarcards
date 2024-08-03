@@ -184,6 +184,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when( payout ).done( function( payout ){	
 
+			alert("test");
+
 			$(document).find("#payout_cards_table tbody").empty();
 
 			$.each( payout.payout.cards, function( k, v){
