@@ -132,9 +132,8 @@ $current_user = wp_get_current_user();
                                     </thead>
                                     <tbody>
                                         <?php 
-                                        $payout_total = 0;                                            
-
                                         if( $available > 0 ){
+                                        $payout_total = 0;                                            
                                             foreach($cards as $item){ 
                                                 $ctr++;
                                                 $data = json_decode($item->data, true);
@@ -243,7 +242,7 @@ $current_user = wp_get_current_user();
                         <div class="row mb-3">
                             <div class="col-xl-4">
                                 <label>Total Amount</label>
-                                <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="$<?php echo number_format(( $final ), 2, '.', ',');?>">
+                                <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
                             </div>
                             <div class="col-xl-4">
                                 <label>Cards Count</label>
