@@ -1075,21 +1075,34 @@
 
     }
 
-    function getPayoutMember($key){
+    function getPayoutMember($params){
 
-        $sql = "SELECT * FROM payouts WHERE id = " . $key;
-        $payout = $this->wpdb->get_results ( $sql );
 
-        $data = json_decode( $payout[0]->data, true ); 
+		$user_id = $params["payout_id"];
 
-		$array = implode("','",  $data["cards"]);
+		$sql = "SELECT * FROM payouts WHERE id = '" . $params["payout_id"] . "'";
+		$payout = $this->wpdb->get_results ( $sql );
+
+		$data = json_decode( $payout[0]->data, true );
+		$array = implode("','",$data["cards"]);
 
 		$sql = "SELECT * FROM ebay WHERE item_id IN ('" . $array . "')";
 		$cards = $this->wpdb->get_results ( $sql );
 
-        return ["cards" => $cards, "payout"=> $payout];
+		$sql = "SELECT * FROM ebay WHERE item_id IN ('" . $array . "')";
+		$cards = $this->wpdb->get_results ( $sql );
 
-    }
+		$user_data = get_userdata($user_id);
+
+		$user = [
+			"id" => $user_data->data->ID,
+			"name" => $user_data->data->display_name,
+			"email" => $user_data->data->user_email,
+		];
+
+		return ["error" => false, "payout" => $payout , "cards" => $cards, "user" => $user ];
+	}
+
 
 
     public function handle_pdf($data){
