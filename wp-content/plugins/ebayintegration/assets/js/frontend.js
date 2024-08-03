@@ -174,7 +174,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when( payout ).done( function( payout ){
 
-			// window.location = "/my-account/payout/";
+			window.location = "/my-account/payout/?inser_id" . payout.insert_id ;
 	
 		});
 	
