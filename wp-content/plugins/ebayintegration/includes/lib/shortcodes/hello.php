@@ -154,6 +154,7 @@ $current_user = wp_get_current_user();
                                     <tbody>
                                         <?php 
                                         if( $available > 0 ){
+                                        $payout_total = 0;                                            
                                             foreach($cards as $item){ 
                                                 $ctr++;
                                                 $data = json_decode($item->data, true);
@@ -242,7 +243,7 @@ $current_user = wp_get_current_user();
                                             </td>
                                         </tr>
                                         <?php
-                                                $payout_total = $$payout_total + $sold_price;
+                                                $payout_total = $$payout_total + $final;
                                             } 
                                         } 
                                         else {
@@ -256,6 +257,14 @@ $current_user = wp_get_current_user();
                                         }
                                         ?>
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th colspan="4">Grand Total</th>
+                                            <th>
+                                            <?php echo number_format(( $payout_total), 2, '.', ','); ?>
+                                            </th>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>
