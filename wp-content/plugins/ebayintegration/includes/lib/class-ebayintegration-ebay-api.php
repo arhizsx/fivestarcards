@@ -1463,7 +1463,7 @@ class Ebay_Integration_Ebay_API {
 	function confirmPayoutRequest($params){
 
 
-		$user_id = 1;
+		$user_id = $params["user_id"];
 		$cards = [];
 
 			foreach( $params["card"] as $k => $c ) {
