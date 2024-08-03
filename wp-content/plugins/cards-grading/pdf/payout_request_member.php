@@ -45,7 +45,7 @@
                             <?php 
                             foreach($data["cards"] as $card){
 
-                                $card_data = json_decode($card, true);
+                                $card_data = json_decode($card->data, true);
                             ?>  
                             <tr>
                                 <td>
