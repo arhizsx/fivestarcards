@@ -74,7 +74,7 @@ $current_user = wp_get_current_user();
 
 <div class="modal fade add_new_payment_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal2" aria-hidden="true"  data-backdrop="" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
 	<div class="modal-dialog modal-lg" id="dxmodal2">
-		<div class="modal-content modal-ajax" style="margin-bottom: 120px;">
+		<div class="modal-content modal-ajax" style="margin-bottom: 200px;">
 			<div class="modal-header bg-dark text-white">
 				<h5 class="modal-title mb-0 p-0">
 					New Payment Request
