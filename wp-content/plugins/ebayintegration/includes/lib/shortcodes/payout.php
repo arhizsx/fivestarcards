@@ -79,6 +79,8 @@
                                     <th class="text-start">Request ID</th>
                                     <th class="text-center">Cards</th>
                                     <th class="text-start">Request Date</th>
+                                    <th class="text-start">Payment</th>
+                                    <th class="text-start">Remarks</th>
                                     <th class="text-end">Amount Requested</th>
                                     <th class="text-end">Status</th>
                                     <th class="text-end">Payout Date</th>
@@ -93,6 +95,8 @@
                                     <td class="text-start"><?php echo $card->id ?></td>
                                     <td class="text-center"><?php echo $data["cards_count"] ?></td>
                                     <td class="text-start"><?php echo $card->add_timestamp ?></td>
+                                    <td class="text-start"></td>
+                                    <td class="text-start"></td>
                                     <td class="text-end"><?php echo $data["requested_amount"] ?></td>
                                     <td class="text-end"><?php echo $card->status ?></td>
                                     <td class="text-end"></td>
