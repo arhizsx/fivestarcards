@@ -35,10 +35,15 @@ $current_user = wp_get_current_user();
         <button id="float_btn_add_ticket" class="btn btn-xl btn-primary ebayintegration-btn"  data-action="add_new_order">
             <i class="fa fa-circle-plus me-2"></i> New Order
         </button>
-        <?php echo get_current_user_id(); ?>
+        <?php 
+            if(  get_current_user_id() == 1054 ) {
+        ?>
         <button id="float_btn_add_payout" class="btn btn-xl btn-primary ebayintegration-btn"  data-action="add_new_payout">
             <i class="fa fa-money-bill me-2"></i> Request Payout
         </button>
+        <?php 
+            }
+        ?>
     </div>
 </div>
 
