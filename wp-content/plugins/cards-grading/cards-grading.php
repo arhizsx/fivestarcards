@@ -1010,8 +1010,9 @@
     public function handle_make_pdf($data){
 
         $params = $data->get_params();
-        
 
+        print_r($params);
+        die();
 
         $options = new Options();
         $options->set('isRemoteEnabled', true); 
