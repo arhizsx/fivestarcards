@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="row p-3">
-                <div class="col-12" style="padding: 20px;">
+                <div class="col-12" style="padding: 00px;">
                     <H5>Payment Request</H5>
                     <table class="table table-sm table-bordered table-striped table-sm table-hover search_table_paid" style="width: 95%">
                         <thead>
