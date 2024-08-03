@@ -174,7 +174,18 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		var payout = confirmPayoutRequest();
 
 		$.when( payout ).done( function( payout ){	
-			window.location = "/my-account/payout/?payout_id=" + payout.payout_id ;	
+
+            $.ajax({
+                type: 'get',
+				url: "/wp-json/cards-grading/v1/makepdf?key="  + payout.payout_id ,
+                success: function(resp){
+					window.location = "/my-account/payout/?payout_id=" + payout.payout_id ;	
+                },
+                error: function(){
+                    console.log("Error in AJAX");
+                }
+            });
+
 		});
 	}
 
