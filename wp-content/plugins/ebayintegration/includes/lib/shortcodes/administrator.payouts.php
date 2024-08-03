@@ -192,7 +192,7 @@
                         </div>
                         <div class="col-xl-4">
                             <label>Total Amount</label>
-                            <input name="total_amount"  class="form-control mb-3 px-2 pb-1 pt-2" type="text" value="">
+                            <input name="requested_amount"  class="form-control mb-3 px-2 pb-1 pt-2" type="text" value="">
                         </div>
                         <div class="col-xl-12">
                             <label>Remarks / Message</label>
