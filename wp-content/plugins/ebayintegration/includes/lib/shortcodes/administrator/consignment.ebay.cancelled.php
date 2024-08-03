@@ -112,12 +112,18 @@ $users = get_users( $args );
                 </td>    
                 <td>
                     <?php 
-                        print_r($cancel);
+                        print_r($cancel["cancelId"]);
                     ?>
                 </td>    
                 <td>
+                    <?php 
+                        print_r($cancel["cancelCloseDate"]["value"]);
+                    ?>
                 </td>    
                 <td>
+                    <?php 
+                        print_r($cancel["cancelStatus"]);
+                    ?>
                 </td>       
             </tr>
             <?php
