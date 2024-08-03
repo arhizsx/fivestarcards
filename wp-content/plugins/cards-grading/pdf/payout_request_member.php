@@ -16,6 +16,9 @@
             th, td {
                 padding: 2px; /* Reduced padding */
             }
+            .text-end {
+                text-align: right;
+            }
 
         </style>        
     </head>
@@ -139,8 +142,8 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th colspan="4" style="text-align: right;">Total Payout</th>
-                                <th colspan="1">
+                                <th colspan="4" class="text-end">Total Payout</th>
+                                <th colspan="1" class="text-end">
                                     $<?php 
                                     echo number_format(( $payout_total), 2, '.', ',');
                                     ?>
