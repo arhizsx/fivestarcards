@@ -63,9 +63,9 @@
                             <thead>
                                 <tr>
                                     <th class="text-start">Request ID</th>
+                                    <th class="text-center">Cards</th>
                                     <th class="text-start">Request Date</th>
                                     <th class="text-start">Payout Date</th>
-                                    <th class="text-center">Cards</th>
                                     <th class="text-end">Amount Requested</th>
                                     <th class="text-end">Status</th>
                                 </tr>
@@ -73,9 +73,9 @@
                             <tbody>
                                 <tr>
                                     <td class="text-start">-</td>
-                                    <td class="text-start">-</td>
-                                    <td class="text-start">-</td>
                                     <td class="text-center">-</td>
+                                    <td class="text-start">-</td>
+                                    <td class="text-start">-</td>
                                     <td class="text-end">-</td>
                                     <td class="text-end">-</td>
                                 </tr>                                    
