@@ -41,7 +41,7 @@
                     <?php print_r( $data["payout"][0]->status ) ?>
                 </div>
                 <div class="col-6">
-                    <?php print_r( $data["user"]["admin"] )  ?>
+                    <?php print_r( $data["user"]["name"] )  ?>
                 </div>
             </div>
             <div class="row p-3">
