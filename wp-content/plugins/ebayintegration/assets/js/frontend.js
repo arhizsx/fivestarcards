@@ -183,7 +183,22 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		var payout = getPayoutRequest( $(this).data("payout_id") );
 
 		$.when( payout ).done( function( payout ){	
-			console.log(payout);
+
+			$(document).find("#payout_cards_table tbody").empty();
+
+			$.each( payout.cards, function( k, v){
+				$(document).find("#payout_cards_table tbody").append(
+					"<tr>" +	
+						"<td class='text-start'>-</td>" +
+						"<td class='text-center'>-</td>" +
+						"<td class='text-start'>-</td>" +
+						"<td class='text-end'>-</td>" +
+						"<td class='text-end'>-</td>" +
+						"<td class='text-end'>-</td>" +
+					"</tr>"
+				);
+			});
+
 		});
 		
 
