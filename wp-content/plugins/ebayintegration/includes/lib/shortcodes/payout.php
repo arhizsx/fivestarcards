@@ -76,7 +76,7 @@
                 </ul>
                 <div class="content p-3 text-center">
                     <div class="table-responsive">
-                        <table class="table table-border table-striped table-sm table-hover search_table_paid" id="payout_cards_table">
+                        <table class="table table-border table-striped table-sm table-hover search_table_paid">
                             <thead>
                                 <tr>
                                     <th class="text-start">Payment ID</th>
@@ -147,7 +147,7 @@
                     <div class="row">
                         <H5 style="color: black;">Cards Included</H5>
                         <div class="table-responsive">
-                        <table class="table table-sm table-bordered table-striped table-sm table-hover search_table_paid">
+                        <table class="table table-sm table-bordered table-striped table-sm table-hover search_table_paid"  id="payout_cards_table">
                                 <thead>
                                     <tr>
                                         <th class="text-start" width="50%">Item</th>
