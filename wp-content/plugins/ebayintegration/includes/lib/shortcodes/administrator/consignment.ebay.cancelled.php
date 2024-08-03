@@ -66,6 +66,9 @@ $users = get_users( $args );
         <thead>
             <tr>
                 <th>Item</th>
+                <th>Cancel ID</th>
+                <th>Cancel Date</th>
+                <th>Reason</th>
             </tr>
         </thead>
         <tbody>
@@ -90,6 +93,8 @@ $users = get_users( $args );
                             $url = $data['ListingDetails']['ViewItemURL'];
                         }
 
+                        $cancel = json_decode($item->cancellation, true);
+
             ?>
             <tr>
                 <td>
@@ -103,9 +108,16 @@ $users = get_users( $args );
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
                     <?php $listing = $data["Item"]["ListingType"] == "Chinese" ? "Auction" : $data["Item"]["ListingType"]; ?>
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
-                    <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
-
-                    
+                    <div class="item_id text-small">ID: <?php echo $item->id ?></div>                                        
+                </td>    
+                    <?php 
+                        print_r($cancel);
+                    ?>
+                <td>
+                </td>    
+                <td>
+                </td>    
+                <td>
                 </td>       
             </tr>
             <?php
