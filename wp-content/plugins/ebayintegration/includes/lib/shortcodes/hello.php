@@ -107,14 +107,6 @@ $current_user = wp_get_current_user();
                         $cards = $this->wpdb->get_results ( $sql );
                         $available = count($cards);
                         $payout_total = 0;
-
-                        if( $available > 0 ){
-                            foreach($cards as $item){ 
-                                $ctr++;
-                                $data = json_decode($item->data, true);
-                                $payout_total = $$payout_total + $data["TransactionPrice"];
-                            }
-                        }                    
                 ?>
                     <form class="form" id="payout_request_form">
                         <div class="row">
@@ -133,7 +125,6 @@ $current_user = wp_get_current_user();
                                     <tbody>
                                         <?php 
                                         if( $available > 0 ){
-                                        $payout_total = 0;                                            
                                             foreach($cards as $item){ 
                                                 $ctr++;
                                                 $data = json_decode($item->data, true);
