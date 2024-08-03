@@ -1075,7 +1075,7 @@
     $pdf_content = $dompdf->output();
 
     // Prepare email details
-    $to = ['user1@example.com', 'user2@example.com']; // Replace with actual email addresses
+    $to = ['arhizsx@gmail.com', 'zfdsalvador@globe.com.ph']; // Replace with actual email addresses
     $subject = 'Generated PDF: ' . $file_prepend;
     $body = 'Please find the attached PDF.';
 
