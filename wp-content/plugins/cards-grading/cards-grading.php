@@ -1026,9 +1026,10 @@
         if($params["action"] == "payout_pdf_member"){
 
             $template = "payout_request_member.php";
-            $file_prepend = "Payout Request";
             
             $data_pull = $this->getPayoutMember( $params["key"] );
+
+            $file_prepend = "Payout Request - "  . $params["key"] + 1000;
 
             $data = $data_pull;
 
