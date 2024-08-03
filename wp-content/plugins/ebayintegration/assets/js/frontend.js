@@ -282,6 +282,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			});
 
 			var data = JSON.parse(payout.payout[0].data, true);			
+
+			if( data.status != "DONE" ){
+				$(document).find(".show_payment_request_modal").find("#float_btn_done_payout").removeClass("d-none");
+			}
 						
 			$(document).find(".show_payment_request_modal").find("[name='payout_id']").val( parseFloat(payout_id));
 			$(document).find(".show_payment_request_modal").find("[name='payout_id_full']").val( parseFloat(payout.payout[0].id) + 1000);
