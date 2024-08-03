@@ -138,7 +138,7 @@ $current_user = wp_get_current_user();
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <H5>Cards Included</H5>
+                        <H4 style="color: black;">Cards Included</H4>
                     </div>
 
                 <?php 
