@@ -1773,7 +1773,7 @@ function confirmPayoutRequest(type, user_id){
 		processData: false,
 		contentType: false,
 		success: function(resp){
-
+			defObject.resolve(resp);    //resolve promise and pass the response.
 		},
 		error: function(){
 			console.log("Error in AJAX");
