@@ -117,19 +117,13 @@ $current_user = wp_get_current_user();
                         }                    
                 ?>
                     <div class="row mb-3">
-                        <div class="col-4">
-                            Total Amount
-                        </div>
-                        <div class="col-8">                    
+                        <div class="col-6">
+                            <label>Total Amount</label>
                             <input  class="form-control" disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-4">
-                            Cards Count    
-                        </div>
-                        <div class="col-8">
-                            <input  class="form-control" disabled type="text" value="<?php echo $available ?>">
+                        <div class="col-6">   
+                            <label>Cards Count</label>
+                            <input  class="form-control" disabled type="text" value="<?php echo $available ?>">          
                         </div>
                     </div>
                     <div class="row mb-3">
