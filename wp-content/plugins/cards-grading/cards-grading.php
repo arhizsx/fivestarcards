@@ -1085,7 +1085,7 @@
 
 		$sql = "SELECT * FROM ebay WHERE sku IN ('" . $array . "')";
 		$cards = $this->wpdb->get_results ( $sql );
-        print_r($cards);
+        print_r($sql);
         die();
 
 
