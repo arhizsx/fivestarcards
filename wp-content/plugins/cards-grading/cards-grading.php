@@ -1029,7 +1029,7 @@
             
             $data_pull = $this->getPayoutMember( $params["key"] );
 
-            $file_prepend = "Payout Request - "  . $params["key"] + 1000;
+            $file_prepend = "5 Star Cards - Payout Request - "  . $params["key"] + 1000;
 
             $data = $data_pull;
 
@@ -1070,7 +1070,7 @@
         $dompdf->render();
 
         // // Output the generated PDF to Browser
-        $dompdf->stream("5 Star Cards - ". $file_prepend . ".pdf");
+        $dompdf->stream($file_prepend . ".pdf");
 
         return true;
 
