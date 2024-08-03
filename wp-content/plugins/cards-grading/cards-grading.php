@@ -1009,6 +1009,10 @@
 
     public function handle_make_pdf($data){
 
+        $params = $data->get_params();
+        
+
+
         $options = new Options();
         $options->set('isRemoteEnabled', true); 
         $dompdf = new Dompdf($options);
@@ -1019,9 +1023,17 @@
             'content' => "content",
             'date' => "date",
         ];
+
+        if($params["action"] == "payout_pdf_member"){
+            $template = "data.php";
+        } else {
+            $template = "data.php";
+        }
+
+        $template = "data.php";
         
         ob_start();
-        include plugin_dir_path(__FILE__) . 'data.php'; // Adjust path if needed
+        include plugin_dir_path(__FILE__) . "template/". $template ; // Adjust path if needed
         $html = ob_get_clean();
 
         $dompdf = new Dompdf();
