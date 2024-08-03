@@ -195,10 +195,10 @@
             </div>
             <div class="modal-footer">
                 <button id="float_btn_add_payout"  data-bs-dismiss="modal"  class="btn btn-xl btn-secondary">
-                    CANCEL
+                    Cancel
                 </button>
                 <button id="float_btn_payout_request_done"  data-bs-dismiss="modal"  class="btn btn-xl btn-primary">
-                    REQUEST DONE
+                    Request Done
                 </button>
             </div>
 		</div>
