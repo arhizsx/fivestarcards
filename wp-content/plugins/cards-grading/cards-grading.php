@@ -1030,17 +1030,9 @@
             
             $data_pull = $this->getPayoutMember( $params["key"] );
 
-            // $data = [
-            //     "cards" => json_encode($data_pull["cards"]),
-            //     "title" => "test"
-            // ];
-
             $data = [
-                "title" => "Test Title",
-                "content" => "Test Content",
-                "data" => "Test Date",
+                "cards" => $data_pull["cards"]
             ];
-
 
         }
         elseif($params["action"] == "payout_pdf_admin"){
@@ -1052,6 +1044,14 @@
                 "data" => "Test Date",
             ];
 
+        } else {
+            $template = "data.php";
+            $file_prepend = "";
+            $data = [
+                "title" => "X",
+                "content" => "X",
+                "data" => "X",
+            ];
         }
 
         ob_start();

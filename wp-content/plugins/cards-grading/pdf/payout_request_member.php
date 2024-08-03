@@ -1,10 +1,3 @@
-<?php
-// Access the passed variables
-$title = $data['title'] ?? 'Default Title';
-$content = $data['content'] ?? 'Default Content';
-$date = $data['date'] ?? date('Y-m-d');
-
-?>
 
 <html>
     <head>
@@ -27,9 +20,12 @@ $date = $data['date'] ?? date('Y-m-d');
         </style>        
     </head>
     <body>
-        <?php print_r($title);
-?>
         <div class="container-fluid m-0 p-0">
+
+<?php
+print_r($data["cards"]);
+?>
+
             <div class="row mb-3 border-bottom">
                 <div class="col-12  p-3">
                     <img src="https://5starcards.com/wp-content/uploads/2023/09/5-star-cards-logo.png" width="150px;" alt="5 Star Cards">
