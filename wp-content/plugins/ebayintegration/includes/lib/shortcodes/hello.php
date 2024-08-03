@@ -228,6 +228,7 @@ $current_user = wp_get_current_user();
                                         ?>
                                     </tbody>
                                 </table>
+                                <?php echo $payout_total ?>
                             </div>
                         </div>
                         <div class="row mb-3">
