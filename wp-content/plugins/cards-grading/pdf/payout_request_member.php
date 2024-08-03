@@ -9,16 +9,17 @@ $payout = $data["payout"];
             @page {
                 margin: 0cm;
             }
-            
+
             body {
                 margin: 0cm;
                 padding: 0cm;
                 font-size: 8pt; /* Set global font size */
             }
 
-            td {
-                padding: 2px;
+            th, td {
+                padding: 2px; /* Reduced padding */
             }
+            
         </style>        
     </head>
     <body>
