@@ -17,7 +17,7 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
 
 $array = implode("','",$skus);
 
-$sql = "SELECT * FROM ebay WHERE sku IN ('" . $array . "')";
+$sql = "SELECT * FROM ebay WHERE status = 'Cancelled' AND sku IN ('" . $array . "')";
 $ebay = $this->wpdb->get_results ( $sql );
 
 $args = array(
