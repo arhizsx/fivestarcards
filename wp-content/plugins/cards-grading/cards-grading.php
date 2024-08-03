@@ -1026,8 +1026,14 @@
 
         if($params["action"] == "payout_pdf_member"){
             $template = "data.php";
+            $data = [
+                "title" => "Test Title",
+                "content" => "Test Content",
+                "data" => "Test Date",
+            ];
         } else {
             $template = "data.php";
+            $data = [];
         }
 
         $template = "data.php";

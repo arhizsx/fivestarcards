@@ -1,8 +1,8 @@
 <?php
 // Access the passed variables
-$title = $pdf_data['title'] ?? 'Default Title';
-$content = $pdf_data['content'] ?? 'Default Content';
-$date = $pdf_data['date'] ?? date('Y-m-d');
+$title = $data['title'] ?? 'Default Title';
+$content = $data['content'] ?? 'Default Content';
+$date = $data['date'] ?? date('Y-m-d');
 ?>
 
 <html>
