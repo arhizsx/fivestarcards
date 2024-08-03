@@ -152,6 +152,7 @@ $current_user = wp_get_current_user();
                                     if( $available > 0 ){
                                         foreach($cards as $item){ 
                                             $ctr++;
+                                            print_r($item);
                                             $data = json_decode($item->data, true);
                                     ?>
                                     <tr>
