@@ -110,6 +110,7 @@ $current_user = wp_get_current_user();
                 ?>
                     <form class="form" id="payout_request_form">
                         <input type="hidden" name="action" value="confirmPayoutRequest">
+                        <input type="hidden" name="user_id" value="<?php echo get_current_user_id() ?>">
                         <div class="row">
                             <H5 style="color: black;">Cards Included</H5>
                             <div class="table-responsive">
