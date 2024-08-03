@@ -76,6 +76,7 @@
                         <table class="table table-border table-striped table-sm table-hover search_table_paid">
                             <thead>
                                 <tr>
+                                    <th class="text-center">Payment ID</th>
                                     <th class="text-center">Cards</th>
                                     <th class="text-start">Request Date</th>
                                     <th class="text-start">Payment</th>
@@ -92,6 +93,7 @@
                                             $data = json_decode($card->data, true);
                                 ?>
                                 <tr class="payment_request_row" data-request_id="<?php echo $card->id ?>">
+                                    <td class="text-center"><?php echo $card->id + 1000 ?></td>
                                     <td class="text-center"><?php echo $data["cards_count"] ?></td>
                                     <td class="text-start"><?php echo $card->add_timestamp ?></td>
                                     <td class="text-start"><?php echo $data["payment_method"] ?></td>
