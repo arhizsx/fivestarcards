@@ -170,6 +170,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	}
 	else if( jQuery(this).data("action") == "confirmPayoutRequest" ){
 
+		var payout = confirmPayoutRequest();
+
+		$.when( payout ).done( function( payout ){
+
+			alert("requested");
+	
+		});
 	
 
 	}
