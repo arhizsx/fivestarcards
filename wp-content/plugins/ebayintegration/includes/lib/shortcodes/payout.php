@@ -87,8 +87,9 @@
                             </thead>
                             <tbody>
                                 <?php 
-                                    foreach( $cards as $card ){ 
-                                        $data = json_decode($card->data, true);
+                                    if( count( $cards ) > 0 ){
+                                        foreach( $cards as $card ){ 
+                                            $data = json_decode($card->data, true);
                                 ?>
                                 <tr class="payment_request_row" data-request_id="<?php echo $card->id ?>">
                                     <td class="text-center"><?php echo $data["cards_count"] ?></td>
@@ -99,7 +100,16 @@
                                     <td class="text-end"><?php echo $card->status ?></td>
                                     <td class="text-end"></td>
                                 </tr>  
-                                <?php } ?>                                  
+                                <?php
+                                        } 
+                                    } else {
+                                ?>
+                                <tr class="payment_request_row_empty">
+                                    <td colspan="7">Empty</td>
+                                </tr>
+                                <?php
+                                    }
+                                ?>                                  
                             </tbody>
                         </table>
                     </div>
