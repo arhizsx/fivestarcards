@@ -117,35 +117,28 @@ $current_user = wp_get_current_user();
                         }                    
                 ?>
                     <div class="row mb-3">
-                        <div class="col-6">
+                        <div class="col-xl-4">
                             <label>Total Amount</label>
                             <input  class="form-control" disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
                         </div>
-                        <div class="col-6">   
+                        <div class="col-xl-4">
                             <label>Cards Count</label>
                             <input  class="form-control" disabled type="text" value="<?php echo $available ?>">          
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-4">
-                            Payment Method
-                        </div>
-                        <div class="col-8">                    
+                        <div class="col-xl-4">
+                            <label>Payment Method</label>
                             <select class="form-control" name="payment_method">
                                 <option value="">Select Desired Payment Method</option>
                                 <option value="Paypal">Paypal</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-4">
-                            Remarks / Message
+                        <div class="col-xl-12">
+                            <label>Remarks / Message</label>
+                            <textarea class="form-control" name="remarks"></textarea>                            
                         </div>
-                        <div class="col-8">                    
-                            <textarea class="form-control" name="remarks"></textarea>
-                        </div>
-                    </div>
 
+                        </div>
+                    </div>
                 <?php 
                     }
                 ?>
