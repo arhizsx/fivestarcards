@@ -152,9 +152,9 @@ $current_user = wp_get_current_user();
                                     if( $available > 0 ){
                                         foreach($cards as $item){ 
                                             $ctr++;
-                                            print_r($item);
                                             $data = json_decode($item->data, true);
                                     ?>
+                                    <input type="hidden" name="card[<?php echo $ctr ?>]" value="<?php echo $item->item_id; ?>">
                                     <tr>
                                         <td class="text-start">
                                             <div class="title text-start">
