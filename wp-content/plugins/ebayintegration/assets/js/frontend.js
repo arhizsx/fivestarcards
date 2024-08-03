@@ -186,6 +186,15 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$.when( payout ).done( function( payout ){	
 
 			$(document).find("#payout_cards_table tbody").empty();
+			$(document).find(".show_payment_request_modal").find("[name='payout_id']").val("");
+			$(document).find(".show_payment_request_modal").find("[name='request_date']").val("");
+			$(document).find(".show_payment_request_modal").find("[name='payout_date']").val("");
+
+
+			$(document).find(".show_payment_request_modal").find("[name='remarks']").val("");
+			$(document).find(".show_payment_request_modal").find("[name='total_amount']").val("");
+			$(document).find(".show_payment_request_modal").find("[name='cards_count']").val("");
+
 			var payout_total = 0;
 
 			$.each( payout.cards, function( k, v){
