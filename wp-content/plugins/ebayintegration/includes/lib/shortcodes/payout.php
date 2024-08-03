@@ -65,9 +65,6 @@
                 ";
             
                 $cards = $this->wpdb->get_results ( $sql );
-
-                print_r( $cards );
-
             ?>
                 <ul class="clearfix d-none d-lg-block">
                     <li class="active">
@@ -88,14 +85,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php 
+                                    foreach( $cards as $card ){ 
+                                        $data = json_decode($card->data, true);
+                                ?>
                                 <tr>
-                                    <td class="text-start">-</td>
-                                    <td class="text-center">-</td>
-                                    <td class="text-start">-</td>
-                                    <td class="text-start">-</td>
-                                    <td class="text-end">-</td>
-                                    <td class="text-end">-</td>
-                                </tr>                                    
+                                    <td class="text-start"><?php echo $card->id ?></td>
+                                    <td class="text-center"><?php echo $data["cards_count"] ?></td>
+                                    <td class="text-start"><?php echo $card->add_timestamp ?></td>
+                                    <td class="text-start"></td>
+                                    <td class="text-end"><?php echo $data["requested_amount"] ?></td>
+                                    <td class="text-end"><?php echo $card->status ?></td>
+                                </tr>  
+                                <?php } ?>                                  
                             </tbody>
                         </table>
                     </div>
