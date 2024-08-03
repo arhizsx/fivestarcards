@@ -144,7 +144,6 @@ $current_user = wp_get_current_user();
                                 <thead>
                                     <tr>
                                         <th class="text-start" width="60%">Item</th>
-                                        <th class="text-end">eBay Pay Date</th>
                                         <th class="text-end">Price Sold</th>
                                     </tr>
                                 </thead>
@@ -163,12 +162,10 @@ $current_user = wp_get_current_user();
                                                 </a>
                                             </div> 
                                             <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
-                                        </td>
-                                        <td class="text-end">
                                             <?php
                                             $paid_time = explode("T",$data["PaidTime"]); 
-                                            echo $paid_time[0];
                                             ?>
+                                            <div class="sku text-small">eBay Pay Date: <?php echo $paid_time[0] ?></div>
                                         </td>
                                         <td class="text-end">
                                             $<?php 
