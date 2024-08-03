@@ -32,6 +32,20 @@
                 </div>
             </div>
             <div class="row p-3">
+                <div class="col-3">
+                    <label>Payout ID</label>
+                    <input type="text" value="<?php echo $data->id ?>">
+                </div>
+                <div class="col-3">
+                    <label>Status</label>
+                    <input type="text" value="<?php echo $data->user->name ?>">
+                </div>
+                <div class="col-6">
+                    <label>User</label>
+                    <input type="text" value="<?php echo $data->user->name ?>">
+                </div>
+            </div>
+            <div class="row p-3">
                 <div class="col-12" style="padding: 20px;">
                     <H5>Payment Request</H5>
                     <table class="table table-sm table-bordered table-striped table-sm table-hover search_table_paid" style="width: 95%">
@@ -48,19 +62,19 @@
                             <?php 
                                 foreach($data["cards"] as $item){ 
                                     $ctr++;
-                                    $data = json_decode($item->data, true);
+                                    $itemdata = json_decode($item->data, true);
                             ?>
                             <input type="hidden" name="card[<?php echo $ctr ?>]" value="<?php echo $item->item_id; ?>">
                             <tr>
                                 <td class="text-start">
                                     <div class="title text-start">
-                                        <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                                            <?php print_r( $data["Item"]["Title"] ); ?>
+                                        <a href="<?php echo $itemdata["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
+                                            <?php print_r( $itemdata["Item"]["Title"] ); ?>
                                         </a>
                                     </div> 
                                 </td>
                                 <?php 
-                                    $sold_price = (float) $data["TransactionPrice"];  
+                                    $sold_price = (float) $itemdata["TransactionPrice"];  
                                 ?>
                                 <td class="text-end">
                                     $<?php 
