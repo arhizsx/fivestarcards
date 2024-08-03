@@ -167,6 +167,11 @@ $current_user = wp_get_current_user();
                                                     </a>
                                                 </div> 
                                             </td>
+                                            <td class="text-end">
+                                                $<?php 
+                                                echo number_format(( $sold_price), 2, '.', ',');
+                                                ?>
+                                            </td>
                                             <?php 
                                                 $sold_price = $data["TransactionPrice"];  
 
@@ -222,15 +227,13 @@ $current_user = wp_get_current_user();
                                                 }
                                             ?>
                                             <td class="text-end">
+                                                <?php echo $rate ?>
                                             </td>
                                             <td class="text-end">
+                                                <?php echo $fees ?>
                                             </td>
                                             <td class="text-end">
-                                            </td>
-                                            <td class="text-end">
-                                                $<?php 
-                                                echo number_format(( $sold_price), 2, '.', ',');
-                                                ?>
+                                                <?php echo $final ?>
                                             </td>
                                         </tr>
                                         <?php
