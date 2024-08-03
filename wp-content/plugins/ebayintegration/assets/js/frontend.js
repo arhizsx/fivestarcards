@@ -266,7 +266,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			var data = JSON.parse(payout.payout[0].data, true);			
 						
 			$(document).find(".show_payment_request_modal").find("[name='payout_id']").val( parseFloat(payout.payout[0].id) + 1000);
-			$(document).find(".show_payment_request_modal").find("[name='request_date']").val(data.request_date);
+			$(document).find(".show_payment_request_modal").find("[name='request_date']").val(payout.payout[0].add_timestamp);
 			$(document).find(".show_payment_request_modal").find("[name='payout_date']").val(data.payout_date);
 
 
