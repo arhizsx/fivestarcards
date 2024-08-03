@@ -1488,7 +1488,7 @@ class Ebay_Integration_Ebay_API {
 
 		$lastid = $this->wpdb->insert_id;
 
-		return ["error" => false, "insert_id" => $lastid];
+		return ["error" => false, "payout_id" => $lastid];
 	}
 
 }
