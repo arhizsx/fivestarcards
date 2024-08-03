@@ -158,12 +158,7 @@
                             <label>Payout Date</label>
                             <input name="payout_date"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
                         </div>
-                        <div class="col-xl-12">
-                            <label>Remarks / Message</label>
-                            <textarea class="form-control" name="remarks"></textarea>                            
-                        </div>
                     </div>
-
                     <div class="row">
                         <H5 style="color: black;">Cards Included</H5>
                         <div class="table-responsive">
