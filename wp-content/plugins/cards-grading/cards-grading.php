@@ -1035,7 +1035,7 @@
 
         
         ob_start();
-        include plugin_dir_path(__FILE__) . "template/". $template ; // Adjust path if needed
+        include plugin_dir_path(__FILE__) .  $template ; // Adjust path if needed
         $html = ob_get_clean();
 
         $dompdf = new Dompdf();
