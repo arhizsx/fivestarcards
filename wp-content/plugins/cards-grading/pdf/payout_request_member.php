@@ -12,7 +12,7 @@ $payout = $data["payout"];
             body {
                 margin: 0cm;
                 padding: 0cm;
-                font-size: 1em;
+                font-size: 12pt; /* Set global font size */
             }
         </style>        
     </head>
