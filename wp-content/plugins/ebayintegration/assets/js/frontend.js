@@ -1781,6 +1781,8 @@ function confirmPayoutRequest(type, user_id){
 		}
 	});
 
+	return defObject.promise();
+
 }
 
 
