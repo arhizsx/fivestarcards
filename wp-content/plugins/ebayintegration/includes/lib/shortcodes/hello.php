@@ -123,7 +123,7 @@ $current_user = wp_get_current_user();
                             <table class="table table-sm table-bordered table-striped table-sm table-hover search_table_paid">
                                     <thead>
                                         <tr>
-                                            <th class="text-start" width="50%">Item</th>
+                                            <th class="text-start" width="60%">Item</th>
                                             <th class="text-end">Price Sold</th>
                                             <th class="text-end">Rate</th>
                                             <th class="text-end">Fees</th>
