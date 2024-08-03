@@ -174,8 +174,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when( payout ).done( function( payout ){
 
-			alert("requested");
-			console.log(payout);
+			window.location = "/my-account/payout/";
 	
 		});
 	
