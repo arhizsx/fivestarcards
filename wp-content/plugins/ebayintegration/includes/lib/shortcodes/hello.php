@@ -137,7 +137,9 @@ $current_user = wp_get_current_user();
                             <textarea class="form-control" name="remarks"></textarea>                            
                         </div>
                     </div>
-
+                    <div class="row mb-3">
+                        <H5>Cards Included</H5>
+                    </div>
 
                 <?php 
                     }
