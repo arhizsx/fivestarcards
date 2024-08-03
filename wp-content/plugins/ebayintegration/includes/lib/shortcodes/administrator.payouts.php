@@ -138,6 +138,15 @@
 
                 <input type="hidden" name="user_id" value="">
                     <div class="row mb-3">
+                        <input name="user_id"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
+                        <div class="col-xl-8">
+                            <label>Client</label>
+                            <input name="user_name"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
+                        </div>
+                        <div class="col-xl-4">
+                            <label>Email</label>
+                            <input name="user_email"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
+                        </div>
                         <div class="col-xl-4">
                             <label>Payout ID</label>
                             <input name="payout_id"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
