@@ -103,12 +103,6 @@ class Ebay_Integration_Ebay_API {
 		} 
 
 
-		elseif($params["action"] == "pdf"){
-
-			return array("error"=> false, "message" => "PDF");
-
-		} 
-		
 		// ///////////////////////
 		//
 		// EBAY ACTIONS
