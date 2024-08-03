@@ -101,19 +101,7 @@ class Ebay_Integration_Ebay_API {
         $headers = $data->get_headers();
         $params = $data->get_params();
 
-		if( !isset($params["action"]) ){
-			return array("error"=> true, "error_message" => "Action Not Set");
-		}
-
-		if($params["action"] == ""){
-			return array("error"=> true, "error_message" => "Action Not Defined");
-		} 
-		elseif($params["action"] == "payout_members"){
-			return "payout_members";
-		} 
-		else {
-			return $params;
-		}
+		return $data;
 
 	}	
 
