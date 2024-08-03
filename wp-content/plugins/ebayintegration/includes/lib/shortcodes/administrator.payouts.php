@@ -195,12 +195,11 @@
             </div>
             <div class="modal-footer">
                 <button id="float_btn_add_payout"  data-bs-dismiss="modal"  class="btn btn-xl btn-secondary">
-                    REQUEST DONE
-                </button>
-                <button id="float_btn_add_payout"  data-bs-dismiss="modal"  class="btn btn-xl btn-secondary">
                     CANCEL
                 </button>
-
+                <button id="float_btn_payout_request_done"  data-bs-dismiss="modal"  class="btn btn-xl btn-primary">
+                    REQUEST DONE
+                </button>
             </div>
 		</div>
 	</div>
