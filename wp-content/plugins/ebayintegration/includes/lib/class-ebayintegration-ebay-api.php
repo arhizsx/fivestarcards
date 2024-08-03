@@ -14,6 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 //  require_once "../../../../wp-load.php";
+require_once ( 'dompdf/autoload.inc.php');
+use Dompdf\Dompdf; 
+use Dompdf\Options; 
 
 class Ebay_Integration_Ebay_API {
 
@@ -83,36 +86,7 @@ class Ebay_Integration_Ebay_API {
 			) 
 		);        
 
-		register_rest_route( 
-			'/ebayintegration/pdf', 
-			'post', 
-			array(
-				'methods' => 'GET',
-				'callback' => array( $this, 'handle_pdf_endpoint' )
-			) 
-		);        
     }
-
-	public function handle_pdf_endpoint( $data ){
-
-        $headers = $data->get_headers();
-        $params = $data->get_params();
-
-		if( !isset($params["action"]) ){
-			return array("error"=> true, "error_message" => "Action Not Set");
-		}
-
-		if($params["action"] == ""){
-			return array("error"=> true, "error_message" => "Action Not Defined");
-		} 
-		elseif($params["action"] == "payout_members"){
-			return "payout_members";
-		} 
-		else {
-			return $params;
-		}
-
-	}	
 
 	public function handle_api_endpoint($data){
 
@@ -128,6 +102,13 @@ class Ebay_Integration_Ebay_API {
 			return array("error"=> true, "error_message" => "Action Not Defined");
 		} 
 
+
+		elseif($params["action"] == "pdf"){
+
+			return "test pdf";
+
+		} 
+		
 		// ///////////////////////
 		//
 		// EBAY ACTIONS
