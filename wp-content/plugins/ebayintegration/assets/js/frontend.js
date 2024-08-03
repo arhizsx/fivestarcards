@@ -245,13 +245,17 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					final = sold_price * rate + fees;
 				}
 
+				rate = parseFloat(rate).toFixed(2)				
+				fees = parseFloat(fees).toFixed(2)				
+				final = parseFloat(final).toFixed(2)				
+
 				$(document).find("#payout_cards_table tbody").append(
 					"<tr>" +	
 						"<td class='text-start'>" + card.Item.Title + "</td>" +
 						"<td class='text-end'>$" + sold_price + "</td>" +
-						"<td class='text-end'>" + rate + "-</td>" +
-						"<td class='text-end'>" + fees + "-</td>" +
-						"<td class='text-end'>" + final + "</td>" +
+						"<td class='text-end'>" + rate + "%</td>" +
+						"<td class='text-end'>$" + fees + "</td>" +
+						"<td class='text-end'>$" + final + "</td>" +
 					"</tr>"
 				);
 			});
