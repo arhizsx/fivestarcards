@@ -85,7 +85,7 @@ $current_user = wp_get_current_user();
 			</div>
             <div class="modal-body p-3">
                 <?php 
-                    if( $user_id != 1054 ){
+                    if( $user_id != 1 ){
                 ?>
                 <div style="color: black;">Please wait we are brewing something cool...</div>
                 <?php        
