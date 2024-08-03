@@ -128,6 +128,9 @@ $current_user = wp_get_current_user();
                                             foreach($cards as $item){ 
                                                 $ctr++;
                                                 $data = json_decode($item->data, true);
+
+                                                echo $payout_total ;
+
                                         ?>
                                         <input type="hidden" name="card[<?php echo $ctr ?>]" value="<?php echo $item->item_id; ?>">
                                         <tr>
