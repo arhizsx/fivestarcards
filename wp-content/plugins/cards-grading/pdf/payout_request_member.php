@@ -32,8 +32,6 @@ $payout = $data["payout"];
             <div class="row">
                 <div class="col-12  p-3">
                     <H5>Payment Request</H5>
-                </div>
-                <div class="col-12  p-3">
                     <table class="table table-bordered tabled-striped">
                         <thead>
                             <tr>
