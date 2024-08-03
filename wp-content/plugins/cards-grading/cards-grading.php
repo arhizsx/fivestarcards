@@ -1031,7 +1031,7 @@
             $data_pull = $this->getPayoutMember( $params["key"] );
 
             $data = [
-                "cards" => $data_pull["cards"]
+                "cards" => json_encode($data_pull["cards"])
             ];
 
         }
