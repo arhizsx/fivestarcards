@@ -56,9 +56,6 @@
                     <li class="active">
                         <a class="" href="/my-account/payout/">Payout Requests</a>
                     </li>
-                    <li class="">
-                        <a class="" href="/my-account/payout?mode=pending">Pending Payout</a>
-                    </li>
                 </ul>
                 <div class="content p-3 text-center">
                     <div class="table-responsive">
@@ -95,9 +92,6 @@
                 <ul class="clearfix d-none d-lg-block">
                     <li class="">
                         <a class="" href="/my-account/payout">Payout Requests</a>
-                    </li>
-                    <li class="active">
-                        <a class="" href="/my-account/payout/?mode=pending">Pending Payout</a>
                     </li>
                 </ul>
                 <div class="content p-3 text-center">
