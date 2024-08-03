@@ -20,9 +20,10 @@
                 <i class="fa-solid fa-handshake me-2"></i>
                 Consignment
             </a>
-            <!-- <a href="/administrator/ebay" class="5star_btn btn text-left btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
-                <i class="fa-brands fa-ebay fa-2xl"></i>
-            </a> -->
+            <a href="/administrator/payouts" class="5star_btn btn text-left btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
+                <i class="fa-solid fa-money me-2"></i>
+                Payouts
+            </a>
             <a href="/administrator/members" class="5star_btn btn text-left btn-dark mb-3" data-type="psa-value_bulk" data-action="add_card">
                 <i class="fa-solid fa-users me-2"></i>
                 Members
