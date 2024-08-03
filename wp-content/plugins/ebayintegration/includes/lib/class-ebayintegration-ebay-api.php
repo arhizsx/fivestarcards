@@ -327,6 +327,13 @@ class Ebay_Integration_Ebay_API {
 
 		}
 		
+		elseif( $params["action"] == "confirmPayoutDone"){
+
+			return $this->confirmPayoutDone($params);
+
+		}
+
+		
 		
 
 		
@@ -1533,4 +1540,15 @@ class Ebay_Integration_Ebay_API {
 
 		return ["error" => false, "payout" => $payout , "cards" => $cards, "user" => $user ];
 	}
+
+
+	function confirmPayoutDone($params){
+
+		$sql = "UPDATE payouts SET `status`  = 'DONE' WHERE id = " . $params["payout_id"];
+
+		$updated_items = $this->wpdb->get_results ( $sql );
+
+		return ["error" => false, "payout_id" => $params["payout_id"]];
+	}	
+	
 }
