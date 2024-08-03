@@ -1027,18 +1027,9 @@
 
             $template = "payout_request_member.php";
             $file_prepend = "Payout Request";
-
             
+            $data = $this->getPayoutMember( $params["key"] );
 
-            $sql = "SELECT * FROM payouts WHERE id = " . $params["key"];
-            $payout = $this->wpdb->get_results ( $sql );
-             
-            // print_r( $payout );
-            // die();
-
-            $data = [
-                "payout" =>  $payout,
-            ];
         }
         elseif($params["action"] == "payout_pdf_admin"){
             $template = "payout_request_admin.php";
@@ -1081,6 +1072,24 @@
         return true;
 
     }
+
+    function getPayoutMember($key){
+
+        $sql = "SELECT * FROM payouts WHERE id = " . $key;
+        $payout = $this->wpdb->get_results ( $sql );
+
+        $data = json_decode( $payout->data, true ); 
+
+		$array = implode("','",  $data["cards"]);
+
+		$sql = "SELECT * FROM ebay WHERE sku IN ('" . $array . "')";
+
+		$cards = $this->wpdb->get_results ( $sql );
+
+
+        return ["cards" => $cards ];
+    }
+
 
     public function handle_pdf($data){
 
