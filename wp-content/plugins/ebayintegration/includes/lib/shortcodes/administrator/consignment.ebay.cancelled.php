@@ -110,10 +110,10 @@ $users = get_users( $args );
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
                     <div class="item_id text-small">ID: <?php echo $item->id ?></div>                                        
                 </td>    
+                <td>
                     <?php 
                         print_r($cancel);
                     ?>
-                <td>
                 </td>    
                 <td>
                 </td>    
