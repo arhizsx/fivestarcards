@@ -50,7 +50,7 @@
                             <tr>
                                 <td>
                                 <?php
-                                print_r($card_data["Item"]);
+                                print_r($card_data["Item"]["Title"]);
                                 ?>
                                 </td>
                                 <td>-</td>
