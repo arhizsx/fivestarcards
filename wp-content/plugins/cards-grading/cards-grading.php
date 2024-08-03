@@ -1030,10 +1030,17 @@
             
             $data_pull = $this->getPayoutMember( $params["key"] );
 
+            // $data = [
+            //     "cards" => json_encode($data_pull["cards"]),
+            //     "title" => "test"
+            // ];
+
             $data = [
-                "cards" => json_encode($data_pull["cards"]),
-                "title" => "test"
+                "title" => "Test Title",
+                "content" => "Test Content",
+                "data" => "Test Date",
             ];
+
 
         }
         elseif($params["action"] == "payout_pdf_admin"){
@@ -1046,7 +1053,7 @@
             ];
 
         }
-        
+
         ob_start();
         include plugin_dir_path(__FILE__) . "pdf/" .  $template ; // Adjust path if needed
         $html = ob_get_clean();

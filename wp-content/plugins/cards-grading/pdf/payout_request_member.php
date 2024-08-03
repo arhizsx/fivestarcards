@@ -1,6 +1,10 @@
 <?php
-print_r($data["cards"]);
+// Access the passed variables
+$title = $data['title'] ?? 'Default Title';
+$content = $data['content'] ?? 'Default Content';
+$date = $data['date'] ?? date('Y-m-d');
 
+print_r($title);
 ?>
 
 <html>
