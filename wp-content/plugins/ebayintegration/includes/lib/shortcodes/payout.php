@@ -202,6 +202,10 @@
                 </form>
             </div>
             <div class="modal-footer">
+                <button id="float_btn_add_payout" class="btn btn-xl btn-secondary">
+                    CLOSE
+                </button>
+
             </div>
 		</div>
 	</div>
