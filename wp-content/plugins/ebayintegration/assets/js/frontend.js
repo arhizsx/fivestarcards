@@ -168,8 +168,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		jQuery(document).find(".add_new_payment_modal").appendTo('body').modal("show");
 
 	}
+	else if( jQuery(this).data("action") == "confirmPayoutRequest" ){
 
+	
 
+	}
 
 	// ////////////////////////// //
 	//  Add Order Buttons   //
@@ -1495,8 +1498,6 @@ function refreshStatus(status, btn_color, page = null) {
 }
 
 
-
-
 function showConsignedCardDetailsModal(id, user_id){
 
 	var defObject = $.Deferred();  // create a deferred object.
@@ -1746,6 +1747,32 @@ function confirmAddConsign(){
 		
 	return defObject.promise();
 	
+}
+
+
+// Payout 
+
+function confirmPayoutRequest(type, user_id){
+
+	var defObject = $.Deferred();  // create a deferred object.
+
+	let form = new FormData( $("#payout_request_form")[0] );
+
+	$.ajax({
+		type: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: form,
+		enctype: 'multipart/form-data',
+		processData: false,
+		contentType: false,
+		success: function(resp){
+
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
 }
 
 
