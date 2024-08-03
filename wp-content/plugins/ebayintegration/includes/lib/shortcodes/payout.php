@@ -66,6 +66,8 @@
             
                 $cards = $this->wpdb->get_results ( $sql );
 
+                print_r( $cards );
+
             ?>
                 <ul class="clearfix d-none d-lg-block">
                     <li class="active">
