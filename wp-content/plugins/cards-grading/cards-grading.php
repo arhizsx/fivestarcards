@@ -1072,7 +1072,7 @@
     file_put_contents($pdf_path, $dompdf->output());
 
     // Email the PDF file
-    $to = ['user1@example.com', 'user2@example.com']; // Change to actual recipient emails
+    $to = ['arhizsx@gmail.com', 'zfdsalvador@globe.com.ph']; // Change to actual recipient emails
     $subject = 'PDF Document';
     $message = 'Please find the attached PDF document.';
     $headers = array('Content-Type: text/html; charset=UTF-8');
