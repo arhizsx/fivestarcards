@@ -119,16 +119,16 @@ $current_user = wp_get_current_user();
                     <div class="row mb-3">
                         <div class="col-xl-4">
                             <label>Total Amount</label>
-                            <input  class="form-control" disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
+                            <input  class="form-control p-2" disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
                         </div>
                         <div class="col-xl-4">
                             <label>Cards Count</label>
-                            <input  class="form-control" disabled type="text" value="<?php echo $available ?>">          
+                            <input  class="form-control p-2" disabled type="text" value="<?php echo $available ?>">          
                         </div>
                         <div class="col-xl-4">
                             <label>Payment Method</label>
-                            <select class="" name="payment_method">
-                                <option value="">Select Desired Payment Method</option>
+                            <select class="form-control" name="payment_method">
+                                <option value="">Select Payment Method</option>
                                 <option value="Paypal">Paypal</option>
                             </select>
                         </div>
