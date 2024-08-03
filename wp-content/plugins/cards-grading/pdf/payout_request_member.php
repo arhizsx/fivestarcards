@@ -4,7 +4,6 @@ $title = $data['title'] ?? 'Default Title';
 $content = $data['content'] ?? 'Default Content';
 $date = $data['date'] ?? date('Y-m-d');
 
-print_r($title);
 ?>
 
 <html>
@@ -28,6 +27,8 @@ print_r($title);
         </style>        
     </head>
     <body>
+        <?php print_r($title);
+?>
         <div class="container-fluid m-0 p-0">
             <div class="row mb-3 border-bottom">
                 <div class="col-12  p-3">
