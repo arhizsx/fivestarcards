@@ -1022,6 +1022,8 @@
         $options = new Options();
         $options->set('isRemoteEnabled', true); 
         $dompdf = new Dompdf($options);
+        $file_prepend = "";
+        $template = "";
         
         if($params["action"] == "payout_pdf_member"){
 
