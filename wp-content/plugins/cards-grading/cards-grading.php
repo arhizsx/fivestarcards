@@ -1012,7 +1012,7 @@
         $headers = $data->get_headers();
         $params = $data->get_params();
 
-        print_r($headers);
+        print_r($params);
         die();
 
         $options = new Options();
