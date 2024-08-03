@@ -1083,9 +1083,9 @@
 
 		$array = implode("','",  $data["cards"]);
 
-		$sql = "SELECT * FROM ebay WHERE sku IN ('" . $array . "')";
+		$sql = "SELECT * FROM ebay WHERE item_id IN ('" . $array . "')";
 		$cards = $this->wpdb->get_results ( $sql );
-        print_r($sql);
+        print_r($cards);
         die();
 
 
