@@ -1525,6 +1525,7 @@ class Ebay_Integration_Ebay_API {
 
 		$user_data = get_userdata($user_id);
 
+		return $user_data;
 		$user = [
 			"name" => $user_data["data"]["display_name"],
 			"email" => $user_data["data"]["user_email"],
