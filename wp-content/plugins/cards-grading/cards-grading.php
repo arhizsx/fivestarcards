@@ -1037,8 +1037,11 @@
         include plugin_dir_path(__FILE__) . "pdf/" .  $template ; // Adjust path if needed
         $html = ob_get_clean();
 
-        $dompdf = new Dompdf();
+        $options = new Options();
+        $options->set('isRemoteEnabled', true);
 
+        $dompdf = new Dompdf( $options );
+    
         $dompdf->setPaper('A4', 'portrait');
 
         $dompdf->loadHtml($html);
