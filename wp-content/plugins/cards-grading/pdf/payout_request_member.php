@@ -1,7 +1,7 @@
 <?php
 $cards = $data["cards"];
 
-print_r($cards);
+print_r($data);
 
 ?>
 
