@@ -1080,7 +1080,7 @@
         $body = 'Please find the attached PDF.';
         $headers = [
             'Content-Type: text/html; charset=UTF-8',
-            'Content-Disposition: attachment; filename="' . $file_prepend . '.pdf"'
+            'Content-Disposition: attachment; filename="' .'5 Star Cards - ' . $file_prepend . '.pdf"'
         ];
         $attachments = [
             [
