@@ -142,7 +142,7 @@
 				</button>
 			</div>
             <div class="modal-body p-3">
-                <form class="form" id="payout_request_form">
+                <form class="form" id="payout_request_form_modal">
                     <input type="hidden" name="user_id" value="">
                     <div class="row">
                         <H5 style="color: black;">Cards Included</H5>
