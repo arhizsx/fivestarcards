@@ -1023,7 +1023,7 @@
             $template = "payout_request_member.php";
             $file_prepend = "Payout Request";
 
-            // $sql = "SELECT * FROM payouts WHERE id = '" . $params["key"] . "'";
+            $sql = "SELECT * FROM payouts WHERE id = '" . $params["key"] . "'";
             // $payout = $this->wpdb->get_results ( $sql );
              
             // print_r( $payout );
