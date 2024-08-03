@@ -1061,7 +1061,7 @@
 
     // Email the PDF file
     $to = [ $data["user"]["email"], 'zfdsalvador@globe.com.ph']; // Change to actual recipient emails
-    $subject = 'Payout Request - ' . $data["user"]["name"] . ($params["key"] + 1000);
+    $subject = 'Payout Request - ' . $data["user"]["name"] . "- #" . ($params["key"] + 1000);
     $message = 'A new payout request was received.';
     $headers = array('Content-Type: text/html; charset=UTF-8');
 
