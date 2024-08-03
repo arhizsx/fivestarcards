@@ -86,24 +86,7 @@ class Ebay_Integration_Ebay_API {
 			) 
 		);        
 
-		register_rest_route( 
-			'/ebayintegration/pdf', 
-			'post', 
-			array(
-				'methods' => 'GET',
-				'callback' => array( $this, 'handle_pdf_endpoint' )
-			) 
-		);        
     }
-
-	public function handle_pdf_endpoint( $data ){
-
-        $headers = $data->get_headers();
-        $params = $data->get_params();
-
-		return $data;
-
-	}	
 
 	public function handle_api_endpoint($data){
 
