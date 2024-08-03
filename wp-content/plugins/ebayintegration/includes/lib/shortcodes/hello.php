@@ -117,26 +117,26 @@ $current_user = wp_get_current_user();
                         }                    
                 ?>
                     <div class="row mb-3">
-                        <div class="col-6">
+                        <div class="col-4">
                             Payment Method
                         </div>
-                        <div class="col-6">                    
+                        <div class="col-8">                    
                             <input disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <div class="col-6">
+                        <div class="col-4">
                             Cards Count    
                         </div>
-                        <div class="col-6">
+                        <div class="col-8">
                             <input disabled type="text" value="<?php echo $available ?>">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <div class="col-6">
+                        <div class="col-4">
                             Payment Method
                         </div>
-                        <div class="col-6">                    
+                        <div class="col-8">                    
                             <select class="form-control" name="payment_method">
                                 <option value="">Select Desired Payment Method</option>
                                 <option value="Paypal">Paypal</option>
@@ -144,10 +144,10 @@ $current_user = wp_get_current_user();
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <div class="col-6">
+                        <div class="col-4">
                             Remarks / Message
                         </div>
-                        <div class="col-6">                    
+                        <div class="col-8">                    
                             <textarea class="form-control" name="remarks"></textarea>
                         </div>
                     </div>
