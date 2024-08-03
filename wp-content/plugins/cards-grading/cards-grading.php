@@ -1012,20 +1012,11 @@
         $headers = $data->get_headers();
         $params = $data->get_params();
 
-        print_r($params);
-        die();
 
         $options = new Options();
         $options->set('isRemoteEnabled', true); 
         $dompdf = new Dompdf($options);
         
-        // Define variables that will be passed to data.php
-        $pdf_data = [
-            'title' => "title",
-            'content' => "content",
-            'date' => "date",
-        ];
-
         if($params["action"] == "payout_pdf_member"){
             $template = "data.php";
             $data = [
@@ -1036,13 +1027,12 @@
         } else {
             $template = "data.php";
             $data = [
-                "title" => "Test Title",
-                "content" => "Test Content",
-                "data" => "Test Date",
+                "title" => "X",
+                "content" => "X",
+                "data" => "X",
             ];
         }
 
-        $template = "data.php";
         
         ob_start();
         include plugin_dir_path(__FILE__) . "template/". $template ; // Adjust path if needed
