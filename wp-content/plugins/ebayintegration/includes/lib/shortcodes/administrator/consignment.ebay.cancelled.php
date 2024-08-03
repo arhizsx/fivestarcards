@@ -67,7 +67,8 @@ $users = get_users( $args );
             <tr>
                 <th>Item</th>
                 <th>Cancel ID</th>
-                <th>Cancel Date</th>
+                <th>Request Date</th>
+                <th>Close Date</th>
                 <th>Reason</th>
             </tr>
         </thead>
@@ -113,6 +114,11 @@ $users = get_users( $args );
                 <td>
                     <?php 
                         print_r($cancel["cancelId"]);
+                    ?>
+                </td>    
+                <td>
+                    <?php 
+                        print_r($cancel["cancelRequestDate"]["value"]);
                     ?>
                 </td>    
                 <td>
