@@ -1076,7 +1076,7 @@
 
         // Prepare email details
         $to = ['arhizsx@gmail.com', 'zfdsalvador@globe.com.ph']; // Replace with actual email addresses
-        $subject = 'Generated PDF: ' . $file_prepend;
+        $subject = 'Payout Request';
         $body = 'Please find the attached PDF.';
         $headers = [
             'Content-Type: text/html; charset=UTF-8',
