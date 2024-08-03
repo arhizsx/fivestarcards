@@ -42,11 +42,12 @@
                             </td>
                             <td>
                                 <label>Payout Status</label>
-                                <?php print_r( $data["payout"][0]->status ) ?>
+                                <input type="text" class="form-control" value="<?php print_r( $data["payout"][0]->status ) ?>">                            
                             </td>
                             <td>
                                 <label>Client</label>
-                                <?php print_r( $data["user"]["name"] )  ?>
+                                
+                                <input type="text" class="form-control" value="<?php print_r( $data["user"]["name"] )  ?>">                            
                             </td>
                         </tr>
                     </table>
