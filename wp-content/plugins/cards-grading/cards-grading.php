@@ -1025,7 +1025,10 @@
 
             $sql = "SELECT * FROM payouts WHERE id = '" . $params["key"] . "'";
             $payout = $this->wpdb->get_results ( $sql );
-                
+             
+            print_r( $payout );
+            die();
+
             $data = [
                 "payout" => $$payout,
             ];
