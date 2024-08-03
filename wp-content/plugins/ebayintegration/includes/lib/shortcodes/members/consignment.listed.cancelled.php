@@ -20,10 +20,6 @@ $array = implode("','",$skus);
 $sql = "SELECT * FROM ebay WHERE sku IN ('" . $array . "')";
 $ebay = $this->wpdb->get_results ( $sql );
 
-print_r($sql);
-
-print_r($ebay);
-
 $args = array(
     'orderby'    => 'display_name',
     'order'      => 'ASC'
