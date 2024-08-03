@@ -1078,10 +1078,8 @@
 
         $sql = "SELECT * FROM payouts WHERE id = " . $key;
         $payout = $this->wpdb->get_results ( $sql );
-        print_r($payout[0]);
 
-
-        $data = json_decode( $payout->data, true ); 
+        $data = json_decode( $payout[0]->data, true ); 
 
 		$array = implode("','",  $data["cards"]);
         print_r($data);
