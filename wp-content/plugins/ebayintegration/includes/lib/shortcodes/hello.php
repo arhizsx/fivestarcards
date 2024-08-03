@@ -138,7 +138,7 @@ $current_user = wp_get_current_user();
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <H4 style="color: black;">Cards Included</H4>
+                        <H5 style="color: black;">Cards Included</H5>
                         <div class="overflow: auto">
                         <table class="table table-sm table-border table-striped table-sm table-hover search_table_paid">
                                 <thead>
