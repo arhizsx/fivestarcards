@@ -1859,6 +1859,7 @@ function confirmPayoutRequest(type, user_id){
 
 	let form = new FormData( $("#payout_request_form")[0] );
 
+	
 	$.ajax({
 		type: 'post',
 		url: "/wp-json/ebayintegration/v1/post",
