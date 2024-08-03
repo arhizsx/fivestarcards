@@ -69,7 +69,7 @@
                                     <th class="text-start">Request Date</th>
                                     <th class="text-center">Cards</th>
                                     <th class="text-end">Amount Requested</th>
-                                    <th class="text-end">Request Status</th>
+                                    <th class="text-end">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
