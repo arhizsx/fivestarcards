@@ -248,7 +248,6 @@ $current_user = wp_get_current_user();
                             <div class="col-xl-4">
                                 <label>Payment Method</label>
                                 <select class="form-control mb-3" name="payment_method">
-                                    <option value="">Select Payment Method</option>
                                     <option value="Paypal">Paypal</option>
                                 </select>
                             </div>
