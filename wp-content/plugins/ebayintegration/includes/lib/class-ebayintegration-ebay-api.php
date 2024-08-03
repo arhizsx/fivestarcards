@@ -1520,8 +1520,11 @@ class Ebay_Integration_Ebay_API {
 		$sql = "SELECT * FROM ebay WHERE item_id IN ('" . $array . "')";
 		$cards = $this->wpdb->get_results ( $sql );
 
+		$sql = "SELECT * FROM ebay WHERE item_id IN ('" . $array . "')";
+		$cards = $this->wpdb->get_results ( $sql );
 
+		$user = get_userdata($user_id);
 
-		return ["error" => false, "payout" => $payout , "cards" => $cards ];
+		return ["error" => false, "payout" => $payout , "cards" => $cards, "user" => $user ];
 	}
 }
