@@ -34,14 +34,14 @@
             <div class="row p-3">
                 <div class="col-3">
                     <label>Payout ID</label>
+                    <?php print_r( $data["payout"][0]->id + 1000 ) ?>
                 </div>
                 <div class="col-3">
                     <label>Status</label>
                     <?php print_r( $data["payout"][0]->status ) ?>
                 </div>
                 <div class="col-6">
-                    <label>User</label>
-                    <?php print_r( $data["user"] )  ?>
+                    <?php print_r( $data["user"]["admin"] )  ?>
                 </div>
             </div>
             <div class="row p-3">
