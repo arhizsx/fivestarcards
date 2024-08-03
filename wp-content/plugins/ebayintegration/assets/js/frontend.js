@@ -253,7 +253,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					"<tr>" +	
 						"<td class='text-start'>" + card.Item.Title + "</td>" +
 						"<td class='text-end'>$" + sold_price + "</td>" +
-						"<td class='text-end'>" + rate + "%</td>" +
+						"<td class='text-end'>" + rate.toFixed(2) + "%</td>" +
 						"<td class='text-end'>$" + fees + "</td>" +
 						"<td class='text-end'>$" + final + "</td>" +
 					"</tr>"
