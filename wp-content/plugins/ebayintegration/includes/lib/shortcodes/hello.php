@@ -73,7 +73,7 @@ $current_user = wp_get_current_user();
 </div>
 
 <div class="modal fade add_new_payment_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal2" aria-hidden="true"  data-backdrop="" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
-	<div class="modal-dialog modal-lg" id="dxmodal2">
+	<div class="modal-dialog modal-xl" id="dxmodal2">
 		<div class="modal-content modal-ajax" style="margin-bottom: 200px;">
 			<div class="modal-header bg-dark text-white">
 				<h5 class="modal-title mb-0 p-0">
@@ -116,78 +116,79 @@ $current_user = wp_get_current_user();
                             }
                         }                    
                 ?>
-                    <div class="row mb-3">
-                        <div class="col-xl-4">
-                            <label>Total Amount</label>
-                            <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
+                    <form class="form" id="payout_request_form">
+                        <div class="row mb-3">
+                            <div class="col-xl-4">
+                                <label>Total Amount</label>
+                                <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
+                            </div>
+                            <div class="col-xl-4">
+                                <label>Cards Count</label>
+                                <input  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="<?php echo $available ?>">          
+                            </div>
+                            <div class="col-xl-4">
+                                <label>Payment Method</label>
+                                <select class="form-control mb-3" name="payment_method">
+                                    <option value="">Select Payment Method</option>
+                                    <option value="Paypal">Paypal</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-12">
+                                <label>Remarks / Message</label>
+                                <textarea class="form-control" name="remarks"></textarea>                            
+                            </div>
                         </div>
-                        <div class="col-xl-4">
-                            <label>Cards Count</label>
-                            <input  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="<?php echo $available ?>">          
-                        </div>
-                        <div class="col-xl-4">
-                            <label>Payment Method</label>
-                            <select class="form-control mb-3" name="payment_method">
-                                <option value="">Select Payment Method</option>
-                                <option value="Paypal">Paypal</option>
-                            </select>
-                        </div>
-                        <div class="col-xl-12">
-                            <label>Remarks / Message</label>
-                            <textarea class="form-control" name="remarks"></textarea>                            
-                        </div>
-                    </div>
-                    <div class="row">
-                        <H5 style="color: black;">Cards Included</H5>
-                        <div class="overflow: auto">
-                        <table class="table table-sm table-border table-striped table-sm table-hover search_table_paid">
-                                <thead>
-                                    <tr>
-                                        <th class="text-start">Item</th>
-                                        <th class="text-end">Price Sold</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php 
-                                    if( $available > 0 ){
-                                        foreach($cards as $item){ 
-                                            $ctr++;
-                                            $data = json_decode($item->data, true);
-                                    ?>
-                                    <input type="hidden" name="card[<?php echo $ctr ?>]" value="<?php echo $item->item_id; ?>">
-                                    <tr>
-                                        <td class="text-start">
-                                            <div class="title text-start">
-                                                <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                                                    <?php print_r( $data["Item"]["Title"] ); ?>
-                                                </a>
-                                            </div> 
-                                        </td>
-                                        <td class="text-end">
-                                            $<?php 
-                                            echo number_format(( $data["TransactionPrice"]), 2, '.', ',');
-                                            ?>
-                                        </td>
-                                    </tr>
-                                    <?php
-                                            $payout_total = $$payout_total + $data["TransactionPrice"];
+                        <div class="row">
+                            <H5 style="color: black;">Cards Included</H5>
+                            <div class="overflow: auto">
+                            <table class="table table-sm table-border table-striped table-sm table-hover search_table_paid">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-start">Item</th>
+                                            <th class="text-end">Price Sold</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php 
+                                        if( $available > 0 ){
+                                            foreach($cards as $item){ 
+                                                $ctr++;
+                                                $data = json_decode($item->data, true);
+                                        ?>
+                                        <input type="hidden" name="card[<?php echo $ctr ?>]" value="<?php echo $item->item_id; ?>">
+                                        <tr>
+                                            <td class="text-start">
+                                                <div class="title text-start">
+                                                    <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
+                                                        <?php print_r( $data["Item"]["Title"] ); ?>
+                                                    </a>
+                                                </div> 
+                                            </td>
+                                            <td class="text-end">
+                                                $<?php 
+                                                echo number_format(( $data["TransactionPrice"]), 2, '.', ',');
+                                                ?>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                                $payout_total = $$payout_total + $data["TransactionPrice"];
+                                            } 
                                         } 
-                                    } 
-                                    else {
-                                    ?>
-                                    <tr>
-                                        <td colspan="3" class="text-center p-5">
-                                            No Items
-                                        </td>
-                                    </tr>
-                                    <?php 
-                                    }
-                                    ?>
-                                </tbody>
-                            </table>
+                                        else {
+                                        ?>
+                                        <tr>
+                                            <td colspan="3" class="text-center p-5">
+                                                No Items
+                                            </td>
+                                        </tr>
+                                        <?php 
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-
+                    </form>
                 <?php 
                     }
                 ?>
