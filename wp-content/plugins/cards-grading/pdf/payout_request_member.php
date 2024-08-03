@@ -37,7 +37,8 @@
                         <tr>
                             <td>
                                 <label>Payout ID</label>
-                                <?php print_r( $data["payout"][0]->id + 1000 ) ?>
+                                <input type="text" class="form-control" value="<?php print_r( $data["payout"][0]->id + 1000 ) ?>">
+                                
                             </td>
                             <td>
                                 <label>Payout Status</label>
