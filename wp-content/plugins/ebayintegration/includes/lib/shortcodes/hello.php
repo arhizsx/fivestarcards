@@ -146,6 +146,9 @@ $current_user = wp_get_current_user();
                                         <tr>
                                             <th class="text-start">Item</th>
                                             <th class="text-end">Price Sold</th>
+                                            <th class="text-end">Rate</th>
+                                            <th class="text-end">Fees</th>
+                                            <th class="text-end">Final</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -164,14 +167,74 @@ $current_user = wp_get_current_user();
                                                     </a>
                                                 </div> 
                                             </td>
+                                            <?php 
+                                                $sold_price = $data["TransactionPrice"];  
+
+                                                if( $sold_price < 10 ){
+                                                    $rate = 1;
+                                                    $fees = 3;
+                                                    $final = ($rate * $sold_price )  + $fees;
+                                                }
+                                                elseif( $sold_price >= 10 && $sold_price <= 49.99 ){
+                                                    $rate = .82;
+                                                    $fees = 0;
+                                                    $final = ($rate * $sold_price )  + $fees;
+                                                }
+                                                elseif( $sold_price >= 50 && $sold_price <= 99.99 ){
+                                                    $rate = .84;
+                                                    $fees = 0;
+                                                    $final = ($rate * $sold_price )  + $fees;
+                                                }
+                                                elseif( $sold_price >= 100 && $sold_price <= 199.99 ){
+                                                    $rate = .85;
+                                                    $fees = 0;
+                                                    $final = ($rate * $sold_price )  + $fees;
+                                                }
+                                                elseif( $sold_price >= 200 && $sold_price <= 499.99 ){
+                                                    $rate = .86;
+                                                    $fees = 0;
+                                                    $final = ($rate * $sold_price )  + $fees;
+                                                }
+                                                elseif( $sold_price >= 500 && $sold_price <= 999.99 ){
+                                                    $rate = .87;
+                                                    $fees = 0;
+                                                    $final = ($rate * $sold_price )  + $fees;
+                                                }
+                                                elseif( $sold_price >= 1000 && $sold_price <= 2999.99 ){
+                                                    $rate = .88;
+                                                    $fees = 0;
+                                                    $final = ($rate * $sold_price )  + $fees;
+                                                }
+                                                elseif( $sold_price >= 3000 && $sold_price <= 4999.99 ){
+                                                    $rate = .90;
+                                                    $fees = 0;
+                                                    $final = ($rate * $sold_price )  + $fees;
+                                                }
+                                                elseif( $sold_price >= 5000 && $sold_price <= 8999.99 ){
+                                                    $rate = .92;
+                                                    $fees = 0;
+                                                    $final = ($rate * $sold_price )  + $fees;
+                                                }
+                                                elseif( $sold_price >= 9000){
+                                                    $rate = .93;
+                                                    $fees = 0;
+                                                    $final = ($rate * $sold_price )  + $fees;
+                                                }
+                                            ?>
+                                            <td class="text-end">
+                                            </td>
+                                            <td class="text-end">
+                                            </td>
+                                            <td class="text-end">
+                                            </td>
                                             <td class="text-end">
                                                 $<?php 
-                                                echo number_format(( $data["TransactionPrice"]), 2, '.', ',');
+                                                echo number_format(( $sold_price), 2, '.', ',');
                                                 ?>
                                             </td>
                                         </tr>
                                         <?php
-                                                $payout_total = $$payout_total + $data["TransactionPrice"];
+                                                $payout_total = $$payout_total + $sold_price;
                                             } 
                                         } 
                                         else {
