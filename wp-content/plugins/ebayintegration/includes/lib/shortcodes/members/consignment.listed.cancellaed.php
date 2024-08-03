@@ -21,9 +21,6 @@ $sql = "SELECT * FROM ebay WHERE sku IN ('" . $array . "')";
 $ebay = $this->wpdb->get_results ( $sql );
 
 
-print_r($ebay);
-
-die();
 
 $args = array(
     'orderby'    => 'display_name',
@@ -40,6 +37,13 @@ $users = get_users( $args );
     }
 </style>
 <div class="table-responsive">
+    <?php 
+print_r($ebay);
+
+die();
+
+    ?>
+
     <table class="table table-border table-striped table-sm table-hover search_table_paid">
         <thead>
             <tr>
