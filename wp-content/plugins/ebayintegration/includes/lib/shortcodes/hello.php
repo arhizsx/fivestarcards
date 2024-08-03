@@ -201,7 +201,7 @@ $current_user = wp_get_current_user();
                                                     echo $final;
                                                 }
 
-                                                echo $payout_total = $payout_total + $final;
+                                                $payout_total = $payout_total + $final;
                                             ?>
                                             <td class="text-end">
                                                 <?php echo number_format(( $rate * 100), 2, '.', ','); ?>%                                            
