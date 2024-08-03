@@ -3,21 +3,6 @@
 
     include( plugin_dir_path( __FILE__ ) . "css.php" );			
 
-    $user_id = get_current_user_id();
-
-    $skus = get_user_meta( $user_id, "sku", true );		
-    $array = implode("','",$skus);
-
-    $sql = "
-        SELECT * 
-        FROM  ebay
-        where status = 'SoldListPaid' AND sku IN ('" . $array . "')
-        ORDER BY id DESC
-    ";
-
-    $cards = $this->wpdb->get_results ( $sql );
-    $available = count($cards);
-
 ?>
 
 <style>
