@@ -1544,6 +1544,8 @@ class Ebay_Integration_Ebay_API {
 
 	function confirmPayoutDone($params){
 
+		
+
 		$sql = "UPDATE payouts SET `status`  = 'DONE' WHERE id = " . $params["payout_id"];
 
 		$updated_items = $this->wpdb->get_results ( $sql );
