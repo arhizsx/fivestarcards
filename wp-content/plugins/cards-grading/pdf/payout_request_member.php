@@ -35,7 +35,7 @@ print_r($data);
             <div class="row">
                 <div class="col-12  p-3">
                     <H5>Payment Request</H5>
-                    <table class="table table-bordered tabled-striped">
+                    <table class="table table-bordered tabled-striped" style="width: 100%">
                         <thead>
                             <tr>
                                 <th class="text-start" width="50%">Item</th>
