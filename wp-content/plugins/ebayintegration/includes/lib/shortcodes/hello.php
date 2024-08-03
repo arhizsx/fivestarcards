@@ -266,7 +266,7 @@ $current_user = wp_get_current_user();
                     }
                 ?>
             </div>
-            <div class="modal-footer p-3">
+            <div class="modal-footer">
                 <button id="float_btn_add_payout" class="btn btn-xl btn-primary ebayintegration-btn"  data-action="add_new_payout_confirm">
                     <i class="fa fa-money-bill me-2"></i> Confirm Payout Request
                 </button>
