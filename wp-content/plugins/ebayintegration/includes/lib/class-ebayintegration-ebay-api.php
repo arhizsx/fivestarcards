@@ -1466,8 +1466,8 @@ class Ebay_Integration_Ebay_API {
 		$user_id = 1;
 		$cards = [];
 
-			foreach( $params["card"] as $c ) {
-				$cards[] = $c;
+			foreach( $params["card"] as $k => $c ) {
+				array_push($cards, $c );
 			} 
 
 
