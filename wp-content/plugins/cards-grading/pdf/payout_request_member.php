@@ -14,6 +14,9 @@ $payout = $data["payout"];
                 padding: 0cm;
                 font-size: 8pt; /* Set global font size */
             }
+            table {
+                padding: 2px;
+            }
         </style>        
     </head>
     <body>
@@ -31,27 +34,27 @@ $payout = $data["payout"];
                     <table class="table table-bordered tabled-striped">
                         <thead>
                             <tr>
-                                <th class="text-start">Payment ID</th>
-                                <th class="text-center">Cards</th>
-                                <th class="text-start">Request Date</th>
-                                <th class="text-end">Amount Requested</th>
-                                <th class="text-end">Status</th>
+                                <th class="text-start" width="50%">Item</th>
+                                <th class="text-end">Price Sold</th>
+                                <th class="text-end">Rate</th>
+                                <th class="text-end">Fees</th>
+                                <th class="text-end">Final</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="text-start">Payment ID</td>
-                                <td class="text-center">Cards</td>
-                                <td class="text-start">Request Date</td>
-                                <td class="text-end">Amount Requested</td>
-                                <td class="text-end">Status</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
                             </tr>
                             <tr>
-                                <td class="text-start">Payment ID</td>
-                                <td class="text-center">Cards</td>
-                                <td class="text-start">Request Date</td>
-                                <td class="text-end">Amount Requested</td>
-                                <td class="text-end">Status</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
                             </tr>
                         </tbody>
                     </table>
