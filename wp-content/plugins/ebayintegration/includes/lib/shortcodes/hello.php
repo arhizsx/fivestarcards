@@ -139,6 +139,64 @@ $current_user = wp_get_current_user();
                     </div>
                     <div class="row mb-3">
                         <H4 style="color: black;">Cards Included</H4>
+                        <table class="table table-border table-striped table-sm table-hover search_table_paid">
+                                <thead>
+                                    <tr>
+                                        <th class="text-start" width="60%">Item</th>
+                                        <th class="text-end">eBay Pay Date</th>
+                                        <th class="text-end">Price Sold</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php 
+                                    if( $available > 0 ){
+                                        foreach($cards as $item){ 
+                                            $ctr++;
+                                            $data = json_decode($item->data, true);
+                                    ?>
+                                    <tr>
+                                        <td class="text-start">
+                                            <div class="title text-start">
+                                                <strong><?php echo $ctr;  ?></strong>&nbsp;
+                                                <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
+                                                    <?php print_r( $data["Item"]["Title"] ); ?>
+                                                </a>
+                                            </div> 
+                                            <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
+                                            <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
+                                            <?php 
+                                                $listing = $data["Item"]["ListingType"] == "Chinese" ? "Auction" : $data["Item"]["ListingType"]; 
+                                            ?>
+                                            <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                                        
+                                        </td>
+                                        <td class="text-end">
+                                            <?php
+                                            $paid_time = explode("T",$data["PaidTime"]); 
+                                            echo $paid_time[0];
+                                            ?>
+                                        </td>
+                                        <td class="text-end">
+                                            $<?php 
+                                            echo number_format(( $data["TransactionPrice"]), 2, '.', ',');
+                                            ?>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                            $payout_total = $$payout_total + $data["TransactionPrice"];
+                                        } 
+                                    } 
+                                    else {
+                                    ?>
+                                    <tr>
+                                        <td colspan="3" class="text-center p-5">
+                                            No Items
+                                        </td>
+                                    </tr>
+                                    <?php 
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
                     </div>
 
                 <?php 
