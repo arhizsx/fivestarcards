@@ -35,7 +35,7 @@
                 <div class="col-12">
                     <table class="table table-sm table-bordered  table-sm table-hover search_table_paid" style="width: 95%">
                         <tr>
-                            <td>
+                            <td width="50%">
                                 <label>Payout ID</label><br>
                                 <input type="text" class="" style="width: 95%" value="<?php print_r( $data["payout"][0]->id + 1000 ) ?>">
                                 
