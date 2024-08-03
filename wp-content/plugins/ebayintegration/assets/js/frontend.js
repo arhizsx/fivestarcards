@@ -190,11 +190,11 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 			$.each( payout.payout.cards, function( k, v){
 
-				console.log(payout.payout.data);
+				cards = JSON.parse(payout.payout.data, true);
 
 				$(document).find("#payout_cards_table tbody").append(
 					"<tr>" +	
-						"<td class='text-start'>-</td>" +
+						"<td class='text-start'>" + cards[0] + "</td>" +
 						"<td class='text-center'>-</td>" +
 						"<td class='text-start'>-</td>" +
 						"<td class='text-end'>-</td>" +
