@@ -1508,6 +1508,8 @@ class Ebay_Integration_Ebay_API {
 		$sql = "SELECT * FROM payouts WHERE id = '" . $params["payout_id"] . "'";
 		$payout = $this->wpdb->get_results ( $sql );
 
+		return json_decode( $payout[0]->data, true );
+
 		return ["error" => false, "payout" => $payout ];
 	}
 }
