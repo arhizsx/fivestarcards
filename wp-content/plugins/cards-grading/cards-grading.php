@@ -1026,13 +1026,13 @@
             
 
             $sql = "SELECT * FROM payouts WHERE id = " . $params["key"];
-            // $payout = $this->wpdb->get_results ( $sql );
+            $payout = $this->wpdb->get_results ( $sql );
              
             // print_r( $payout );
             // die();
 
             $data = [
-                "payout" =>  $params["key"],
+                "payout" =>  $payout,
             ];
         }
         elseif($params["action"] == "payout_pdf_admin"){
