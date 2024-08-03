@@ -202,7 +202,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button id="float_btn_add_payout" class="btn btn-xl btn-secondary">
+                <button id="float_btn_add_payout"  data-bs-dismiss="modal"  class="btn btn-xl btn-secondary">
                     CLOSE
                 </button>
 
