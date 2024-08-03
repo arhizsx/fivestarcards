@@ -173,7 +173,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		var payout = confirmPayoutRequest();
 
 		$.when( payout ).done( function( payout ){	
-			window.location = "/my-account/payout/?payout_id=" + payout.payout_id ;	
+			// window.location = "/my-account/payout/?payout_id=" + payout.payout_id ;	
 		});
 	}
 	else if( jQuery(this).data("action") == "show_payment_request" ){
