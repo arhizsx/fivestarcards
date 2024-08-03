@@ -145,6 +145,9 @@ $current_user = wp_get_current_user();
                     }
                 ?>
             </div>
+            <div class="modal-footer p-3">
+                    request
+            </div>
 		</div>
 	</div>
 </div>
