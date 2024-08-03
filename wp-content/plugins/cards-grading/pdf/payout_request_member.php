@@ -32,16 +32,23 @@
                 </div>
             </div>
             <div class="row p-3">
-                <div class="col-3">
-                    <label>Payout ID</label>
-                    <?php print_r( $data["payout"][0]->id + 1000 ) ?>
-                </div>
-                <div class="col-3">
-                    <label>Status</label>
-                    <?php print_r( $data["payout"][0]->status ) ?>
-                </div>
-                <div class="col-6">
-                    <?php print_r( $data["user"]["name"] )  ?>
+                <div class="col-12">
+                    <table class="table table-sm table-bordered table-striped table-sm table-hover search_table_paid" style="width: 95%">
+                        <tr>
+                            <td>
+                                <label>Payout ID</label>
+                                <?php print_r( $data["payout"][0]->id + 1000 ) ?>
+                            </td>
+                            <td>
+                                <label>Payout Status</label>
+                                <?php print_r( $data["payout"][0]->status ) ?>
+                            </td>
+                            <td>
+                                <label>Client</label>
+                                <?php print_r( $data["user"]["name"] )  ?>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div class="row p-3">
