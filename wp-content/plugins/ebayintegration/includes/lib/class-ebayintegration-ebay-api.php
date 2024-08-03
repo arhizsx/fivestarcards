@@ -1501,8 +1501,6 @@ class Ebay_Integration_Ebay_API {
 
 		$sql = "UPDATE ebay SET `request_id`  = " . $lastid . " WHERE item_id IN ('" . $array . "')";
 
-		return $sql;
-
 		$updated_items = $this->wpdb->get_results ( $sql );
 
 		return ["error" => false, "payout_id" => $lastid, "updated_items" => $updated_items];
