@@ -259,8 +259,8 @@ $current_user = wp_get_current_user();
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th colspan="4">Grand Total</th>
-                                            <th>
+                                            <th colspan="4" class="text-end">GRAND TOTAL</th>
+                                            <th class="text-end">
                                             <?php echo number_format(( $payout_total), 2, '.', ','); ?>
                                             </th>
                                         </tr>
