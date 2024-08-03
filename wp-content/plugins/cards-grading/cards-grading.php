@@ -1013,6 +1013,12 @@
         $options->set('isRemoteEnabled', true); 
         $dompdf = new Dompdf($options);
         
+        // Define variables that will be passed to data.php
+        $pdf_data = [
+            'title' => "title",
+            'content' => "content",
+            'date' => "date",
+        ];
         
         ob_start();
         include plugin_dir_path(__FILE__) . 'data.php'; // Adjust path if needed
