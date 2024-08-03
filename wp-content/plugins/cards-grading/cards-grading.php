@@ -1030,9 +1030,6 @@
             
             $data = $this->getPayoutMember( $params["key"] );
 
-            print_r($data);
-            die();
-
         }
         elseif($params["action"] == "payout_pdf_admin"){
             $template = "payout_request_admin.php";

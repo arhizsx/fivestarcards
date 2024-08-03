@@ -1,7 +1,4 @@
 <?php
-$cards = $data["cards"];
-$payout = $data["payout"];
-
 print_r($data);
 
 ?>
