@@ -715,6 +715,15 @@
 
         register_rest_route(
             "cards-grading/v1",
+            "makepdf",
+            array(
+                'methods' => 'GET',
+                'callback' => array($this, 'handle_make_pdf')
+            )                        
+        );
+
+        register_rest_route(
+            "cards-grading/v1",
             "notification",
             array(
                 'methods' => 'POST',
@@ -997,6 +1006,22 @@
 
 
     }    
+
+    public function handle_make_pdf($data){
+
+        $options = new Options();
+        $options->set('isRemoteEnabled', true); 
+        $dompdf = new Dompdf($options);
+        
+
+        return $data;
+
+        // ob_start();
+        // include plugin_dir_path(__FILE__) . 'data.php'; // Adjust path if needed
+        // $html = ob_get_clean();
+    
+
+    }
 
     public function handle_pdf($data){
 
