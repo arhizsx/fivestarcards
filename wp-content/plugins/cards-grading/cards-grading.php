@@ -1068,8 +1068,8 @@
         // Render the HTML as PDF
         $dompdf->render();
 
-        // Output the generated PDF to Browser
-        $dompdf->stream("5 Star Cards - ". $file_prepend . ".pdf");
+        // // Output the generated PDF to Browser
+        // $dompdf->stream("5 Star Cards - ". $file_prepend . ".pdf");
 
         // Get the PDF output as a string
         $pdf_content = $dompdf->output();
@@ -1084,7 +1084,7 @@
         ];
         $attachments = [
             [
-                'name' => $file_prepend . '.pdf',
+                'name' => '5 Star Cards - ' . $file_prepend . '.pdf',
                 'data' => $pdf_content,
                 'type' => 'application/pdf'
             ]
