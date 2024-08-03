@@ -84,6 +84,18 @@ $current_user = wp_get_current_user();
 				</button>
 			</div>
             <div class="modal-body p-3">
+                <?php 
+                    if( $user_id != 1054 ){
+                ?>
+                <H1>Please wait we are brewing something cool...</H1>
+                <?php        
+                    } else {
+
+                        $payout_total = 0;
+                ?>
+                <?php 
+                    }
+                ?>
             </div>
 		</div>
 	</div>
