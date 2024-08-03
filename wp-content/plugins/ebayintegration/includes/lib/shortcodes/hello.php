@@ -91,8 +91,47 @@ $current_user = wp_get_current_user();
                 <?php        
                     } else {
 
+
+                        $user_id = get_current_user_id();
+
+                        $skus = get_user_meta( $user_id, "sku", true );		
+                        $array = implode("','",$skus);
+                    
+                        $sql = "
+                            SELECT * 
+                            FROM  ebay
+                            where status = 'SoldListPaid' AND sku IN ('" . $array . "')
+                            ORDER BY id DESC
+                        ";
+                    
+                        $cards = $this->wpdb->get_results ( $sql );
+                        $available = count($cards);
                         $payout_total = 0;
+
+                        if( $available > 0 ){
+                            foreach($cards as $item){ 
+                                $ctr++;
+                                $data = json_decode($item->data, true);
+                                $payout_total = $$payout_total + $data["TransactionPrice"];
+                            }
+                        }                    
                 ?>
+                    <div class="row">
+                        <div class="col-6">
+                            Total Amount
+                        </div>
+                        <div class="col-6">                    
+                            <input type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            Cards Count    
+                        </div>
+                        <div class="col-6">
+                            <input type="text" value="<?php echo $available ?>">
+                        </div>
+                    </div>
                 <?php 
                     }
                 ?>
