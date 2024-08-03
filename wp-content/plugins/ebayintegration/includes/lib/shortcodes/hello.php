@@ -167,14 +167,15 @@ $current_user = wp_get_current_user();
                                                     </a>
                                                 </div> 
                                             </td>
+                                            <?php 
+                                                $sold_price = $data["TransactionPrice"];  
+                                            ?>
                                             <td class="text-end">
                                                 $<?php 
                                                 echo number_format(( $sold_price), 2, '.', ',');
                                                 ?>
                                             </td>
                                             <?php 
-                                                $sold_price = $data["TransactionPrice"];  
-
                                                 if( $sold_price < 10 ){
                                                     $rate = 1;
                                                     $fees = 3;
