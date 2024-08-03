@@ -218,7 +218,7 @@ $current_user = wp_get_current_user();
                                         <?php
                                                 $payout_total = $$payout_total + ($rate * $sold_price) + $fees;
 
-                                                echo $payout_total ;
+                                                echo $payout_total . "<br>";
                                             } 
                                         } 
                                         else {
