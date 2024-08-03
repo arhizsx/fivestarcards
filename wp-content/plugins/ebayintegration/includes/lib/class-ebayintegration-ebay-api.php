@@ -1472,7 +1472,9 @@ class Ebay_Integration_Ebay_API {
 
 
 		$data = [
-			"cards" => $cards
+			"cards" => $cards,
+			"remarks" => $params["remarks"],
+			"payment_method" => $params["payment_method"],
 		];
 		return $this->wpdb->insert(
 					'payouts',
