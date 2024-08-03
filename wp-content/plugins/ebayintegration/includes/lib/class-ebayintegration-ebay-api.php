@@ -1525,10 +1525,10 @@ class Ebay_Integration_Ebay_API {
 
 		$user_data = get_userdata($user_id);
 
-		return $user_data->data->user_email;
 		$user = [
-			"name" => $user_data["data"]["display_name"],
-			"email" => $user_data["data"]["user_email"],
+			"id" => $user_data->data->ID,
+			"name" => $user_data->data->display_name,
+			"email" => $user_data->data->user_email,
 		];
 
 		return ["error" => false, "payout" => $payout , "cards" => $cards, "user" => $user ];
