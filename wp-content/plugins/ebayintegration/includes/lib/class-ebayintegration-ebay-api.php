@@ -1475,6 +1475,8 @@ class Ebay_Integration_Ebay_API {
 			"cards" => $cards,
 			"remarks" => $params["remarks"],
 			"payment_method" => $params["payment_method"],
+			"cards_count" => $params["cards_count"],
+			"requested_amount" => $params["requested_amount"],
 		];
 
 		$this->wpdb->insert(

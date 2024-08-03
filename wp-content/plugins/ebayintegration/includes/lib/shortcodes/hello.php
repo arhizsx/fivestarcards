@@ -257,9 +257,11 @@ $current_user = wp_get_current_user();
                                 <textarea class="form-control" name="remarks"></textarea>                            
                             </div>
                         </div>
-                        
+                        <input type="hidden" value="<?php echo $payout_total ?>" name="requested_amount">
+                        <input type="hidden" value="<?php echo $available ?>" name="cards_count">
                     </form>
                 <?php 
+
                     }
                 ?>
             </div>
