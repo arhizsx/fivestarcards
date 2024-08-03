@@ -136,8 +136,6 @@ $current_user = wp_get_current_user();
                             <label>Remarks / Message</label>
                             <textarea class="form-control" name="remarks"></textarea>                            
                         </div>
-
-                        </div>
                     </div>
                 <?php 
                     }
