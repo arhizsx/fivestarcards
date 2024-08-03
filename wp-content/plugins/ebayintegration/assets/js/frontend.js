@@ -180,7 +180,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		jQuery(document).find(".show_payment_request_modal").appendTo('body').modal("show");
 
-		var payout = getPayoutRequest();
+		var payout = getPayoutRequest( $(this).data("payout_id") );
 
 		$.when( payout ).done( function( payout ){	
 			console.log(payout);

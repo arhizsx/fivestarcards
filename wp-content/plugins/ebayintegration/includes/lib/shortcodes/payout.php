@@ -93,7 +93,7 @@
                                         foreach( $cards as $card ){ 
                                             $data = json_decode($card->data, true);
                                 ?>
-                                <tr class="payment_request_row ebayintegration-btn" data-action="show_payment_request" data-request_id="<?php echo $card->id ?>">
+                                <tr class="payment_request_row ebayintegration-btn" data-action="show_payment_request" data-payout_id="<?php echo $card->id ?>">
                                     <td class="text-start"><?php echo $card->id + 1000 ?></td>
                                     <td class="text-center"><?php echo $data["cards_count"] ?></td>
                                     <td class="text-start"><?php echo $card->add_timestamp ?></td>
