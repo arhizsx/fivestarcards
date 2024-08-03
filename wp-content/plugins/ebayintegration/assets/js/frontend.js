@@ -188,7 +188,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 			$.each( payout.payout.cards, function( k, v){
 
-				console.log(payout);
+				console.log(payout.payout.data);
 
 				$(document).find("#payout_cards_table tbody").append(
 					"<tr>" +	
