@@ -76,7 +76,7 @@
                                     <th class="text-start">Request Date</th>
                                     <th class="text-end">Amount Requested</th>
                                     <th class="text-end">Status</th>
-                                    <th class="text-end">Payout Date</th>
+                                    <!-- <th class="text-end">Payout Date</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -91,7 +91,7 @@
                                     <td class="text-start"><?php echo $card->add_timestamp ?></td>
                                     <td class="text-end"><?php echo $data["requested_amount"] ?></td>
                                     <td class="text-end"><?php echo $card->status ?></td>
-                                    <td class="text-end"></td>
+                                    <!-- <td class="text-end"></td> -->
                                 </tr>  
                                 <?php
                                         } 
