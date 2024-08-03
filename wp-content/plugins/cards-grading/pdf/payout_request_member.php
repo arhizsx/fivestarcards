@@ -31,7 +31,7 @@
             <div class="row p-3">
                 <div class="col-12" style="padding: 20px;">
                     <H5>Payment Request</H5>
-                    <table class="table table-bordered tabled-striped" style="width: 96%">
+                    <table class="table table-bordered tabled-striped" style="width: 95%">
                         <thead>
                             <tr>
                                 <th class="text-start" width="50%">Item</th>
