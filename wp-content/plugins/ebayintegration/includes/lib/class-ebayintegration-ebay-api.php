@@ -209,6 +209,11 @@ class Ebay_Integration_Ebay_API {
 		elseif( $params["action"] == "confirmPayoutRequest"){
 			return $this->confirmPayoutRequest( $params );
 		}
+
+		elseif( $params["action"] == "getPayoutRequest"){
+			return $this->getPayoutRequest( $params );
+		}
+		
 		
 		elseif( $params["action"] == "confirmConsignCardsShipping"){
 			return $this->confirmConsignCardsShipping( $params );
@@ -322,6 +327,8 @@ class Ebay_Integration_Ebay_API {
 
 		}
 		
+		
+
 		
 
 		else {			
@@ -1493,4 +1500,14 @@ class Ebay_Integration_Ebay_API {
 		return ["error" => false, "payout_id" => $lastid];
 	}
 
+	function getPayoutRequest($params){
+
+
+		$user_id = $params["payout_id"];
+
+		$sql = "SELECT * FROM payouts WHERE id = '" . $params["payout_id"] . "'";
+		$payout = $this->wpdb->get_results ( $sql );
+
+		return ["error" => false, "payout" => $payout ];
+	}
 }

@@ -143,7 +143,7 @@
 			</div>
             <div class="modal-body p-3">
                 <form class="form" id="payout_request_form">
-                    <input type="hidden" name="user_id" value="<?php echo get_current_user_id() ?>">
+                    <input type="hidden" name="user_id" value="">
                     <div class="row">
                         <H5 style="color: black;">Cards Included</H5>
                         <div class="table-responsive">

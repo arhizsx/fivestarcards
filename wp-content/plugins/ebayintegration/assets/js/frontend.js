@@ -180,6 +180,13 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		jQuery(document).find(".show_payment_request_modal").appendTo('body').modal("show");
 
+		var payout = getPayoutRequest();
+
+		$.when( payout ).done( function( payout ){	
+			console.log(payout);
+		});
+		
+
 	}
 
 	
@@ -1787,6 +1794,32 @@ function confirmPayoutRequest(type, user_id){
 
 }
 
+function getPayoutRequest($payout_id){
+
+	var defObject = $.Deferred();  // create a deferred object.
+
+	$.ajax({
+		type: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: {
+			"action": "getPayoutRequest",
+			"payout_id": $payout_id
+		},
+		success: function(resp){
+			defObject.resolve(resp);    //resolve promise and pass the response.
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
+	return defObject.promise();
+
+}
+
+
+
+
 
 // GRADING
 
@@ -2267,8 +2300,6 @@ function getItemInfo(item_id){
 
 
 }
-
-
 
 
 
