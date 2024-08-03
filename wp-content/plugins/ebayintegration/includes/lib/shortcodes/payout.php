@@ -135,197 +135,58 @@
 		<div class="modal-content modal-ajax" style="margin-bottom: 200px;">
 			<div class="modal-header bg-dark text-white">
 				<h5 class="modal-title mb-0 p-0">
-					New Payment Request
+					Payment Request Details
 				</h5>
     			<button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
 					X
 				</button>
 			</div>
             <div class="modal-body p-3">
-                <?php 
-                    if( $user_id == 1 ){
-                ?>
-                <div style="color: black;">Please wait we are brewing something cool...</div>
-                <?php        
-                    } else {
-
-
-                        $user_id = get_current_user_id();
-
-                        $skus = get_user_meta( $user_id, "sku", true );		
-                        $array = implode("','",$skus);
-                    
-                        $sql = "
-                            SELECT * 
-                            FROM  ebay
-                            where status = 'SoldListPaid' AND sku IN ('" . $array . "')
-                            ORDER BY id DESC
-                        ";
-                    
-                        $cards = $this->wpdb->get_results ( $sql );
-                        $available = count($cards);
-                        $payout_total = 0;
-                ?>
-                    <form class="form" id="payout_request_form">
-                        <input type="hidden" name="action" value="confirmPayoutRequest">
-                        <input type="hidden" name="user_id" value="<?php echo get_current_user_id() ?>">
-                        <div class="row">
-                            <H5 style="color: black;">Cards Included</H5>
-                            <div class="table-responsive">
-                            <table class="table table-sm table-bordered table-striped table-sm table-hover search_table_paid">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-start" width="50%">Item</th>
-                                            <th class="text-end">Price Sold</th>
-                                            <th class="text-end">Rate</th>
-                                            <th class="text-end">Fees</th>
-                                            <th class="text-end">Final</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php 
-                                        if( $available > 0 ){
-                                            foreach($cards as $item){ 
-                                                $ctr++;
-                                                $data = json_decode($item->data, true);
-
-
-                                        ?>
-                                        <input type="hidden" name="card[<?php echo $ctr ?>]" value="<?php echo $item->item_id; ?>">
-                                        <tr>
-                                            <td class="text-start">
-                                                <div class="title text-start">
-                                                    <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                                                        <?php print_r( $data["Item"]["Title"] ); ?>
-                                                    </a>
-                                                </div> 
-                                            </td>
-                                            <?php 
-                                                $sold_price = (float) $data["TransactionPrice"];  
-                                            ?>
-                                            <td class="text-end">
-                                                $<?php 
-                                                echo number_format(( $sold_price), 2, '.', ',');
-                                                ?>
-                                            </td>
-                                            <?php 
-                                                if( $sold_price < 10 ){
-                                                    $rate = 1;
-                                                    $fees = 3;
-                                                    $final = ($rate * $sold_price )  + $fees;
-                                                }
-                                                elseif( $sold_price >= 10 && $sold_price <= 49.99 ){
-                                                    $rate = .82;
-                                                    $fees = 0;
-                                                    $final = ($rate * $sold_price )  + $fees;
-                                                }
-                                                elseif( $sold_price >= 50 && $sold_price <= 99.99 ){
-                                                    $rate = .84;
-                                                    $fees = 0;
-                                                    $final = ($rate * $sold_price )  + $fees;
-                                                }
-                                                elseif( $sold_price >= 100 && $sold_price <= 199.99 ){
-                                                    $rate = .85;
-                                                    $fees = 0;
-                                                    $final = ($rate * $sold_price )  + $fees;
-                                                }
-                                                elseif( $sold_price >= 200 && $sold_price <= 499.99 ){
-                                                    $rate = .86;
-                                                    $fees = 0;
-                                                    $final = ($rate * $sold_price )  + $fees;
-                                                }
-                                                elseif( $sold_price >= 500 && $sold_price <= 999.99 ){
-                                                    $rate = .87;
-                                                    $fees = 0;
-                                                    $final = ($rate * $sold_price )  + $fees;
-                                                }
-                                                elseif( $sold_price >= 1000 && $sold_price <= 2999.99 ){
-                                                    $rate = .88;
-                                                    $fees = 0;
-                                                    $final = ($rate * $sold_price )  + $fees;
-                                                }
-                                                elseif( $sold_price >= 3000 && $sold_price <= 4999.99 ){
-                                                    $rate = .90;
-                                                    $fees = 0;
-                                                    $final = ($rate * $sold_price )  + $fees;
-                                                }
-                                                elseif( $sold_price >= 5000 && $sold_price <= 8999.99 ){
-                                                    $rate = .92;
-                                                    $fees = 0;
-                                                    $final = ($rate * $sold_price )  + $fees;
-                                                }
-                                                elseif( $sold_price >= 9000){
-                                                    $rate = .93;
-                                                    $fees = 0;
-                                                    $final = ($rate * $sold_price )  + $fees;
-                                                    echo $final;
-                                                }
-
-                                                $payout_total = $payout_total + $final;
-                                            ?>
-                                            <td class="text-end">
-                                                <?php echo number_format(( $rate * 100), 2, '.', ','); ?>%                                            
-                                            </td>
-                                            <td class="text-end">
-                                                $<?php 
-                                                echo number_format(( $fees), 2, '.', ',');
-                                                ?>
-                                            </td>
-                                            <td class="text-end">
-                                                $<?php 
-                                                echo number_format(( $final), 2, '.', ',');
-                                                ?>
-                                            </td>
-                                        </tr>
-                                        <?php
-                                            } 
-                                        } 
-                                        else {
-                                        ?>
-                                        <tr>
-                                            <td colspan="3" class="text-center p-5">
-                                                No Items
-                                            </td>
-                                        </tr>
-                                        <?php 
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
+                <form class="form" id="payout_request_form">
+                    <input type="hidden" name="user_id" value="<?php echo get_current_user_id() ?>">
+                    <div class="row">
+                        <H5 style="color: black;">Cards Included</H5>
+                        <div class="table-responsive">
+                        <table class="table table-sm table-bordered table-striped table-sm table-hover search_table_paid">
+                                <thead>
+                                    <tr>
+                                        <th class="text-start" width="50%">Item</th>
+                                        <th class="text-end">Price Sold</th>
+                                        <th class="text-end">Rate</th>
+                                        <th class="text-end">Fees</th>
+                                        <th class="text-end">Final</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-xl-4">
-                                <label>Total Amount</label>
-                                <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
-                            </div>
-                            <div class="col-xl-4">
-                                <label>Cards Count</label>
-                                <input  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="<?php echo $available ?>">          
-                            </div>
-                            <div class="col-xl-4">
-                                <label>Payment Method</label>
-                                <select class="form-control mb-3" name="payment_method">
-                                    <option value="Paypal">Paypal</option>
-                                </select>
-                            </div>
-                            <div class="col-xl-12">
-                                <label>Remarks / Message</label>
-                                <textarea class="form-control" name="remarks"></textarea>                            
-                            </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-xl-4">
+                            <label>Total Amount</label>
+                            <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="">
                         </div>
-                        <input type="hidden" value="<?php echo $payout_total ?>" name="requested_amount">
-                        <input type="hidden" value="<?php echo $available ?>" name="cards_count">
-                    </form>
-                <?php 
-
-                    }
-                ?>
+                        <div class="col-xl-4">
+                            <label>Cards Count</label>
+                            <input  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
+                        </div>
+                        <div class="col-xl-4">
+                            <label>Payment Method</label>
+                            <select class="form-control mb-3" name="payment_method">
+                                <option value="Paypal">Paypal</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-12">
+                            <label>Remarks / Message</label>
+                            <textarea class="form-control" name="remarks"></textarea>                            
+                        </div>
+                    </div>
+                    <input type="hidden" value="" name="requested_amount">
+                    <input type="hidden" value="" name="cards_count">
+                </form>
             </div>
             <div class="modal-footer">
-                <button id="float_btn_add_payout" class="btn btn-xl btn-primary ebayintegration-btn"  data-action="confirmPayoutRequest">
-                    <i class="fa fa-money-bill me-2"></i> Confirm Payout Request
-                </button>
             </div>
 		</div>
 	</div>
