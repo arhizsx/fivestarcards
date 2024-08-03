@@ -149,7 +149,8 @@
                         </div>
                         <div class="col-xl-4">
                             <label>Payout ID</label>
-                            <input name="payout_id"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
+                            <input name="payout_id"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="hidden" value="">          
+                            <input name="payout_id_full"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
                         </div>
                         <div class="col-xl-4">
                             <label>Request Date</label>

@@ -183,6 +183,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		jQuery(document).find(".show_payment_request_modal").appendTo('body').modal("show");
 
 		var payout = getPayoutRequest( $(this).data("payout_id") );
+		var payout_id = $(this).data("payout_id") ;
 		$(document).find("#payout_cards_table tbody").empty();
 
 		$.when( payout ).done( function( payout ){	
@@ -281,7 +282,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 			var data = JSON.parse(payout.payout[0].data, true);			
 						
-			$(document).find(".show_payment_request_modal").find("[name='payout_id']").val( parseFloat(payout.payout[0].id) + 1000);
+			$(document).find(".show_payment_request_modal").find("[name='payout_id']").val( parseFloat(payout.payout[0].id));
+			$(document).find(".show_payment_request_modal").find("[name='payout_id_full']").val( parseFloat(payout.payout[0].id) + 1000);
 			$(document).find(".show_payment_request_modal").find("[name='request_date']").val(payout.payout[0].add_timestamp);
 			$(document).find(".show_payment_request_modal").find("[name='payout_date']").val(data.payout_date);
 
