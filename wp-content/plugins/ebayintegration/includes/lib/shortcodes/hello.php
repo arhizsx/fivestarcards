@@ -137,7 +137,7 @@ $current_user = wp_get_current_user();
                             <textarea class="form-control" name="remarks"></textarea>                            
                         </div>
                     </div>
-                    <div class="row mb-3">
+                    <div class="row">
                         <H5 style="color: black;">Cards Included</H5>
                         <div class="overflow: auto">
                         <table class="table table-sm table-border table-striped table-sm table-hover search_table_paid">
