@@ -18,7 +18,7 @@ $payout = $data["payout"];
     </head>
     <body>
         <div class="container-fluid m-0 p-0">
-            <div class="row mb-3 border-bottom">
+            <div class="row mb-3 border-bottom p-3">
                 <div class="col">
                     <img src="https://5starcards.com/wp-content/uploads/2023/09/5-star-cards-logo.png" width="150px;" alt="5 Star Cards">
                 </div>
