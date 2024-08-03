@@ -1079,12 +1079,12 @@
         $sql = "SELECT * FROM payouts WHERE id = " . $key;
         $payout = $this->wpdb->get_results ( $sql );
 
-        print_r($payout);
-        die();
 
         $data = json_decode( $payout->data, true ); 
 
 		$array = implode("','",  $data["cards"]);
+        print_r($data);
+        die();
 
 		$sql = "SELECT * FROM ebay WHERE sku IN ('" . $array . "')";
 
