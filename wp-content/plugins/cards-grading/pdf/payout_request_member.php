@@ -37,17 +37,17 @@
                         <tr>
                             <td>
                                 <label>Payout ID</label>
-                                <input type="text" class="form-control" value="<?php print_r( $data["payout"][0]->id + 1000 ) ?>">
+                                <input type="text" class="" value="<?php print_r( $data["payout"][0]->id + 1000 ) ?>">
                                 
                             </td>
                             <td>
                                 <label>Payout Status</label>
-                                <input type="text" class="form-control" value="<?php print_r( $data["payout"][0]->status ) ?>">                            
+                                <input type="text" class="" value="<?php print_r( $data["payout"][0]->status ) ?>">                            
                             </td>
                             <td>
                                 <label>Client</label>
                                 
-                                <input type="text" class="form-control" value="<?php print_r( $data["user"]["name"] )  ?>">                            
+                                <input type="text" class="" value="<?php print_r( $data["user"]["name"] )  ?>">                            
                             </td>
                         </tr>
                     </table>
