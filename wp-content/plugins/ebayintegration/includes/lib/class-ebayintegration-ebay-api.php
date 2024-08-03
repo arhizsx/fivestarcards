@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 //  require_once "../../../../wp-load.php";
-
+print_r (__DIR__ . '/vendor/autoload.php');
 print_r( plugin_dir_path( __FILE__ ) . 'dompdf/autoload.inc.php' );
 die();
 use Dompdf\Dompdf; 
