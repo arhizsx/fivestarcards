@@ -1029,10 +1029,7 @@
             $file_prepend = "Payout Request";
             
             $data = $this->getPayoutMember( $params["key"] );
-            print_r($params["key"]);
 
-            print_r($data);
-            die();
 
         }
         elseif($params["action"] == "payout_pdf_admin"){
@@ -1081,6 +1078,9 @@
 
         $sql = "SELECT * FROM payouts WHERE id = " . $key;
         $payout = $this->wpdb->get_results ( $sql );
+
+        print_r($payout);
+        die();
 
         $data = json_decode( $payout->data, true ); 
 
