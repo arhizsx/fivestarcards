@@ -1085,11 +1085,8 @@
 
 		$sql = "SELECT * FROM ebay WHERE item_id IN ('" . $array . "')";
 		$cards = $this->wpdb->get_results ( $sql );
-        print_r($cards);
-        die();
 
-
-        return ["cards" => $cards ];
+        return ["cards" => $cards, "payout"=> $payout];
     }
 
 
