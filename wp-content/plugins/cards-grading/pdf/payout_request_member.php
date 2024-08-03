@@ -44,10 +44,9 @@
                         <tbody>
                             <?php 
                             foreach($data["cards"] as $card){
+                                print_r($card);
 
                                 $card_data = json_decode($card, true);
-
-                                print_r($card_data);
                             ?>  
                             <tr>
                                 <td>-</td>
