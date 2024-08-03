@@ -132,8 +132,9 @@ $current_user = wp_get_current_user();
                                     </thead>
                                     <tbody>
                                         <?php 
-                                        if( $available > 0 ){
                                         $payout_total = 0;                                            
+
+                                        if( $available > 0 ){
                                             foreach($cards as $item){ 
                                                 $ctr++;
                                                 $data = json_decode($item->data, true);
