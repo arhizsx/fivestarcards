@@ -1033,7 +1033,11 @@
             ];
         } else {
             $template = "data.php";
-            $data = [];
+            $data = [
+                "title" => "Test Title",
+                "content" => "Test Content",
+                "data" => "Test Date",
+            ];
         }
 
         $template = "data.php";
