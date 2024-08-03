@@ -1464,7 +1464,7 @@ class Ebay_Integration_Ebay_API {
 
 		$user_id = 1;
 		$data = [
-			"test" => "test"
+			"cards" => $params["cards"]
 		];
 		return $this->wpdb->insert(
 					'payouts',
