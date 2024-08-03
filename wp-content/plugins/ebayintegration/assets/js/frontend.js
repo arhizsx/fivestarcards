@@ -193,8 +193,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				$(document).find("#payout_cards_table tbody").append(
 					"<tr>" +	
-						"<td class='text-start'>" +card.Item.Title + "</td>" +
-						"<td class='text-end'>$" + card.TransactionPrice + "</td>" +
+						"<td class='text-start'>" + card.Item.Title + "</td>" +
+						"<td class='text-end'>$" + parseFloat(card.TransactionPrice).toFixed(2) + "</td>" +
 						"<td class='text-end'>0-</td>" +
 						"<td class='text-end'>0-</td>" +
 						"<td class='text-end'>0</td>" +
