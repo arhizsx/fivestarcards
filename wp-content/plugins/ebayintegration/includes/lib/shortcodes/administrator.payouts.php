@@ -207,7 +207,7 @@
                 <button id="float_btn_add_payout"  data-bs-dismiss="modal"  class="btn btn-xl btn-secondary">
                     Cancel
                 </button>
-                <button id="float_btn_add_payout" class="btn btn-xl btn-primary ebayintegration-btn"  data-action="confirmPayoutDone">
+                <button id="float_btn_add_payout" class="d-none btn btn-xl btn-primary ebayintegration-btn"  data-action="confirmPayoutDone">
                     <i class="fa fa-check me-2"></i> Done
                 </button>
             </div>
