@@ -195,6 +195,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 
 			$(document).find(".show_payment_request_modal").find("[name='remarks']").val("");
+			$(document).find(".show_payment_request_modal").find("[name='requested_amount']").val("");
 			$(document).find(".show_payment_request_modal").find("[name='total_amount']").val("");
 			$(document).find(".show_payment_request_modal").find("[name='cards_count']").val("");
 
@@ -290,6 +291,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 			$(document).find(".show_payment_request_modal").find("[name='remarks']").val(data.remarks);
 			$(document).find(".show_payment_request_modal").find("[name='total_amount']").val(payout_total);
+			$(document).find(".show_payment_request_modal").find("[name='requested_amount']").val(payout_total);
 			$(document).find(".show_payment_request_modal").find("[name='cards_count']").val(payout.cards.length);
 
 			$(document).find(".show_payment_request_modal").find("[name='user_id']").val( payout.user.id );
