@@ -1497,7 +1497,13 @@ class Ebay_Integration_Ebay_API {
 
 		$lastid = $this->wpdb->insert_id;
 
-		return ["error" => false, "payout_id" => $lastid];
+		$array = implode("','",$cards);
+
+		$sql = "UPDATE ebay SET `request_id`  = " . $lastid . " WHERE item_id IN ('" . $array . "')";
+
+		$updated_items = $this->wpdb->get_results ( $sql );
+
+		return ["error" => false, "payout_id" => $lastid, "updated_items" => $updated_items];
 	}
 
 	function getPayoutRequest($params){
