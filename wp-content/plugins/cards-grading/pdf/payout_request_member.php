@@ -11,7 +11,7 @@ $payout = $data["payout"];
             }
 
             body {
-                margin: 1cm;
+                margin: 0cm;
                 padding: 0cm;
                 font-size: 9pt; /* Set global font size */
             }
