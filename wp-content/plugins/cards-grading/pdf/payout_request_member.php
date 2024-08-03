@@ -34,15 +34,14 @@
             <div class="row p-3">
                 <div class="col-3">
                     <label>Payout ID</label>
-                    <?php print_r( $data["payout"] ) ?>
                 </div>
                 <div class="col-3">
                     <label>Status</label>
-                    <?php print_r( $data["user"] )  ?>
+                    <?php print_r( $data["payout"]["status"] ) ?>
                 </div>
                 <div class="col-6">
                     <label>User</label>
-                    <input type="text" value="<?php echo $data->user->name ?>">
+                    <?php print_r( $data["user"] )  ?>
                 </div>
             </div>
             <div class="row p-3">
