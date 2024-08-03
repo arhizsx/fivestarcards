@@ -1024,7 +1024,7 @@
             $file_prepend = "Payout Request";
 
             $sql = "SELECT * FROM payouts WHERE id = '" . $params["key"] . "'";
-            // $payout = $this->wpdb->get_results ( $sql );
+            $payout = $this->wpdb->get_results ( $sql );
              
             // print_r( $payout );
             // die();
