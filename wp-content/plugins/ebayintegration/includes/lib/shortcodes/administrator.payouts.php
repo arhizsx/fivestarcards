@@ -87,8 +87,10 @@
                                                 'order'      => 'ASC'
                                             );   
                         
-                                            $user = get_users( $args );
-                                                                    
+                                            $users = get_users( $args );
+
+                                            echo $users->display_name;
+
                                 ?>
                                 <tr class="payment_request_row ebayintegration-btn" data-action="show_payment_request" data-payout_id="<?php echo $card->id ?>">
                                     <td class="text-start"><?php echo $card->id + 1000 ?></td>
