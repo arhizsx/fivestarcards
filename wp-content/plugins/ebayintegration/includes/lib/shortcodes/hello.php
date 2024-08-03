@@ -127,7 +127,7 @@ $current_user = wp_get_current_user();
                         </div>
                         <div class="col-xl-4">
                             <label>Payment Method</label>
-                            <select class="form-control" name="payment_method">
+                            <select class="" name="payment_method">
                                 <option value="">Select Desired Payment Method</option>
                                 <option value="Paypal">Paypal</option>
                             </select>
@@ -137,6 +137,8 @@ $current_user = wp_get_current_user();
                             <textarea class="form-control" name="remarks"></textarea>                            
                         </div>
                     </div>
+
+
                 <?php 
                     }
                 ?>
