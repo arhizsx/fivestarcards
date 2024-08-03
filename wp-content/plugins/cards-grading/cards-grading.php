@@ -1012,14 +1012,25 @@
         $options = new Options();
         $options->set('isRemoteEnabled', true); 
         $dompdf = new Dompdf($options);
-        
-
-        return "TEST";
-
-        // ob_start();
-        // include plugin_dir_path(__FILE__) . 'data.php'; // Adjust path if needed
-        // $html = ob_get_clean();
     
+
+        ob_start();
+        include plugin_dir_path(__FILE__) . 'data.php'; // Adjust path if needed
+        $html = ob_get_clean();
+    
+        $dompdf = new Dompdf();
+
+        $dompdf->setPaper('A4', 'portrait');
+
+        $dompdf->loadHtml($html);
+                
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream("5 Star Cards - ". $customer . " - ". $order_number . ".pdf");
+            
+        return true;
 
     }
 
