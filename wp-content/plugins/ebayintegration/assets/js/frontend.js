@@ -183,13 +183,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		var payout = getPayoutRequest( $(this).data("payout_id") );
 
 		$.when( payout ).done( function( payout ){	
-			console.log(payout.payout[0]);
-
 
 			$(document).find("#payout_cards_table tbody").empty();
 
-			$.each( payout.payout.cards, function( k, v){
+			$.each( payout.cards, function( k, v){
 
+				console.log(v);
 
 				$(document).find("#payout_cards_table tbody").append(
 					"<tr>" +	
