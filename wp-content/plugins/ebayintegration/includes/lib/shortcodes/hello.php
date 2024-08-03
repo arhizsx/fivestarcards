@@ -215,7 +215,8 @@ $current_user = wp_get_current_user();
                                         <?php
                                                 $payout_total = $$payout_total + $final;
 
-                                                echo $payout_total;
+                                                echo $payout_total ;
+                                                echo $final;
                                             } 
                                         } 
                                         else {
