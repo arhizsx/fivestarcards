@@ -1030,6 +1030,8 @@
             
             $data = $this->getPayoutMember( $params["key"] );
 
+            print_r($data);
+            die();
 
         }
         elseif($params["action"] == "payout_pdf_admin"){
@@ -1086,10 +1088,8 @@
 		$sql = "SELECT * FROM ebay WHERE item_id IN ('" . $array . "')";
 		$cards = $this->wpdb->get_results ( $sql );
 
+        return ["cards" => $cards, "payout"=> $payout];
 
-
-        print_r( ["cards" => $cards, "payout"=> $payout] );
-        die();
     }
 
 
