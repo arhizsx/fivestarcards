@@ -137,6 +137,16 @@
                                 } 
                             ?>
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan="4">Total Payout</th>
+                                <th colspan="1">
+                                    $<?php 
+                                    echo number_format(( $payout_total), 2, '.', ',');
+                                    ?>
+                                </th>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>
