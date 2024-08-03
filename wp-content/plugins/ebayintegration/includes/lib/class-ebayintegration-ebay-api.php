@@ -1523,7 +1523,12 @@ class Ebay_Integration_Ebay_API {
 		$sql = "SELECT * FROM ebay WHERE item_id IN ('" . $array . "')";
 		$cards = $this->wpdb->get_results ( $sql );
 
-		$user = get_userdata($user_id);
+		$user_data = get_userdata($user_id);
+
+		$user = [
+			"name" => $user_data["data"]["display_name"],
+			"email" => $user_data["data"]["user_email"],
+		];
 
 		return ["error" => false, "payout" => $payout , "cards" => $cards, "user" => $user ];
 	}
