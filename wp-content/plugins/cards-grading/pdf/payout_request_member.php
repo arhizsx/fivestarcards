@@ -36,18 +36,17 @@
                     <table class="table table-sm table-bordered table-striped table-sm table-hover search_table_paid" style="width: 95%">
                         <tr>
                             <td>
-                                <label>Payout ID</label>
-                                <input type="text" class="" value="<?php print_r( $data["payout"][0]->id + 1000 ) ?>">
+                                <label>Payout ID</label><br>
+                                <input type="text" class="" style="width: 95%" value="<?php print_r( $data["payout"][0]->id + 1000 ) ?>">
                                 
                             </td>
                             <td>
-                                <label>Payout Status</label>
-                                <input type="text" class="" value="<?php print_r( $data["payout"][0]->status ) ?>">                            
+                                <label>Payout Status</label><br>
+                                <input type="text" class="" style="width: 95%" value="<?php print_r( $data["payout"][0]->status ) ?>">                            
                             </td>
                             <td>
-                                <label>Client</label>
-                                
-                                <input type="text" class="" value="<?php print_r( $data["user"]["name"] )  ?>">                            
+                                <label>Client</label><br>                                
+                                <input type="text" class="" style="width: 95%" value="<?php print_r( $data["user"]["name"] )  ?>">                            
                             </td>
                         </tr>
                     </table>
