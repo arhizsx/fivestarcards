@@ -1462,8 +1462,10 @@ class Ebay_Integration_Ebay_API {
 
 	function confirmPayoutRequest($params){
 
-		$user_id = $params["user_id"];
-		$data = $params["cards"];
+		$user_id = 1;
+		$data = [
+			"test" => "test"
+		];
 		$this->wpdb->insert(
 			'payouts',
 			array(
