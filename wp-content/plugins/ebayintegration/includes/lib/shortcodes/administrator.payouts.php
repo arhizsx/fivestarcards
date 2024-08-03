@@ -79,6 +79,7 @@
                                 <?php 
                                     if( count( $cards ) > 0 ){
                                         foreach( $cards as $card ){ 
+                                            
                                             $data = json_decode($card->data, true);
 
                                             $args = array(
@@ -89,12 +90,10 @@
                         
                                             $users = get_users( $args );
 
-                                            echo $users->display_name;
-
                                 ?>
                                 <tr class="payment_request_row ebayintegration-btn" data-action="show_payment_request" data-payout_id="<?php echo $card->id ?>">
                                     <td class="text-start"><?php echo $card->id + 1000 ?></td>
-                                    <td class="text-start"><?php echo $user["display_name"]; ?></td>
+                                    <td class="text-start"><?php echo $users->display_name; ?></td>
                                     <td class="text-center"><?php echo $data["cards_count"] ?></td>
                                     <td class="text-start"><?php echo $card->add_timestamp ?></td>
                                     <td class="text-end">$<?php echo number_format(( $data["requested_amount"] ), 2, '.', ',') ?></td>
