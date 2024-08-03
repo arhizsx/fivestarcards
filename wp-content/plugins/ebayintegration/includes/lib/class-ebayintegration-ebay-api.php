@@ -1466,14 +1466,14 @@ class Ebay_Integration_Ebay_API {
 		$data = [
 			"test" => "test"
 		];
-		$this->wpdb->insert(
-			'payouts',
-			array(
-				'status' => "REQUESTED",
-				'user_id' => $user_id,
-				"data" => json_encode($data),
-			)
-		);
+		return $this->wpdb->insert(
+					'payouts',
+					array(
+						'status' => "REQUESTED",
+						'user_id' => $user_id,
+						"data" => json_encode($data),
+					)
+				);
 
 
 		return $params;
