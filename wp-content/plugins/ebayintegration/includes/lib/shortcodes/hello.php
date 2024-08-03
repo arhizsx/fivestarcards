@@ -227,13 +227,17 @@ $current_user = wp_get_current_user();
                                                 }
                                             ?>
                                             <td class="text-end">
-                                                <?php echo $rate ?>
+                                                <?php echo $rate ?>                                                
                                             </td>
                                             <td class="text-end">
-                                                <?php echo $fees ?>
+                                                $<?php 
+                                                echo number_format(( $fees), 2, '.', ',');
+                                                ?>
                                             </td>
                                             <td class="text-end">
-                                                <?php echo $final ?>
+                                                $<?php 
+                                                echo number_format(( $final), 2, '.', ',');
+                                                ?>
                                             </td>
                                         </tr>
                                         <?php
