@@ -188,16 +188,16 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 			$.each( payout.cards, function( k, v){
 
-				console.log(JSON.parse(v.data), true);
+				var card = JSON.parse(v.data, true);
+
 
 				$(document).find("#payout_cards_table tbody").append(
 					"<tr>" +	
-						"<td class='text-start'></td>" +
-						"<td class='text-center'>-</td>" +
-						"<td class='text-start'>-</td>" +
-						"<td class='text-end'>-</td>" +
-						"<td class='text-end'>-</td>" +
-						"<td class='text-end'>-</td>" +
+						"<td class='text-start'>" +card.Item.Title + "</td>" +
+						"<td class='text-end'>" + card.TransactionPrice + "-</td>" +
+						"<td class='text-end'>0-</td>" +
+						"<td class='text-end'>0-</td>" +
+						"<td class='text-end'>0</td>" +
 					"</tr>"
 				);
 			});
