@@ -1033,6 +1033,8 @@
             ];
         }
 
+        print_r(plugin_dir_path(__FILE__));
+        die();
         
         ob_start();
         include plugin_dir_path(__FILE__) .  $template ; // Adjust path if needed
