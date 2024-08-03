@@ -28,8 +28,8 @@
                     <img src="https://5starcards.com/wp-content/uploads/2023/09/5-star-cards-logo.png" width="150px;" alt="5 Star Cards">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12  p-3">
+            <div class="row p-3">
+                <div class="col-12 ">
                     <H5>Payment Request</H5>
                     <table class="table table-bordered tabled-striped" style="width: 100%">
                         <thead>
