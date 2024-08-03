@@ -116,7 +116,7 @@ $current_user = wp_get_current_user();
                             }
                         }                    
                 ?>
-                    <div class="row">
+                    <div class="row mb-3">
                         <div class="col-6">
                             Total Amount
                         </div>
@@ -124,7 +124,7 @@ $current_user = wp_get_current_user();
                             <input type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mb-3">
                         <div class="col-6">
                             Cards Count    
                         </div>
