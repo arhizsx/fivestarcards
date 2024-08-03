@@ -12,6 +12,7 @@ $payout = $data["payout"];
             body {
                 margin: 0cm;
                 padding: 0cm;
+                font-size: 1em;
             }
         </style>        
     </head>
