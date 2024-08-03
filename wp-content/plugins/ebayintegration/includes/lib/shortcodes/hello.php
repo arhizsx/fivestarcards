@@ -201,7 +201,7 @@ $current_user = wp_get_current_user();
                                                     echo $final;
                                                 }
 
-                                                echo $final;
+                                                echo $final + $fees + $rate;
                                             ?>
                                             <td class="text-end">
                                                 <?php echo number_format(( $rate * 100), 2, '.', ','); ?>%                                            
