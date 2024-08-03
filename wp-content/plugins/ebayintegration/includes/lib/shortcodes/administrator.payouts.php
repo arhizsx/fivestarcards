@@ -135,8 +135,8 @@
 			</div>
             <div class="modal-body p-3">
                 <form class="form" id="payout_request_form_modal">
-
-                <input type="hidden" name="user_id" value="">
+                    <input type="hidden" name="action" value="confirmPayoutDone">
+                    <input type="hidden" name="user_id" value="">
                     <div class="row mb-3">
                         <input name="user_id"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="hidden" value="">          
                         <div class="col-xl-8">
@@ -206,8 +206,8 @@
                 <button id="float_btn_add_payout"  data-bs-dismiss="modal"  class="btn btn-xl btn-secondary">
                     Cancel
                 </button>
-                <button id="float_btn_payout_request_done"  data-bs-dismiss="modal"  class="btn btn-xl btn-primary">
-                    Request Done
+                <button id="float_btn_add_payout" class="btn btn-xl btn-primary ebayintegration-btn"  data-action="confirmPayoutDone">
+                    <i class="fa fa-check me-2"></i> Done
                 </button>
             </div>
 		</div>

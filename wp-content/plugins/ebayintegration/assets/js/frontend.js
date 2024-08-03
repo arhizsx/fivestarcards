@@ -168,6 +168,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		jQuery(document).find(".add_new_payment_modal").appendTo('body').modal("show");
 
 	}
+
 	else if( jQuery(this).data("action") == "confirmPayoutRequest" ){
 
 		var payout = confirmPayoutRequest();
@@ -176,6 +177,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			window.location = "/my-account/payout/?payout_id=" + payout.payout_id ;	
 		});
 	}
+
 	else if( jQuery(this).data("action") == "show_payment_request" ){
 
 		jQuery(document).find(".show_payment_request_modal").appendTo('body').modal("show");
@@ -297,7 +299,14 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 
-	
+	else if( jQuery(this).data("action") == "confirmPayoutDone" ){
+
+		var payout = confirmPayoutDone();
+
+		$.when( payout ).done( function( payout ){	
+			window.location = "/administrator/payout/?payout_id=" + payout.payout_id ;	
+		});
+	}
 
 	// ////////////////////////// //
 	//  Add Order Buttons   //
@@ -1877,7 +1886,33 @@ function confirmAddConsign(){
 
 // Payout 
 
-function confirmPayoutRequest(type, user_id){
+function confirmPayoutDone(){
+
+	var defObject = $.Deferred();  // create a deferred object.
+
+	let form = new FormData( $("#payout_request_form")[0] );
+
+	
+	$.ajax({
+		type: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: form,
+		enctype: 'multipart/form-data',
+		processData: false,
+		contentType: false,
+		success: function(resp){
+			defObject.resolve(resp);    //resolve promise and pass the response.
+		},
+		error: function(){
+			console.log("Error in AJAX");
+		}
+	});
+
+	return defObject.promise();
+
+}
+
+function confirmPayoutRequest(){
 
 	var defObject = $.Deferred();  // create a deferred object.
 
