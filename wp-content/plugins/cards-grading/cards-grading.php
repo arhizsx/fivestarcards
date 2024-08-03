@@ -1043,14 +1043,6 @@
                 "data" => "Test Date",
             ];
 
-        } else {
-            $template = "data.php";
-            $file_prepend = "";
-            $data = [
-                "title" => "X",
-                "content" => "X",
-                "data" => "X",
-            ];
         }
 
         ob_start();
@@ -1070,7 +1062,7 @@
         $dompdf->render();
 
         // // Output the generated PDF to Browser
-        $dompdf->stream($file_prepend . ".pdf");
+        $dompdf->stream( $file_prepend . ".pdf");
 
         return true;
 
