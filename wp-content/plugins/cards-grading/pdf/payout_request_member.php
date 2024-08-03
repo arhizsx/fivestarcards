@@ -31,7 +31,7 @@
             <div class="row p-3">
                 <div class="col-12" style="padding: 20px;">
                     <H5>Payment Request</H5>
-                    <table class="table table-bordered tabled-striped" style="width: 95%">
+                    <table class="table table-sm table-bordered table-striped table-sm table-hover search_table_paid">
                         <thead>
                             <tr>
                                 <th class="text-start" width="50%">Item</th>
@@ -43,23 +43,98 @@
                         </thead>
                         <tbody>
                             <?php 
-                            foreach($data["cards"] as $card){
-
-                                $card_data = json_decode($card->data, true);
-                            ?>  
+                                foreach($data["cards"] as $item){ 
+                                    $ctr++;
+                                    $data = json_decode($item->data, true);
+                            ?>
+                            <input type="hidden" name="card[<?php echo $ctr ?>]" value="<?php echo $item->item_id; ?>">
                             <tr>
-                                <td>
-                                <?php
-                                print_r($card_data["Item"]["Title"]);
-                                ?>
+                                <td class="text-start">
+                                    <div class="title text-start">
+                                        <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
+                                            <?php print_r( $data["Item"]["Title"] ); ?>
+                                        </a>
+                                    </div> 
                                 </td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
+                                <?php 
+                                    $sold_price = (float) $data["TransactionPrice"];  
+                                ?>
+                                <td class="text-end">
+                                    $<?php 
+                                    echo number_format(( $sold_price), 2, '.', ',');
+                                    ?>
+                                </td>
+                                <?php 
+                                    if( $sold_price < 10 ){
+                                        $rate = 1;
+                                        $fees = 3;
+                                        $final = ($rate * $sold_price )  + $fees;
+                                    }
+                                    elseif( $sold_price >= 10 && $sold_price <= 49.99 ){
+                                        $rate = .82;
+                                        $fees = 0;
+                                        $final = ($rate * $sold_price )  + $fees;
+                                    }
+                                    elseif( $sold_price >= 50 && $sold_price <= 99.99 ){
+                                        $rate = .84;
+                                        $fees = 0;
+                                        $final = ($rate * $sold_price )  + $fees;
+                                    }
+                                    elseif( $sold_price >= 100 && $sold_price <= 199.99 ){
+                                        $rate = .85;
+                                        $fees = 0;
+                                        $final = ($rate * $sold_price )  + $fees;
+                                    }
+                                    elseif( $sold_price >= 200 && $sold_price <= 499.99 ){
+                                        $rate = .86;
+                                        $fees = 0;
+                                        $final = ($rate * $sold_price )  + $fees;
+                                    }
+                                    elseif( $sold_price >= 500 && $sold_price <= 999.99 ){
+                                        $rate = .87;
+                                        $fees = 0;
+                                        $final = ($rate * $sold_price )  + $fees;
+                                    }
+                                    elseif( $sold_price >= 1000 && $sold_price <= 2999.99 ){
+                                        $rate = .88;
+                                        $fees = 0;
+                                        $final = ($rate * $sold_price )  + $fees;
+                                    }
+                                    elseif( $sold_price >= 3000 && $sold_price <= 4999.99 ){
+                                        $rate = .90;
+                                        $fees = 0;
+                                        $final = ($rate * $sold_price )  + $fees;
+                                    }
+                                    elseif( $sold_price >= 5000 && $sold_price <= 8999.99 ){
+                                        $rate = .92;
+                                        $fees = 0;
+                                        $final = ($rate * $sold_price )  + $fees;
+                                    }
+                                    elseif( $sold_price >= 9000){
+                                        $rate = .93;
+                                        $fees = 0;
+                                        $final = ($rate * $sold_price )  + $fees;
+                                        echo $final;
+                                    }
+
+                                    $payout_total = $payout_total + $final;
+                                ?>
+                                <td class="text-end">
+                                    <?php echo number_format(( $rate * 100), 2, '.', ','); ?>%                                            
+                                </td>
+                                <td class="text-end">
+                                    $<?php 
+                                    echo number_format(( $fees), 2, '.', ',');
+                                    ?>
+                                </td>
+                                <td class="text-end">
+                                    $<?php 
+                                    echo number_format(( $final), 2, '.', ',');
+                                    ?>
+                                </td>
                             </tr>
-                            <?php    
-                            }                        
+                            <?php
+                                } 
                             ?>
                         </tbody>
                     </table>
