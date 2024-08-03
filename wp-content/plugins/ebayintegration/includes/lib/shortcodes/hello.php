@@ -118,7 +118,7 @@ $current_user = wp_get_current_user();
                 ?>
                     <div class="row mb-3">
                         <div class="col-4">
-                            Payment Method
+                            Total Amount
                         </div>
                         <div class="col-8">                    
                             <input disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
