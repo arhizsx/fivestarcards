@@ -1031,7 +1031,8 @@
             $data_pull = $this->getPayoutMember( $params["key"] );
 
             $data = [
-                "cards" => json_encode($data_pull["cards"])
+                "cards" => json_encode($data_pull["cards"]),
+                "title" => "test"
             ];
 
         }
@@ -1044,16 +1045,8 @@
                 "data" => "Test Date",
             ];
 
-        } else {
-            $template = "data.php";
-            $file_prepend = "";
-            $data = [
-                "title" => "X",
-                "content" => "X",
-                "data" => "X",
-            ];
         }
-
+        
         ob_start();
         include plugin_dir_path(__FILE__) . "pdf/" .  $template ; // Adjust path if needed
         $html = ob_get_clean();
