@@ -1064,9 +1064,26 @@
         $dompdf->render();
 
         // // Output the generated PDF to Browser
-        $dompdf->stream( $file_prepend . ".pdf");
+        // $dompdf->stream( $file_prepend . ".pdf");
 
-        return true;
+    // Save the PDF file to the server
+    $upload_dir = wp_upload_dir();
+    $pdf_path = $upload_dir['path'] . '/' . $file_prepend . ".pdf";
+    file_put_contents($pdf_path, $dompdf->output());
+
+    // Email the PDF file
+    $to = ['user1@example.com', 'user2@example.com']; // Change to actual recipient emails
+    $subject = 'PDF Document';
+    $message = 'Please find the attached PDF document.';
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+
+    // Attach PDF file to email
+    $attachments = [$pdf_path];
+    
+    // Send email
+    wp_mail($to, $subject, $message, $headers, $attachments);
+
+    return true;
 
     }
 
