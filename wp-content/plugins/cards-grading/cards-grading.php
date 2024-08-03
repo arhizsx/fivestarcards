@@ -1078,28 +1078,24 @@
     $to = ['arhizsx@gmail.com', 'zfdsalvador@globe.com.ph']; // Replace with actual email addresses
     $subject = 'Generated PDF: ' . $file_prepend;
     $body = 'Please find the attached PDF.';
-
-    // Set email headers and attachment
     $headers = [
         'Content-Type: text/html; charset=UTF-8'
     ];
     $attachments = [
         [
-            'name' => $file_prepend . '.pdf',
+            'name' => $pdf_file_name,
             'data' => $pdf_content,
             'type' => 'application/pdf'
         ]
     ];
 
-    // Send the email with the PDF attachment
+    // Use WP_Mail to send the email with the PDF attachment
     add_filter('wp_mail_content_type', function() { return 'multipart/mixed'; });
     wp_mail($to, $subject, $body, $headers, $attachments);
-
-    // Restore default content type
     remove_filter('wp_mail_content_type', function() { return 'multipart/mixed'; });
 
     return true;
-
+    
     }
 
     function getPayoutMember($params){
