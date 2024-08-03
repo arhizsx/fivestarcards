@@ -1071,32 +1071,34 @@
         // // Output the generated PDF to Browser
         // $dompdf->stream("5 Star Cards - ". $file_prepend . ".pdf");
 
-        // Get the PDF output as a string
-        $pdf_content = $dompdf->output();
+    // Get the PDF output as a string
+    $pdf_content = $dompdf->output();
 
-        // Prepare email details
-        $to = ['arhizsx@gmail.com', 'zfdsalvador@globe.com.ph']; // Replace with actual email addresses
-        $subject = 'Payout Request';
-        $body = 'Please find the attached PDF.';
-        $headers = [
-            'Content-Type: text/html; charset=UTF-8',
-            'Content-Disposition: attachment; filename="' . $file_prepend . '.pdf"'
-        ];
-        $attachments = [
-            [
-                'name' => $file_prepend . '.pdf',
-                'data' => $pdf_content,
-                'type' => 'application/pdf'
-            ]
-        ];
+    // Prepare email details
+    $to = ['user1@example.com', 'user2@example.com']; // Replace with actual email addresses
+    $subject = 'Generated PDF: ' . $file_prepend;
+    $body = 'Please find the attached PDF.';
 
-        // Send the email with the PDF attachment
-        wp_mail($to, $subject, $body, $headers, $attachments);
+    // Set email headers and attachment
+    $headers = [
+        'Content-Type: text/html; charset=UTF-8'
+    ];
+    $attachments = [
+        [
+            'name' => $file_prepend . '.pdf',
+            'data' => $pdf_content,
+            'type' => 'application/pdf'
+        ]
+    ];
 
-        return true;
-        
-            
-        return true;
+    // Send the email with the PDF attachment
+    add_filter('wp_mail_content_type', function() { return 'multipart/mixed'; });
+    wp_mail($to, $subject, $body, $headers, $attachments);
+
+    // Restore default content type
+    remove_filter('wp_mail_content_type', function() { return 'multipart/mixed'; });
+
+    return true;
 
     }
 
