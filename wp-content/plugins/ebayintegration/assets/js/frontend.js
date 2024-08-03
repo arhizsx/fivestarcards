@@ -283,7 +283,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 			var data = JSON.parse(payout.payout[0].data, true);			
 
-			console.log( data );
+			console.log( payout.payout[0] );
 			if( data.status != "DONE" ){
 				$(document).find(".show_payment_request_modal").find("#float_btn_done_payout").removeClass("d-none");
 			}
