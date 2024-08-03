@@ -1028,7 +1028,11 @@
             $template = "payout_request_member.php";
             $file_prepend = "Payout Request";
             
-            $data = $this->getPayoutMember( $params["key"] );
+            $data_pull = $this->getPayoutMember( $params["key"] );
+
+            $data =[
+                "cards" => $data_pull["cards"]
+            ];
 
         }
         elseif($params["action"] == "payout_pdf_admin"){
