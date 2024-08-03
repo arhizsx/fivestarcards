@@ -13,7 +13,7 @@ if( isset( $_GET['i'] ) ){
     $page = 1;
 }
 
-$skus = get_user_meta( $params["user_id"], "sku", true );		
+$skus = get_user_meta( get_current_user_id(), "sku", true );		
 
 $array = implode("','",$skus);
 
