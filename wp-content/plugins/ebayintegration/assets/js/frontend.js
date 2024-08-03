@@ -159,6 +159,17 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 
+	// ////////////////////////// //
+	//  Add Payout Buttons   //
+	// ////////////////////////// //
+
+	else if( jQuery(this).data("action") == "add_new_payout" ){
+
+		jQuery(document).find(".add_new_payment_modal").appendTo('body').modal("show");
+
+	}
+
+
 
 	// ////////////////////////// //
 	//  Add Order Buttons   //
