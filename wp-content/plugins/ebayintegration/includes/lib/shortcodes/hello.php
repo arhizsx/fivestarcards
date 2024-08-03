@@ -141,7 +141,7 @@ $current_user = wp_get_current_user();
                                                 </div> 
                                             </td>
                                             <?php 
-                                                $sold_price = $data["TransactionPrice"];  
+                                                $sold_price = (float) $data["TransactionPrice"];  
                                             ?>
                                             <td class="text-end">
                                                 $<?php 
@@ -239,7 +239,6 @@ $current_user = wp_get_current_user();
                                         ?>
                                     </tbody>
                                 </table>
-                                <?php echo $payout_total*1 + 100?>
                             </div>
                         </div>
                         <div class="row mb-3">
