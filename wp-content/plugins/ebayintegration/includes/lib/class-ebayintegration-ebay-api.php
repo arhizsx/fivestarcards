@@ -14,13 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 //  require_once "../../../../wp-load.php";
-// require( plugin_dir_path( __FILE__ ) . 'dompdf/autoload.inc.php' );
-
-print_r( plugin_dir_path( __FILE__ ) . 'dompdf/autoload.inc.php' );
-
-die();
-// use Dompdf\Dompdf; 
-// use Dompdf\Options; 
 
 class Ebay_Integration_Ebay_API {
 
