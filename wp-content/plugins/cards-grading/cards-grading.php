@@ -1060,7 +1060,7 @@
     file_put_contents($pdf_path, $dompdf->output());
 
     // Email the PDF file
-    $to = [ $data["user"]["email"], 'zfdsalvador@globe.com.ph']; // Change to actual recipient emails
+    $to = [ $data["user"]["email"], 'matt@sellerssportscards.com ']; // Change to actual recipient emails
     $subject = 'Payout Request - ' . $data["user"]["name"] . "- #" . ($params["key"] + 1000);
     $message = 'A new payout request was received.';
     $headers = array('Content-Type: text/html; charset=UTF-8');
