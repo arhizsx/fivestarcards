@@ -33,7 +33,7 @@
             </div>
             <div class="row p-3">
                 <div class="col-12">
-                    <table class="table table-sm table-bordered table-striped table-sm table-hover search_table_paid" style="width: 95%">
+                    <table class="table table-sm table-bordered  table-sm table-hover search_table_paid" style="width: 95%">
                         <tr>
                             <td>
                                 <label>Payout ID</label><br>
@@ -44,9 +44,15 @@
                                 <label>Payout Status</label><br>
                                 <input type="text" class="" style="width: 95%" value="<?php print_r( $data["payout"][0]->status ) ?>">                            
                             </td>
+                        </tr>
+                        <tr>
                             <td>
                                 <label>Client</label><br>                                
                                 <input type="text" class="" style="width: 95%" value="<?php print_r( $data["user"]["name"] )  ?>">                            
+                            </td>
+                            <td>
+                                <label>Email</label><br>                                
+                                <input type="text" class="" style="width: 95%" value="<?php print_r( $data["user"]["email"] )  ?>">                            
                             </td>
                         </tr>
                     </table>
