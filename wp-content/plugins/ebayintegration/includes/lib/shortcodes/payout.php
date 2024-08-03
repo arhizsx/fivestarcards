@@ -152,11 +152,11 @@
                         </div>
                         <div class="col-xl-4">
                             <label>Request Date</label>
-                            <input name="request_Date"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
+                            <input name="request_date"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
                         </div>
                         <div class="col-xl-4">
                             <label>Payout Date</label>
-                            <input name="request_Date"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
+                            <input name="payout_date"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
                         </div>
                         <div class="col-xl-12">
                             <label>Remarks / Message</label>
