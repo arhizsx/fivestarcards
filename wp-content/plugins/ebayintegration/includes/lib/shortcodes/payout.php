@@ -143,7 +143,27 @@
 			</div>
             <div class="modal-body p-3">
                 <form class="form" id="payout_request_form_modal">
-                    <input type="hidden" name="user_id" value="">
+
+                <input type="hidden" name="user_id" value="">
+                    <div class="row mb-3">
+                        <div class="col-xl-4">
+                            <label>Payout ID</label>
+                            <input name="payout_id"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
+                        </div>
+                        <div class="col-xl-4">
+                            <label>Request Date</label>
+                            <input name="request_Date"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
+                        </div>
+                        <div class="col-xl-4">
+                            <label>Payout Date</label>
+                            <input name="request_Date"  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
+                        </div>
+                        <div class="col-xl-12">
+                            <label>Remarks / Message</label>
+                            <textarea class="form-control" name="remarks"></textarea>                            
+                        </div>
+                    </div>
+
                     <div class="row">
                         <H5 style="color: black;">Cards Included</H5>
                         <div class="table-responsive">
