@@ -1025,27 +1025,15 @@
         $file_prepend = "";
         $template = "";
         
-        if($params["action"] == "payout_pdf_member"){
 
-            $template = "payout_request_member.php";
-            
-            $data_pull = $this->getPayoutMember( $params["key"] );
+        $template = "payout_request_member.php";
+        
+        $data_pull = $this->getPayoutMember( $params["key"] );
 
-            $file_prepend = "5 Star Cards - Payout Request - "  . $params["key"] + 1000;
+        $file_prepend = "5 Star Cards - Payout Request - "  . $params["key"] + 1000;
 
-            $data = $data_pull;
+        $data = $data_pull;
 
-        }
-        elseif($params["action"] == "payout_pdf_admin"){
-            $template = "payout_request_admin.php";
-            $file_prepend = "Payout Request";
-            $data = [
-                "title" => "Test Title",
-                "content" => "Test Content",
-                "data" => "Test Date",
-            ];
-
-        }
 
         ob_start();
         include plugin_dir_path(__FILE__) . "pdf/" .  $template ; // Adjust path if needed
