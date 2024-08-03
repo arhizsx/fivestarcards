@@ -97,7 +97,7 @@
                                     <td class="text-start"><?php echo $card->id + 1000 ?></td>
                                     <td class="text-center"><?php echo $data["cards_count"] ?></td>
                                     <td class="text-start"><?php echo $card->add_timestamp ?></td>
-                                    <td class="text-end"><?php echo $data["requested_amount"] ?></td>
+                                    <td class="text-end">$<?php echo number_format(( $data["requested_amount"] ), 2, '.', ',') ?></td>
                                     <td class="text-end"><?php echo $card->status ?></td>
                                     <!-- <td class="text-end"></td> -->
                                 </tr>  
