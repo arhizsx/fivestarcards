@@ -142,6 +142,8 @@ $current_user = wp_get_current_user();
                                             </td>
                                             <?php 
                                                 $sold_price = (float) $data["TransactionPrice"];  
+
+                                                print_r($sold_price);
                                             ?>
                                             <td class="text-end">
                                                 $<?php 
