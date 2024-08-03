@@ -1017,9 +1017,7 @@
         ob_start();
         include plugin_dir_path(__FILE__) . 'data.php'; // Adjust path if needed
         $html = ob_get_clean();
-        print_r($html);
-        die();
-    
+
         $dompdf = new Dompdf();
 
         $dompdf->setPaper('A4', 'portrait');
