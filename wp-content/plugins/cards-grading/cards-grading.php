@@ -1012,8 +1012,9 @@
         $options = new Options();
         $options->set('isRemoteEnabled', true); 
         $dompdf = new Dompdf($options);
-    
-
+        
+        print_r(plugin_dir_path(__FILE__) . 'index.php');
+        die();
         ob_start();
         include plugin_dir_path(__FILE__) . 'index.php'; // Adjust path if needed
         $html = ob_get_clean();
