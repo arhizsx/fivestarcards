@@ -54,7 +54,6 @@
             </div>
             <div class="row p-3">
                 <div class="col-12">
-                    <H5>Payment Request</H5>
                     <table class="table table-sm table-bordered table-striped table-sm table-hover search_table_paid" style="width: 95%">
                         <thead>
                             <tr>
