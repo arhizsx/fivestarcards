@@ -308,7 +308,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		var payout = confirmPayoutDone();
 
 		$.when( payout ).done( function( payout ){	
-			// window.location = "/administrator/payout/?payout_id=" + payout.payout_id ;	
+			window.location = "/administrator/payouts/?payout_id=" + payout.payout_id ;	
 		});
 	}
 
