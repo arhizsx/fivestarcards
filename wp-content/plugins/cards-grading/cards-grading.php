@@ -1009,9 +1009,10 @@
 
     public function handle_make_pdf($data){
 
+        $headers = $data->get_headers();
         $params = $data->get_params();
 
-        print_r($params);
+        print_r($headers);
         die();
 
         $options = new Options();
