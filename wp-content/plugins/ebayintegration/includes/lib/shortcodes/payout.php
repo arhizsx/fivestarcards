@@ -164,10 +164,6 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-xl-4">
-                            <label>Total Amount</label>
-                            <input name="total_amount"  class="form-control mb-3 px-2 pb-1 pt-2" type="text" value="">
-                        </div>
-                        <div class="col-xl-4">
                             <label>Cards Count</label>
                             <input name="cards_count" class="form-control mb-3 p-2 pb-1 pt-2" type="text" value="">          
                         </div>
@@ -176,6 +172,10 @@
                             <select class="form-control mb-3" name="payment_method">
                                 <option value="Paypal">Paypal</option>
                             </select>
+                        </div>
+                        <div class="col-xl-4">
+                            <label>Total Amount</label>
+                            <input name="total_amount"  class="form-control mb-3 px-2 pb-1 pt-2" type="text" value="">
                         </div>
                         <div class="col-xl-12">
                             <label>Remarks / Message</label>
