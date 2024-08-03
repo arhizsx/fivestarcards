@@ -593,6 +593,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 						"<img src='" + resp.data.file.baseurl + "'>"
 					);
 
+					$(document).find(".picture_box_modal").modal("hide");
+
                 },
                 error: function(){
                     console.log("Error in AJAX");
