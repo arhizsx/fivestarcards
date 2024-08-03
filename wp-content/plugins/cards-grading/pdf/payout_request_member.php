@@ -22,9 +22,6 @@
     <body>
         <div class="container-fluid m-0 p-0">
 
-<?php
-print_r($data["cards"]);
-?>
 
             <div class="row mb-3 border-bottom">
                 <div class="col-12  p-3">
@@ -45,6 +42,9 @@ print_r($data["cards"]);
                             </tr>
                         </thead>
                         <tbody>
+                            <?php 
+                            foreach($data["cards"] as $card){
+                            ?>
                             <tr>
                                 <td>-</td>
                                 <td>-</td>
@@ -52,13 +52,9 @@ print_r($data["cards"]);
                                 <td>-</td>
                                 <td>-</td>
                             </tr>
-                            <tr>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                            </tr>
+                            <?php    
+                            }                        
+                            ?>
                         </tbody>
                     </table>
                 </div>
