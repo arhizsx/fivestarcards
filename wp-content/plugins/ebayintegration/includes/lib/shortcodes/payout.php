@@ -26,6 +26,9 @@
         color: black;
 
     }
+    .payment_request_row {
+        cursor: pointer;
+    }
 </style>
 
 <div class="container-fluid">
