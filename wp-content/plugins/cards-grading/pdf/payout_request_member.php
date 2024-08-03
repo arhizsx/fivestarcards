@@ -13,13 +13,13 @@ $payout = $data["payout"];
             body {
                 margin: 0cm;
                 padding: 0cm;
-                font-size: 8pt; /* Set global font size */
+                font-size: 9pt; /* Set global font size */
             }
 
             th, td {
                 padding: 2px; /* Reduced padding */
             }
-            
+
         </style>        
     </head>
     <body>
