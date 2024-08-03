@@ -1082,12 +1082,11 @@
         $data = json_decode( $payout[0]->data, true ); 
 
 		$array = implode("','",  $data["cards"]);
-        print_r($data);
-        die();
 
 		$sql = "SELECT * FROM ebay WHERE sku IN ('" . $array . "')";
-
 		$cards = $this->wpdb->get_results ( $sql );
+        print_r($cards);
+        die();
 
 
         return ["cards" => $cards ];
