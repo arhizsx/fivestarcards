@@ -1078,7 +1078,7 @@
 
         $sql = "SELECT * FROM payouts WHERE id = " . $key;
         $payout = $this->wpdb->get_results ( $sql );
-        print_r($payout);
+        print_r($payout->data);
 
 
         $data = json_decode( $payout->data, true ); 
