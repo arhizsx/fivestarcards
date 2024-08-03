@@ -263,8 +263,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				);
 			});
 
-			$(document.find(".show_payment_request_modal")).find("input[name='total_amount']").val(payout_total);
-			$(document.find(".show_payment_request_modal")).find("input[name='total_amount']").val(payout.cards.length);
+			$(document.find(".show_payment_request_modal")).find("[name='total_amount']").val(payout_total);
+			$(document.find(".show_payment_request_modal")).find("[name='cards_count']").val(payout.cards.length);
 
 		});
 		
