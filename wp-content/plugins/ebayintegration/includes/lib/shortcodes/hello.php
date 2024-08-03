@@ -119,15 +119,15 @@ $current_user = wp_get_current_user();
                     <div class="row mb-3">
                         <div class="col-xl-4">
                             <label>Total Amount</label>
-                            <input  class="form-control px-2 pb-1 pt-2" disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
+                            <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
                         </div>
                         <div class="col-xl-4">
                             <label>Cards Count</label>
-                            <input  class="form-control p-2 pb-1 pt-2" disabled type="text" value="<?php echo $available ?>">          
+                            <input  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="<?php echo $available ?>">          
                         </div>
                         <div class="col-xl-4">
                             <label>Payment Method</label>
-                            <select class="form-control" name="payment_method">
+                            <select class="form-control mb-3" name="payment_method">
                                 <option value="">Select Payment Method</option>
                                 <option value="Paypal">Paypal</option>
                             </select>
@@ -193,7 +193,7 @@ $current_user = wp_get_current_user();
             </div>
             <div class="modal-footer p-3">
                 <button id="float_btn_add_payout" class="btn btn-xl btn-primary ebayintegration-btn"  data-action="add_new_payout_confirm">
-                    <i class="fa fa-money-bill me-2"></i> Request Payout
+                    <i class="fa fa-money-bill me-2"></i> Confirm Payout Request
                 </button>
             </div>
 		</div>
