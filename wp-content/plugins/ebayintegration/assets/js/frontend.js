@@ -250,7 +250,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				fees = parseFloat(fees).toFixed(2);				
 				final = parseFloat(final).toFixed(2);		
 				
-				payout_total = payout_total + final;
+				payout_total = parseFloat(payout_total) + parseFloat(final);
 
 				$(document).find("#payout_cards_table tbody").append(
 					"<tr>" +	
