@@ -117,27 +117,6 @@ $current_user = wp_get_current_user();
                         }                    
                 ?>
                     <form class="form" id="payout_request_form">
-                        <div class="row mb-3">
-                            <div class="col-xl-4">
-                                <label>Total Amount</label>
-                                <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
-                            </div>
-                            <div class="col-xl-4">
-                                <label>Cards Count</label>
-                                <input  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="<?php echo $available ?>">          
-                            </div>
-                            <div class="col-xl-4">
-                                <label>Payment Method</label>
-                                <select class="form-control mb-3" name="payment_method">
-                                    <option value="">Select Payment Method</option>
-                                    <option value="Paypal">Paypal</option>
-                                </select>
-                            </div>
-                            <div class="col-xl-12">
-                                <label>Remarks / Message</label>
-                                <textarea class="form-control" name="remarks"></textarea>                            
-                            </div>
-                        </div>
                         <div class="row">
                             <H5 style="color: black;">Cards Included</H5>
                             <div class="table-responsive">
@@ -268,6 +247,28 @@ $current_user = wp_get_current_user();
                                 </table>
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <div class="col-xl-4">
+                                <label>Total Amount</label>
+                                <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="$<?php echo number_format(( $final ), 2, '.', ',');?>">
+                            </div>
+                            <div class="col-xl-4">
+                                <label>Cards Count</label>
+                                <input  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="<?php echo $available ?>">          
+                            </div>
+                            <div class="col-xl-4">
+                                <label>Payment Method</label>
+                                <select class="form-control mb-3" name="payment_method">
+                                    <option value="">Select Payment Method</option>
+                                    <option value="Paypal">Paypal</option>
+                                </select>
+                            </div>
+                            <div class="col-xl-12">
+                                <label>Remarks / Message</label>
+                                <textarea class="form-control" name="remarks"></textarea>                            
+                            </div>
+                        </div>
+                        
                     </form>
                 <?php 
                     }
