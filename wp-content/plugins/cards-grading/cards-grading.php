@@ -26,6 +26,7 @@
  use Dompdf\Options;
 
  class CardsGrading {
+	public $wpdb;	
     
     public function __construct() 
     {
@@ -1018,14 +1019,29 @@
         $dompdf = new Dompdf($options);
         
         if($params["action"] == "payout_pdf_member"){
-            $template = "data.php";
+
+            $template = "payout_request_member.php";
+            $file_prepend = "Payout Request";
+
+            $sql = "SELECT * FROM payouts WHERE id = '" . $params["key"] . "'";
+            $payout = $this->wpdb->get_results ( $sql );
+                
+            $data = [
+                "payout" => $$payout,
+            ];
+        }
+        elseif($params["action"] == "payout_pdf_admin"){
+            $template = "payout_request_admin.php";
+            $file_prepend = "Payout Request";
             $data = [
                 "title" => "Test Title",
                 "content" => "Test Content",
                 "data" => "Test Date",
             ];
+
         } else {
             $template = "data.php";
+            $file_prepend = "";
             $data = [
                 "title" => "X",
                 "content" => "X",
@@ -1050,7 +1066,7 @@
         $dompdf->render();
 
         // Output the generated PDF to Browser
-        $dompdf->stream("5 Star Cards - ". $customer . " - ". $order_number . ".pdf");
+        $dompdf->stream("5 Star Cards - ". $file_prepend . ".pdf");
             
         return true;
 
