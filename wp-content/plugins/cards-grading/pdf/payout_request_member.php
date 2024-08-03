@@ -19,12 +19,15 @@ $payout = $data["payout"];
     <body>
         <div class="container-fluid m-0 p-0">
             <div class="row mb-3 border-bottom p-3">
-                <div class="col">
+                <div class="col-12">
                     <img src="https://5starcards.com/wp-content/uploads/2023/09/5-star-cards-logo.png" width="150px;" alt="5 Star Cards">
                 </div>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col-12">
+                    <H1>Payment Request</H1>
+                </div>
+                <div class="col-12">
                     <table class="table table-bordered tabled-striped">
                         <thead>
                             <tr>
