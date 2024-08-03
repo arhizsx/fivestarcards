@@ -24,7 +24,7 @@
                 Consignment
             </a>
             <a href="/administrator/payouts" class="5star_btn btn text-left btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
-                <i class="fa-solid fa-money me-2"></i>
+                <i class="fa-solid fa-money-bill me-2"></i>
                 Payouts
             </a>
             <a href="/administrator/members" class="5star_btn btn text-left btn-secondary mb-3" data-type="psa-value_bulk" data-action="add_card">
