@@ -139,7 +139,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th colspan="4">Total Payout</th>
+                                <th colspan="4" style="text-align: right;">Total Payout</th>
                                 <th colspan="1">
                                     $<?php 
                                     echo number_format(( $payout_total), 2, '.', ',');
