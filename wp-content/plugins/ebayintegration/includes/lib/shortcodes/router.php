@@ -148,6 +148,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'administrator.members.php');			
             break;
 
+        case "administrator_payouts":
+
+			include( plugin_dir_path( __FILE__ ) . 'administrator.payouts.php');			
+            break;
+
         case "refresh":
 
 			include( plugin_dir_path( __FILE__ ) . 'refresh.php');			
