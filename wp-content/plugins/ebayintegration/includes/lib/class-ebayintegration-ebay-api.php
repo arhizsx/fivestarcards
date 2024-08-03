@@ -205,6 +205,10 @@ class Ebay_Integration_Ebay_API {
 		if( $params["action"] == "confirmAddConsign"){
 			return $this->confirmAddConsign( $params );
 		}
+
+		elseif( $params["action"] == "confirmPayoutRequest"){
+			return $this->confirmPayoutRequest( $params );
+		}
 		
 		elseif( $params["action"] == "confirmConsignCardsShipping"){
 			return $this->confirmConsignCardsShipping( $params );
@@ -1455,5 +1459,9 @@ class Ebay_Integration_Ebay_API {
 
 	}
 
+
+	function confirmPayoutRequest($params){
+		return $params;
+	}
 
 }
