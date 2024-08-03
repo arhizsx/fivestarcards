@@ -262,6 +262,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					"</tr>"
 				);
 			});
+
+			var data = JSON.parse(payout.payout[0].data, true);
+			$(document).find(".show_payment_request_modal").find("[name='remarks']").val(data.remarks);
 			$(document).find(".show_payment_request_modal").find("[name='total_amount']").val(payout_total);
 			$(document).find(".show_payment_request_modal").find("[name='cards_count']").val(payout.cards.length);
 
