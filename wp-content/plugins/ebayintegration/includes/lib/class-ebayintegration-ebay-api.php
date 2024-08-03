@@ -1476,14 +1476,15 @@ class Ebay_Integration_Ebay_API {
 			"remarks" => $params["remarks"],
 			"payment_method" => $params["payment_method"],
 		];
-		return $this->wpdb->insert(
-					'payouts',
-					array(
-						'status' => "REQUESTED",
-						'user_id' => $user_id,
-						"data" => json_encode($data),
-					)
-				);
+
+		$this->wpdb->insert(
+			'payouts',
+			array(
+				'status' => "REQUESTED",
+				'user_id' => $user_id,
+				"data" => json_encode($data),
+			)
+		);
 
 
 		return $params;
