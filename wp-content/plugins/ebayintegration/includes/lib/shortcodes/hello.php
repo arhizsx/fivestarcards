@@ -118,7 +118,7 @@ $current_user = wp_get_current_user();
                 ?>
                     <div class="row mb-3">
                         <div class="col-6">
-                            Total Amount
+                            Payment Method
                         </div>
                         <div class="col-6">                    
                             <input disabled type="text" value="$<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
@@ -132,6 +132,26 @@ $current_user = wp_get_current_user();
                             <input disabled type="text" value="<?php echo $available ?>">
                         </div>
                     </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            Payment Method
+                        </div>
+                        <div class="col-6">                    
+                            <select class="form-control" name="payment_method">
+                                <option value="">Select Desired Payment Method</option>
+                                <option value="Paypal">Paypal</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            Remarks / Message
+                        </div>
+                        <div class="col-6">                    
+                            <textarea class="form-control" name="remarks"></textarea>
+                        </div>
+                    </div>
+
                 <?php 
                     }
                 ?>
