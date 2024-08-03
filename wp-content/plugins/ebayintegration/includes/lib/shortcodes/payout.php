@@ -165,11 +165,11 @@
                     <div class="row mb-3">
                         <div class="col-xl-4">
                             <label>Total Amount</label>
-                            <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="">
+                            <input name="total_amount"  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="">
                         </div>
                         <div class="col-xl-4">
                             <label>Cards Count</label>
-                            <input  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
+                            <input name="cards_count" class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="">          
                         </div>
                         <div class="col-xl-4">
                             <label>Payment Method</label>

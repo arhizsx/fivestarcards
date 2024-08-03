@@ -185,6 +185,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$.when( payout ).done( function( payout ){	
 
 			$(document).find("#payout_cards_table tbody").empty();
+			var payout_total = 0;
 
 			$.each( payout.cards, function( k, v){
 
@@ -247,7 +248,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 				rate = parseFloat(rate).toFixed(2) * 100;				
 				fees = parseFloat(fees).toFixed(2);				
-				final = parseFloat(final).toFixed(2);				
+				final = parseFloat(final).toFixed(2);		
+				
+				payout_total = payout_total + final;
 
 				$(document).find("#payout_cards_table tbody").append(
 					"<tr>" +	
@@ -259,6 +262,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 					"</tr>"
 				);
 			});
+
+			$(document.find(".show_payment_request_modal")).find("input[name='total_amount']").val(payout_total);
+			$(document.find(".show_payment_request_modal")).find("input[name='total_amount']").val(payout.cards.length);
 
 		});
 		
