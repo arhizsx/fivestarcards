@@ -181,6 +181,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		jQuery(document).find(".show_payment_request_modal").appendTo('body').modal("show");
 
 		var payout = getPayoutRequest( $(this).data("payout_id") );
+		$(document).find("#payout_cards_table tbody").empty();
 
 		$.when( payout ).done( function( payout ){	
 
