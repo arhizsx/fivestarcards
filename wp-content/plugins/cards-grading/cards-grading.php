@@ -1030,9 +1030,7 @@
             
             $data_pull = $this->getPayoutMember( $params["key"] );
 
-            $data = [
-                "cards" => $data_pull["cards"]
-            ];
+            $data = $data_pull;
 
         }
         elseif($params["action"] == "payout_pdf_admin"){
