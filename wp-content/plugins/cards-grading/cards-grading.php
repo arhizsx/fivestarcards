@@ -1162,7 +1162,7 @@
 
         $dompdf = new Dompdf();
 
-        $dompdf->setPaper(array(0,0,500,400));
+        $dompdf->setPaper(array(0,0,500,300));
 
         $dompdf->loadHtml($html);
                 
