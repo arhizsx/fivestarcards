@@ -210,22 +210,31 @@
                         <th colspan='1' class="text-end">$<?php echo $total_grading ?></th>
                     </tr>
                     <tr>
-                        <td colspan="5" class="bg-success py-3 text-white">
                             <?php 
                                 if(  count( $grading_addon ) > 0 ){
                                     $checked = "checked";
+                                    $colspan = "5";                                    
                                 } else {
                                     $checked = "";
+                                    $colspan = "8";
                                 }
                             ?>
+
+                        <td colspan="<?php echo $colspan ?>" class="bg-success py-3 text-white">
                             <input <?php echo $checked ?> type="checkbox" id="service" name="service" class="me-3 grading_inspection_checkbox" data-type="<?php echo $_GET["type"] ?>" value="inspection_service"><strong class="">Include Inspection Service</strong> (This will be an additional charge of $3 per card)
                         </td>
+                        <?php 
+                        if( $checked != "" ){
+                        ?>
                         <th colspan='2' class="text-end bg-success text-white">
                             Total Inspection Service
                         </th>
                         <th colspan='1' class="text-end bg-success text-white">
                             $<?php echo count($grading) * 3 ?>
                         </th>
+                        <?php 
+                        }   
+                        ?>
                     </tr>
                 </tfoot>        
             </table>
