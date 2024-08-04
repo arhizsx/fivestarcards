@@ -127,7 +127,7 @@
                 <thead>
                     <tr>
                         <th colspan="8">
-                            <input type="checkbox" id="service" name="service" value="inspection_service">Include Inspection Service
+                            <input type="checkbox" id="service" name="service" class="me-3" value="inspection_service">Include Inspection Service
                         </th>
                     </tr>
                     <tr>
