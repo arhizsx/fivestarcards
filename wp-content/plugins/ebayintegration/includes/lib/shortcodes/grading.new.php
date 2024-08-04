@@ -204,10 +204,10 @@
                         <td colspan="5" class="bg-danger py-3 text-white">
                             <input type="checkbox" id="service" name="service" class="me-3" value="inspection_service"><strong class="">Include Inspection Service</strong> (This will be an additional charge of $3 per card)
                         </td>
-                        <th colspan='2' class="text-end">
+                        <th colspan='2' class="text-end bg-danger text-white">
                             Total Inspection Service
                         </th>
-                        <th colspan='1' class="text-end">
+                        <th colspan='1' class="text-end bg-danger text-white">
                             $<?php echo count($consignment) * 3 ?>
                         </th>
                     </tr>
