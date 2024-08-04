@@ -690,7 +690,7 @@
                 </tr>
                 <tr>
                     <td>
-                    <a href="?grader=psa&type=psa-value_bulk" class="btn btn-sm btn-outline-primary">Log Cards</a>
+                    <a href="?grader=psa&type=psa-value_bulk_vintage" class="btn btn-sm btn-outline-primary">Log Cards</a>
                     </td>
                 </tr>
             </table>
