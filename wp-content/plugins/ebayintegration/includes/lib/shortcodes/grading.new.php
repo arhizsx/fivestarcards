@@ -147,6 +147,10 @@
                     </tr>
                     <?php 
                         } else {
+
+                            $total_dv = 0;
+                            $total_grading = 0;
+
                             foreach( $consignment as $card ){
 
                                 $data = json_decode( $card->data, true );
@@ -179,6 +183,9 @@
                         <td class='text-end'>$<?php echo $data["per_card"] ?></td>
                     </tr>
                     <?php 
+                                $total_grading = $total_grading + $data["per_card"];
+                                $total_dv = $total_dv + $data["per_card"];
+
                             }
                         }
                     ?>  
@@ -189,17 +196,17 @@
                             Total Inspection Service
                         </th>
                         <th colspan='1' class="text-end">
-                            $0.00
+                            $<?php echo count($consignment) * 3 ?>
                         </th>
                     </tr>
 
                     <tr>
                         <th colspan='7' class="text-end">Total DV</th>
-                        <th colspan='1' class="text-end">$0.00</th>
+                        <th colspan='1' class="text-end">$<?php echo $total_dv ?></th>
                     </tr>
                     <tr>
                         <th colspan='7' class="text-end">Grading Charge</th>
-                        <th colspan='1' class="text-end">$0.00</th>
+                        <th colspan='1' class="text-end">$<?php echo $total_grading ?></th>
                     </tr>
                 </tfoot>        
             </table>
