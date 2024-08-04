@@ -185,7 +185,7 @@
                     </tr>
                     <?php 
                                 $total_grading = $total_grading + $data["per_card"];
-                                $total_dv = $total_dv + $data["per_card"];
+                                $total_dv = $total_dv + $data["dv"];
 
                             }
                         }
