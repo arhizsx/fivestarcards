@@ -210,7 +210,7 @@
                         <th colspan='1' class="text-end">$<?php echo $total_grading ?></th>
                     </tr>
                     <tr>
-                        <td colspan="8" class="bg-secondary py-3 text-dark">
+                        <td colspan="8" class="bg-light py-3 text-dark">
                             <input type="checkbox" id="service" name="service" class="me-3" value="inspection_service"><strong>Include Inspection Service</strong> (This will be an additional charge of $3 per card)
                         </td>
                     </tr>
