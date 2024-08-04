@@ -36,6 +36,7 @@
 		$this->wpdb = $wpdb;
 
 
+        
         // Create Custom Post Type
         add_action('init', array($this, 'create_custom_post_type') );        
 
