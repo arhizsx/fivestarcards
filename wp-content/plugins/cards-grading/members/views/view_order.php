@@ -290,7 +290,7 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
                         $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mb-2">
                     <div class="col text-end">
                         Grading Charge    
                     </div>
