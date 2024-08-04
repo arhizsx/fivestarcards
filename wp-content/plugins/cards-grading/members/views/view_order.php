@@ -306,7 +306,7 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
                         Inspection Charge    
                     </div>
                     <div class="col text-end"  id="grading_charges">
-                        $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
+                        $<?php echo number_format((float) $cards_count * 3, 2, '.', ''); ?>
                     </div>
                 </div>
                 <?php 
