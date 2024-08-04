@@ -2496,14 +2496,33 @@ $(document).on("change", ".mobile_tab_select", function(){
 
 $(document).on("click", ".grading_inspection_checkbox", function(){
 	
-	console.log($(this).data());
-	console.log($(this).prop("checked"));
+	var user_id = $(this).data("user_id");
+	var type = $(this).data("type");
 
 	if( $(this).prop("checked") == true ){
-		action = "remove";
-	} else {
 		action = "add";
+	} else {
+		action = "remove";
 	}
+
+	jQuery.ajax({
+		method: 'post',
+		url: "/wp-json/ebayintegration/v1/post",
+		data: {
+			action: "grading_checkbox",
+			check_action : action,
+			user_id : user_id,
+			type : type,
+		},
+		success: function(resp){
+
+			console.log( resp );
+
+		},
+		error: function(){
+			// console.log("Error in AJAX");
+		}
+	});	
 
 
 });

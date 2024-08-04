@@ -333,11 +333,12 @@ class Ebay_Integration_Ebay_API {
 
 		}
 
-		
-		
+		elseif( $params["action"] == "grading_checkbox"){
 
-		
+			return $this->grading_checkbox($params);
 
+		}
+		
 		else {			
 
 			return $params;
@@ -1553,4 +1554,8 @@ class Ebay_Integration_Ebay_API {
 		return ["error" => false, "payout_id" => $params["payout_id"]];
 	}	
 	
+
+	function grading_checkbox($params){
+		return $params;
+	}
 }
