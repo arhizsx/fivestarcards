@@ -1158,6 +1158,7 @@
         $html .= "  </tr>";
         $html .= "</tr>";
         $html .= "</table>";
+        $html .= "<H1>INSPECTION SERVICE</H1>";
 
         $dompdf = new Dompdf();
 
