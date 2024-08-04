@@ -123,8 +123,13 @@
 
         <!-- DESKTOP VIEW -->
         <div class="table-responsive d-none d-lg-block">
-            <table class="table table-sm table-bordered" id="new_grading">
+            <table class="table table-sm table-bordered" id="new_grading">                
                 <thead>
+                    <tr>
+                        <th colspan="8">
+                            <input type="checkbox" id="service" name="service" value="inspection_service">Include Inspection Service
+                        </th>
+                    </tr>
                     <tr>
                         <th style="width: 20px;"></th>
                         <th style="width: 100px;">Photo</th>
