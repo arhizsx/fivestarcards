@@ -138,6 +138,9 @@
                 </thead>
                 <tbody>
                     <?php
+                        $total_dv = 0;
+                        $total_grading = 0;
+
                         if( count( $consignment ) == 0 ){
                     ?>
                     <tr class="empty_grading">
@@ -148,8 +151,6 @@
                     <?php 
                         } else {
 
-                            $total_dv = 0;
-                            $total_grading = 0;
 
                             foreach( $consignment as $card ){
 
