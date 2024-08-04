@@ -2494,3 +2494,6 @@ $(document).on("change", ".mobile_tab_select", function(){
     window.location.href = $(this).val();
 });
 
+$(document).on("click", ".grading_inspection_checkbox", function(){
+
+});

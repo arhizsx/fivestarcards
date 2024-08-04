@@ -202,7 +202,7 @@
                     </tr>
                     <tr>
                         <td colspan="5" class="bg-success py-3 text-white">
-                            <input type="checkbox" id="service" name="service" class="me-3" value="inspection_service"><strong class="">Include Inspection Service</strong> (This will be an additional charge of $3 per card)
+                            <input type="checkbox" id="service" name="service" class="me-3 grading_inspection_checkbox" data-type="<?php echo $_GET["type"] ?>" value="inspection_service"><strong class="">Include Inspection Service</strong> (This will be an additional charge of $3 per card)
                         </td>
                         <th colspan='2' class="text-end bg-success text-white">
                             Total Inspection Service
@@ -857,3 +857,4 @@
         }
     }
 ?>
+
