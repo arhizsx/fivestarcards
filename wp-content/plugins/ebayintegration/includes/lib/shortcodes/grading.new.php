@@ -127,7 +127,7 @@
                 <thead>
                     <tr>
                         <td colspan="8">
-                            <input type="checkbox" id="service" name="service" class="me-3" value="inspection_service"><strong>Include Inspection Service</strong> (This will be an additional charge of $3 per card)
+                            <input checked type="checkbox" id="service" name="service" class="me-3" value="inspection_service"><strong>Include Inspection Service</strong> (This will be an additional charge of $3 per card)
                         </td>
                     </tr>
                     <tr>
