@@ -908,6 +908,15 @@ class Ebay_Integration_Ebay_API {
 			"type" => $params["type"]
 		];
 
+
+		$sql = "SELECT * FROM grading_addons where type='". $params["type"] .  "' AND user_id = '". $params["user_id"] .  "'";
+		$query = $this->wpdb->get_results ( $sql );	
+		if( count($query) > 0 ){
+			$inspection = true;
+		} else {
+			$inspection = null;
+		}
+
 		$this->wpdb->insert(
 			'grading_orders',
 			array(
@@ -915,6 +924,7 @@ class Ebay_Integration_Ebay_API {
 				"type" => $params["type"],
 				"data" => json_encode($data),		
 				"status" => "To Ship",		
+				"inspection" => $inspection
 			)
 		);
 
@@ -925,6 +935,7 @@ class Ebay_Integration_Ebay_API {
 			array(
 				'status'=>"checkout",
 				"order_id" => $lastid,
+				"inspection" => $inspection
 			), 
 			array(
 				'user_id' => $params["user_id"],
