@@ -185,8 +185,11 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th colspan='8' class="text-start">
+                        <th colspan='7' class="text-end">
                             Add Inspection Service
+                        </th>
+                        <th colspan='1' class="text-end">
+                            $0.00
                         </th>
                     </tr>
 
