@@ -1556,6 +1556,29 @@ class Ebay_Integration_Ebay_API {
 	
 
 	function grading_checkbox($params){
-		return $params;
+
+		if( $params["check_action"] == "remove" ){
+
+			$sql = "DELETE FROM grading_addons where type='". $params["type"] .  "' AND user_id = '". $params["user_id"] .  "'";
+			$query = $this->wpdb->get_results ( $sql );	
+
+			return true;
+		}
+		elseif( $params["check_action"] == "add" ){
+
+			$this->wpdb->insert(
+				'grading_addons',
+				array(
+					'user_id' => $params["user_id"],
+					"type" => $params["type"],
+				)
+			);
+	
+			return true;
+
+		} else {
+			return $params;
+		}
+
 	}
 }
