@@ -967,6 +967,10 @@ class Ebay_Integration_Ebay_API {
 			'post_status' => 'publish'
 		]);
 
+		if( $inspection != null ){
+			add_post_meta($checkout_post_id, "inspection",  $inspection );
+		}
+
 		add_post_meta($checkout_post_id, "user_id",  $params["user_id"] );
 		add_post_meta($checkout_post_id, "service_type", "Card Grading" );
 		add_post_meta($checkout_post_id, "grading_type", $grading_name );
