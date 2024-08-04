@@ -184,6 +184,13 @@
                 "url" => '/grading/psa/value-bulk',
             ],
             [
+                "name" => "PSA - Value Bulk Vintage",
+                "type" => "psa-value_bulk_vintage",
+                "per_card" => 19,
+                "max_dv" => 499,
+                "url" => '/grading/psa/value-bulk-vintage',
+            ],
+            [
                 "name" => "PSA - Value Plus",
                 "type" => "psa-value_plus",
                 "per_card" => 40,
