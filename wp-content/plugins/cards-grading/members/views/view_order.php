@@ -298,6 +298,9 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
                         $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
                     </div>
                 </div>
+                <?php 
+                    if( $checkout_meta["inspection"][0] == "1" ) { 
+                ?>
                 <div class="row">
                     <div class="col text-end">
                         Inspection Charge    
@@ -306,6 +309,9 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
                         $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
                     </div>
                 </div>
+                <?php 
+                    }
+                ?>
             </div>
         </div>
 
