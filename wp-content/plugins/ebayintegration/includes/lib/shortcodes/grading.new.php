@@ -677,6 +677,27 @@
         <div class="col-lg col-md-4 text-center grading_box">
             <table class="table table-bordered">
                 <tr>
+                    <td class='grading_title' style="background-color: #005e0c; color: #ffffff;">Value Bulk Vintage</td>
+                </tr>
+                <tr>
+                    <td class="">
+                        <div class="pricing">19</div>
+                        <div>per card</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DV < $499</td>
+                </tr>
+                <tr>
+                    <td>
+                    <a href="?grader=psa&type=psa-value_bulk" class="btn btn-sm btn-outline-primary">Log Cards</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg col-md-4 text-center grading_box">
+            <table class="table table-bordered">
+                <tr>
                     <td class='grading_title' style="background-color: #e02b20; color: #ffffff;">Value Plus</td>
                 </tr>
                 <tr>
