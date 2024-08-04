@@ -193,15 +193,6 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th colspan='7' class="text-end">
-                            Total Inspection Service
-                        </th>
-                        <th colspan='1' class="text-end">
-                            $<?php echo count($consignment) * 3 ?>
-                        </th>
-                    </tr>
-
-                    <tr>
                         <th colspan='7' class="text-end">Total DV</th>
                         <th colspan='1' class="text-end">$<?php echo $total_dv ?></th>
                     </tr>
@@ -213,6 +204,14 @@
                         <td colspan="8" class="bg-light py-3 text-dark">
                             <input type="checkbox" id="service" name="service" class="me-3" value="inspection_service"><strong class="text-danger">Include Inspection Service</strong> (This will be an additional charge of $3 per card)
                         </td>
+                    </tr>
+                    <tr>
+                        <th colspan='7' class="text-end">
+                            Total Inspection Service
+                        </th>
+                        <th colspan='1' class="text-end">
+                            $<?php echo count($consignment) * 3 ?>
+                        </th>
                     </tr>
 
                 </tfoot>        
