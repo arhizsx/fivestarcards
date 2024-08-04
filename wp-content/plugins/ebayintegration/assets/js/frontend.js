@@ -2516,7 +2516,7 @@ $(document).on("click", ".grading_inspection_checkbox", function(){
 		},
 		success: function(resp){
 
-			console.log( resp );
+			location.reload();
 
 		},
 		error: function(){
