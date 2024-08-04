@@ -193,12 +193,6 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="8" class="bg-danger py-3 text-white">
-                            <input checked type="checkbox" id="service" name="service" class="me-3" value="inspection_service"><strong>Include Inspection Service</strong> (This will be an additional charge of $3 per card)
-                        </td>
-                    </tr>
-
-                    <tr>
                         <th colspan='7' class="text-end">
                             Total Inspection Service
                         </th>
@@ -215,6 +209,12 @@
                         <th colspan='7' class="text-end">Grading Charge</th>
                         <th colspan='1' class="text-end">$<?php echo $total_grading ?></th>
                     </tr>
+                    <tr>
+                        <td colspan="8" class="bg-danger py-3 text-white">
+                            <input checked type="checkbox" id="service" name="service" class="me-3" value="inspection_service"><strong>Include Inspection Service</strong> (This will be an additional charge of $3 per card)
+                        </td>
+                    </tr>
+
                 </tfoot>        
             </table>
         </div>
