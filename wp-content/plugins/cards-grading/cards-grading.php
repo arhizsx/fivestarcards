@@ -1158,7 +1158,9 @@
         $html .= "  </tr>";
         $html .= "</tr>";
         $html .= "</table>";
-        $html .= "<H1>INSPECTION SERVICE</H1>";
+        if( array_key_exists("inspection", $post_meta)  ){
+            $html .= "<H1>INSPECTION SERVICE</H1>";
+        }
 
         $dompdf = new Dompdf();
 
