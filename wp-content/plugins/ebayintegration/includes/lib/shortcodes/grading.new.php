@@ -221,7 +221,7 @@
                             ?>
 
                         <td colspan="<?php echo $colspan ?>" class="bg-success py-3 text-white">
-                            <input <?php echo $checked ?> type="checkbox" id="service" name="service" class="me-3 grading_inspection_checkbox" data-type="<?php echo $_GET["type"] ?>" value="inspection_service"><strong class="">Include Inspection Service</strong> (This will be an additional charge of $3 per card)
+                            <input <?php echo $checked ?> type="checkbox" id="service" name="service" class="me-3 grading_inspection_checkbox" data-user_id="<?php echo get_current_user_id() ?>" data-type="<?php echo $_GET["type"] ?>" value="inspection_service"><strong class="">Include Inspection Service</strong> (This will be an additional charge of $3 per card)
                         </td>
                         <?php 
                         if( $checked != "" ){
