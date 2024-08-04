@@ -2495,7 +2495,9 @@ $(document).on("change", ".mobile_tab_select", function(){
 });
 
 $(document).on("click", ".grading_inspection_checkbox", function(){
+	
 	console.log($(this).data());
-
 	console.log($(this).prop("checked"));
+
+
 });

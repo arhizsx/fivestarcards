@@ -36,11 +36,20 @@
 
         global $wpdb;
 
-        $consignment = $this->wpdb->get_results ( "
+        $grading = $this->wpdb->get_results ( "
         SELECT * 
         FROM grading
         where user_id = " . get_current_user_id() . " 
         and status = 'logged'
+        and type = '" . $_GET['type']  . "'
+        order by id desc
+        "
+        );        
+
+        $grading_addon = $this->wpdb->get_results ( "
+        SELECT * 
+        FROM grading_addons
+        where user_id = " . get_current_user_id() . " 
         and type = '" . $_GET['type']  . "'
         order by id desc
         "
@@ -141,7 +150,7 @@
                         $total_dv = 0;
                         $total_grading = 0;
 
-                        if( count( $consignment ) == 0 ){
+                        if( count( $grading ) == 0 ){
                     ?>
                     <tr class="empty_grading">
                         <td colspan="8" class="text-center py-5">
@@ -152,7 +161,7 @@
                         } else {
 
 
-                            foreach( $consignment as $card ){
+                            foreach( $grading as $card ){
 
                                 $data = json_decode( $card->data, true );
 
@@ -202,13 +211,20 @@
                     </tr>
                     <tr>
                         <td colspan="5" class="bg-success py-3 text-white">
-                            <input type="checkbox" id="service" name="service" class="me-3 grading_inspection_checkbox" data-type="<?php echo $_GET["type"] ?>" value="inspection_service"><strong class="">Include Inspection Service</strong> (This will be an additional charge of $3 per card)
+                            <?php 
+                                if(  count( $grading_addon ) > 0 ){
+                                    $checked = "checked";
+                                } else {
+                                    $checked = "";
+                                }
+                            ?>
+                            <input <?php echo $checked ?> type="checkbox" id="service" name="service" class="me-3 grading_inspection_checkbox" data-type="<?php echo $_GET["type"] ?>" value="inspection_service"><strong class="">Include Inspection Service</strong> (This will be an additional charge of $3 per card)
                         </td>
                         <th colspan='2' class="text-end bg-success text-white">
                             Total Inspection Service
                         </th>
                         <th colspan='1' class="text-end bg-success text-white">
-                            $<?php echo count($consignment) * 3 ?>
+                            $<?php echo count($grading) * 3 ?>
                         </th>
                     </tr>
                 </tfoot>        
@@ -228,7 +244,7 @@
                         $total_dv = 0;
                         $total_grading = 0;
 
-                        if( count( $consignment ) == 0 ){
+                        if( count( $grading ) == 0 ){
                     ?>
                     <tr class="empty_grading">
                         <td colspan="2" class="text-center py-5">
@@ -237,7 +253,7 @@
                     </tr>
                     <?php 
                         } else {
-                            foreach( $consignment as $card ){
+                            foreach( $grading as $card ){
 
                             $data = json_decode( $card->data, true );
 
@@ -324,7 +340,7 @@
                             Total Inspection Service
                         </th>
                         <th colspan='1' class="text-end">
-                            $<?php echo count($consignment) * 3 ?>
+                            $<?php echo count($grading) * 3 ?>
                         </th>
                     </tr>
 
