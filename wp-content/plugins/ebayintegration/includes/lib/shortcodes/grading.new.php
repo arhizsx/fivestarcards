@@ -126,11 +126,6 @@
             <table class="table table-sm table-bordered" id="new_grading">                
                 <thead>
                     <tr>
-                        <td colspan="8" class="bg-danger text-white">
-                            <input checked type="checkbox" id="service" name="service" class="me-3" value="inspection_service"><strong>Include Inspection Service</strong> (This will be an additional charge of $3 per card)
-                        </td>
-                    </tr>
-                    <tr>
                         <th style="width: 20px;"></th>
                         <th style="width: 100px;">Photo</th>
                         <th width="30%">Player Name</th>
@@ -197,6 +192,12 @@
                     ?>  
                 </tbody>
                 <tfoot>
+                    <tr>
+                        <td colspan="8" class="bg-danger py-3 text-white">
+                            <input checked type="checkbox" id="service" name="service" class="me-3" value="inspection_service"><strong>Include Inspection Service</strong> (This will be an additional charge of $3 per card)
+                        </td>
+                    </tr>
+
                     <tr>
                         <th colspan='7' class="text-end">
                             Total Inspection Service
