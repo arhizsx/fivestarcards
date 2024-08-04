@@ -186,7 +186,7 @@
                 <tfoot>
                     <tr>
                         <th colspan='8' class="text-start">
-                            Inspection Service
+                            Add Inspection Service
                         </th>
                     </tr>
 
