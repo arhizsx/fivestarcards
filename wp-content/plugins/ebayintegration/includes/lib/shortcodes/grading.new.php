@@ -223,6 +223,9 @@
                 </thead>
                 <tbody>
                     <?php
+                        $total_dv = 0;
+                        $total_grading = 0;
+
                         if( count( $consignment ) == 0 ){
                     ?>
                     <tr class="empty_grading">
@@ -306,20 +309,32 @@
                         </td>
                     </tr>
                     <?php
+                            $total_grading = $total_grading + $data["per_card"];
+                            $total_dv = $total_dv + $data["dv"];
+
                             }
                         }
                     ?>
                 </tbody>
-                <!-- <tfoot>
+                <tfoot>
                     <tr>
-                        <th>Total DV</th>
-                        <th class="text-end">$0.00</th>
+                        <th colspan='1' class="text-end">
+                            Total Inspection Service
+                        </th>
+                        <th colspan='1' class="text-end">
+                            $<?php echo count($consignment) * 3 ?>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th colspan='1' class="text-end">Total DV</th>
+                        <th colspan='1' class="text-end">$<?php echo $total_dv ?></th>
                     </tr>
                     <tr>
-                        <th>Grading Charge</th>
-                        <th class="text-end">$0.00</th>
+                        <th colspan='1' class="text-end">Grading Charge</th>
+                        <th colspan='1' class="text-end">$<?php echo $total_grading ?></th>
                     </tr>
-                </tfoot> -->
+                </tfoot>        
             </table>    
         </div>
 
