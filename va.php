@@ -132,6 +132,8 @@
                 $('.folder-container').addClass('hidden');
                 $(".progress-box").removeClass("hidden");
 
+                $('body, html').css("display", "flex");
+
                 const folderId = $('#folderId').val();
 
                 $.ajax({
