@@ -239,7 +239,7 @@
             <small>Please input the Google Drive's Folder Link before clicking on GET FILES</small>
             <button id="startButton" class="btn btn-primary mt-3 form-control">GET FILES</button>
         </div>
-        <div class="loading text-center">
+        <div class="loading text-center hidden">
             Loading please wait...
         </div>
         <div class="still_running hidden text-center">
