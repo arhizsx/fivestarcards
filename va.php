@@ -129,6 +129,7 @@
             $('#startButton').click(function() {
                 // Hide input and button immediately
                 $('.controls').addClass('hidden');
+                $('.folder-container').addClass('hidden');
                 $(".progress-box").removeClass("hidden");
 
                 const folderId = $('#folderId').val();
