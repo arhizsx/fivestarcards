@@ -208,6 +208,8 @@
                         if (item.id != null) {
                             table += '<button class="btn-sm btn btn-dark ebayintegration-btn mb-3 me-3" data-action="consignmentPaidOutQueue" data-id="' + item.id + '">Queue</button>';
                             table += '<button class="btn-sm btn btn-primary ebayintegration-btn mb-3" data-action="consignmentPaidOut" data-id="' + item.id + '">Paid Out</button>';
+                        } else {
+                            table += "SEARCH MANUALLY";
                         }
                         table += '</td>';
                         table += '</tr>';
