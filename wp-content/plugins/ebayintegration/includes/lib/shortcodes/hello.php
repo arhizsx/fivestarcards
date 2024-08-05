@@ -36,7 +36,7 @@ $current_user = wp_get_current_user();
             <i class="fa fa-circle-plus me-2"></i> New Order
         </button>
         <?php 
-            if(  get_current_user_id() == 587 ) {
+            if( in_array( get_current_user_id(), array( 587, 1, 3 ) )  ) {
         ?>
         <button id="float_btn_add_payout" class="btn btn-xl btn-success ebayintegration-btn"  data-action="add_new_payout">
             <i class="fa fa-money-bill me-2"></i> Request Payout
