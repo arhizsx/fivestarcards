@@ -68,18 +68,23 @@
         $(document).ready(function() {
             // Load folders from PHP script
             $.getJSON('get_listed_folders.php', function(data) {
-                createFolderTable(data);
-            }).fail(function() {
-                console.error('Error loading listed_folders.json');
+                if (data.folders && Array.isArray(data.folders)) {
+                    createFolderTable(data.folders);
+                } else {
+                    console.error('Data is not in expected format:', data);
+                }
+            }).fail(function(jqxhr, textStatus, error) {
+                console.error('Error loading listed_folders.json:', textStatus, error);
             });
 
             function createFolderTable(folders) {
                 let table = '<table class="table folder-table">';
                 table += '<thead><tr><th>Folder Name</th><th>Folder URL</th></tr></thead><tbody>';
                 folders.forEach(folder => {
-                    table += '<tr data-url="' + folder.url + '">';
+                    const folderUrl = `https://drive.google.com/drive/folders/${folder.id}`;
+                    table += '<tr data-url="' + folderUrl + '">';
                     table += '<td>' + folder.name + '</td>';
-                    table += '<td>' + folder.url + '</td>';
+                    table += '<td>' + folderUrl + '</td>';
                     table += '</tr>';
                 });
                 table += '</tbody></table>';
