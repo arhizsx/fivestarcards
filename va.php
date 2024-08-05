@@ -66,16 +66,42 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Load folders from PHP script
-            $.getJSON('get_listed_folders.php', function(data) {
-                if (data.folders && Array.isArray(data.folders)) {
+            function checkAndLoadFolders() {
+                $.getJSON('get_listed_folders.php', function(data) {
+                    const timestamp = new Date(data.timestamp);
+                    const now = new Date();
+                    const timeDifference = Math.abs(now - timestamp);
+                    const daysDifference = timeDifference / (1000 * 3600 * 24);
+
+                    if (daysDifference > 2) {
+                        // Run the script to update the folders
+                        $.ajax({
+                            url: 'run_listfolders_script.php',
+                            method: 'POST',
+                            success: function() {
+                                // Reload the folders after running the script
+                                loadFolders();
+                            },
+                            error: function(jqxhr, textStatus, error) {
+                                console.error('Error running listfolders script:', textStatus, error);
+                            }
+                        });
+                    } else {
+                        // Load folders as is
+                        createFolderTable(data.folders);
+                    }
+                }).fail(function(jqxhr, textStatus, error) {
+                    console.error('Error loading listed_folders.json:', textStatus, error);
+                });
+            }
+
+            function loadFolders() {
+                $.getJSON('get_listed_folders.php', function(data) {
                     createFolderTable(data.folders);
-                } else {
-                    console.error('Data is not in expected format:', data);
-                }
-            }).fail(function(jqxhr, textStatus, error) {
-                console.error('Error loading listed_folders.json:', textStatus, error);
-            });
+                }).fail(function(jqxhr, textStatus, error) {
+                    console.error('Error loading listed_folders.json:', textStatus, error);
+                });
+            }
 
             function createFolderTable(folders) {
                 let table = '<table class="table folder-table">';
@@ -88,7 +114,7 @@
                     table += '</tr>';
                 });
                 table += '</tbody></table>';
-                $('.container').prepend(table);
+                $('.container').append('<div class="folder-container">' + table + '</div>');
 
                 // Add click event to table rows
                 $('.folder-table tr').click(function() {
@@ -97,6 +123,8 @@
                     $('.controls').removeClass('hidden');
                 });
             }
+
+            checkAndLoadFolders();
 
             $('#startButton').click(function() {
                 // Hide input and button immediately
