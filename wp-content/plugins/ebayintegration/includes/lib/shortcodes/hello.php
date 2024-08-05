@@ -161,7 +161,7 @@ $current_user = wp_get_current_user();
                                                 if( $sold_price < 10 ){
                                                     $rate = 1;
                                                     $fees = 3;
-                                                    $final = ($rate * $sold_price )  + $fees;
+                                                    $final = ($rate * $sold_price )  - $fees;
                                                 }
                                                 elseif( $sold_price >= 10 && $sold_price <= 49.99 ){
                                                     $rate = .82;
