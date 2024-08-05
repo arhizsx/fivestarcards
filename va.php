@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Process Progress</title>
+    <title>Process Paidout</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body, html {
@@ -218,7 +218,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="progress-box hidden">
+        <div class="progress-box">
             <div id="progress-circle" class="progress-circle">
                 <svg viewBox="0 0 200 200">
                     <circle class="behind" cx="100" cy="100" r="85"></circle>
@@ -232,7 +232,7 @@
             <p class="progress-text">Hang in there!</p>
             Cross checking items in the database...
         </div>
-        <div class="controls hidden">
+        <div class="controls">
             <h1 class="mb-4">Process Paid Outs</h1>
             <label>Google Drive Folder Link</label>
             <input type="text" id="folderId" class="form-control" placeholder="Enter Google Drive Folder Link" />
