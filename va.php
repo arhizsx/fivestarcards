@@ -9,7 +9,7 @@
         body, html {
             height: 100%;
             margin: 0;
-            display: flex;
+            display: block;
             justify-content: center;
             align-items: center;
             background-color: #f8f9fa;
@@ -218,7 +218,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="progress-box">
+        <div class="progress-box hidden">
             <div id="progress-circle" class="progress-circle">
                 <svg viewBox="0 0 200 200">
                     <circle class="behind" cx="100" cy="100" r="85"></circle>
