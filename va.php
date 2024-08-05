@@ -66,9 +66,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Load folders from JSON file
-            $.getJSON('/home/arhizsx/listed_folders.json', function(data) {
+            // Load folders from PHP script
+            $.getJSON('get_listed_folders.php', function(data) {
                 createFolderTable(data);
+            }).fail(function() {
+                console.error('Error loading listed_folders.json');
             });
 
             function createFolderTable(folders) {
@@ -90,8 +92,6 @@
                     $('.controls').removeClass('hidden');
                 });
             }
-
-            // Existing code for AJAX calls and button click event
 
             $('#startButton').click(function() {
                 // Hide input and button immediately
@@ -136,10 +136,8 @@
                             circle.css('stroke-dashoffset', dashOffset);
 
                             if (progress >= 100) {
-
                                 $("#progress-box").addClass("hidden");
                                 $("#progress-db").removeClass("hidden");
-
                             }
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
