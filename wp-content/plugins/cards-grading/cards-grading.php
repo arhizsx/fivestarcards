@@ -1086,10 +1086,13 @@
     function getPayoutMember($params){
 
 
-		$user_id = $params["payout_id"];
 
 		$sql = "SELECT * FROM payouts WHERE id = '" . $params["payout_id"] . "'";
 		$payout = $this->wpdb->get_results ( $sql );
+
+
+		$user_id = $payout[0]->user_id;
+		$user_data = get_userdata($user_id);
 
 		$data = json_decode( $payout[0]->data, true );
 		$array = implode("','",$data["cards"]);
@@ -1097,12 +1100,7 @@
 		$sql = "SELECT * FROM ebay WHERE item_id IN ('" . $array . "')";
 		$cards = $this->wpdb->get_results ( $sql );
 
-		$sql = "SELECT * FROM ebay WHERE item_id IN ('" . $array . "')";
-		$cards = $this->wpdb->get_results ( $sql );
-
-		$user_data = get_userdata($user_id);
-
-		$user = [
+        $user = [
 			"id" => $user_data->data->ID,
 			"name" => $user_data->data->display_name,
 			"email" => $user_data->data->user_email,
