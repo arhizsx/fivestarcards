@@ -843,6 +843,8 @@ class Ebay_Integration_Ebay_API {
 				'post_title' => $user->display_name . " - " . $params["player"],
 				'post_status' => 'publish'
 			]);
+
+			$params["quantity"] = 1;
 	
 			add_post_meta($post_id, "checkout_id", $params["checkout_id"] );
 			add_post_meta($post_id, "user_id", $params["user_id"] );
