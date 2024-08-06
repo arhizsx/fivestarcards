@@ -228,7 +228,6 @@ $processed_status = array("Processing Order", "Cards Graded");
                     <th><?php  echo $action_label; ?></th>
                     <?php } ?>
                     <th>ID</th>
-                    <th>Photo</th>
                     <th>Year</th>
                     <th>Brand</th>
                     <th>Card #</th>
@@ -302,7 +301,6 @@ $processed_status = array("Processing Order", "Cards Graded");
                         $image = "<img style='max-width: 80px;' width='100%' src='/wp-content/uploads/cards/" . $db_card_data["file"]["filename"] . "' />";
                     ?>
                     <td><?php echo $post->ID; ?></td>
-                    <td><?php echo $image   ?></td>
                     <td><?php echo $card["year"]; ?></td>
                     <td><?php echo $card["brand"]; ?></td>
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
