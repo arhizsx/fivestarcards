@@ -136,7 +136,6 @@
                 <thead>
                     <tr>
                         <th style="width: 20px;"></th>
-                        <th style="width: 100px;">Photo</th>
                         <th width="30%">Player Name</th>
                         <th>Year</th>
                         <th>Brand</th>
@@ -179,11 +178,6 @@
                             <a class='text-danger  ebayintegration-btn' data-action="removeGradingCardRow"  data-id='<?php echo $card->id ?>' data-user_id="<?php echo get_current_user_id(); ?>" href='#'>
                                 <i class='fa-solid fa-lg fa-xmark'></i>
                             </a>
-                        </td>
-                        <td style="width: 100px; padding: 0px;">
-                            <div class="ebayintegration-btn"  data-action="grading_picture_box_click"  data-id="<?php echo $card->id ?>"   data-user_id="<?php echo get_current_user_id() ?>">
-                            <?php echo $img ?>
-                            </div>
                         </td>
                         <td><?php echo $data["player"] ?></td>
                         <td><?php echo $data["year"] ?></td>
