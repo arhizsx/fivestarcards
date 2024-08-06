@@ -454,14 +454,6 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 								"<div class='col-8'>$0.00" +
 								"</div>" +
 							"</div>" +
-							"<div class='row'>" +
-								"<div class='small text-secondary col-sm-4'>Photo</div>" +
-								"<div class='col-sm-8'>" +
-									"<div class='d-flex justify-content-center align-items-center picture_box'>" +
-										"<i class='fa-solid fa-file-image fa-2x'></i>" +
-									"</div>" +
-								"</div>" +
-							"</div>" +
 						"</td>" +
 					"</tr>"
 				);
