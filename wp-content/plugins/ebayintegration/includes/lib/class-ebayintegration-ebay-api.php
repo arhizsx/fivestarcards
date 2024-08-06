@@ -833,6 +833,7 @@ class Ebay_Integration_Ebay_API {
 			$data["user_id"] = $user_id;
 
 			$params["db_id"] = $lastid;
+			$data["db_id"] = $lastid;
 
 			// OLD CODE
 
