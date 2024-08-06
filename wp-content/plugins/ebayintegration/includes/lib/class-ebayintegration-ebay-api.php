@@ -1534,16 +1534,13 @@ class Ebay_Integration_Ebay_API {
 	function getPayoutRequest($params){
 
 
-		$user_id = $params["payout_id"];
+		$user_id = $params["user_id"];
 
 		$sql = "SELECT * FROM payouts WHERE id = '" . $params["payout_id"] . "'";
 		$payout = $this->wpdb->get_results ( $sql );
 
 		$data = json_decode( $payout[0]->data, true );
 		$array = implode("','",$data["cards"]);
-
-		$sql = "SELECT * FROM ebay WHERE item_id IN ('" . $array . "')";
-		$cards = $this->wpdb->get_results ( $sql );
 
 		$sql = "SELECT * FROM ebay WHERE item_id IN ('" . $array . "')";
 		$cards = $this->wpdb->get_results ( $sql );
