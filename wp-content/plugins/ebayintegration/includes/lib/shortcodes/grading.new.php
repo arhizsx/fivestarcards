@@ -196,21 +196,21 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th colspan='7' class="text-end">Total DV</th>
+                        <th colspan='6' class="text-end">Total DV</th>
                         <th colspan='1' class="text-end">$<?php echo $total_dv ?></th>
                     </tr>
                     <tr>
-                        <th colspan='7' class="text-end">Grading Charge</th>
+                        <th colspan='6' class="text-end">Grading Charge</th>
                         <th colspan='1' class="text-end">$<?php echo $total_grading ?></th>
                     </tr>
                     <tr>
                             <?php 
                                 if(  count( $grading_addon ) > 0 ){
                                     $checked = "checked";
-                                    $colspan = "5";                                    
+                                    $colspan = "4";                                    
                                 } else {
                                     $checked = "";
-                                    $colspan = "8";
+                                    $colspan = "7";
                                 }
                             ?>
 
