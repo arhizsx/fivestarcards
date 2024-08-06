@@ -1546,7 +1546,7 @@ class Ebay_Integration_Ebay_API {
 		$cards = $this->wpdb->get_results ( $sql );
 
 
-		$user_id = $payout->user_id;
+		$user_id = $payout[0]->user_id;
 		$user_data = get_userdata($user_id);
 
 		$user = [
