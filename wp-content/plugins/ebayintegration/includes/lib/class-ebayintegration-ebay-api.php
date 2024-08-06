@@ -1534,10 +1534,10 @@ class Ebay_Integration_Ebay_API {
 	function getPayoutRequest($params){
 
 
-		$user_id = $params["user_id"];
 
 		$sql = "SELECT * FROM payouts WHERE id = '" . $params["payout_id"] . "'";
 		$payout = $this->wpdb->get_results ( $sql );
+		
 
 		$data = json_decode( $payout[0]->data, true );
 		$array = implode("','",$data["cards"]);
@@ -1545,6 +1545,8 @@ class Ebay_Integration_Ebay_API {
 		$sql = "SELECT * FROM ebay WHERE item_id IN ('" . $array . "')";
 		$cards = $this->wpdb->get_results ( $sql );
 
+
+		$user_id = $payout->user_id;
 		$user_data = get_userdata($user_id);
 
 		$user = [
