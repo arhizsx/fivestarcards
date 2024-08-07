@@ -1931,7 +1931,7 @@ function confirmPayoutRequest(){
 
 	var defObject = $.Deferred();  // create a deferred object.
 
-	let form = new FormData( $("#payout_request_form")[0] );
+	let form = new FormData( $("#payout_request_form_request")[0] );
 
 	
 	$.ajax({

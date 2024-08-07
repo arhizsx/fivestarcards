@@ -120,7 +120,7 @@ $current_user = wp_get_current_user();
                         $available = count($cards);
                         $payout_total = 0;
                 ?>
-                    <form class="form" id="payout_request_form">
+                    <form class="form" id="payout_request_form_request">
                         <input type="hidden" name="action" value="confirmPayoutRequest">
                         <input type="hidden" name="user_id" value="<?php echo get_current_user_id() ?>">
                         <div class="row">
