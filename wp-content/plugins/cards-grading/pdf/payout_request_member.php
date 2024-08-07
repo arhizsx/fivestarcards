@@ -64,6 +64,7 @@
                         <thead>
                             <tr>
                                 <th class="text-start" width="50%">Item</th>
+                                <th class="text-start">SKU</th>
                                 <th class="text-end">Price Sold</th>
                                 <th class="text-end">Rate</th>
                                 <th class="text-end">Fees</th>
@@ -79,11 +80,12 @@
                             <input type="hidden" name="card[<?php echo $ctr ?>]" value="<?php echo $item->item_id; ?>">
                             <tr>
                                 <td class="text-start">
-                                    <div class="title text-start">
-                                        <a href="<?php echo $itemdata["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                                            <?php print_r( $itemdata["Item"]["Title"] ); ?>
-                                        </a>
-                                    </div> 
+                                    <a href="<?php echo $itemdata["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
+                                        <?php print_r( $itemdata["Item"]["Title"] ); ?>
+                                    </a>
+                                </td>
+                                <td class="text-start">
+                                    <?php echo $item->sku ?>
                                 </td>
                                 <?php 
                                     $sold_price = (float) $itemdata["TransactionPrice"];  

@@ -1564,10 +1564,13 @@ class Ebay_Integration_Ebay_API {
 
 
 		$sql = "UPDATE payouts SET `status`  = 'DONE' WHERE id = " . $params["payout_id"];
-
 		$updated_items = $this->wpdb->get_results ( $sql );
 
-		return ["error" => false, "payout_id" => $params["payout_id"]];
+		$sql = "UPDATE ebay SET `status`  = 'PaidOut', `paid_out_date` = CURDATE() WHERE request_id = " . $params["payout_id"];
+		$paidout_items = $this->wpdb->get_results ( $sql );
+
+
+		return ["error" => false, "payout_id" => $params["payout_id"], "paidout_items" => $paidout_items];
 	}	
 	
 

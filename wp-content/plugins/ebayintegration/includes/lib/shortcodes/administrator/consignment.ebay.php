@@ -7,7 +7,7 @@
             <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("unsold") ?>" href="/administrator/consignment/?mode=ebay&type=unsold">Unsold</a>
             <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("cancelled") ?>" href="/administrator/consignment/?mode=ebay&type=cancelled">Cancelled</a>
             <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("pending_payout") ?>" href="/administrator/consignment/?mode=ebay&type=pending_payout">Pending Payout</a>
-            <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("paid_out") ?>" href="/administrator/consignment/?mode=ebay&type=paid_out">Paid Out</a>
+            <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("paid_out") ?>" href="/administrator/consignment/?mode=ebay&type=paid_out">Paid</a>
         </div>
     </div>
     <div class="row">
