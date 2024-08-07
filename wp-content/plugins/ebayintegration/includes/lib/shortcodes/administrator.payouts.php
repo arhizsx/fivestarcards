@@ -174,7 +174,8 @@
                         <table class="table table-sm table-bordered table-striped table-sm table-hover search_table_paid"  id="payout_cards_table">
                                 <thead>
                                     <tr>
-                                        <th class="text-start" width="50%">Item</th>
+                                        <th class="text-start" width="40%">Item</th>
+                                        <th class="text-start">SKU</th>
                                         <th class="text-end">Price Sold</th>
                                         <th class="text-end">Rate</th>
                                         <th class="text-end">Fees</th>
