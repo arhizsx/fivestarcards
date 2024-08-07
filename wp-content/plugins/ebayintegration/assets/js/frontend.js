@@ -295,14 +295,20 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 			var data = JSON.parse(payout.payout[0].data, true);			
 
-			if( payout.payout[0].status != "DONE" ){
+			if( payout.payout[0].status != "PAID OUT" ){
 				$(document).find(".show_payment_request_modal").find("#float_btn_done_payout").removeClass("d-none");
 			}
 						
 			$(document).find(".show_payment_request_modal").find("[name='payout_id']").val( parseFloat(payout_id));
 			$(document).find(".show_payment_request_modal").find("[name='payout_id_full']").val( parseFloat(payout.payout[0].id) + 1000);
 			$(document).find(".show_payment_request_modal").find("[name='request_date']").val(payout.payout[0].add_timestamp);
-			$(document).find(".show_payment_request_modal").find("[name='payout_date']").val(data.payout_date);
+
+			var payout_date = "";
+			if( payout.payout[0].add_timestamp != payout.payout[0].update_timestamp ){
+				payout_date = payout.payout[0].update_timestamp
+			}
+
+			$(document).find(".show_payment_request_modal").find("[name='payout_date']").val(payout_date);
 
 
 			$(document).find(".show_payment_request_modal").find("[name='remarks']").val(data.remarks);
