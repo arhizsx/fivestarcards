@@ -260,10 +260,6 @@ $current_user = wp_get_current_user();
                                 <label>Total Amount</label>
                                 <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
                             </div>
-                            <div class="col-xl-12">
-                                <label>Remarks / Message</label>
-                                <textarea class="form-control" name="remarks"></textarea>                            
-                            </div>
                         </div>
                         <div class="row mb-3 d-none" id="paypal">
                             <div class="col-xl-12">
@@ -289,6 +285,13 @@ $current_user = wp_get_current_user();
                                 <input  class="form-control mb-3 p-2 pb-1 pt-2"  type="text" value="" name="name_on_bank_account">          
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <div class="col-xl-12">
+                                <label>Remarks / Message</label>
+                                <textarea class="form-control" name="remarks"></textarea>                            
+                            </div>
+                        </div>
+
                         <input type="hidden" value="<?php echo $payout_total ?>" name="requested_amount">
                         <input type="hidden" value="<?php echo $available ?>" name="cards_count">
                     </form>
