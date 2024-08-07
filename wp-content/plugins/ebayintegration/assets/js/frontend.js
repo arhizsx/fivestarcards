@@ -284,7 +284,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				$(document).find("#payout_cards_table tbody").append(
 					"<tr>" +	
 						"<td class='text-start'><a href='" + card.Item.ListingDetails.ViewItemURL + "' target='_blank'>" + card.Item.Title + "</a></td>" +
-						"<td class='text-start'>" + card.Item.sku + "</td>" +
+						"<td class='text-start'>" + card.Item.SKU + "</td>" +
 						"<td class='text-end'>$" + sold_price + "</td>" +
 						"<td class='text-end'>" + rate.toFixed(2) + "%</td>" +
 						"<td class='text-end'>$" + fees + "</td>" +
