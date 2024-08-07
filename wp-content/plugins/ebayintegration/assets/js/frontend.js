@@ -2515,5 +2515,5 @@ $(document).on("click", ".grading_inspection_checkbox", function(){
 });
 
 $(document).on("change", ".payment_method", function(){
-	console.log($(this).value);
+	console.log($(this).val());
 });
