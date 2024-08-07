@@ -124,7 +124,7 @@ $current_user = wp_get_current_user();
                             <table class="table table-sm table-bordered table-striped table-sm table-hover search_table_paid">
                                     <thead>
                                         <tr>
-                                            <th class="text-start" width="50%">Item</th>
+                                            <th class="text-start" width="40%">Item</th>
                                             <th class="text-start">SKU</th>
                                             <th class="text-end">Price Sold</th>
                                             <th class="text-end">Rate</th>
@@ -234,7 +234,7 @@ $current_user = wp_get_current_user();
                                         else {
                                         ?>
                                         <tr>
-                                            <td colspan="5" class="text-center p-5">
+                                            <td colspan="6" class="text-center p-5">
                                                 No Items
                                             </td>
                                         </tr>
