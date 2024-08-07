@@ -265,12 +265,12 @@ $current_user = wp_get_current_user();
                                 <textarea class="form-control" name="remarks"></textarea>                            
                             </div>
                         </div>
-                        <div class="row mb-3 hidden" id="paypal">
+                        <div class="row mb-3 d-none" id="paypal">
                             <div class="col-xl-12">
                                 <input  class="form-control mb-3 p-2 pb-1 pt-2"  type="text" value="" name="paypal_email">          
                             </div>
                         </div>
-                        <div class="row mb-3 hideen" id="ach">
+                        <div class="row mb-3 d-none" id="ach">
                             <div class="col-xl-6">
                                 <input  class="form-control mb-3 p-2 pb-1 pt-2"  type="text" value="" name="bank_name">          
                             </div>
