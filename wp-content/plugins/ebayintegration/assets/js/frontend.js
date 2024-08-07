@@ -2524,9 +2524,9 @@ $(document).on("click", ".grading_inspection_checkbox", function(){
 $(document).on("change", ".payment_method", function(){
 	console.log($(this).val());
 
-	if($(this).val() == ""){
+	console.log($(document).find(".ach"));
 
-		
+	if($(this).val() == ""){
 		$(document).find(".paypal").addClass("d-none");
 		$(document).find(".ach").addClass("d-none");
 	}
