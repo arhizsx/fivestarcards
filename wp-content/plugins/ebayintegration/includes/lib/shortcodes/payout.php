@@ -87,6 +87,7 @@
                                     <th class="text-end">Status</th>
                                     <!-- <th class="text-end">Payout Date</th> -->
                                 </tr>
+
                             </thead>
                             <tbody>
                                 <?php 
