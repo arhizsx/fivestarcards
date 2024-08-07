@@ -268,13 +268,13 @@ $current_user = wp_get_current_user();
                                 <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
                             </div>
                         </div>
-                        <div class="row mb-3 d-none paypal" id="paypal">
+                        <div class="row mb-3 d-none paypal">
                             <div class="col-xl-12">
                                 <label>Paypal Email</label>
                                 <input  class="form-control mb-3 p-2 pb-1 pt-2"  type="text" value="" name="paypal_email">          
                             </div>
                         </div>
-                        <div class="row mb-3 d-none ach" id="ach">
+                        <div class="row mb-3 d-none ach">
                             <div class="col-xl-6">
                                 <label>Bank Name</label>
                                 <input  class="form-control mb-3 p-2 pb-1 pt-2"  type="text" value="" name="bank_name">          
