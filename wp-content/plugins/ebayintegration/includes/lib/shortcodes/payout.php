@@ -83,6 +83,7 @@
                                     <th class="text-center">Cards</th>
                                     <th class="text-start">Request Date</th>
                                     <th class="text-end">Amount Requested</th>
+                                    <th class="text-end">Paid Date</th>
                                     <th class="text-end">Status</th>
                                     <!-- <th class="text-end">Payout Date</th> -->
                                 </tr>
@@ -98,6 +99,14 @@
                                     <td class="text-center"><?php echo $data["cards_count"] ?></td>
                                     <td class="text-start"><?php echo $card->add_timestamp ?></td>
                                     <td class="text-end">$<?php echo number_format(( $data["requested_amount"] ), 2, '.', ',') ?></td>
+                                    <?php 
+                                        if($card->update_timestamp == $card->add_timestamp){
+                                            $tt = "";
+                                        } else {
+                                            $tt = $card->update_timestamp;
+                                        }
+                                    ?>
+                                    <td class="text-end"><?php echo   $tt ?></td>
                                     <td class="text-end"><?php echo $card->status ?></td>
                                     <!-- <td class="text-end"></td> -->
                                 </tr>  
