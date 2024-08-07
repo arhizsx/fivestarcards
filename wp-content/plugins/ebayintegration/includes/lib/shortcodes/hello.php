@@ -125,6 +125,7 @@ $current_user = wp_get_current_user();
                                     <thead>
                                         <tr>
                                             <th class="text-start" width="50%">Item</th>
+                                            <th class="text-start">SKU</th>
                                             <th class="text-end">Price Sold</th>
                                             <th class="text-end">Rate</th>
                                             <th class="text-end">Fees</th>
@@ -143,11 +144,12 @@ $current_user = wp_get_current_user();
                                         <input type="hidden" name="card[<?php echo $ctr ?>]" value="<?php echo $item->item_id; ?>">
                                         <tr>
                                             <td class="text-start">
-                                                <div class="title text-start">
                                                     <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
                                                         <?php print_r( $data["Item"]["Title"] ); ?>
                                                     </a>
-                                                </div> 
+                                            </td>
+                                            <td class="text-start">
+                                                <?php echo $item->sku ?>
                                             </td>
                                             <?php 
                                                 $sold_price = (float) $data["TransactionPrice"];  
