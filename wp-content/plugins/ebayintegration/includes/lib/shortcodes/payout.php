@@ -190,7 +190,7 @@
                     <div class="row mb-3">
                         <div class="col-xl-4">
                             <label>Payment Method</label>
-                            <select class="form-control mb-3 payment_method" name="payment_method">
+                            <select disabled class="form-control mb-3 payment_method" name="payment_method">
                                 <option value="">Select Payment Method</option>
                                 <option value="Paypal">Paypal</option>
                                 <option value="ACH">ACH</option>
@@ -205,6 +205,7 @@
                             <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
                         </div>
                     </div>
+
                     <div class="row mb-3 d-none" id="paypal">
                         <div class="col-xl-12">
                             <label>Paypal Email</label>
@@ -232,7 +233,7 @@
                     <div class="row mb-3">
                         <div class="col-xl-12">
                             <label>Remarks / Message</label>
-                            <textarea class="form-control" name="remarks"></textarea>                            
+                            <textarea disabled class="form-control" name="remarks"></textarea>                            
                         </div>
                     </div>
                     <input type="hidden" value="" name="requested_amount">
