@@ -198,24 +198,53 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-xl-4">
-                            <label>Cards Count</label>
-                            <input name="cards_count" class="form-control mb-3 p-2 pb-1 pt-2" type="text" value="">          
-                        </div>
-                        <div class="col-xl-4">
                             <label>Payment Method</label>
-                            <select class="form-control mb-3" name="payment_method">
+                            <select class="form-control mb-3 payment_method" name="payment_method">
+                                <option value="">Select Payment Method</option>
                                 <option value="Paypal">Paypal</option>
+                                <option value="ACH">ACH</option>
                             </select>
                         </div>
                         <div class="col-xl-4">
-                            <label>Total Amount</label>
-                            <input name="total_amount"  class="form-control mb-3 px-2 pb-1 pt-2" type="text" value="">
+                            <label>Cards Count</label>
+                            <input  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="<?php echo $available ?>">          
                         </div>
+                        <div class="col-xl-4">
+                            <label>Total Amount</label>
+                            <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
+                        </div>
+                    </div>
+                    <div class="row mb-3 d-none" id="paypal">
+                        <div class="col-xl-12">
+                            <label>Paypal Email</label>
+                            <input  class="form-control mb-3 p-2 pb-1 pt-2"  type="text" value="" name="paypal_email">          
+                        </div>
+                    </div>
+                    <div class="row mb-3 d-none" id="ach">
+                        <div class="col-xl-6">
+                            <label>Bank Name</label>
+                            <input  class="form-control mb-3 p-2 pb-1 pt-2"  type="text" value="" name="bank_name">          
+                        </div>
+                        <div class="col-xl-6">
+                            <label>Bank Routing Number</label>
+                            <input  class="form-control mb-3 p-2 pb-1 pt-2"  type="text" value="" name="bank_routing_number">          
+                        </div>
+                        <div class="col-xl-6">
+                            <label>Bank Account Number</label>
+                            <input  class="form-control mb-3 p-2 pb-1 pt-2"  type="text" value="" name="bank_account_number">          
+                        </div>
+                        <div class="col-xl-6">
+                            <label>Name on Bank Account</label>
+                            <input  class="form-control mb-3 p-2 pb-1 pt-2"  type="text" value="" name="name_on_bank_account">          
+                        </div>
+                    </div>
+                    <div class="row mb-3">
                         <div class="col-xl-12">
                             <label>Remarks / Message</label>
                             <textarea class="form-control" name="remarks"></textarea>                            
                         </div>
                     </div>
+                    
                     <input type="hidden" value="" name="requested_amount">
                     <input type="hidden" value="" name="cards_count">
                 </form>
