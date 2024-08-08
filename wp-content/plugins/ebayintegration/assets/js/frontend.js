@@ -330,7 +330,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 				$(document).find(".ach").addClass("d-none");
 				$(document).find(".paypal").addClass("d-none");
 			}
-			console.log(data);
+			console.log(data["payment_method"]);
 
 		});
 		
