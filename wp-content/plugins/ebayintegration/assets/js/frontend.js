@@ -318,6 +318,18 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			$(document).find(".show_payment_request_modal").find("[name='user_email']").val( payout.user.email );
 			$(document).find(".show_payment_request_modal").find("[name='user_name']").val( payout.user.name );
 
+
+			if(data.payment_method == "Paypal"){
+				$(document).find(".ach").addClass("d-none");
+				$(document).find(".paypal").removeClass("d-none");
+			}
+			else if(data.payment_method == "ACH"){
+				$(document).find(".ach").removeClass("d-none");
+				$(document).find(".paypal").addClass("d-none");
+			} else {
+				$(document).find(".ach").addClass("d-none");
+				$(document).find(".paypal").addClass("d-none");
+			}
 			console.log(data);
 
 		});
