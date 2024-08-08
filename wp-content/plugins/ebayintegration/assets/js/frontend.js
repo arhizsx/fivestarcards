@@ -200,10 +200,10 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 		$.when( payout ).done( function( payout ){	
 
 			$(document).find("#payout_cards_table tbody").empty();
+
 			$(document).find(".show_payment_request_modal").find("[name='payout_id']").val("");
 			$(document).find(".show_payment_request_modal").find("[name='request_date']").val("");
 			$(document).find(".show_payment_request_modal").find("[name='payout_date']").val("");
-
 
 			$(document).find(".show_payment_request_modal").find("[name='remarks']").val("");
 			$(document).find(".show_payment_request_modal").find("[name='requested_amount']").val("");
@@ -307,9 +307,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			if( payout.payout[0].add_timestamp != payout.payout[0].update_timestamp ){
 				payout_date = payout.payout[0].update_timestamp
 			}
-
 			$(document).find(".show_payment_request_modal").find("[name='payout_date']").val(payout_date);
-
 
 			$(document).find(".show_payment_request_modal").find("[name='remarks']").val(data.remarks);
 			$(document).find(".show_payment_request_modal").find("[name='total_amount']").val(payout_total.toFixed(2));
@@ -319,6 +317,8 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			$(document).find(".show_payment_request_modal").find("[name='user_id']").val( payout.user.id );
 			$(document).find(".show_payment_request_modal").find("[name='user_email']").val( payout.user.email );
 			$(document).find(".show_payment_request_modal").find("[name='user_name']").val( payout.user.name );
+
+			console.log(data);
 
 		});
 		
