@@ -199,7 +199,11 @@
                     <div class="row mb-3">
                         <div class="col-xl-4">
                             <label>Payment Method</label>
-                            <input  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="<?php echo $available ?>">          
+                            <select class="form-control mb-3 payment_method" name="payment_method">
+                                <option value="">Select Payment Method</option>
+                                <option value="Paypal">Paypal</option>
+                                <option value="ACH">ACH</option>
+                            </select>
                         </div>
                         <div class="col-xl-4">
                             <label>Cards Count</label>
