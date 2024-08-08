@@ -1506,9 +1506,14 @@ class Ebay_Integration_Ebay_API {
 		$data = [
 			"cards" => $cards,
 			"remarks" => $params["remarks"],
-			"payment_method" => $params["payment_method"],
 			"cards_count" => $params["cards_count"],
 			"requested_amount" => $params["requested_amount"],
+			"payment_method" => $params["payment_method"],
+			"paypal_email" => $params["paypal_email"],
+			"bank_name" => $params["bank_name"],
+			"bank_routing_number" => $params["bank_routing_number"],
+			"bank_account_number" => $params["bank_account_number"],
+			"name_on_bank_account" => $params["name_on_bank_account"],
 		];
 
 		$this->wpdb->insert(
