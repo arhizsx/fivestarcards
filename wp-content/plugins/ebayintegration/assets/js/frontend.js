@@ -318,6 +318,12 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			$(document).find(".show_payment_request_modal").find("[name='user_email']").val( payout.user.email );
 			$(document).find(".show_payment_request_modal").find("[name='user_name']").val( payout.user.name );
 
+			$(document).find(".show_payment_request_modal").find("[name='paypal_email']").val( data["paypal_email"] );
+			$(document).find(".show_payment_request_modal").find("[name='bank_name']").val( data["bank_name"] );
+			$(document).find(".show_payment_request_modal").find("[name='bank_routing_number']").val( data["bank_routing_number"] );
+			$(document).find(".show_payment_request_modal").find("[name='bank_account_number']").val( data["bank_account_number"] );
+			$(document).find(".show_payment_request_modal").find("[name='name_on_bank_account']").val( data["name_on_bank_account"] );
+
 
 			$(document).find(".show_payment_request_modal").find("[name='payment_method']").val(data["payment_method"] ).trigger("change");
 
