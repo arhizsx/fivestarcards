@@ -312,7 +312,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			$(document).find(".show_payment_request_modal").find("[name='remarks']").val(data.remarks);
 			$(document).find(".show_payment_request_modal").find("[name='total_amount']").val(payout_total.toFixed(2));
 			$(document).find(".show_payment_request_modal").find("[name='requested_amount']").val(parseFloat(data["requested_amount"]).toFixed(2));
-			$(document).find(".show_payment_request_modal").find("[name='cards_count']").val(parseFloat(data["requested_amount"]).toFixed(2));
+			$(document).find(".show_payment_request_modal").find("[name='cards_count']").val(parseFloat(data["cards_count"]).toFixed(2));
 
 			$(document).find(".show_payment_request_modal").find("[name='user_id']").val( payout.user.id );
 			$(document).find(".show_payment_request_modal").find("[name='user_email']").val( payout.user.email );
