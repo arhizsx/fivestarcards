@@ -319,8 +319,9 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			$(document).find(".show_payment_request_modal").find("[name='user_name']").val( payout.user.name );
 
 
+			$(document).find(".show_payment_request_modal").find("[name='payment_method']").val(data["payment_method"] ).trigger("change");
+
 			if(data["payment_method"] == "Paypal"){
-				console.log(data["payment_method"]);
 
 				$(document).find(".ach").addClass("d-none");
 				$(document).find(".paypal").removeClass("d-none");
