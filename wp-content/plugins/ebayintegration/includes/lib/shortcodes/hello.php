@@ -41,7 +41,7 @@ $current_user = wp_get_current_user();
 
 
 
-            if( in_array( get_current_user_id(), array( 587, 1, 579, 1087, 698  ) )  ) {
+            if( in_array( get_current_user_id(), array( 587, 1, 579, 1087, 644  ) )  ) {
         ?>
         <button id="float_btn_add_payout" class="btn btn-xl btn-success ebayintegration-btn"  data-action="add_new_payout">
             <i class="fa fa-money-bill me-2"></i> Request Payout
