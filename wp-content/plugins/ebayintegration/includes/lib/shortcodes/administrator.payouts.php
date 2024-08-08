@@ -207,12 +207,12 @@
                         </div>
                         <div class="col-xl-4">
                             <label>Cards Count</label>
-                            <input  class="form-control mb-3 p-2 pb-1 pt-2" disabled type="text" value="<?php echo $available ?>">          
+                            <input  class="form-control mb-3 p-2 pb-1 pt-2" name="cards_count" disabled type="text" value="">          
                         </div>
                         <div class="col-xl-4">
                             <label>Total Amount</label>
-                            <input  class="form-control mb-3 px-2 pb-1 pt-2" disabled type="text" value="<?php echo number_format(( $payout_total ), 2, '.', ',');?>">
-                        </div>
+                            <input  class="form-control mb-3 px-2 pb-1 pt-2"  name="requested_amount" disabled type="text" value="">
+                        </div> 
                     </div>
                     <div class="row mb-3 d-none paypal" id="">
                         <div class="col-xl-12">
@@ -243,10 +243,7 @@
                             <label>Remarks / Message</label>
                             <textarea class="form-control" name="remarks"></textarea>                            
                         </div>
-                    </div>
-                    
-                    <input type="hidden" value="" name="requested_amount">
-                    <input type="hidden" value="" name="cards_count">
+                    </div>                    
                 </form>
             </div>
             <div class="modal-footer">
