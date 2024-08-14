@@ -76,7 +76,7 @@
                     if (daysDifference > 2) {
                         // Run the script to update the folders
                         $.ajax({
-                            url: '  .php',
+                            url: 'run_listfolders_script.php',
                             method: 'POST',
                             success: function() {
                                 // Reload the folders after running the script
