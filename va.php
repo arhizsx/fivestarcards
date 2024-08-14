@@ -73,8 +73,6 @@
                     const timeDifference = Math.abs(now - timestamp);
                     const daysDifference = timeDifference / (1000 * 3600 * 24);
 
-                    console.log(data);
-
                     if (daysDifference > 2) {
                         // Run the script to update the folders
                         $.ajax({
@@ -106,9 +104,14 @@
             }
 
             function createFolderTable(folders) {
+
+
                 let table = '<table class="table folder-table">';
                 table += '<thead><tr><th>Folder Name</th><th>Folder URL</th></tr></thead><tbody>';
                 folders.forEach(folder => {
+
+                    console.log( folder );
+
                     const folderUrl = `https://drive.google.com/drive/folders/${folder.id}`;
                     table += '<tr data-url="' + folderUrl + '">';
                     table += '<td>' + folder.name + '</td>';
