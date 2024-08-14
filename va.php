@@ -66,77 +66,28 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function() {
-            function checkAndLoadFolders() {
 
+            $(document).on("click", ".ebayintegration-btn", function(){
                 $.ajax({
-                    url: 'get_listed_folders.php',
-                    method: 'GET',
-                    success: function(data) {
-                        const timestamp = new Date(data.timestamp);
-                        const now = new Date();
-                        const timeDifference = Math.abs(now - timestamp);
-                        const daysDifference = timeDifference / (1000 * 3600 * 24);
-
-                        if (daysDifference > 2) {
-                            // Run the script to update the folders
-                            $.ajax({
-                                url: 'run_listfolders_script.php',
-                                method: 'POST',
-                                success: function() {
-                                    // Reload the folders after running the script
-                                    loadFolders();
-                                },
-                                error: function(jqxhr, textStatus, error) {
-                                    console.error('Error running listfolders script:', textStatus, error);
-                                }
-                            });
-                        } else {
-                            // Load folders as is
-                            createFolderTable(data.folders);
-                        }
+                    method: 'get',
+                    url: "/wp-json/ebayintegration/v1/ajax",
+                    data: {
+                        action: "consignmentPaidOut",
+				        id: $(this).data("id")
                     },
-                    error: function(jqxhr, textStatus, error) {
-                        console.error('Error running listfolders script:', textStatus, error);
+                    success: function(response) {
+
+                        console.log(response)
+
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('AJAX Error:', status, error);
                     }
+
                 });
 
-            }
+            });
 
-            function loadFolders() {
-                $.getJSON('get_listed_folders.php', function(data) {
-                    createFolderTable(data.folders);
-                }).fail(function(jqxhr, textStatus, error) {
-                    console.error('Error loading listed_folders.json:', textStatus, error);
-                });
-            }
-
-            function createFolderTable(folders) {
-
-
-                let table = '<table class="table folder-table">';
-                table += '<thead><tr><th>Folder Name</th><th>Folder URL</th></tr></thead><tbody>';
-                folders.forEach(folder => {
-
-                    console.log( folder );
-
-                    const folderUrl = `https://drive.google.com/drive/folders/${folder.id}`;
-                    table += '<tr data-url="' + folderUrl + '">';
-                    table += '<td>' + folder.name + '</td>';
-                    table += '<td>' + folderUrl + '</td>';
-                    table += '</tr>';
-                });
-                table += '</tbody></table>';
-                $('.container').append('<div class="folder-container">' + table + '</div>');
-
-                // Add click event to table rows
-                $('.folder-table tr').click(function() {
-                    const folderUrl = $(this).data('url');
-                    $('#folderId').val(folderUrl);
-                    $('.controls').removeClass('hidden');
-                });
-            }
-
-            checkAndLoadFolders();
 
             $('#startButton').click(function() {
                 // Hide input and button immediately
