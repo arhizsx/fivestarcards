@@ -69,11 +69,11 @@
 
             $(document).on("click", ".ebayintegration-btn", function(){
                 $.ajax({
-                    method: 'get',
-                    url: "/wp-json/ebayintegration/v1/ajax",
-                    data: {
+                    method: 'post',
+                    url: "/wp-json/ebayintegration/v1/post",
+                    data: { 
                         action: "consignmentPaidOut",
-				        id: $(this).data("id")
+                        id: $(this).data("id")
                     },
                     success: function(response) {
 
