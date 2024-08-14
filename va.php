@@ -67,32 +67,44 @@
     <script>
         $(document).ready(function() {
             function checkAndLoadFolders() {
-                $.getJSON('get_listed_folders.php', function(data) {
-                    const timestamp = new Date(data.timestamp);
-                    const now = new Date();
-                    const timeDifference = Math.abs(now - timestamp);
-                    const daysDifference = timeDifference / (1000 * 3600 * 24);
 
-                    if (daysDifference > 2) {
-                        // Run the script to update the folders
-                        $.ajax({
-                            url: 'run_listfolders_script.php',
-                            method: 'POST',
-                            success: function() {
-                                // Reload the folders after running the script
-                                loadFolders();
-                            },
-                            error: function(jqxhr, textStatus, error) {
-                                console.error('Error running listfolders script:', textStatus, error);
-                            }
-                        });
-                    } else {
-                        // Load folders as is
-                        createFolderTable(data.folders);
+                $.ajax({
+                    url: 'get_listed_folders.php',
+                    method: 'GET',
+                    success: function(data) {
+                        console.log(data);
+                    },
+                    error: function(jqxhr, textStatus, error) {
+                        console.error('Error running listfolders script:', textStatus, error);
                     }
-                }).fail(function(jqxhr, textStatus, error) {
-                    console.error('Error loading listed_folders.json:', textStatus, error);
                 });
+
+                // $.getJSON('get_listed_folders.php', function(data) {
+                //     const timestamp = new Date(data.timestamp);
+                //     const now = new Date();
+                //     const timeDifference = Math.abs(now - timestamp);
+                //     const daysDifference = timeDifference / (1000 * 3600 * 24);
+
+                //     if (daysDifference > 2) {
+                //         // Run the script to update the folders
+                //         $.ajax({
+                //             url: 'run_listfolders_script.php',
+                //             method: 'POST',
+                //             success: function() {
+                //                 // Reload the folders after running the script
+                //                 loadFolders();
+                //             },
+                //             error: function(jqxhr, textStatus, error) {
+                //                 console.error('Error running listfolders script:', textStatus, error);
+                //             }
+                //         });
+                //     } else {
+                //         // Load folders as is
+                //         createFolderTable(data.folders);
+                //     }
+                // }).fail(function(jqxhr, textStatus, error) {
+                //     console.error('Error loading listed_folders.json:', textStatus, error);
+                // });
             }
 
             function loadFolders() {
