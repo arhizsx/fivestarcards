@@ -73,6 +73,8 @@
                     const timeDifference = Math.abs(now - timestamp);
                     const daysDifference = timeDifference / (1000 * 3600 * 24);
 
+                    console.log(data);
+
                     if (daysDifference > 2) {
                         // Run the script to update the folders
                         $.ajax({
