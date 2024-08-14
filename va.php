@@ -77,6 +77,8 @@
                     },
                     success: function(response) {
 
+                        $(document).find("tr.item_row[data-id='" + response.id +"']").remove();
+
                         console.log(response)
 
                     },
