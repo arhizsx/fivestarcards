@@ -36,6 +36,17 @@
 
         global $wpdb;
 
+        $grading_files = $this->wpdb->get_results ( "
+        SELECT * 
+        FROM grading
+        where user_id = " . get_current_user_id() . " 
+        and status = 'logged'
+        and type = '" . $_GET['type']  . "_file'
+        order by id desc
+        "
+        );        
+
+
         $grading = $this->wpdb->get_results ( "
         SELECT * 
         FROM grading
@@ -230,6 +241,10 @@
                         }   
                         ?>
                     </tr>
+                    <?php 
+                        if( count( $grading_files ) == 0 ){
+                        } else {
+                    ?>
                     <tr>                        
                         <th colspan="7" class="text-center">
                             Uploaded Cards List
@@ -237,9 +252,11 @@
                     </tr>    
                     <tr class="grading_file">
                         <td colspan="7" class="text-center">
-                            Empty
                         </td>
                     </tr>      
+                    <?php                             
+                        }
+                    ?>
                 </tfoot>        
             </table>
         </div>
