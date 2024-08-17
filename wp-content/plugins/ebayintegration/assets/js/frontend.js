@@ -613,11 +613,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
             });
 
 
-        } else {
-
-			alert("Error");
-
-		}
+        } 
 
 	}
 	else if( jQuery(this).data("action") == "remove_grading_file" ){
