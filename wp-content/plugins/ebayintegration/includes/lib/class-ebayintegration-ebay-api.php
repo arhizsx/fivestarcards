@@ -1076,7 +1076,7 @@ class Ebay_Integration_Ebay_API {
 
 		$lastid = $this->wpdb->insert_id;					
 
-		return ["error"=> false, "data" => $data, "params" => $params];
+		return ["error"=> false, "data" => $uploads, "params" => $params];
 
 	}
 
