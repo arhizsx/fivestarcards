@@ -44,13 +44,12 @@ $admin_action_status = array( "Package Received", "Completed - Grades Ready");
 
 $processed_status = array("Processing Order", "Cards Graded");
 
-if( $grading_order_id > 0 ){
+$grading_order_id = (int) $checkout_meta["grading_orders_id"][0];
 
-    $grading_order_id = (int) $checkout_meta["grading_orders_id"][0];
+if( $grading_order_id > 0 ){
 
     $sql = "SELECT * FROM grading where order_id =". $grading_order_id . " AND type LIKE '%_file'";
     $grading_files = $this->wpdb->get_results ( $sql );	
-
 
     
 } else {
