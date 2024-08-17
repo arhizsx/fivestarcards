@@ -1065,18 +1065,12 @@ class Ebay_Integration_Ebay_API {
 
 		}
 
-		$data = [
-			"uploads" => $uploads,
-			"grading_type" => $params["type"],
-			"user_id" => $params["user_id"],
-		];
-
 		$this->wpdb->insert(
 					'grading',
 					array(							
 						'user_id' => $params["user_id"],
 						'type' => $params["type"] . "_file",
-						"data" => json_encode($data),
+						"data" => json_encode($uploads),
 					)
 				);
 
