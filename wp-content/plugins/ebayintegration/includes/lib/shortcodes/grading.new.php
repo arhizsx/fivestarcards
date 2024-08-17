@@ -192,7 +192,12 @@
 
                             }
                         }
-                    ?>  
+                    ?>            
+                    <tr>
+                        <th colspan="7">
+                            Uploaded Cards List
+                        </th>
+                    </tr>          
                 </tbody>
                 <tfoot>
                     <tr>
@@ -317,14 +322,6 @@
                                 <div class='small text-secondary col-sm-4'>Grading</div>
                                 <div class='col-sm-8'>
                                     $0.00
-                                </div>
-                            </div>
-                            <div class='row'>
-                                <div class='small text-secondary col-sm-4'>Photo</div>
-                                <div class='col-sm-8'>
-                                    <div class="ebayintegration-btn"  data-action="grading_picture_box_click"  data-id="<?php echo $card->id ?>"   data-user_id="<?php echo get_current_user_id() ?>">
-                                    <?php echo $img ?>
-                                    </div>
                                 </div>
                             </div>
                         </td>
