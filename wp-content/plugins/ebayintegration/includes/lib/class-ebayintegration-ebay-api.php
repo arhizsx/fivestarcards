@@ -919,6 +919,15 @@ class Ebay_Integration_Ebay_API {
 		];
 
 
+		$sql = "SELECT * FROM grading where type='". $params["type"] .  "_file' AND user_id = '". $params["user_id"] .  "'";
+		$grading_files = $this->wpdb->get_results ( $sql );	
+
+		if( count($grading_files) > 0){
+			$status = "For Entry";
+		} else {
+			$status = "To Ship";
+		}
+
 		$sql = "SELECT * FROM grading_addons where type='". $params["type"] .  "' AND user_id = '". $params["user_id"] .  "'";
 		$query = $this->wpdb->get_results ( $sql );	
 		if( count($query) > 0 ){
@@ -933,7 +942,7 @@ class Ebay_Integration_Ebay_API {
 				'user_id' => $params["user_id"],
 				"type" => $params["type"],
 				"data" => json_encode($data),		
-				"status" => "To Ship",		
+				"status" => $status,		
 				"inspection" => $inspection
 			)
 		);
@@ -950,6 +959,19 @@ class Ebay_Integration_Ebay_API {
 			array(
 				'user_id' => $params["user_id"],
 				"type" => $params["type"],
+			)
+		);		
+
+		$rows = $this->wpdb->update(
+			'grading', 
+			array(
+				'status'=>"checkout",
+				"order_id" => $lastid,
+				"inspection" => $inspection
+			), 
+			array(
+				'user_id' => $params["user_id"],
+				"type" => $params["type"] . "_file",
 			)
 		);		
 
