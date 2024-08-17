@@ -554,13 +554,13 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-12">
+                                    <div class="col-12 mt-4">
                                         Accepted formats PNG, JPG, CSV, PDF, XLSX
                                     </div>
                                     <div class="col-12">
                                         Once our team process your list this order will be updated.
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12  mb-3">
                                         You can upload multiple list and it will be consolidated in this order.
                                     </div>
                                 </div>
