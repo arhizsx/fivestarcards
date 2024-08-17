@@ -230,13 +230,14 @@
                         }   
                         ?>
                     </tr>
-                    <tr>
+                    <tr>                        
                         <th colspan="7" class="text-center">
                             Uploaded Cards List
                         </th>
                     </tr>    
                     <tr class="grading_file">
-                        <td colspan="7" class="text-center">
+                        <td style="width: 20px;"></td>
+                        <td colspan="6" class="text-center">
                             Empty
                         </td>
                     </tr>      
