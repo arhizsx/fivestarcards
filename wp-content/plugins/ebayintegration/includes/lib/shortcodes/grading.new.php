@@ -483,9 +483,9 @@
                         <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
 
                         <button class="btn border btn-success ebayintegration-btn" 
-                            data-action='confirmAddGrading' 
+                            data-action='confirmUploadGradingFile' 
                         >
-                            Log Card
+                            Upload File
                         </button>
                     </div>
 
