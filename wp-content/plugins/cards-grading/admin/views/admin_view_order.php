@@ -48,8 +48,6 @@ $grading_orders_id = $checkout_meta["grading_orders_id"][0];
 $sql = "SELECT * FROM grading where order_id='". $grading_orders_id . "' AND type LIKE '%_file'";
 $grading_files = $this->wpdb->get_results ( $sql );	
 
-
-
 ?>
 
 <div class="m-0 p-0">
@@ -365,19 +363,21 @@ $grading_files = $this->wpdb->get_results ( $sql );
             <thead>
                 <tr>
                     <th>
-                        <?php 
-
-                            print_r($grading_files);
-
-                        ?>
                         File Details
                     </th>
                 </tr>
             </thead>
             <tbody> 
+                <?php 
+                foreach($grading_files as $gfile){
+                    $file = json_decode($gfile->data, true);
+                ?>
                 <tr>
-                    <td class="text-center">Empty</td>
+                    <td class="text-center"><?php echo $file["name"] ?></td>
                 </tr>
+                <?php 
+                }
+                ?>
             </tbody>
         </table>
     </div>
