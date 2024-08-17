@@ -255,7 +255,7 @@
                     <tr class="grading_file">
                         <td colspan="7" class="text-center">
                         <?php 
-                            print_r($file->data[0]["baseurl"]);
+                            print_r($file->data["baseurl"]);
                         ?>                        
                         </td>
                     </tr>      
