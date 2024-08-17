@@ -338,6 +338,7 @@ class Ebay_Integration_Ebay_API {
 			return $this->grading_checkbox($params);
 
 		}
+
 		
 		else {			
 

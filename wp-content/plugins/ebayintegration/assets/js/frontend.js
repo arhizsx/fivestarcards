@@ -612,8 +612,23 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
         }
 
 	}
+	else if( jQuery(this).data("action") == "remove_grading_file" ){
 
-	
+		$.ajax({
+			type: 'post',
+			url: "/wp-json/ebayintegration/v1/post",
+			data: $(this).data(),
+			success: function(resp){
+
+				console.log(resp);
+
+			},
+			error: function(){
+				console.log("Error in AJAX");
+			}
+		});
+
+	}		
 	
 	// ////////////////////////// //
 	//  Add Consignment Buttons   //
