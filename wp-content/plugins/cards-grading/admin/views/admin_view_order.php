@@ -5,6 +5,7 @@ global $wpdb;
 $checkout_post = get_post($params['order_number']);
 $checkout_meta = get_post_meta($checkout_post->ID);
 
+
 $user_id = $checkout_meta["user_id"][0];
 $user = get_user_by( "id", $user_id );
 
@@ -45,7 +46,7 @@ $processed_status = array("Processing Order", "Cards Graded");
 
 $grading_orders_id = $checkout_meta["grading_orders_id"][0];
 
-$sql = "SELECT * FROM grading where order_id='". $grading_orders_id . "' AND type LIKE '%_file'";
+$sql = "SELECT * FROM grading where order_id ='". $grading_orders_id . "' AND type LIKE '%_file'";
 $grading_files = $this->wpdb->get_results ( $sql );	
 
 ?>
@@ -391,7 +392,12 @@ $grading_files = $this->wpdb->get_results ( $sql );
                 ?>
                 <tr>
                     
-                    <td class=""><a target="_blank" href="<?php print_r( $file["baseurl"] ) ?>"><?php print_r( $file["name"] ) ?></a></td>
+                    <td class="">
+                        <?php 
+                            echo $params['order_number'];
+                        ?>
+                        <a target="_blank" href="<?php print_r( $file["baseurl"] ) ?>"><?php print_r( $file["name"] ) ?></a>
+                    </td>
                 </tr>
                 <?php 
 
