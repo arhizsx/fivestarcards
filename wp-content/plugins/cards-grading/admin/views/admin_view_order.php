@@ -379,8 +379,10 @@ if( $grading_order_id > 0 ){
                 <tr>
                     <th>
                         <?php 
+                            print_r($grading_order_id);
+                            echo "<br><br>";
                             print_r($grading_files);
-
+                            echo "<br><br>";
                             print_r( count($grading_files) );
                         ?>
                         File Details
