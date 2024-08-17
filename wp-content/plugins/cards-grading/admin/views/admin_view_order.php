@@ -50,6 +50,10 @@ if( $grading_order_id > 0 ){
 
     $sql = "SELECT * FROM grading where order_id =". $grading_order_id . " AND type LIKE '%_file'";
     $grading_files = $this->wpdb->get_results ( $sql );	
+
+    print_r($grading_files);
+
+    die();
     
 } else {
     $grading_files = [];
