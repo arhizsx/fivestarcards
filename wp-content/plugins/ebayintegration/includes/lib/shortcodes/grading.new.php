@@ -258,6 +258,7 @@
                             $file_data = json_decode($file->data, true);
                             foreach( $file_data as $fdata ){
                                 print_r($fdata["baseurl"]);
+                                print_r($fdata);
                             }
                         ?>                        
                         </td>
