@@ -49,7 +49,9 @@ $sql = "SELECT * FROM grading where order_id='". $grading_orders_id . "' AND typ
 $grading_files = $this->wpdb->get_results ( $sql );	
 
 ?>
-
+<div class="mt-3 mb-4">
+    <a href="/administrator/grading?mode=<?php echo $_GET["mode"]?>">Back to Open Orders</a>     
+</div>
 <div class="m-0 p-0">
     <div class="row border-bottom">
         <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12" >
