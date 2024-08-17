@@ -303,9 +303,9 @@ class Ebay_Integration_Ebay_API {
 			return $this->confirmGradingTableCheckout( $params );
 		}		
 
-		elseif( $params["action"] == "confirmPhotoAdd"){
+		elseif( $params["action"] == "confirmUploadGradingFile"){
 
-			return  $this->confirmPhotoAdd($params, $files);
+			return  $this->confirmUploadGradingFile($params, $files);
 			
 		}
 
@@ -1034,22 +1034,23 @@ class Ebay_Integration_Ebay_API {
 	}
 
 
-	function confirmPhotoAdd($params, $files) {
+	function confirmUploadGradingFile($params, $files) {
 		
 		$uploads = [];
 		$upload_folder = wp_get_upload_dir();
 		$upload_folder = $upload_folder["basedir"];
 		$allowed_extensions = ["image/jpeg", "image/png"];
 
-
 		foreach($files as $k => $v){
 
-			$extension = $v["type"];			
+			$extension = $v["type"];	
+			
+			return ( $extension );
 
 			if( in_array( $extension, $allowed_extensions ) ){
 
 
-				$fileName = $k . '-' . $params["user_id"] . "-" . $params["card_id"] . "-" . rand( time() , 1000 ) . "" .  $v["name"];
+				$fileName = $k . '-' . $params["user_id"] . "-" . $params["type"] . "-" . rand( time() , 1000 ) . "-" .  $v["name"];
 
 				$file = file_get_contents( $v["tmp_name"] );
 	

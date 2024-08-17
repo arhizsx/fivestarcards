@@ -465,7 +465,10 @@
                     <div class="modal-body py-2 px-3">
                         <div class="row formbox">
                             <form class="form" id="photo_upload_form">
-                                <input type="hidden" name="action" value="confirmPhotoAdd">
+
+                                <input type="hidden" name="user_id" value="<?php echo get_current_user_id() ?>">
+                                <input type="hidden" name="action" value="confirmUploadGradingFile">
+                                <input type="hidden" name="type" value="<?php echo $_GET["type"] ?>">
 
                                 <div class="col-12">
                                     <label>Select Cards List File</label>
