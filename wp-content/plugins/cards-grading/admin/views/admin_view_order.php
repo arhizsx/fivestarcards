@@ -379,7 +379,9 @@ $grading_files = $this->wpdb->get_results ( $sql );
             <thead>
                 <tr>
                     <th>
-                        <?php print_r( $checkout_meta["grading_orders_id"][0] )?>
+                        <?php 
+                          print_r($grading_files);
+                        ?>
                         File Details
                     </th>
                 </tr>
