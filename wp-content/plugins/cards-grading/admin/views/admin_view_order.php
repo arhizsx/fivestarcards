@@ -379,6 +379,10 @@ $grading_files = $this->wpdb->get_results ( $sql );
             <thead>
                 <tr>
                     <th>
+                        <?php 
+                            echo $posts;
+                        ?>
+
                         File Details
                     </th>
                 </tr>
