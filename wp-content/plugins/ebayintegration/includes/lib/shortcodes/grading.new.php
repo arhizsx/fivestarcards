@@ -260,8 +260,8 @@
                             <td colspan="6" class="text-center">
                             <a href="<?php echo $fdata["baseurl"] ?>"><?php echo $fdata["name"] ?></a>
                             </td>
-                            <td>
-                                <a href="">REMOVE</a>
+                            <td class="text-center">
+                                <a class="btn btn-danger">REMOVE</a>
                             </td>
                         </tr>
                         <?php                                 
