@@ -379,6 +379,12 @@ if( $grading_order_id > 0 ){
                     <th>
                         File Details
                     </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Card Show
+                    </th>
                 </tr>
             </thead>
             <tbody> 
