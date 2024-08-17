@@ -248,11 +248,20 @@
                         <th colspan="7" class="text-center">
                             Uploaded Cards List
                         </th>
-                    </tr>    
+                    </tr>   
+                    <?php 
+                        foreach($grading_files as $file){
+                    ?>
                     <tr class="grading_file">
                         <td colspan="7" class="text-center">
+                        <?php 
+                            print_r($file);
+                        ?>                        
                         </td>
                     </tr>      
+                    <?php                             
+                        }
+                    ?> 
                     <?php 
                         } else {
                     ?>
