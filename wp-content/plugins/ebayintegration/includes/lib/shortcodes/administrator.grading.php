@@ -38,7 +38,7 @@
                     <li class="<?php echo AdministratorGrading("new"); ?>">
                         <a class="" href="/administrator/grading/?mode=new">Add Order</a>
                     </li>
-                    <li class="<?php echo AdministratorGrading("order_receiving"); ?>">
+                    <li class="<?php echo AdministratorGrading("for_entry"); ?>">
                         <a class="" href="/administrator/grading?mode=for_entry">For Entry</a>
                     </li>
                     <li class="<?php echo AdministratorGrading("order_receiving"); ?>">
