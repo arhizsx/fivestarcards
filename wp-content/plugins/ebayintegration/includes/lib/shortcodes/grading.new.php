@@ -465,8 +465,9 @@
                     <div class="modal-body py-2 px-3">
                         <div class="row formbox">
                             <div class="col-12">
-                                <label>Select Import Template</label>
-                                <input type="file" name="import_file" class="form-control mb-3">
+                                <label>Select Cards List File</label>
+                                <input type="file" name="import_file" class="form-control mb-3"  accept="image/png,  image/jpeg, .csv, .pdf, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet ">
+                                <small>Accepted formats PNG, JPG, CSV, PDF, XLSX</small>
                             </div>
                         </div>
                         <div class="d-none p-5 text-center loading">
