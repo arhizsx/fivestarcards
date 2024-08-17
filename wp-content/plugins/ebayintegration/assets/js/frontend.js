@@ -402,98 +402,102 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	}
 	
 	else if( jQuery(this).data("action") == "confirmAddGrading" ){
-		
-		var card = confirmAddGrading();
 
-		$(document).find(".log_grading_modal").find(".formbox").addClass("d-none");
-		$(document).find(".log_grading_modal").find(".loading").removeClass("d-none");
-		element.prop("disabled", "disabled");
+		if( Checker()){
+			var card = confirmAddGrading();
 
-		$.when(card).done( function( card ){
-
-			$(document).find("#new_grading tbody .empty_grading").remove();
-			$(document).find("#new_grading_mobile tbody .empty_grading").remove();
-
-			$.each( card, function(k, v){
-
-				$(document).find("#new_grading tbody").prepend(
-					"<tr class='consigned_item_row' data-id='" + v.id + "'>" +
-						"<td>" +
-							"<a class='text-danger   ebayintegration-btn' data-action='removeGradingCardRow' data-id='" + v.id + "' href='#'>" +
-								"<i class='fa-solid fa-lg fa-xmark'></i>" + 
-							"</a>" +
-						"</td>" +
-						"<td>" + v.player + "</td>" +
-						"<td>" + v.year + "</td>" +
-						"<td>" + v.brand + "</td>" +
-						"<td>" + v.card_number + "<br><small>" + v.attribute_sn + "</small></td>" +
-						"<td class='text-end'>$" + v.dv + "</td>" +
-						"<td class='text-end'>$" + v.per_card + "</td>" +
-					"</tr>"
-				);
-
-				$(document).find("#new_grading_mobile tbody").prepend(
-					"<tr class='consigned_item_row' data-id='" + v.id + "'>" +
-						"<td colspan='2'>" +
-							"<div class='w-100 p-0 text-end' style='position: relative;'>" +
-								"<a class='text-danger  ebayintegration-btn' data-action='removeGradingCardRow' data-id='" + v.id + "' href='#' style='position: absolute; right: 0px;'>" +
-									"<i class='fa-solid fa-xl fa-xmark'></i>" + 
-								"</a>" +
-							"</div>" +
-							"<div class='row'>" +
-								"<div class='small text-secondary col-4'>Player</div>" +
-								"<div class='col-8'>" +
-								 	v.player +									
-								"</div>" + 
-							"</div>" +
-							"<div class='row'>" +
-								"<div class='small text-secondary col-4'>Year</div>" +
-								"<div class='col-8'>" +
-								 	v.year +									
-								"</div>" +
-							"</div>" +
-							"<div class='row'>" +
-								"<div class='small text-secondary col-4'>Brand</div>" +
-								"<div class='col-8'>" +
-								 	v.brand +									
-								"</div>" +
-							"</div>" +
-							"<div class='row'>" +
-								"<div class='small text-secondary col-4'>Card #</div>" +
-								"<div class='col-8'>" +
-								 	v.card_number +									
-								"</div>" +
-							"</div>" +
-							"<div class='row'>" +
-								"<div class='small text-secondary col-4'>Attribute SN</div>" +
-								"<div class='col-8'>" +
-								 	v.attribute_sn +									
-								"</div>" +
-							"</div>" +
-							"<div class='row'>" +
-								"<div class='small text-secondary col-4'>Declared Value</div>" +
-								"<div class='col-8'>$0.00" +
-								 	
-								"</div>" +
-							"</div>" +
-							"<div class='row'>" +
-								"<div class='small text-secondary col-4'>Grading</div>" +
-								"<div class='col-8'>$0.00" +
-								"</div>" +
-							"</div>" +
-						"</td>" +
-					"</tr>"
-				);
-
-			} );
-
-
-			$(document).find(".log_grading_modal").find(".formbox").removeClass("d-none");
-			$(document).find(".log_grading_modal").find(".loading").addClass("d-none");
-
-			element.prop("disabled", "");
+			$(document).find(".log_grading_modal").find(".formbox").addClass("d-none");
+			$(document).find(".log_grading_modal").find(".loading").removeClass("d-none");
+			element.prop("disabled", "disabled");
 	
-		});
+			$.when(card).done( function( card ){
+	
+				$(document).find("#new_grading tbody .empty_grading").remove();
+				$(document).find("#new_grading_mobile tbody .empty_grading").remove();
+	
+				$.each( card, function(k, v){
+	
+					$(document).find("#new_grading tbody").prepend(
+						"<tr class='consigned_item_row' data-id='" + v.id + "'>" +
+							"<td>" +
+								"<a class='text-danger   ebayintegration-btn' data-action='removeGradingCardRow' data-id='" + v.id + "' href='#'>" +
+									"<i class='fa-solid fa-lg fa-xmark'></i>" + 
+								"</a>" +
+							"</td>" +
+							"<td>" + v.player + "</td>" +
+							"<td>" + v.year + "</td>" +
+							"<td>" + v.brand + "</td>" +
+							"<td>" + v.card_number + "<br><small>" + v.attribute_sn + "</small></td>" +
+							"<td class='text-end'>$" + v.dv + "</td>" +
+							"<td class='text-end'>$" + v.per_card + "</td>" +
+						"</tr>"
+					);
+	
+					$(document).find("#new_grading_mobile tbody").prepend(
+						"<tr class='consigned_item_row' data-id='" + v.id + "'>" +
+							"<td colspan='2'>" +
+								"<div class='w-100 p-0 text-end' style='position: relative;'>" +
+									"<a class='text-danger  ebayintegration-btn' data-action='removeGradingCardRow' data-id='" + v.id + "' href='#' style='position: absolute; right: 0px;'>" +
+										"<i class='fa-solid fa-xl fa-xmark'></i>" + 
+									"</a>" +
+								"</div>" +
+								"<div class='row'>" +
+									"<div class='small text-secondary col-4'>Player</div>" +
+									"<div class='col-8'>" +
+										 v.player +									
+									"</div>" + 
+								"</div>" +
+								"<div class='row'>" +
+									"<div class='small text-secondary col-4'>Year</div>" +
+									"<div class='col-8'>" +
+										 v.year +									
+									"</div>" +
+								"</div>" +
+								"<div class='row'>" +
+									"<div class='small text-secondary col-4'>Brand</div>" +
+									"<div class='col-8'>" +
+										 v.brand +									
+									"</div>" +
+								"</div>" +
+								"<div class='row'>" +
+									"<div class='small text-secondary col-4'>Card #</div>" +
+									"<div class='col-8'>" +
+										 v.card_number +									
+									"</div>" +
+								"</div>" +
+								"<div class='row'>" +
+									"<div class='small text-secondary col-4'>Attribute SN</div>" +
+									"<div class='col-8'>" +
+										 v.attribute_sn +									
+									"</div>" +
+								"</div>" +
+								"<div class='row'>" +
+									"<div class='small text-secondary col-4'>Declared Value</div>" +
+									"<div class='col-8'>$0.00" +
+										 
+									"</div>" +
+								"</div>" +
+								"<div class='row'>" +
+									"<div class='small text-secondary col-4'>Grading</div>" +
+									"<div class='col-8'>$0.00" +
+									"</div>" +
+								"</div>" +
+							"</td>" +
+						"</tr>"
+					);
+	
+				} );
+	
+	
+				$(document).find(".log_grading_modal").find(".formbox").removeClass("d-none");
+				$(document).find(".log_grading_modal").find(".loading").addClass("d-none");
+	
+				element.prop("disabled", "");
+		
+			});
+	
+		}
+		
 	
 	}
 
