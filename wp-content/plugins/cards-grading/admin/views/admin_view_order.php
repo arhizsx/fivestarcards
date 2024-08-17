@@ -346,6 +346,12 @@ $processed_status = array("Processing Order", "Cards Graded");
             </div>
         </div>
     </div>
+    <div class="row mt-3">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <H3 style="color: black !important;">Uploaded Cards List File</H3>
+        </div>
+    </div>
+
     <div class='5star_btn_box_admin_bottom w-100 border-top pt-3'>
         <button class="btn border btn-danger 5star_btn" data-action="admin_delete_order" data-order_number="<?php echo $params['order_number'] ?>" >Delete Order</button>
     </div>        
