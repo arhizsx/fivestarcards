@@ -2233,6 +2233,8 @@ function Checker(){
 
 	} );
 
+	console.log( error_cnt );
+
 	if( error_cnt > 0 ){
 
 		return false;
