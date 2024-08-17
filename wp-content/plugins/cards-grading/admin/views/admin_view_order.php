@@ -377,13 +377,6 @@ if( $grading_order_id > 0 ){
             <thead>
                 <tr>
                     <th>
-                        <?php 
-                            print_r( $checkout_meta["grading_orders_id"][0] );
-                            echo "<br><br>";
-                            print_r($grading_files);
-                            echo "<br><br>";
-                            print_r( count($grading_files) );
-                        ?>
                         File Details
                     </th>
                 </tr>
