@@ -152,7 +152,7 @@
                         if( count( $grading ) == 0 ){
                     ?>
                     <tr class="empty_grading">
-                        <td colspan="8" class="text-center py-5">
+                        <td colspan="7" class="text-center py-5">
                             Empty
                         </td>
                     </tr>
@@ -234,7 +234,12 @@
                         <th colspan="7" class="text-center">
                             Uploaded Cards List
                         </th>
-                    </tr>          
+                    </tr>    
+                    <tr class="empty_grading_file">
+                        <td colspan="7" class="text-center py-5">
+                            Empty
+                        </td>
+                    </tr>      
                 </tfoot>        
             </table>
         </div>
