@@ -37,7 +37,7 @@ foreach($posts as $post)
 }
 
 $admin_status = array( "Shipped", "Package Received", "Incomplete Items Shipped" );
-$admin_action_status = array( "Package Received", "Grading");
+$admin_action_status = array( "Package Received", "Grading", "Completed - Grades Ready");
 
 $processed_status = array("Processing Order", "Cards Graded");
 
@@ -275,6 +275,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                                 </div>
                             </div>
                         <?php }  
+
                         elseif ( $checkout_meta["status"][0] == "Completed - Grades Ready" ) { ?>
                             <div class="row">
                                 <div class="col-lg-12"> 
