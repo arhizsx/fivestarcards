@@ -308,16 +308,6 @@ $grading_files = $this->wpdb->get_results ( $sql );
                         <?php } ?>
                     </td>
                     <?php } ?>
-                    <?php 
-                        $db_card = $wpdb->get_results ( "
-                            SELECT * 
-                            FROM  grading
-                            where id = " . $card["db_id"]
-                        );
-
-                        $db_card_data = json_decode( $db_card[0]->data, true );
-                        $image = "<img style='max-width: 80px;' width='100%' src='/wp-content/uploads/cards/" . $db_card_data["file"]["filename"] . "' />";
-                    ?>
                     <td><?php echo $post->ID; ?></td>
                     <td><?php echo $card["year"]; ?></td>
                     <td><?php echo $card["brand"]; ?></td>
@@ -380,7 +370,7 @@ $grading_files = $this->wpdb->get_results ( $sql );
                 <tr>
                     <th>
                         <?php 
-                          print_r( count($grading_files) );
+                            print_r($checkout_meta["grading_orders_id"][0]);
                           print_r( count($grading_files) );
                         ?>
                         File Details
