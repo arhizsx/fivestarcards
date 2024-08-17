@@ -235,8 +235,8 @@
                             Uploaded Cards List
                         </th>
                     </tr>    
-                    <tr class="empty_grading_file">
-                        <td colspan="7" class="text-center py-5">
+                    <tr class="grading_file">
+                        <td colspan="7" class="text-center">
                             Empty
                         </td>
                     </tr>      
