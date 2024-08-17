@@ -600,7 +600,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
                 contentType: false,
                 success: function(resp){
 
-					console.log(resp);
+					location.reload();
 
                 },
                 error: function(){
