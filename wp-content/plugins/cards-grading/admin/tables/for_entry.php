@@ -84,7 +84,7 @@ $posts = get_posts($args);
     
     <div class="row">
         <div class="col-xl-6">
-            <H2 style="color: black;">Order Receiving</H2>            
+            <H2 style="color: black;">For Entry</H2>            
         </div>
         <div class="col-xl-6 text-end">
             <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".5star_my_orders">        
