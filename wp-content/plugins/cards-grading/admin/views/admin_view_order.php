@@ -370,12 +370,15 @@ $grading_files = $this->wpdb->get_results ( $sql );
             <tbody> 
                 <?php 
                 foreach($grading_files as $gfile){
-                    $file = json_decode($gfile->data, true);
+                    $files = json_decode($gfile->data, true);
+                        foreach($files as $file){
                 ?>
                 <tr>
                     <td class="text-center"><?php print_r( $file ) ?></td>
                 </tr>
                 <?php 
+
+                        }
                 }
                 ?>
             </tbody>
