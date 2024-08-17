@@ -53,7 +53,7 @@ $grading_files = $this->wpdb->get_results ( $sql );
     <?php 
         if(isset( $_GET["mode"] )){
     ?>
-    <a href="/administrator/grading?mode=<?php echo $_GET["mode"]?>">Back to Open Orders</a>     
+    <a href="/administrator/grading?mode=<?php echo $_GET["mode"]?>">Back to Orders</a>     
     <?php 
         } else {
     ?>
