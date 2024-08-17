@@ -403,7 +403,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 	
 	else if( jQuery(this).data("action") == "confirmAddGrading" ){
 
-		if( Checker()){
+		if( Checker( $(document).find(".log_grading_modal") )){
 			var card = confirmAddGrading();
 
 			$(document).find(".log_grading_modal").find(".formbox").addClass("d-none");
@@ -591,7 +591,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
         e.preventDefault();
 
-        if( Checker() ) {
+        if( Checker($(document).find(".import_grading_modal")) ) {
 
             let form = new FormData( $("#photo_upload_form")[0] );
 
@@ -2138,9 +2138,9 @@ function confirmGradingTableCheckout(type, user_id){
 
 
 
-function Checker(){
+function Checker( element ){
 
-	let to_check = $(document).find(".checker");
+	let to_check = $(element).find(".checker");
 	let error_cnt = 0;
 
 	$.each(to_check, function( k, v){
