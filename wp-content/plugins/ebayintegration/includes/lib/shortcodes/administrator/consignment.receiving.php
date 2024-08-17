@@ -10,7 +10,27 @@
 
 global $wpdb;
 
-if( isset( $_GET['type'] ) ){
+if( ! isset( $_GET['type'] ) ){
+
+    $orders = $this->wpdb->get_results ( "
+        SELECT
+            consignment_orders.*,
+            wp_users.user_email,
+            wp_users.display_name
+        FROM consignment_orders
+        	INNER JOIN wp_users
+            ON consignment_orders.user_id = wp_users.ID
+        where status = 'shipped'
+        order by id desc
+        "
+    );
+
+    $show = "orders";
+    $btn_cards = 'btn-secondary';
+    $btn_orders = 'btn-primary';
+
+
+} else {
 
     $consignment = $this->wpdb->get_results ( "
 
@@ -30,24 +50,6 @@ if( isset( $_GET['type'] ) ){
     $btn_cards = 'btn-primary';
     $btn_orders = 'btn-secondary';
 
-} else {
-
-    $orders = $this->wpdb->get_results ( "
-        SELECT
-            consignment_orders.*,
-            wp_users.user_email,
-            wp_users.display_name
-        FROM consignment_orders
-        	INNER JOIN wp_users
-            ON consignment_orders.user_id = wp_users.ID
-        where status = 'shipped'
-        order by id desc
-        "
-    );
-
-    $show = "orders";
-    $btn_cards = 'btn-secondary';
-    $btn_orders = 'btn-primary';
 }
 ?>
 
