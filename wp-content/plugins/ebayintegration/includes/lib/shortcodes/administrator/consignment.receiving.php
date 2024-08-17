@@ -162,7 +162,7 @@ if( $show == "cards" ){
                     <td><?php echo $data["shipping_date"]; ?></td>
                     <td><?php echo strtoupper($order->status); ?></td>
                     <td class="fit">
-                        <a class="btn btn-pill btn-sm btn-primary ebayintegration-btn" data-action="confirmConsignedCardReceivedAll" data-id="<?php echo $order->id ?>" data-user_id="<?php echo get_current_user_id(); ?>">
+                        <a class="btn btn-pill btn-sm btn-primary ebayintegration-btn" data-action="" data-id="<?php echo $order->id ?>" data-user_id="<?php echo get_current_user_id(); ?>">
                             <i class="fa-solid fa-check me-2"></i>...
                         </a>
                     </td>
