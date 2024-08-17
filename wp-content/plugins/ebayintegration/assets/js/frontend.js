@@ -2154,6 +2154,11 @@ function Checker(){
 						value = to_check.eq( k ).val();
 						break;
 
+					case "number":
+
+						value = to_check.eq( k ).val();
+						break;
+
 					case "checkbox":
 
 
