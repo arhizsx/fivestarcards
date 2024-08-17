@@ -26,8 +26,8 @@ if( ! isset( $_GET['type'] ) ){
     );
 
     $show = "orders";
-    $btn_cards = 'btn-secondary';
-    $btn_orders = 'btn-primary';
+    $btn_cards = 'btn-primary';
+    $btn_orders = 'btn-secondary';
 
 
 } else {
@@ -47,8 +47,8 @@ if( ! isset( $_GET['type'] ) ){
     );
 
     $show = "cards";
-    $btn_cards = 'btn-primary';
-    $btn_orders = 'btn-secondary';
+    $btn_cards = 'btn-secondary';
+    $btn_orders = 'btn-primary';
 
 }
 ?>
