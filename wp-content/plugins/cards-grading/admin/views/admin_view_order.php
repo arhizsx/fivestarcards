@@ -365,7 +365,7 @@ if( $grading_order_id > 0 ){
     </div>
 
     <?php
-    // if( count($grading_files) ){
+    if( count($grading_files) ){
     ?>
     <div class="row mt-3">
         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -409,7 +409,7 @@ if( $grading_order_id > 0 ){
         </table>
     </div>
     <?php 
-    // }
+    }
     ?>
 
     <div class='5star_btn_box_admin_bottom w-100 border-top pt-3'>
