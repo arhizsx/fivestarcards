@@ -48,8 +48,14 @@ foreach($posts as $post)
 
 $processed_status = array("Completed - Grades Ready");
 
-
 $consignment_status = array("Order Partial Consignment", "Order Consigned", "Ready For Payment", "Consignment Paid");
+
+$grading_orders_id = $checkout_meta["grading_orders_id"][0];
+
+$sql = "SELECT * FROM grading where order_id='". $grading_orders_id . "' AND type LIKE '%_file'";
+$grading_files = $this->wpdb->get_results ( $sql );	
+
+
 
 ?>
 <div class="m-0 p-0">
@@ -375,6 +381,46 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
         </div>
         <?php } ?>
     </div>
+
+    <?php
+    if( count($grading_files) ){
+    ?>
+    <div class="row mt-3">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <H3 style="color: black !important;">Uploaded Cards List File</H3>
+        </div>
+    </div>
+    <div class="table-responsive">   
+        <table class='table table-sm table-bordered table-striped'>
+            <thead>
+                <tr>
+                    <th>
+                        File Details
+                    </th>
+                </tr>
+            </thead>
+            <tbody> 
+                <?php 
+                foreach($grading_files as $gfile){
+                    $files = json_decode($gfile->data, true);
+                        foreach($files as $file){
+                ?>
+                <tr>
+                    
+                    <td class=""><a target="_blank" href="<?php print_r( $file["baseurl"] ) ?>"><?php print_r( $file["name"] ) ?></a></td>
+                </tr>
+                <?php 
+
+                        }
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+    <?php 
+    }
+    ?>
+
     
 </div>
 
