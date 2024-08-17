@@ -545,7 +545,7 @@
                                     <div class="col-lg-6">
                                         <label>Card Show Name</label>
                                         <select class="form-control p-1 checker" data-checker="required">
-                                            <option value="NO SHOW">NO SHOW</option>
+                                            <option selected value="NO SHOW">NO SHOW</option>
                                             <option value="Madison">Madison</option>
                                             <option value="Janesville">Janesville</option>
                                             <option value="Rockford">Rockford</option>
