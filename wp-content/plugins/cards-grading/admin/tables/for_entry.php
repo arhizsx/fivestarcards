@@ -2,7 +2,7 @@
 
 $user_id = get_current_user_id();
 
-$table_statuses = array("For Entry");
+$table_statuses = array("For Entry", "For Entry");
 
 $meta_query = array(
     "relaton" => 'AND',
