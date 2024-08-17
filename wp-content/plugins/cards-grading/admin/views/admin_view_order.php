@@ -233,9 +233,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                     <th>Card #</th>
                     <th>Player Name</th>
                     <th>Status</th>
-                    <?php if( in_array( $checkout_meta["status"][0], $processing_status ) ){ ?>
                     <th class="text-end">Grade</th>
-                    <?php } ?>
                     <th class='text-end'>DV</th>
                     <th class="text-end">Grading</th>
                 </tr>
@@ -307,9 +305,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
                     <td><?php echo $card["player"]; ?></td>
                     <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
-                    <?php if( in_array( $checkout_meta["status"][0], $processing_status ) ){ ?>
                     <td class="grade text-end"><?php echo $meta["grade"][0]; ?></td>
-                    <?php }?>
                     <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                 </tr>
