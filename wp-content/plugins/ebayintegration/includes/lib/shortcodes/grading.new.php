@@ -529,39 +529,40 @@
                     <div class="modal-body py-2 px-3">
                         <div class="row formbox">
                             <form class="form" id="photo_upload_form">
+                                <div class="row">
+                                    <input type="hidden" name="user_id" value="<?php echo get_current_user_id() ?>">
+                                    <input type="hidden" name="action" value="confirmUploadGradingFile">
+                                    <input type="hidden" name="type" value="<?php echo $_GET["type"] ?>">
 
-                                <input type="hidden" name="user_id" value="<?php echo get_current_user_id() ?>">
-                                <input type="hidden" name="action" value="confirmUploadGradingFile">
-                                <input type="hidden" name="type" value="<?php echo $_GET["type"] ?>">
+                                    <div class="col-12">
+                                        <label>Select Cards List File</label>
+                                        <input type="file" name="import_file" class="form-control mb-3"  accept="image/png,  image/jpeg, .csv, .pdf, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet ">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Quantity of Cards</label>
+                                        <input type="number" name="qty" class="form-control p-1">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Card Show Name</label>
+                                        <select class="form-control p-1">
+                                            <option value="NO SHOW">NO SHOW</option>
+                                            <option value="Madison">Madison</option>
+                                            <option value="Janesville">Janesville</option>
+                                            <option value="Rockford">Rockford</option>
+                                            <option value="Kane County">Kane County</option>
+                                            <option value="Dupage">Dupage</option>
+                                        </select>
+                                    </div>
 
-                                <div class="col-12">
-                                    <label>Select Cards List File</label>
-                                    <input type="file" name="import_file" class="form-control mb-3"  accept="image/png,  image/jpeg, .csv, .pdf, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet ">
-                                </div>
-                                <div class="col-lg-6">
-                                    <label>Quantity of Cards</label>
-                                    <input type="number" name="qty" class="form-control p-1">
-                                </div>
-                                <div class="col-lg-6">
-                                    <label>Card Show Name</label>
-                                    <select class="form-control p-1">
-                                        <option value="NO SHOW">NO SHOW</option>
-                                        <option value="Madison">Madison</option>
-                                        <option value="Janesville">Janesville</option>
-                                        <option value="Rockford">Rockford</option>
-                                        <option value="Kane County">Kane County</option>
-                                        <option value="Dupage">Dupage</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-12">
-                                    Accepted formats PNG, JPG, CSV, PDF, XLSX
-                                </div>
-                                <div class="col-12">
-                                    Once our team process your list this order will be updated.
-                                </div>
-                                <div class="col-12">
-                                    You can upload multiple list and it will be consolidated in this order.
+                                    <div class="col-12">
+                                        Accepted formats PNG, JPG, CSV, PDF, XLSX
+                                    </div>
+                                    <div class="col-12">
+                                        Once our team process your list this order will be updated.
+                                    </div>
+                                    <div class="col-12">
+                                        You can upload multiple list and it will be consolidated in this order.
+                                    </div>
                                 </div>
                             </form>
                         </div>
