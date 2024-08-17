@@ -125,7 +125,7 @@
             <button class="btn btn-success mb-3 ebayintegration-btn" data-action="show_log_grading_modal">
                 Log Card
             </button>
-            <button class="btn btn-dark mb-3 ebayintegration-btn" data-action="show_import_grading_modal">
+            <button class="btn btn-dark mb-3 ebayintegration-btn" data-action="picture_box_modal">
                 Upload Cards List
             </button>
         </div>
