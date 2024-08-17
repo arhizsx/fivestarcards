@@ -581,7 +581,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 	}
 	
-	else if( jQuery(this).data("action") == "confirmPhotoAdd" ){
+	else if( jQuery(this).data("action") == "confirmUploadGradingFile" ){
 
 		console.log( $(this).data() );
 

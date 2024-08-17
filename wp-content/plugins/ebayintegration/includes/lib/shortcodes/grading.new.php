@@ -125,7 +125,7 @@
             <button class="btn btn-success mb-3 ebayintegration-btn" data-action="show_log_grading_modal">
                 Log Card
             </button>
-            <button class="btn btn-dark mb-3 ebayintegration-btn" data-action="picture_box_modal">
+            <button class="btn btn-dark mb-3 ebayintegration-btn" data-action="show_import_grading_modal">
                 Upload Cards List
             </button>
         </div>
@@ -464,19 +464,23 @@
                     </div>
                     <div class="modal-body py-2 px-3">
                         <div class="row formbox">
-                            <div class="col-12">
-                                <label>Select Cards List File</label>
-                                <input type="file" name="import_file" class="form-control mb-3"  accept="image/png,  image/jpeg, .csv, .pdf, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet ">
-                            </div>
-                            <div class="col-12">
-                                Accepted formats PNG, JPG, CSV, PDF, XLSX
-                            </div>
-                            <div class="col-12">
-                                Once our team process your list this order will be updated.
-                            </div>
-                            <div class="col-12">
-                                You can upload multiple list and it will be consolidated in this order.
-                            </div>
+                            <form class="form" id="photo_upload_form">
+                                <input type="hidden" name="action" value="confirmPhotoAdd">
+
+                                <div class="col-12">
+                                    <label>Select Cards List File</label>
+                                    <input type="file" name="import_file" class="form-control mb-3"  accept="image/png,  image/jpeg, .csv, .pdf, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet ">
+                                </div>
+                                <div class="col-12">
+                                    Accepted formats PNG, JPG, CSV, PDF, XLSX
+                                </div>
+                                <div class="col-12">
+                                    Once our team process your list this order will be updated.
+                                </div>
+                                <div class="col-12">
+                                    You can upload multiple list and it will be consolidated in this order.
+                                </div>
+                            </form>
                         </div>
                         <div class="d-none p-5 text-center loading">
 
@@ -499,7 +503,7 @@
         </div>
 
         <!-- PICTURE MODAL -->
-        <div class="modal fade picture_box_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+        <!-- <div class="modal fade picture_box_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
             <div class="modal-dialog" id="dxmodal">
                 <div class="modal-content modal-ajax">
                     <div class="modal-header bg-dark text-white">
@@ -542,7 +546,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- CLEAR MODAL -->
         <div class="modal fade clear_grading_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
