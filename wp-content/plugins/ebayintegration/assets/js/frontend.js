@@ -620,7 +620,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 			data: $(this).data(),
 			success: function(resp){
 
-				console.log(resp);
+				location.reload();
 
 			},
 			error: function(){

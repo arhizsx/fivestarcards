@@ -1605,7 +1605,7 @@ class Ebay_Integration_Ebay_API {
 		$sql = "DELETE FROM grading  WHERE id = " . $params["id"];
 		$deleted_items = $this->wpdb->get_results ( $sql );
 		
-		return $deleted_items;
+		return true;
 
 	}
 
