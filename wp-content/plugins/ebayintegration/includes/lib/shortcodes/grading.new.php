@@ -259,7 +259,7 @@
                         <tr class="grading_file">
                             <td colspan="7" class="text-left">
                                 <a class="me-3 btn btn-danger btn-sm ebayintegration-btn" data-action="remove_grading_file" data-file="<?php echo $fdata["baseurl"] ?>" >REMOVE</a>
-                                <a href="<?php echo $fdata["baseurl"] ?>"><?php echo $fdata["name"] ?></a>
+                                <a href="<?php echo $fdata["baseurl"] ?>" target="_blank"><?php echo $fdata["name"] ?></a>
                             </td>
                         </tr>
                         <?php                                 
