@@ -1075,7 +1075,7 @@ class Ebay_Integration_Ebay_API {
 					'grading',
 					array(							
 						'user_id' => $params["user_id"],
-						'type' => $params["type"],
+						'type' => $params["type"] . "_file",
 						"data" => json_encode($data),
 					)
 				);
