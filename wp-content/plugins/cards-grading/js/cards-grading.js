@@ -1077,7 +1077,7 @@ $(document).on("click",".admin-payment-row", function(e){
 
 $(document).on("click",".admin-consigned-row", function(e){
 
-    window.location.href = "/admin/view-consignment?id=" + $(this).data("post_id") ;
+    window.location.href = "/admininistrator/view-consignment?id=" + $(this).data("post_id") ;
 
 });
 
