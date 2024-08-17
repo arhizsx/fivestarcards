@@ -1045,8 +1045,6 @@ class Ebay_Integration_Ebay_API {
 
 			$extension = $v["type"];	
 			
-			return ( $extension );
-
 			if( in_array( $extension, $allowed_extensions ) ){
 
 
