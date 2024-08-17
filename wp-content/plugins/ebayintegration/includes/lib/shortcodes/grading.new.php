@@ -193,11 +193,6 @@
                             }
                         }
                     ?>            
-                    <tr>
-                        <th colspan="7">
-                            Uploaded Cards List
-                        </th>
-                    </tr>          
                 </tbody>
                 <tfoot>
                     <tr>
@@ -235,6 +230,11 @@
                         }   
                         ?>
                     </tr>
+                    <tr>
+                        <th colspan="7" class="text-center">
+                            Uploaded Cards List
+                        </th>
+                    </tr>          
                 </tfoot>        
             </table>
         </div>
