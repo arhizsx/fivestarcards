@@ -236,8 +236,7 @@
                         </th>
                     </tr>    
                     <tr class="grading_file">
-                        <td style="width: 20px;"></td>
-                        <td colspan="6" class="text-center">
+                        <td colspan="7" class="text-center">
                             Empty
                         </td>
                     </tr>      
