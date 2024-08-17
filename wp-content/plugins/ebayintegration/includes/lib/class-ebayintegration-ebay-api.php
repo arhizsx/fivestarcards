@@ -339,6 +339,13 @@ class Ebay_Integration_Ebay_API {
 
 		}
 
+		elseif( $params["action"] == "remove_grading_file"){
+
+			return $this->remove_grading_file($params);
+
+		}
+
+		
 		
 		else {			
 
@@ -1592,4 +1599,14 @@ class Ebay_Integration_Ebay_API {
 		}
 
 	}
+
+	function remove_grading_file($params){
+
+		$sql = "DELETE FROM grading  WHERE id = " . $params["id"];
+		$deleted_items = $this->wpdb->get_results ( $sql );
+		
+		return $deleted_items;
+
+	}
+
 }
