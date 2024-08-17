@@ -362,7 +362,7 @@ $processed_status = array("Processing Order", "Cards Graded");
             </thead>
             <tbody> 
                 <tr>
-                    <td>Empty</td>
+                    <td class="text-center">Empty</td>
                 </tr>
             </tbody>
         </table>
