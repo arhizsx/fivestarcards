@@ -10,7 +10,7 @@
 
 global $wpdb;
 
-if( ! isset( $_GET['type'] ) ){
+if( isset( $_GET['type'] ) ){
 
     $consignment = $this->wpdb->get_results ( "
 
