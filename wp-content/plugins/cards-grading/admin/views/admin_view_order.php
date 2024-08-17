@@ -359,7 +359,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                 <tr>
                     <th>
                         <?php 
-                            print_r( $checkout_meta);
+                            print_r( $checkout_meta["grading_orders_id"]);
                         ?>
                         File Details
                     </th>
