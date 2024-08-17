@@ -354,6 +354,11 @@ $processed_status = array("Processing Order", "Cards Graded");
     <div class="table-responsive">   
         <table class='table table-sm table-bordered table-striped'>
             <thead>
+                <tr>
+                    <th>
+                        File Details
+                    </th>
+                </tr>
             </thead>
             <tbody> 
                 <tr>
