@@ -536,15 +536,15 @@
 
                                     <div class="col-12">
                                         <label>Select Cards List File</label>
-                                        <input type="file" name="import_file" class="form-control mb-3"  accept="image/png,  image/jpeg, .csv, .pdf, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet ">
+                                        <input type="file" name="import_file" class="form-control mb-3 checker"  accept="image/png,  image/jpeg, .csv, .pdf, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet ">
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Quantity of Cards</label>
-                                        <input type="number" name="qty" class="form-control p-1">
+                                        <input type="number" name="qty" class="form-control p-1 checker">
                                     </div>
                                     <div class="col-lg-6">
                                         <label>Card Show Name</label>
-                                        <select class="form-control p-1">
+                                        <select class="form-control p-1 checker">
                                             <option value="NO SHOW">NO SHOW</option>
                                             <option value="Madison">Madison</option>
                                             <option value="Janesville">Janesville</option>
