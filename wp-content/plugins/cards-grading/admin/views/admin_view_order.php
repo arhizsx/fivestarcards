@@ -398,6 +398,13 @@ if( $grading_order_id > 0 ){
                     <td class="">
                         <a target="_blank" href="<?php print_r( $file["baseurl"] ) ?>"><?php print_r( $file["name"] ) ?></a>
                     </td>
+                    <td class="text-end">
+                        <?php print_r( $file["qty"] ) ?>
+                    </td>
+                    <td class="text-end">
+                        <?php print_r( $file["card_show"] ) ?>
+                    </td>
+
                 </tr>
                 <?php 
 
