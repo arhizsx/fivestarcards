@@ -261,8 +261,8 @@
                                 <a href="<?php echo $fdata["baseurl"] ?>"><?php echo $fdata["name"] ?></a>
                             </td>
                             <td class="text-center" colspan="1">
-                                <a class="btn btn-danger btn-sm">REMOVE</a>
-                                <a class="btn btn-primary btn-sm">VIEW</a>
+                                <a class="btn btn-primary btn-sm">REMOVE</a>
+                                <a class="btn btn-dark btn-sm">VIEW</a>
                             </td>
                         </tr>
                         <?php                                 
