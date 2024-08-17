@@ -36,7 +36,6 @@ foreach($posts as $post)
     $cards_count = $cards_count + $card["quantity"];
 }
 
-print_r( $checkout_meta["grading_orders_id"][0]);
 
 
 $admin_status = array( "Shipped", "Package Received", "Incomplete Items Shipped" );
@@ -359,6 +358,9 @@ $processed_status = array("Processing Order", "Cards Graded");
             <thead>
                 <tr>
                     <th>
+                        <?php 
+                            print_r( $checkout_meta["grading_orders_id"][0]);
+                        ?>
                         File Details
                     </th>
                 </tr>
