@@ -469,6 +469,9 @@
                                 <input type="file" name="import_file" class="form-control mb-3"  accept="image/png,  image/jpeg, .csv, .pdf, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet ">
                                 <small>Accepted formats PNG, JPG, CSV, PDF, XLSX</small>
                             </div>
+                            <div class="col-12">
+                                Once our team process your list this order will be updated.
+                            </div>
                         </div>
                         <div class="d-none p-5 text-center loading">
 
