@@ -257,7 +257,7 @@
                             foreach( $file_data as $fdata ){
                         ?>
                         <tr class="grading_file">
-                            <td class="text-center">
+                            <td class="text-center" colspan="2">
                                 <a class="btn btn-danger btn-sm">REMOVE</a>
                                 <a class="btn btn-primary btn-sm">VIEW</a>
                             </td>
