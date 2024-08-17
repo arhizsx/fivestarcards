@@ -242,8 +242,7 @@
                         ?>
                     </tr>
                     <?php 
-                        if( count( $grading_files ) == 0 ){
-                        } else {
+                        if( count( $grading_files ) > 0 ){
                     ?>
                     <tr>                        
                         <th colspan="7" class="text-center">
@@ -254,6 +253,9 @@
                         <td colspan="7" class="text-center">
                         </td>
                     </tr>      
+                    <?php 
+                        } else {
+                    ?>
                     <?php                             
                         }
                     ?>
