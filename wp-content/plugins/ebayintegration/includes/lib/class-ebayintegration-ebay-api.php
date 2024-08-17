@@ -1051,7 +1051,7 @@ class Ebay_Integration_Ebay_API {
 
 		add_post_meta($checkout_post_id, "total_dv", $total_dv );
 		add_post_meta($checkout_post_id, "total_cards", $total_cards );
-		add_post_meta($checkout_post_id, "status", "To Ship" );
+		add_post_meta($checkout_post_id, "status", $status );
 
 
 		if( $rows != false ){
