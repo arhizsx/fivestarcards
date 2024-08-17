@@ -379,7 +379,7 @@ if( $grading_order_id > 0 ){
                 <tr>
                     <th>
                         <?php 
-                            print_r($grading_order_id);
+                            print_r( $checkout_meta["grading_orders_id"][0] );
                             echo "<br><br>";
                             print_r($grading_files);
                             echo "<br><br>";
