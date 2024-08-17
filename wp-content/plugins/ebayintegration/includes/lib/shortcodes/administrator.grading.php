@@ -84,6 +84,10 @@
                                     $shortcode = "[cards-grading-admin]";                                    
                                     break;
 
+                                case "for_entry": 
+                                    $shortcode = "[cards-grading-orders_table table='for_entry']";                                    
+                                    break;
+
                                 case "open_orders": 
                                     $shortcode = "[cards-grading-orders_table table='open_orders']";                                    
                                     break;
