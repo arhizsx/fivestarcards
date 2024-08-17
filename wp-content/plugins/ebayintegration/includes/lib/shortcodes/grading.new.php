@@ -245,8 +245,14 @@
                         if( count( $grading_files ) > 0 ){
                     ?>
                     <tr>                        
-                        <th colspan="7" class="text-center">
+                        <th colspan="4" class="text-center">
                             Uploaded Cards List Files
+                        </th>
+                        <th  class="text-center">
+                            Quantity
+                        </th>
+                        <th class="text-center">
+                            Card Show
                         </th>
                     </tr>   
                     <?php 
