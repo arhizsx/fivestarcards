@@ -397,6 +397,12 @@ $grading_files = $this->wpdb->get_results ( $sql );
                     <th>
                         File Details
                     </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Card Show
+                    </th>
                 </tr>
             </thead>
             <tbody> 
@@ -408,6 +414,8 @@ $grading_files = $this->wpdb->get_results ( $sql );
                 <tr>
                     
                     <td class=""><a target="_blank" href="<?php print_r( $file["baseurl"] ) ?>"><?php print_r( $file["name"] ) ?></a></td>
+                    <td><?php print_r( $file["qty"] ) ?></td>
+                    <td><?php print_r( $file["card_show"] ) ?></td>
                 </tr>
                 <?php 
 
