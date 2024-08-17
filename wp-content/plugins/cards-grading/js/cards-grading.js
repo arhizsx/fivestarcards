@@ -1076,7 +1076,7 @@ $(document).on("click",".admin-order-row", function(e){
 
 $(document).on("click",".admin-payment-row", function(e){
 
-    window.location.href = "/admin/view-payment?id=" + $(this).data("post_id") ;
+    window.location.href = "/administrator/view-payment?id=" + $(this).data("post_id") + "&mode=awaiting_payment" ;
 
 });
 
