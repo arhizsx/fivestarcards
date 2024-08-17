@@ -257,12 +257,12 @@
                             foreach( $file_data as $fdata ){
                         ?>
                         <tr class="grading_file">
-                            <td colspan="6" class="text-center">
-                            <a href="<?php echo $fdata["baseurl"] ?>"><?php echo $fdata["name"] ?></a>
-                            </td>
                             <td class="text-center">
                                 <a class="btn btn-danger btn-sm">REMOVE</a>
                                 <a class="btn btn-primary btn-sm">VIEW</a>
+                            </td>
+                            <td colspan="6" class="text-left">
+                                <a href="<?php echo $fdata["baseurl"] ?>"><?php echo $fdata["name"] ?></a>
                             </td>
                         </tr>
                         <?php                                 
