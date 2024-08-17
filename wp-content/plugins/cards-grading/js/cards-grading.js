@@ -1065,8 +1065,12 @@ $(document).on("click",".my-consignment-row", function(e){
 
 $(document).on("click",".admin-order-row", function(e){
 
+    if($(this).data("back") != ""){
+        window.location.href = "/administrator/grading/view-order?id=" + $(this).data("post_id")  + "&mode=" + $(this).data("back") ;
+    } else {
+        window.location.href = "/administrator/grading/view-order?id=" + $(this).data("post_id");
+    }    
 
-    window.location.href = "/administrator/grading/view-order?id=" + $(this).data("post_id")  + "&mode=" + $(this).data("back") ;
 
 });
 
