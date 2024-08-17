@@ -269,10 +269,7 @@
                         }
                     ?> 
                     <?php 
-                        } else {
-                    ?>
-                    <?php                             
-                        }
+                        } 
                     ?>
                 </tfoot>        
             </table>
@@ -391,6 +388,37 @@
                         <th colspan='1' class="text-end">Grading Charge</th>
                         <th colspan='1' class="text-end">$<?php echo $total_grading ?></th>
                     </tr>
+                    <?php 
+                        if( count( $grading_files ) > 0 ){
+                    ?>
+                    <tr>                        
+                        <th colspan="1" class="text-center">
+                            Uploaded Cards List Files
+                        </th>
+                    </tr>   
+                    <?php 
+                        foreach($grading_files as $file){
+                    ?>
+                        <?php 
+                            $file_data = json_decode($file->data, true);
+                            foreach( $file_data as $fdata ){
+                        ?>
+                        <tr class="grading_file">
+                            <td colspan="1" class="text-left">
+                                <a class="me-3 btn btn-danger btn-sm ebayintegration-btn" data-action="remove_grading_file" data-file="<?php echo $fdata["baseurl"] ?>" >REMOVE</a>
+                                <a href="<?php echo $fdata["baseurl"] ?>" target="_blank"><?php echo $fdata["name"] ?></a>
+                            </td>
+                        </tr>
+                        <?php                                 
+                            }
+                        ?>                        
+                    <?php                             
+                        }
+                    ?> 
+                    <?php 
+                        } 
+                    ?>
+
                 </tfoot>        
             </table>    
         </div>
