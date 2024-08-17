@@ -468,13 +468,10 @@
                                 <label>Select Import Template</label>
                                 <input type="file" name="import_file" class="form-control mb-3">
                             </div>
-                            <div class="col-12 mb-3">
-                                <a href="#">Download Import Template</a>
-                            </div>
                         </div>
                         <div class="d-none p-5 text-center loading">
 
-                            Importing cards list, please wait...
+                            Uploading cards list, please wait...
 
                         </div>
                     </div>
