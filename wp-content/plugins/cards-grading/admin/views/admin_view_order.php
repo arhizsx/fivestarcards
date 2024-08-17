@@ -37,7 +37,7 @@ foreach($posts as $post)
 }
 
 $admin_status = array( "Shipped", "Package Received", "Incomplete Items Shipped" );
-$admin_action_status = array( "Package Received", "Grading", "Completed - Grades Ready");
+$admin_action_status = array( "Package Received", "Completed - Grades Ready");
 
 $processed_status = array("Processing Order", "Cards Graded");
 
