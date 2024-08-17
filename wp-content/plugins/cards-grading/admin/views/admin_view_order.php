@@ -386,9 +386,6 @@ $grading_files = $this->wpdb->get_results ( $sql );
                 <tr>
                     
                     <td class="">
-                        <?php 
-                            print_r($posts) ;
-                        ?>
                         <a target="_blank" href="<?php print_r( $file["baseurl"] ) ?>"><?php print_r( $file["name"] ) ?></a>
                     </td>
                 </tr>
