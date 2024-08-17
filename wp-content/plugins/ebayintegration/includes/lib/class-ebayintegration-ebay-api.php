@@ -1054,13 +1054,10 @@ class Ebay_Integration_Ebay_API {
 	
 				$filesize = file_put_contents( $upload_folder."/cards/".$fileName, $file );
 
-
-
-
 				$v["baseurl"] = "/wp-content/uploads/cards/" . $fileName;
 				$v["filename"] = $fileName;
 				$v["upload_label"] = $k;
-				$v["filesize"] = $filesize;
+				$v["filesize"] = $filesize;				
 				
 				$uploads[] = $v;
 		
@@ -1068,26 +1065,22 @@ class Ebay_Integration_Ebay_API {
 
 		}
 
-		$query = "
-		SELECT * 
-		FROM  grading
-		WHERE id = " . $params["card_id"] ;
+		$data = [
+			"uploads" => $uploads,
+			"grading_type" => $params["type"],
+			"user_id" => $params["user_id"],
+		];
 
+		$this->wpdb->insert(
+					'grading',
+					array(							
+						'user_id' => $params["user_id"],
+						'type' => $params["type"],
+						"data" => json_encode($data),
+					)
+				);
 
-		$result = $this->wpdb->get_results ($query);				
-		$data = json_decode($result[0]->data, true);
-		$data["file"] = $uploads[0];
-
-
-		$this->wpdb->update(
-			'grading', 
-			array(
-				'data'=> json_encode($data), 
-			), 
-			array(
-				'id'=> $params["card_id"] 
-			)
-		);		
+		$lastid = $this->wpdb->insert_id;					
 
 		return ["error"=> false, "data" => $data, "params" => $params];
 
