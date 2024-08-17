@@ -260,7 +260,7 @@
                             <td colspan="6" class="text-left">
                                 <a href="<?php echo $fdata["baseurl"] ?>"><?php echo $fdata["name"] ?></a>
                             </td>
-                            <td class="text-center" colspan="1">
+                            <td class="text-right" colspan="1">
                                 <a class="btn btn-primary btn-sm">REMOVE</a>
                                 <a class="btn btn-dark btn-sm">VIEW</a>
                             </td>
