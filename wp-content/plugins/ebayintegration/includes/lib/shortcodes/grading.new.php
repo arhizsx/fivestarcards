@@ -256,7 +256,9 @@
                         <td colspan="7" class="text-center">
                         <?php 
                             $file_data = json_decode($file->data, true);
-                            print_r($file_data[0]);
+                            foreach( $file_data as $fdata ){
+                                print_r($fdata["baseurl"]);
+                            }
                         ?>                        
                         </td>
                     </tr>      
