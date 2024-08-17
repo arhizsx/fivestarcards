@@ -1039,7 +1039,7 @@ class Ebay_Integration_Ebay_API {
 		$uploads = [];
 		$upload_folder = wp_get_upload_dir();
 		$upload_folder = $upload_folder["basedir"];
-		$allowed_extensions = ["image/jpeg", "image/png"];
+		$allowed_extensions = ["image/jpeg", "image/png", "application/pdf", "text/csv", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" ];
 
 		foreach($files as $k => $v){
 
