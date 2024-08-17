@@ -1065,7 +1065,7 @@ $(document).on("click",".my-consignment-row", function(e){
 
 $(document).on("click",".admin-order-row", function(e){
 
-    alert($(this).data());
+    alert($(this).data("back"));
 
     window.location.href = "/administrator/grading/view-order?id=" + $(this).data("post_id") ;
 
