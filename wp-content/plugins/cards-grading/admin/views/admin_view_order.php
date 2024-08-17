@@ -252,7 +252,7 @@ $processed_status = array("Processing Order", "Cards Graded");
                             $card_total_dv = $card["dv"] * $card["quantity"];
                             $card_grading_charge = $card["per_card"] * $card["quantity"];
 
-                            if( in_array($meta["status"][0], array("To Pay - Grade Only", "Shipped", "To Ship", "Received", "Pay Grading", "Graded") ) ){
+                            if( in_array($meta["status"][0], array("To Pay - Grade Only", "Shipped", "To Ship", "Received", "Pay Grading", "Graded", "Completed - Grades Ready") ) ){
                                 $grading_charge = $grading_charge + $card_grading_charge;
                             }
 
