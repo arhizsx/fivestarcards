@@ -125,9 +125,9 @@
             <button class="btn btn-success mb-3 ebayintegration-btn" data-action="show_log_grading_modal">
                 Log Card
             </button>
-            <!-- <button class="btn btn-dark mb-3 ebayintegration-btn" data-action="show_import_grading_modal">
-                Import Cards List
-            </button> -->
+            <button class="btn btn-dark mb-3 ebayintegration-btn" data-action="show_import_grading_modal">
+                Upload Cards List
+            </button>
         </div>
 
         <!-- DESKTOP VIEW -->
@@ -456,7 +456,7 @@
                 <div class="modal-content modal-ajax">
                     <div class="modal-header bg-dark text-white">
                         <h5 class="modal-title">
-                            Import Cards List
+                            Upload Cards List File
                         </h5>
                         <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
                             X
