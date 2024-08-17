@@ -255,7 +255,8 @@
                     <tr class="grading_file">
                         <td colspan="7" class="text-center">
                         <?php 
-                            print_r($file->data);
+                            $file_data = json_decode($file->data, true);
+                            print_r($file_data[0]);
                         ?>                        
                         </td>
                     </tr>      
