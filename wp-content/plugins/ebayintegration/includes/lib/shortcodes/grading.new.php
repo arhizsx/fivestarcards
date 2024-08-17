@@ -246,7 +246,7 @@
                     ?>
                     <tr>                        
                         <th colspan="7" class="text-center">
-                            Uploaded Cards List
+                            Uploaded Cards List Files
                         </th>
                     </tr>   
                     <?php 
