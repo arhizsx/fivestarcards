@@ -138,7 +138,7 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
                         }
                     }
             ?>
-                <button class='5star_btn btn btn-primary mb-3 <?php echo $show_btn; ?>' data-action="complete_grading_process" data-order_number="<?php echo $params['order_number'] ?>">
+                <button class='5star_btn btn btn-primary <?php echo $show_btn; ?>' data-action="complete_grading_process" data-order_number="<?php echo $params['order_number'] ?>">
                     Complete Grading Process
                 </button>      
             <?php 
@@ -146,7 +146,7 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
 
                 elseif( $checkout_meta["status"][0] == "Incomplete Items Shipped" ) { 
             ?>
-                <button class='5star_btn btn btn-primary mb-3' data-action="acknowledge_missing_cards" data-order_number="<?php echo $params['order_number'] ?>">
+                <button class='5star_btn btn btn-primary' data-action="acknowledge_missing_cards" data-order_number="<?php echo $params['order_number'] ?>">
                     Acknowledge Missing Cards
                 </button>      
             <?php 
@@ -154,7 +154,7 @@ $consignment_status = array("Order Partial Consignment", "Order Consigned", "Rea
 
                 elseif( $checkout_meta["status"][0] == "Order To Pay" ) { 
             ?>
-                <button class='5star_btn btn btn-primary mb-3' data-action="order_paid" data-order_number="<?php echo $params['order_number'] ?>">
+                <button class='5star_btn btn btn-primary' data-action="order_paid" data-order_number="<?php echo $params['order_number'] ?>">
                     Order Paid
                 </button>      
             <?php 
