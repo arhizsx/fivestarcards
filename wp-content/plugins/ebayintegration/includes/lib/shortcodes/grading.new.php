@@ -258,8 +258,8 @@
                         ?>
                         <tr class="grading_file">
                             <td colspan="7" class="text-left">
-                                <a class="btn btn-primary btn-sm">REMOVE</a>
-                                <a class="btn btn-dark btn-sm">VIEW</a>
+                                <a class="btn btn-danger btn-sm">REMOVE</a>
+                                <a class="btn btn-dark btn-sm mr-3">VIEW</a>
                                 <a href="<?php echo $fdata["baseurl"] ?>"><?php echo $fdata["name"] ?></a>
                             </td>
                         </tr>
