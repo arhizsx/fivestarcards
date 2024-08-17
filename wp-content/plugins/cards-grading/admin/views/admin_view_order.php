@@ -373,7 +373,7 @@ $grading_files = $this->wpdb->get_results ( $sql );
                     $file = json_decode($gfile->data, true);
                 ?>
                 <tr>
-                    <td class="text-center"><?php echo $file["name"] ?></td>
+                    <td class="text-center"><?php print_r( $file ) ?></td>
                 </tr>
                 <?php 
                 }
