@@ -44,9 +44,8 @@ $admin_action_status = array( "Package Received", "Completed - Grades Ready");
 
 $processed_status = array("Processing Order", "Cards Graded");
 
-$grading_orders_id = $checkout_meta["grading_orders_id"][0];
 
-$sql = "SELECT * FROM grading where order_id ='". $grading_orders_id . "' AND type LIKE '%_file'";
+$sql = "SELECT * FROM grading where order_id ='". $params['order_number'] . "' AND type LIKE '%_file'";
 $grading_files = $this->wpdb->get_results ( $sql );	
 
 ?>
@@ -394,7 +393,7 @@ $grading_files = $this->wpdb->get_results ( $sql );
                     
                     <td class="">
                         <?php 
-                            echo $params['order_number'];
+                            echo $grading_files;
                         ?>
                         <a target="_blank" href="<?php print_r( $file["baseurl"] ) ?>"><?php print_r( $file["name"] ) ?></a>
                     </td>
