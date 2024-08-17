@@ -252,17 +252,18 @@
                     <?php 
                         foreach($grading_files as $file){
                     ?>
-                    <tr class="grading_file">
-                        <td colspan="7" class="text-center">
                         <?php 
                             $file_data = json_decode($file->data, true);
                             foreach( $file_data as $fdata ){
-                                print_r($fdata["baseurl"]);
-                                print_r($fdata);
+                        ?>
+                        <tr class="grading_file">
+                            <td colspan="7" class="text-center">
+                            <a href="<?php echo $fdata["baseurl"] ?>"><?php echo $fdata["name"] ?></a>
+                            </td>
+                        </tr>
+                        <?php                                 
                             }
                         ?>                        
-                        </td>
-                    </tr>      
                     <?php                             
                         }
                     ?> 
