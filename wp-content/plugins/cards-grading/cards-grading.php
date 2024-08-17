@@ -452,6 +452,11 @@
                 $table = 'order_receiving.php';
                 break;
 
+            case "for_entry":
+                $folder = "admin";
+                $table = 'for_entry.php';
+                break;
+
             case "consigned_orders":
                 $folder = "admin";
                 $table = 'consigned_orders.php';
