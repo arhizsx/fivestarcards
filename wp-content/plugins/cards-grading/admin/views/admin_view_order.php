@@ -374,7 +374,7 @@ $grading_files = $this->wpdb->get_results ( $sql );
                         foreach($files as $file){
                 ?>
                 <tr>
-                    <td class="text-center"><?php print_r( $file["name"] ) ?></td>
+                    <td class=""><?php print_r( $file["name"] ) ?></td>
                 </tr>
                 <?php 
 
