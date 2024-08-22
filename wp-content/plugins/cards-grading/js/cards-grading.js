@@ -841,6 +841,27 @@ function orderAction(action, data, order_number){
     
 }
 
+function setGrade(post_id, grade, certificate_number){
+
+    var nonce = $(document).find(".5star_logged_cards").data("nonce");
+    var url = $(document).find(".5star_logged_cards").data("endpoint");
+
+    $.ajax({
+        method: 'post',
+        url: url,
+        headers: {'X-WP-Nonce': nonce },
+        data: {
+            'post_id': post_id,
+            'grade': grade,
+            'certificate_number': certificate_number 
+        },
+        success: function(resp){
+            console.log(resp);
+        }
+    });
+
+}
+
 function cardAction(action, value, post_id, parent_element ){
 
     var nonce = $(document).find(".5star_logged_cards").data("nonce");
@@ -980,9 +1001,9 @@ function confirmCardGrade(){
 
     var post_id =  $(document).find("#set_grade_form input[name='post_id']").val();
     var grade =  $(document).find("#set_grade_form input[name='grade']").val();
+    var certificate_number =  $(document).find("#set_grade_form input[name='certificate_number']").val();
 
-    cardAction("set_grade", grade, post_id, "");
-    // location.reload();
+    setGrade( post_id, grade, certificate_number );
 
 }
 
