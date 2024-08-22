@@ -857,7 +857,7 @@ function setGrade(post_id, grade, certificate_number){
             'certificate_number': certificate_number 
         },
         success: function(resp){
-            console.log(resp);
+            location.reload();
         }
     });
 

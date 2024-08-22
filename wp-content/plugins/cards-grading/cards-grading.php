@@ -1413,6 +1413,7 @@
         update_post_meta($params["post_id"], 'status', "Graded");   
         update_post_meta($params["post_id"], 'grade', $params["grade"]);   
         update_post_meta($params["post_id"], 'certificate_number', $params["certificate_number"]);   
+        
         return true;
 
     }
