@@ -851,6 +851,7 @@ function setGrade(post_id, grade, certificate_number){
         url: url,
         headers: {'X-WP-Nonce': nonce },
         data: {
+            'action': "set_grade",
             'post_id': post_id,
             'grade': grade,
             'certificate_number': certificate_number 
