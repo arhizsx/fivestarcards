@@ -453,6 +453,12 @@ if( $grading_order_id > 0 ){
                             </div>
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <label for="certificate_number">Certificate Number</label>
+                                    <input type="text" name="certificate_number" value="" data-field_check="required"  class="form-control mb-2"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6">
                                     <label for="year">Year</label>
                                     <input type="number" name="year" value="" data-field_check="required"  class="form-control mb-2" disabled/>
                                 </div>
