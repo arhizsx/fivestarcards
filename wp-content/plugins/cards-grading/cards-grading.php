@@ -1429,7 +1429,7 @@
             // Prepare the response
             $response = $output;
         } else {
-            $response['status'] = 'error';
+            $response['status'] = 'error'; 
             $response['message'] = 'folder_id not set';
         }
         
