@@ -1423,9 +1423,8 @@
         // Execute the Python script and capture output and errors
         $output = shell_exec($command);
     
-        // Prepare the response
-        $response = $output;
-    
+        update_post_meta($params["post_id"], 'psa', $output);   
+
         // Return the JSON response
         echo $output;
 
