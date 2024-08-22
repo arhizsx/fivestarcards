@@ -1434,7 +1434,7 @@
         }
         
         // Return the JSON response
-        echo $output;
+        return $output;
 
     }
 
