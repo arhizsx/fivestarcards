@@ -454,7 +454,7 @@ if( $grading_order_id > 0 ){
                             <div class="row">
                                 <div class="col-xl-12">
                                     <label for="certificate_number">Certificate Number</label>
-                                    <input type="text" name="certificate_number" value="" data-field_check="required"  class="form-control mb-2"/>
+                                    <input id="certificate_number" type="text" name="certificate_number" style="font-size: 3em !important; text-align: center !important; color: white !important; background-color: black !important;"  value="" data-field_check="required"  class="form-control mb-2"/>
                                 </div>
                             </div>
                             <div class="row">
