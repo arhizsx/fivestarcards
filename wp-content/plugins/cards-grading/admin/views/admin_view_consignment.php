@@ -35,7 +35,7 @@ foreach($posts as $post)
     $cards_count = $cards_count + $card["quantity"];
 }
 
-$admin_status = array( "Order Partial Consignment", "Order Consigned" );
+$admin_status = array( "Order Partial Consignment", "Active Consignments" );
 $admin_action_status = array( "Consigned", "Sold - Consigned" );
 
 $payment_status = array( "Ready For Payment" );
