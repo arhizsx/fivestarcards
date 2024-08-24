@@ -326,15 +326,6 @@ if( $grading_order_id > 0 ){
                         -    
                     </td>
                     <?php } else { ?>
-                    <td class="text-start">
-                        -
-                    </td>
-                    <td class="text-start">
-                        -
-                    </td>
-                    <td class="text-start">
-                        -
-                    </td>
                     <?php } ?>
 
                     <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
