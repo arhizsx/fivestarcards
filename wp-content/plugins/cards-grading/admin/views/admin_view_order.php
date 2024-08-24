@@ -41,6 +41,8 @@ foreach($posts as $post)
 
 $admin_status = array( "Shipped", "Package Received", "Incomplete Items Shipped" );
 $admin_action_status = array( "Package Received");
+$admin_graded_status = array( "Completed - Grades Ready");
+
 
 $processed_status = array("Processing Order", "Cards Graded");
 
@@ -260,7 +262,7 @@ if( $grading_order_id > 0 ){
                     <th>Card #</th>
                     <th>Player Name</th>
                     <th>Status</th>
-                    <?php if( $checkout_meta["status"][0] == "Completed - Grades Ready" ) { ?>
+                    <?php if( in_array( $checkout_meta["status"][0], $admin_graded_status ) ){ ?>
                     <th style="width: 150px;" class="text-start">Grade</th>
                     <th style="width: 200px;" class="text-start">Cert No.</th>
                     <th class="text-start">Title</th>
@@ -315,7 +317,7 @@ if( $grading_order_id > 0 ){
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
                     <td><?php echo $card["player"]; ?></td>
                     <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
-                    <?php if( $checkout_meta["status"][0] == "Completed - Grades Ready" ) { ?>
+                    <?php if( in_array( $checkout_meta["status"][0], $admin_graded_status ) ){ ?>
                     <td class="text-start">
                         <input type="text" value="" name="grade" class="form-control form-control-sm">
                     </td>
