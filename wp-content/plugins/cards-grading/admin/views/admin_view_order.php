@@ -318,16 +318,17 @@ if( $grading_order_id > 0 ){
                     <td><?php echo $card["player"]; ?></td>
                     <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
                     <?php if( in_array( $checkout_meta["status"][0], $admin_graded_status ) ){ ?>
-                    <td class="text-start">
-                        <input type="text" value="" name="grade" class="form-control form-control-sm">
-                    </td>
-                    <td class="text-start">
-                        <input type="text" value="" name="certificate_number" class="form-control form-control-sm">
-                    </td>
-                    <td class="text-start">
-                        -    
-                    </td>
+                        <td class="text-start">
+                            <input type="text" value="" name="grade" data-post_id="<?php echo $post->ID; ?>" class="form-control form-control-sm card_grade_saving">
+                        </td>
+                        <td class="text-start">
+                            <input type="text" value="" name="certificate_number" data-post_id="<?php echo $post->ID; ?>" class="form-control form-control-sm card_grade_saving">
+                        </td>
+                        <td class="text-start">
+                            <input type="text" value="" name="card_title" data-post_id="<?php echo $post->ID; ?>" class="form-control form-control-sm card_grade_saving">
+                        </td>
                     <?php } else { ?>
+
                     <?php } ?>
 
                     <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
