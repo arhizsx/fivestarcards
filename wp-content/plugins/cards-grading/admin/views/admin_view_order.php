@@ -260,7 +260,7 @@ if( $grading_order_id > 0 ){
                     <th>Card #</th>
                     <th>Player Name</th>
                     <th>Status</th>
-                    <th class="text-end">Grade</th>
+                    <th style="width: 100px;" class="text-end">Grade</th>
                     <th class="text-end">Cert No.</th>
                     <th class='text-end'>DV</th>
                     <th class="text-end">Grading</th>
@@ -313,7 +313,7 @@ if( $grading_order_id > 0 ){
                     <td><?php echo $card["player"]; ?></td>
                     <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
                     <td class="grade text-end">
-                        <input type="text" value="" name="grade" class="form-control form-control-sm" style="width: 100px;">
+                        <input type="text" value="" name="grade" class="form-control form-control-sm">
                     </td>
                     <td class="grade text-end">
                         <input type="text" value="" name="certificate_number" class="form-control form-control-sm">
