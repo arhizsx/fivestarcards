@@ -960,6 +960,7 @@ class Ebay_Integration_Ebay_API {
 			), 
 			array(
 				'user_id' => $params["user_id"],
+				"status" => "logged",
 				"type" => $params["type"],
 			)
 		);		
@@ -973,6 +974,7 @@ class Ebay_Integration_Ebay_API {
 			), 
 			array(
 				'user_id' => $params["user_id"],
+				"status" => "logged",
 				"type" => $params["type"] . "_file",
 			)
 		);		
