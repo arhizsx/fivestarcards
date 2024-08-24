@@ -260,7 +260,7 @@ if( $grading_order_id > 0 ){
                     <th>Card #</th>
                     <th>Player Name</th>
                     <th>Status</th>
-                    <th style="width: 100px;" class="text-end">Grade</th>
+                    <th style="width: 150px;" class="text-end">Grade</th>
                     <th style="width: 200px;" class="text-end">Cert No.</th>
                     <th class='text-end'>DV</th>
                     <th class="text-end">Grading</th>
