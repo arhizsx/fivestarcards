@@ -312,14 +312,14 @@ if( $grading_order_id > 0 ){
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
                     <td><?php echo $card["player"]; ?></td>
                     <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
-                    <td class="grade text-end">
+                    <td class="grade text-start">
                         <?php if( $checkout_meta["status"][0] == "Completed - Grades Ready" ) { ?>
                         <input type="text" value="" name="grade" class="form-control form-control-sm">
                         <?php } else { ?>
                         -
                         <?php } ?>
                     </td>
-                    <td class="grade text-end">
+                    <td class="grade text-start">
                         <?php if( $checkout_meta["status"][0] == "Completed - Grades Ready" ) { ?>
                         <input type="text" value="" name="certificate_number" class="form-control form-control-sm">
                         <?php } else { ?>
