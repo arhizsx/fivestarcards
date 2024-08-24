@@ -980,6 +980,7 @@ class Ebay_Integration_Ebay_API {
 		);		
 
 		return $rows;
+		
 		// OLD ROUTINE CODE
 
 		$user = get_user_by( "id", $params["user_id"] );
