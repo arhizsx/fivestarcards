@@ -1222,3 +1222,8 @@ function DemoteAdmin(user_id){
 
     location.reload();
 }
+
+
+$(document).on("change", ".card_grade_saving", function(){
+    console.log("Grade Saving");
+});
