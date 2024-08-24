@@ -55,7 +55,7 @@ $grading_orders_id = $checkout_meta["grading_orders_id"][0];
 $sql = "SELECT * FROM grading where order_id='". $grading_orders_id . "' AND type LIKE '%_file'";
 $grading_files = $this->wpdb->get_results ( $sql );	
 
-
+print_r($grading_files);
 
 ?>
 <div class="m-0 p-0">
