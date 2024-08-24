@@ -312,7 +312,8 @@ if( $grading_order_id > 0 ){
                                     <?php }  ?>
                                 </div>
                             </div>
-                        <?php } else {?>
+                        <?php } ?>
+                        <?php else { ?>
                             -
                         <?php } ?>
                     </td>
