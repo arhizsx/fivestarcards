@@ -242,7 +242,7 @@ $(document).on("click", ".5star_btn", function(e){
         case "set_grade": 
 
 
-            showSetGrade( $(this).closest("tr").data() );
+            // showSetGrade( $(this).closest("tr").data() );
 
             break;
 

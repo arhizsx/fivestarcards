@@ -261,6 +261,7 @@ if( $grading_order_id > 0 ){
                     <th>Player Name</th>
                     <th>Status</th>
                     <th class="text-end">Grade</th>
+                    <th class="text-end">Cert No.</th>
                     <th class='text-end'>DV</th>
                     <th class="text-end">Grading</th>
                 </tr>
@@ -323,6 +324,7 @@ if( $grading_order_id > 0 ){
                     <td><?php echo $card["player"]; ?></td>
                     <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
                     <td class="grade text-end"><?php echo $meta["grade"][0]; ?></td>
+                    <td class="grade text-end"><?php echo $meta["certificate_number"][0]; ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                 </tr>
@@ -425,7 +427,7 @@ if( $grading_order_id > 0 ){
 </div>
 
 
-<div class="modal fade view_card" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
+<!-- <div class="modal fade view_card" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
 	<div class="modal-dialog" id="dxmodal">
 		<div class="modal-content modal-ajax">
 			<div class="modal-header bg-dark text-white">
@@ -492,7 +494,7 @@ if( $grading_order_id > 0 ){
                 </div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <div class="modal fade updatestatusmodal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px;">
 	<div class="modal-dialog" id="dxmodal">
