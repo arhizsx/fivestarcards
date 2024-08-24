@@ -300,20 +300,8 @@ if( $grading_order_id > 0 ){
                                     </button>
                                 </div>
                             </div>
-                        <?php }  
-
-                        elseif ( $checkout_meta["status"][0] == "Completed - Grades Ready" ) { ?>
-                            <div class="row">
-                                <div class="col-lg-12"> 
-                                    <?php if( in_array( $meta["status"][0], array("Received", "Graded")  )) { ?>
-                                    <button class='5star_btn btn-sm btn btn-success w-100' data-action="set_grade" data-post_id="<?php echo $post->ID; ?>">
-                                        Set Grade
-                                    </button>
-                                    <?php }  ?>
-                                </div>
-                            </div>
-                        <?php } ?>
-                        <?php else { ?>
+                        <?php } 
+                         else { ?>
                             -
                         <?php } ?>
                     </td>
