@@ -579,7 +579,7 @@ jQuery( document ).on("click", ".ebayintegration-btn", function(e){
 
 		$.when( card ).done( function( card ){
 
-			window.location.href = "/my-account/grading/view-order/?mode=open&id=" + card.checkout_post_id;
+			// window.location.href = "/my-account/grading/view-order/?mode=open&id=" + card.checkout_post_id;
 			console.log(card);
 		});
 
