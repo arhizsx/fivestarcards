@@ -1110,7 +1110,7 @@ $(document).on("click",".admin-consigned-row", function(e){
 
 $(document).on("click",".admin-completed-row", function(e){
 
-    window.location.href = "/admin/view-completed?id=" + $(this).data("post_id") ;
+    window.location.href = "/administrator/grading/view-completed?id=" + $(this).data("post_id") ;
 
 });
 
