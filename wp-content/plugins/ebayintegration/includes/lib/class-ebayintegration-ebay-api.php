@@ -1001,7 +1001,7 @@ class Ebay_Integration_Ebay_API {
 			'post_type' => 'cards-grading-chk',
 			'post_title' => $user->display_name . " - " . $grading_name,
 			'post_status' => 'publish'
-		]);
+		]); 
 
 		if( $inspection != null ){
 			add_post_meta($checkout_post_id, "inspection",  $inspection );
