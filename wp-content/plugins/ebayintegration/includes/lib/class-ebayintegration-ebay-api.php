@@ -976,8 +976,6 @@ class Ebay_Integration_Ebay_API {
 				"type" => $params["type"] . "_file",
 			)
 		);		
-
-		return $rows;
 		
 		// OLD ROUTINE CODE
 
