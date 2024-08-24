@@ -312,8 +312,12 @@ if( $grading_order_id > 0 ){
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
                     <td><?php echo $card["player"]; ?></td>
                     <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
-                    <td class="grade text-end"><?php echo $meta["grade"][0]; ?></td>
-                    <td class="grade text-end"><?php echo $meta["certificate_number"][0]; ?></td>
+                    <td class="grade text-end">
+                        <input type="text" value="" name="grade" class="form-control form-control-sm">
+                    </td>
+                    <td class="grade text-end">
+                        <input type="text" value="" name="certificate_number" class="form-control form-control-sm">
+                    </td>
                     <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
                 </tr>
