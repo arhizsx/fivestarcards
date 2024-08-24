@@ -260,9 +260,11 @@ if( $grading_order_id > 0 ){
                     <th>Card #</th>
                     <th>Player Name</th>
                     <th>Status</th>
+                    <?php if( $checkout_meta["status"][0] == "Completed - Grades Ready" ) { ?>
                     <th style="width: 150px;" class="text-start">Grade</th>
                     <th style="width: 200px;" class="text-start">Cert No.</th>
                     <th class="text-start">Title</th>
+                    <?php } ?>
                     <th class='text-end'>DV</th>
                     <th class="text-end">Grading</th>
                 </tr>
