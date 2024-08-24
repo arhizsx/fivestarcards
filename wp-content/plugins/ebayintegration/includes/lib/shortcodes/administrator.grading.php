@@ -97,7 +97,7 @@
                                     break;
 
                                 case "consignment": 
-                                    $shortcode = "[cards-grading-orders_table table='consigned_for_payment']";
+                                    $shortcode = "[cards-grading-orders_table table='consigned_orders']";
                                     break;
 
                                 case "completed": 
