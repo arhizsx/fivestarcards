@@ -256,7 +256,7 @@ if( $grading_order_id > 0 ){
                         ?>
                     <th><?php  echo $action_label; ?></th>
                     <?php } ?>
-                    <th>ID</th>
+                    <!-- <th>ID</th> -->
                     <th>Year</th>
                     <th>Brand</th>
                     <th>Card #</th>
@@ -310,7 +310,9 @@ if( $grading_order_id > 0 ){
                         <?php } ?>
                     </td>
                     <?php } ?>
-                    <td><?php echo $post->ID; ?></td>
+                    <!-- <td>
+                        <?php // echo $post->ID; ?>
+                    </td> -->
                     <td><?php echo $card["year"]; ?></td>
                     <td><?php echo $card["brand"]; ?></td>
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
