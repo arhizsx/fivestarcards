@@ -88,7 +88,7 @@ $users = get_users( $args );
                             $url = $data["Item"]['ListingDetails']['ViewItemURL'];
                             $title = $data["Item"]["Title"];
                             $listing_type = $data["Item"]["ListingType"];
-                            $current_price = $data["Item"]["SellingStatus"]["CurrentPrice"];
+                            $current_price = $data["TransactionPrice"];
                         } else {
                             $url = $data['ListingDetails']['ViewItemURL'];
                             $title = $data["Title"];
@@ -118,7 +118,7 @@ $users = get_users( $args );
                 </td>
                 <td class="text-end">
                     $<?php 
-                    echo number_format(( $current_price ), 2, '.', ',');
+                    echo number_format(( $data["TransactionPrice"]), 2, '.', ',');
                     ?>
                 </td>
             </tr>
