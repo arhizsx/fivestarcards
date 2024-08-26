@@ -46,7 +46,7 @@ $users = get_users( $args );
                     $data = json_decode($item->data, true);
                     $ctr++;
             ?>
-            <tr>
+            <tr class="ebay_card_row" data-id="<?php echo $item->id ?>">
                 <td>
                     <div class="title">
                         <?php echo $ctr; ?>&nbsp;
