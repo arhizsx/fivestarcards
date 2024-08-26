@@ -84,30 +84,18 @@ $users = get_users( $args );
                         $data = json_decode($item->data, true);
                         $ctr++;
 
-                        if( in_array("Item", $data) ){
-                            $url = $data["Item"]['ListingDetails']['ViewItemURL'];
-                            $title = $data["Item"]["Title"];
-                            $listing_type = $data["Item"]["ListingType"];
-                            $current_price = $data["TransactionPrice"];
-                        } else {
-                            $url = $data['ListingDetails']['ViewItemURL'];
-                            $title = $data["Title"];
-                            $listing_type = $data["ListingType"];
-                            $current_price = $data["SellingStatus"]["CurrentPrice"];
-                        }
-    
             ?>
             <tr>
                 <td>
                     <div class="title">
                         <strong><?php echo $ctr;  ?></strong>&nbsp;
-                        <a href="<?php echo $url ?>" target="_blank">
-                            <?php print_r( $title ); ?>
+                        <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
+                            <?php print_r( $data["Item"]["Title"] ); ?>
                         </a>
                     </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
-                    <?php $listing = $listing_type == "Chinese" ? "Auction" : $listing_type; ?>
+                    <?php $listing = $data["Item"]["ListingType"] == "Chinese" ? "Auction" : $data["Item"]["ListingType"]; ?>
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
                     <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
 
