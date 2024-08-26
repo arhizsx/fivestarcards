@@ -85,19 +85,6 @@ $users = get_users( $args );
                 </td>
                 <td class="text-end">
                     <button class="btn btn-primary btn-sm mb-2 ebayintegration-btn" data-action="consignmentPaidOut" data-id="<?php echo $item->id ?>">PAID</button>
-                    <?php 
-                    if( get_current_user_id() == 1 ){ 
-                        if( $item->status == "PaidOutQueued" ){
-                    ?>                            
-                        <button class="btn btn-success btn-sm ms-2 mb-2 ebayintegration-btn" data-action="consignmentPaidOutRelease" data-id="<?php echo $item->id ?>">RELEASE</button>
-                    <?php 
-                        } else {
-                    ?>
-                        <button class="btn btn-dark btn-sm ms-2 mb-2 ebayintegration-btn" data-action="consignmentPaidOutQueue" data-id="<?php echo $item->id ?>">QUEUE</button>
-                    <?php 
-                        }
-                    } 
-                    ?>
                 </td>
             </tr>
             <?php
