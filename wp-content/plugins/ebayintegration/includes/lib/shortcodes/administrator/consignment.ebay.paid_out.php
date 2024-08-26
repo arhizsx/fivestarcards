@@ -84,6 +84,12 @@ $users = get_users( $args );
                         $data = json_decode($item->data, true);
                         $ctr++;
 
+                        if( in_array("TransactionPrice", $data) ){
+                            $current_price = $data["TransactionPrice"];
+                        } else {
+                            $current_price = $data["Item"]["SellingStatus"]["CurrentPrice"];
+                        }
+
             ?>
             <tr>
                 <td>
@@ -106,7 +112,7 @@ $users = get_users( $args );
                 </td>
                 <td class="text-end">
                     $<?php 
-                    echo number_format(( $data["TransactionPrice"]), 2, '.', ',');
+                    echo number_format(( $current_price ), 2, '.', ',');
                     ?>
                 </td>
             </tr>
