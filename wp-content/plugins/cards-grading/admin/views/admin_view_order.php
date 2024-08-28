@@ -363,7 +363,7 @@ if( $grading_order_id > 0 ){
                     ?>
                     <td>
                         <?php  echo $post->ID; 
-                        print_r( $sql  );
+                        print_r( $db_row  );
                         
                         ?>
                     </td>
