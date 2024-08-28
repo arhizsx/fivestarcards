@@ -1231,6 +1231,21 @@ $(document).on("change", ".card_grade_saving", function(){
     var name = $(this).data("name");
     var value = $(this).val();
 
+
+    var grading = saveGrading( post_id, db_id, name, value );
+
+    $.when( grading ).done( function( grading ){
+
+        console.log(grading);
+
+    });
+
+});
+
+function saveGrading(post_id, db_id, name, value){
+
+	var defObject = $.Deferred();  // create a deferred object.
+
     $.ajax({
         type: 'post',
         url: "/wp-json/ebayintegration/v1/post",
@@ -1242,23 +1257,13 @@ $(document).on("change", ".card_grade_saving", function(){
             value: value
         },
         success: function(resp){
-
-            if(resp == true){
-
-                // location.reload();
-                console.log(resp);
-
-            } else {
-
-                alert("Incomplete Grading Info");
-
-            }
-
-
+			defObject.resolve(resp);    //resolve promise and pass the response.
         },
         error: function(){
             console.log("Error in AJAX");
         }
     });
 
-});
+	return defObject.promise();
+
+}
