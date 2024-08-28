@@ -1266,7 +1266,7 @@ $(document).on("change", ".card_grade_saving", function(){
 
         }
 
-        console.log(grading.psa);
+        console.log(grading.psa.table.Year + " " + grading.psa.table.Brand + " " + grading.psa.table.Player + " " + grading.psa.table["Card Number"] );
 
     });
 
