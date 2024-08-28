@@ -439,8 +439,8 @@ if( $grading_order_id > 0 ){
                     <td><?php echo $post->ID ?></td>
                     <td><?php echo $db_row_data["title"] ?></td>
                     <td><a href='<?php echo $db_row_data["certImgFront"] ?>'><img width='100px' src='<?php echo $db_row_data["certImgFront"] ?>' target='_blank'></a><a href='<?php echo $db_row_data["certImgBack"] ?>' target='_blank'><img width='100px' src='<?php echo $db_row_data["certImgBack"] ?>'></a></td>
-                    <td><?php echo $db_row_data["grade"] ?></td>" + 
-                    <td><?php echo $db_row_data["certificate_number"] ?></td>" + 
+                    <td><?php echo $db_row_data["grade"] ?></td>
+                    <td><?php echo $db_row_data["certificate_number"] ?></td>
                 </tr>
 
                 <?php 
