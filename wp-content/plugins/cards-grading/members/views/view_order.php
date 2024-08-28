@@ -314,6 +314,53 @@ $grading_files = $this->wpdb->get_results ( $sql );
                 ?>
             </tbody>
         </table>
+
+        <H3 style="color: black !important;">Graded Cards</H3>
+        <table id="completed_graded" class="table table-bordered table-striped">
+            <thead>
+                <th>ID</th>
+                <th width="50%">Title</th>
+                <th>Photo</th>
+                <th>Grade</th>
+                <th>Certificate #</th>
+            </thead>
+            <tbody>
+                <?php 
+                    if( $posts ){
+
+                        foreach($posts as $post)
+                        {
+                            $meta = get_post_meta($post->ID);
+                            $card = json_decode($meta['card'][0], true);
+
+                            $sql = "SELECT * FROM grading WHERE id = " . $card["db_id"];
+                            $db_row = $this->wpdb->get_results ( $sql );
+        
+                            $db_row_data = json_decode($db_row[0]->data, true);
+        
+                            if( array_key_exists( "title", $db_row_data ) && array_key_exists( "certImgFront", $db_row_data ) && array_key_exists( "certImgBack", $db_row_data )  ){
+        
+                ?>
+                <tr class='admin-graded-row' data-post_id='" + post_id + "'>
+                    <td><?php echo $post->ID ?></td>
+                    <td><?php echo $db_row_data["title"] ?></td>
+                    <td><a href='<?php echo $db_row_data["certImgFront"] ?>'><img width='100px' src='<?php echo $db_row_data["certImgFront"] ?>' target='_blank'></a><a href='<?php echo $db_row_data["certImgBack"] ?>' target='_blank'><img width='100px' src='<?php echo $db_row_data["certImgBack"] ?>'></a></td>
+                    <td><?php echo $db_row_data["grade"] ?></td>
+                    <td><?php echo $db_row_data["certificate_number"] ?></td>
+                </tr>
+
+                <?php 
+                            }
+
+                        }
+
+                    }
+                ?>
+
+
+            </tbody>
+        </table>
+
     </div>
 
     <div class='5star_btn_box_bottom w-100'>
