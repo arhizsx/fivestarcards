@@ -1666,6 +1666,7 @@ class Ebay_Integration_Ebay_API {
 		$data[ $params["name"] ] = $params["value"];
 
 
+		return $data;
 
 		if( in_array( "grade",  $data) && in_array( "certificate_number", $data ) ){
 
