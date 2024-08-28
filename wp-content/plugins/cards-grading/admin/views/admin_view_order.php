@@ -355,6 +355,8 @@ if( $grading_order_id > 0 ){
                     $sql = "SELECT * FROM grading WHERE id = " . $card["db_id"];
                     $db_row = $this->wpdb->get_results ( $sql );
 
+
+
                     $db_row_data = json_decode(  $db_row, true );
                             
 
@@ -363,7 +365,7 @@ if( $grading_order_id > 0 ){
                     ?>
                     <td>
                         <?php  echo $post->ID; 
-                    print_r( $sql  );
+                    print_r( $db_row  );
                         
                         ?>
                     </td>
