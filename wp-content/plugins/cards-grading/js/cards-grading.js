@@ -883,7 +883,7 @@ function cardAction(action, value, post_id, parent_element ){
             if(action == "card_update_status")
             {
                 if(resp == true){
-                    $(parent_element).find("td:eq(6)").text(value);                    
+                    $(parent_element).find("td:eq(4)").text(value);                    
                 } 
 
                 var missing = 0;
@@ -891,10 +891,10 @@ function cardAction(action, value, post_id, parent_element ){
 
                 if( value == "Received" ){
                     $(parent_element).closest("table tbody").find("tr").each( function(k, v){
-                        if( $(v).find("td:eq(6)").text() != "Received"){
+                        if( $(v).find("td:eq(4)").text() != "Received"){
                             missing = missing + 1;
                         }
-                        else if( $(v).find("td:eq(6)").text() == "Shipped"){
+                        else if( $(v).find("td:eq(4)").text() == "Shipped"){
                             shipped = shipped + 1;
                         }
                     });
