@@ -1236,11 +1236,13 @@ $(document).on("change", ".card_grade_saving", function(){
 
     $(document).find(".admin-card-row[data-post_id='" + post_id + "']").find("input").prop("disabled", true);
 
-    // console.log($(document).find(".admin-card-row[data-post_id='" + post_id + "']").find("input"));
-
     $.when( grading ).done( function( grading ){
 
-        // $(document).find(".admin-card-row[data-post_id='" + post_id + "']").removeClass("disabled");
+        if( grading == true ){
+
+            $(document).find(".admin-card-row[data-post_id='" + post_id + "']").find("input").prop("disabled", false);
+
+        }
 
         console.log(grading);
 
