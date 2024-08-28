@@ -1227,4 +1227,32 @@ function DemoteAdmin(user_id){
 $(document).on("change", ".card_grade_saving", function(){
     console.log("Grade Saving");
     console.log($(this).data());
+
+    var post_id = $(this).data("post_id");
+    var db_id = $(this).data("db_id");
+    var name = $(this).data("name");
+    var value = $(this).val();
+
+
+    $.ajax({
+        type: 'post',
+        url: "/wp-json/ebayintegration/v1/post",
+        data: { 
+            action: "card_grade_saving",
+            name: name,
+            post_id: post_id,
+            db_id: db_id,
+            value: value
+
+        },
+        success: function(resp){
+
+            console.log( resp );
+
+        },
+        error: function(){
+            console.log("Error in AJAX");
+        }
+    });
+
 });
