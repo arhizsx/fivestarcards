@@ -1226,4 +1226,5 @@ function DemoteAdmin(user_id){
 
 $(document).on("change", ".card_grade_saving", function(){
     console.log("Grade Saving");
+    console.log($(this).data());
 });

@@ -326,10 +326,10 @@ if( $grading_order_id > 0 ){
 
                     <?php if( in_array( $checkout_meta["status"][0], $admin_graded_status ) ){ ?>
                         <td class="text-start">
-                            <input type="text" value="" name="grade" data-post_id="<?php echo $post->ID; ?>" class="form-control form-control-sm card_grade_saving">
+                            <input type="text" value="" name="grade" data-post_id="<?php echo $post->ID; ?>" data-db_id="<?php echo $card['db_id']; ?>" class="form-control form-control-sm card_grade_saving">
                         </td>
                         <td class="text-start">
-                            <input type="text" value="" name="certificate_number" data-post_id="<?php echo $post->ID; ?>" class="form-control form-control-sm card_grade_saving">
+                            <input type="text" value="" name="certificate_number" data-post_id="<?php echo $post->ID; ?>" data-db_id="<?php echo $card['db_id']; ?>" class="form-control form-control-sm card_grade_saving">
                         </td>
                     <?php } else { ?>
 
