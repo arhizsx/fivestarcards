@@ -1258,6 +1258,7 @@ $(document).on("change", ".card_grade_saving", function(){
                 "<tr class='admin-graded-row' data-post_id='" + post_id + "'>" +
                     "<td>" + post_id + "</td>" + 
                     "<td>" + grading.title + "</td>" + 
+                    "<td><img width='80px' src='" + grading.certImgFront + "'><img width='80px' src='" + grading.certImgFront + "'></td>" + 
                     "<td>" + grading.grade + "</td>" + 
                     "<td>" + grading.certificate_number + "</td>" + 
                 "</tr>"

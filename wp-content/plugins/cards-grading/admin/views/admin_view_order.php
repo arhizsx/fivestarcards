@@ -356,9 +356,10 @@ if( $grading_order_id > 0 ){
         <table id="completed_graded">
             <thead>
                 <th>ID</th>
-                <th width="60%">Title</th>
+                <th width="50%">Title</th>
+                <th>Photo</th>
                 <th>Grade</th>
-                <th>Serial</th>
+                <th>Certificate #</th>
             </thead>
             <tbody>
 
