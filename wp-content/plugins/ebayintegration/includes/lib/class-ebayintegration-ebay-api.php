@@ -1655,8 +1655,13 @@ class Ebay_Integration_Ebay_API {
 		$sql = "UDPATE grading SET data = " . json_encode($data) . "' WHERE id = " . $params["db_id"];
 		$result = $this->wpdb->get_results ( $sql );
 
+		return $result;
+
 		$sql = "SELECT * FROM grading WHERE id = " . $params["db_id"];
 		$result = $this->wpdb->get_results ( $sql );
+
+
+
 
 		if( in_array( "grade",  $data) && in_array( "certificate_number", $data ) ){
 
