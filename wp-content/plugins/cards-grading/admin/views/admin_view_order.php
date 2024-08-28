@@ -355,17 +355,14 @@ if( $grading_order_id > 0 ){
                     $sql = "SELECT * FROM grading WHERE id = " . $card["db_id"];
                     $db_row = $this->wpdb->get_results ( $sql );
 
-                    $db_row_data = json_decode(  $db_row["data"], true );
+                    $db_row_data = json_decode(  $db_row[0]["data"], true );
                     
 
                     if( array_key_exists( "title", $db_row_data ) == false && array_key_exists( "certImgFront", $db_row_data )  == false && array_key_exists( "certImgBack", $db_row_data )  == false ){
 
                     ?>
                     <td>
-                        <?php  echo $post->ID; 
-                        print_r( $db_row  );
-                        
-                        ?>
+                        <?php  echo $post->ID; ?>
                     </td>
                     <td><?php echo $card["year"]; ?></td>
                     <td><?php echo $card["brand"]; ?></td>
