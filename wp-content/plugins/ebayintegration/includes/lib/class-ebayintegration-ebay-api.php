@@ -1666,7 +1666,6 @@ class Ebay_Integration_Ebay_API {
 
 		if( in_array( "grade",  $data) && in_array( "certificate_number", $data ) ){
 
-			return "test";
 
 			if( $data["grade"] != ""  && $data["certificate_number"] != "" ){
 
@@ -1679,6 +1678,8 @@ class Ebay_Integration_Ebay_API {
 
 
 		} else {
+
+			return "test";
 
 			return false;
 
