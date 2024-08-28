@@ -189,9 +189,9 @@ $grading_files = $this->wpdb->get_results ( $sql );
                     <th>Card #</th>
                     <th>Player Name</th>
                     <th>Status</th>
-                    <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
+                <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
                     <th class="text-end">Grade</th>
-                    <?php } ?>
+                <?php } ?>
                     <th class='text-end'>DV</th>
                     <th class="text-end">Grading</th>
                 <?php if( in_array( $checkout_meta["status"][0], $consignment_status ) ){ ?>
@@ -223,47 +223,59 @@ $grading_files = $this->wpdb->get_results ( $sql );
 
                             $total_to_receive = $total_to_receive + $meta["to_receive"][0];
 
+                            
+
+                            $sql = "SELECT * FROM grading WHERE id = " . $card["db_id"];
+                            $db_row = $this->wpdb->get_results ( $sql );
+        
+                            $db_row_data = json_decode($db_row[0]->data, true);
+        
                 ?>
                 <tr class="user-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
-                    <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
-                    <td>                        
-                        <?php 
-                            if( $checkout_meta["status"][0] == "Completed - Grades Ready" ) { 
-                                if( in_array( $meta["status"][0], array("Graded", "Consign Card", "Pay Grading") ) ) {
-                        ?>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="consign_card" data-post_id="<?php echo $post->ID; ?>">
-                                        Consign
-                                    </button>
-                                </div>
-                                <div class="col-sm-12">
-                                    <button class='5star_btn btn-sm btn btn-primary w-100 mb-3' data-action="pay_card_grading" data-post_id="<?php echo $post->ID; ?>">
-                                        Pay
-                                    </button>
-                                </div>
-                            </div>
-                        <?php
-                                } 
-                            } 
-                        ?>
-                    </td>
-                    <?php } ?>
-                    <td><?php echo $card["year"]; ?></td>
-                    <td><?php echo $card["brand"]; ?></td>
-                    <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
-                    <td><?php echo $card["player"]; ?></td>
-                    <td><?php echo $meta["status"][0]; ?></td>
-                    <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
-                    <td class="text-end"><?php echo $meta["grade"][0];  ?></td>
-                    <?php } ?>
-                    <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
-                    <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
-                    <?php if( in_array( $checkout_meta["status"][0], $consignment_status ) ){ ?>
-                    <td class='text-end'><?php echo "$" . number_format((float) $meta["sold_price"][0], 2, '.', ''); ?></td>
-                    <td class='text-end'><?php echo "$" . number_format((float) $meta["to_receive"][0], 2, '.', ''); ?></td>
-                    <?php } ?>
 
+                    <?php 
+                    if( array_key_exists( "title", $db_row_data ) == false && array_key_exists( "certImgFront", $db_row_data ) == false && array_key_exists( "certImgBack", $db_row_data ) == false  ){
+                    ?>
+
+                        <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
+                        <td>                        
+                            <?php 
+                                if( $checkout_meta["status"][0] == "Completed - Grades Ready" ) { 
+                                    if( in_array( $meta["status"][0], array("Graded", "Consign Card", "Pay Grading") ) ) {
+                            ?>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="consign_card" data-post_id="<?php echo $post->ID; ?>">
+                                            Consign
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <button class='5star_btn btn-sm btn btn-primary w-100 mb-3' data-action="pay_card_grading" data-post_id="<?php echo $post->ID; ?>">
+                                            Pay
+                                        </button>
+                                    </div>
+                                </div>
+                            <?php
+                                    } 
+                                } 
+                            ?>
+                        </td>
+                        <?php } ?>
+                        <td><?php echo $card["year"]; ?></td>
+                        <td><?php echo $card["brand"]; ?></td>
+                        <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
+                        <td><?php echo $card["player"]; ?></td>
+                        <td><?php echo $meta["status"][0]; ?></td>
+                        <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
+                        <td class="text-end"><?php echo $meta["grade"][0];  ?></td>
+                        <?php } ?>
+                        <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
+                        <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
+                        <?php if( in_array( $checkout_meta["status"][0], $consignment_status ) ){ ?>
+                        <td class='text-end'><?php echo "$" . number_format((float) $meta["sold_price"][0], 2, '.', ''); ?></td>
+                        <td class='text-end'><?php echo "$" . number_format((float) $meta["to_receive"][0], 2, '.', ''); ?></td>
+                        <?php } ?>
+                    <?php } ?>
                 </tr>
                 <?php          
                         }
