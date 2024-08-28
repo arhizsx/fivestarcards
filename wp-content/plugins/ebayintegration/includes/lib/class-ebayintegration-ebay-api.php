@@ -345,6 +345,11 @@ class Ebay_Integration_Ebay_API {
 
 		}
 
+		elseif( $params["action"] == "card_grade_saving"){
+
+			return $this->card_grade_saving($params);
+
+		}
 		
 		
 		else {			
@@ -1635,6 +1640,12 @@ class Ebay_Integration_Ebay_API {
 		$deleted_items = $this->wpdb->get_results ( $sql );
 		
 		return true;
+
+	}
+
+	function card_grade_saving( $params ) {
+		
+		return $params;
 
 	}
 
