@@ -292,16 +292,18 @@ $grading_files = $this->wpdb->get_results ( $sql );
                     <?php 
                     } 
                     
+
+                    ?>
+                </tr>
+                <?php          
+                        }
+
                     if($graded_count == 0){
                     ?>
                         <td colspan="<?php echo $empty_cols + $add_col_one + $add_col_two + $add_col_three  ?>" class="text-center p-3">Empty</td>
                     <?php                         
                     }
 
-                    ?>
-                </tr>
-                <?php          
-                        }
                     } else {
                 ?>
                 <tr>
