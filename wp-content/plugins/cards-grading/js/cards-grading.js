@@ -1234,7 +1234,9 @@ $(document).on("change", ".card_grade_saving", function(){
 
     var grading = saveGrading( post_id, db_id, name, value );
 
-    $(document).find(".admin-card-row[data-post_id='" + post_id + "']").find("input").prop("disabled", "disabled");
+    // $(document).find(".admin-card-row[data-post_id='" + post_id + "']").find("input").prop("disabled", "disabled");
+
+    console.log($(document).find(".admin-card-row[data-post_id='" + post_id + "']").find("input"));
 
     $.when( grading ).done( function( grading ){
 
