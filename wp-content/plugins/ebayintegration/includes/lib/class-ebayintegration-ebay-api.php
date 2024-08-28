@@ -1663,9 +1663,14 @@ class Ebay_Integration_Ebay_API {
 		$data = json_decode( $result[0]->data, true );
 		$data[ $params["name"] ] = $params["value"];
 
+
+
 		if( array_key_exists("grade", $data) && array_key_exists("certificate_number", $data)  ){
 
 			if( $data["grade"] != ""  && $data["certificate_number"] != "" ){
+
+				return get_post_meta( $params["post_id"] , 'grading' , true );
+
 				
 				$psa = $this->getPSA( $data["certificate_number"] );
 
