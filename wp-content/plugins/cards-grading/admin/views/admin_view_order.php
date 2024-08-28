@@ -353,7 +353,7 @@ if( $grading_order_id > 0 ){
                 ?>
             </tbody>
         </table>
-        <table id="graded_completed">
+        <table id="completed_graded">
             <thead>
                 <th>ID</th>
                 <th>Title</th>
