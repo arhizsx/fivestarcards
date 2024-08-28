@@ -1254,7 +1254,6 @@ $(document).on("change", ".card_grade_saving", function(){
             }
 
             
-
             $(document).find("#completed_graded tbody").append(
                 "<tr class='admin-graded-row' data-post_id='" + post_id + "'>" +
                     "<td>ID</td>" + 
