@@ -342,6 +342,9 @@ $grading_files = $this->wpdb->get_results ( $sql );
         
                 ?>
                 <tr class='admin-graded-row' data-post_id='" + post_id + "'>
+                    <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
+                        <th>Action</th>
+                    <?php } ?>
                     <td><?php echo $post->ID ?></td>
                     <td><?php echo $db_row_data["title"] ?></td>
                     <td><a href='<?php echo $db_row_data["certImgFront"] ?>'><img width='100px' src='<?php echo $db_row_data["certImgFront"] ?>' target='_blank'></a><a href='<?php echo $db_row_data["certImgBack"] ?>' target='_blank'><img width='100px' src='<?php echo $db_row_data["certImgBack"] ?>'></a></td>
