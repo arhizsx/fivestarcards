@@ -1671,6 +1671,8 @@ class Ebay_Integration_Ebay_API {
 
 				$psxa = json_decode( $psa, true );
 
+				return $psxa;
+
 				if (json_last_error() === JSON_ERROR_NONE) {
 					// JSON is valid
 				}
