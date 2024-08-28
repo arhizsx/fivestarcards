@@ -1669,7 +1669,7 @@ class Ebay_Integration_Ebay_API {
 				
 				$psa = $this->getPSA( $data["certificate_number"] );
 
-				return $psa["certImgBack"];
+				return $psa["certImgBack"]; 
 
 				if (json_last_error() === JSON_ERROR_NONE) {
 					// JSON is valid
