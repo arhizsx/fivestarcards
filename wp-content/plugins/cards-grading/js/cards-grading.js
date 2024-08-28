@@ -1266,9 +1266,9 @@ $(document).on("change", ".card_grade_saving", function(){
 
         }
 
-        psa = JSON.parse(grading.psa);
+        psa = JSON.parse( grading.psa );
 
-        console.log(psa);
+        console.log(psa.table_data);
 
     });
 
