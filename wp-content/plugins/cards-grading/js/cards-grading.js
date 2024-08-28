@@ -1268,7 +1268,7 @@ $(document).on("change", ".card_grade_saving", function(){
 
         psa = JSON.parse( grading.psa );
 
-        console.log(psa.table_data);
+        console.log( psa.table_data["Year"] + psa.table_data["Brand"] + psa.table_data["Card Number"] );
 
     });
 
