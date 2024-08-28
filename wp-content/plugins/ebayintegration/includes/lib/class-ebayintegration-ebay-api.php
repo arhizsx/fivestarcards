@@ -1674,7 +1674,7 @@ class Ebay_Integration_Ebay_API {
 				if (json_last_error() === JSON_ERROR_NONE) {
 					// JSON is valid
 				}
-				return $this->getPSA( $data["certificate_number"] );
+				// return $this->getPSA( $data["certificate_number"] );
 	
 			} else {
 	
