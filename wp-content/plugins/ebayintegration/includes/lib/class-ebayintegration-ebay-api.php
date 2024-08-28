@@ -1692,8 +1692,6 @@ class Ebay_Integration_Ebay_API {
 
     public function getPSA($certificate_number){
         
-        header('Content-Type: application/json'); // Set the content type to JSON
-
         $response = array();
         $command = "python3 /home/arhizsx/psa.py " . $certificate_number . "  2>&1"; // Capture both stdout and stderr
         
@@ -1701,7 +1699,7 @@ class Ebay_Integration_Ebay_API {
         $output = shell_exec($command);
     
         // Return the JSON response
-        echo $output;
+        return $output;
 
     }
 
