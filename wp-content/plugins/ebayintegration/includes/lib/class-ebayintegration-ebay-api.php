@@ -1672,7 +1672,6 @@ class Ebay_Integration_Ebay_API {
 
 				if( $grading_type[0] == "psa" && $params["name"] == "certificate_number" ){
 
-
 					$psa = $this->getPSA( $data["certificate_number"] );
 
 					$psa_data = json_decode( $psa, true );
