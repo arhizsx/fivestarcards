@@ -1268,7 +1268,7 @@ $(document).on("change", ".card_grade_saving", function(){
 
         
         // psa = JSON.parse(JSON.stringify(grading.psa));
-        console.log( grading.psa);
+        console.log( grading.psa["certImgBack"]);
         // console.log( psa.table_data["Year"] + " " +  psa.table_data["Brand"] +  " " + psa.table_data["Card Number"] + " " + psa.table_data["Player"]  + " " + psa.table_data["Variety/Pedigree"]  + " " + psa.table_data["Grade"] );
 
     });
