@@ -1247,7 +1247,9 @@ $(document).on("change", ".card_grade_saving", function(){
         success: function(resp){
 
             if(resp == true){
-                location.reload();
+                // location.reload();
+
+                console.log(resp);
             } else {
 
                 alert("Incomplete Grading Info");
