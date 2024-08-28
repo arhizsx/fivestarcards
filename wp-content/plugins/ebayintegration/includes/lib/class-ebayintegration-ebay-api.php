@@ -1678,7 +1678,9 @@ class Ebay_Integration_Ebay_API {
 	
 					if (json_last_error() === JSON_ERROR_NONE) {
 
-						return [ "error" => true, "psa" => $psa_data ];
+						return $psa_data["table_data"];
+
+						return [ "error" => true, "psa" => $psa_data, "title" => $title, "grade"=> $grade, "certificate_number" => $certificate_number ];
 						
 					} else {
 						return [ "error" => false ];
