@@ -1644,39 +1644,59 @@ class Ebay_Integration_Ebay_API {
 	}
 
 	function card_grade_saving( $params ) {
-		
+
+        update_post_meta($params["post_id"], 'status', "Graded");   
+        update_post_meta($params["post_id"], $params["name"], $params[$params["name"]]);   
 
 		$sql = "SELECT * FROM grading WHERE id = " . $params["db_id"];
 		$result = $this->wpdb->get_results ( $sql );
 
-
 		$data = json_decode( $result[0]->data, true );
 		$data[ $params["name"] ] = $params["value"];
-
 		
 		$sql = "UPDATE grading SET data = '" . json_encode($data) . "' WHERE id = " . $params["db_id"];
 		$result = $this->wpdb->get_results ( $sql );
 
-
 		$sql = "SELECT * FROM grading WHERE id = " . $params["db_id"];
 		$result = $this->wpdb->get_results ( $sql );
-
 
 		$data = json_decode( $result[0]->data, true );
 		$data[ $params["name"] ] = $params["value"];
 
+		if( array_key_exists("grade", $data) && array_key_exists("certificate_number", $data)  ){
 
-		if( $data["grade"] != ""  && $data["certificate_number"] != "" ){
-
-			return true;
-
+			if( $data["grade"] != ""  && $data["certificate_number"] != "" ){
+				
+				return $this->getPSA( $data["certificate_number"] );
+	
+			} else {
+	
+				return false;
+			}
+	
 		} else {
-
 			return false;
 		}
 
 
 
+
 	}
+
+    public function getPSA($certificate_number){
+        
+        header('Content-Type: application/json'); // Set the content type to JSON
+
+        $response = array();
+        $command = "python3 /home/arhizsx/psa.py " . $certificate_number . "  2>&1"; // Capture both stdout and stderr
+        
+        // Execute the Python script and capture output and errors
+        $output = shell_exec($command);
+    
+        // Return the JSON response
+        echo $output;
+
+    }
+
 
 }

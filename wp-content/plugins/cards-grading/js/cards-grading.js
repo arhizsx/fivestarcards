@@ -1225,14 +1225,11 @@ function DemoteAdmin(user_id){
 
 
 $(document).on("change", ".card_grade_saving", function(){
-    console.log("Grade Saving");
-    console.log($(this).data());
 
     var post_id = $(this).data("post_id");
     var db_id = $(this).data("db_id");
     var name = $(this).data("name");
     var value = $(this).val();
-
 
     $.ajax({
         type: 'post',
@@ -1247,9 +1244,10 @@ $(document).on("change", ".card_grade_saving", function(){
         success: function(resp){
 
             if(resp == true){
-                // location.reload();
 
+                // location.reload();
                 console.log(resp);
+
             } else {
 
                 alert("Incomplete Grading Info");
