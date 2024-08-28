@@ -1662,14 +1662,13 @@ class Ebay_Integration_Ebay_API {
 
 		$data = json_decode( $result[0]->data, true );
 
-
 		if( array_key_exists("grade", $data) && array_key_exists("certificate_number", $data)  ){
 
 			if( $data["grade"] != ""  && $data["certificate_number"] != "" ){
 
 				$grading_type =  explode( "-", get_post_meta( $params["post_id"] , 'grading' , true ));
 
-				if( $grading_type[0] == "psa" ){
+				if( $grading_type[0] == "psa" && $params["name"] == "certificate_number" ){
 
 					$psa = $this->getPSA( $data["certificate_number"] );
 
@@ -1687,10 +1686,11 @@ class Ebay_Integration_Ebay_API {
 						$data[ "certImgBack"] = $psa_data["certImgBack"];
 						$data[ "certImgFront"] = $psa_data["certImgFront"];
 
+
 						$sql = "UPDATE grading SET data = '" . json_encode($data) . "' WHERE id = " . $params["db_id"];
 						$result = $this->wpdb->get_results ( $sql );
 				
-						return [ "error" => true, "psa" => $psa_data, "title" => $title, "grade"=> $grade, "certificate_number" => $certificate_number ];
+						return [ "error" => true, "psa" => $psa_data, "title" => $title, "grade"=> $grade, "certificate_number" => $certificate_number, "certImgFront" => $psa_data["certImgFront"], "certImgBack" => $psa_data["certImgBack"] ];
 						
 					} else {
 						return [ "error" => false ];
