@@ -1668,7 +1668,7 @@ class Ebay_Integration_Ebay_API {
 
 				$grading_type =  explode( "-", get_post_meta( $params["post_id"] , 'grading' , true ));
 
-				if( $grading_type[0] == "psa" && $params["name"] == "certificate_number" ){
+				if( $grading_type[0] == "psa" ){
 
 					$psa = $this->getPSA( $data["certificate_number"] );
 
