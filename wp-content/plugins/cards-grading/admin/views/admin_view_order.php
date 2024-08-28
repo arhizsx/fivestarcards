@@ -353,6 +353,17 @@ if( $grading_order_id > 0 ){
                 ?>
             </tbody>
         </table>
+        <table id="graded_completed">
+            <thead>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Grade</th>
+                <th>Serial</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
     </div>
     <div class='5star_btn_box_bottom w-100'>
         <div class="row">
