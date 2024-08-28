@@ -1661,7 +1661,6 @@ class Ebay_Integration_Ebay_API {
 		$result = $this->wpdb->get_results ( $sql );
 
 		$data = json_decode( $result[0]->data, true );
-		$data[ $params["name"] ] = $params["value"];
 
 
 		if( array_key_exists("grade", $data) && array_key_exists("certificate_number", $data)  ){
