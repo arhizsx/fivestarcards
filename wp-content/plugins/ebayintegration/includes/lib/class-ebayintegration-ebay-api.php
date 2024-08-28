@@ -1645,7 +1645,31 @@ class Ebay_Integration_Ebay_API {
 
 	function card_grade_saving( $params ) {
 		
-		return $params;
+
+		$sql = "SELECT * FROM grading WHERE id = " . $params["db_id"];
+		$result = $this->wpdb->get_results ( $sql );
+
+		$data = json_decode( $result->data, 2 );
+		$data[ $params["name"] ] = $params["value"];
+
+
+		if( in_array( "grade",  $data) && in_array( "certificate_number", $data ) ){
+
+			if( $data["grade"] != ""  && $data["certificate_number"] != "" ){
+				return true;
+				
+			} else {
+
+				return false;
+			}
+
+
+		} else {
+
+			return false;
+
+		}
+
 
 	}
 

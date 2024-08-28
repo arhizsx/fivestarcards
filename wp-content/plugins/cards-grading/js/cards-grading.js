@@ -1243,11 +1243,17 @@ $(document).on("change", ".card_grade_saving", function(){
             post_id: post_id,
             db_id: db_id,
             value: value
-
         },
         success: function(resp){
 
-            console.log( resp );
+            if(resp == true){
+                location.reload();
+            } else {
+
+                alert("Incomplete Grading Info");
+
+            }
+
 
         },
         error: function(){
