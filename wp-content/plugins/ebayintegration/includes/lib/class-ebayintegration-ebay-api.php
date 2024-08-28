@@ -1652,6 +1652,9 @@ class Ebay_Integration_Ebay_API {
 		$data = json_decode( $result->data, 2 );
 		$data[ $params["name"] ] = $params["value"];
 
+
+		return $data;
+		
 		$sql = "UPDATE grading SET data = " . json_encode($data) . "' WHERE id = " . $params["db_id"];
 		$result = $this->wpdb->get_results ( $sql );
 
