@@ -1665,7 +1665,7 @@ class Ebay_Integration_Ebay_API {
 		$data = json_decode( $result[0]->data, true );
 		$data[ $params["name"] ] = $params["value"];
 
-			return in_array( "grade",  $data);
+			return is_array( $data);
 
 		if( in_array( "grade",  $data) && in_array( "certificate_number", $data ) ){
 
