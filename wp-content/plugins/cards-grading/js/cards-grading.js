@@ -1247,10 +1247,13 @@ $(document).on("change", ".card_grade_saving", function(){
             $(document).find(".admin-card-row[data-post_id='" + post_id + "']").remove();
 
             if( $(document).find("#card_table tbody tr").length == 0 ){
+
                 $(document).find("#card_table tbody").append(
                     "<tr class='p-5 text-center'>Empty</tr>"
                 );  
             }
+
+            
 
             $(document).find("#completed_graded tbody").append(
                 "<tr class='admin-graded-row' data-post_id='" + post_id + "'>" +
@@ -1263,7 +1266,7 @@ $(document).on("change", ".card_grade_saving", function(){
 
         }
 
-        console.log(grading);
+        console.log(grading.psa);
 
     });
 
