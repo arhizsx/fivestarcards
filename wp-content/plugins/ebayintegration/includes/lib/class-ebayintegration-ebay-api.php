@@ -1701,7 +1701,7 @@ class Ebay_Integration_Ebay_API {
         $output = shell_exec($command);
     
         // Return the JSON response
-        echo $output;
+        return $output;
 
     }
 
