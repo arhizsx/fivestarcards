@@ -1649,25 +1649,20 @@ class Ebay_Integration_Ebay_API {
 		$sql = "SELECT * FROM grading WHERE id = " . $params["db_id"];
 		$result = $this->wpdb->get_results ( $sql );
 
-		return $result[0]->id;
 
-
-		$data = json_decode( $result->data, true );
-
+		$data = json_decode( $result[0]->data, true );
 		$data[ $params["name"] ] = $params["value"];
-
 
 		
 		$sql = "UPDATE grading SET data = " . json_encode($data) . "' WHERE id = " . $params["db_id"];
 		$result = $this->wpdb->get_results ( $sql );
 
 
-
 		$sql = "SELECT * FROM grading WHERE id = " . $params["db_id"];
 		$result = $this->wpdb->get_results ( $sql );
 
-
-
+		$data = json_decode( $result[0]->data, true );
+		$data[ $params["name"] ] = $params["value"];
 
 		if( in_array( "grade",  $data) && in_array( "certificate_number", $data ) ){
 
