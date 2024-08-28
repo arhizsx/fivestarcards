@@ -1678,7 +1678,11 @@ class Ebay_Integration_Ebay_API {
 	
 					if (json_last_error() === JSON_ERROR_NONE) {
 
-						return $psa_data["table_data"];
+						$psa_info = $psa_data["table_data"];
+
+						$title = $psa_info["Year"] . " " .  $psa_info["Brand"] . " " . $psa_info["Card Number"] . " " . $psa_info["Variety/Pedigree"] . " " . $psa_info["Grade"];
+						$grade =  $data["grade"];
+						$certificate_number =  $data["certificate_number"];
 
 						return [ "error" => true, "psa" => $psa_data, "title" => $title, "grade"=> $grade, "certificate_number" => $certificate_number ];
 						
