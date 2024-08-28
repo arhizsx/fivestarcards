@@ -1667,6 +1667,13 @@ class Ebay_Integration_Ebay_API {
 
 			if( $data["grade"] != ""  && $data["certificate_number"] != "" ){
 				
+				$psa = $this->getPSA( $data["certificate_number"] );
+
+				return $psa["certImgBack"];
+
+				if (json_last_error() === JSON_ERROR_NONE) {
+					// JSON is valid
+				}
 				return $this->getPSA( $data["certificate_number"] );
 	
 			} else {
