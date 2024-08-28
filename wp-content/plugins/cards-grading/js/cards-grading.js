@@ -1247,6 +1247,7 @@ $(document).on("change", ".card_grade_saving", function(){
             $(document).find(".admin-card-row[data-post_id='" + post_id + "']").remove();
             $(document).find("#completed_graded tbody").append(
                 "<tr>" +
+                    "<td>ID</td>" + 
                     "<td>TITLE</td>" + 
                     "<td>GRADE</td>" + 
                     "<td>SERIAL</td>" + 
