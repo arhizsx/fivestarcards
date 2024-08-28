@@ -357,7 +357,7 @@ if( $grading_order_id > 0 ){
 
 
 
-                    $db_row_data = json_decode(  $db_row[0], true );
+                    print_r( json_decode(  $db_row[0], true ) );
                             
 
                     if( array_key_exists( "title", $db_row_data ) == false && array_key_exists( "certImgFront", $db_row_data )  == false && array_key_exists( "certImgBack", $db_row_data )  == false ){
