@@ -323,6 +323,7 @@ $grading_files = $this->wpdb->get_results ( $sql );
                 <?php } ?>
                 <th>ID</th>
                 <th width="50%">Title</th>
+                <th>Status</th>
                 <th>Photo</th>
                 <th>Grade</th>
                 <th>Certificate #</th>
@@ -374,6 +375,7 @@ $grading_files = $this->wpdb->get_results ( $sql );
 
                     <td><?php echo $post->ID ?></td>
                     <td><?php echo $db_row_data["title"] ?></td>
+                    <td></td>
                     <td><a href='<?php echo $db_row_data["certImgFront"] ?>'><img width='100px' src='<?php echo $db_row_data["certImgFront"] ?>' target='_blank'></a><a href='<?php echo $db_row_data["certImgBack"] ?>' target='_blank'><img width='100px' src='<?php echo $db_row_data["certImgBack"] ?>'></a></td>
                     <td><?php echo $db_row_data["grade"] ?></td>
                     <td><?php echo $db_row_data["certificate_number"] ?></td>
