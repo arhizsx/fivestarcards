@@ -1660,11 +1660,13 @@ class Ebay_Integration_Ebay_API {
 
 		$sql = "SELECT * FROM grading WHERE id = " . $params["db_id"];
 		$result = $this->wpdb->get_results ( $sql );
-		return $result;
 
 
 		$data = json_decode( $result[0]->data, true );
 		$data[ $params["name"] ] = $params["value"];
+
+		return $data;
+
 
 		if( in_array( "grade",  $data) && in_array( "certificate_number", $data ) ){
 
