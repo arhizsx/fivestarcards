@@ -357,13 +357,15 @@ if( $grading_order_id > 0 ){
 
                     $db_row_data = json_decode(  $db_row, true );
                             
-                    print_r( $db_row_data  );
 
                     if( array_key_exists( "title", $db_row_data ) == false && array_key_exists( "certImgFront", $db_row_data )  == false && array_key_exists( "certImgBack", $db_row_data )  == false ){
 
                     ?>
                     <td>
-                        <?php  echo $post->ID; ?>
+                        <?php  echo $post->ID; 
+                    print_r( $db_row_data  );
+                        
+                        ?>
                     </td>
                     <td><?php echo $card["year"]; ?></td>
                     <td><?php echo $card["brand"]; ?></td>
