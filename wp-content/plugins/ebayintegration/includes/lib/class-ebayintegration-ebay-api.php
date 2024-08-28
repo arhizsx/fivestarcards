@@ -1684,6 +1684,13 @@ class Ebay_Integration_Ebay_API {
 						$grade =  $data["grade"];
 						$certificate_number =  $data["certificate_number"];
 
+						$data[ "title"] = $title;
+						$data[ "certImgBack"] = $psa_data["certImgBack"];
+						$data[ "certImgFront"] = $psa_data["certImgFront"];
+
+						$sql = "UPDATE grading SET data = '" . json_encode($data) . "' WHERE id = " . $params["db_id"];
+						$result = $this->wpdb->get_results ( $sql );
+				
 						return [ "error" => true, "psa" => $psa_data, "title" => $title, "grade"=> $grade, "certificate_number" => $certificate_number ];
 						
 					} else {
