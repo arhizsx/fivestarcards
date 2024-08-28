@@ -234,10 +234,20 @@ $grading_files = $this->wpdb->get_results ( $sql );
                 <tr class="user-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
 
                     <?php 
+                    $graded_count = 0;
+                    $empty_cols = 7;
+                    $add_col_one = 0;
+                    $add_col_two = 0;
+                    $add_col_three = 0;
+
                     if( array_key_exists( "title", $db_row_data ) == false && array_key_exists( "certImgFront", $db_row_data ) == false && array_key_exists( "certImgBack", $db_row_data ) == false  ){
+
+                        $graded_count++;                 
                     ?>
 
-                        <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
+                        <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ 
+                            $add_col_one = 1;
+                        ?>
                         <td>                        
                             <?php 
                                 if( $checkout_meta["status"][0] == "Completed - Grades Ready" ) { 
@@ -266,16 +276,29 @@ $grading_files = $this->wpdb->get_results ( $sql );
                         <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
                         <td><?php echo $card["player"]; ?></td>
                         <td><?php echo $meta["status"][0]; ?></td>
-                        <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
+                        <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ 
+                            $add_col_two = 1;
+                        ?>
                         <td class="text-end"><?php echo $meta["grade"][0];  ?></td>
                         <?php } ?>
                         <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
                         <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
-                        <?php if( in_array( $checkout_meta["status"][0], $consignment_status ) ){ ?>
+                        <?php if( in_array( $checkout_meta["status"][0], $consignment_status ) ){ 
+                            $add_col_three = 1;
+                        ?>
                         <td class='text-end'><?php echo "$" . number_format((float) $meta["sold_price"][0], 2, '.', ''); ?></td>
                         <td class='text-end'><?php echo "$" . number_format((float) $meta["to_receive"][0], 2, '.', ''); ?></td>
                         <?php } ?>
-                    <?php } ?>
+                    <?php 
+                    } 
+                    
+                    if($graded_count == 0){
+                    ?>
+                        <td colspan="<?php echo $empty_cols + $add_col_one + $add_col_two + $add_col_three  ?>" class="text-center p-3">Empty</td>
+                    <?php                         
+                    }
+
+                    ?>
                 </tr>
                 <?php          
                         }
