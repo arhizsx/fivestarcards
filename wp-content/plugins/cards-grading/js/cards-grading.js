@@ -1253,11 +1253,13 @@ $(document).on("change", ".card_grade_saving", function(){
                 );  
             }
 
-            
+            psa = grading.psa["table_data"];
+            var title =  psa["Year"] + " " +  psa["Brand"] +  " " + psa["Card Number"] + " " + psa["Player"]  + " " + psa["Variety/Pedigree"]  + " " + psa["Grade"];
+                
             $(document).find("#completed_graded tbody").append(
                 "<tr class='admin-graded-row' data-post_id='" + post_id + "'>" +
                     "<td>ID</td>" + 
-                    "<td>TITLE</td>" + 
+                    "<td>" + title + "</td>" + 
                     "<td>GRADE</td>" + 
                     "<td>SERIAL</td>" + 
                 "</tr>"
@@ -1266,8 +1268,6 @@ $(document).on("change", ".card_grade_saving", function(){
         }
 
         
-        psa = grading.psa["table_data"];
-        console.log( psa["Year"] + " " +  psa["Brand"] +  " " + psa["Card Number"] + " " + psa["Player"]  + " " + psa["Variety/Pedigree"]  + " " + psa["Grade"] );
 
     });
 
