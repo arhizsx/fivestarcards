@@ -1238,7 +1238,7 @@ $(document).on("change", ".card_grade_saving", function(){
 
     $.when( grading ).done( function( grading ){
 
-        if( grading == false ){
+        if( grading.error == false ){
 
             $(document).find(".admin-card-row[data-post_id='" + post_id + "']").find("input[name='certificate_number']").prop("disabled", false);
 
@@ -1246,7 +1246,7 @@ $(document).on("change", ".card_grade_saving", function(){
 
             $(document).find(".admin-card-row[data-post_id='" + post_id + "']").remove();
             $(document).find("#completed_graded tbody").append(
-                "<tr>" +
+                "<tr class='admin-graded-row' data-post_id='" + post_id + "'>" +
                     "<td>ID</td>" + 
                     "<td>TITLE</td>" + 
                     "<td>GRADE</td>" + 

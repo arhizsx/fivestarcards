@@ -1677,24 +1677,26 @@ class Ebay_Integration_Ebay_API {
 					$psa_data = json_decode( $psa, true );
 	
 					if (json_last_error() === JSON_ERROR_NONE) {
-						return true;
+
+						return [ "error" => true ];
+						
 					} else {
-						return false;
+						return [ "error" => false ];
 					}
 
 				} else {
 
-					return true;
+					return [ "error" => true ];
 
 				}
 	
 			} else {
 	
-				return false;
+				return [ "error" => false ];
 			}
 	
 		} else {
-			return false;
+			return [ "error" => false ];
 		}
 
 
