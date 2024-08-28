@@ -235,7 +235,7 @@ $grading_files = $this->wpdb->get_results ( $sql );
 
                     <?php 
                     $graded_count = 0;
-                    $empty_cols = 7;
+                    $empty_cols = 9;
                     $add_col_one = 0;
                     $add_col_two = 0;
                     $add_col_three = 0;
