@@ -1669,17 +1669,24 @@ class Ebay_Integration_Ebay_API {
 
 			if( $data["grade"] != ""  && $data["certificate_number"] != "" ){
 
-				return get_post_meta( $params["post_id"] , 'grading' , true );
+				$grading_type =  explode( "-", get_post_meta( $params["post_id"] , 'grading' , true ));
 
-				
-				$psa = $this->getPSA( $data["certificate_number"] );
+				if( $grading_type[0] == "psa" ){
 
-				$psa_data = json_decode( $psa, true );
+					$psa = $this->getPSA( $data["certificate_number"] );
 
-				if (json_last_error() === JSON_ERROR_NONE) {
-					return true;
+					$psa_data = json_decode( $psa, true );
+	
+					if (json_last_error() === JSON_ERROR_NONE) {
+						return true;
+					} else {
+						return false;
+					}
+
 				} else {
-					return false;
+
+					return true;
+
 				}
 	
 			} else {
