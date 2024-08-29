@@ -142,16 +142,15 @@ if( $grading_order_id > 0 ){
         </div>
     </div>
     <div class="row mt-3">
-        <div class="col-lg-6 col-md-6 col-sm-6 d-flex justify-content-evenly">
-            <div style="color: black !important;">Cards List</div>
-
-            <?php 
-                if( $checkout_meta["inspection"][0] == "1" ) { 
-            ?>
-            <div style="color: black !important;">INSPECTION SERVICE</div>
-            <?php 
-                }
-            ?>
+        <?php 
+            if( $checkout_meta["inspection"][0] == "1" ) { 
+        ?>
+        <H3 style="color: red !important;">INSPECTION SERVICE</H3>
+        <?php 
+            }
+        ?>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <H3 style="color: black !important;">Cards List</H3>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 text-end">
             <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
