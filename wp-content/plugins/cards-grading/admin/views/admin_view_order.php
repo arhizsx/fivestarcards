@@ -151,6 +151,9 @@ if( $grading_order_id > 0 ){
         ?>
         <div class="col-lg-6 col-md-6 col-sm-6">
             <H3 style="color: black !important;">Cards List</H3>
+            <button class="5star_btn btn-sm btn btn-success w-100 mb-3" data-action="item_avlb_in_package_all" data-order_number="<?php echo $params['order_number'] ?>">
+                Received All
+            </button>            
         </div>
 
         <div class="col-lg-6 col-md-6 col-sm-6 text-end">
@@ -204,10 +207,6 @@ if( $grading_order_id > 0 ){
             <button class='5star_btn btn btn-primary mb-3 <?php echo $complete_btn; ?>' data-action="complete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
                 Items Complete
             </button>      
-
-            <button class="5star_btn btn-sm btn btn-success w-100 mb-3" data-action="item_avlb_in_package_all" data-order_number="<?php echo $params['order_number'] ?>">
-                Received All
-            </button>            
             <?php } ?>
 
             <?php 

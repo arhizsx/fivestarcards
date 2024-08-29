@@ -205,6 +205,7 @@ $(document).on("click", ".5star_btn", function(e){
             cardAction("card_update_status", "Received", $(this).data("post_id"), $(this).closest("tr"));
             break;
 
+
         case "complete_package_contents":
 
             var order_number = $(this).data("order_number");
