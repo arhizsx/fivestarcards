@@ -181,9 +181,6 @@ $grading_files = $this->wpdb->get_results ( $sql );
         <table class='table 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
                 <tr>
-                <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ ?>
-                    <th>Action</th>
-                <?php } ?>
                     <th>Year</th>
                     <th>Brand</th>
                     <th>Card #</th>
@@ -241,7 +238,6 @@ $grading_files = $this->wpdb->get_results ( $sql );
                     $add_col_three = 0;
 
                     if( array_key_exists( "title", $db_row_data ) == false && array_key_exists( "certImgFront", $db_row_data ) == false && array_key_exists( "certImgBack", $db_row_data ) == false  ){
-
                         $graded_count++;                 
                     ?>
 
