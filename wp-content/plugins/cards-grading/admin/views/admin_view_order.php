@@ -459,23 +459,37 @@ if( $grading_order_id > 0 ){
         <div class="row">
             <div class="col-lg-6 text-end pb-2 fw-bold cards_dv_total">
             </div>
-                <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
-            <div class="row mb-2">
-                <div class="col text-end">
-                        Total DV          
+            <div class="col-lg-6 text-end pb-2 fw-bold cards_charge_total">
+                <div class="row mb-2">
+                    <div class="col text-end">
+                            Total DV          
+                    </div>
+                    <div class="col text-end" id="total_dv">
+                        $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>
+                    </div>
                 </div>
-                <div class="col text-end" id="total_dv">
-                    $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>
+                <div class="row">
+                    <div class="col text-end">
+                            Grading Charge    
+                    </div>
+                    <div class="col text-end"  id="grading_charges">
+                    $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col text-end">
-                        Grading Charge    
+                <?php 
+                    if( $checkout_meta["inspection"][0] == "1" ) { 
+                ?>
+                <div class="row">
+                    <div class="col text-end">
+                        Inspection Charge    
+                    </div>
+                    <div class="col text-end"  id="grading_charges">
+                        $<?php echo number_format((float) $cards_count * 3, 2, '.', ''); ?>
+                    </div>
                 </div>
-                <div class="col text-end"  id="grading_charges">
-                $<?php echo number_format((float)$grading_charge, 2, '.', ''); ?>
-                </div>
-            </div>
+                <?php 
+                    }
+                ?>
             </div>
         </div>
     </div>
