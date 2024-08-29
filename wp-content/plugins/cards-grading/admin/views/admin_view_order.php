@@ -468,7 +468,7 @@ if( $grading_order_id > 0 ){
                         $<?php echo number_format((float)$total_dv, 2, '.', ''); ?>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row  mb-2">
                     <div class="col text-end">
                             Grading Charge    
                     </div>
