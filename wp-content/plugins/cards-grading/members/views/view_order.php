@@ -245,32 +245,6 @@ $grading_files = $this->wpdb->get_results ( $sql );
                         $graded_count++;                 
                     ?>
 
-                        <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ 
-                            $add_col_one = 1;
-                        ?>
-                        <td>                        
-                            <?php 
-                                if( $checkout_meta["status"][0] == "Completed - Grades Ready" ) { 
-                                    if( in_array( $meta["status"][0], array("Graded", "Consign Card", "Pay Grading") ) ) {
-                            ?>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <button class='5star_btn btn-sm btn btn-success w-100 mb-3' data-action="consign_card" data-post_id="<?php echo $post->ID; ?>">
-                                            Consign
-                                        </button>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <button class='5star_btn btn-sm btn btn-primary w-100 mb-3' data-action="pay_card_grading" data-post_id="<?php echo $post->ID; ?>">
-                                            Pay
-                                        </button>
-                                    </div>
-                                </div>
-                            <?php
-                                    } 
-                                } 
-                            ?>
-                        </td>
-                        <?php } ?>
                         <td><?php echo $card["year"]; ?></td>
                         <td><?php echo $card["brand"]; ?></td>
                         <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
