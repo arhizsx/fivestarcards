@@ -151,7 +151,7 @@ if( $grading_order_id > 0 ){
         ?>
         <div class="col-lg-6 col-md-6 col-sm-6">
             <H3 style="color: black !important;">Cards List</H3>
-            <button class="5star_btn btn-sm btn btn-success mb-3" data-action="item_avlb_in_package_all" data-order_number="<?php echo $params['order_number'] ?>">
+            <button class="5star_btn btn-sm btn btn-primary mb-3" data-action="item_avlb_in_package_all" data-order_number="<?php echo $params['order_number'] ?>">
                 Received All
             </button>            
         </div>
