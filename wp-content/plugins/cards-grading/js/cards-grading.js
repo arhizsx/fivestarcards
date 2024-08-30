@@ -458,8 +458,7 @@ $(document).on("click", ".5star_btn", function(e){
 
             
             break;
-
-            
+      
         case "admin_create_order":
 
             var user_id = $(document).find("[name='select_customer']").val();
@@ -1085,7 +1084,6 @@ $(document).on("click",".my-consignment-row", function(e){
 
 });
 
-
 $(document).on("click",".admin-order-row", function(e){
 
     if($(this).data("back") != ""){
@@ -1127,7 +1125,6 @@ function showSubmissionNumberModal(){
 
 }
 
-
 $(document).find('.setsubmissionmodal').on('shown.bs.modal', function() {
     $(document).find(".setsubmissionmodal").find("input[name='submission_number']").val("");
     $(document).find(".setsubmissionmodal").find("input[name='submission_number']").focus();
@@ -1167,7 +1164,6 @@ $(document).on("change", ".select_filter", function(){
 
 });
 
-
 $(document).find(".search_box").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     $(document).find($(this).data("target") + " tbody tr").filter(function() {
@@ -1180,7 +1176,6 @@ function showSetSkus(){
     $(document).find(".set_skus_modal").appendTo('body').modal("show");
 
 }
-
 
 function MakeAdmin(user_id){
 

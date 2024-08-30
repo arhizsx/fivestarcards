@@ -39,8 +39,8 @@ foreach($posts as $post)
 
 
 
-$admin_status = array( "Shipped", "Package Received", "Incomplete Items Shipped" );
-$admin_action_status = array( "Package Received");
+$admin_status = array( "Shipped", "Package Received" );
+$admin_action_status = array( "Package Received", "Incomplete Items Shipped");
 $admin_graded_status = array( "Completed - Grades Ready", "Active Consignments", "Pending eBay Payment", "Pending Payout", "Paid Out");
 
 
