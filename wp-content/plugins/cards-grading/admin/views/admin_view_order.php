@@ -39,8 +39,8 @@ foreach($posts as $post)
 
 
 
-$admin_status = array( "Shipped", "Package Received" );
-$admin_action_status = array( "Package Received", "Incomplete Items Shipped");
+$admin_status = array( "Shipped", "Package Received", "Incomplete Items Shipped" );
+$admin_action_status = array( "Package Received");
 $admin_graded_status = array( "Completed - Grades Ready", "Active Consignments", "Pending eBay Payment", "Pending Payout", "Paid Out");
 
 
@@ -229,7 +229,7 @@ if( $grading_order_id > 0 ){
 
             <?php 
 
-            $processing_status = array("Processing Order", "Shipped to PSA / SGC", "Research", "Grading", "Assembly", "QA1", "QA2", "Completed - Grades Ready" );
+            $processing_status = array("Processing Order", "Shipped to PSA / SGC", "Research", "Grading", "Assembly", "QA1", "QA2", "Completed - Grades Ready", "Incomplete Items Shipped" );
 
             if( in_array( $checkout_meta["status"][0], $processing_status ) ) 
             { 
