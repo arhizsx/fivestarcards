@@ -309,7 +309,7 @@ if( $grading_order_id > 0 ){
 
                 ?>
                 <?php                             
-                    if( in_array( $checkout_meta["status"][0], $admin_graded_status ) == false ){                             
+                    if( in_array( $checkout_meta["status"][0], $admin_graded_status ) == false && $meta["status"][0] == "Received" ){                             
                 ?>
                 <tr class="admin-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
                     <?php if( in_array( $checkout_meta["status"][0], $admin_action_status ) ){ ?>
