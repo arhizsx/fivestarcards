@@ -311,7 +311,7 @@ if( $grading_order_id > 0 ){
                 <tr class="admin-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
 
                     <?php 
-                        if( in_array( $checkout_meta["status"][0], $admin_graded_status ) == false){                             
+                        if( in_array( $checkout_meta["status"][0], $admin_graded_status ) == false && $meta["status"][0] == "Received"){                             
                     ?>
 
                     <?php if( in_array( $checkout_meta["status"][0], $admin_action_status ) ){ ?>
@@ -348,7 +348,7 @@ if( $grading_order_id > 0 ){
                     <?php } ?>
 
                     <?php 
-                        if( in_array( $checkout_meta["status"][0], $admin_graded_status ) && $meta["status"][0] == "Received" ){                             
+                        if( in_array( $checkout_meta["status"][0], $admin_graded_status )){                             
                     ?>
                         <td class="text-start">
                             <input type="text" value="" name="grade"  data-name="grade" data-post_id="<?php echo $post->ID; ?>" data-db_id="<?php echo $card['db_id']; ?>" class="form-control form-control-sm card_grade_saving">
