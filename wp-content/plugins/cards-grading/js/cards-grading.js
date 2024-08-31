@@ -210,7 +210,7 @@ $(document).on("click", ".5star_btn", function(e){
             var cards = $(document).find(".admin-card-row") ;
 
             $.each(cards, function(k, v){
-                console.log(v);
+                console.log(v.data());
             });
 
             break
