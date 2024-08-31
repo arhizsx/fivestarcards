@@ -306,7 +306,7 @@ if( $grading_order_id > 0 ){
                                 $grading_charge = $grading_charge + $card_grading_charge;
                             }
 
-                            print_r( $meta );
+                            print_r( $meta["status"][0] );
 
                 ?>
                 <?php                             
