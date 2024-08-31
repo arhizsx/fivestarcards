@@ -304,8 +304,6 @@ if( $grading_order_id > 0 ){
                                 $grading_charge = $grading_charge + $card_grading_charge;
                             }
 
-                            print_r( $meta["status"][0] );
-
                 ?>
                 <?php                             
                     if( in_array( $checkout_meta["status"][0], $admin_graded_status ) == false ){                             
@@ -340,9 +338,7 @@ if( $grading_order_id > 0 ){
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
                     <td><?php echo $card["player"]; ?></td>
 
-                    <td class=".card_status">
-                        <?php print_r( $meta ); ?>
-                    </td>
+                        <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
 
                     <?php 
                         if( in_array( $checkout_meta["status"][0], $admin_graded_status )){                             
