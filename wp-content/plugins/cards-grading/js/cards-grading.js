@@ -207,7 +207,11 @@ $(document).on("click", ".5star_btn", function(e){
 
         case "item_avlb_in_package_all":
 
-            console.log($(document).find(".admin-card-row[data-card]"));
+            var cards = $(document).find(".admin-card-row") ;
+
+            $.each(cards, function(k, v){
+                console.log(v);
+            });
 
             break
 
