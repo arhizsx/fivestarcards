@@ -210,6 +210,9 @@ $(document).on("click", ".5star_btn", function(e){
             var cards = $(document).find(".admin-card-row") ;
 
             $.each(cards, function(k, v){
+
+                cardAction("card_update_status", "Received", $(v).data("post_id"), $(v).closest("tr"));
+    
                 console.log($(v).data());
             });
 
