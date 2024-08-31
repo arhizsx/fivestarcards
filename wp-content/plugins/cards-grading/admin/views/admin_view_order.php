@@ -375,7 +375,7 @@ if( $grading_order_id > 0 ){
                     if( array_key_exists( "title", $db_row_data ) == false && array_key_exists( "certImgFront", $db_row_data )  == false && array_key_exists( "certImgBack", $db_row_data )  == false ){
 
                     ?>
-                    <td>
+                    <td>X
                         <?php  echo $post->ID;                         
                         ?>
                     </td>
