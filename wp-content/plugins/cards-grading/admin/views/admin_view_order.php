@@ -279,9 +279,7 @@ if( $grading_order_id > 0 ){
                     <th>Brand</th>
                     <th>Card #</th>
                     <th>Player Name</th>
-                    <?php if( in_array( $checkout_meta["status"][0], $admin_graded_status ) == false ){ ?>
                     <th>Status</th>
-                    <?php } ?>
                     <?php if( in_array( $checkout_meta["status"][0], $admin_graded_status ) ){ ?>
                     <th style="width: 150px;" class="text-start">Grade</th>
                     <th style="width: 200px;" class="text-start">Cert No.</th>
