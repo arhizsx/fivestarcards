@@ -279,7 +279,9 @@ if( $grading_order_id > 0 ){
                     <th>Brand</th>
                     <th>Card #</th>
                     <th>Player Name</th>
+                    <?php if( in_array( $checkout_meta["status"][0], $admin_graded_status ) == false ){ ?>
                     <th>Status</th>
+                    <?php } ?>
                     <?php if( in_array( $checkout_meta["status"][0], $admin_graded_status ) ){ ?>
                     <th style="width: 150px;" class="text-start">Grade</th>
                     <th style="width: 200px;" class="text-start">Cert No.</th>
@@ -303,6 +305,7 @@ if( $grading_order_id > 0 ){
                             if( in_array($meta["status"][0], array("To Pay - Grade Only", "Shipped", "To Ship", "Received", "Pay Grading", "Graded", "Completed - Grades Ready") ) ){
                                 $grading_charge = $grading_charge + $card_grading_charge;
                             }
+
 
                 ?>
                 <?php                             
@@ -338,24 +341,22 @@ if( $grading_order_id > 0 ){
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
                     <td><?php echo $card["player"]; ?></td>
 
+                    <?php if( in_array( $checkout_meta["status"][0], $admin_graded_status ) == false ){ ?>
                         <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
+                    <?php } ?>
 
                     <?php 
                         if( in_array( $checkout_meta["status"][0], $admin_graded_status )){                             
                     ?>
-                        <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
                         <td class="text-start">
                             <input type="text" value="" name="grade"  data-name="grade" data-post_id="<?php echo $post->ID; ?>" data-db_id="<?php echo $card['db_id']; ?>" class="form-control form-control-sm card_grade_saving">
                         </td>
                         <td class="text-start">
                             <input type="text" value="" name="certificate_number" data-name="certificate_number" data-post_id="<?php echo $post->ID; ?>" data-db_id="<?php echo $card['db_id']; ?>" class="form-control form-control-sm card_grade_saving">
                         </td>
-                    <?php 
-                        } else { ?>
+                    <?php } else { ?>
 
-                    <?php 
-                        } 
-                    ?>
+                    <?php } ?>
 
                     <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
                     <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
@@ -375,7 +376,7 @@ if( $grading_order_id > 0 ){
                     if( array_key_exists( "title", $db_row_data ) == false && array_key_exists( "certImgFront", $db_row_data )  == false && array_key_exists( "certImgBack", $db_row_data )  == false ){
 
                     ?>
-                    <td>X
+                    <td>
                         <?php  echo $post->ID;                         
                         ?>
                     </td>
@@ -384,9 +385,7 @@ if( $grading_order_id > 0 ){
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
                     <td><?php echo $card["player"]; ?></td>
 
-                    <?php if( in_array( $checkout_meta["status"][0], $admin_graded_status ) == false ){ ?>
                         <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
-                    <?php } ?>
 
                     <?php 
                         if( in_array( $checkout_meta["status"][0], $admin_graded_status ) ){                             
