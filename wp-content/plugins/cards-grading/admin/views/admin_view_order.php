@@ -341,9 +341,7 @@ if( $grading_order_id > 0 ){
                     <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
                     <td><?php echo $card["player"]; ?></td>
 
-                    <?php if( in_array( $checkout_meta["status"][0], $admin_graded_status ) == false ){ ?>
                         <td class=".card_status"><?php echo $meta["status"][0]; ?></td>
-                    <?php } ?>
 
                     <?php 
                         if( in_array( $checkout_meta["status"][0], $admin_graded_status )){                             
