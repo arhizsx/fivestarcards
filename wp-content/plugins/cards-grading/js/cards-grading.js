@@ -205,6 +205,11 @@ $(document).on("click", ".5star_btn", function(e){
             cardAction("card_update_status", "Received", $(this).data("post_id"), $(this).closest("tr"));
             break;
 
+        case "item_avlb_in_package_all":
+
+            console.log($(document).find(".admin-card-row").data());
+
+            break
 
         case "complete_package_contents":
 
