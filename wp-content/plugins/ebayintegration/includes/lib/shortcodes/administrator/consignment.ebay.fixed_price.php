@@ -62,7 +62,9 @@ $users = get_users( $args );
                     //     if( $data["ListingType"] != "Chinese"){
                     //         $i++;
             ?>  
-                <?php print_r($data); ?>
+            <tr>
+                <td><?php print_r( count($data)); ?></td>
+            </tr>
             <?php 
                     //     }
                     // }
