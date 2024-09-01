@@ -1678,7 +1678,7 @@ class Ebay_Integration_Ebay_API {
 
 						$psa_info = $psa_data["table_data"];
 
-						$title = $psa_info["Year"] . " " .  $psa_info["Brand"] . " " . $psa_info["Card Number"] . " " . $psa_info["Variety/Pedigree"] . " " . $psa_info["Grade"];
+						$title = $psa_info["Year"] . " " .  $psa_info["Brand"] . " " .  $psa_info["Player"] . " " . $psa_info["Card Number"] . " " . $psa_info["Variety/Pedigree"] . " " . $psa_info["Grade"];
 						$grade =  $data["grade"];
 						$certificate_number =  $data["certificate_number"];
 
