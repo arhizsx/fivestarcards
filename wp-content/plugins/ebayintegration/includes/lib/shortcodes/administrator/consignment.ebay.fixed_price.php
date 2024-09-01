@@ -19,6 +19,11 @@ $users = get_users( $args );
 
 
 ?>
+<style>
+    .text-small {
+        font-size: .7em !important;
+    }
+</style>
 <div class="d-flex justify-content-between mb-3">
     <div>
         <i class="fa-brands fa-ebay fa-2xl"></i> FIXED PRICE
@@ -63,24 +68,21 @@ $users = get_users( $args );
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>                    
                     <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
                 </td>
-                <td class="text-end">
-                <?php echo $data["SellingStatus"]["QuantitySold"] * 1; ?>
-                </td>
-                <td class="text-end">
-                    <?php echo $data["QuantityAvailable"] * 1; ?>
-                </td>
-                <td class="text-end">
-                    <?php echo $data["WatchCount"] * 1; ?>
-                </td>
-                <td class="text-end">$<?php 
-                echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
-                ?></td>
             </tr>
             <?php 
                     }
                 }
 
             } 
+            else {
+            ?>
+            <tr>
+                <td colspan="2" class="text-center p-5">
+                    No Item
+                </td>
+            </tr>
+            <?php 
+            }
             ?>
         </tbody>
     </table>
