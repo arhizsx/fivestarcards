@@ -76,10 +76,8 @@ $users = get_users( $args );
                     <?php echo $data["QuantityAvailable"] * 1; ?>
                 </td>
                 <td class="text-end">
-                    <?php echo $data["WatchCount"] * 1; ?>
                 </td>
                 <td class="text-end">$<?php 
-                echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
                 ?></td>
             </tr>
             <?php 
