@@ -53,13 +53,38 @@ $users = get_users( $args );
                 foreach($ebay as $item){ 
                     $data = json_decode($item->data, true);
 
-                    print_r( $data );
-                    // if( $data["ListingType"] != "Chinese"){
-                    //     $i++;
+                    if( array_key_exists("ListingType", $data) ){
+                        if( $data["ListingType"] != "Chinese"){
+                            $i++;
             ?>
             <tr>
+                <td>
+                    <div class="title">
+                        <span class='pe-2'><strong><?php echo $i ?></strong></span>
+                        <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
+                        <?php echo $data["Title"]; ?>
+                        </a>
+                    </div>
+                    <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
+                    <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>                    
+                    <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
+                </td>
+                <td class="text-end">
+                <?php echo $data["SellingStatus"]["QuantitySold"] * 1; ?>
+                </td>
+                <td class="text-end">
+                    <?php echo $data["QuantityAvailable"] * 1; ?>
+                </td>
+                <td class="text-end">
+                    <?php echo $data["WatchCount"] * 1; ?>
+                </td>
+                <td class="text-end">$<?php 
+                echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
+                ?></td>
             </tr>
             <?php 
+                        }
+                    }
                 }
 
             } 
