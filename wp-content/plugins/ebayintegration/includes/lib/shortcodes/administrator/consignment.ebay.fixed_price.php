@@ -61,15 +61,13 @@ $users = get_users( $args );
                 <td>
                     <div class="title">
                         <span class='pe-2'><strong><?php echo $i ?></strong></span>
-                        <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                        <?php echo $data["Title"]; ?>
-                        </a>
                     </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>                    
                     <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
                 </td>
                 <td class="text-end">
+                <?php echo $data["SellingStatus"]["QuantitySold"] * 1; ?>
                 </td>
                 <td class="text-end">
                     <?php echo $data["QuantityAvailable"] * 1; ?>
