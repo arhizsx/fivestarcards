@@ -67,16 +67,12 @@ $users = get_users( $args );
                     <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
                 </td>
                 <td class="text-end">
-                <?php echo $data["SellingStatus"]["QuantitySold"] * 1; ?>
                 </td>
                 <td class="text-end">
-                    <?php echo $data["QuantityAvailable"] * 1; ?>
                 </td>
                 <td class="text-end">
-                    <?php echo $data["WatchCount"] * 1; ?>
                 </td>
                 <td class="text-end">$<?php 
-                echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
                 ?></td>
             </tr>
             <?php 
