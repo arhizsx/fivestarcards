@@ -52,7 +52,7 @@ $users = get_users( $args );
 
                 foreach($ebay as $item){ 
 
-
+                    if( $item->data != null ){
 
                     $data = json_decode($item->data, true);
 
@@ -68,6 +68,7 @@ $users = get_users( $args );
             <?php 
                     //     }
                     // }
+                    }
                 }
 
             } 
