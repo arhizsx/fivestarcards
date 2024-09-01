@@ -89,7 +89,7 @@
                         }
 
 
-                        echo do_shortcode( $shortcode );                    
+                        // echo do_shortcode( $shortcode );                    
 
                     ?>
                 </div>
