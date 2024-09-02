@@ -38,6 +38,7 @@ $available = count($ebay);
                     <?php 
                     foreach($ebay as $item){ 
                             if( in_array( $item->sku, $skus ) ){
+                                $i++;
                     ?>
                     <tr>
                         <td>
