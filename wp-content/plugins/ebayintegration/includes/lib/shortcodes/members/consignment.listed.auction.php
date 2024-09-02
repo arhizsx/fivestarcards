@@ -28,6 +28,8 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
             }
         }
     }
+
+    print_r($available);
 ?>
 <div class="table-responsive">
     <table class="table table-border table-striped table-sm table-hover search_table_auction">
