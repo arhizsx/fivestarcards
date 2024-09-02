@@ -4,8 +4,7 @@ global $wpdb;
 
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
-FROM  ebay
-where status = 'ActiveList'
+FROM  view_fixed_price
 "  
 );
 
@@ -51,18 +50,12 @@ $users = get_users( $args );
                 $i = 0;
 
                 foreach($ebay as $item){ 
-                    $data = json_decode($item->data, true);
-
-                    if( array_key_exists("ListingType", $data) ){
-                        if( $data["ListingType"] != "Chinese"){
-                            $i++;
             ?>
             <tr>
                 <td>
                     <div class="title">
                         <span class='pe-2'><strong><?php echo $i ?></strong></span>
-                        <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                        <?php echo $data["Title"]; ?>
+                        <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
                         </a>
                     </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
@@ -70,21 +63,19 @@ $users = get_users( $args );
                     <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
                 </td>
                 <td class="text-end">
-                <?php echo $data["SellingStatus"]["QuantitySold"]; ?>
+                <?php echo $item->QuantitySold; ?>
                 </td>
                 <td class="text-end">
-                    <?php echo $data["QuantityAvailable"]; ?>
+                    <?php echo $item->QuantityAvailable; ?>
                 </td>
                 <td class="text-end">
-                    <?php echo $data["WatchCount"]; ?>
+                    <?php echo $item->WatchCount; ?>
                 </td>
                 <td class="text-end">$<?php 
-                echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
+                echo number_format(( $item->CurrentPrice), 2, '.', ',');
                 ?></td>
             </tr>
             <?php 
-                        }
-                    }
                 }
 
             } 
