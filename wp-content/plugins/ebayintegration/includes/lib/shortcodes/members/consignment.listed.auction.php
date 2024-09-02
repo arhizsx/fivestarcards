@@ -7,7 +7,7 @@ SELECT *
 FROM  view_auction" 
 );
 
-print_r(count($ebay));
+print_r( "data:". count($ebay));
 
 $skus = get_user_meta( get_current_user_id(), "sku", true );		
 
