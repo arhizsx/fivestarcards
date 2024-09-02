@@ -4,9 +4,7 @@ global $wpdb;
 
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
-FROM  view_auction
-
-" 
+FROM  view_auction" 
 );
 
 $skus = get_user_meta( get_current_user_id(), "sku", true );		
