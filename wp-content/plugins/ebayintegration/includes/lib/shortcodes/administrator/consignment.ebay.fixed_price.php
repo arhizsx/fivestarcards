@@ -56,6 +56,7 @@ $users = get_users( $args );
                     <div class="title">
                         <span class='pe-2'><strong><?php echo $i ?></strong></span>
                         <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
+                            <?php echo $item->Title; ?>
                         </a>
                     </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
