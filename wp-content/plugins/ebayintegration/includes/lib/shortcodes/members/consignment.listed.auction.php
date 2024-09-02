@@ -11,8 +11,6 @@ WHERE ListingType = 'Chinese'
 "
 );
 
-print_r($skus);
-
 $available = count($ebay);
 
 ?>
@@ -40,8 +38,6 @@ $available = count($ebay);
                     <?php 
                     foreach($ebay as $item){ 
                             if( in_array( $item->sku, $skus ) ){
-
-                                print_r( $item );
                     ?>
                     <tr>
                         <td>
