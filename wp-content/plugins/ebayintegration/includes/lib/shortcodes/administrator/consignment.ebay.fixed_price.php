@@ -58,7 +58,7 @@ $users = get_users( $args );
                     //         $i++;
             ?>
             <tr>
-                <td><?php print_r( $item ); ?></td>
+                <td><?php print_r( $item->data ); ?></td>
             </tr>
             <?php 
                 }
