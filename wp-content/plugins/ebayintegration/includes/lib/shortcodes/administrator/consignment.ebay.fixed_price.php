@@ -51,16 +51,17 @@ $users = get_users( $args );
                 $i = 0;
 
                 foreach($ebay as $item){ 
-                    // $data = json_decode($item->data, true);
+                    $data = json_decode($item->data, true);
 
-                    // if( array_key_exists("ListingType", $data) ){
-                    //     if( $data["ListingType"] != "Chinese"){
-                    //         $i++;
+                    if( array_key_exists("ListingType", $data) ){
+                        if( $data["ListingType"] != "Chinese"){
+                            $i++;
             ?>
             <tr>
                 <td><?php print_r( $item->data ); ?></td>
             </tr>
             <?php 
+                        }}
                 }
 
             } 
