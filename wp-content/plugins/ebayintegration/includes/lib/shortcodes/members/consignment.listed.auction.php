@@ -4,8 +4,7 @@ global $wpdb;
 
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
-FROM  ebay
-where status = 'ActiveList'
+FROM  view_auction
 " 
 );
 
@@ -48,32 +47,28 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
             ?>
                     <?php 
                     foreach($ebay as $item){ 
-                        $data = json_decode($item->data, true);
-
-                        if( $data["ListingType"] == "Chinese"){
-                            
                             if( in_array( $item->sku, $skus ) ){
                     ?>
                     <tr>
                         <td>
                             <div class="title">
-                                <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                                <?php echo $data["Title"]; ?>
+                                <span class='pe-2'><strong><?php echo $i ?></strong></span>
+                                <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
+                                <?php echo  $item->Title; ?>
                                 </a>
                             </div>
                             <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                             <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
+                            <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
                         </td>
                         <td class="text-end">
-                            <?php echo $data["SellingStatus"]["BidCount"] * 1?>
+                            <?php echo $item->BidCount?>
                         </td>
-
                         <td class="text-end">$<?php 
-                            echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
+                            echo number_format(( $item->CurrentPrice), 2, '.', ',');
                         ?></td>
                     </tr>
                     <?php 
-                            }
                         }
                     }
                     ?>
