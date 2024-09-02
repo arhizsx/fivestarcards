@@ -9,11 +9,9 @@ FROM  view_auction
 " 
 );
 
-print_r($ebay);
-
 $skus = get_user_meta( get_current_user_id(), "sku", true );		
 
-print_r($skus);
+// print_r($skus);
 
 
 ?>
@@ -28,8 +26,7 @@ print_r($skus);
 <?php 
     $available = 0;
     foreach($ebay as $item){ 
-        $data = json_decode($item->data, true);
-        if( $data["ListingType"] == "Chinese"){
+        if( $item->ListingType == "Chinese"){
             if( in_array( $item->sku, $skus ) ){
                 $available++;
             }
