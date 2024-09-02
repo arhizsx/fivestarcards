@@ -4,7 +4,9 @@ global $wpdb;
 
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
-FROM  view_auction" 
+FROM  view_auction 
+WHERE ListingType = 'Chinese'
+"
 );
 
 print_r( "data:". count($ebay));
