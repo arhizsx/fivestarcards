@@ -9,6 +9,7 @@ FROM  view_auction
 " 
 );
 
+print_r($ebay);
 
 $skus = get_user_meta( get_current_user_id(), "sku", true );		
 
