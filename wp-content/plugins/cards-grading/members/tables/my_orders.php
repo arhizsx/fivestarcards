@@ -2,6 +2,8 @@
 
 $user_id = get_current_user_id();
 
+print_r($user_id);
+
 $args = array(
     'meta_query' => array(
         'relation' => 'AND', 
