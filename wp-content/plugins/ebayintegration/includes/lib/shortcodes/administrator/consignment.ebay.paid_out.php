@@ -86,8 +86,13 @@ $users = get_users( $args );
 
                         if( in_array("TransactionPrice", $data) ){
                             $current_price = $data["TransactionPrice"];
-                        } else {
-                            $current_price = $data["Item"]["SellingStatus"]["CurrentPrice"];
+                        } 
+                        else {
+                            if( array_key_exists("Item", $data) ){
+                                $current_price = $data["Item"]["SellingStatus"]["CurrentPrice"];
+                            } else {
+                                $current_price = $data["SellingStatus"]["CurrentPrice"];
+                            }
                         }
 
                         if( array_key_exists("Item", $data) ){
@@ -97,8 +102,6 @@ $users = get_users( $args );
                             $title = $data["Title"];
                             $url = $data['ListingDetails']['ViewItemURL'];
                         }
-
-
 
             ?>
             <tr>
