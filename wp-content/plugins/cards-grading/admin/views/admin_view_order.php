@@ -459,9 +459,9 @@ if( $grading_order_id > 0 ){
                             $sql = "SELECT * FROM grading WHERE id = " . $card["db_id"];
                             $db_row = $this->wpdb->get_results ( $sql );
         
-                            print( $db_row );
 
                             $db_row_data = json_decode($db_row[0]->data, true);
+                            print( $db_row_data );
         
                             if( array_key_exists( "title", $db_row_data ) && array_key_exists( "certImgFront", $db_row_data ) && array_key_exists( "certImgBack", $db_row_data )  ){
         
