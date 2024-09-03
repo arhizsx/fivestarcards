@@ -22,6 +22,8 @@ $args = array(
 
 $posts = get_posts($args);
 
+print_r($posts);
+
 ?>
 
 <div class="m-0 p-0">
