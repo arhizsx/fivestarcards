@@ -455,27 +455,21 @@ if( $grading_order_id > 0 ){
                         {
                             $meta = get_post_meta($post->ID);
                             $card = json_decode($meta['card'][0], true);
+                            print_r( $card );
 
-                            $sql = "SELECT * FROM grading WHERE id = " . $card["db_id"];
-                            $db_row = $this->wpdb->get_results ( $sql );
+
+                            // $sql = "SELECT * FROM grading WHERE id = " . $card["db_id"];
+                            // $db_row = $this->wpdb->get_results ( $sql );
         
 
-                            $db_row_data = json_decode($db_row[0]->data, true);
-                            print( $db_row_data );
+                            // $db_row_data = json_decode($db_row[0]->data, true);
         
-                            if( array_key_exists( "title", $db_row_data ) && array_key_exists( "certImgFront", $db_row_data ) && array_key_exists( "certImgBack", $db_row_data )  ){
+                            // if( array_key_exists( "title", $db_row_data ) && array_key_exists( "certImgFront", $db_row_data ) && array_key_exists( "certImgBack", $db_row_data )  ){
         
                 ?>
-                <tr class='admin-graded-row' data-post_id='" + post_id + "'>
-                    <td><?php echo $post->ID ?></td>
-                    <td><?php echo $db_row_data["title"] ?></td>
-                    <td><a href='<?php echo $db_row_data["certImgFront"] ?>'><img width='100px' src='<?php echo $db_row_data["certImgFront"] ?>' target='_blank'></a><a href='<?php echo $db_row_data["certImgBack"] ?>' target='_blank'><img width='100px' src='<?php echo $db_row_data["certImgBack"] ?>'></a></td>
-                    <td><?php echo $db_row_data["grade"] ?></td>
-                    <td><?php echo $db_row_data["certificate_number"] ?></td>
                 </tr>
 
                 <?php 
-                            }
 
                         }
 
