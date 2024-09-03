@@ -48,11 +48,11 @@ $posts = get_posts($args);
                 <?php 
                     if( $posts ){
 
-                        print_r($posts);
 
                         foreach($posts as $post)
                         {
                             $meta = get_post_meta($post->ID);
+                            print_r($posts);
 
                             $date_format = get_option( 'date_format' );
                             $time_format = get_option( 'time_format' );
