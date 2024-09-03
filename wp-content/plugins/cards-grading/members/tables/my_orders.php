@@ -22,8 +22,6 @@ $args = array(
 
 $posts = get_posts($args);
 
-print_r($posts);
-
 ?>
 
 <div class="m-0 p-0">
@@ -49,6 +47,8 @@ print_r($posts);
             <tbody>
                 <?php 
                     if( $posts ){
+
+                        print_r($posts);
 
                         foreach($posts as $post)
                         {
