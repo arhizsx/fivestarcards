@@ -26,27 +26,10 @@
         <div class="col-xl-12 col-lg-12">
             <div class="shortcode_tab_box">
                 <ul class="clearfix d-none d-lg-block">
-                    <li class="<?php echo ActivateGrading("open"); ?>">
-                        <a class="" href="/my-account/grading/?mode=open">Open</a>
-                    </li>
-                    <li class="<?php echo ActivateGrading("for_payment"); ?>">
-                        <a class="" href="/my-account/grading/?mode=for_payment">For Payment</a>
-                    </li>
-                    <li class="<?php echo ActivateGrading("consigned"); ?>">
-                        <a class="" href="/my-account/grading/?mode=consigned">Consigned</a>
-                    </li>
-                    <li class="<?php echo ActivateGrading("completed"); ?>">
-                        <a class="" href="/my-account/grading/?mode=completed">Completed</a>
-                    </li>
                 </ul>
                 <div class="d-lg-none p-3">
                     <label>Select Grading Order Status</label>
                     <select class="form-control" id="mobile_tab_select">
-                        <!-- <option value="/my-account/grading/" <?php echo ActivateGradingSelect("log") ?>>Log Cards</option> -->
-                        <option value="/my-account/grading/?mode=open" <?php echo ActivateGradingSelect("open") ?>>Open</option>
-                        <option value="/my-account/grading/?mode=for_payment" <?php echo ActivateGradingSelect("for_payment") ?>>For Payment</option>
-                        <option value="/my-account/grading/?mode=consigned" <?php echo ActivateGradingSelect("consigned") ?>>Consigned</option>
-                        <option value="/my-account/grading/?mode=completed" <?php echo ActivateGradingSelect("completed") ?>>Completed</option>
                     </select>
                 </div>
                 <div class="content p-3">
