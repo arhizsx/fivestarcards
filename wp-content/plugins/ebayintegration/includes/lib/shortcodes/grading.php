@@ -55,7 +55,7 @@
                         if( isset( $_GET['mode'] )  == false){
 
                             // include( plugin_dir_path( __FILE__ ) . "members/grading.new.php" );			
-                            echo do_shortcode( "[cards-grading-orders_table table='my_orders']" );                    
+                            // echo do_shortcode( "[cards-grading-orders_table table='my_orders']" );                    
 
                         } 
                         else {
