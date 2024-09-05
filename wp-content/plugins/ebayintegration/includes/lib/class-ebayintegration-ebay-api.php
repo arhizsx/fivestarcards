@@ -1276,9 +1276,12 @@ class Ebay_Integration_Ebay_API {
 		$status = curl_getinfo($curl);
 		
 		curl_close($curl);
+
 		
+
 		$xml=simplexml_load_string($response) or die("Error: Cannot create object");
 
+		return $xml;
 
 		$json = json_decode(json_encode($xml), true);
 		
