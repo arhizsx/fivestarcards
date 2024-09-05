@@ -9,25 +9,8 @@ $post_data = [
 
 $curl = curl_init();
 
-// Set cURL options
-curl_setopt($curl, CURLOPT_URL, "https://www.google.com");
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+var_dump($curl);
 
-// Execute cURL request
-$response = curl_exec($curl);
-
-// Check if an error occurred
-if (curl_errno($curl)) {
-    // Get the error message
-    $error_msg = curl_error($curl);
-    return  "cURL error: " . $error_msg;
-} else {
-    // Process the response
-    return "Response: " . $response;
-}
-
-// Close cURL resource
-curl_close($curl);
 
 
 ?>
