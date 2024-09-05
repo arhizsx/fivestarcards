@@ -1278,6 +1278,11 @@ class Ebay_Integration_Ebay_API {
 		curl_close($curl);
 
 		
+		if (function_exists('simplexml_load_string')) {
+			return "simplexml_load_string() exists!";
+		} else {
+			return "simplexml_load_string() does not exist.";
+		}
 
 		$xml=simplexml_load_string($response) or die("Error: Cannot create object");
 
