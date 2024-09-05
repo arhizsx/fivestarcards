@@ -121,7 +121,6 @@ class Ebay_Integration_Ebay_API {
 
 		elseif($params["action"] == "refreshToken"){
 
-			return "test";
 			return $this->refreshToken();
 
 		} 
@@ -1145,6 +1144,8 @@ class Ebay_Integration_Ebay_API {
 		];
 
 		$curl = curl_init();
+
+		return $curl;
 
 		curl_setopt_array(
 			$curl,
