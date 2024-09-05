@@ -1145,7 +1145,7 @@ class Ebay_Integration_Ebay_API {
 		return $post_data;
 
 		$curl = curl_init();
-
+		print_r($curl);
 
 		curl_setopt_array(
 			$curl,
