@@ -121,6 +121,7 @@ class Ebay_Integration_Ebay_API {
 
 		elseif($params["action"] == "refreshToken"){
 
+			return "test";
 			return $this->refreshToken();
 
 		} 
