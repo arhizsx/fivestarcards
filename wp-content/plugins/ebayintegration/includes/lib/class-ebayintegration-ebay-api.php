@@ -1142,10 +1142,9 @@ class Ebay_Integration_Ebay_API {
 			"grant_type" => "refresh_token",
 			"refresh_token" => $this->refresh_token,
 		];
-		return $post_data;
 
 		$curl = curl_init();
-		print_r($curl);
+		return print_r($curl);
 
 		curl_setopt_array(
 			$curl,
