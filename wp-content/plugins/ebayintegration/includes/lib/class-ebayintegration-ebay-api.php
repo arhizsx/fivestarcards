@@ -1248,6 +1248,8 @@ class Ebay_Integration_Ebay_API {
 		'</GetMyeBaySellingRequest> ';
 		
 		$curl = curl_init();
+
+		return $curl;
 		
 		curl_setopt_array(
 			$curl,
