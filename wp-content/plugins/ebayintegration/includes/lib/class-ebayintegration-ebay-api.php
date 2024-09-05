@@ -1279,8 +1279,6 @@ class Ebay_Integration_Ebay_API {
 
 		$xml=simplexml_load_string($response) or die("Error: Cannot create object");
 
-		return $xml;
-
 		$json = json_decode(json_encode($xml), true);
 		
 
