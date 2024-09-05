@@ -1249,7 +1249,6 @@ class Ebay_Integration_Ebay_API {
 		
 		$curl = curl_init();
 
-		return $curl;
 		
 		curl_setopt_array(
 			$curl,
@@ -1272,6 +1271,9 @@ class Ebay_Integration_Ebay_API {
 		);
 		
 		$response = curl_exec($curl);
+
+		return $response;
+
 		$status = curl_getinfo($curl);
 		
 		curl_close($curl);
