@@ -1,9 +1,7 @@
 <?php
-
-function _isCurl(){
-    return function_exists('curl_version');
+if (function_exists('curl_init')) {
+    echo "cURL is installed!";
+} else {
+    echo "cURL is not installed.";
 }
-
-print_r(_isCurl());
-
 ?>
