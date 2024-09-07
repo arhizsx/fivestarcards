@@ -1211,7 +1211,7 @@ class Ebay_Integration_Ebay_API {
 		}
 		elseif( $type == "scheduled" ){
 			$switch = "ScheduledList";
-			$duration = '';
+			$duration = '<DurationInDays></DurationInDays>';
 			$switch_filter = "";
 			$sort = "";
 		}
