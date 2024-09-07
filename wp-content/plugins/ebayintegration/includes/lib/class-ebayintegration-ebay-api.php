@@ -1186,10 +1186,10 @@ class Ebay_Integration_Ebay_API {
 
 
 		if( $type == null || $type == "active"){
-			$switch = "ScheduledList";
+			$switch = "ActiveList";
 			$duration = '';
 			$switch_filter = "";
-			$sort = "";
+			$sort = "<Sort>TimeLeft</Sort>";
 		}
 		elseif( $type == "sold" ){
 			$switch = "SoldList";
