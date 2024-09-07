@@ -1197,12 +1197,6 @@ class Ebay_Integration_Ebay_API {
 			$switch_filter = "<OrderStatusFilter>PaidAndShipped</OrderStatusFilter>";
 			$sort = "";
 		}
-		elseif( $type == "unsold" ){
-			$switch = "UnsoldList";
-			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
-			$switch_filter = "";
-			$sort = "";
-		}
 		elseif( $type == "awaiting" ){
 			$switch = "SoldList";
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
@@ -1211,6 +1205,12 @@ class Ebay_Integration_Ebay_API {
 		}
 		elseif( $type == "unsold" ){
 			$switch = "UnsoldList";
+			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
+			$switch_filter = "";
+			$sort = "";
+		}
+		elseif( $type == "scheduled" ){
+			$switch = "ScheduledList";
 			$duration = '<DurationInDays>' . $days_count . '</DurationInDays>';
 			$switch_filter = "";
 			$sort = "";
