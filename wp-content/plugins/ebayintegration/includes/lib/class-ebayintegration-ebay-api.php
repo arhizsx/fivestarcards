@@ -1245,6 +1245,14 @@ class Ebay_Integration_Ebay_API {
 				$duration .
 				$switch_filter .
 			'</' . $switch . '>' .
+			'<ScheduledList>'.
+				'<Include>true</Include>'.
+				'<IncludeNotes>false</IncludeNotes>'.
+				'<Pagination>'.
+					'<EntriesPerPage>200</EntriesPerPage>'.
+					'<PageNumber>1</PageNumber>'.
+				'</Pagination>'.
+			'</ScheduledList>'.
 		'</GetMyeBaySellingRequest> '; 
 		
 		$curl = curl_init();
