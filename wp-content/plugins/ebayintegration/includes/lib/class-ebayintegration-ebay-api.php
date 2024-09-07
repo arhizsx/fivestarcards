@@ -1245,6 +1245,12 @@ class Ebay_Integration_Ebay_API {
 				$duration .
 				$switch_filter .
 			'</' . $switch . '>' .
+			'<ScheduledList>' .
+				'<Pagination>' .
+					'<EntriesPerPage>' . $per_page . '</EntriesPerPage>' .
+					'<PageNumber>' . $page_number . '</PageNumber>' .
+				'</Pagination>' .
+			'</ScheduledList>' .			
 		'</GetMyeBaySellingRequest> ';
 		
 		$curl = curl_init();
@@ -1331,7 +1337,6 @@ class Ebay_Integration_Ebay_API {
 				elseif( array_key_exists( "ActiveList", $json ) ){
 
 					$requestType = "ActiveList";
-
 
 					if( array_key_exists( "ItemArray", $json[ $requestType ]) ){
 						if( array_key_exists( "Item", $json[ $requestType ]["ItemArray"]) ){
