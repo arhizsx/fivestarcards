@@ -1251,7 +1251,7 @@ class Ebay_Integration_Ebay_API {
 					'<PageNumber>' . $page_number . '</PageNumber>' .
 				'</Pagination>' .
 			'</ScheduledList>' .			
-		'</GetMyeBaySellingRequest> ';
+		'</GetMyeBaySellingRequest> '; 
 		
 		$curl = curl_init();
 
