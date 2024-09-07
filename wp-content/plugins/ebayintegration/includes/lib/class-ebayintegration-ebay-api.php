@@ -1211,7 +1211,7 @@ class Ebay_Integration_Ebay_API {
 		}
 		elseif( $type == "scheduled" ){
 			$switch = "ScheduledList";
-			$duration = '<DurationInDays></DurationInDays>';
+			$duration = '';
 			$switch_filter = "";
 			$sort = "";
 		}
@@ -1346,6 +1346,20 @@ class Ebay_Integration_Ebay_API {
 				elseif( array_key_exists( "UnsoldList", $json ) ){
 
 					$requestType = "UnsoldList";
+
+					if( array_key_exists( "ItemArray", $json[ $requestType ]) ){
+						if( array_key_exists( "Item", $json[ $requestType ]["ItemArray"]) ){
+							foreach( $json[ $requestType ]["ItemArray"]["Item"] as $item ){
+								array_push( $items, $item );
+							}
+						}
+					}
+
+
+				}
+				elseif( array_key_exists( "ScheduledList", $json ) ){
+
+					$requestType = "ScheduledList";
 
 					if( array_key_exists( "ItemArray", $json[ $requestType ]) ){
 						if( array_key_exists( "Item", $json[ $requestType ]["ItemArray"]) ){
