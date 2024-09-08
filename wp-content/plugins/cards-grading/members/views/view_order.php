@@ -120,6 +120,66 @@ $grading_files = $this->wpdb->get_results ( $sql );
             <H4 style="color: black !important;">Cards List</H4>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 text-end">
+            <?php 
+                if( $checkout_meta["status"][0] == "Completed - Grades Ready" ) { 
+
+                    if( $posts )
+                    {
+                        $pay_grading = 0;
+                        $consign_card = 0;
+                        $not_available = 0;
+
+                        foreach($posts as $post)
+                        {
+                            $meta = get_post_meta($post->ID);
+                            if( $meta["status"][0] == "Consign Card" ){
+                                $consign_card++;
+                            }
+                            elseif( $meta["status"][0] == "Pay Grading" ){
+                                $pay_grading++;
+                            }
+                            elseif( $meta["status"][0] == "Not Available" ){
+                                $not_available++;
+                            }
+                        }
+
+                        if( $pay_grading + $consign_card + $not_available == count($posts) ){
+                            $show_btn = "";
+                        } else {
+                            $show_btn = "d-none";
+                        }
+                    }
+            ?>
+                <button class='5star_btn btn btn-primary <?php echo $show_btn; ?>' data-action="complete_grading_process" data-order_number="<?php echo $params['order_number'] ?>">
+                    Complete Grading Process
+                </button>      
+            <?php 
+                } 
+
+                elseif( $checkout_meta["status"][0] == "Incomplete Items Shipped" ) { 
+            ?>
+                <button class='5star_btn btn btn-primary' data-action="acknowledge_missing_cards" data-order_number="<?php echo $params['order_number'] ?>">
+                    Acknowledge Missing Cards
+                </button>      
+            <?php 
+                }
+
+                elseif( $checkout_meta["status"][0] == "Order To Pay" ) { 
+            ?>
+                <button class='5star_btn btn btn-primary' data-action="order_paid" data-order_number="<?php echo $params['order_number'] ?>">
+                    Order Paid
+                </button>      
+            <?php 
+                }
+                elseif( $checkout_meta["status"][0] == "To Ship" ) { 
+            ?>
+
+                <button class='5star_btn btn btn-primary' data-action="shipped">
+                    Items Shipped
+                </button>      
+            <?php 
+                }
+            ?>
             <button class='5star_btn btn btn-secondary' data-action="view_pdf"  data-order_number="<?php echo $params['order_number'] ?>">
                 PDF
             </button>      
@@ -146,90 +206,6 @@ $grading_files = $this->wpdb->get_results ( $sql );
                 </tr>
             </thead>
             <tbody>
-                <?php 
-                    if( $posts ){
-
-                        foreach($posts as $post)
-                        {
-                            $meta = get_post_meta($post->ID);
-                            $card = json_decode($meta['card'][0], true);
-
-
-                            if( $meta["status"][0] != 'Not Available' ){
-
-                                $card_total_dv = $card["dv"] * $card["quantity"];
-                                $card_grading_charge = $card["per_card"] * $card["quantity"];
-
-                                if( in_array( $meta["status"][0], array("Pay Grading", "To Pay - Grade Only", "To Ship", "Shipped", "Received", "Paid - Grade Only", "Graded") ) ){
-                                    $grading_charge = $grading_charge + $card_grading_charge;
-                                }
-        
-                            }
-
-                            $total_to_receive = $total_to_receive + $meta["to_receive"][0];
-
-                            
-
-                            $sql = "SELECT * FROM grading WHERE id = " . $card["db_id"];
-                            $db_row = $this->wpdb->get_results ( $sql );
-        
-                            $db_row_data = json_decode($db_row[0]->data, true);
-        
-                ?>
-                <tr class="user-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
-
-                    <?php 
-                    $graded_count = 0;
-                    $empty_cols = 9;
-                    $add_col_one = 0;
-                    $add_col_two = 0;
-                    $add_col_three = 0;
-
-                    if( array_key_exists( "title", $db_row_data ) == false && array_key_exists( "certImgFront", $db_row_data ) == false && array_key_exists( "certImgBack", $db_row_data ) == false  ){
-                        $graded_count++;                 
-                    ?>
-
-                        <td><?php echo $card["year"]; ?></td>
-                        <td><?php echo $card["brand"]; ?></td>
-                        <td><?php echo $card["card_number"]; ?><br><small><?php echo $card["attribute"]; ?></small></td>
-                        <td><?php echo $card["player"]; ?></td>
-                        <td><?php echo $meta["status"][0]; ?></td>
-                        <?php if( in_array( $checkout_meta["status"][0], $processed_status ) ){ 
-                            $add_col_two = 1;
-                        ?>
-                        <td class="text-end"><?php echo $meta["grade"][0];  ?></td>
-                        <?php } ?>
-                        <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
-                        <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
-                        <?php if( in_array( $checkout_meta["status"][0], $consignment_status ) ){ 
-                            $add_col_three = 2;
-                        ?>
-                        <td class='text-end'><?php echo "$" . number_format((float) $meta["sold_price"][0], 2, '.', ''); ?></td>
-                        <td class='text-end'><?php echo "$" . number_format((float) $meta["to_receive"][0], 2, '.', ''); ?></td>
-                        <?php } ?>
-                    <?php 
-                    } 
-                    
-
-                    ?>
-                </tr>
-                <?php          
-                        }
-
-                    if($graded_count == 0){
-                    ?>
-                        <td colspan="<?php echo $empty_cols + $add_col_one + $add_col_two + $add_col_three  ?>" class="text-center p-3">Empty</td>
-                    <?php                         
-                    }
-
-                    } else {
-                ?>
-                <tr>
-                    <td class="text-center" colspan="9">Empty</td>
-                </tr>
-                <?php          
-                    }
-                ?>
             </tbody>
         </table>
 
