@@ -206,6 +206,71 @@ $grading_files = $this->wpdb->get_results ( $sql );
                 </tr>
             </thead>
             <tbody>
+                <?php 
+                    if( $posts ){
+
+                        foreach($posts as $post)
+                        {
+                            $meta = get_post_meta($post->ID);
+                            $card = json_decode($meta['card'][0], true);
+
+
+                            if( $meta["status"][0] != 'Not Available' ){
+
+                                $card_total_dv = $card["dv"] * $card["quantity"];
+                                $card_grading_charge = $card["per_card"] * $card["quantity"];
+
+                                if( in_array( $meta["status"][0], array("Pay Grading", "To Pay - Grade Only", "To Ship", "Shipped", "Received", "Paid - Grade Only", "Graded") ) ){
+                                    $grading_charge = $grading_charge + $card_grading_charge;
+                                }
+        
+                            }
+
+                            $total_to_receive = $total_to_receive + $meta["to_receive"][0];
+
+                            
+
+                            $sql = "SELECT * FROM grading WHERE id = " . $card["db_id"];
+                            $db_row = $this->wpdb->get_results ( $sql );
+        
+                            $db_row_data = json_decode($db_row[0]->data, true);
+        
+                ?>
+                <tr class="user-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
+
+                    <?php 
+                    $graded_count = 0;
+                    $empty_cols = 9;
+                    $add_col_one = 0;
+                    $add_col_two = 0;
+                    $add_col_three = 0;
+
+                    if( array_key_exists( "title", $db_row_data ) == false && array_key_exists( "certImgFront", $db_row_data ) == false && array_key_exists( "certImgBack", $db_row_data ) == false  ){
+                        $graded_count++;                 
+                    ?>
+                    <?php 
+                    } 
+                    
+
+                    ?>
+                </tr>
+                <?php          
+                        }
+
+                    if($graded_count == 0){
+                    ?>
+                        <td colspan="<?php echo $empty_cols + $add_col_one + $add_col_two + $add_col_three  ?>" class="text-center p-3">Empty</td>
+                    <?php                         
+                    }
+
+                    } else {
+                ?>
+                <tr>
+                    <td class="text-center" colspan="9">Empty</td>
+                </tr>
+                <?php          
+                    }
+                ?>
             </tbody>
         </table>
 
