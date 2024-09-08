@@ -120,66 +120,6 @@ $grading_files = $this->wpdb->get_results ( $sql );
             <H4 style="color: black !important;">Cards List</H4>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 text-end">
-            <?php 
-                if( $checkout_meta["status"][0] == "Completed - Grades Ready" ) { 
-
-                    if( $posts )
-                    {
-                        $pay_grading = 0;
-                        $consign_card = 0;
-                        $not_available = 0;
-
-                        foreach($posts as $post)
-                        {
-                            $meta = get_post_meta($post->ID);
-                            if( $meta["status"][0] == "Consign Card" ){
-                                $consign_card++;
-                            }
-                            elseif( $meta["status"][0] == "Pay Grading" ){
-                                $pay_grading++;
-                            }
-                            elseif( $meta["status"][0] == "Not Available" ){
-                                $not_available++;
-                            }
-                        }
-
-                        if( $pay_grading + $consign_card + $not_available == count($posts) ){
-                            $show_btn = "";
-                        } else {
-                            $show_btn = "d-none";
-                        }
-                    }
-            ?>
-                <button class='5star_btn btn btn-primary <?php echo $show_btn; ?>' data-action="complete_grading_process" data-order_number="<?php echo $params['order_number'] ?>">
-                    Complete Grading Process
-                </button>      
-            <?php 
-                } 
-
-                elseif( $checkout_meta["status"][0] == "Incomplete Items Shipped" ) { 
-            ?>
-                <button class='5star_btn btn btn-primary' data-action="acknowledge_missing_cards" data-order_number="<?php echo $params['order_number'] ?>">
-                    Acknowledge Missing Cards
-                </button>      
-            <?php 
-                }
-
-                elseif( $checkout_meta["status"][0] == "Order To Pay" ) { 
-            ?>
-                <button class='5star_btn btn btn-primary' data-action="order_paid" data-order_number="<?php echo $params['order_number'] ?>">
-                    Order Paid
-                </button>      
-            <?php 
-                }
-                elseif( $checkout_meta["status"][0] == "To Ship" ) { 
-            ?>
-
-                <button class='5star_btn btn btn-primary' data-action="shipped">
-                    Items Shipped
-                </button>      
-            <?php 
-                }
-            ?>
             <button class='5star_btn btn btn-secondary' data-action="view_pdf"  data-order_number="<?php echo $params['order_number'] ?>">
                 PDF
             </button>      
