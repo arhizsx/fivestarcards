@@ -233,7 +233,7 @@ $grading_files = $this->wpdb->get_results ( $sql );
                             $sql = "SELECT * FROM grading WHERE id = " . $card["db_id"];
                             $db_row = $this->wpdb->get_results ( $sql );
                             
-                            print_r( count($db_row) );
+                            if(  count($db_row) > 0 ) {
 
                             $db_row_data = json_decode($db_row[0]->data, true);
         
@@ -271,6 +271,8 @@ $grading_files = $this->wpdb->get_results ( $sql );
                         <?php } ?>
                     <?php 
                     } 
+
+                    }
                     
 
                     ?>
