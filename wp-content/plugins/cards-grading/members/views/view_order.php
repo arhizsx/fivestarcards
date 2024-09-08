@@ -233,9 +233,9 @@ $grading_files = $this->wpdb->get_results ( $sql );
                             $sql = "SELECT * FROM grading WHERE id = " . $card["db_id"];
                             $db_row = $this->wpdb->get_results ( $sql );
                             
-                            print_r($db_row);
+                            print_r( count($db_row) );
 
-                            $db_row_data = [];
+                            $db_row_data = json_decode($db_row[0]->data, true);
         
                 ?>
                 <tr class="user-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
