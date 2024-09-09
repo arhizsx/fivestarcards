@@ -1413,7 +1413,6 @@ class Ebay_Integration_Ebay_API {
 					}
 					elseif( $type == "scheduled" ){
 
-						print_r($item);
 
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
@@ -1458,6 +1457,7 @@ class Ebay_Integration_Ebay_API {
 						} 
 						else {
 							
+
 							$this->wpdb->update(
 								'ebay', 
 								array(
@@ -1473,6 +1473,8 @@ class Ebay_Integration_Ebay_API {
 
 					} 
 					else {
+
+						print_r($item);
 
 						$this->wpdb->insert(
 							'ebay',
