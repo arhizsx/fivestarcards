@@ -1429,7 +1429,7 @@ class Ebay_Integration_Ebay_API {
 					if( $type == "scheduled" ){
 
 						if( $result  != null){
-							print_r( "found" );
+							print_r( $result );
 						} else {
 							print_r( "not found" );
 						}
