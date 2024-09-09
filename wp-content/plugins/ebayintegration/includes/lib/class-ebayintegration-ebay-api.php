@@ -1457,6 +1457,8 @@ class Ebay_Integration_Ebay_API {
 						} 
 						else {
 							
+							print_r($item);
+
 
 							$this->wpdb->update(
 								'ebay', 
@@ -1474,7 +1476,6 @@ class Ebay_Integration_Ebay_API {
 					} 
 					else {
 
-						print_r($item);
 
 						$this->wpdb->insert(
 							'ebay',
