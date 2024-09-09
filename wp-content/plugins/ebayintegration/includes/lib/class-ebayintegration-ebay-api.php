@@ -1455,10 +1455,11 @@ class Ebay_Integration_Ebay_API {
 							} 
 
 						} 
+						elseif( $type == "scheduled" ){
+							print_r($item);
+						}
 						else {
 							
-							print_r("IN UPDATE");
-
 							$this->wpdb->update(
 								'ebay', 
 								array(
