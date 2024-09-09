@@ -1428,7 +1428,11 @@ class Ebay_Integration_Ebay_API {
 
 					if( $type == "scheduled" ){
 
-						print_r( count($result) );
+						if( $result ){
+							print_r( count($result) );
+						} else {
+							print_r( "not found" );
+						}
 					}
 
 
