@@ -1410,6 +1410,11 @@ class Ebay_Integration_Ebay_API {
 						$SKU = $item["Item"]["SKU"];
 						$itemstatus = "SoldListPaid";							
 					}
+					elseif( $type == "scheduled" ){
+						$itemID = $item["ItemID"];
+						$SKU = $item["SKU"];
+						$itemstatus = "ScheduledList";
+					}
 
 
 					$result = $this->wpdb->get_results ("
