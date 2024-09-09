@@ -1493,8 +1493,9 @@ class Ebay_Integration_Ebay_API {
 					}
 				}
 
-
-				return $returnArray;
+				if( $type != 'scheduled' ){
+					return $returnArray;
+				}
 
 			}
 	
