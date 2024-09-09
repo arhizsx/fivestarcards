@@ -1426,6 +1426,11 @@ class Ebay_Integration_Ebay_API {
 						WHERE item_id = " . $itemID 
 					);				
 
+					if( $type == "scheduled" ){
+
+						print_r( $result );
+					}
+
 
 					if( count($result) > 0 ){
 						
@@ -1456,14 +1461,6 @@ class Ebay_Integration_Ebay_API {
 
 						} 
 						elseif( $type == "scheduled" ){
-							$result = $this->wpdb->get_results ("
-								SELECT * 
-								FROM  ebay
-								WHERE item_id = " . $itemID . "
-								AND status = 'PaidOut'
-								"
-							);				
-							print_r($result);
 						}
 						else {
 							
