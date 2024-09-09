@@ -1428,7 +1428,7 @@ class Ebay_Integration_Ebay_API {
 
 					if( $type == "scheduled" ){
 
-						print_r( $result );
+						print_r( count($result) );
 					}
 
 
