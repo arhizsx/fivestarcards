@@ -1452,7 +1452,7 @@ class Ebay_Integration_Ebay_API {
 										'item_id'=>$itemID)
 								);		
 
-							}
+							} 
 
 						} 
 						else {
