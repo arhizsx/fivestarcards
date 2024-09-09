@@ -1426,16 +1426,6 @@ class Ebay_Integration_Ebay_API {
 						WHERE item_id = " . $itemID 
 					);				
 
-					if( $type == "scheduled" ){
-
-						if( $result  != null){
-							print_r( $result );
-						} else {
-							print_r( "not found" );
-						}
-					}
-
-
 					if( count($result) > 0 ){
 						
 						if( $type == "sold" ){
@@ -1464,8 +1454,6 @@ class Ebay_Integration_Ebay_API {
 							} 
 
 						} 
-						elseif( $type == "scheduled" ){
-						}
 						else {
 							
 							$this->wpdb->update(
@@ -1497,9 +1485,7 @@ class Ebay_Integration_Ebay_API {
 					}
 				}
 
-				if( $type != 'scheduled' ){
 					return $returnArray;
-				}
 
 			}
 	
