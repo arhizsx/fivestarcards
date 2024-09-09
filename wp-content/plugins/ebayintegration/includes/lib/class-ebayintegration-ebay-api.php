@@ -1390,7 +1390,6 @@ class Ebay_Integration_Ebay_API {
 
 				foreach( $items as $item ){
 
-					print_r($item);
 
 					if( $type == "active" ){
 						$itemID = $item["ItemID"];
@@ -1413,6 +1412,9 @@ class Ebay_Integration_Ebay_API {
 						$itemstatus = "SoldListPaid";							
 					}
 					elseif( $type == "scheduled" ){
+
+						print_r($item);
+
 						$itemID = $item["ItemID"];
 						$SKU = $item["SKU"];
 						$itemstatus = "ScheduledList";
