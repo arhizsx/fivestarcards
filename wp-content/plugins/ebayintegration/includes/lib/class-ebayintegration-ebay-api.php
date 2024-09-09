@@ -1457,7 +1457,6 @@ class Ebay_Integration_Ebay_API {
 						} 
 						else {
 							
-							die();
 							print_r("IN UPDATE");
 
 							$this->wpdb->update(
