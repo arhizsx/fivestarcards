@@ -11,6 +11,9 @@ WHERE ListingType = 'Chinese'
 "
 );
 
+
+print_r( $ebay );
+
 $available = count($ebay);
 
 ?>
