@@ -178,7 +178,7 @@
 
                                 $data = json_decode( $card->data, true );
 
-                                print_r( $data );
+                                print_r( $data["player"] );
 
 
                     ?>
