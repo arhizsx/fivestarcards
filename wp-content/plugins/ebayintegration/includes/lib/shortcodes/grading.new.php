@@ -142,7 +142,7 @@
         </div>
 
         <!-- DESKTOP VIEW -->
-        <!-- <div class="table-responsive d-none d-lg-block">
+        <div class="table-responsive d-none d-lg-block">
             <table class="table table-sm table-bordered" id="new_grading">                
                 <thead>
                     <tr>
@@ -214,7 +214,7 @@
                         <th colspan='6' class="text-end">Grading Charge</th>
                         <th colspan='1' class="text-end">$<?php echo $total_grading ?></th>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                             <?php 
                                 if(  count( $grading_addon ) > 0 ){
                                     $checked = "checked";
@@ -240,52 +240,10 @@
                         <?php 
                         }   
                         ?>
-                    </tr>
-                    <?php 
-                        if( count( $grading_files ) > 0 ){
-                    ?>
-                    <tr>                        
-                        <th colspan="4" class="text-center">
-                            Uploaded Cards List Files
-                        </th>
-                        <th  class="text-center">
-                            Quantity
-                        </th>
-                        <th class="text-center">
-                            Card Show
-                        </th>
-                    </tr>   
-                    <?php 
-                        foreach($grading_files as $file){
-                    ?>
-                        <?php 
-                            $file_data = json_decode($file->data, true);
-                            foreach( $file_data as $fdata ){
-                        ?>
-                        <tr class="grading_file">
-                            <td colspan="4" class="text-left">
-                                <a class="me-3 btn btn-danger btn-sm ebayintegration-btn" data-action="remove_grading_file" data-id="<?php echo $file->id ?>" data-file="<?php echo $fdata["baseurl"] ?>" >REMOVE</a>
-                                <a href="<?php echo $fdata["baseurl"] ?>" target="_blank"><?php echo $fdata["name"] ?></a>
-                            </td>
-                            <td>
-                                <?php echo $fdata["qty"] ?>
-                            </td>                        
-                            <td>
-                                <?php echo $fdata["card_show"] ?>
-                            </td>                        
-                        </tr>
-                        <?php                                 
-                            }
-                        ?>                        
-                    <?php                             
-                        }
-                    ?> 
-                    <?php 
-                        } 
-                    ?>
+                    </tr> -->
                 </tfoot>        
             </table>
-        </div> -->
+        </div>
 
         <!-- MOBILE VIEW -->
         <div class="d-lg-none pb-2">
