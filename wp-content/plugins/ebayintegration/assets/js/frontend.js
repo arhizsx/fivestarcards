@@ -575,11 +575,11 @@ jQuery(document).on("click", ".ebayintegration-btn", function (e) {
 
 		var card = confirmGradingTableCheckout(grading_type, user_id);
 
-		// element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
+		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
 
 		$.when(card).done(function (card) {
 
-			// window.location.href = "/my-account/grading/view-order/?mode=open&id=" + card.checkout_post_id;
+			window.location.href = "/my-account/grading/view-order/?mode=open&id=" + card.checkout_post_id;
 			console.log(card);
 		});
 
