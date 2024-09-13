@@ -1050,9 +1050,11 @@ class Ebay_Integration_Ebay_API {
 		foreach($posts as $post)
 		{
 
-			return $post;
 
 			$card_data =  get_post_meta( $post->ID , 'card' , true );
+
+			return $card_data;
+
 			$card = json_decode($card_data, true);
 
 
