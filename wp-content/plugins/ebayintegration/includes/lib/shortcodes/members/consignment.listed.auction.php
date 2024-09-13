@@ -12,7 +12,7 @@ WHERE ListingType = 'Chinese'
 );
 
 
-print_r( $ebay );
+print_r( $skus );
 
 $available = count($ebay);
 
