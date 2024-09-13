@@ -918,6 +918,8 @@ class Ebay_Integration_Ebay_API {
 
 	public function confirmGradingTableCheckout( $params ){
 
+		return "TEST";
+
 		$data = [
 			"user_id" => $params["user_id"],
 			"type" => $params["type"]
