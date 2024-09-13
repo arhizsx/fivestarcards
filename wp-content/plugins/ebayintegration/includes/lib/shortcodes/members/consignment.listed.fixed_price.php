@@ -35,16 +35,20 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
             <?php 
 
             $available = 0;
-            foreach($ebay as $item){ 
-                $data = json_decode($item->data, true);
-                if( $data["ListingType"] != "Chinese"){
-                    if( in_array( $item->sku, $skus ) ){
-                        $available++;
+
+            if($skus != null){
+                foreach($ebay as $item){ 
+                    $data = json_decode($item->data, true);
+                    if( $data["ListingType"] != "Chinese"){
+                        if( in_array( $item->sku, $skus ) ){
+                            $available++;
+                        }
                     }
                 }
             }
-
+            
             if( $available > 0 && $skus != null){
+
                 foreach($ebay as $item){                     
                     
                     if( in_array( $item->sku, $skus ) ){
