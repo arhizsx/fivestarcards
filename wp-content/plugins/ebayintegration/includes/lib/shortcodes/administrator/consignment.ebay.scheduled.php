@@ -62,7 +62,7 @@ $users = get_users( $args );
                 </td>
                 <td class="text-end">
                     $<?php 
-                    echo number_format(( $data["Item"]["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
+                    echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
                     ?>
                 </td>
 
