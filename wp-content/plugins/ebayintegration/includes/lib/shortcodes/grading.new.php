@@ -142,7 +142,7 @@
         </div>
 
         <!-- DESKTOP VIEW -->
-        <div class="table-responsive d-none d-lg-block">
+        <!-- <div class="table-responsive d-none d-lg-block">
             <table class="table table-sm table-bordered" id="new_grading">                
                 <thead>
                     <tr>
@@ -285,7 +285,7 @@
                     ?>
                 </tfoot>        
             </table>
-        </div>
+        </div> -->
 
         <!-- MOBILE VIEW -->
         <div class="d-lg-none pb-2">
