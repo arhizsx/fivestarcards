@@ -1050,8 +1050,11 @@ class Ebay_Integration_Ebay_API {
 		foreach($posts as $post)
 		{
 
+			return $post;
+
 			$card_data =  get_post_meta( $post->ID , 'card' , true );
 			$card = json_decode($card_data, true);
+
 
 			$total_cards = $total_cards + $card["quantity"];
 			$total_dv = $total_dv + ( $card["quantity"] * $card["dv"] );
