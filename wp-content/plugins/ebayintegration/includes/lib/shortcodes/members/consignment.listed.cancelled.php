@@ -46,8 +46,9 @@ $users = get_users( $args );
             </tr>
         </thead>
         <tbody>
+
             <?php 
-            if( $available > 0 && $skus != null ){
+            if(  $skus != null ){
 
                 $ctr = 0;
 
