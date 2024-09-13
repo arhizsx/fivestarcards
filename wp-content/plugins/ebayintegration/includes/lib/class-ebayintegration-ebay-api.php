@@ -1056,11 +1056,11 @@ class Ebay_Integration_Ebay_API {
 
 			$card = json_decode($card_data, true);
 
+			return $card;
 
 			$total_cards = $total_cards + $card["quantity"];
 			$total_dv = $total_dv + ( $card["quantity"] * $card["dv"] );
 
-			return $total_cards;
 
 			update_post_meta($post->ID, 'status', 'checkout');   
 			add_post_meta($post->ID, "checkout_id", $checkout_post_id );
