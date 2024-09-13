@@ -175,13 +175,13 @@
 
                                 $data = json_decode( $card->data, true );
 
-                                if(array_key_exists("file", $data)){
-                                    $img = "<img src='" . ($data["file"]["baseurl"]) . "'>";
-                                } else {
-                                    $img = '<div class="d-flex justify-content-center align-items-center picture_box ebayintegration-btn" data-action="grading_picture_box_click"  data-id="' . $card->id . '"   data-user_id="' . get_current_user_id() . '">' .
-                                            '<i class="fa-solid fa-file-image fa-2x"></i>' . 
-                                        '</div>';
-                                }
+                                // if(array_key_exists("file", $data)){
+                                //     $img = "<img src='" . ($data["file"]["baseurl"]) . "'>";
+                                // } else {
+                                //     $img = '<div class="d-flex justify-content-center align-items-center picture_box ebayintegration-btn" data-action="grading_picture_box_click"  data-id="' . $card->id . '"   data-user_id="' . get_current_user_id() . '">' .
+                                //             '<i class="fa-solid fa-file-image fa-2x"></i>' . 
+                                //         '</div>';
+                                // }
 
                     ?>
                     <tr class='consigned_item_row' data-id='<?php echo $card->id; ?>'>
@@ -214,7 +214,7 @@
                         <th colspan='6' class="text-end">Grading Charge</th>
                         <th colspan='1' class="text-end">$<?php echo $total_grading ?></th>
                     </tr>
-                    <!-- <tr>
+                    <tr>
                             <?php 
                                 if(  count( $grading_addon ) > 0 ){
                                     $checked = "checked";
@@ -240,7 +240,7 @@
                         <?php 
                         }   
                         ?>
-                    </tr> -->
+                    </tr>
                     <?php 
                         if( count( $grading_files ) > 0 ){
                     ?>
