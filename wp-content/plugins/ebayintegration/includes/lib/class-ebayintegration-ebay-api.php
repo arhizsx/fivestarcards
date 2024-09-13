@@ -926,6 +926,9 @@ class Ebay_Integration_Ebay_API {
 
 
 		$sql = "SELECT * FROM grading where type='". $params["type"] .  "_file' AND user_id = '". $params["user_id"] .  "' AND status = 'logged'";
+		return $sql;
+
+
 		$grading_files = $this->wpdb->get_results ( $sql );	
 
 		return $params;
