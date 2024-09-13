@@ -40,8 +40,6 @@ FROM  view_auction
                     }
                 }
 
-                print_r( $available );
-
                 if( $available > 0 && $skus != null){
             ?>
                     <?php 
