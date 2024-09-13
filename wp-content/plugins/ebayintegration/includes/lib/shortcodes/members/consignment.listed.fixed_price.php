@@ -2,7 +2,7 @@
 
 global $wpdb;
 
-$ebay = $this->wpdb->get_results ( "
+$ebay = $this->wpdb->get_results ( " 
 SELECT * 
 FROM  view_fixed_price
 "  

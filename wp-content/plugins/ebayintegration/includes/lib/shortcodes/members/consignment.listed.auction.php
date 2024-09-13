@@ -7,7 +7,6 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  view_auction 
-WHERE ListingType = 'Chinese'
 "
 );
 
