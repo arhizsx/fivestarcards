@@ -918,7 +918,6 @@ class Ebay_Integration_Ebay_API {
 
 	public function confirmGradingTableCheckout( $params ){
 
-		return "TEST";
 
 		$data = [
 			"user_id" => $params["user_id"],
@@ -928,6 +927,8 @@ class Ebay_Integration_Ebay_API {
 
 		$sql = "SELECT * FROM grading where type='". $params["type"] .  "_file' AND user_id = '". $params["user_id"] .  "' AND status = 'logged'";
 		$grading_files = $this->wpdb->get_results ( $sql );	
+
+		return $grading_files;
 
 		if( count($grading_files) > 0){
 			$status = "For Entry";
