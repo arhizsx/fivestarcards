@@ -38,9 +38,9 @@ print_r( $skus );
                     
                     foreach($ebay as $item){ 
 
+                        print_r($item);
 
                         $data = json_decode($item->data, true);
-                        print_r( $data );
                         if( $data["ListingType"] == "Chinese"){
 
                             print_r( $item->sku );
