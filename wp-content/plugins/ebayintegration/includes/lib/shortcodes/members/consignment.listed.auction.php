@@ -34,14 +34,10 @@ print_r( $skus );
             <?php 
 
                 $available = 0;
-                if($skus != null){
-                    
+                if($skus != null){                    
                     foreach($ebay as $item){ 
-
-                        if( $item->ListingType == "Chinese"){
-                            if( in_array( $item->sku, $skus ) ){
-                                $available++;
-                            }
+                        if( in_array( $item->sku, $skus ) ){
+                            $available++;
                         }
                     }
                 }
