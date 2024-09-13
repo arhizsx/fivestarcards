@@ -1010,7 +1010,7 @@ class Ebay_Integration_Ebay_API {
 				'post_status' => 'publish'
 		]); 
 
-		return $checkout_post_id;
+		return $inspection;
 
 		if( $inspection != null ){
 			add_post_meta($checkout_post_id, "inspection",  $inspection );
