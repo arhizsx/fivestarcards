@@ -40,6 +40,7 @@ print_r( $skus );
 
 
                         $data = json_decode($item->data, true);
+                        print_r( $data );
                         if( $data["ListingType"] == "Chinese"){
 
                             print_r( $item->sku );
