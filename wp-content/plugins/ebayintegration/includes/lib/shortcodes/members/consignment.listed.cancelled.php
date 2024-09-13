@@ -38,8 +38,10 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
         <thead>
             <tr>
                 <th width="60%">Item</th>
-                <th>eBay Pay Date</th>
-                <th class="text-end">Price Sold</th>
+                <th>Cancel ID</th>
+                <th>Request Date</th>
+                <th>Close Date</th>
+                <th>Reason</th>
             </tr>
         </thead>
         <tbody>
