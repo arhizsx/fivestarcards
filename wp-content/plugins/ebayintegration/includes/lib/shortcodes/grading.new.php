@@ -287,153 +287,6 @@
             </table>
         </div>
 
-        <!-- MOBILE VIEW -->
-        <div class="d-lg-none pb-2">
-            <table class="table table-sm table-bordered" id="new_grading_mobile">
-                <thead>
-                    <tr>
-                        <th colspan="2">Items</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                        $total_dv = 0;
-                        $total_grading = 0;
-
-                        if( count( $grading ) == 0 ){
-                    ?>
-                    <tr class="empty_grading">
-                        <td colspan="2" class="text-center py-5">
-                            Empty
-                        </td>
-                    </tr>
-                    <?php 
-                        } else {
-                            foreach( $grading as $card ){
-
-                            $data = json_decode( $card->data, true );
-
-                            if(array_key_exists("file", $data)){
-                                $img = "<img src='" . ($data["file"]["baseurl"]) . "'>";
-                            } else {
-                                $img = '<div class="d-flex justify-content-center align-items-center picture_box">' .
-                                            '<i class="fa-solid fa-file-image fa-2x"></i>' . 
-                                        '</div>';
-
-                            }   
-
-                    ?>
-                    <tr class='consigned_item_row' data-id='<?php echo $card->id; ?>'>
-                        <td colspan="2">
-                            <div class='w-100 p-0 text-end' style='position: relative;'>
-                                <a class='text-danger ebayintegration-btn' data-action="removeGradingCardRow" data-id='<?php echo $card->id ?>' data-user_id="<?php echo get_current_user_id(); ?>" href='#' style='position: absolute; right: 0px;'>
-                                    <i class='fa-solid fa-xl fa-xmark'></i>
-                                </a>
-                            </div>
-                            <div class='row'>
-                                <div class='small text-secondary col-sm-4'>Player</div>
-                                <div class='col-sm-8'>                                    
-                                    <?php echo $data["player"] ?>								
-                                </div>
-                            </div>
-                            <div class='row'>
-                                <div class='small text-secondary col-sm-4'>Year</div>
-                                <div class='col-sm-8'>
-                                    <?php echo $data["year"] ?>
-                                </div>
-                            </div>
-                            <div class='row'>
-                                <div class='small text-secondary col-sm-4'>Brand</div>
-                                <div class='col-sm-8'>
-                                    <?php echo $data["brand"] ?>
-                                </div>
-                            </div>
-                            <div class='row'>
-                                <div class='small text-secondary col-4'>Card #</div>
-                                <div class='col-sm-8'>
-                                    <?php echo $data["card_number"] ?>
-                                </div>
-                            </div>
-                            <div class='row'>
-                                <div class='small text-secondary col-sm-4'>Attribute SN</div>
-                                <div class='col-sm-8'>
-                                    <?php echo $data["attribute_sn"] ?>
-                                </div>
-                            </div>
-                            <div class='row'>
-                                <div class='small text-secondary col-sm-4'>Declared Value</div>
-                                <div class='col-sm-8'>
-                                    $0.00                        
-                                </div>
-                            </div>
-                            <div class='row'>
-                                <div class='small text-secondary col-sm-4'>Grading</div>
-                                <div class='col-sm-8'>
-                                    $0.00
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <?php
-                            $total_grading = $total_grading + $data["per_card"];
-                            $total_dv = $total_dv + $data["dv"];
-
-                            }
-                        }
-                    ?>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th colspan='1' class="text-end">
-                            Total Inspection Service
-                        </th>
-                        <th colspan='1' class="text-end">
-                            $<?php echo count($grading) * 3 ?>
-                        </th>
-                    </tr>
-
-                    <tr>
-                        <th colspan='1' class="text-end">Total DV</th>
-                        <th colspan='1' class="text-end">$<?php echo $total_dv ?></th>
-                    </tr>
-                    <tr>
-                        <th colspan='1' class="text-end">Grading Charge</th>
-                        <th colspan='1' class="text-end">$<?php echo $total_grading ?></th>
-                    </tr>
-                    <?php 
-                        if( count( $grading_files ) > 0 ){
-                    ?>
-                    <tr>                        
-                        <th colspan="1" class="text-center">
-                            Uploaded Cards List Files
-                        </th>
-                    </tr>   
-                    <?php 
-                        foreach($grading_files as $file){
-                    ?>
-                        <?php 
-                            $file_data = json_decode($file->data, true);
-                            foreach( $file_data as $fdata ){
-                        ?>
-                        <tr class="grading_file">
-                            <td colspan="1" class="text-left">
-                                <a class="me-3 btn btn-danger btn-sm ebayintegration-btn" data-id="<?php echo $file->id ?>" data-action="remove_grading_file" data-file="<?php echo $fdata["baseurl"] ?>" >REMOVE</a>
-                                <a href="<?php echo $fdata["baseurl"] ?>" target="_blank"><?php echo $fdata["name"] ?></a>
-                            </td>
-                        </tr>
-                        <?php                                 
-                            }
-                        ?>                        
-                    <?php                             
-                        }
-                    ?> 
-                    <?php 
-                        } 
-                    ?>
-
-                </tfoot>        
-            </table>    
-        </div>
 
         <!-- TABLE LOWER BUTTONS -->
         <div class="d-flex justify-content-end">
@@ -672,6 +525,86 @@
         </div>
 
 
+        SHIP MODAL
+        <div class="modal fade ship_batch_modal" tabindex="-1" role="dialog" aria-labelledby="dxmodal" aria-hidden="true"  data-backdrop="static" data-bs-backdrop="static"   data-bs-keyboard="false" data-data='' data-modal='' data-key='' data-modal_size='full' style="margin-top: 120px">
+            <div class="modal-dialog modal-lg" style="margin-bottom: 150px;">
+                <div class="modal-content modal-ajax">
+                    <div class="modal-header bg-dark text-white">
+                        <h5 class="modal-title">
+                            Ship Cards
+                        </h5>
+                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+                            X
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="formbox">
+
+                            <div class="row">
+                                <div class="col">
+                                    <H5 style="color: black;">Ship your items to</H5>
+                                </div>
+                            </div>
+                            <div class="row border-bottom mb-3">
+                                <div class="col-lg-6 small pb-3">
+                                    <div>USPS</div>
+                                    <div>Matt Sellers</div>
+                                    <div>PO Box 263 Hartland, WI 53029</div>
+                                </div>
+                                <div class="col-lg-6 small pb-3">
+                                    <div>FedEx / UPS / DHL</div>
+                                    <div>Matt Sellers</div>
+                                    <div>203 E Wisconsin Ave Suite 203C Oconomowoc, WI 53066</div>
+                                </div>
+                            </div>
+                            
+                            <forn id="shipping_info_form">
+
+                                    <input type="hidden" name="user_id" value="<?php echo get_current_user_id() ?>">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-12 mb-3">
+                                            <label for="carrier">Carrier</label>
+                                            <select name="carrier" class="form-control" data-field_check="required">
+                                                <option value="">Select Carrier</option>
+                                                <option value="USPS">USPS</option>
+                                                <option value="FedEx">FedEx</option>
+                                                <option value="DHL">DHL</option>
+                                                <option value="UPS">UPS</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12 mb-3">
+                                            <label for="shipped_by">Shipped By</label>
+                                            <input type="text" name="shipped_by" class="form-control p-2" data-field_check="required">
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12 mb-3">
+                                            <label for="tracking_number">Tracking Number</label>
+                                            <input type="text" name="tracking_number" class="form-control p-2" data-field_check="required">
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-12 mb-3">
+                                            <label for="shipping_date">Shipping Date</label>
+                                            <input type="date" name="shipping_date" class="form-control p-2" data-field_check="required">
+                                        </div>
+                                    </div>
+                            </forn>
+                        </div>
+                        <div class="d-none p-5 text-center loading">
+
+                            Processing cards, please wait...
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn border btn-secondary" data-bs-dismiss="modal" >Close</button>
+
+                        <button class="btn border btn-primary ebayintegration-btn" 
+                            data-action='confirmConsignCardsShipping' 
+                        >
+                            Card Shipped
+                        </button>                    
+                    </div>
+                </div>
+            </div>
+        </div>
 
 <!-- GRADING MENU -->
 
