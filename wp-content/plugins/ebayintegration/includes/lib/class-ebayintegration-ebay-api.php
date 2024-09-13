@@ -1073,7 +1073,7 @@ class Ebay_Integration_Ebay_API {
 		add_post_meta($checkout_post_id, "status", $status );
 		add_post_meta($checkout_post_id, "grading_orders_id", $lastid );
 		
-
+		return $rows;
 
 		if( $rows != false ){
 
