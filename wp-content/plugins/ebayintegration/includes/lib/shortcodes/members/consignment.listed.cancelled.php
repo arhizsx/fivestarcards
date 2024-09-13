@@ -27,6 +27,7 @@ $args = array(
 
 $users = get_users( $args );
 
+print_r( $skus  );
 
 ?>
 <style>
