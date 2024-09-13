@@ -192,8 +192,11 @@
                         <td class='text-end'>$<?php echo $data["per_card"] ?></td>
                     </tr>
                     <?php 
-                                $total_grading = $total_grading + $data["per_card"];
-                                $total_dv = $total_dv + $data["dv"];
+                                $per_card = (float) $data["per_card"];
+                                $dv = (float) $data["dv"];
+
+                                $total_grading = $total_grading + $per_card;
+                                $total_dv = $total_dv + $dv;
 
                             }
                         }
