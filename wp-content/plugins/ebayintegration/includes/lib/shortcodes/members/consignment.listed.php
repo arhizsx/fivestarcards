@@ -2,6 +2,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
+            <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("scheduled") ?>" href="/my-account/consignment/?mode=listed&type=scheduled">Scheduled</a>
             <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("auction") ?>" href="/my-account/consignment/?mode=listed&type=auction">Auction</a>
             <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("fixed_price") ?>" href="/my-account/consignment/?mode=listed&type=fixed_price">Fixed Price</a>
             <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("awaiting_payment") ?>" href="/my-account/consignment/?mode=listed&type=awaiting_payment">Awaiting Payment</a>
