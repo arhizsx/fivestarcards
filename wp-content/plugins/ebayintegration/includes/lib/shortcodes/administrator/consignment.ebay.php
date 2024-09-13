@@ -1,6 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
+            <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("scheduled") ?>" href="/administrator/consignment/?mode=ebay&type=scheduled">Scheduled</a>
             <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("auction") ?>" href="/administrator/consignment/?mode=ebay&type=auction">Auction</a>
             <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("fixed_price") ?>" href="/administrator/consignment/?mode=ebay&type=fixed_price">Fixed Price</a>
             <a class="btn btn-pill btn-sm mb-2 <?php echo ActivateListing("awaiting_payment") ?>" href="/administrator/consignment/?mode=ebay&type=awaiting_payment">Awaiting Payment</a>
