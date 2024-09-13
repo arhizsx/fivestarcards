@@ -11,6 +11,8 @@ $array = implode("','",$skus);
 $sql = "SELECT * FROM ebay WHERE status = 'Cancelled' AND sku IN ('" . $array . "')";
 $ebay = $this->wpdb->get_results ( $sql );
 
+print_r( $ebay );
+
 ?>
 <style>
     .text-small {
