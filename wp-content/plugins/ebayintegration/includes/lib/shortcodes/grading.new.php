@@ -241,6 +241,48 @@
                         }   
                         ?>
                     </tr> -->
+                    <?php 
+                        if( count( $grading_files ) > 0 ){
+                    ?>
+                    <tr>                        
+                        <th colspan="4" class="text-center">
+                            Uploaded Cards List Files
+                        </th>
+                        <th  class="text-center">
+                            Quantity
+                        </th>
+                        <th class="text-center">
+                            Card Show
+                        </th>
+                    </tr>   
+                    <?php 
+                        foreach($grading_files as $file){
+                    ?>
+                        <?php 
+                            $file_data = json_decode($file->data, true);
+                            foreach( $file_data as $fdata ){
+                        ?>
+                        <tr class="grading_file">
+                            <td colspan="4" class="text-left">
+                                <a class="me-3 btn btn-danger btn-sm ebayintegration-btn" data-action="remove_grading_file" data-id="<?php echo $file->id ?>" data-file="<?php echo $fdata["baseurl"] ?>" >REMOVE</a>
+                                <a href="<?php echo $fdata["baseurl"] ?>" target="_blank"><?php echo $fdata["name"] ?></a>
+                            </td>
+                            <td>
+                                <?php echo $fdata["qty"] ?>
+                            </td>                        
+                            <td>
+                                <?php echo $fdata["card_show"] ?>
+                            </td>                        
+                        </tr>
+                        <?php                                 
+                            }
+                        ?>                        
+                    <?php                             
+                        }
+                    ?> 
+                    <?php 
+                        } 
+                    ?> -->
                 </tfoot>        
             </table>
         </div>
