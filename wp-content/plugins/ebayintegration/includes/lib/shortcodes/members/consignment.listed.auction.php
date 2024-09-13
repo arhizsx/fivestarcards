@@ -10,8 +10,6 @@ FROM  view_auction
 "
 );
 
-print_r( $skus );
-
 ?>
 <style>
     .text-small {
