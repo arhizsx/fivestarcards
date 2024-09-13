@@ -27,7 +27,6 @@ $args = array(
 
 $users = get_users( $args );
 
-print_r( $skus  );
 
 ?>
 <style>
@@ -56,6 +55,8 @@ print_r( $skus  );
                             $available++;
                         }
                     }
+                } else {
+                    echo "NO SKU";
                 }
             ?>
 
