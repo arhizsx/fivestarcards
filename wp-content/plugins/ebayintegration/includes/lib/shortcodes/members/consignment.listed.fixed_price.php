@@ -12,6 +12,7 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
 
 $available = count($ebay);
 
+print_r( $skus );
 
 ?>
 <style>
@@ -47,9 +48,10 @@ $available = count($ebay);
         </thead>
         <tbody>
             <?php 
-                if( $available > 0 && $skus != null){
-                    $i ++;
+            if( $available > 0){
+                $i ++;
                 foreach($ebay as $item){ 
+
 
                     
                     if( in_array( $item->sku, $skus ) ){
