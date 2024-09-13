@@ -156,19 +156,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                        $total_dv = 0;
-                        $total_grading = 0;
-
-                        if( count( $grading ) == 0 ){
-                    ?>
-                    <tr class="empty_grading">
-                        <td colspan="7" class="text-center py-5">
-                            Empty
-                        </td>
-                    </tr>
                     <?php 
-                        } else {
 
 
                             foreach( $grading as $card ){
@@ -185,13 +173,24 @@
 
                     ?>
                     <tr class='consigned_item_row' data-id='<?php echo $card->id; ?>'>
+                        <td>
+                            <a class='text-danger  ebayintegration-btn' data-action="removeGradingCardRow"  data-id='<?php echo $card->id ?>' data-user_id="<?php echo get_current_user_id(); ?>" href='#'>
+                                <i class='fa-solid fa-lg fa-xmark'></i>
+                            </a>
+                        </td>
+                        <td><?php echo $data["player"] ?></td>
+                        <td><?php echo $data["year"] ?></td>
+                        <td><?php echo $data["brand"] ?></td>
+                        <td><?php echo $data["card_number"] ?><br><small><?php echo $data["attribute_sn"] ?></small></td>
+                        <td class='text-end'>$<?php echo $data["dv"] ?></td>
+                        <td class='text-end'>$<?php echo $data["per_card"] ?></td>
                     </tr>
                     <?php 
                                 $total_grading = $total_grading + $data["per_card"];
                                 $total_dv = $total_dv + $data["dv"];
 
                             }
-                        }
+                        
                     ?>            
                 </tbody>
                 <tfoot>
