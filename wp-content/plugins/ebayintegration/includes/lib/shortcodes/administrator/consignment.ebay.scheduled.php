@@ -34,8 +34,7 @@ $users = get_users( $args );
             <tr>
                 <th>Item</th>
                 <th class="text-end">Amount</th>
-                <th>Action</th>
-            </tr>
+=            </tr>
         </thead>
         <tbody>
             <?php 
@@ -65,9 +64,6 @@ $users = get_users( $args );
                     $<?php 
                     echo number_format(( $data["Item"]["SellingStatus"]["CurrentPrice"]), 2, '.', ',');
                     ?>
-                </td>
-                <td class="text-end">
-                    <button class="btn btn-primary btn-sm mb-2 ebayintegration-btn" data-action="consignmentPaidOut" data-id="<?php echo $item->id ?>">PAID</button>
                 </td>
 
             </tr>
