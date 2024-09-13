@@ -38,10 +38,7 @@ print_r( $skus );
                     
                     foreach($ebay as $item){ 
 
-                        print_r($item);
-
-                        $data = json_decode($item->data, true);
-                        if( $data["ListingType"] == "Chinese"){
+                        if( $item["ListingType"] == "Chinese"){
 
                             print_r( $item->sku );
                             echo "<br>";
