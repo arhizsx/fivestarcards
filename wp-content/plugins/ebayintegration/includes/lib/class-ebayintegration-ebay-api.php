@@ -935,8 +935,6 @@ class Ebay_Integration_Ebay_API {
 		}
 
 		$sql = "SELECT * FROM grading_addons where type='". $params["type"] .  "' AND user_id = '". $params["user_id"] .  "'";
-
-		return $sql;
 		$query = $this->wpdb->get_results ( $sql );	
 		if( count($query) > 0 ){
 			$inspection = true;
@@ -955,7 +953,9 @@ class Ebay_Integration_Ebay_API {
 			)
 		);
 
-		$lastid = $this->wpdb->insert_id;					
+		$lastid = $this->wpdb->insert_id;	
+		
+		return $lastid;
 
 		$rows = $this->wpdb->update(
 			'grading', 
