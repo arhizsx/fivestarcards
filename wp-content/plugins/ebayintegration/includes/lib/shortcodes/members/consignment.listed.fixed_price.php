@@ -10,6 +10,9 @@ FROM  view_fixed_price
 
 $skus = get_user_meta( get_current_user_id(), "sku", true );		
 
+$available = count($ebay);
+
+
 ?>
 <style>
     .text-small {
@@ -44,8 +47,8 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
         </thead>
         <tbody>
             <?php 
-            if( $available > 0 ){
-                $i ++;
+                if( $available > 0 && $skus != null){
+                    $i ++;
                 foreach($ebay as $item){ 
 
                     
