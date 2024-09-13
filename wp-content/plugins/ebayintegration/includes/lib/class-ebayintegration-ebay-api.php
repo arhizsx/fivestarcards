@@ -955,8 +955,6 @@ class Ebay_Integration_Ebay_API {
 
 		$lastid = $this->wpdb->insert_id;	
 		
-		return $lastid;
-
 		$rows = $this->wpdb->update(
 			'grading', 
 			array(
@@ -970,6 +968,8 @@ class Ebay_Integration_Ebay_API {
 				"type" => $params["type"],
 			)
 		);		
+
+		return $rows;
 
 		$rows = $this->wpdb->update(
 			'grading', 
