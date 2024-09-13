@@ -286,6 +286,100 @@
 
         <!-- MOBILE VIEW -->
         <div class="d-lg-none pb-2">
+            <table class="table table-sm table-bordered" id="new_grading_mobile">
+                <thead>
+                    <tr>
+                        <th colspan="2">Items</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        $total_dv = 0;
+                        $total_grading = 0;
+
+                        if( count( $grading ) == 0 ){
+                    ?>
+                    <tr class="empty_grading">
+                        <td colspan="2" class="text-center py-5">
+                            Empty
+                        </td>
+                    </tr>
+                    <?php 
+                        } else {
+                            foreach( $grading as $card ){
+
+                            $data = json_decode( $card->data, true );
+
+                            if(array_key_exists("file", $data)){
+                                $img = "<img src='" . ($data["file"]["baseurl"]) . "'>";
+                            } else {
+                                $img = '<div class="d-flex justify-content-center align-items-center picture_box">' .
+                                            '<i class="fa-solid fa-file-image fa-2x"></i>' . 
+                                        '</div>';
+
+                            }   
+
+                    ?>
+                    <tr class='consigned_item_row' data-id='<?php echo $card->id; ?>'>
+                        <td colspan="2">
+                            <div class='w-100 p-0 text-end' style='position: relative;'>
+                                <a class='text-danger ebayintegration-btn' data-action="removeGradingCardRow" data-id='<?php echo $card->id ?>' data-user_id="<?php echo get_current_user_id(); ?>" href='#' style='position: absolute; right: 0px;'>
+                                    <i class='fa-solid fa-xl fa-xmark'></i>
+                                </a>
+                            </div>
+                            <div class='row'>
+                                <div class='small text-secondary col-sm-4'>Player</div>
+                                <div class='col-sm-8'>                                    
+                                    <?php echo $data["player"] ?>								
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='small text-secondary col-sm-4'>Year</div>
+                                <div class='col-sm-8'>
+                                    <?php echo $data["year"] ?>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='small text-secondary col-sm-4'>Brand</div>
+                                <div class='col-sm-8'>
+                                    <?php echo $data["brand"] ?>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='small text-secondary col-4'>Card #</div>
+                                <div class='col-sm-8'>
+                                    <?php echo $data["card_number"] ?>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='small text-secondary col-sm-4'>Attribute SN</div>
+                                <div class='col-sm-8'>
+                                    <?php echo $data["attribute_sn"] ?>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='small text-secondary col-sm-4'>Declared Value</div>
+                                <div class='col-sm-8'>
+                                    $0.00                        
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='small text-secondary col-sm-4'>Grading</div>
+                                <div class='col-sm-8'>
+                                    $0.00
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php
+                            $total_grading = $total_grading + $data["per_card"];
+                            $total_dv = $total_dv + $data["dv"];
+
+                            }
+                        }
+                    ?>
+                </tbody>
+            </table>    
         </div>
 
         <!-- TABLE LOWER BUTTONS -->
