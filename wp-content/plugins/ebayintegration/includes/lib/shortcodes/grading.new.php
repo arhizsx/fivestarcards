@@ -173,7 +173,7 @@
 
                             foreach( $grading as $card ){
 
-                                print_r( $card );
+                                print_r( $card->player );
 
                                 // $data = json_decode( $card->data, true );
 
