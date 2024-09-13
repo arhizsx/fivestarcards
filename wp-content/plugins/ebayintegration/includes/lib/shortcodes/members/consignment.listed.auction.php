@@ -39,10 +39,6 @@ print_r( $skus );
                     foreach($ebay as $item){ 
 
                         if( $item->ListingType == "Chinese"){
-
-                            print_r( $item->sku );
-                            echo "<br>";
-    
                             if( in_array( $item->sku, $skus ) ){
                                 $available++;
                             }
