@@ -173,12 +173,8 @@
 
                             foreach( $grading as $card ){
 
-                                print_r( $card->data );
-
-
                                 $data = json_decode( $card->data, true );
 
-                                print_r( $data["player"] );
 
 
                     ?>
@@ -196,92 +192,13 @@
                         <td class='text-end'>$<?php echo $data["per_card"] ?></td>
                     </tr>
                     <?php 
-                                $total_grading = $total_grading + $card->per_card;
-                                $total_dv = $total_dv + $card->dv;
+                                $total_grading = $total_grading + $data["per_card"];
+                                $total_dv = $total_dv + $data["dv"];
 
                             }
                         }
                     ?>            
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <th colspan='6' class="text-end">Total DV</th>
-                        <th colspan='1' class="text-end">$<?php echo $total_dv ?></th>
-                    </tr>
-                    <tr>
-                        <th colspan='6' class="text-end">Grading Charge</th>
-                        <th colspan='1' class="text-end">$<?php echo $total_grading ?></th>
-                    </tr>
-                    <tr>
-                            <?php 
-                                if(  count( $grading_addon ) > 0 ){
-                                    $checked = "checked";
-                                    $colspan = "4";                                    
-                                } else {
-                                    $checked = "";
-                                    $colspan = "7";
-                                }
-                            ?>
-
-                        <td colspan="<?php echo $colspan ?>" class="bg-success py-3 text-white">
-                            <input <?php echo $checked ?> type="checkbox" id="service" name="service" class="me-3 grading_inspection_checkbox" data-user_id="<?php echo get_current_user_id() ?>" data-type="<?php echo $_GET["type"] ?>" value="inspection_service"><strong class="">Include Inspection Service</strong> (This will be an additional charge of $3 per card)
-                        </td>
-                        <?php 
-                        if( $checked != "" ){
-                        ?>
-                        <th colspan='2' class="text-end bg-success text-white">
-                            Total Inspection Service
-                        </th>
-                        <th colspan='1' class="text-end bg-success text-white">
-                            $<?php echo count($grading) * 3 ?>
-                        </th>
-                        <?php 
-                        }   
-                        ?>
-                    </tr>
-                    <?php 
-                        if( count( $grading_files ) > 0 ){
-                    ?>
-                    <tr>                        
-                        <th colspan="4" class="text-center">
-                            Uploaded Cards List Files
-                        </th>
-                        <th  class="text-center">
-                            Quantity
-                        </th>
-                        <th class="text-center">
-                            Card Show
-                        </th>
-                    </tr>   
-                    <?php 
-                        foreach($grading_files as $file){
-                    ?>
-                        <?php 
-                            $file_data = json_decode($file->data, true);
-                            foreach( $file_data as $fdata ){
-                        ?>
-                        <tr class="grading_file">
-                            <td colspan="4" class="text-left">
-                                <a class="me-3 btn btn-danger btn-sm ebayintegration-btn" data-action="remove_grading_file" data-id="<?php echo $file->id ?>" data-file="<?php echo $fdata["baseurl"] ?>" >REMOVE</a>
-                                <a href="<?php echo $fdata["baseurl"] ?>" target="_blank"><?php echo $fdata["name"] ?></a>
-                            </td>
-                            <td>
-                                <?php echo $fdata["qty"] ?>
-                            </td>                        
-                            <td>
-                                <?php echo $fdata["card_show"] ?>
-                            </td>                        
-                        </tr>
-                        <?php                                 
-                            }
-                        ?>                        
-                    <?php                             
-                        }
-                    ?> 
-                    <?php 
-                        } 
-                    ?>
-                </tfoot>        
             </table>
         </div>
 
