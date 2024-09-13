@@ -926,12 +926,7 @@ class Ebay_Integration_Ebay_API {
 
 
 		$sql = "SELECT * FROM grading where type='". $params["type"] .  "_file' AND user_id = '". $params["user_id"] .  "' AND status = 'logged'";
-		return $sql;
-
-
 		$grading_files = $this->wpdb->get_results ( $sql );	
-
-		return $params;
 
 		if( count($grading_files) > 0){
 			$status = "For Entry";
@@ -940,6 +935,8 @@ class Ebay_Integration_Ebay_API {
 		}
 
 		$sql = "SELECT * FROM grading_addons where type='". $params["type"] .  "' AND user_id = '". $params["user_id"] .  "'";
+
+		return $sql;
 		$query = $this->wpdb->get_results ( $sql );	
 		if( count($query) > 0 ){
 			$inspection = true;

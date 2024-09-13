@@ -575,7 +575,7 @@ jQuery(document).on("click", ".ebayintegration-btn", function (e) {
 
 		var card = confirmGradingTableCheckout(grading_type, user_id);
 
-		element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
+		// element.html('<i class="fa-solid fa-md fa-spinner fa-spin"></i>');
 
 		$.when(card).done(function (card) {
 
