@@ -14,8 +14,6 @@ WHERE ListingType = 'Chinese'
 
 print_r( $skus );
 
-$available = count($ebay);
-
 ?>
 <style>
     .text-small {
@@ -36,6 +34,17 @@ $available = count($ebay);
         </thead>
         <tbody>
             <?php 
+
+                $available = 0;
+                foreach($ebay as $item){ 
+                    $data = json_decode($item->data, true);
+                    if( $data["ListingType"] == "Chinese"){
+                        if( in_array( $item->sku, $skus ) ){
+                            $available++;
+                        }
+                    }
+                }
+
                 if( $available > 0 && $skus != null){
             ?>
                     <?php 

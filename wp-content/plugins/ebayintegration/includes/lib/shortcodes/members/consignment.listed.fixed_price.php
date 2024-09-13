@@ -10,9 +10,6 @@ FROM  view_fixed_price
 
 $skus = get_user_meta( get_current_user_id(), "sku", true );		
 
-$available = count($ebay);
-
-print_r( $skus );
 
 ?>
 <style>
@@ -23,18 +20,6 @@ print_r( $skus );
 <div class="d-flex flex-row-reverse mb-3">
     <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_fixed_price">
 </div>
-<?php 
-    $available = 0;
-    foreach($ebay as $item){ 
-        $data = json_decode($item->data, true);
-        if( $data["ListingType"] != "Chinese"){
-            if( in_array( $item->sku, $skus ) ){
-                $available++;
-            }
-        }
-    }
-?>
-
 <div class="table-responsive">
     <table class="table table-border table-striped table-sm table-hover search_table_fixed_price">
         <thead>
@@ -48,11 +33,19 @@ print_r( $skus );
         </thead>
         <tbody>
             <?php 
-            if( $available > 0){
-                $i ++;
-                foreach($ebay as $item){ 
 
+            $available = 0;
+            foreach($ebay as $item){ 
+                $data = json_decode($item->data, true);
+                if( $data["ListingType"] != "Chinese"){
+                    if( in_array( $item->sku, $skus ) ){
+                        $available++;
+                    }
+                }
+            }
 
+            if( $available > 0 && $skus != null){
+                foreach($ebay as $item){                     
                     
                     if( in_array( $item->sku, $skus ) ){
                         $i++;
