@@ -124,13 +124,6 @@
 
         <!-- UPPER BUTTONS -->
         <div>
-            <?php 
-                if( isset($_GET["grader"]) ){
-                    $grd = "?grader=" . $_GET["grader"];
-                } else {
-                    $grd = "";
-                }
-            ?>
             <a href="/my-account/grading/new<?php echo $grd; ?>" class="btn btn-outline-dark mb-3 ">Back to Grading Types</a>
 
             <button class="btn btn-success mb-3 ebayintegration-btn" data-action="show_log_grading_modal">
@@ -156,7 +149,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                        $total_dv = 0;
+                        $total_grading = 0;
+
+                        if( count( $grading ) == 0 ){
+                    ?>
+                    <tr class="empty_grading">
+                        <td colspan="7" class="text-center py-5">
+                            Empty
+                        </td>
+                    </tr>
                     <?php 
+                        } else {
 
 
                             foreach( $grading as $card ){
@@ -190,7 +195,7 @@
                                 $total_dv = $total_dv + $data["dv"];
 
                             }
-                        
+                        }
                     ?>            
                 </tbody>
                 <tfoot>
