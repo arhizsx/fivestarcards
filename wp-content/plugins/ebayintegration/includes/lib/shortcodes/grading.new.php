@@ -188,12 +188,12 @@
                                 <i class='fa-solid fa-lg fa-xmark'></i>
                             </a>
                         </td>
-                        <td><?php echo $card->player ?></td>
-                        <td><?php echo $card->year ?></td>
-                        <td><?php echo $card->brand ?></td>
-                        <td><?php echo $card->card_number ?><br><small><?php echo $card->attribute_sn ?></small></td>
-                        <td class='text-end'>$<?php echo $card->dv ?></td>
-                        <td class='text-end'>$<?php echo $card->per_card ?></td>
+                        <td><?php echo $data["player"] ?></td>
+                        <td><?php echo $data["year"] ?></td>
+                        <td><?php echo $data["brand"] ?></td>
+                        <td><?php echo $data["card_number"] ?><br><small><?php echo $data["attribute_sn"] ?></small></td>
+                        <td class='text-end'>$<?php echo $data["dv"] ?></td>
+                        <td class='text-end'>$<?php echo $data["per_card"] ?></td>
                     </tr>
                     <?php 
                                 $total_grading = $total_grading + $card->per_card;
