@@ -80,7 +80,7 @@ print_r( $skus );
                 } else {
             ?>
                 <tr>
-                    <td colspan="5" class="text-center p-5">Empty</td>
+                    <td colspan="3" class="text-center p-5">Empty</td>
                 </tr>
             <?php                     
                 }
