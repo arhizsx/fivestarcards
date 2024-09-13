@@ -1046,7 +1046,6 @@ class Ebay_Integration_Ebay_API {
 
 		$posts = get_posts($args);
 
-		return $posts;
 
 		foreach($posts as $post)
 		{
@@ -1068,7 +1067,7 @@ class Ebay_Integration_Ebay_API {
 		add_post_meta($checkout_post_id, "status", $status );
 		add_post_meta($checkout_post_id, "grading_orders_id", $lastid );
 		
-
+		
 
 		if( $rows != false ){
 			return ["error" => false, "params" => $params, "checkout_post_id" => $checkout_post_id];
