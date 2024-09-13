@@ -47,11 +47,24 @@ $users = get_users( $args );
         </thead>
         <tbody>
             <?php 
-            if( count($ebay) > 0 ){
+                $available = 0;
+                if($skus != null){
+                    foreach($ebay as $item){ 
+                        $data = json_decode($item->data, true);
+                        if( in_array( $item->sku, $skus ) ){
+                            $available++;
+                        }
+                    }
+                }
+            ?>
+
+            <?php 
+            if( $available > 0 && $skus != null ){
 
                 $ctr = 0;
 
                 foreach($ebay as $item){ 
+
                     if( $item->transaction != "Not Sold" ){
 
 

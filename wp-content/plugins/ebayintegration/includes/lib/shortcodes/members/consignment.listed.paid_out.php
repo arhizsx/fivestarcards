@@ -23,10 +23,12 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
 </div>
 <?php 
     $available = 0;
-    foreach($ebay as $item){ 
-        if( $item->transaction != "Not Sold" ){
-            if( in_array( $item->sku, $skus ) ){
-                $available++;
+    if($skus != null){
+        foreach($ebay as $item){ 
+            if( $item->transaction != "Not Sold" ){
+                if( in_array( $item->sku, $skus ) ){
+                    $available++;
+                }
             }
         }
     }
@@ -43,7 +45,7 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
         </thead>
         <tbody>
             <?php 
-            if( $available > 0 ){
+            if( $available > 0  && $skus != null){
                 foreach($ebay as $item){ 
                     if( $item->transaction != "Not Sold" ){
                         $transaction = json_decode($item->transaction, true);
