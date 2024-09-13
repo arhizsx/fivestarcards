@@ -49,13 +49,13 @@ $users = get_users( $args );
                 <td>
                     <div class="title">
                         <?php echo $ctr; ?>&nbsp;
-                        <a href="<?php echo $data["Item"]['ListingDetails']['ViewItemURL'] ?>" target="_blank">
-                            <?php print_r( $data["Item"]["Title"] ); ?>
+                        <a href="<?php echo $data['ListingDetails']['ViewItemURL'] ?>" target="_blank">
+                            <?php print_r( $data["Title"] ); ?>
                         </a>
                     </div>
                     <div class="sku text-small">SKU: <?php echo $item->sku ?></div>
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
-                    <?php $listing = $data["Item"]["ListingType"] == "Chinese" ? "Auction" : $data["Item"]["ListingType"]; ?>
+                    <?php $listing = $data["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"]; ?>
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
                     <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
                     
