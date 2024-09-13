@@ -11,9 +11,6 @@ WHERE ListingType = 'Chinese'
 "
 );
 
-
-print_r( $skus );
-
 ?>
 <style>
     .text-small {
