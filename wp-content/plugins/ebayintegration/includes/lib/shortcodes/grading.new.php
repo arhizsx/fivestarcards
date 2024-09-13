@@ -155,7 +155,28 @@
                         <th class="text-end">Grading</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    <?php
+                        $total_dv = 0;
+                        $total_grading = 0;
+
+                        if( count( $grading ) == 0 ){
+                    ?>
+                    <tr class="empty_grading">
+                        <td colspan="7" class="text-center py-5">
+                            Empty
+                        </td>
+                    </tr>
+                    <?php 
+
+                    ?>
+                    <?php 
+                                $total_grading = $total_grading + $data["per_card"];
+                                $total_dv = $total_dv + $data["dv"];
+
+                        }
+                    ?>            
+                </tbody>
                 <tfoot>
                     <tr>
                         <th colspan='6' class="text-end">Total DV</th>
