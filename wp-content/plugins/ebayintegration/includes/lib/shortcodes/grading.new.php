@@ -173,7 +173,7 @@
 
                             foreach( $grading as $card ){
 
-                                print_r( $card );
+                                print_r( $card->data );
 
                                 print_r( $card->player );
 
