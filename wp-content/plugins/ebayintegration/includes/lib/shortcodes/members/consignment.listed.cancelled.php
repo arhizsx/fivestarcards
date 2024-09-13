@@ -87,7 +87,7 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
             else {
             ?>
             <tr>
-                <td colspan="3" class="text-center p-5">
+                <td colspan="5" class="text-center p-5">
                     No Items
                 </td>
             </tr>
