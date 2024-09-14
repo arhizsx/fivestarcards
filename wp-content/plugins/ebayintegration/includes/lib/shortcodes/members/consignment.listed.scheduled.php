@@ -38,7 +38,8 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
         <thead>
             <tr>
                 <th>Item</th>
-                <th class="text-end">Price Sold</th>
+                <th class="text-end">Listing Start</th>
+                <th class="text-end">Price</th>
             </tr>
         </thead>
         <tbody>
@@ -64,6 +65,9 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                     <div class="item_id text-small">Item ID: <?php echo $item->item_id ?></div>
                     <?php $listing = $data["ListingType"] == "Chinese" ? "Auction" : $data["ListingType"]; ?>
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
+                </td>
+                <td class="text-start">
+                    $<?php echo $data["ListingDetails"]["StartTime"]; ?>
                 </td>
                 <td class="text-end">
                     $<?php echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ','); ?>
