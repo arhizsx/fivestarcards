@@ -62,7 +62,6 @@ foreach($user_skus as $sk){
 
                         $skus = get_user_meta( $user->ID, "sku", true );
 
-                        print_r($skus);
                 ?>
                     <tr class="user_row" data-user_id="<?php  echo $user->ID ?>">
                         <td class="info">
@@ -72,7 +71,7 @@ foreach($user_skus as $sk){
                         </td>
                         <td class="skus">
                             <?php
-                                if(count($skus) > 0){
+                                if( $skus != null ){
                                     echo "<ul class='user_sku_list'>";
                                     foreach($skus as $sku){
                                         echo "<li><a href='#' class='ebayintegration-btn' data-action='removeSKU' data-sku='" . $sku . "' data-user_id='" . $user->ID ."'> X </a> ". $sku . "</li>";
