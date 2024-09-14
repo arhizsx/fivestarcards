@@ -62,7 +62,7 @@ $users = get_users( $args );
                     
                 </td>
                 <td class="text-start">
-                    $<?php echo $data["ListingDetails"]["StartTime"]; ?>
+                    <?php echo $data["ListingDetails"]["StartTime"]; ?>
                 </td>
                 <td class="text-end">
                     $<?php 
