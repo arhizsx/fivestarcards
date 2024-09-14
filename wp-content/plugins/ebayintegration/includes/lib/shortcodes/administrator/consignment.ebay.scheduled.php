@@ -45,6 +45,14 @@ $users = get_users( $args );
                     
                     $data = json_decode($item->data, true);
                     $ctr++;
+
+                    $date = new DateTime($data["ListingDetails"]["StartTime"], new DateTimeZone('UTC'));
+
+                    $date->setTimezone(new DateTimeZone('America/Chicago'));
+                    
+                    // Format the output
+                    $sched_date =  $date->format('Y-m-d H:i:s T');                            
+
             ?>
             <tr class="ebay_card_row" data-id="<?php echo $item->id ?>">
                 <td>
@@ -62,7 +70,7 @@ $users = get_users( $args );
                     
                 </td>
                 <td class="text-start">
-                    <?php echo $data["ListingDetails"]["StartTime"]; ?>
+                    <?php echo $sched_date; ?>
                 </td>
                 <td class="text-end">
                     $<?php 

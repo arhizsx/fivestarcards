@@ -52,6 +52,13 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
 
                         if( in_array( $item->sku, $skus ) ){
                             $ctr++;
+
+                            $date = new DateTime($data["ListingDetails"]["StartTime"], new DateTimeZone('UTC'));
+
+                            $date->setTimezone(new DateTimeZone('America/Chicago'));
+                            
+                            // Format the output
+                            $sched_date =  $date->format('Y-m-d H:i:s T');                            
             ?>
             <tr>
                 <td>
@@ -67,7 +74,7 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
                 </td>
                 <td class="text-start">
-                    <?php echo $data["ListingDetails"]["StartTime"]; ?>
+                    <?php echo $sched_date; ?>
                 </td>
                 <td class="text-end">
                     $<?php echo number_format(( $data["SellingStatus"]["CurrentPrice"]), 2, '.', ','); ?>
