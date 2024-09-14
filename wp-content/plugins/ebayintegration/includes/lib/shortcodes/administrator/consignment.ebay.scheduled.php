@@ -33,7 +33,8 @@ $users = get_users( $args );
         <thead>
             <tr>
                 <th>Item</th>
-                <th class="text-end">Amount</th>
+                <th class="text-start">Listing Start</th>
+                <th class="text-end">Price</th>
 =            </tr>
         </thead>
         <tbody>
@@ -59,6 +60,9 @@ $users = get_users( $args );
                     <div class="item_id text-small">Listing Type: <?php echo $listing; ?></div>                    
                     <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
                     
+                </td>
+                <td class="text-start">
+                    $<?php echo $data["ListingDetails"]["StartTime"]; ?>
                 </td>
                 <td class="text-end">
                     $<?php 
