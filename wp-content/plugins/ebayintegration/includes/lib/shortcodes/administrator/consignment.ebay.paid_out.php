@@ -99,6 +99,7 @@ $users = get_users( $args );
                             <?php print_r( $title ); ?>
                         </a>
                     </div>
+                    <div class="item_id text-small">ID: <?php echo $item->id ?></div>                    
 
                     
                 </td>       
