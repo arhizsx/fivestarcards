@@ -465,7 +465,7 @@ if( $grading_order_id > 0 ){
                             if( array_key_exists( "title", $db_row_data ) && array_key_exists( "certImgFront", $db_row_data ) && array_key_exists( "certImgBack", $db_row_data )  ){
         
                 ?>
-                <tr class='admin-graded-row' data-post_id='" + post_id + "'>
+                <tr class='admin-graded-row' data-post_id='<?php echo $post->ID ?>'>
                     <td><?php echo $post->ID ?></td>
                     <td><input type="text" class="form-control" value="<?php echo $db_row_data["title"] ?>" data-id="<?php echo $db_row_data["id"] ?>"></td>
                     <td><input type="text" class="" value="<?php echo $db_row_data["grade"] ?>" data-id="<?php echo $db_row_data["id"] ?>"></td>
