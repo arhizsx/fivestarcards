@@ -44,20 +44,69 @@ $users = get_users( $args );
         font-size: .7em !important;
     }
 </style>
-    <div class="d-flex justify-content-between mb-3">
-        <div>
-        Page: 
-        <select class="ps-2 mobile_tab_select">
+<div class="d-flex justify-content-between mb-3">
+    <input class="btn pl-2 search_box" style="margin-left: 15px; text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_paid">
+</div>
+
+<div class="table-responsive">
+    <table class="table table-border table-striped table-sm table-hover search_table_paid">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Paid Out Date</th>
+                <th class="text-end">Amount Paid</th>
+            </tr>
+        </thead>
+        <tbody>
             <?php 
-            for( $i = 1; $i <= $total_pages; $i++ ){
+            if( count($ebay) > 0 ){
+
+                $ctr = 0;
+
+                foreach($ebay as $item){ 
+                    if( $item->transaction != "Not Sold" ){
+
+
+                        $transaction = json_decode($item->transaction, true);
+                        $data = json_decode($item->data, true);
+                        $ctr++;
+
+                        if( in_array("TransactionPrice", $data) ){
+                            $current_price = $data["TransactionPrice"];
+                        } 
+                        else {
+                            if( array_key_exists("Item", $data) ){
+                                $current_price = $data["Item"]["SellingStatus"]["CurrentPrice"];
+                            } else {
+                                $current_price = $data["SellingStatus"]["CurrentPrice"];
+                            }
+                        }
+
+                        if( array_key_exists("Item", $data) ){
+                            $title = $data["Item"]["Title"];
+                            $url = $data["Item"]['ListingDetails']['ViewItemURL'];
+                        } else {
+                            $title = $data["Title"];
+                            $url = $data['ListingDetails']['ViewItemURL'];
+                        }
+
             ?>
-            <option value="/administrator/consignment/?mode=ebay&type=paid_out&i=<?php echo $i ?>" <?php echo $_GET["i"] == $i ? "selected" : ""; ?>><?php echo $i ?></option>
-            <?php    
+            <tr>
+            </tr>
+            <?php
+                    }
+                } 
+            } 
+            else {
+            ?>
+            <tr>
+                <td colspan="2" class="text-center p-5">
+                    No Items
+                </td>
+            </tr>
+            <?php 
             }
             ?>
-            <option></option>
-        </select>
-        </div>
-        <input class="btn pl-2 search_box" style="margin-left: 15px; text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_paid">
-    </div>
-
+        </tbody>
+    </table>
+</div>
