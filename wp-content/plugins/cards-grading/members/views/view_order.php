@@ -113,14 +113,6 @@ $grading_files = $this->wpdb->get_results ( $sql );
         </div>
     </div>
     <div class="row mt-3">
-        <?php 
-            if( $checkout_meta["inspection"][0] == "1" ) { 
-        ?>
-        <H3 style="color: red !important;">INSPECTION SERVICE</H3>
-        <?php 
-            }
-        ?>
-
         <div class="col-lg-6 col-md-6 col-sm-6">
             <H4 style="color: black !important;">Cards List</H4>
         </div>
