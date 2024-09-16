@@ -219,16 +219,16 @@ $grading_files = $this->wpdb->get_results ( $sql );
                             $meta = get_post_meta($post->ID);
                             $card = json_decode($meta['card'][0], true);
 
-                            print_r($meta);
-                            die();
 
                             if( $meta["status"][0] != 'Not Available' ){
 
-                                $card_total_dv = $card["dv"] * $card["quantity"];
-                                $card_grading_charge = $card["per_card"] * $card["quantity"];
+    
+
+                                $card_total_dv = (float) $card["dv"] * $card["quantity"];
+                                $card_grading_charge = (float) $card["per_card"] * $card["quantity"];
 
                                 if( in_array( $meta["status"][0], array("Pay Grading", "To Pay - Grade Only", "To Ship", "Shipped", "Received", "Paid - Grade Only", "Graded") ) ){
-                                    $grading_charge = $grading_charge + $card_grading_charge;
+                                    $grading_charge = (float) $grading_charge + $card_grading_charge;
                                 }
         
                             }
