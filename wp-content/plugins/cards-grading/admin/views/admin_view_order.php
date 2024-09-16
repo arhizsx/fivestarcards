@@ -31,10 +31,10 @@ foreach($posts as $post)
     $meta = get_post_meta($post->ID);
     $card = json_decode($meta['card'][0], true);
 
-    $card_total_dv = $card["dv"] * $card["quantity"];
+    $card_total_dv = (float) $card["dv"] * $card["quantity"];
 
-    $total_dv = $total_dv + $card_total_dv;
-    $cards_count = $cards_count + $card["quantity"];
+    $total_dv = (float) $total_dv + $card_total_dv;
+    $cards_count = (float) $cards_count + $card["quantity"];
 }
 
 
@@ -297,8 +297,8 @@ if( $grading_order_id > 0 ){
                             $meta = get_post_meta($post->ID);
                             $card = json_decode($meta['card'][0], true);
 
-                            $card_total_dv = $card["dv"] * $card["quantity"];
-                            $card_grading_charge = $card["per_card"] * $card["quantity"];
+                            $card_total_dv = (float) $card["dv"] * $card["quantity"];
+                            $card_grading_charge = (float) $card["per_card"] * $card["quantity"];
 
                             if( in_array($meta["status"][0], array("To Pay - Grade Only", "Shipped", "To Ship", "Received", "Pay Grading", "Graded", "Completed - Grades Ready") ) ){
                                 $grading_charge = $grading_charge + $card_grading_charge;
