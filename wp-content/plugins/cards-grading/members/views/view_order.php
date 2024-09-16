@@ -42,7 +42,7 @@ foreach($posts as $post)
     if( $meta["status"][0] != 'Not Available' ){
 
     
-    $card_total_dv = $card["dv"] * $card["quantity"];
+    $card_total_dv = (float) $card["dv"] * $card["quantity"];
 
     print_r( $card_total_dv);
 
