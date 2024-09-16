@@ -44,12 +44,9 @@ foreach($posts as $post)
     
     $card_total_dv = (float) $card["dv"] * $card["quantity"];
 
-    print_r( $card_total_dv);
 
-    die();
-
-    $total_dv = $total_dv + $card_total_dv;
-    $cards_count = $cards_count + $card["quantity"];
+    $total_dv = (float) $total_dv + $card_total_dv;
+    $cards_count = (float) $cards_count + $card["quantity"];
 
     }
 }
