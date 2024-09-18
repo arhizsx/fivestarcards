@@ -75,19 +75,9 @@ foreach($user_skus as $sk){
                             <?php
                                 if( $skus != null ){
                                     echo "<ul class='user_sku_list'>";
-
-
+                                    
                                     foreach($skus as $sku){
-
-
-                                        $user_status = $wpdb->get_results ( "
-                                        SELECT * FROM `wp_users` WHERE id = '" . $sk->user_id ."';
-                                        ");
-                                        
-                                        if( $user_status->active == 0 ){
-                                
                                         echo "<li><a href='#' class='ebayintegration-btn' data-action='removeSKU' data-sku='" . $sku . "' data-user_id='" . $user->ID ."'> X </a> ". $sku . "</li>";
-                                        }
                                     }    
                                     echo "</ul>";
 
@@ -152,12 +142,19 @@ foreach($user_skus as $sk){
                                 <?php 
 
                                     $skus = $wpdb->get_results ( "
-                                        SELECT DISTINCT sku FROM ebay ORDER BY sku ASC
+                                        SELECT DISTINCT sku, user_id FROM ebay ORDER BY sku ASC
                                     " );                                    
 
                                     foreach($skus as $sku){
-                                        if(in_array( $sku->sku, $active_skus ) === false ){
-                                            echo "<option value='" . $sku->sku . "'>" . $sku->sku . "</option>";
+
+                                        $user_status = $wpdb->get_results ( "
+                                        SELECT * FROM `wp_users` WHERE id = '" . $skus->user_id ."';
+                                        ");
+                                        
+                                        if( $user_status->active == 0 ){                                    
+                                            if(in_array( $sku->sku, $active_skus ) === false ){
+                                                echo "<option value='" . $sku->sku . "'>" . $sku->sku . "</option>";
+                                            }
                                         }
                                     }
                                 ?>
