@@ -10,8 +10,8 @@ $active_skus = [];
 
 foreach($user_skus as $sk){
 
-
     $active = get_user_meta( $sk->user_id, "sku", true );
+
     array_push( $active_skus, ...$active);
 
 }
@@ -140,20 +140,14 @@ foreach($user_skus as $sk){
                             <select class="form-control mb-2" name="sku">
                                 <option selected value="">Select Active eBay SKU</option>
                                 <?php 
-
+                                    
                                     $skus = $wpdb->get_results ( "
                                         SELECT DISTINCT sku FROM ebay ORDER BY sku ASC
                                     " );                                    
 
                                     foreach($skus as $sku){ 
+
                                         if(in_array( $sku->sku, $active_skus ) === false ){
-
-                                            $who = $wpdb->get_results ( "
-                                                SELECT DISTINCT user_id FROM ebay WHERE sku = '"  . $sku->sku . "'
-                                            " );                                    
-                                                
-                                            print_r($who);
-
                                             echo "<option value='" . $sku->sku . "'>" . $sku->sku . "</option>";
                                         }
                                     }
