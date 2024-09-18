@@ -143,12 +143,39 @@ foreach($user_skus as $sk){
                                     
                                     $skus = $wpdb->get_results ( "
                                         SELECT DISTINCT sku FROM ebay ORDER BY sku ASC
-                                    " );                                    
+                                    ");
+                                    
+                                    $user_skus = $wpdb->get_results ( "
+                                    SELECT * FROM `wp_usermeta` WHERE meta_key = 'sku' ORDER BY `user_id` ASC;
+                                    ");
+                                    
+                                    $inactive_skus = [];
+                                    
+                                    foreach($user_skus as $sk){               
+
+                                        $active_user = $wpdb->get_results ( "
+                                        SELECT * FROM `wp_users` WHERE id = " . $sk->user_id . ";
+                                        ");
+
+                                        if( $active_user->active == 1 ){
+                                            $inactive = get_user_meta( $sk->user_id, "sku", true );                                    
+                                            array_push( $inactive_skus, ...$inactive);                                        
+                                        }
+                                        
+                                    }
+                                                                        
+
+
 
                                     foreach($skus as $sku){ 
 
                                         if(in_array( $sku->sku, $active_skus ) === false ){
-                                            echo "<option value='" . $sku->sku . "'>" . $sku->sku . "</option>";
+
+                                            if( in_array( $sku->sku, $inactive_skus ) == false){
+
+                                                echo "<option value='" . $sku->sku . "'>" . $sku->sku . "</option>";
+
+                                            }
                                         }
                                     }
                                 ?>
