@@ -10,16 +10,10 @@ $active_skus = [];
 
 foreach($user_skus as $sk){
 
-    $user_status = $wpdb->get_results ( "
-    SELECT * FROM `wp_users` WHERE id = '" . $sk->user_id ."';
-    ");
-    
-    if( $user_status->active == 0 ){
 
     $active = get_user_meta( $sk->user_id, "sku", true );
     array_push( $active_skus, ...$active);
 
-    }
 }
 
 ?>
@@ -81,8 +75,19 @@ foreach($user_skus as $sk){
                             <?php
                                 if( $skus != null ){
                                     echo "<ul class='user_sku_list'>";
+
+
                                     foreach($skus as $sku){
+
+
+                                        $user_status = $wpdb->get_results ( "
+                                        SELECT * FROM `wp_users` WHERE id = '" . $sk->user_id ."';
+                                        ");
+                                        
+                                        if( $user_status->active == 0 ){
+                                
                                         echo "<li><a href='#' class='ebayintegration-btn' data-action='removeSKU' data-sku='" . $sku . "' data-user_id='" . $user->ID ."'> X </a> ". $sku . "</li>";
+                                        }
                                     }    
                                     echo "</ul>";
 
