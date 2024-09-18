@@ -145,15 +145,9 @@ foreach($user_skus as $sk){
                                         SELECT DISTINCT sku, user_id FROM ebay ORDER BY sku ASC
                                     " );                                    
 
-                                    foreach($skus as $sku){
-
-                                        print_r($sku );
-                                        die();
-                                        
-                                        if( $user_status->active == 0 ){                                    
-                                            if(in_array( $sku->sku, $active_skus ) === false ){
-                                                echo "<option value='" . $sku->sku . "'>" . $sku->sku . "</option>";
-                                            }
+                                    foreach($skus as $sku){ 
+                                        if(in_array( $sku->sku, $active_skus ) === false ){
+                                            echo "<option value='" . $sku->sku . "'>" . $sku->sku . "</option>";
                                         }
                                     }
                                 ?>
