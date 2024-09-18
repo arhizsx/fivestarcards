@@ -9,9 +9,17 @@ SELECT * FROM `wp_usermeta` WHERE meta_key = 'sku' ORDER BY `user_id` ASC;
 $active_skus = [];
 
 foreach($user_skus as $sk){
+
+    $user_status = $wpdb->get_results ( "
+    SELECT * FROM `wp_users` WHERE id = '" . $sk->user_id ."';
+    ");
+    
+    if( $user_status->active == 0 ){
+
     $active = get_user_meta( $sk->user_id, "sku", true );
     array_push( $active_skus, ...$active);
 
+    }
 }
 
 ?>
