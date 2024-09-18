@@ -62,6 +62,8 @@ foreach($user_skus as $sk){
                     if($users){                        
                         foreach($users as $user){
 
+
+                            if(  $user->active == 0 ) {
                         $skus = get_user_meta( $user->ID, "sku", true );
 
                 ?>
@@ -96,6 +98,7 @@ foreach($user_skus as $sk){
                         </td>
                     </tr>
                 <?php    
+                            }
                         }
                     } else {
                 ?>
