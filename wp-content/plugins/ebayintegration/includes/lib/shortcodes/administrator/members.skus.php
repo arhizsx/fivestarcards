@@ -148,7 +148,7 @@ foreach($user_skus as $sk){
                                     foreach($skus as $sku){
 
                                         $user_status = $wpdb->get_results ( "
-                                        SELECT * FROM `wp_users` WHERE id = '" . $skus->user_id ."';
+                                        SELECT * FROM `wp_users` WHERE id = '" . $sku->user_id ."';
                                         ");
                                         
                                         if( $user_status->active == 0 ){                                    
