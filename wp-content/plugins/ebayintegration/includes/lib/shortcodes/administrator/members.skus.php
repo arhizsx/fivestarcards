@@ -142,7 +142,7 @@ foreach($user_skus as $sk){
                                 <?php 
 
                                     $skus = $wpdb->get_results ( "
-                                        SELECT DISTINCT sku, user_id FROM ebay ORDER BY sku ASC
+                                        SELECT DISTINCT sku FROM ebay ORDER BY sku ASC
                                     " );                                    
 
                                     foreach($skus as $sku){ 
