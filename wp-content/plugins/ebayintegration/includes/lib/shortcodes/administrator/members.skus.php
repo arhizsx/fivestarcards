@@ -147,6 +147,13 @@ foreach($user_skus as $sk){
 
                                     foreach($skus as $sku){ 
                                         if(in_array( $sku->sku, $active_skus ) === false ){
+
+                                            $who = $wpdb->get_results ( "
+                                                SELECT DISTINCT user_id FROM ebay WHERE sku = '"  . $sku->sku . "'
+                                            " );                                    
+                                                
+                                            print_r($who);
+
                                             echo "<option value='" . $sku->sku . "'>" . $sku->sku . "</option>";
                                         }
                                     }
