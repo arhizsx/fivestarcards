@@ -378,18 +378,13 @@ if( $grading_order_id > 0 ){
 
                     $sql = "SELECT * FROM grading WHERE id = " . $card["db_id"];
 
-                    print_r( $sql );
-
-                    print_r( "<br>" );
 
                     $db_row = $this->wpdb->get_results ( $sql );
 
-                    print_r( $db_row );
-
-
+                    
+                    if( count( $db_row ) > 0 ) {
+                
                     $db_row_data = json_decode($db_row[0]->data, true);
-
-
 
                     if( 
                         array_key_exists( "title", $db_row_data ) == false && 
@@ -445,6 +440,7 @@ if( $grading_order_id > 0 ){
                             }
 
                         }
+                    }
                     ?>
 
                 </tr>
