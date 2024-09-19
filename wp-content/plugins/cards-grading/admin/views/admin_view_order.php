@@ -141,6 +141,125 @@ if( $grading_order_id > 0 ){
 
         </div>
     </div>
+    <div class="row mt-3">
+        <?php 
+            if( $checkout_meta["inspection"][0] == "1" ) { 
+        ?>
+        <H3 style="color: red !important;">INSPECTION SERVICE</H3>
+        <?php 
+            }
+        ?>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <H3 style="color: black !important;">Cards List</H3>
+            <?php 
+            if( $checkout_meta["status"][0] == "Package Received") 
+            { 
+            ?>
+            <button class="5star_btn btn-sm btn btn-primary mb-3" data-action="item_avlb_in_package_all" data-order_number="<?php echo $params['order_number'] ?>">
+                Received All
+            </button>
+            <?php 
+            }
+            ?>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 text-end">
+            <?php if( $checkout_meta["status"][0] == "Shipped" ) { ?>
+            <button class='5star_btn btn btn-primary mb-3' data-action="package_received"  data-order_number="<?php echo $params['order_number'] ?>">
+                Package Received
+            </button>      
+            <?php } ?>
+            <?php 
+            if( $checkout_meta["status"][0] == "Package Received" ) { 
+
+                if( $posts )
+                {
+                    $received = 0;
+                    $missing = 0;
+                    $shipped = 0;
+
+                    foreach($posts as $post)
+                    {
+                        $meta = get_post_meta($post->ID);
+                        if( $meta["status"][0] == "Received" ){
+                            $received++;
+                        }
+                        elseif( $meta["status"][0] == "Not Available" ){
+                            $missing++;
+                        }
+                        elseif( $meta["status"][0] == "Shipped" ){
+                            $shipped++;
+                        }
+                    }
+
+                    if( $received == count($posts) && $shipped == 0){
+                        $complete_btn = "";
+                    } else {
+                        $complete_btn = "d-none";
+                    }
+
+                    if( $missing > 0 && $shipped == 0){
+                        $missing_btn = "";
+                    } else {
+                        $missing_btn = "d-none";
+                    }
+                }
+            ?>
+            <button class='5star_btn btn btn-danger mb-3 <?php echo $missing_btn; ?>' data-action="cancel_order" data-order_number="<?php echo $params['order_number'] ?>">
+                Cancel Order
+            </button>      
+            <button class='5star_btn btn btn-warning mb-3 <?php echo $missing_btn; ?>' data-action="incomplete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
+                Missing Items
+            </button>      
+            <button class='5star_btn btn btn-primary mb-3 <?php echo $complete_btn; ?>' data-action="complete_package_contents" data-order_number="<?php echo $params['order_number'] ?>">
+                Items Complete
+            </button>      
+            <?php } ?>
+
+            <?php 
+            if( $checkout_meta["status"][0] == "Grading Complete" ) 
+            { 
+            ?>
+            <button class='5star_btn btn btn-success mb-3' data-action="acknowledge_order_request" data-order_number="<?php echo $params['order_number'] ?>">
+                Acknowledge Order Request
+            </button>      
+            <?php 
+            } 
+            ?> 
+
+            <?php 
+
+            $processing_status = array("Processing Order", "Shipped to PSA / SGC", "Research", "Grading", "Assembly", "QA1", "QA2", "Completed - Grades Ready", "Incomplete Items Shipped" );
+
+            if( in_array( $checkout_meta["status"][0], $processing_status ) ) 
+            { 
+            ?>
+            <button class='5star_btn btn btn-primary mb-3' data-action="set_submission_number" data-order_number="<?php echo $params['order_number'] ?>">
+                Set Submission #
+            </button>      
+            <button class='5star_btn btn btn-success mb-3' data-action="update_status" data-order_number="<?php echo $params['order_number'] ?>">
+                Update Status
+            </button>      
+            <?php 
+            } 
+
+            $processing_status = array( "To Ship" );
+
+            if( in_array( $checkout_meta["status"][0], $processing_status ) ) 
+            { 
+
+            ?> 
+            <button class='5star_btn btn btn-primary mb-3' data-action="package_received"  data-order_number="<?php echo $params['order_number'] ?>">
+                Package Received 
+            </button>      
+            <button class='5star_btn btn btn-secondary mb-3' data-action="view_pdf"  data-order_number="<?php echo $params['order_number'] ?>">
+                PDF
+            </button>   
+            <?php 
+            }
+            ?>
+        </div>
+    </div>
     <div class="table-responsive">   
         <table id="card_table" class='table table-sm 5star_logged_cards table-bordered table-striped' data-endpoint="<?php echo get_rest_url(null, "cards-grading/v1/order-action") ?>"  data-view_pdf_endpoint="<?php echo get_rest_url(null, "cards-grading/v1/pdf") ?>" data-nonce="<?php echo wp_create_nonce("wp_rest"); ?>">
             <thead>
@@ -408,59 +527,6 @@ if( $grading_order_id > 0 ){
         </div>
     </div>
 
-    <?php
-    if( count($grading_files) ){
-    ?>
-    <div class="row mt-3">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-            <H3 style="color: black !important;">Uploaded Cards List File</H3>
-        </div>
-    </div>
-    <div class="table-responsive">   
-        <table class='table table-sm table-bordered table-striped'>
-            <thead>
-                <tr>
-                    <th>
-                        File Details
-                    </th>
-                    <th class="text-end">
-                        Quantity
-                    </th>
-                    <th class="text-end">
-                        Card Show
-                    </th>
-                </tr>
-            </thead>
-            <tbody> 
-                <?php 
-                foreach($grading_files as $gfile){
-                    $files = json_decode($gfile->data, true);
-                        foreach($files as $file){
-                ?>
-                <tr>
-                    
-                    <td class="">
-                        <a target="_blank" href="<?php print_r( $file["baseurl"] ) ?>"><?php print_r( $file["name"] ) ?></a>
-                    </td>
-                    <td class="text-end">
-                        <?php print_r( $file["qty"] ) ?>
-                    </td>
-                    <td class="text-end">
-                        <?php print_r( $file["card_show"] ) ?>
-                    </td>
-
-                </tr>
-                <?php 
-
-                        }
-                }
-                ?>
-            </tbody>
-        </table>
-    </div>
-    <?php 
-    }
-    ?>
 
     <div class='5star_btn_box_admin_bottom w-100 border-top pt-3'>
         <button class="btn border btn-danger 5star_btn" data-action="admin_delete_order" data-order_number="<?php echo $params['order_number'] ?>" >Delete Order</button>
