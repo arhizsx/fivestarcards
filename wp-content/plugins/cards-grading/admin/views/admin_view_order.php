@@ -308,7 +308,6 @@ if( $grading_order_id > 0 ){
                 ?>
                 <?php                             
                     if( in_array( $checkout_meta["status"][0], $admin_graded_status ) == false ){                             
-                            die();
                 ?>
                 <tr class="admin-card-row" data-post_id="<?php echo $post->ID; ?>" data-card='<?php echo json_encode($card) ?>'>
                     <?php 
@@ -381,6 +380,8 @@ if( $grading_order_id > 0 ){
                     $db_row = $this->wpdb->get_results ( $sql );
 
                     $db_row_data = json_decode($db_row[0]->data, true);
+
+                    die();
 
                     if( array_key_exists( "title", $db_row_data ) == false && array_key_exists( "certImgFront", $db_row_data )  == false && array_key_exists( "certImgBack", $db_row_data )  == false ){
 
