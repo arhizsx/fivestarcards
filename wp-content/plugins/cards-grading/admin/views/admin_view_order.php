@@ -384,6 +384,7 @@ if( $grading_order_id > 0 ){
 
                     $db_row = $this->wpdb->get_results ( $sql );
 
+                    print_r( $db_row );
 
 
                     $db_row_data = json_decode($db_row[0]->data, true);
