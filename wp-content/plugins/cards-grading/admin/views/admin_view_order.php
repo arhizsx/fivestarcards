@@ -405,12 +405,6 @@ if( $grading_order_id > 0 ){
                         if( in_array( $checkout_meta["status"][0], $admin_graded_status ) ){          
                             if( $meta["status"][0] == "Received" ){                   
                     ?>
-                        <td class="text-start">
-                            <input type="text" value="" name="grade"  data-name="grade" data-post_id="<?php echo $post->ID; ?>" data-db_id="<?php echo $card['db_id']; ?>" class="form-control form-control-sm card_grade_saving">
-                        </td>
-                        <td class="text-start">
-                            <input type="text" value="" name="certificate_number" data-name="certificate_number" data-post_id="<?php echo $post->ID; ?>" data-db_id="<?php echo $card['db_id']; ?>" class="form-control form-control-sm card_grade_saving">
-                        </td>
                     <?php
                             } else {
                     ?>
@@ -429,6 +423,8 @@ if( $grading_order_id > 0 ){
                     } 
                     ?>
 
+                    <td class='text-end'><?php echo "$" . number_format((float)$card["dv"], 2, '.', ''); ?></td>
+                    <td class='text-end'><?php echo "$" . number_format((float) $card_grading_charge, 2, '.', ''); ?></td>
 
                     <?php 
                             }
