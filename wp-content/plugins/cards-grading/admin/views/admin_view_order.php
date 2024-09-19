@@ -381,6 +381,8 @@ if( $grading_order_id > 0 ){
 
                     $db_row_data = json_decode($db_row[0]->data, true);
 
+                    print_r( $db_row_data );
+
 
                     if( 
                         array_key_exists( "title", $db_row_data ) == false && 
@@ -405,6 +407,12 @@ if( $grading_order_id > 0 ){
                         if( in_array( $checkout_meta["status"][0], $admin_graded_status ) ){          
                             if( $meta["status"][0] == "Received" ){                   
                     ?>
+                        <td class="text-start">
+                            <input type="text" value="" name="grade"  data-name="grade" data-post_id="<?php echo $post->ID; ?>" data-db_id="<?php echo $card['db_id']; ?>" class="form-control form-control-sm card_grade_saving">
+                        </td>
+                        <td class="text-start">
+                            <input type="text" value="" name="certificate_number" data-name="certificate_number" data-post_id="<?php echo $post->ID; ?>" data-db_id="<?php echo $card['db_id']; ?>" class="form-control form-control-sm card_grade_saving">
+                        </td>
                     <?php
                             } else {
                     ?>
