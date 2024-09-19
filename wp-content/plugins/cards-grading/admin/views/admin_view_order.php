@@ -527,6 +527,59 @@ if( $grading_order_id > 0 ){
         </div>
     </div>
 
+    <?php
+    if( count($grading_files) ){
+    ?>
+    <div class="row mt-3">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <H3 style="color: black !important;">Uploaded Cards List File</H3>
+        </div>
+    </div>
+    <div class="table-responsive">   
+        <table class='table table-sm table-bordered table-striped'>
+            <thead>
+                <tr>
+                    <th>
+                        File Details
+                    </th>
+                    <th class="text-end">
+                        Quantity
+                    </th>
+                    <th class="text-end">
+                        Card Show
+                    </th>
+                </tr>
+            </thead>
+            <tbody> 
+                <?php 
+                foreach($grading_files as $gfile){
+                    $files = json_decode($gfile->data, true);
+                        foreach($files as $file){
+                ?>
+                <tr>
+                    
+                    <td class="">
+                        <a target="_blank" href="<?php print_r( $file["baseurl"] ) ?>"><?php print_r( $file["name"] ) ?></a>
+                    </td>
+                    <td class="text-end">
+                        <?php print_r( $file["qty"] ) ?>
+                    </td>
+                    <td class="text-end">
+                        <?php print_r( $file["card_show"] ) ?>
+                    </td>
+
+                </tr>
+                <?php 
+
+                        }
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+    <?php 
+    }
+    ?>
 
     <div class='5star_btn_box_admin_bottom w-100 border-top pt-3'>
         <button class="btn border btn-danger 5star_btn" data-action="admin_delete_order" data-order_number="<?php echo $params['order_number'] ?>" >Delete Order</button>
