@@ -380,6 +380,8 @@ if( $grading_order_id > 0 ){
 
                     print_r( $sql );
 
+                    print_r( "<br>" );
+
                     $db_row = $this->wpdb->get_results ( $sql );
 
 
