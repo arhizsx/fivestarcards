@@ -28,6 +28,7 @@
  use Dompdf\Dompdf; 
  use Dompdf\Options;
 
+ 
  class CardsGrading {
 
     public $wpdb;	
@@ -1180,10 +1181,19 @@
             echo "Dompdf is not loaded!";
         }
         
-        die();
+        if (!extension_loaded('mbstring')) {
+            echo "The mbstring extension is not loaded!";
+        }
+        
+        if (!extension_loaded('gd')) {
+            echo "The GD extension is not loaded!";
+        }
+        
 
         $dompdf = new Dompdf();
 
+
+        
         var_dump($dompdf);
 
 
