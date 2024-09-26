@@ -1132,8 +1132,6 @@
 
         $customer = $user->display_name;
         
-        print_r($customer);
-        die();
 
 
         $html = "<style>";
@@ -1171,6 +1169,10 @@
         if( array_key_exists("inspection", $post_meta)  ){
             $html .= "<H1>INSPECTION SERVICE</H1>";
         }
+
+        print_r($html);
+        die();
+
 
         $dompdf = new Dompdf();
 
