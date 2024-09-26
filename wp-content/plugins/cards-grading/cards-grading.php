@@ -21,17 +21,8 @@
     echo 'You are not allowed';
     exit;
  }
+ require_once ( '/var/www/fivestarcards/wp-content/dompdf/autoload.inc.php');
  
- $filename = '/var/www/fivestarcards/wp-content/dompdf/autoload.inc.php';
-
-if (file_exists($filename)) {
-    echo "The file $filename exists";
-} else {
-    echo "The file $filename does not exist";
-}
- 
-die();
-
  use Dompdf\Dompdf; 
  use Dompdf\Options;
 
