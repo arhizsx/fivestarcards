@@ -1173,7 +1173,6 @@
 
         $dompdf = new Dompdf();
 
-        print_r($dompdf);
         die();
 
 
