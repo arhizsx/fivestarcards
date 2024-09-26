@@ -1120,10 +1120,12 @@
 
         $order_number = $_GET["id"];
 
-        print_r($order_number);
-        die();
 
         $post = get_post($order_number);
+        
+        print_r($post);
+        die();
+
         
         $post_meta = get_post_meta($post->ID);
         $user_id =  $post_meta["user_id"][0];
