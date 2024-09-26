@@ -1122,15 +1122,15 @@
 
 
         $post = get_post($order_number);
-        
-        print_r($post);
-        die();
+
 
         
         $post_meta = get_post_meta($post->ID);
         $user_id =  $post_meta["user_id"][0];
         $user = get_user_by( "id", $user_id );
 
+        print_r($post_meta);
+        die();
 
         $customer = $user->display_name;
         
