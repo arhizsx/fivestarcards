@@ -26,6 +26,8 @@
  use Dompdf\Dompdf; 
  use Dompdf\Options;
 
+
+
  class CardsGrading {
 
     public $wpdb;	
@@ -729,7 +731,7 @@
             "pdf",
             array(
                 'methods' => 'GET',
-                'callback' => array($this, 'handle_pdf')
+                'callback' => array($this, 'handle_make_pdfå')
             )                        
         );
 
