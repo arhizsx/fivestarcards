@@ -1171,10 +1171,17 @@
         }
 
 
+        if(function_exists('Dompdf')){
+            print_r(  "YES");
+        }else {
+
+            print_r(  "NO");
+        }
+        die();
+
         $dompdf = new Dompdf();
 
         var_dump($dompdf);
-        die();
 
 
         $dompdf->setPaper(array(0,0,500,300));
