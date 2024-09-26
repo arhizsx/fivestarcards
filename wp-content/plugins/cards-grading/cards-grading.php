@@ -21,7 +21,7 @@
     echo 'You are not allowed';
     exit;
  }
- require_once ( 'dompdf/autoload.inc.php');
+ require_once ( './dompdf/autoload.inc.php');
  use Dompdf\Dompdf; 
  use Dompdf\Options;
 
@@ -1032,9 +1032,9 @@
         $params = $data->get_params();
 
 
-        $options = new Options();
-        $options->set('isRemoteEnabled', true); 
-        $dompdf = new Dompdf($options);
+        // $options = new Options();
+        // $options->set('isRemoteEnabled', true); 
+        $dompdf = new Dompdf();
         $file_prepend = "";
         $template = "";
         
@@ -1173,6 +1173,7 @@
 
         $dompdf = new Dompdf();
 
+        print_r($dompdf);
         die();
 
 
