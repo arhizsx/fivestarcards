@@ -1170,11 +1170,12 @@
             $html .= "<H1>INSPECTION SERVICE</H1>";
         }
 
-        print_r($html);
-        die();
-
 
         $dompdf = new Dompdf();
+
+        print_r($dompdf);
+        die();
+
 
         $dompdf->setPaper(array(0,0,500,300));
 
