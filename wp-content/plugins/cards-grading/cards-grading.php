@@ -1171,12 +1171,12 @@
         }
 
 
-        if(function_exists('Dompdf')){
-            print_r(  "YES");
-        }else {
-
-            print_r(  "NO");
+        if (class_exists('Dompdf\Dompdf')) {
+            echo "Dompdf is loaded!";
+        } else {
+            echo "Dompdf is not loaded!";
         }
+        
         die();
 
         $dompdf = new Dompdf();
