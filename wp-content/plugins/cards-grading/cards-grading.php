@@ -731,7 +731,7 @@
             "pdf",
             array(
                 'methods' => 'GET',
-                'callback' => array($this, 'handle_make_pdfå')
+                'callback' => array($this, 'handle_make_pdf')
             )                        
         );
 
