@@ -21,7 +21,7 @@
     echo 'You are not allowed';
     exit;
  }
- require_once ( 'dompdf/autoload.inc.php');
+ require_once ( '/var/www/fivestarcards/wp-content/dompdf/autoload.inc.php');
  use Dompdf\Dompdf; 
  use Dompdf\Options;
 
