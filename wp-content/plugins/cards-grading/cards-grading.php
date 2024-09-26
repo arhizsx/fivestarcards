@@ -21,12 +21,9 @@
     echo 'You are not allowed';
     exit;
  }
- require_once ( '/var/www/fivestarcards/wp-content/dompdf/autoload.inc.php');
- 
+ require_once ( 'dompdf/autoload.inc.php');
  use Dompdf\Dompdf; 
  use Dompdf\Options;
-
-
 
  class CardsGrading {
 
@@ -731,7 +728,7 @@
             "pdf",
             array(
                 'methods' => 'GET',
-                'callback' => array($this, 'handle_make_pdf')
+                'callback' => array($this, 'handle_pdf')
             )                        
         );
 
@@ -1174,12 +1171,9 @@
         }
 
 
+        $dompdf = new Dompdf();
 
-        $options = new Options();
-        $options->set('isRemoteEnabled', true); 
-        $dompdf = new Dompdf($options);
-        
-        print_r($html);
+        var_dump($dompdf);
         die();
 
 
