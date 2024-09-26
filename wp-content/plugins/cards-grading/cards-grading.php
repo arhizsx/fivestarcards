@@ -1189,6 +1189,7 @@
             echo "The GD extension is not loaded!";
         }
         
+        die();
 
         $dompdf = new Dompdf();
 
