@@ -8,23 +8,26 @@
 
     $skus = get_user_meta( $user_id, "sku", true );		
 
-    print_r( $skus );
-    die();
+    if( $skus != null ) {
+        $array = implode("','",$skus);
+
+        $sql = "
+            SELECT * 
+            FROM  ebay
+            where status = 'SoldListPaid' AND sku IN ('" . $array . "')
+            ORDER BY id DESC
+        ";
+
+        $cards = $this->wpdb->get_results ( $sql );
+        $available = count($cards);
+    
+    } else {
+        $cards = null;
+        $available = 0;
+    }
 
 
-    $array = implode("','",$skus);
 
-
-    $sql = "
-        SELECT * 
-        FROM  ebay
-        where status = 'SoldListPaid' AND sku IN ('" . $array . "')
-        ORDER BY id DESC
-    ";
-
-
-    $cards = $this->wpdb->get_results ( $sql );
-    $available = count($cards);
 
 
 ?>
