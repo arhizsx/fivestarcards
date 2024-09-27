@@ -86,7 +86,7 @@
 
                 } else {
 
-                    $cards = null;
+                    $cards = [];
 
                 } 
 
