@@ -5,6 +5,8 @@
 
     $user_id = get_current_user_id();
 
+    die();
+
     $skus = get_user_meta( $user_id, "sku", true );		
     $array = implode("','",$skus);
 
