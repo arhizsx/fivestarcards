@@ -70,6 +70,9 @@
                 $user_id = get_current_user_id();
 
                 $skus = get_user_meta( $user_id, "sku", true );		
+
+                if( $skus != null ) {
+
                 $array = implode("','",$skus);
             
                 $sql = "
@@ -80,6 +83,14 @@
                 ";
             
                 $cards = $this->wpdb->get_results ( $sql );
+
+                } else {
+
+                    $cards = null;
+
+                } 
+
+
             ?>
                 <ul class="clearfix d-none d-lg-block">
                     <li class="active">
