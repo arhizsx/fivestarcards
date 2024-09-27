@@ -16,10 +16,12 @@
         ORDER BY id DESC
     ";
 
+    print_r( $sql );
+    die();
+
     $cards = $this->wpdb->get_results ( $sql );
     $available = count($cards);
 
-    die();
 
 ?>
 
