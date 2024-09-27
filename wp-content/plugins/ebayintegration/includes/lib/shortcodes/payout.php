@@ -7,10 +7,13 @@
 
 
     $skus = get_user_meta( $user_id, "sku", true );		
-    $array = implode("','",$skus);
 
     print_r( $skus );
     die();
+
+
+    $array = implode("','",$skus);
+
 
     $sql = "
         SELECT * 
