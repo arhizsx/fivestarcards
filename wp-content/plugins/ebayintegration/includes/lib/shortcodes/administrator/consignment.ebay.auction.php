@@ -54,7 +54,7 @@ $users = get_users( $args );
                 <td>
                     <div class="title">
                         <span class='pe-2'><strong><?php echo $i ?></strong></span>
-                        <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
+                        <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339081621&customid=&toolid=10001&mkevt=1" target="_blank">
                         <?php echo  $item->Title; ?>
                         </a>
                     </div>
