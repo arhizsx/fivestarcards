@@ -9,6 +9,9 @@
     $skus = get_user_meta( $user_id, "sku", true );		
     $array = implode("','",$skus);
 
+    print_r( $skus );
+    die();
+
     $sql = "
         SELECT * 
         FROM  ebay
@@ -16,8 +19,6 @@
         ORDER BY id DESC
     ";
 
-    print_r( $sql );
-    die();
 
     $cards = $this->wpdb->get_results ( $sql );
     $available = count($cards);
