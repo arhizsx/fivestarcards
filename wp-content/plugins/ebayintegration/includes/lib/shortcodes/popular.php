@@ -29,8 +29,8 @@ LIMIT 12;
 ?>
 <style>
     .itemTitle {
-        line-height: 1em;
-        height: 2em;
+        line-height: 1.5em;
+        height: 3em;
         overflow: hidden;
         text-overflow: ellipsis;
     }    
