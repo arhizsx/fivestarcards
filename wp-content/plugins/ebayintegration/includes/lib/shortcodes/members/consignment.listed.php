@@ -64,7 +64,7 @@ LIMIT 6;
                     </div>
                     <div class="px-2 d-flex justify-content-between" style="color: black; font-weight:bold;">
                         <div>$<?php echo $item->CurrentPrice; ?></div>
-                        <div>Bidders: <?php echo $item->BidCount; ?></div>
+                        <div>Bids: <?php echo $item->BidCount; ?></div>
                     </div>
                     <div style="font-size: 12px;">
                         <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
