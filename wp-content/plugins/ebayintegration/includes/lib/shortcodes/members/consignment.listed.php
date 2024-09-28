@@ -13,6 +13,20 @@ ORDER BY RAND()
 LIMIT 6;    
 " 
 );
+
+$popular = $this->wpdb->get_results ( "
+SELECT * 
+FROM (
+    SELECT * 
+    FROM view_fixed_price
+    ORDER BY BidCount DESC
+    LIMIT 20
+) AS top_20
+ORDER BY RAND()
+LIMIT 6;    
+" 
+);
+
 ?>
 
 
@@ -63,8 +77,43 @@ LIMIT 6;
                         </a>
                     </div>
                     <div class="px-2 mt-2 d-flex justify-content-between" style="font-size: 12px; color: black; font-weight:bold;">
-                        <div>$<?php echo $item->CurrentPrice; ?></div>
                         <div>Bids: <?php echo $item->BidCount; ?></div>
+                        <div class="text-end">$<?php echo $item->CurrentPrice; ?></div>
+                    </div>
+                    <div style="font-size: 12px;">
+                        <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
+                            <?php echo $item->Title; ?>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <?php 
+            }
+            ?>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <H1>Popular Items</H1>
+            </div>
+        </div>
+        <div class="row">
+            <?php 
+            foreach($popular as $item){ 
+            ?>
+            <div class="d-flex align-items-end col-md-2 col-sm-4 mb-3 text-center">
+                <div>
+                    <div class="height: 120px; min-height: 120px; max-height: 120px;">
+                        <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
+                            <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo $item->GalleryURL ?>">
+                        </a>
+                    </div>
+                    <div class="px-2 mt-2 d-flex justify-content-between" style="font-size: 12px; color: black; font-weight:bold;">
+                        <div>Bids: <?php echo $item->WatchCount; ?></div>
+                        <div class="text-end">$<?php echo $item->CurrentPrice; ?></div>
                     </div>
                     <div style="font-size: 12px;">
                         <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
