@@ -27,6 +27,16 @@ LIMIT 6;
 );
 
 ?>
+<style>
+    .itemTitle {
+        line-height: 1.5em;
+        height: 3em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;        
+    }    
+</style>
 <div class="container-fluid">
     <div class="row">
         <div class="col">
@@ -41,7 +51,7 @@ LIMIT 6;
                 ?>
                 <div class="d-flex align-items-start col-md-2 col-sm-4 mb-3 text-center">
                     <div>
-                        <div class="height: 120px; min-height: 120px; max-height: 120px;">
+                        <div style="height: 120px; min-height: 120px; max-height: 120px;">
                             <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339081621&customid=&toolid=10001&mkevt=1" target="_blank">
                                 <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo $item->GalleryURL ?>">
                             </a>
@@ -50,7 +60,7 @@ LIMIT 6;
                             <div>Bids: <?php echo $item->BidCount; ?></div>
                             <div class="text-end">$<?php echo $item->CurrentPrice; ?></div>
                         </div>
-                        <div style="font-size: 12px;">
+                        <div class="itemTitle" style="font-size: 12px;">
                             <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339081621&customid=&toolid=10001&mkevt=1" target="_blank">
                                 <?php echo $item->Title; ?>
                             </a>
@@ -76,7 +86,7 @@ LIMIT 6;
                 ?>
                 <div class="d-flex align-items-start col-md-2 col-sm-4 mb-3 text-center">
                     <div>
-                        <div class="height: 120px; min-height: 120px; max-height: 120px;">
+                        <div style="height: 120px; min-height: 120px; max-height: 120px;">
                             <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339081621&customid=&toolid=10001&mkevt=1" target="_blank">
                                 <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo $item->GalleryURL ?>">
                             </a>
@@ -85,7 +95,7 @@ LIMIT 6;
                             <div>Watchers: <?php echo $item->WatchCount; ?></div>
                             <div class="text-end">$<?php echo $item->CurrentPrice; ?></div>
                         </div>
-                        <div style="font-size: 12px;">
+                        <div class="itemTitle" style="font-size: 12px;">
                             <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339081621&customid=&toolid=10001&mkevt=1" target="_blank">
                                 <?php echo $item->Title; ?>
                             </a>
