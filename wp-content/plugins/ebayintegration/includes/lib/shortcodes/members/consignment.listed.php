@@ -60,7 +60,7 @@ LIMIT 6;
                     <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo $item->GalleryURL ?>">
                 </div>
                 <div>$<?php echo $item->CurrentPrice; ?></div>
-                <div style="font-size: 10px;">
+                <div style="font-size: 12px;">
                     <a href="">
                     <?php echo $item->Title; ?>
                     </a>
