@@ -97,12 +97,17 @@ $hot = $this->wpdb->get_results ( "
         </tbody>
     </table>    
 </div>
-<div class="">
+<div class="row">
+    <div class="col">
+        <H1>Hot Items</H1>
+    </div>
+</div>
+<div class="row">
     <?php 
     foreach($hot as $item){ 
     ?>
-    <div class="col">
-        <?php echo $item->ViewItemURL ?>
+    <div class="col-md-3">
+        <img src="<?php echo $item->ViewItemURL ?>">
     </div>
     <?php 
     }
