@@ -10,7 +10,7 @@ FROM (
     LIMIT 20
 ) AS top_20
 ORDER BY RAND()
-LIMIT 8;    
+LIMIT 6;    
 " 
 );
 ?>
@@ -54,10 +54,14 @@ LIMIT 8;
             <?php 
             foreach($hot as $item){ 
             ?>
-            <div class="col-md-3 mb-3 text-center">
+            <div class="col-md-4 mb-3 text-center">
                 <img style="min-height: 80px;" src="<?php echo $item->GalleryURL ?>">
                 <div><?php echo $item->CurrentPrice; ?></div>
-                <div style="font-size: 12px;"><?php echo $item->Title; ?></div>
+                <div style="font-size: 10px;">
+                    <a href="">
+                    <?php echo $item->Title; ?>
+                    </a>
+                </div>
             </div>
             <?php 
             }
