@@ -47,22 +47,6 @@
 
 </style>
 <?php 
-$hot = $this->wpdb->get_results ( "
-SELECT * 
-FROM (
-    SELECT * 
-    FROM view_auction
-    WHERE ListingType='Chinese'
-    ORDER BY BidCount DESC
-    LIMIT 20
-) AS top_20
-ORDER BY RAND()
-LIMIT 6;    
-" 
-);
-?>
-
-<?php 
 
     function Activate($page){
         if( isset( $_GET['mode']) == false ){
@@ -119,38 +103,6 @@ LIMIT 6;
         }
         ?>
     </div>
-
-    <div class="row">
-    <div class="col">
-        <div class="row">
-            <div class="col">
-                <H1>Hot Auctions</H1>
-            </div>
-        </div>
-        <div class="row">
-            <?php 
-            foreach($hot as $item){ 
-            ?>
-            <div class="col-md-4 mb-3 text-center">
-                <img style="min-height: 80px;" src="<?php echo $item->GalleryURL ?>">
-                <div><?php echo $item->CurrentPrice; ?></div>
-                <div style="font-size: 10px;">
-                    <a href="">
-                    <?php echo $item->Title; ?>
-                    </a>
-                </div>
-            </div>
-            <?php 
-            }
-            ?>
-        </div>
-    </div>
-    <div class="col">
-        &nbsp;
-    </div>
-</div>
-
-
 </div>
 
 
