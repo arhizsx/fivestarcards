@@ -107,7 +107,7 @@ $hot = $this->wpdb->get_results ( "
     foreach($hot as $item){ 
     ?>
     <div class="col-md-3 mb-3 text-center">
-        <img height="80px" src="<?php echo $item->GalleryURL ?>">
+        <img style="min-height: 80px;" src="<?php echo $item->GalleryURL ?>">
         <div><?php echo $item->CurrentPrice; ?></div>
         <div><?php echo $item->Title; ?></div>
     </div>
