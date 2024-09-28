@@ -62,7 +62,7 @@ LIMIT 6;
                             <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo $item->GalleryURL ?>">
                         </a>
                     </div>
-                    <div class="px-2 d-flex justify-content-between" style="color: black; font-weight:bold;">
+                    <div class="px-2 mt-2 d-flex justify-content-between" style="color: black; font-weight:bold;">
                         <div>$<?php echo $item->CurrentPrice; ?></div>
                         <div>Bids: <?php echo $item->BidCount; ?></div>
                     </div>
