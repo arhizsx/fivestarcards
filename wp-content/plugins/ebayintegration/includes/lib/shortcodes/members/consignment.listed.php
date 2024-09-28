@@ -55,17 +55,17 @@ LIMIT 6;
             <?php 
             foreach($hot as $item){ 
             ?>
+            <a href="#">
             <div class="col-md-2 col-sm-4 mb-3 text-center">
                 <div class="height: 120px; min-height: 120px; max-height: 120px;">
                     <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo $item->GalleryURL ?>">
                 </div>
                 <div>$<?php echo $item->CurrentPrice; ?></div>
                 <div style="font-size: 12px;">
-                    <a href="">
                     <?php echo $item->Title; ?>
-                    </a>
                 </div>
             </div>
+            </a>
             <?php 
             }
             ?>
