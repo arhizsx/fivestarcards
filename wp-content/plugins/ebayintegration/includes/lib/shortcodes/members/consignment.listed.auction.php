@@ -111,7 +111,7 @@ $hot = $this->wpdb->get_results ( "
             <div class="col-md-3 mb-3 text-center">
                 <img style="min-height: 80px;" src="<?php echo $item->GalleryURL ?>">
                 <div><?php echo $item->CurrentPrice; ?></div>
-                <div><?php echo $item->Title; ?></div>
+                <div style="font-size: 12px;"><?php echo $item->Title; ?></div>
             </div>
             <?php 
             }
