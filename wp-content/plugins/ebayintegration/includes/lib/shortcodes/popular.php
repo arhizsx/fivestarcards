@@ -60,7 +60,7 @@ LIMIT 6;
                             <div>Bids: <?php echo $item->BidCount; ?></div>
                             <div class="text-end">$<?php echo $item->CurrentPrice; ?></div>
                         </div>
-                        <div class="itemTitle" style="font-size: 12px;">
+                        <div class="itemTitle">
                             <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339081621&customid=&toolid=10001&mkevt=1" target="_blank">
                                 <?php echo $item->Title; ?>
                             </a>
@@ -95,7 +95,7 @@ LIMIT 6;
                             <div>Watchers: <?php echo $item->WatchCount; ?></div>
                             <div class="text-end">$<?php echo $item->CurrentPrice; ?></div>
                         </div>
-                        <div class="itemTitle" style="font-size: 12px;">
+                        <div class="itemTitle">
                             <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339081621&customid=&toolid=10001&mkevt=1" target="_blank">
                                 <?php echo $item->Title; ?>
                             </a>
