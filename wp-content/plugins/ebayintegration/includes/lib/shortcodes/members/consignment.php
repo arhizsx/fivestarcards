@@ -119,9 +119,8 @@ LIMIT 6;
         }
         ?>
     </div>
-</div>
 
-<div class="row">
+    <div class="row">
     <div class="col">
         <div class="row">
             <div class="col">
@@ -149,6 +148,9 @@ LIMIT 6;
     <div class="col">
         &nbsp;
     </div>
+</div>
+
+
 </div>
 
 
