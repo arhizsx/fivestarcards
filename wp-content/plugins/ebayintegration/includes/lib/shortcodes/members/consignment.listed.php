@@ -60,7 +60,10 @@ LIMIT 6;
                     <div class="height: 120px; min-height: 120px; max-height: 120px;">
                         <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo $item->GalleryURL ?>">
                     </div>
-                    <div>$<?php echo $item->CurrentPrice; ?></div>
+                    <div>
+                        <div>$<?php echo $item->CurrentPrice; ?></div>
+                        <div><?php echo $item->BidCount; ?></div>
+                    </div>
                     <div style="font-size: 12px;">
                         <?php echo $item->Title; ?>
                     </div>
