@@ -55,7 +55,7 @@ LIMIT 6;
             <?php 
             foreach($hot as $item){ 
             ?>
-            <div class="col-md-4 mb-3 text-center">
+            <div class="col-md-2 mb-3 text-center">
                 <img style="min-height: 80px;" src="<?php echo $item->GalleryURL ?>">
                 <div><?php echo $item->CurrentPrice; ?></div>
                 <div style="font-size: 10px;">
