@@ -58,7 +58,7 @@ LIMIT 6;
             <div class="col-md-2 col-sm-4 mb-3 text-center">
                 
                     <div class="height: 120px; min-height: 120px; max-height: 120px;">
-                        <a href="#">
+                        <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
                             <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo $item->GalleryURL ?>">
                         </a>
                     </div>
@@ -67,7 +67,7 @@ LIMIT 6;
                         <div><?php echo $item->BidCount; ?></div>
                     </div>
                     <div style="font-size: 12px;">
-                        <a href="#">
+                        <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
                             <?php echo $item->Title; ?>
                         </a>
                     </div>
