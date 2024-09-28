@@ -118,4 +118,7 @@ $hot = $this->wpdb->get_results ( "
             ?>
         </div>
     </div>
+    <div class="col">
+        &nbsp;
+    </div>
 </div>
