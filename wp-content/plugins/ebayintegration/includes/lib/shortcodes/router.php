@@ -27,6 +27,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'pending_payout_items.php');			
             break;
 
+        case "popular":
+
+			include( plugin_dir_path( __FILE__ ) . 'popular.php');			
+            break;
+
         case "awaiting_payment_items":
 
 			include( plugin_dir_path( __FILE__ ) . 'awaiting_payment_items.php');			
