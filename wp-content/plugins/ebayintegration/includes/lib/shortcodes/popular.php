@@ -9,7 +9,7 @@ FROM (
     LIMIT 20
 ) AS top_20
 ORDER BY RAND()
-LIMIT 6;    
+LIMIT 12;    
 " 
 );
 
@@ -22,7 +22,7 @@ FROM (
     LIMIT 20
 ) AS top_20
 ORDER BY RAND()
-LIMIT 6;    
+LIMIT 12;    
 " 
 );
 
@@ -47,7 +47,7 @@ LIMIT 6;
                 <?php 
                 foreach($hot as $item){ 
                 ?>
-                <div class="d-flex align-items-start col-md-2 col-sm-4 mb-3 text-center">
+                <div class="d-flex align-items-start col-md-3 col-sm-4 mb-3 text-center">
                     <div>
                         <div style="height: 120px; min-height: 120px; max-height: 120px;">
                             <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339081621&customid=&toolid=10001&mkevt=1" target="_blank">
@@ -82,7 +82,7 @@ LIMIT 6;
                 <?php 
                 foreach($popular as $item){ 
                 ?>
-                <div class="d-flex align-items-start col-md-2 col-sm-4 mb-3 text-center">
+                <div class="d-flex align-items-start col-md-3 col-sm-4 mb-3 text-center">
                     <div>
                         <div style="height: 120px; min-height: 120px; max-height: 120px;">
                             <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339081621&customid=&toolid=10001&mkevt=1" target="_blank">
