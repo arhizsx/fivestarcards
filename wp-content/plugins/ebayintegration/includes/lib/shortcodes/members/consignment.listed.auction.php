@@ -107,7 +107,7 @@ $hot = $this->wpdb->get_results ( "
     foreach($hot as $item){ 
     ?>
     <div class="col-md-3">
-        <img src="<?php echo $item->ViewItemURL ?>">
+        <img src="<?php echo $item->GalleryURL ?>">
     </div>
     <?php 
     }
