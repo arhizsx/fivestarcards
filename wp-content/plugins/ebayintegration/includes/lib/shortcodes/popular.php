@@ -34,7 +34,6 @@ LIMIT 6;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        width: 100%;        
     }    
 </style>
 <div class="container-fluid">
