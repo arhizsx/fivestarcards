@@ -9,7 +9,7 @@ FROM (
     LIMIT 20
 ) AS top_20
 ORDER BY RAND()
-LIMIT 12;    
+LIMIT 8;    
 " 
 );
 
@@ -22,7 +22,7 @@ FROM (
     LIMIT 20
 ) AS top_20
 ORDER BY RAND()
-LIMIT 12;    
+LIMIT 8;    
 " 
 );
 
