@@ -55,7 +55,7 @@ LIMIT 6;
             <?php 
             foreach($hot as $item){ 
             ?>
-            <div class="col-md-2 mb-3 text-center">
+            <div class="col-md-2 col-sm-4 mb-3 text-center">
                 <div class="height: 120px; min-height: 120px; max-height: 120px;">
                     <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo $item->GalleryURL ?>">
                 </div>
