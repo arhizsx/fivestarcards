@@ -56,19 +56,22 @@ LIMIT 6;
             foreach($hot as $item){ 
             ?>
             <div class="col-md-2 col-sm-4 mb-3 text-center">
-                <a href="#">
+                
                     <div class="height: 120px; min-height: 120px; max-height: 120px;">
-                        <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo $item->GalleryURL ?>">
+                        <a href="#">
+                            <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo $item->GalleryURL ?>">
+                        </a>
                     </div>
-                    <div>
+                    <div class="d-flex justify-content-center" style="color: black; font-weight:bold;">
                         <div>$<?php echo $item->CurrentPrice; ?></div>
                         <div><?php echo $item->BidCount; ?></div>
                     </div>
                     <div style="font-size: 12px;">
-                        <?php echo $item->Title; ?>
+                        <a href="#">
+                            <?php echo $item->Title; ?>
+                        </a>
                     </div>
-                </a>
-            </div>
+                </div>
             <?php 
             }
             ?>
