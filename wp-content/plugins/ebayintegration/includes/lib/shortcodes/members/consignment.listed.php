@@ -69,9 +69,6 @@ LIMIT 6;
             ?>
         </div>
     </div>
-    <div class="col">
-        &nbsp;
-    </div>
 </div>
 
 
