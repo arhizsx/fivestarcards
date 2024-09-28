@@ -99,7 +99,7 @@ $hot = $this->wpdb->get_results ( "
 </div>
 <div class="row">
     <div class="col">
-        <H1>Hot Items</H1>
+        <H1>Hot Auctions</H1>
     </div>
 </div>
 <div class="row">
