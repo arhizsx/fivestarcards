@@ -19,7 +19,7 @@ SELECT *
 FROM (
     SELECT * 
     FROM view_fixed_price
-    ORDER BY BidCount DESC
+    ORDER BY WatchCount DESC
     LIMIT 20
 ) AS top_20
 ORDER BY RAND()
