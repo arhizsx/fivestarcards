@@ -13,10 +13,6 @@ FROM  view_auction
 
 $hot = $this->wpdb->get_results ( "
     SELECT * 
-    FROM  view_auction
-    WHERE ListingType='Chinese'
-
-    SELECT * 
     FROM (
         SELECT * 
         FROM view_auction
@@ -28,7 +24,6 @@ $hot = $this->wpdb->get_results ( "
     LIMIT 12;    
 " 
 );
-
 
 ?>
 <style>
