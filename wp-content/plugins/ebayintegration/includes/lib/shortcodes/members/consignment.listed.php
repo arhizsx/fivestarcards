@@ -57,7 +57,7 @@ LIMIT 6;
             ?>
             <div class="col-md-2 mb-3 text-center">
                 <img style="min-height: 80px;" src="<?php echo $item->GalleryURL ?>">
-                <div><?php echo $item->CurrentPrice; ?></div>
+                <div>$<?php echo $item->CurrentPrice; ?></div>
                 <div style="font-size: 10px;">
                     <a href="">
                     <?php echo $item->Title; ?>
