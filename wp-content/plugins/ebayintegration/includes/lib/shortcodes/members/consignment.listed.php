@@ -62,7 +62,7 @@ LIMIT 6;
     <div class="col">
         <div class="row">
             <div class="col">
-                <H2>Hot Auctions</H2>
+                <H1>Hot Auctions</H1>
             </div>
         </div>
         <div class="row">
@@ -97,7 +97,7 @@ LIMIT 6;
     <div class="col">
         <div class="row">
             <div class="col">
-                <H2>Popular Items</H2>
+                <H1>Popular Items</H1>
             </div>
         </div>
         <div class="row">
