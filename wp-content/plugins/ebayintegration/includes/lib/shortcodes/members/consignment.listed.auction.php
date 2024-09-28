@@ -10,6 +10,26 @@ FROM  view_auction
 "
 );
 
+
+$hot = $this->wpdb->get_results ( "
+    SELECT * 
+    FROM  view_auction
+    WHERE ListingType='Chinese'
+
+    SELECT * 
+    FROM (
+        SELECT * 
+        FROM view_auction
+        WHERE ListingType='Chinese'
+        ORDER BY BidCount DESC
+        LIMIT 20
+    ) AS top_20
+    ORDER BY RAND()
+    LIMIT 12;    
+" 
+);
+
+
 ?>
 <style>
     .text-small {
@@ -80,5 +100,16 @@ FROM  view_auction
                 }
             ?>
         </tbody>
-    </table>
+    </table>    
+</div>
+<div class="">
+    <?php 
+    foreach($hot as $item){ 
+    ?>
+    <div class="col">
+        <?php echo $item->ViewItemURL ?>
+    </div>
+    <?php 
+    }
+    ?>
 </div>
