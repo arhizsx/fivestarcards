@@ -55,7 +55,7 @@ LIMIT 6;
             <?php 
             foreach($hot as $item){ 
             ?>
-            <div class="col-md-2 col-sm-4 mb-3 text-center">
+            <div class="d-flex align-items-end col-md-2 col-sm-4 mb-3 text-center">
                 
                     <div class="height: 120px; min-height: 120px; max-height: 120px;">
                         <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
