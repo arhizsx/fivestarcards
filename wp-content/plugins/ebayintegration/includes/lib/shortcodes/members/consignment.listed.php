@@ -112,7 +112,7 @@ LIMIT 6;
                         </a>
                     </div>
                     <div class="px-2 mt-2 d-flex justify-content-between" style="font-size: 12px; color: black; font-weight:bold;">
-                        <div>Bids: <?php echo $item->WatchCount; ?></div>
+                        <div>Watchers: <?php echo $item->WatchCount; ?></div>
                         <div class="text-end">$<?php echo $item->CurrentPrice; ?></div>
                     </div>
                     <div style="font-size: 12px;">
