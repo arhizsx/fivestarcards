@@ -40,7 +40,8 @@ LIMIT 8;
         <div class="col">
             <div class="row">
                 <div class="col">
-                    <H1 style="color: black;">Hot Auctions</H1>
+                    <H1 style="color: black;">Hot eBay Auctions</H1>
+                    <p>You will be redirected to an ebay listing</p>
                 </div>
             </div>
             <div class="row">
@@ -75,7 +76,8 @@ LIMIT 8;
         <div class="col">
             <div class="row">
                 <div class="col">
-                    <H1 style="color: black;">Popular Items</H1>
+                    <H1 style="color: black;">Popular eBay Items</H1>
+                    <p>You will be redirected to an ebay listing</p>
                 </div>
             </div>
             <div class="row">
