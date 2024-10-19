@@ -32,6 +32,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'popular.php');			
             break;
 
+        case "store":
+
+			include( plugin_dir_path( __FILE__ ) . 'store.php');			
+            break;
+
         case "awaiting_payment_items":
 
 			include( plugin_dir_path( __FILE__ ) . 'awaiting_payment_items.php');			

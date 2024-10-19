@@ -1,28 +1,16 @@
 <?php 
 $hot = $this->wpdb->get_results ( "
-SELECT * 
-FROM (
     SELECT * 
     FROM view_auction
     WHERE ListingType='Chinese'
     ORDER BY BidCount DESC
-    LIMIT 20
-) AS top_20
-ORDER BY RAND()
-LIMIT 8;    
 " 
 );
 
 $popular = $this->wpdb->get_results ( "
-SELECT * 
-FROM (
     SELECT * 
     FROM view_fixed_price
     ORDER BY WatchCount DESC
-    LIMIT 20
-) AS top_20
-ORDER BY RAND()
-LIMIT 8;    
 " 
 );
 
