@@ -37,6 +37,11 @@
 			include( plugin_dir_path( __FILE__ ) . 'store-auction.php');			
             break;
 
+        case "store-fixed-priced":
+
+			include( plugin_dir_path( __FILE__ ) . 'store-fixed-priced.php');			
+            break;
+
         case "awaiting_payment_items":
 
 			include( plugin_dir_path( __FILE__ ) . 'awaiting_payment_items.php');			
