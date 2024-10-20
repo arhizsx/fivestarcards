@@ -31,7 +31,7 @@ $hot = $this->wpdb->get_results ( "
                 ?>
                 <div class="d-flex align-items-start col-md-3 col-sm-6 mb-3 text-center">
                     <div>
-                        <div style="height: 150px; min-height: 150px; max-height: 150px;">
+                        <div style="height: 2000px; min-height: 2000px; max-height: 2000px;">
                             <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339085460&customid=store&toolid=10001&mkevt=1" target="_blank">
                                 <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo str_replace("s-l140.webp","s-l600.webp", $item->GalleryURL) ?>">
                             </a>
