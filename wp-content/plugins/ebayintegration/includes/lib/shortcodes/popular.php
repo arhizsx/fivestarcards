@@ -50,7 +50,7 @@ LIMIT 8;
                 ?>
                 <div class="d-flex align-items-start col-md-3 col-sm-6 mb-3 text-center">
                     <div>
-                        <div style="height: 120px; min-height: 120px; max-height: 120px;">
+                        <div style="height: 200px; min-height: 200px; max-height: 200px;">
                             <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339081621&customid=&toolid=10001&mkevt=1" target="_blank">
                                 <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo $item->GalleryURL ?>">
                             </a>
@@ -86,7 +86,7 @@ LIMIT 8;
                 ?>
                 <div class="d-flex align-items-start col-md-3 col-sm-6 mb-3 text-center">
                     <div>
-                        <div style="height: 120px; min-height: 120px; max-height: 120px;">
+                        <div style="height: 200px; min-height: 200px; max-height: 200px;">
                             <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339081621&customid=&toolid=10001&mkevt=1" target="_blank">
                                 <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo $item->GalleryURL ?>">
                             </a>
