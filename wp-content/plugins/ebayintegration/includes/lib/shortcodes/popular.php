@@ -6,8 +6,8 @@ FROM (
     FROM view_auction
     WHERE ListingType='Chinese'
     ORDER BY BidCount DESC
-    LIMIT 20
-) AS top_20
+    LIMIT 12
+) AS top_12
 ORDER BY RAND()
 LIMIT 8;    
 " 
@@ -19,8 +19,8 @@ FROM (
     SELECT * 
     FROM view_fixed_price
     ORDER BY WatchCount DESC
-    LIMIT 20
-) AS top_20
+    LIMIT 12
+) AS top_12
 ORDER BY RAND()
 LIMIT 8;    
 " 
