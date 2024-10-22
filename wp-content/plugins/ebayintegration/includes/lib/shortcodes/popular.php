@@ -42,6 +42,7 @@ LIMIT 8;
                 <div class="col">
                     <H1 style="color: black; margin-bottom: 0px;">Hot eBay Auctions</H1>
                     <p>You will be redirected to an ebay listing</p>
+
                 </div>
             </div>
             <div class="row">
@@ -129,5 +130,10 @@ LIMIT 8;
                 ?>
             </div>
         </div>
+    </div>
+    <div class="row">
+        <div class="col" style="font-size: 7px; gray">
+        Disclaimer: This site contains links that may result in a small commission if purchases are made through them. These links help support the content provided, at no additional cost to you. Thank you for your support.
+        </div>                
     </div>
 </div>

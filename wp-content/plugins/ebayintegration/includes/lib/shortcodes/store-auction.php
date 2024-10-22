@@ -19,6 +19,11 @@ $hot = $this->wpdb->get_results ( "
 </style>
 <div class="container-fluid px-3">
     <div class="row">
+        <div class="col" style="font-size: 7px; gray">
+        Disclaimer: This site contains links that may result in a small commission if purchases are made through them. These links help support the content provided, at no additional cost to you. Thank you for your support.
+        </div>                
+    </div>
+    <div class="row">
         <div class="col">
             <div class="row">
                 <div class="col">
