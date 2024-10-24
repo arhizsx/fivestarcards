@@ -99,17 +99,20 @@
                         </div>
                         <div class="col-xl-6">
 
-
+ 
                             <label>User</label>
                             <select name="user_id" class="form-control">
                                 <option value="">Select User</option>
                                 <?php 
                                 if($users){                        
                                     foreach($users as $user){
+                                        if( $user->active == 0 ) {
                                 ?>
                                     <option value="<?php echo $user->ID ?>"><?php echo $user->display_name ?> - <?php echo $user->user_email ?></option>
-                                <?php 
+                                <?php
+                                        } 
                                     }
+
                                 }
                                 ?>
                             </select>
