@@ -106,9 +106,11 @@
                                 <?php 
                                 if($users){                        
                                     foreach($users as $user){
+                                        if($user->active == 0 ){
                                 ?>
                                     <option value="<?php echo $user->ID ?>"><?php echo $user->display_name ?> - <?php echo $user->user_email ?></option>
-                                <?php 
+                                <?php
+                                        } 
                                     }
                                 }
                                 ?>
