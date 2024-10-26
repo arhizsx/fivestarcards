@@ -17,6 +17,8 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
         font-size: .7em !important;
     }
 </style>
+<script>window._epn = {campaign: 5339086186};</script>
+<script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
 <div class="d-flex flex-row-reverse mb-3">
     <input class="btn pl-2 search_box" style="text-align: left; padding-left: 10px; padding-bottom:5px; padding-top: 6px;" placeholder="Search" type="text" data-target=".search_table_fixed_price">
 </div>
@@ -58,7 +60,7 @@ $skus = get_user_meta( get_current_user_id(), "sku", true );
                 <td>
                     <div class="title">
                         <span class='pe-2'><strong><?php echo $i ?></strong></span>
-                        <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339086186&customid=members&toolid=10001&mkevt=1" target="_blank">
+                        <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
                             <?php echo $item->Title; ?>
                         </a>
                     </div>

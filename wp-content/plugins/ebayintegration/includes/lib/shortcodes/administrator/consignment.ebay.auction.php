@@ -24,6 +24,8 @@ $users = get_users( $args );
         font-size: .7em !important;
     }
 </style>
+<script>window._epn = {campaign: 5339086185};</script>
+<script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
 <div class="d-flex justify-content-between mb-3">
     <div>
         <i class="fa-brands fa-ebay fa-2xl"></i> AUCTION
@@ -54,7 +56,7 @@ $users = get_users( $args );
                 <td>
                     <div class="title">
                         <span class='pe-2'><strong><?php echo $i ?></strong></span>
-                        <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339086185&customid=admin&toolid=10001&mkevt=1" target="_blank">
+                        <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
                         <?php echo  $item->Title; ?>
                         </a>
                     </div>
