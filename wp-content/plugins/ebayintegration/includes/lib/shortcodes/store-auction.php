@@ -17,6 +17,8 @@ $hot = $this->wpdb->get_results ( "
         text-overflow: ellipsis;
     }    
 </style>
+<script>window._epn = {campaign: 5339086184};</script>
+<script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
 <div class="container-fluid px-3">
     <div class="row">
         <div class="col">
@@ -45,7 +47,7 @@ $hot = $this->wpdb->get_results ( "
                     <div>
 
                         <div style="height: 200px; min-height: 200px; max-height: 200px;">
-                            <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339086184&customid=auction&toolid=10001&mkevt=1" target="_blank">
+                            <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
                                 <img style="margin-top: auto; margin-bottom: auto; height: 100%;" src="<?php echo $img ?>">
                             </a>
                         </div>
@@ -54,7 +56,7 @@ $hot = $this->wpdb->get_results ( "
                             <div class="text-end">$<?php echo $item->CurrentPrice; ?></div>
                         </div>
                         <div class="itemTitle">
-                            <a href="<?php echo $item->ViewItemURL ?>?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339086184&customid=auction&toolid=10001&mkevt=1" target="_blank">
+                            <a href="<?php echo $item->ViewItemURL ?>" target="_blank">
                                 <?php echo $item->Title; ?>
                             </a>
                         </div>
