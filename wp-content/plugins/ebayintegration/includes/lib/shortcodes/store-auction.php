@@ -4,7 +4,7 @@ $hot = $this->wpdb->get_results ( "
     FROM view_auction
     WHERE ListingType='Chinese'
     AND BidCount > 0
-    ORDER BY BidCount DESC
+    ORDER BY CurrentPrice DESC, BidCount DESC
 " 
 );
 
