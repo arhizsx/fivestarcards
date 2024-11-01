@@ -2,6 +2,7 @@
 $popular = $this->wpdb->get_results ( "
     SELECT * 
     FROM view_fixed_price
+    WHERE WatchCount > 0
     ORDER BY WatchCount DESC
 " 
 );
