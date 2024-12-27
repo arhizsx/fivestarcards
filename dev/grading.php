@@ -153,18 +153,15 @@
   </div>
 
   <footer class="collapsed">
-    <div class="footer-content">
-      <button id="footerToggle" class="btn btn-primary">
-        <span id="toggleIcon" class="bi bi-caret-down-fill"></span>
-      </button>
-    </div>
     <div class="always-visible">
       <div class="row w-100 text-center">
         <div class="col-6 border-end">
           <p>Row 1, Column 1</p>
         </div>
         <div class="col-6">
-          <p>Row 1, Column 2</p>
+            <button id="footerToggle" class="btn btn-primary">
+                <span id="toggleIcon" class="bi bi-caret-down-fill"></span>
+            </button>
         </div>
       </div>
       <div class="row w-100 text-center">
