@@ -134,7 +134,7 @@
     <div class="always-visible">
         <div class="row p-0">
             <div class="col-6">
-                Summary
+                <strong>Summary <span>(0 item)</span></strong>
             </div>
             <div class="col-6">
                 <button id="footerToggle" class="btn">
