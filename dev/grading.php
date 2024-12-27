@@ -136,7 +136,7 @@
                 Summary
             </div>
             <div class="col-6">
-                <button id="footerToggle" class="btn btn-primary">
+                <button id="footerToggle" class="">
                     <span id="toggleIcon" class="bi bi-caret-down-fill"></span>
                 </button>                
             </div>
