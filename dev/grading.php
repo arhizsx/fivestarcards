@@ -153,11 +153,11 @@
   </div>
 
   <footer class="collapsed">
-    <div class="footer-content">
-      <button id="footerToggle" class="btn btn-primary">Toggle Footer</button>
-    </div>
     <div class="always-visible">
       <div class="row w-100 text-center">
+        <div class="col-12">
+            <button id="footerToggle" class="btn btn-primary">Toggle Footer</button>
+        </div>
         <div class="col-6 border-end">
           <p>Row 1, Column 1</p>
         </div>
