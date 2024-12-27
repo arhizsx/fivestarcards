@@ -150,7 +150,7 @@
 
     <!-- 3rd Row: Always Visible and Pinned -->
     <div class="pinned-visible">
-        <div class="d-flex justify-content-between px-4 py-2">
+        <div class="d-flex justify-content-between px-0 py-2">
             <button id="footerBack" class="btn btn-outline-dark">Back</button>
             <button id="footerContinue" class="btn btn-primary">Continue</button>
         </div>
