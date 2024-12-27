@@ -14,6 +14,34 @@
       background-color: #f8f9fa;
       padding: 1rem;
       border-bottom: 1px solid #dee2e6;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      max-height: 50px;
+    }
+
+    .menu {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .menu {
+        display: flex;
+        gap: 1rem;
+      }
+    }
+
+    .buttons-box {
+      display: flex;
+      gap: 0.5rem;
     }
 
     /* Sticky Footer */
@@ -67,8 +95,20 @@
   </style>
 </head>
 <body>
-  <header class="text-center">
-    <h1>Sticky Header</h1>
+  <header>
+    <div class="logo">
+      <img src="https://via.placeholder.com/150" alt="Logo">
+    </div>
+    <nav class="menu">
+      <a href="#" class="text-decoration-none">Home</a>
+      <a href="#" class="text-decoration-none">About</a>
+      <a href="#" class="text-decoration-none">Services</a>
+      <a href="#" class="text-decoration-none">Contact</a>
+    </nav>
+    <div class="buttons-box">
+      <button class="btn btn-primary">Login</button>
+      <button class="btn btn-secondary">Sign Up</button>
+    </div>
   </header>
 
   <div class="container mt-3">
