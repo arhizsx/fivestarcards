@@ -154,16 +154,24 @@
 
   <footer class="collapsed">
     <div class="always-visible py-3">
-      <div class="row w-100 text-center">
-        <div class="col-6 border-end">
-          <p>Row 1, Column 1</p>
+        <div class="row w-100 text-center">
+            <div class="col-6 border-end">
+                <p>Row 1, Column 1</p>
+            </div>
+            <div class="col-6">
+                <button id="footerToggle" class="btn btn-primary">
+                    <span id="toggleIcon" class="bi bi-caret-up-fill"></span>
+                </button>
+            </div>
         </div>
-        <div class="col-6">
-            <button id="footerToggle" class="btn btn-primary">
-                <span id="toggleIcon" class="bi bi-caret-up-fill"></span>
-            </button>
+        <div class="row w-100 text-center">
+            <div class="col-6">
+                <p>Row 1, Column 1</p>
+            </div>
+            <div class="col-6">
+                <p>Row 1, Column 1</p>
+            </div>
         </div>
-      </div>
     </div>
     <div class="hidden-content">
         <div class="row w-100 text-center py-3">
@@ -171,17 +179,6 @@
             <p>This is hidden content visible only when the footer is expanded.</p>
             </div>
         <div>
-    </div>
-    <div class="always-visible py-3">
-      <div class="row w-100 text-center">
-        <div class="col-6 border-end">
-          <p>Row 1, Column 1</p>
-        </div>
-        <div class="col-6 border-end">
-          <p>Row 1, Column 1</p>
-        </div>
-      </div>
-      
     </div>
   </footer>
 
