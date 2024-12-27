@@ -103,7 +103,7 @@
 <body>
   <header>
     <div class="logo">
-      <img src="https://via.placeholder.com/150" alt="Logo">
+      <img src="https://5starcards.com/wp-content/uploads/2023/09/5-star-cards-logo.png" alt="Logo">
     </div>
     <nav class="menu">
       <a href="#" class="text-decoration-none">Home</a>
@@ -121,7 +121,7 @@
       <div class="col-md-7 col-12 mb-3">
         <H2>Enter Items</H2>
         <p>Add items you want to submit to PSA for grading</p>
-        
+
       </div>
       <div class="col-md-5 d-none d-md-block mb-3">
         <div class="p-3 border bg-light">Column 2</div>
