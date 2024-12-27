@@ -112,15 +112,16 @@
       <a href="#" class="text-decoration-none">Contact</a>
     </nav>
     <div class="buttons-box">
-      <button class="btn btn-primary">Login</button>
-      <button class="btn btn-secondary">Sign Up</button>
+      <button class="btn btn-outline-dark">Save & Exit</button>
     </div>
   </header>
 
   <div class="container-fluid mt-3">
     <div class="row">
       <div class="col-md-7 col-12 mb-3">
-        <div class="p-3 border bg-light">Column 1</div>
+        <div class="p-3 border bg-light">
+            <H1>Enter Items</H1>
+        </div>
       </div>
       <div class="col-md-5 d-none d-md-block mb-3">
         <div class="p-3 border bg-light">Column 2</div>
