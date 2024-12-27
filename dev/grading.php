@@ -101,18 +101,18 @@
   </style>
 </head>
 <body>
-  <header class="bg-black text-white">
+  <header class="bg-black">
     <div class="logo">
       <img src="https://5starcards.com/wp-content/uploads/2023/09/5-star-cards-logo.png" alt="Logo">
     </div>
-    <nav class="menu">
+    <nav class="menu text-white">
       <a href="#" class="text-decoration-none">Home</a>
       <a href="#" class="text-decoration-none">About</a>
       <a href="#" class="text-decoration-none">Services</a>
       <a href="#" class="text-decoration-none">Contact</a>
     </nav>
     <div class="buttons-box">
-      <button class="btn btn-outline-dark">Save & Exit</button>
+      <button class="btn btn-outline-primary">Save & Exit</button>
     </div>
   </header>
 
