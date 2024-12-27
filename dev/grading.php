@@ -125,6 +125,12 @@
   <footer class="collapsed">
     <div class="footer-content">
       <button id="footerToggle" class="btn btn-primary">Toggle Footer</button>
+
+      <div style="height: 20px;">
+
+        text only data;
+
+      </div>   
     </div>
   </footer>
 
