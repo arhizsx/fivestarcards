@@ -61,11 +61,11 @@
     }
 
     footer.collapsed {
-      /* height: 150px; */
+      height: 50px;
     }
 
     footer.expanded {
-      /* height: 75vh; */
+      height: 75vh;
     }
 
     footer .footer-content {
@@ -153,32 +153,31 @@
   </div>
 
   <footer class="collapsed">
-    <div class="always-visible py-3">
-        <div class="row w-100 text-center">
-            <div class="col-6 border-end">
-                <p>Row 1, Column 1</p>
-            </div>
-            <div class="col-6">
-                <button id="footerToggle" class="btn btn-primary">
-                    <span id="toggleIcon" class="bi bi-caret-up-fill"></span>
-                </button>
-            </div>
+    <div class="footer-content">
+      <button id="footerToggle" class="btn btn-primary">
+        <span id="toggleIcon" class="bi bi-caret-down-fill"></span>
+      </button>
+    </div>
+    <div class="always-visible">
+      <div class="row w-100 text-center">
+        <div class="col-6 border-end">
+          <p>Row 1, Column 1</p>
         </div>
-        <div class="hidden-content">
-            <div class="row w-100 text-center py-3">
-                <div class="col-12">
-                <p>This is hidden content visible only when the footer is expanded.</p>
-                </div>
-            <div>
+        <div class="col-6">
+          <p>Row 1, Column 2</p>
         </div>
-        <div class="row w-100 text-center">
-            <div class="col-6">
-                <p>Row 1, Column 1</p>
-            </div>
-            <div class="col-6">
-                <p>Row 1, Column 1</p>
-            </div>
+      </div>
+      <div class="row w-100 text-center">
+        <div class="col-6 border-end">
+          <p>Row 2, Column 1</p>
         </div>
+        <div class="col-6">
+          <p>Row 2, Column 2</p>
+        </div>
+      </div>
+    </div>
+    <div class="hidden-content">
+      <p>This is hidden content visible only when the footer is expanded.</p>
     </div>
   </footer>
 
@@ -192,15 +191,14 @@
       if (footer.classList.contains('collapsed')) {
         footer.classList.remove('collapsed');
         footer.classList.add('expanded');
-        toggleIcon.classList.replace('bi-caret-up-fill', 'bi-caret-down-fill');
+        toggleIcon.classList.replace('bi-caret-down-fill', 'bi-caret-up-fill');
       } else {
         footer.classList.remove('expanded');
         footer.classList.add('collapsed');
-        toggleIcon.classList.replace('bi-caret-down-fill', 'bi-caret-up-fill');
+        toggleIcon.classList.replace('bi-caret-up-fill', 'bi-caret-down-fill');
       }
     });
   </script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
 </body>
 </html>
