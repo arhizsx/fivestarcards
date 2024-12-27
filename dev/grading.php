@@ -149,13 +149,9 @@
   <footer class="collapsed">
     <div class="footer-content">
     </div>
-    <div class="always-visible">
-        <div>
-            <button id="footerToggle" class="btn btn-primary">Toggle Footer</button>
-        </div>
-        <div>
-            Always visible content
-        </div>
+    <div class="always-visible">        
+        <div class="row"><button id="footerToggle" class="btn btn-primary">Toggle Footer</button></div>
+        <div class="row">Always visible content</div>
     </div>
     <div class="hidden-content">
       <p>This is hidden content visible only when the footer is expanded.</p>
