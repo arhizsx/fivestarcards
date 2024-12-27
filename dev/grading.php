@@ -191,11 +191,11 @@
       if (footer.classList.contains('collapsed')) {
         footer.classList.remove('collapsed');
         footer.classList.add('expanded');
-        toggleIcon.classList.replace('bi-caret-down-fill', 'bi-caret-up-fill');
+        toggleIcon.classList.replace('bi-caret-up-fill', 'bi-caret-down-fill');
       } else {
         footer.classList.remove('expanded');
         footer.classList.add('collapsed');
-        toggleIcon.classList.replace('bi-caret-up-fill', 'bi-caret-down-fill');
+        toggleIcon.classList.replace('bi-caret-down-fill', 'bi-caret-up-fill');
       }
     });
   </script>
