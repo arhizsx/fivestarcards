@@ -61,7 +61,7 @@
     }
 
     footer.collapsed {
-      height: 150px;
+      /* height: 150px; */
     }
 
     footer.expanded {
