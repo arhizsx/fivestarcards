@@ -152,9 +152,6 @@
     <div class="pinned-visible">
         <div class="d-flex justify-content-between px-4 py-2">
             <button id="footerBack" class="btn btn-outline-dark">Back</button>
-            <button id="footerToggle" class="btn btn-primary">
-            <span id="toggleIcon" class="bi bi-caret-down-fill"></span>
-            </button>
             <button id="footerContinue" class="btn btn-primary">Continue</button>
         </div>
     </div>
