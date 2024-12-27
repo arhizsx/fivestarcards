@@ -171,6 +171,8 @@
                 </div>
             <div>
         </div>
+    </div>
+    <div class="always-visible py-3">
       <div class="row w-100 text-center">
         <div class="col-6 border-end">
           <p>Row 1, Column 1</p>
