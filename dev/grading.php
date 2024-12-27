@@ -53,56 +53,32 @@
       z-index: 1020;
       background-color: #f8f9fa;
       border-top: 1px solid #dee2e6;
-      transition: height 0.3s ease-in-out;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
 
-    footer.collapsed {
-      height: 50px;
-    }
-
-    footer.expanded {
-      height: 75vh;
-    }
-
-    footer .footer-content {
-      overflow: hidden;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    footer .always-visible {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
+    .always-visible {
       padding: 0.5rem;
       background-color: #e9ecef;
       border-bottom: 1px solid #dee2e6;
-      gap: 0.5rem; /* Space between rows */
     }
 
-    footer .row {
-      margin: 0; /* Remove default margin */
-    }
-
-    footer .hidden-content {
+    .hidden-content {
       display: none;
-      flex-direction: column;
-      justify-content: center;
+      flex-grow: 1;
       align-items: center;
-      height: 100%;
-      width: 100%;
+      justify-content: center;
+      padding: 1rem;
     }
 
     footer.expanded .hidden-content {
       display: flex;
+    }
+
+    .pinned-visible {
+      background-color: #e9ecef;
+      border-top: 1px solid #dee2e6;
+      padding: 0.5rem;
     }
 
     body {
@@ -153,28 +129,21 @@
   </div>
 
   <footer class="collapsed">
-    <div class="always-visible">
-      <div class="row w-100 text-center">
-        <div class="col-6 border-end">
-          <p>Row 1, Column 1</p>
-        </div>
-        <div class="col-6">
-            <button id="footerToggle" class="btn btn-primary">
-                <span id="toggleIcon" class="bi bi-caret-down-fill"></span>
-            </button>
-        </div>
-      </div>
-      <div class="row w-100 text-center">
-        <div class="col-6 border-end">
-          <p>Row 2, Column 1</p>
-        </div>
-        <div class="col-6">
-          <p>Row 2, Column 2</p>
-        </div>
-      </div>
+    <!-- 1st Row: Always Visible -->
+    <div class="always-visible text-center">
+      <button id="footerToggle" class="btn btn-primary">
+        <span id="toggleIcon" class="bi bi-caret-down-fill"></span>
+      </button>
     </div>
+
+    <!-- 2nd Row: Always Hidden -->
     <div class="hidden-content">
       <p>This is hidden content visible only when the footer is expanded.</p>
+    </div>
+
+    <!-- 3rd Row: Always Visible and Pinned -->
+    <div class="pinned-visible text-center">
+      <p>Always visible and pinned to the bottom of the page</p>
     </div>
   </footer>
 
