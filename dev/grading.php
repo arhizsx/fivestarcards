@@ -130,7 +130,7 @@
 
   <footer class="collapsed">
     <!-- 1st Row: Always Visible -->
-    <div class="always-visible text-center">
+    <div class="always-visible">
         <div class="row p-0">
             <div class="col-6">
                 Summary
@@ -149,7 +149,7 @@
     </div>
 
     <!-- 3rd Row: Always Visible and Pinned -->
-    <div class="pinned-visible text-center">
+    <div class="pinned-visible">
         <div class="flex flex-row-reverse justify-between px-4 py-2">
             <button id="footerToggle" class="flex items-center justify-center whitespace-nowrap transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-500 min-w-[5rem] h-10 px-4 gap-2 rounded-xl text-body2 text-inverted bg-primary-500 hover:bg-primary-700">
                 Back
