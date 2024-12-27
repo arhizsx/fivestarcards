@@ -120,7 +120,8 @@
     <div class="row">
       <div class="col-md-7 col-12 mb-3">
         <div class="p-3 border bg-light">
-            <H1>Enter Items</H1>
+            <H2>Enter Items</H2>
+            <p>Add items you want to submit to PSA for grading</p>
         </div>
       </div>
       <div class="col-md-5 d-none d-md-block mb-3">
