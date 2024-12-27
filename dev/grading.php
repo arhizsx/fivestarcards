@@ -117,7 +117,7 @@
     </div>
   </header>
 
-  <div class="container mt-3">
+  <div class="container-fluid mt-3">
     <div class="row">
       <div class="col-md-7 col-12 mb-3">
         <div class="p-3 border bg-light">Column 1</div>
