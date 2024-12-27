@@ -112,7 +112,7 @@
       <a href="#" class="text-decoration-none">Contact</a>
     </nav>
     <div class="buttons-box">
-      <button class="btn btn-outline-primary">Save & Exit</button>
+      <button class="btn btn-primary">Save & Exit</button>
     </div>
   </header>
 
