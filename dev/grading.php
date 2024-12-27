@@ -73,10 +73,10 @@
 
   <div class="container mt-3">
     <div class="row">
-      <div class="col-md-6 col-12 mb-3">
+      <div class="col-md-7 col-12 mb-3">
         <div class="p-3 border bg-light">Column 1</div>
       </div>
-      <div class="col-md-6 d-none d-md-block mb-3">
+      <div class="col-md-5 d-none d-md-block mb-3">
         <div class="p-3 border bg-light">Column 2</div>
       </div>
     </div>
