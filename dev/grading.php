@@ -147,16 +147,32 @@
   </div>
 
   <footer class="collapsed">
-    <div class="footer-content">
+  <div class="footer-content">
+    <button id="footerToggle" class="btn btn-primary">Toggle Footer</button>
+  </div>
+  <div class="always-visible">
+    <div class="row w-100 text-center">
+      <div class="col-6 border-end">
+        <p>Row 1, Column 1</p>
+      </div>
+      <div class="col-6">
+        <p>Row 1, Column 2</p>
+      </div>
     </div>
-    <div class="always-visible">        
-        <div class="row"><button id="footerToggle" class="btn btn-primary">Toggle Footer</button></div>
-        <div class="row">Always visible content</div>
+    <div class="row w-100 text-center">
+      <div class="col-6 border-end">
+        <p>Row 2, Column 1</p>
+      </div>
+      <div class="col-6">
+        <p>Row 2, Column 2</p>
+      </div>
     </div>
-    <div class="hidden-content">
-      <p>This is hidden content visible only when the footer is expanded.</p>
-    </div>
-  </footer>
+  </div>
+  <div class="hidden-content">
+    <p>This is hidden content visible only when the footer is expanded.</p>
+  </div>
+</footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
