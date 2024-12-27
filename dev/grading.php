@@ -65,7 +65,7 @@
     }
 
     footer.expanded {
-      height: 75vh;
+      /* height: 75vh; */
     }
 
     footer .footer-content {
@@ -169,7 +169,7 @@
       </div>
     </div>
     <div class="hidden-content">
-        <div class="row w-100 text-center">
+        <div class="row w-100 text-center py-3">
             <div class="col-12">
             <p>This is hidden content visible only when the footer is expanded.</p>
             </div>
