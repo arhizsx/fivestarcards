@@ -132,7 +132,7 @@
   <footer class="collapsed">
     <!-- 1st Row: Always Visible -->
     <div class="always-visible">
-        <div class="d-flex justify-content-between px-0 py-2">
+        <div class="d-flex justify-content-between p-0">
             <div class="">
                 <strong>Summary <span>(0 item)</span></strong>
             </div>
