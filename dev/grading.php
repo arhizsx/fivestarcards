@@ -155,20 +155,13 @@
   <footer class="collapsed">
     <div class="always-visible py-3">
       <div class="row w-100 text-center">
-        <div class="col-12">
-            <!-- <button id="footerToggle" class="btn btn-primary">Toggle Footer</button> -->
-            <button id="footerToggle" class="btn btn-primary">
-                <span id="toggleIcon" class="bi bi-caret-up-fill"></span>
-            </button>
-
-        </div>
-      </div> 
-      <div class="row w-100 text-center">
         <div class="col-6 border-end">
           <p>Row 1, Column 1</p>
         </div>
         <div class="col-6">
-          <p>Row 1, Column 2</p>
+            <button id="footerToggle" class="btn btn-primary">
+                <span id="toggleIcon" class="bi bi-caret-up-fill"></span>
+            </button>
         </div>
       </div>
     </div>
