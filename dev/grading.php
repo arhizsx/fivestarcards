@@ -101,7 +101,7 @@
   </style>
 </head>
 <body>
-  <header>
+  <header class="bg-black text-white">
     <div class="logo">
       <img src="https://5starcards.com/wp-content/uploads/2023/09/5-star-cards-logo.png" alt="Logo">
     </div>
