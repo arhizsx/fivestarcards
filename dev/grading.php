@@ -151,7 +151,7 @@
     <!-- 3rd Row: Always Visible and Pinned -->
     <div class="pinned-visible">
         <div class="flex flex-row-reverse justify-between px-4 py-2">
-            <button id="footerToggle" class="btn-outline-dark">
+            <button id="footerToggle" class="btn btn-outline-dark">
                 Back
             </button>                
             <button id="footerToggle" class="btn btn-primary">
