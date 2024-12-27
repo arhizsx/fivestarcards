@@ -132,14 +132,20 @@
   <footer class="collapsed">
     <!-- 1st Row: Always Visible -->
     <div class="always-visible">
+        <div class="d-flex justify-content-between px-0 py-2">
+            <div class="">
+                <strong>Summary <span>(0 item)</span></strong>
+            </div>
+            <button id="footerToggle" class="btn">
+                <span id="toggleIcon" class="bi bi-caret-down-fill"></span>
+            </button>                
+        </div>
+
         <div class="row p-0">
             <div class="col-6 align-items-center d-flex">
                 <strong>Summary <span>(0 item)</span></strong>
             </div>
-            <div class="col-6  align-items-center d-flex">
-                <button id="footerToggle" class="btn">
-                    <span id="toggleIcon" class="bi bi-caret-down-fill"></span>
-                </button>                
+            <div class="col-6 align-items-center d-flex">
             </div>
         </div>
     </div>
