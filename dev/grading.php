@@ -64,7 +64,6 @@
     }
 
     footer.expanded {
-      height: 75vh;
     }
 
     footer .footer-content {
