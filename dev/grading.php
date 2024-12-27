@@ -158,7 +158,7 @@
         <div class="col-12">
             <!-- <button id="footerToggle" class="btn btn-primary">Toggle Footer</button> -->
             <button id="footerToggle" class="btn btn-primary">
-                <span id="toggleIcon" class="bi bi-caret-down-fill"></span>
+                <span id="toggleIcon" class="bi bi-caret-up-fill"></span>
             </button>
 
         </div>
@@ -191,11 +191,11 @@
       if (footer.classList.contains('collapsed')) {
         footer.classList.remove('collapsed');
         footer.classList.add('expanded');
-        toggleIcon.classList.replace('bi-caret-up-fill', 'bi-caret-down-fill');
+        toggleIcon.classList.replace('bi-caret-down-fill', 'bi-caret-up-fill');
       } else {
         footer.classList.remove('expanded');
         footer.classList.add('collapsed');
-        toggleIcon.classList.replace('bi-caret-down-fill', 'bi-caret-up-fill');
+        toggleIcon.classList.replace('bi-caret-up-fill', 'bi-caret-down-fill');
       }
     });
   </script>
