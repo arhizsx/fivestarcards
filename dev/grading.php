@@ -159,7 +159,7 @@
             <button id="footerToggle" class="btn btn-primary">Toggle Footer</button>
         </div>
       </div> 
-      <div class="row w-100 text-center">
+      <div class="row w-100 text-center py-3">
         <div class="col-6 border-end">
           <p>Row 1, Column 1</p>
         </div>
