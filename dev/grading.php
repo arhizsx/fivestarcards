@@ -18,8 +18,10 @@
 
     /* Sticky Footer */
     footer {
-      position: sticky;
+      position: fixed;
       bottom: 0;
+      left: 0;
+      width: 100%;
       z-index: 1020;
       background-color: #f8f9fa;
       border-top: 1px solid #dee2e6;
@@ -40,6 +42,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    body {
+      margin-bottom: 50px; /* Ensure content does not overlap with footer */
     }
   </style>
 </head>
