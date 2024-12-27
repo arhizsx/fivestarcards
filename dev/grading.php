@@ -26,6 +26,9 @@
       background-color: #f8f9fa;
       border-top: 1px solid #dee2e6;
       transition: height 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     footer.collapsed {
@@ -45,7 +48,15 @@
     }
 
     body {
-      margin-bottom: 50px; /* Ensure content does not overlap with footer */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      flex: 1;
     }
   </style>
 </head>
