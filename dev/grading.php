@@ -147,14 +147,14 @@
   </div>
 
   <footer class="collapsed">
+    <div class="footer-content">
+      <button id="footerToggle" class="btn btn-primary">Toggle Footer</button>
+    </div>
     <div class="always-visible">
       Always visible content
     </div>
     <div class="hidden-content">
       <p>This is hidden content visible only when the footer is expanded.</p>
-    </div>
-    <div class="footer-content">
-      <button id="footerToggle" class="btn btn-primary">Toggle Footer</button>
     </div>
   </footer>
 
