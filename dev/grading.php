@@ -45,8 +45,6 @@
     }
 
     /* Sticky Footer */
-
-
     footer {
       position: fixed;
       bottom: 0;
@@ -79,19 +77,19 @@
     }
 
     footer .always-visible {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 0.5rem;
-    background-color: #e9ecef;
-    border-bottom: 1px solid #dee2e6;
-    gap: 0.5rem; /* Space between rows */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 0.5rem;
+      background-color: #e9ecef;
+      border-bottom: 1px solid #dee2e6;
+      gap: 0.5rem; /* Space between rows */
     }
 
     footer .row {
-    margin: 0; /* Remove default margin */
+      margin: 0; /* Remove default margin */
     }
 
     footer .hidden-content {
@@ -155,32 +153,31 @@
   </div>
 
   <footer class="collapsed">
-  <div class="footer-content">
-    <button id="footerToggle" class="btn btn-primary">Toggle Footer</button>
-  </div>
-  <div class="always-visible">
-    <div class="row w-100 text-center">
-      <div class="col-6 border-end">
-        <p>Row 1, Column 1</p>
+    <div class="footer-content">
+      <button id="footerToggle" class="btn btn-primary">Toggle Footer</button>
+    </div>
+    <div class="always-visible">
+      <div class="row w-100 text-center">
+        <div class="col-6 border-end">
+          <p>Row 1, Column 1</p>
+        </div>
+        <div class="col-6">
+          <p>Row 1, Column 2</p>
+        </div>
       </div>
-      <div class="col-6">
-        <p>Row 1, Column 2</p>
+      <div class="row w-100 text-center">
+        <div class="col-6 border-end">
+          <p>Row 2, Column 1</p>
+        </div>
+        <div class="col-6">
+          <p>Row 2, Column 2</p>
+        </div>
       </div>
     </div>
-    <div class="row w-100 text-center">
-      <div class="col-6 border-end">
-        <p>Row 2, Column 1</p>
-      </div>
-      <div class="col-6">
-        <p>Row 2, Column 2</p>
-      </div>
+    <div class="hidden-content">
+      <p>This is hidden content visible only when the footer is expanded.</p>
     </div>
-  </div>
-  <div class="hidden-content">
-    <p>This is hidden content visible only when the footer is expanded.</p>
-  </div>
-</footer>
-
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
