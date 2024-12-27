@@ -58,6 +58,12 @@
     .container {
       flex: 1;
     }
+
+    @media (min-width: 768px) {
+      footer {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
