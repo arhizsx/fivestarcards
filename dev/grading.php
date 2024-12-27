@@ -55,6 +55,7 @@
       border-top: 1px solid #dee2e6;
       transition: height 0.3s ease-in-out;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
     }
@@ -64,7 +65,7 @@
     }
 
     footer.expanded {
-      min-height: 5vh;
+      height: 75vh;
     }
 
     footer .footer-content {
@@ -73,6 +74,29 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    footer .always-visible {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 0.5rem;
+      background-color: #e9ecef;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    footer .hidden-content {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    footer.expanded .hidden-content {
+      display: flex;
     }
 
     body {
@@ -123,14 +147,14 @@
   </div>
 
   <footer class="collapsed">
+    <div class="always-visible">
+      Always visible content
+    </div>
+    <div class="hidden-content">
+      <p>This is hidden content visible only when the footer is expanded.</p>
+    </div>
     <div class="footer-content">
       <button id="footerToggle" class="btn btn-primary">Toggle Footer</button>
-
-      <div style="height: 20px;">
-
-        text only data;
-
-      </div>   
     </div>
   </footer>
 
