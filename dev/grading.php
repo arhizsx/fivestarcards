@@ -164,13 +164,22 @@
             </button>
         </div>
       </div>
-    </div>
-    <div class="hidden-content">
-        <div class="row w-100 text-center py-3">
-            <div class="col-12">
-            <p>This is hidden content visible only when the footer is expanded.</p>
-            </div>
-        <div>
+        <div class="hidden-content">
+            <div class="row w-100 text-center py-3">
+                <div class="col-12">
+                <p>This is hidden content visible only when the footer is expanded.</p>
+                </div>
+            <div>
+        </div>
+      <div class="row w-100 text-center">
+        <div class="col-6 border-end">
+          <p>Row 1, Column 1</p>
+        </div>
+        <div class="col-6 border-end">
+          <p>Row 1, Column 1</p>
+        </div>
+      </div>
+      
     </div>
   </footer>
 
