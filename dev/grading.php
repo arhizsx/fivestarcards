@@ -45,6 +45,8 @@
     }
 
     /* Sticky Footer */
+
+
     footer {
       position: fixed;
       bottom: 0;
@@ -77,13 +79,19 @@
     }
 
     footer .always-visible {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      padding: 0.5rem;
-      background-color: #e9ecef;
-      border-bottom: 1px solid #dee2e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #e9ecef;
+    border-bottom: 1px solid #dee2e6;
+    gap: 0.5rem; /* Space between rows */
+    }
+
+    footer .row {
+    margin: 0; /* Remove default margin */
     }
 
     footer .hidden-content {
