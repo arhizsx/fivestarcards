@@ -131,9 +131,16 @@
   <footer class="collapsed">
     <!-- 1st Row: Always Visible -->
     <div class="always-visible text-center">
-      <button id="footerToggle" class="btn btn-primary">
-        <span id="toggleIcon" class="bi bi-caret-down-fill"></span>
-      </button>
+        <div class="row p-0">
+            <div class="col-6">
+                Summary
+            </div>
+            <div class="col-6">
+                <button id="footerToggle" class="btn btn-primary">
+                    <span id="toggleIcon" class="bi bi-caret-down-fill"></span>
+                </button>                
+            </div>
+        </div>
     </div>
 
     <!-- 2nd Row: Always Hidden -->
@@ -143,7 +150,18 @@
 
     <!-- 3rd Row: Always Visible and Pinned -->
     <div class="pinned-visible text-center">
-      <p>Always visible and pinned to the bottom of the page</p>
+        <div class="row p-0">
+            <div class="col-6">
+                <button id="footerToggle" class="btn btn-primary">
+                    Back
+                </button>                
+            </div>
+            <div class="col-6">
+                <button id="footerToggle" class="btn btn-primary">
+                    Continue
+                </button>                
+            </div>
+        </div>
     </div>
   </footer>
 
