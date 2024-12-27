@@ -64,6 +64,7 @@
     }
 
     footer.expanded {
+      min-height: 5vh;
     }
 
     footer .footer-content {
