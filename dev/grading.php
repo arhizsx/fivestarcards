@@ -156,7 +156,11 @@
     <div class="always-visible py-3">
       <div class="row w-100 text-center">
         <div class="col-12">
-            <button id="footerToggle" class="btn btn-primary">Toggle Footer</button>
+            <!-- <button id="footerToggle" class="btn btn-primary">Toggle Footer</button> -->
+            <button id="footerToggle" class="btn btn-primary">
+                <span id="toggleIcon" class="bi bi-caret-down-fill"></span>
+            </button>
+
         </div>
       </div> 
       <div class="row w-100 text-center">
@@ -181,14 +185,17 @@
   <script>
     const footer = document.querySelector('footer');
     const footerToggle = document.getElementById('footerToggle');
+    const toggleIcon = document.getElementById('toggleIcon');
 
     footerToggle.addEventListener('click', () => {
       if (footer.classList.contains('collapsed')) {
         footer.classList.remove('collapsed');
         footer.classList.add('expanded');
+        toggleIcon.classList.replace('bi-caret-down-fill', 'bi-caret-up-fill');
       } else {
         footer.classList.remove('expanded');
         footer.classList.add('collapsed');
+        toggleIcon.classList.replace('bi-caret-up-fill', 'bi-caret-down-fill');
       }
     });
   </script>
