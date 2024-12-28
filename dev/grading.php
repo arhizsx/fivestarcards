@@ -124,57 +124,64 @@
 
       </div>
       <div class="col-md-5 d-none d-md-block mb-3">
-        <div class="p-3 border rounded bg-white">
-            <H3>Summary</H3>
-            <div class="row pt-3">
-                <div class="col">
-                    Item Type
+        <div class="card">
+            <div class="card-body">
+                <H3>Summary</H3>
+                <div class="row pt-3">
+                    <div class="col">
+                        Item Type
+                    </div>
+                    <div class="col text-end">
+                        Trading Cards
+                    </div>
                 </div>
-                <div class="col text-end">
-                    Trading Cards
+                <div class="row pt-3">
+                    <div class="col">
+                        Submission Type
+                    </div>
+                    <div class="col text-end">
+                        Grading
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col">
+                        Service Level
+                    </div>
+                    <div class="col text-end">
+                        Value (1980-Present)
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col">
+                        Price
+                    </div>
+                    <div class="col text-end">
+                        $19.99/item
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col">
+                        Max Ins. Value
+                    </div>
+                    <div class="col text-end">
+                        $500/item
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col">
+                        Items x 1
+                    </div>
+                    <div class="col text-end">
+                        $19.99
+                    </div>
                 </div>
             </div>
-            <div class="row pt-3">
-                <div class="col">
-                    Submission Type
-                </div>
-                <div class="col text-end">
-                    Grading
-                </div>
+            <div class="card-footer">
+                <button class="btn btn-primary">
+                    Proceed to Checkout
+                </button>
             </div>
-            <div class="row pt-3">
-                <div class="col">
-                    Service Level
-                </div>
-                <div class="col text-end">
-                    Value (1980-Present)
-                </div>
-            </div>
-            <div class="row pt-3">
-                <div class="col">
-                    Price
-                </div>
-                <div class="col text-end">
-                    $19.99/item
-                </div>
-            </div>
-            <div class="row pt-3">
-                <div class="col">
-                    Max Ins. Value
-                </div>
-                <div class="col text-end">
-                    $500/item
-                </div>
-            </div>
-            <div class="row pt-3">
-                <div class="col">
-                    Items x 1
-                </div>
-                <div class="col text-end">
-                    $19.99
-                </div>
-            </div>
-        </div>
+        </div>        
       </div>
     </div>
   </div>
