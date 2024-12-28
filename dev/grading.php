@@ -138,12 +138,12 @@
                                 <label>Year</label>
                                 <input type="number" name="year" class="form-control">
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col">
                                 <label>Brand</label>
                                 <input type="text" name="brand" class="form-control">
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col">
                                 <label>Player / Subject</label>
                                 <input type="text" name="player_subject" class="form-control">
