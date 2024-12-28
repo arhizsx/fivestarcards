@@ -129,7 +129,7 @@
             <div class="upper_box">
                 <div class="add_item_box">
                     <form class="form">
-                        <div class="form-row">
+                        <div class="row">
                             <div class="col">
                                 <label>Year</label>
                                 <input type="number" name="year" class="form-control">
