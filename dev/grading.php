@@ -123,7 +123,7 @@
         <p>Add items you want to submit to PSA for grading</p>
 
       </div>
-      <div class="col-xl-4 d-none d-md-block mb-3">
+      <div class="col-xl-4 d-none d-xl-block mb-3">
         <div class="card">
             <div class="card-body" style="font-size: .85rem;">
                 <H3>Summary</H3>
