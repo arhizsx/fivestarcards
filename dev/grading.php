@@ -118,12 +118,12 @@
 
   <div class="container mt-3">
     <div class="row">
-      <div class="col-md-8 col-12 mb-3">
+      <div class="col-xl-8 col-12 mb-3">
         <H2>Enter Items</H2>
         <p>Add items you want to submit to PSA for grading</p>
 
       </div>
-      <div class="col-md-4 d-none d-md-block mb-3">
+      <div class="col-xl-4 d-none d-md-block mb-3">
         <div class="card">
             <div class="card-body" style="font-size: .85rem;">
                 <H3>Summary</H3>
