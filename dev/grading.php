@@ -126,24 +126,51 @@
                 <p class="header_subtitle">Add items you want to submit to PSA for grading</p>
             </div>
 
-            <div class="upper_box mt-4">
+            <div class="upper_box mt-5">
                 <div class="add_item_box">
                     <form class="form">
                         <div class="row">
                             <div class="col">
+                                <label>Quantity</label>
+                                <input type="number" name="quantity" class="form-control">
+                            </div>
+                            <div class="col">
                                 <label>Year</label>
                                 <input type="number" name="year" class="form-control">
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col">
                                 <label>Brand</label>
                                 <input type="text" name="brand" class="form-control">
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Player / Subject</label>
+                                <input type="text" name="player_subject" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Card Number</label>
+                                <input type="number" name="card_number" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label>Attribute / SN</label>
+                                <input type="number" name="attribute" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label>Declared Value</label>
+                                <input type="number" name="dv" class="form-control">
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>
 
-            <div class="middle_box mt-4">
+            <div class="middle_box mt-5">
 
                 <div class="card">
                     <div class="card-header">
