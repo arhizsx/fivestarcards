@@ -125,7 +125,7 @@
       </div>
       <div class="col-md-5 d-none d-md-block mb-3">
         <div class="card">
-            <div class="card-body" style=".85rem">
+            <div class="card-body" style="font-size: .85rem;">
                 <H3>Summary</H3>
                 <div class="row py-3">
                     <div class="col">
