@@ -177,7 +177,7 @@
                 </div>
             </div>
             <div class="card-footer p-4">
-                <button class="btn btn-primary form-control">
+                <button class="btn btn-primary form-control py-3">
                     Proceed to Checkout
                 </button>
             </div>
