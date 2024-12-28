@@ -124,7 +124,57 @@
 
       </div>
       <div class="col-md-5 d-none d-md-block mb-3">
-        <div class="p-3 border bg-light">Column 2</div>
+        <div class="p-3 border bg-white">
+            <H2>Summary</H2>
+            <div class="row">
+                <div class="col">
+                    Item Type
+                </div>
+                <div class="col">
+                    Trading Cards
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Submission Type
+                </div>
+                <div class="col">
+                    Grading
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Service Level
+                </div>
+                <div class="col">
+                    Value (1980-Present)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Price
+                </div>
+                <div class="col">
+                    $19.99/item
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Max Ins. Value
+                </div>
+                <div class="col">
+                    $500/item
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    Items x 1
+                </div>
+                <div class="col">
+                    $19.99
+                </div>
+            </div>
+        </div>
       </div>
     </div>
   </div>
