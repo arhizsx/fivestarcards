@@ -126,7 +126,7 @@
                 <p class="header_subtitle">Add items you want to submit to PSA for grading</p>
             </div>
 
-            <div class="upper_box">
+            <div class="upper_box mt-4">
                 <div class="add_item_box">
                     <form class="form">
                         <div class="row">
@@ -143,7 +143,7 @@
                 </div>
             </div>
 
-            <div class="middle_box">
+            <div class="middle_box mt-4">
 
                 <div class="card">
                     <div class="card-header">
