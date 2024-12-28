@@ -125,7 +125,7 @@
       </div>
       <div class="col-md-4 d-none d-md-block mb-3">
         <div class="p-3 border rounded bg-white">
-            <H2>Summary</H2>
+            <H3>Summary</H3>
             <div class="row pt-3">
                 <div class="col">
                     Item Type
