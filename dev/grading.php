@@ -126,7 +126,7 @@
       <div class="col-md-5 d-none d-md-block mb-3">
         <div class="p-3 border bg-white">
             <H2>Summary</H2>
-            <div class="row">
+            <div class="row pt-3">
                 <div class="col">
                     Item Type
                 </div>
@@ -134,7 +134,7 @@
                     Trading Cards
                 </div>
             </div>
-            <div class="row">
+            <div class="row pt-3">
                 <div class="col">
                     Submission Type
                 </div>
@@ -142,7 +142,7 @@
                     Grading
                 </div>
             </div>
-            <div class="row">
+            <div class="row pt-3">
                 <div class="col">
                     Service Level
                 </div>
@@ -150,7 +150,7 @@
                     Value (1980-Present)
                 </div>
             </div>
-            <div class="row">
+            <div class="row pt-3">
                 <div class="col">
                     Price
                 </div>
@@ -158,7 +158,7 @@
                     $19.99/item
                 </div>
             </div>
-            <div class="row">
+            <div class="row pt-3">
                 <div class="col">
                     Max Ins. Value
                 </div>
@@ -166,7 +166,7 @@
                     $500/item
                 </div>
             </div>
-            <div class="row">
+            <div class="row pt-3">
                 <div class="col">
                     Items x 1
                 </div>
