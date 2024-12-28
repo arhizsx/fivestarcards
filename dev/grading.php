@@ -119,71 +119,109 @@
 
   <div class="container mt-3">
     <div class="row">
-      <div class="col-xl-8 col-lg-8 col-12 mb-3">
-        <H2>Enter Items</H2>
-        <p>Add items you want to submit to PSA for grading</p>
+        <div class="col-xl-8 col-lg-8 col-12 mb-3">
 
-      </div>
-      <div class="col-xl-4 col-lg-4 d-none d-lg-block mb-3">
-        <div class="card">
-            <div class="card-body" style="font-size: .85rem;">
-                <H3>Summary</H3>
-                <div class="row py-3">
-                    <div class="col">
-                        Item Type
-                    </div>
-                    <div class="col text-end">
-                        Trading Cards
-                    </div>
-                </div>
-                <div class="row py-3">
-                    <div class="col">
-                        Submission Type
-                    </div>
-                    <div class="col text-end">
-                        Grading
-                    </div>
-                </div>
-                <div class="row py-3">
-                    <div class="col">
-                        Service Level
-                    </div>
-                    <div class="col text-end">
-                        Value (1980-Present)
-                    </div>
-                </div>
-                <div class="row py-3">
-                    <div class="col">
-                        Price
-                    </div>
-                    <div class="col text-end">
-                        $19.99/item
-                    </div>
-                </div>
-                <div class="row py-3">
-                    <div class="col">
-                        Max Ins. Value
-                    </div>
-                    <div class="col text-end">
-                        $500/item
-                    </div>
-                </div>
-                <div class="row py-3">
-                    <div class="col">
-                        Items x 1
-                    </div>
-                    <div class="col text-end">
-                        $19.99
-                    </div>
+            <div class="header_box">
+                <H2 class="header_title">Enter Items</H2>
+                <p class="header_subtitle">Add items you want to submit to PSA for grading</p>
+            </div>
+
+            <div class="upper_box">
+                <div class="add_item_box">
+                    <form class="form">
+                        <div class="form-row">
+                            <div class="col">
+                                <label>Year</label>
+                                <input type="number" name="year" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label>Brand</label>
+                                <input type="text" name="brand" class="form-control">
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="card-footer p-4">
-                <button class="btn btn-primary form-control py-2">
-                    Proceed to Checkout
-                </button>
+
+            <div class="middle_box">
+
+                <div class="card">
+                    <div class="card-header">
+                        Items
+                    </div>
+                    <div class="card-body">
+                    </div>
+                    <div class="card-footer">
+                    </div>
+                </div>
+
             </div>
-        </div>        
-      </div>
+
+            <div class="lower_box">
+
+
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 d-none d-lg-block mb-3">
+            <div class="card">
+                <div class="card-body" style="font-size: .85rem;">
+                    <H3>Summary</H3>
+                    <div class="row py-3">
+                        <div class="col">
+                            Item Type
+                        </div>
+                        <div class="col text-end">
+                            Trading Cards
+                        </div>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col">
+                            Submission Type
+                        </div>
+                        <div class="col text-end">
+                            Grading
+                        </div>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col">
+                            Service Level
+                        </div>
+                        <div class="col text-end">
+                            Value (1980-Present)
+                        </div>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col">
+                            Price
+                        </div>
+                        <div class="col text-end">
+                            $19.99/item
+                        </div>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col">
+                            Max Ins. Value
+                        </div>
+                        <div class="col text-end">
+                            $500/item
+                        </div>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col">
+                            Items x 1
+                        </div>
+                        <div class="col text-end">
+                            $19.99
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer p-4">
+                    <button class="btn btn-primary form-control py-2">
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>        
+        </div>
     </div>
   </div>
 
