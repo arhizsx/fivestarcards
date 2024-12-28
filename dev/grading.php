@@ -152,15 +152,15 @@
                         <div class="row">
                             <div class="col">
                                 <label>Card Number</label>
-                                <input type="number" name="card_number" class="form-control mb-3">
+                                <input type="text" name="card_number" class="form-control mb-3">
                             </div>
                             <div class="col">
                                 <label>Attribute / SN</label>
-                                <input type="number" name="attribute" class="form-control mb-3">
+                                <input type="text" name="attribute" class="form-control mb-3">
                             </div>
                             <div class="col">
                                 <label>Declared Value</label>
-                                <input type="number" name="dv" class="form-control mb-3">
+                                <input type="text" name="dv" class="form-control mb-3">
                             </div>
                         </div>
 
