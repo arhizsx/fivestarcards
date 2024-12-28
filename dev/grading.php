@@ -32,7 +32,7 @@
       display: none;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       .menu {
         display: flex;
         gap: 1rem;
@@ -93,7 +93,7 @@
       flex: 1;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       footer {
         display: none;
       }
@@ -118,12 +118,12 @@
 
   <div class="container mt-3">
     <div class="row">
-      <div class="col-xl-8 col-12 mb-3">
+      <div class="col-xl-8 col-lg-8 col-12 mb-3">
         <H2>Enter Items</H2>
         <p>Add items you want to submit to PSA for grading</p>
 
       </div>
-      <div class="col-xl-4 d-none d-xl-block mb-3">
+      <div class="col-xl-4 col-lg-4 d-none d-lg-block mb-3">
         <div class="card">
             <div class="card-body" style="font-size: .85rem;">
                 <H3>Summary</H3>
