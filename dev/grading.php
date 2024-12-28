@@ -32,7 +32,7 @@
       display: none;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1200px) {
       .menu {
         display: flex;
         gap: 1rem;
@@ -93,7 +93,7 @@
       flex: 1;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1200px) {
       footer {
         display: none;
       }
