@@ -124,7 +124,7 @@
 
       </div>
       <div class="col-md-5 d-none d-md-block mb-3">
-        <div class="p-3 border bg-white">
+        <div class="p-3 border rounded bg-white">
             <H2>Summary</H2>
             <div class="row pt-3">
                 <div class="col">
