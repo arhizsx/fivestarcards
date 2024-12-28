@@ -116,7 +116,7 @@
     </div>
   </header>
 
-  <div class="container-fluid mt-3">
+  <div class="container mt-3">
     <div class="row">
       <div class="col-md-7 col-12 mb-3">
         <H2>Enter Items</H2>
