@@ -176,7 +176,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-footer p-5">
+            <div class="card-footer p-4">
                 <button class="btn btn-primary form-control">
                     Proceed to Checkout
                 </button>
