@@ -132,35 +132,35 @@
                         <div class="row">
                             <div class="col">
                                 <label>Quantity</label>
-                                <input type="number" name="quantity" class="form-control">
+                                <input type="number" name="quantity" class="form-control mb-3">
                             </div>
                             <div class="col">
                                 <label>Year</label>
-                                <input type="number" name="year" class="form-control">
+                                <input type="number" name="year" class="form-control mb-3">
                             </div>
                             <div class="col">
                                 <label>Brand</label>
-                                <input type="text" name="brand" class="form-control">
+                                <input type="text" name="brand" class="form-control mb-3">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <label>Player / Subject</label>
-                                <input type="text" name="player_subject" class="form-control">
+                                <input type="text" name="player_subject" class="form-control mb-3">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <label>Card Number</label>
-                                <input type="number" name="card_number" class="form-control">
+                                <input type="number" name="card_number" class="form-control mb-3">
                             </div>
                             <div class="col">
                                 <label>Attribute / SN</label>
-                                <input type="number" name="attribute" class="form-control">
+                                <input type="number" name="attribute" class="form-control mb-3">
                             </div>
                             <div class="col">
                                 <label>Declared Value</label>
-                                <input type="number" name="dv" class="form-control">
+                                <input type="number" name="dv" class="form-control mb-3">
                             </div>
                         </div>
 
