@@ -106,10 +106,12 @@
       <img src="https://5starcards.com/wp-content/uploads/2023/09/5-star-cards-logo.png" alt="Logo">
     </div>
     <nav class="menu text-white">
-      <a href="#" class="text-decoration-none">Home</a>
-      <a href="#" class="text-decoration-none">About</a>
-      <a href="#" class="text-decoration-none">Services</a>
-      <a href="#" class="text-decoration-none">Contact</a>
+      <a href="#" class="text-decoration-none">Item Type</a>
+      <a href="#" class="text-decoration-none">Submission Type</a>
+      <a href="#" class="text-decoration-none">Service Level</a>
+      <a href="#" class="text-decoration-none">Item Entry</a>
+      <a href="#" class="text-decoration-none">Shipping & Billing</a>
+      <a href="#" class="text-decoration-none">Confirmation</a>
     </nav>
     <div class="buttons-box">
       <button class="btn btn-primary">Save & Exit</button>
