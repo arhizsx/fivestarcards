@@ -104,7 +104,7 @@
     }
 
     .table-labels {
-        font-size: .6rem;
+        font-size: .7rem;
     }
 
   </style>
