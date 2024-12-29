@@ -103,6 +103,10 @@
         font-size: .85rem;
     }
 
+    .table-labels {
+        font-size: .5rem;
+    }
+
   </style>
 </head>
 <body>
@@ -182,7 +186,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                        <div class="row">
+                        <div class="row table-labels">
                             <div class="col-xl-8 col-lg-8">
                                 Items
                             </div>
