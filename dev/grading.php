@@ -178,16 +178,16 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-xl-9">
+                            <div class="col-xl-6">
                                 Items
                             </div>
-                            <div class="col-xl-1">
+                            <div class="col-xl-2">
                                 Qty.
                             </div>
-                            <div class="col-xl-1">
+                            <div class="col-xl-2">
                                 Max Ins. Value
                             </div>
-                            <div class="col-xl-1">
+                            <div class="col-xl-2">
                                 &nbsp;
                             </div>
                         </div>
