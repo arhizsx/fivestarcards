@@ -215,9 +215,12 @@
 
             </div>
 
-            <div class="lower_box">
-
-
+            <div class="lower_box mt-5">
+                <div class="request_box">
+                    <H2 class="header_title">Comments or Requests</H2>
+                    <p class="header_subtitle">Write anything you would like to share about your submission with us</p>
+                    <textarea class="form-control"></textarea>
+                </div>
             </div>
         </div>
         <div class="col-xl-4 col-lg-4 d-none d-lg-block mb-3">
