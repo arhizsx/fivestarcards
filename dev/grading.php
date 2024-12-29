@@ -215,9 +215,9 @@
 
             </div>
 
-            <div class="lower_box mt-5">
+            <div class="lower_box mt-5 mb-5">
                 <div class="request_box">
-                    <H2 class="header_title">Comments or Requests</H2>
+                    <H3 class="header_title">Comments or Requests</H3>
                     <p class="header_subtitle">Write anything you would like to share about your submission with us</p>
                     <textarea class="form-control"></textarea>
                 </div>
