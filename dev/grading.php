@@ -168,7 +168,12 @@
                                 <input type="text" name="dv" class="form-control mb-3">
                             </div>
                         </div>
-
+                        <div class="row">
+                            <div class="col">
+                                <button class="btn btn-primary">Save</button>
+                                <button class="btn btn-secondary">Discard</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
