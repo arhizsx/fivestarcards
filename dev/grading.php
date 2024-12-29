@@ -187,13 +187,13 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="row table-labels">
-                            <div class="col-xl-8 col-lg-8 col-sm-8">
+                            <div class="col-xl-8 col-lg-8 col-sm-7">
                                 Items
                             </div>
                             <div class="col-xl-1 col-lg-1 col-sm-1">
                                 Qty.
                             </div>
-                            <div class="col-xl-2 col-lg-2 col-sm-2">
+                            <div class="col-xl-2 col-lg-2 col-sm-3">
                                 Max Ins. Value
                             </div>
                             <div class="col-xl-1 col-lg-1 col-sm-1">
