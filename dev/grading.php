@@ -172,7 +172,20 @@
 
                 <div class="card">
                     <div class="card-header">
-                        Items
+                        <div class="row">
+                            <div class="col">
+                                Items
+                            </div>
+                            <div class="col">
+                                Qty.
+                            </div>
+                            <div class="col">
+                                Max Ins. Value
+                            </div>
+                            <div class="col">
+                                &nbsp;
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                     </div>
