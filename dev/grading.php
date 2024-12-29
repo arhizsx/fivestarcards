@@ -202,6 +202,9 @@
                         </div>
                     </div>
                     <div class="card-body">
+                        <div class="table-items table-empty">
+                            No items have been added yet.
+                        </div>
                     </div>
                 </div>
 
