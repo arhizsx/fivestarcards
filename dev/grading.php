@@ -98,6 +98,11 @@
         display: none;
       }
     }
+
+    body {
+        font-size: .85rem;
+    }
+
   </style>
 </head>
 <body>
