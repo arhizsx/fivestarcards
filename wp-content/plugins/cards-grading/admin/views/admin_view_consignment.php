@@ -57,11 +57,10 @@ global $wpdb;
 
 <div class="table-responsive">
 
-    <H4>Shipped <?php echo $shipped ?></H4>
+    <H4>Shipped (<?php echo $shipped ?>)</H4>
     <table class="table table-sm table-bordered" id="receiving_consignment">
         <thead>
             <tr>
-                <th>Card ID</th>
                 <th>Card</th>
                 <th>Status</th>
                 <th class="fit text-end"></th>
@@ -85,9 +84,10 @@ global $wpdb;
                             $data = json_decode( $card->data, true );
             ?>
             <tr class="consigned_item_row" data-id="<?php echo $card->id ?>">
-
-                <td><?php echo $card->id ?></td>
-                <td><?php echo $data["year"] . " " . $data["brand"] . " " . $data["player"] . " " . $data["card_number"] . " " . $data["attribute_sn"]  ?></td>
+                <td>
+                    <div><?php echo $data["year"] . " " . $data["brand"] . " " . $data["player"] . " " . $data["card_number"] . " " . $data["attribute_sn"]  ?></div>
+                    <div><small><?php echo $card->id ?></small></div>
+                </td>
                 <td><?php echo $card->status ?></td>
                 <td class="fit">
                     <a class="btn btn-pill btn-sm btn-danger ebayintegration-btn" data-action="consignedCardNotReceived" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id(); ?>">
@@ -106,11 +106,10 @@ global $wpdb;
         </tbody>
     </table>
 
-    <H4>Received <?php echo $received ?></H4>
+    <H4>Received (<?php echo $received ?>)</H4>
     <table class="table table-sm table-bordered" id="receiving_consignment">
         <thead>
             <tr>
-                <th>Card ID</th>
                 <th>Card</th>
                 <th>Status</th>
                 <th class="fit text-end"></th>
@@ -133,9 +132,10 @@ global $wpdb;
                             $data = json_decode( $card->data, true );
             ?>
             <tr class="consigned_item_row" data-id="<?php echo $card->id ?>">
-
-                <td><?php echo $card->id ?></td>
-                <td><?php echo $data["year"] . " " . $data["brand"] . " " . $data["player"] . " " . $data["card_number"] . " " . $data["attribute_sn"]  ?></td>
+                <td>
+                    <div><?php echo $data["year"] . " " . $data["brand"] . " " . $data["player"] . " " . $data["card_number"] . " " . $data["attribute_sn"]  ?></div>
+                    <div><small><?php echo $card->id ?></small></div>
+                </td>
                 <td><?php echo $card->status ?></td>
                 <td class="fit">
                     <a class="btn btn-pill btn-sm btn-danger ebayintegration-btn" data-action="consignedCardNotReceived" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id(); ?>">
@@ -151,11 +151,10 @@ global $wpdb;
         </tbody>
     </table>
 
-    <H4>Unavailable  <?php echo $unavailable ?></H4>
+    <H4>Unavailable  (<?php echo $unavailable ?>)</H4>
     <table class="table table-sm table-bordered" id="receiving_consignment">
         <thead>
             <tr>
-                <th>Card ID</th>
                 <th>Card</th>
                 <th>Status</th>
                 <th class="fit text-end"></th>
@@ -178,9 +177,10 @@ global $wpdb;
                             $data = json_decode( $card->data, true );
             ?>
             <tr class="consigned_item_row" data-id="<?php echo $card->id ?>">
-
-                <td><?php echo $card->id ?></td>
-                <td><?php echo $data["year"] . " " . $data["brand"] . " " . $data["player"] . " " . $data["card_number"] . " " . $data["attribute_sn"]  ?></td>
+                <td>
+                    <div><?php echo $data["year"] . " " . $data["brand"] . " " . $data["player"] . " " . $data["card_number"] . " " . $data["attribute_sn"]  ?></div>
+                    <div><small><?php echo $card->id ?></small></div>
+                </td>
                 <td><?php echo $card->status ?></td>
                 <td class="fit">
                     <a class="btn btn-pill btn-sm btn-success ebayintegration-btn" data-action="confirmConsignedCardReceived" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id(); ?>">
