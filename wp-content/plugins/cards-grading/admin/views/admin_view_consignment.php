@@ -69,7 +69,7 @@ global $wpdb;
         </thead>
         <tbody>
             <?php 
-                if(  $shipped > 0 ){
+                if(  $shipped == 0 ){
             ?>
             <tr>
                 <td colspan="8" class="text-center py-5">
@@ -118,7 +118,7 @@ global $wpdb;
         </thead>
         <tbody>
             <?php 
-                if( $received > 0 ){
+                if( $received == 0 ){
             ?>
             <tr>
                 <td colspan="8" class="text-center py-5">
@@ -166,7 +166,7 @@ global $wpdb;
         </thead>
         <tbody>
             <?php 
-                if(  $unavailable > 0 ){
+                if(  $unavailable == 0 ){
             ?>
             <tr>
                 <td colspan="8" class="text-center py-5">
