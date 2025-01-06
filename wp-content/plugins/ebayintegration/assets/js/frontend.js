@@ -833,6 +833,7 @@ jQuery(document).on("click", ".ebayintegration-btn", function (e) {
 		$.when(card).done(function (card) {
 
 			if (card.error == false) {
+
 				if ($(document).find(".consigned_item_row[data-id='" + id + "']").closest("tbody").find(".consigned_item_row").length == 1) {
 
 					$(document).find("#receiving_consignment tbody").append(
@@ -845,7 +846,10 @@ jQuery(document).on("click", ".ebayintegration-btn", function (e) {
 
 				}
 
-				$(document).find(".consigned_item_row[data-id='" + id + "']").remove();
+				// $(document).find(".consigned_item_row[data-id='" + id + "']").remove();
+
+				location.reload();
+
 			} else {
 				alert("Error encountered");
 			}
