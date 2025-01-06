@@ -4,6 +4,9 @@
    white-space: nowrap;
    width: 1%;
 }    
+H4 {
+    color: black;
+}
 </style>
 
 <?php 
