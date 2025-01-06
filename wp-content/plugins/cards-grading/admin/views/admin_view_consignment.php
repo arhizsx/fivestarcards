@@ -38,6 +38,7 @@ global $wpdb;
                 <th>User</th>
                 <th>Order ID</th>
                 <th>Card</th>
+                <th>Status</th>
                 <th class="fit text-end"></th>
             </tr>
         </thead>
@@ -63,6 +64,7 @@ global $wpdb;
                 </td>
                 <td><?php echo $card->order_id + 1000 ?></td>
                 <td><?php echo $data["year"] . " " . $data["brand"] . " " . $data["player"] . " " . $data["card_number"] . " " . $data["attribute_sn"]  ?></td>
+                <td><?php echo $card->status ?></td>
                 <td class="fit">
                     <a class="btn btn-pill btn-sm btn-danger ebayintegration-btn" data-action="consignedCardNotReceived" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id(); ?>">
                         <i class="fa-solid fa-xmark"></i>
