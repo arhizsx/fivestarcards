@@ -138,8 +138,8 @@ global $wpdb;
                 <td><?php echo $data["year"] . " " . $data["brand"] . " " . $data["player"] . " " . $data["card_number"] . " " . $data["attribute_sn"]  ?></td>
                 <td><?php echo $card->status ?></td>
                 <td class="fit">
-                    <a class="btn btn-pill btn-sm btn-success ebayintegration-btn" data-action="confirmConsignedCardReceived" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id(); ?>">
-                        <i class="fa-solid fa-check"></i>
+                    <a class="btn btn-pill btn-sm btn-danger ebayintegration-btn" data-action="consignedCardNotReceived" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id(); ?>">
+                        <i class="fa-solid fa-xmark"></i>
                     </a>
                 </td>
             </tr>
