@@ -1104,9 +1104,9 @@ $(document).on("click", ".admin-order-row", function (e) {
 $(document).on("click", ".consigned_order_row", function (e) {
 
     if ($(this).data("back") != "") {
-        window.location.href = "/administrator/consignment/view-order?id=" + $(this).data("post_id") + "&mode=" + $(this).data("back");
+        window.location.href = "/administrator/consignment/view-consignment?id=" + $(this).data("post_id") + "&mode=" + $(this).data("back");
     } else {
-        window.location.href = "/administrator/consignment/view-order?id=" + $(this).data("post_id");
+        window.location.href = "/administrator/consignment/view-consignment?id=" + $(this).data("post_id");
     }
 
 
