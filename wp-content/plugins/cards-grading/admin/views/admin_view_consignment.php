@@ -38,17 +38,15 @@ global $wpdb;
 
      if( count( $consignment ) > 0 ){
 
-
-
         foreach( $consignment as $card ) {
 
-            if( $card->status  === 'shipped') {
+            if( $card->status  == 'shipped') {
                 $shipped++;
             }
-            elseif( $card->status  === 'received') {
+            elseif( $card->status  == 'received') {
                 $received++;
             }
-            elseif( $card->status  === 'unavailable') {
+            elseif( $card->status  == 'unavailable') {
                 $unavailable++;
             }
 
@@ -59,7 +57,7 @@ global $wpdb;
 
 <div class="table-responsive">
 
-    <H4>Shipped</H4>
+    <H4>Shipped <?php echo $shipped ?></H4>
     <table class="table table-sm table-bordered" id="receiving_consignment">
         <thead>
             <tr>
@@ -108,7 +106,7 @@ global $wpdb;
         </tbody>
     </table>
 
-    <H4>Received</H4>
+    <H4>Received <?php echo $received ?></H4>
     <table class="table table-sm table-bordered" id="receiving_consignment">
         <thead>
             <tr>
@@ -156,7 +154,7 @@ global $wpdb;
         </tbody>
     </table>
 
-    <H4>Unavailable</H4>
+    <H4>Unavailable  <?php echo $unavailable ?></H4>
     <table class="table table-sm table-bordered" id="receiving_consignment">
         <thead>
             <tr>
