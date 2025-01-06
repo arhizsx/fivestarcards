@@ -35,8 +35,7 @@ global $wpdb;
     <table class="table table-sm table-bordered" id="receiving_consignment">
         <thead>
             <tr>
-                <th>User</th>
-                <th>Order ID</th>
+                <th>Card ID</th>
                 <th>Card</th>
                 <th>Status</th>
                 <th class="fit text-end"></th>
@@ -58,11 +57,7 @@ global $wpdb;
             ?>
             <tr class="consigned_item_row" data-id="<?php echo $card->id ?>">
 
-                <td>
-                    <div><?php echo $card->display_name ?></div>
-                    <div class="small"><?php echo $card->user_email ?></div>
-                </td>
-                <td><?php echo $card->order_id + 1000 ?></td>
+                <td><?php echo $card->id ?></td>
                 <td><?php echo $data["year"] . " " . $data["brand"] . " " . $data["player"] . " " . $data["card_number"] . " " . $data["attribute_sn"]  ?></td>
                 <td><?php echo $card->status ?></td>
                 <td class="fit">
