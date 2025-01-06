@@ -91,8 +91,11 @@ if( $show == "cards" ){
                 } else {
                     foreach( $consignment as $card ) {
                         $data = json_decode( $card->data, true );
+
+                        print_r($data);
             ?>
             <tr class="consigned_item_row" data-id="<?php echo $card->id ?>">
+
                 <td>
                     <div><?php echo $card->display_name ?></div>
                     <div class="small"><?php echo $card->user_email ?></div>
