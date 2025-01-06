@@ -10,7 +10,7 @@
 
 global $wpdb;
 
-if( ! isset( $_GET['type'] ) ){
+if( ! isset( $_GET['type'] )  || ( isset( $_GET['type'] ) && $_GET['type'] == 'orders' )  ){
 
     $orders = $this->wpdb->get_results ( "
         SELECT
