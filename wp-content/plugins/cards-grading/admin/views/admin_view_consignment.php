@@ -20,7 +20,7 @@ global $wpdb;
         FROM consignment
         	INNER JOIN wp_users
             ON consignment.user_id = wp_users.ID
-        where status IN ('shipped', 'received') and order_id = " . $_GET["id"] . "
+        where order_id = " . $_GET["id"] . "
         order by order_id desc, consignment.id desc;
         "
     );
