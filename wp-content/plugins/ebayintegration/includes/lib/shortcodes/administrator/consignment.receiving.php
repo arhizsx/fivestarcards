@@ -92,7 +92,7 @@ if( $show == "cards" ){
                     foreach( $consignment as $card ) {
                         $data = json_decode( $card->data, true );
             ?>
-            <tr class="consigned_item_row" data-id="<?php echo $card->id ?>" data-moda="receiving">
+            <tr class="consigned_item_row" data-id="<?php echo $card->id ?>" data-type="receiving">
                 <td>
                     <div><?php echo $card->display_name ?></div>
                     <div class="small"><?php echo $card->user_email ?></div>

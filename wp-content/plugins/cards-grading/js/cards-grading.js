@@ -1104,7 +1104,7 @@ $(document).on("click", ".admin-order-row", function (e) {
 $(document).on("click", ".consigned_order_row", function (e) {
 
     if ($(this).data("back") != "") {
-        window.location.href = "/administrator/consignment/view-consignment?id=" + $(this).data("id") + "&mode=" + $(this).data("back");
+        window.location.href = "/administrator/consignment/view-consignment?id=" + $(this).data("id") + "&type=" + $(this).data("type");
     } else {
         window.location.href = "/administrator/consignment/view-consignment?id=" + $(this).data("id");
     }
