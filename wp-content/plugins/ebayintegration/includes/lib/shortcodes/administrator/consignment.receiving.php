@@ -70,11 +70,7 @@ if( $show == "cards" ){
             <tr>
                 <th>User</th>
                 <th>Order ID</th>
-                <th>Year</th>
-                <th>Brand</th>
-                <th>Player Name</th>
-                <th>Card Number</th>
-                <th>Attribute S/N</th>
+                <th>Card</th>
                 <th class="fit text-end"></th>
             </tr>
         </thead>
@@ -99,11 +95,7 @@ if( $show == "cards" ){
                     <div class="small"><?php echo $card->user_email ?></div>
                 </td>
                 <td><?php echo $card->order_id + 1000 ?></td>
-                <td><?php echo $data["year"] ?></td>
-                <td><?php echo $data["brand"] ?></td>
-                <td><?php echo $data["player"] ?></td>
-                <td><?php echo $data["card_number"] ?></td>
-                <td><?php echo $data["attribute_sn"] ?></td>
+                <td><?php echo $data["year"] . " " . $data["brand"] . " " . $data["player"] . " " . $data["card_number"] . " " . $data["attribute_sn"]  ?></td>
                 <td class="fit">
                     <a class="btn btn-pill btn-sm btn-danger ebayintegration-btn" data-action="consignedCardNotReceived" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id(); ?>">
                         <i class="fa-solid fa-xmark"></i>
