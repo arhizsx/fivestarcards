@@ -91,8 +91,6 @@ if( $show == "cards" ){
                 } else {
                     foreach( $consignment as $card ) {
                         $data = json_decode( $card->data, true );
-
-                        print_r($data);
             ?>
             <tr class="consigned_item_row" data-id="<?php echo $card->id ?>">
 
@@ -103,7 +101,7 @@ if( $show == "cards" ){
                 <td><?php echo $card->order_id + 1000 ?></td>
                 <td><?php echo $data["year"] ?></td>
                 <td><?php echo $data["brand"] ?></td>
-                <td><?php echo $data["player_name"] ?></td>
+                <td><?php echo $data["player"] ?></td>
                 <td><?php echo $data["card_number"] ?></td>
                 <td><?php echo $data["attribute_sn"] ?></td>
                 <td class="fit">
