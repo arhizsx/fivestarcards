@@ -75,7 +75,7 @@ global $wpdb;
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Shipped By</div>
-        <div class='order-data'></div>
+        <div class='order-data'><?php echo $shipped; ?></div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Shipping Date</div>
@@ -91,19 +91,19 @@ global $wpdb;
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Total Cards</div>
-        <div class='order-data'>0</div>
+        <div class='order-data'><?php echo count( $consignment ) ?> </div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Shipped Cards</div>
-        <div class='order-data'>0</div>
+        <div class='order-data'><?php echo $shipped; ?></div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Received Cards</div>
-        <div class='order-data'>0</div>
+        <div class='order-data'><?php echo $received; ?></div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Unavailable Cards</div>
-        <div class='order-data'>0</div>
+        <div class='order-data'><?php echo $unavailable; ?></div>
     </div>
 </div>
 
