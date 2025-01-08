@@ -814,6 +814,8 @@ jQuery(document).on("click", ".ebayintegration-btn", function (e) {
 
 				$(document).find(".consigned_item_row[data-id='" + id + "']").remove();
 
+				location.reload();
+
 			} else {
 				alert("Error encountered");
 			}
