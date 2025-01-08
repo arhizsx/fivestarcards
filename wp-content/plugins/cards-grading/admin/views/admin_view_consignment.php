@@ -13,6 +13,16 @@ H4 {
 
 global $wpdb;
 
+    $consignment_order = $this->wpdb->get_results ( "
+		SELECT 
+            *
+        FROM consignment_order
+        where order_id = " . $_GET["id"]
+    );
+
+
+    print_r($consignment_order);
+    die();
 
     $consignment = $this->wpdb->get_results ( "
 
