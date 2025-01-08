@@ -17,7 +17,7 @@ global $wpdb;
 		SELECT 
             *
         FROM consignment_orders
-        where order_id = " . $_GET["id"]
+        where id = " . $_GET["id"]
     );
 
 
