@@ -59,22 +59,22 @@ global $wpdb;
 <div class="row">
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Order ID</div>
-        <div class='order-data'></div>
+        <div class='order-data'>0</div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>User</div>
-        <div class='order-data'></div>
+        <div class='order-data'>0</div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Carrier</div>
-        <div class='order-data grading'></div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-        <div class='order-label'>Shipped By</div>
-        <div class='order-data'></div>
+        <div class='order-data grading'>0</div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Tracking #</div>
+        <div class='order-data'></div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Shipped By</div>
         <div class='order-data'></div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
@@ -87,19 +87,19 @@ global $wpdb;
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Status</div>
-        <div class='order-data'></div>
+        <div class='order-data'>SHIPPED</div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Total Cards</div>
-        <div class='order-data'></div>
+        <div class='order-data'>0</div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Shipped Cards</div>
-        <div class='order-data'></div>
+        <div class='order-data'>0</div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Received Cards</div>
-        <div class='order-data'></div>
+        <div class='order-data'>0</div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Unavailable Cards</div>
