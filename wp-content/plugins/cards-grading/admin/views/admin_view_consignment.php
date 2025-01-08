@@ -23,6 +23,9 @@ global $wpdb;
 
     $order_data = json_decode($consignment_order->data, true);
 
+    print_r($order_data);
+
+
     $consignment = $this->wpdb->get_results ( "
 
 		SELECT 
@@ -62,7 +65,6 @@ global $wpdb;
         }
      }
 
-print_r($order_data);
 
 
 ?>
