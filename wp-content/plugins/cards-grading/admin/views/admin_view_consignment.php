@@ -21,9 +21,8 @@ global $wpdb;
     );
 
 
-    $order_data = json_decode($consignment_order->data, true);
+    $order_data = json_decode($consignment_order[0]->data, true);
 
-    print_r($consignment_order[0]);
 
 
     $consignment = $this->wpdb->get_results ( "
@@ -73,7 +72,7 @@ global $wpdb;
 <div class="row">
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Order ID</div>
-        <div class='order-data'><?php echo $consignment_order->id + 1000?></div>
+        <div class='order-data'><?php echo $consignment_order[0]->id + 1000?></div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>User</div>
