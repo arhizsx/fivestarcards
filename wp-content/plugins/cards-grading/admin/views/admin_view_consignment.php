@@ -75,6 +75,10 @@ global $wpdb;
         <div class='order-data'><?php echo $consignment_order[0]->id + 1000?></div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Status</div>
+        <div class='order-data'>SHIPPED</div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>User</div>
         <div class='order-data'>-</div>
     </div>
@@ -93,10 +97,6 @@ global $wpdb;
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Shipping Date</div>
         <div class='order-data'></div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-        <div class='order-label'>Status</div>
-        <div class='order-data'>SHIPPED</div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Shipped Cards</div>
