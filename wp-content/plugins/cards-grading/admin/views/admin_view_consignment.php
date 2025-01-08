@@ -55,9 +55,69 @@ global $wpdb;
 
 ?>
 
+
+<div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Status</div>
+        <div class='order-data'></div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Service Type</div>
+        <div class='order-data'></div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Grading Type</div>
+        <div class='order-data grading'></div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Total Declared Value</div>
+        <div class='order-data'></div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Carrier</div>
+        <div class='order-data'></div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Shipped By</div>
+        <div class='order-data'></div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Tracking Number</div>
+        <div class='order-data'></div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Shipping Date</div>
+        <div class='order-data'></div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Total Cards</div>
+        <div class='order-data'></div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Received Cards</div>
+        <div class='order-data'></div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Missing Cards</div>
+        <div class='order-data'>0</div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Submission #</div>
+        <div class='order-data'></div>
+    </div>
+</div>
+
+
 <div class="table-responsive">
 
-    <H4>Shipped (<?php echo $shipped ?>)</H4>
+    <div class="row">
+        <div class="col">
+            <H4>Shipped (<?php echo $shipped ?>)</H4>
+        </div>
+        <div class="col">
+            
+        </div>
+    </div>
     <table class="table table-sm table-bordered" id="receiving_consignment">
         <thead>
             <tr>
@@ -195,4 +255,5 @@ global $wpdb;
             ?>
         </tbody>
     </table>
+
 </div>
