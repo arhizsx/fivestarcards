@@ -21,8 +21,7 @@ global $wpdb;
     );
 
 
-    print_r($consignment_order);
-    die();
+    $order_data = json_decode($consignment->data, true);
 
     $consignment = $this->wpdb->get_results ( "
 
@@ -70,19 +69,19 @@ global $wpdb;
 <div class="row">
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Order ID</div>
-        <div class='order-data'>0</div>
+        <div class='order-data'><?php echo $consignment_order->id + 1000?></div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>User</div>
-        <div class='order-data'>0</div>
+        <div class='order-data'>-</div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Carrier</div>
-        <div class='order-data grading'>0</div>
+        <div class='order-data grading'><?php echo $order_data["carrier"]?></div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Tracking #</div>
-        <div class='order-data'></div>
+        <div class='order-data'><?php echo $order_data["tracking_number"]?></div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Shipped By</div>
