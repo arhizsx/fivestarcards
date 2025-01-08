@@ -90,7 +90,11 @@ global $wpdb;
         <div class='order-data'></div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-        <div class='order-label'>Shipping Date</div>
+        <div class='order-label'>Total Cards</div>
+        <div class='order-data'></div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Shipped Cards</div>
         <div class='order-data'></div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
@@ -98,12 +102,8 @@ global $wpdb;
         <div class='order-data'></div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-        <div class='order-label'>Missing Cards</div>
+        <div class='order-label'>Unavailable Cards</div>
         <div class='order-data'>0</div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-        <div class='order-label'>Submission #</div>
-        <div class='order-data'></div>
     </div>
 </div>
 
