@@ -16,7 +16,7 @@ global $wpdb;
     $consignment_order = $this->wpdb->get_results ( "
 		SELECT 
             *
-        FROM consignment_order
+        FROM consignment_orders
         where order_id = " . $_GET["id"]
     );
 
