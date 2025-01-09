@@ -72,11 +72,11 @@ global $wpdb;
     <?php 
         if(isset( $_GET["mode"] )){
     ?>
-    <a href="/administrator/grading?mode=<?php echo $_GET["mode"]?>">Back to Orders</a>     
+    <a href="/administrator/consignment?mode=<?php echo $_GET["mode"]?>">Back to Consignments</a>     
     <?php 
         } else {
     ?>
-    <a href="/administrator/grading">Back to Open Orders</a>     
+    <a href="/administrator/consignment">Back to Consignments</a>     
     <?php         
         }
     ?>
