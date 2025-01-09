@@ -191,51 +191,6 @@ global $wpdb;
         </tbody>
     </table>
 
-    <H4>Received (<?php echo $received ?>)</H4>
-    <table class="table table-sm table-bordered" id="receiving_consignment">
-        <thead>
-            <tr>
-                <th>Card</th>
-                <th>Status</th>
-                <th class="fit text-end"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php 
-                if( $received == 0 ){
-            ?>
-            <tr>
-                <td colspan="8" class="text-center py-5">
-                    Empty
-                </td>
-            </tr>
-            <?php 
-                } else {
-                    foreach( $consignment as $card ) {
-                        if( $card->status == "received" ) {
-
-                            $data = json_decode( $card->data, true );
-            ?>
-            <tr class="consigned_item_row" data-id="<?php echo $card->id ?>">
-                <td>
-                    <div><?php echo $data["year"] . " " . $data["brand"] . " " . $data["player"] . " " . $data["card_number"] . " " . $data["attribute_sn"]  ?></div>
-                    <div><small><?php echo $card->id ?></small></div>
-                </td>
-                <td><?php echo $card->status ?></td>
-                <td class="fit">
-                    <a class="btn btn-pill btn-sm btn-danger ebayintegration-btn" data-action="consignedCardNotReceived" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id(); ?>">
-                        <i class="fa-solid fa-xmark"></i>
-                    </a>
-                </td>
-            </tr>
-            <?php 
-                        }
-                    }
-                }
-            ?>
-        </tbody>
-    </table>
-
     <H4>Unavailable  (<?php echo $unavailable ?>)</H4>
     <table class="table table-sm table-bordered" id="receiving_consignment">
         <thead>
@@ -281,6 +236,51 @@ global $wpdb;
         </tbody>
     </table>
 
-    308595
+    <H4>Received (<?php echo $received ?>)</H4>
+    <table class="table table-sm table-bordered" id="receiving_consignment">
+        <thead>
+            <tr>
+                <th>Card</th>
+                <th>Status</th>
+                <th class="fit text-end"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+                if( $received == 0 ){
+            ?>
+            <tr>
+                <td colspan="8" class="text-center py-5">
+                    Empty
+                </td>
+            </tr>
+            <?php 
+                } else {
+                    foreach( $consignment as $card ) {
+                        if( $card->status == "received" ) {
+
+                            $data = json_decode( $card->data, true );
+            ?>
+            <tr class="consigned_item_row" data-id="<?php echo $card->id ?>">
+                <td>
+                    <div><?php echo $data["year"] . " " . $data["brand"] . " " . $data["player"] . " " . $data["card_number"] . " " . $data["attribute_sn"]  ?></div>
+                    <div><small><?php echo $card->id ?></small></div>
+                </td>
+                <td><?php echo $card->status ?></td>
+                <td class="fit">
+                    <a class="btn btn-pill btn-sm btn-danger ebayintegration-btn" data-action="consignedCardNotReceived" data-id="<?php echo $card->id ?>" data-user_id="<?php echo get_current_user_id(); ?>">
+                        <i class="fa-solid fa-xmark"></i>
+                    </a>
+                </td>
+            </tr>
+            <?php 
+                        }
+                    }
+                }
+            ?>
+        </tbody>
+    </table>
+
+
 
 </div>
