@@ -716,21 +716,73 @@ class Ebay_Integration_Ebay_API {
 		$sql = $this->wpdb->prepare(
 			"UPDATE consignment
 			 SET status = %s
-			 WHERE order_id LIKE %s
+			 WHERE order_id = %s
 			 AND status NOT LIKE %s",
 			'received',
-			'%' . $params['id'] . '%',
-			'%received%'
+			$params['id'],
+			'received'
 		);
 		
 		$rows = $this->wpdb->query($sql);
 		
-
 		if( $rows != false ){
-			return ["error" => false, "params" => $params ];
+
+			$sql_remaining = $this->wpdb->prepare(
+				"SELECT consignment
+				 WHERE order_id = %s
+				 AND status NOT LIKE %s",
+				$params['id'],
+				'received'
+			);
+			
+			$rows_remaining = $this->wpdb->query($sql_remaining);
+			
+			if( $rows_remaining != false ){
+
+				if( $rows_remaining > 0 ){
+
+					return ["error" => false, "params" => $params ];
+
+				} else {
+
+					$sql_status = $this->wpdb->prepare(
+						"UPDATE consignment_order
+						 SET status = %s
+						 WHERE order_id = %s",
+						'CONSIGNED',
+						$params['id']
+					);
+							
+					$rows_status = $this->wpdb->query($sql_status);
+		
+					if( $rows != false ){
+
+						return ["error" => false, "params" => $params ];
+
+					} else {
+	
+						return ["error" => true, "params" => $params, "message" => "order status not updated" ];
+
+					}
+	
+
+				}
+
+
+
+			} else {
+
+				return ["error" => true, "params" => $params, "meessage" => "Not Received Consignments Not Selected" ];
+
+			}
+	
 		} else {
-			return ["error" => true, "params" => $params ];
+			return ["error" => true, "params" => $params, "message" => "consignments not updated" ];
 		}
+
+
+
+
 
 	}
 
