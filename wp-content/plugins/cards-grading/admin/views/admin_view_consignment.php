@@ -73,15 +73,15 @@ global $wpdb;
         <div class='order-data'>SHIPPED</div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Order ID</div>
+        <div class='order-data'><?php echo $consignment_order[0]->id + 1000?></div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>User</div>
         <div class='order-data'>-</div>
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-        <div class='order-label'>Order ID</div>
-        <div class='order-data'><?php echo $consignment_order[0]->id + 1000?></div>
-    </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Carrier</div>
         <div class='order-data grading'><?php echo $order_data["carrier"]?></div>
