@@ -67,6 +67,21 @@ global $wpdb;
 
 
 ?>
+
+<div class="mt-3 mb-4">
+    <?php 
+        if(isset( $_GET["mode"] )){
+    ?>
+    <a href="/administrator/grading?mode=<?php echo $_GET["mode"]?>">Back to Orders</a>     
+    <?php 
+        } else {
+    ?>
+    <a href="/administrator/grading">Back to Open Orders</a>     
+    <?php         
+        }
+    ?>
+</div>
+
 <div class="row">
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Status</div>
