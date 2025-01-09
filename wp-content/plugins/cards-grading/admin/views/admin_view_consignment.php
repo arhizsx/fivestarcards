@@ -112,6 +112,7 @@ global $wpdb;
     </div>
 </div>
 
+<hr>
 
 <div class="table-responsive">
 
