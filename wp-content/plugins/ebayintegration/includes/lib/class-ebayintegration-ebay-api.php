@@ -227,6 +227,10 @@ class Ebay_Integration_Ebay_API {
 			return $this->confirmConsignedCardReceived( $params );
 		}
 
+		elseif( $params["action"] == "confirmConsignedCardReceivedAll"){
+			return $this->confirmConsignedCardReceivedAll( $params );
+		}
+
 		elseif( $params["action"] == "consignedCardNotReceived"){
 			return $this->consignedCardNotReceived( $params );
 		}
@@ -696,6 +700,35 @@ class Ebay_Integration_Ebay_API {
 			), 
 			array(
 				"id" => $params["id"],
+			)
+		);
+
+		if( $rows != false ){
+			return ["error" => false, "params" => $params ];
+		} else {
+			return ["error" => true, "params" => $params ];
+		}
+
+	}
+
+	public function confirmConsignedCardReceivedAll( $params ){
+
+		$rows = $this->wpdb->update(
+			'consignment',
+			array(
+				'status' => "received",
+			), 
+			array(
+				array(
+					"key" => "order_id",
+					"value" => $params["id"],
+					"compare" => "LIKE"
+				),
+				array(
+					"key" => "status",
+					"value" => "received",
+					"compare" => "NOT LIKE"
+				)
 			)
 		);
 

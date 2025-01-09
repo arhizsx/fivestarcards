@@ -140,7 +140,7 @@ global $wpdb;
             <H4>Shipped (<?php echo $shipped ?>)</H4>
         </div>
         <div class="col text-end">
-            <a class="btn btn-pill btn-sm btn-success ebayintegration-btn" data-action="consignedCardReceivedAll" data-id="<?php echo $_GET["id"] ?>" data-user_id="<?php echo get_current_user_id(); ?>">
+            <a class="btn btn-pill btn-sm btn-success ebayintegration-btn" data-action="confirmConsignedCardReceivedAll" data-id="<?php echo $_GET["id"] ?>" data-user_id="<?php echo get_current_user_id(); ?>">
                 <i class="fa-solid fa-check"></i> Receive All
             </a>
         </div>
