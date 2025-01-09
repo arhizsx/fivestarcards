@@ -713,24 +713,18 @@ class Ebay_Integration_Ebay_API {
 
 	public function confirmConsignedCardReceivedAll( $params ){
 
-		$rows = $this->wpdb->update(
-			'consignment',
-			array(
-				'status' => "received",
-			), 
-			array(
-				array(
-					"key" => "order_id",
-					"value" => $params["id"],
-					"compare" => "LIKE"
-				),
-				array(
-					"key" => "status",
-					"value" => "received",
-					"compare" => "NOT LIKE"
-				)
-			)
+		$sql = $this->wpdb->prepare(
+			"UPDATE consignment
+			 SET status = %s
+			 WHERE order_id LIKE %s
+			 AND status NOT LIKE %s",
+			'received',
+			'%' . $params['id'] . '%',
+			'%received%'
 		);
+		
+		$rows = $this->wpdb->query($sql);
+		
 
 		if( $rows != false ){
 			return ["error" => false, "params" => $params ];
