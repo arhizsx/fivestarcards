@@ -139,7 +139,7 @@ global $wpdb;
         <div class="col">
             <H4>Shipped (<?php echo $shipped ?>)</H4>
         </div>
-        <div class="col">
+        <div class="col text-end">
             <button class="btn btn-success">Received All</button>    
         </div>
     </div>
