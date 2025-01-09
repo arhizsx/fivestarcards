@@ -869,6 +869,8 @@ jQuery(document).on("click", ".ebayintegration-btn", function (e) {
 
 		$.when(order).done(function (order) {
 
+			location.reload();
+
 		});
 
 	}
