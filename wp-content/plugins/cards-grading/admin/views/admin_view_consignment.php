@@ -140,7 +140,7 @@ global $wpdb;
             <H4>Shipped (<?php echo $shipped ?>)</H4>
         </div>
         <div class="col">
-            
+            <button class="btn btn-success">Received All</button>    
         </div>
     </div>
     <table class="table table-sm table-bordered" id="receiving_consignment">
@@ -190,7 +190,6 @@ global $wpdb;
             ?>
         </tbody>
     </table>
-
     <H4>Unavailable  (<?php echo $unavailable ?>)</H4>
     <table class="table table-sm table-bordered" id="receiving_consignment">
         <thead>
