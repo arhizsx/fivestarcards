@@ -99,6 +99,10 @@ global $wpdb;
         <div class='order-data'><?php echo $order_data["shipping_date"]?></div>
     </div>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+        <div class='order-label'>Total Cards</div>
+        <div class='order-data'><?php echo $shipped + $received + $unavailable; ?></div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
         <div class='order-label'>Shipped Cards</div>
         <div class='order-data'><?php echo $shipped; ?></div>
     </div>
