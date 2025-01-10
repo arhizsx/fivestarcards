@@ -130,7 +130,7 @@ global $wpdb;
         <div class='order-data'><?php echo $unavailable; ?></div>
     </div>
     <?php 
-    if( $received + $unavailable == $shipped ){
+    if( ($received + $unavailable) == $shipped ){
     ?>
     <div class="col-12">
         <a class="btn btn-pill btn-primary ebayintegration-btn" data-action="confirmConsignedOrder" data-id="<?php echo $_GET["id"] ?>" data-user_id="<?php echo get_current_user_id(); ?>">
