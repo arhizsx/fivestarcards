@@ -130,6 +130,9 @@ global $wpdb;
         <div class='order-data'><?php echo $unavailable; ?></div>
     </div>
     <?php 
+
+    echo $received + $unavailable;
+
     if( ($received + $unavailable) == $shipped ){
     ?>
     <div class="col-12">
