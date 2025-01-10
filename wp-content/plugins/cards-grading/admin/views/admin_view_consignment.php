@@ -129,6 +129,13 @@ global $wpdb;
         <div class='order-label'>Unavailable Cards</div>
         <div class='order-data'><?php echo $unavailable; ?></div>
     </div>
+    @if( $received + $unavailable == $shipped )
+    <div class="col-12">
+        <a class="btn btn-pill btn-sm btn-success ebayintegration-btn" data-action="confirmConsignedOrder" data-id="<?php echo $_GET["id"] ?>" data-user_id="<?php echo get_current_user_id(); ?>">
+            <i class="fa-solid fa-check"></i> Consigned
+        </a>
+    </div>
+    @endif
 </div>
 
 <hr>
