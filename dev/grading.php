@@ -116,6 +116,10 @@
         padding: 30px;
     }
 
+    .rounded-xl {
+        border-radius: .75rem;
+    }
+
   </style>
 </head>
 <body>
@@ -152,13 +156,13 @@
 
                 <div class="middle_box mt-5">
 
-                    <div class="card border border-primary">
+                    <div class="card border border-primary rounded-xl mb-3">
                         <div class="card-body">
                             PSA
                         </div>
                     </div>
 
-                    <div class="card border border-primary">
+                    <div class="card border border-primary rounded-xl">
                         <div class="card-body">
                             SGC
                         </div>
