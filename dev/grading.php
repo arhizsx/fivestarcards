@@ -120,6 +120,7 @@
       <img src="https://5starcards.com/wp-content/uploads/2023/09/5-star-cards-logo.png" alt="Logo">
     </div>
     <nav class="menu text-white">
+      <a href="#" class="text-decoration-none">Submission</a>
       <a href="#" class="text-decoration-none">Grader</a>
       <a href="#" class="text-decoration-none">Service Level</a>
       <a href="#" class="text-decoration-none">Item Entry</a>
