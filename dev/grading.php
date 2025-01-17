@@ -154,14 +154,14 @@
                 <div class="middle_box mt-5">
 
                     <div class="card border border-primary rounded-xl mb-3">
-                        <div class="card-body">
-                            PSA
+                        <div class="card-body text-primary">
+                            <strong>PSA</strong>
                         </div>
                     </div>
 
                     <div class="card border border-primary rounded-xl">
                         <div class="card-body">
-                            SGC
+                            <strong>SGC</strong>
                         </div>
                     </div>
 
