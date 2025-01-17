@@ -167,13 +167,6 @@
 
                 </div>
 
-                <div class="lower_box mt-5 mb-5">
-                    <div class="request_box">
-                        <H4 class="header_title">Comments or Requests</H4>
-                        <p class="header_subtitle">Write anything you would like to share about your submission with us</p>
-                        <textarea class="form-control"></textarea>
-                    </div>
-                </div>
             </div>
             <?php } ?>
 
