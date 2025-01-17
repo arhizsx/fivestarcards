@@ -151,9 +151,6 @@
                     <p class="header_subtitle">Select the grading company you desire</p>
                 </div>
 
-                <div class="upper_box mt-5">
-                </div>
-
                 <div class="middle_box mt-5">
 
                     <div class="card border border-primary rounded-xl mb-3">
