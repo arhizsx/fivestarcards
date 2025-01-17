@@ -139,8 +139,46 @@
     <div class="row">
         <div class="col-xl-8 col-lg-8 col-12 mb-3">
 
-
+            <!-- Grader -->
+             <?php if($_GET["step"] == 'grader') { ?>
             <div class="submission_step" data-step="item_entry">
+                <div class="header_box">
+                    <H2 class="header_title">Select Grader</H2>
+                    <p class="header_subtitle">Select the grading company you desire</p>
+                </div>
+
+                <div class="upper_box mt-5">
+                </div>
+
+                <div class="middle_box mt-5">
+
+                    <div class="card border border-primary">
+                        <div class="card-body">
+                            PSA
+                        </div>
+                    </div>
+
+                    <div class="card border border-primary">
+                        <div class="card-body">
+                            SGC
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="lower_box mt-5 mb-5">
+                    <div class="request_box">
+                        <H4 class="header_title">Comments or Requests</H4>
+                        <p class="header_subtitle">Write anything you would like to share about your submission with us</p>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
+
+            <!-- Item Entry -->
+            <?php if($_GET["step"] == 'item_entry') { ?>
+                <div class="submission_step" data-step="item_entry">
                 <div class="header_box">
                     <H2 class="header_title">Enter Items</H2>
                     <p class="header_subtitle">Add items you want to submit to PSA for grading</p>
@@ -229,6 +267,9 @@
                     </div>
                 </div>
             </div>
+            <?php } ?>
+
+
         </div>
         <div class="col-xl-4 col-lg-4 d-none d-lg-block mb-3">
             <div class="card">
