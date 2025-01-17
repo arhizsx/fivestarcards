@@ -159,7 +159,7 @@
                         </div>
                     </div>
 
-                    <div class="card border border-secondary rounded-xl">
+                    <div class="card border border-light rounded-xl">
                         <div class="card-body">
                             <strong>SGC</strong>
                         </div>
