@@ -1,3 +1,7 @@
+<?php 
+    $id = 0;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,11 +124,11 @@
       <img src="https://5starcards.com/wp-content/uploads/2023/09/5-star-cards-logo.png" alt="Logo">
     </div>
     <nav class="menu text-white">
-      <a href="#" class="text-decoration-none">Grader</a>
-      <a href="#" class="text-decoration-none">Service Level</a>
-      <a href="?step=item_entry" class="text-decoration-none">Item Entry</a>
-      <a href="#" class="text-decoration-none">Shipping</a>
-      <a href="#" class="text-decoration-none">Confirmation</a>
+      <a href="?id=<?php echo $id ?>&step=grader"  class="text-decoration-none">Grader</a>
+      <a href="?id=<?php echo $id ?>&step=service_level"  class="text-decoration-none">Service Level</a>
+      <a href="?id=<?php echo $id ?>&step=item_entry" class="text-decoration-none">Item Entry</a>
+      <a href="?id=<?php echo $id ?>&step=shipping"  class="text-decoration-none">Shipping</a>
+      <a href="?id=<?php echo $id ?>&step=confirmation"  class="text-decoration-none">Confirmation</a>
     </nav>
     <div class="buttons-box">
       <button class="btn btn-primary">Save & Exit</button>
