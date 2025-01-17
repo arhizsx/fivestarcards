@@ -155,11 +155,11 @@
 
                     <div class="card border border-primary rounded-xl mb-3">
                         <div class="card-body text-primary">
-                            <strong>PSA</strong>
+                            <H3>PSA</H3>
                         </div>
                     </div>
 
-                    <div class="card border border-light rounded-xl">
+                    <div class="card border border-secondary rounded-xl">
                         <div class="card-body">
                             <strong>SGC</strong>
                         </div>
