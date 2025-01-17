@@ -107,7 +107,7 @@
             case "sgc-bulk": 
                 $grading_title = "SGC Bulk";
                 $max_dv = 0;
-                $per_card = 19;
+                $per_card = 16;
                 break;
 
             default: 
@@ -622,7 +622,7 @@
                 </tr>
                 <tr>
                     <td class="">
-                        <div class="pricing">19</div>
+                        <div class="pricing">20</div>
                         <div>per card</div>
                     </td>
                 </tr>
@@ -643,7 +643,7 @@
                 </tr>
                 <tr>
                     <td class="">
-                        <div class="pricing">19</div>
+                        <div class="pricing">20</div>
                         <div>per card</div>
                     </td>
                 </tr>
@@ -760,7 +760,7 @@
                 </tr>
                 <tr>
                     <td class="">
-                        <div class="pricing">19</div>
+                        <div class="pricing">16</div>
                         <div>per card</div>
                     </td>
                 </tr>
