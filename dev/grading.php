@@ -120,10 +120,9 @@
       <img src="https://5starcards.com/wp-content/uploads/2023/09/5-star-cards-logo.png" alt="Logo">
     </div>
     <nav class="menu text-white">
-      <a href="#" class="text-decoration-none">Submission</a>
       <a href="#" class="text-decoration-none">Grader</a>
       <a href="#" class="text-decoration-none">Service Level</a>
-      <a href="#" class="text-decoration-none">Item Entry</a>
+      <a href="?step=item_entry" class="text-decoration-none">Item Entry</a>
       <a href="#" class="text-decoration-none">Shipping</a>
       <a href="#" class="text-decoration-none">Confirmation</a>
     </nav>
@@ -136,91 +135,94 @@
     <div class="row">
         <div class="col-xl-8 col-lg-8 col-12 mb-3">
 
-            <div class="header_box">
-                <H2 class="header_title">Enter Items</H2>
-                <p class="header_subtitle">Add items you want to submit to PSA for grading</p>
-            </div>
 
-            <div class="upper_box mt-5">
-                <div class="add_item_box">
-                    <form class="form">
-                        <div class="row">
-                            <div class="col">
-                                <label>Quantity</label>
-                                <input type="number" name="quantity" class="form-control mb-3">
-                            </div>
-                            <div class="col">
-                                <label>Year</label>
-                                <input type="number" name="year" class="form-control mb-3">
-                            </div>
-                            <div class="col">
-                                <label>Brand</label>
-                                <input type="text" name="brand" class="form-control mb-3">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <label>Player / Subject</label>
-                                <input type="text" name="player_subject" class="form-control mb-3">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <label>Card Number</label>
-                                <input type="text" name="card_number" class="form-control mb-3">
-                            </div>
-                            <div class="col">
-                                <label>Attribute / SN</label>
-                                <input type="text" name="attribute" class="form-control mb-3">
-                            </div>
-                            <div class="col">
-                                <label>Declared Value</label>
-                                <input type="text" name="dv" class="form-control mb-3">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <button class="btn btn-primary">Save</button>
-                                <button class="btn btn-secondary">Discard</button>
-                            </div>
-                        </div>
-                    </form>
+            <div class="submission_step" data-step="item_entry">
+                <div class="header_box">
+                    <H2 class="header_title">Enter Items</H2>
+                    <p class="header_subtitle">Add items you want to submit to PSA for grading</p>
                 </div>
-            </div>
 
-            <div class="middle_box mt-5">
-
-                <div class="card">
-                    <div class="card-header">
-                        <div class="row table-labels">
-                            <div class="col-xl-8 col-lg-8 col-sm-7">
-                                Items
+                <div class="upper_box mt-5">
+                    <div class="add_item_box">
+                        <form class="form">
+                            <div class="row">
+                                <div class="col">
+                                    <label>Quantity</label>
+                                    <input type="number" name="quantity" class="form-control mb-3">
+                                </div>
+                                <div class="col">
+                                    <label>Year</label>
+                                    <input type="number" name="year" class="form-control mb-3">
+                                </div>
+                                <div class="col">
+                                    <label>Brand</label>
+                                    <input type="text" name="brand" class="form-control mb-3">
+                                </div>
                             </div>
-                            <div class="col-xl-1 col-lg-1 col-sm-1">
-                                Qty.
+                            <div class="row">
+                                <div class="col">
+                                    <label>Player / Subject</label>
+                                    <input type="text" name="player_subject" class="form-control mb-3">
+                                </div>
                             </div>
-                            <div class="col-xl-2 col-lg-2 col-sm-3">
-                                Max Ins. Value
+                            <div class="row">
+                                <div class="col">
+                                    <label>Card Number</label>
+                                    <input type="text" name="card_number" class="form-control mb-3">
+                                </div>
+                                <div class="col">
+                                    <label>Attribute / SN</label>
+                                    <input type="text" name="attribute" class="form-control mb-3">
+                                </div>
+                                <div class="col">
+                                    <label>Declared Value</label>
+                                    <input type="text" name="dv" class="form-control mb-3">
+                                </div>
                             </div>
-                            <div class="col-xl-1 col-lg-1 col-sm-1">
-                                &nbsp;
+                            <div class="row">
+                                <div class="col">
+                                    <button class="btn btn-primary">Save</button>
+                                    <button class="btn btn-secondary">Discard</button>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-items table-empty">
-                            No items have been added yet.
-                        </div>
+                        </form>
                     </div>
                 </div>
 
-            </div>
+                <div class="middle_box mt-5">
 
-            <div class="lower_box mt-5 mb-5">
-                <div class="request_box">
-                    <H4 class="header_title">Comments or Requests</H4>
-                    <p class="header_subtitle">Write anything you would like to share about your submission with us</p>
-                    <textarea class="form-control"></textarea>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row table-labels">
+                                <div class="col-xl-8 col-lg-8 col-sm-7">
+                                    Items
+                                </div>
+                                <div class="col-xl-1 col-lg-1 col-sm-1">
+                                    Qty.
+                                </div>
+                                <div class="col-xl-2 col-lg-2 col-sm-3">
+                                    Max Ins. Value
+                                </div>
+                                <div class="col-xl-1 col-lg-1 col-sm-1">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-items table-empty">
+                                No items have been added yet.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="lower_box mt-5 mb-5">
+                    <div class="request_box">
+                        <H4 class="header_title">Comments or Requests</H4>
+                        <p class="header_subtitle">Write anything you would like to share about your submission with us</p>
+                        <textarea class="form-control"></textarea>
+                    </div>
                 </div>
             </div>
         </div>
