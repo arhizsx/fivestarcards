@@ -71,13 +71,13 @@
             case "psa-value_bulk": 
                 $grading_title = "PSA Value Bulk";
                 $max_dv = 499;
-                $per_card = 19;
+                $per_card = 20;
                 break;
 
             case "psa-value_bulk_vintage": 
                 $grading_title = "PSA Value Bulk Vintage";
                 $max_dv = 499;
-                $per_card = 19;
+                $per_card = 20;
                 break;
 
             case "psa-value_plus": 
