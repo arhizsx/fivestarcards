@@ -548,6 +548,9 @@ if( $grading_order_id > 0 ){
     </div>
 
     <?php
+
+    print_f($grading_files);
+
     if( count($grading_files) ){
     ?>
     <div class="row mt-3">
