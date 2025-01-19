@@ -466,7 +466,7 @@ if( $grading_order_id > 0 ){
                 <th>Photo</th>
                 <th>Certificate #</th>
             </thead>
-            <tbody>
+            <!-- <tbody>
                 <?php 
 
                     if( $posts ){
@@ -505,7 +505,7 @@ if( $grading_order_id > 0 ){
                 ?>
 
 
-            </tbody>
+            </tbody> -->
         </table>
     </div>
     <div class='5star_btn_box_bottom w-100'>
@@ -548,9 +548,6 @@ if( $grading_order_id > 0 ){
     </div>
 
     <?php
-
-    print_f($grading_files);
-
     if( count($grading_files) ){
     ?>
     <div class="row mt-3">
