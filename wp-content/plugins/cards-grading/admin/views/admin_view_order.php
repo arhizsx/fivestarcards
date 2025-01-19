@@ -476,11 +476,12 @@ if( $grading_order_id > 0 ){
                             $meta = get_post_meta($post->ID);
                             $card = json_decode($meta['card'][0], true);
 
-                            print_r($card);
-                            die();
 
                             $sql = "SELECT * FROM grading WHERE id = " . $card["db_id"];
                             $db_row = $this->wpdb->get_results ( $sql );
+
+                            print_r($db_row);
+                            die();
         
                             if( count($db_row) > 0 ){
                             $db_row_data = json_decode($db_row[0]->data, true);
