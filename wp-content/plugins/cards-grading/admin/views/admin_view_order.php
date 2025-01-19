@@ -466,7 +466,7 @@ if( $grading_order_id > 0 ){
                 <th>Photo</th>
                 <th>Certificate #</th>
             </thead>
-            <!-- <tbody>
+            <tbody>
                 <?php 
 
                     if( $posts ){
@@ -485,7 +485,7 @@ if( $grading_order_id > 0 ){
                             if( array_key_exists( "title", $db_row_data ) && array_key_exists( "certImgFront", $db_row_data ) && array_key_exists( "certImgBack", $db_row_data )  ){
         
                 ?>
-                <tr class='admin-graded-row' data-post_id='<?php echo $post->ID ?>'  data-id="<?php print_r( $db_row[0]->id ) ?>">>
+                <!-- <tr class='admin-graded-row' data-post_id='<?php echo $post->ID ?>'  data-id="<?php print_r( $db_row[0]->id ) ?>">>
                     <td><?php echo $post->ID ?></td>
                     <td>
                         <input type="text" class="form-control" value="<?php echo $db_row_data["title"] ?>" data-id="<?php print_r( $db_row[0]->id ) ?>">                        
@@ -493,7 +493,7 @@ if( $grading_order_id > 0 ){
                     <td><input type="text" class="" value="<?php echo $db_row_data["grade"] ?>" data-id="<?php print_r( $db_row[0]->id ) ?>"></td>
                     <td><a href='<?php echo $db_row_data["certImgFront"] ?>'><img width='100px' src='<?php echo $db_row_data["certImgFront"] ?>' target='_blank'></a><a href='<?php echo $db_row_data["certImgBack"] ?>' target='_blank'><img width='100px' src='<?php echo $db_row_data["certImgBack"] ?>'></a></td>
                     <td><?php echo $db_row_data["certificate_number"] ?></td>
-                </tr>
+                </tr> -->
 
                 <?php 
                                 }
@@ -505,7 +505,7 @@ if( $grading_order_id > 0 ){
                 ?>
 
 
-            </tbody> -->
+            </tbody>
         </table>
     </div>
     <div class='5star_btn_box_bottom w-100'>
