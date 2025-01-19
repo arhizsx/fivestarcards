@@ -457,7 +457,7 @@ if( $grading_order_id > 0 ){
             </tbody>
         </table>
 
-        <H3 style="color: black !important;">Graded Cards</H3>
+        <!-- <H3 style="color: black !important;">Graded Cards</H3>
         <table id="completed_graded" class="table table-bordered table-striped">
             <thead>
                 <th>ID</th>
@@ -480,8 +480,6 @@ if( $grading_order_id > 0 ){
                             $sql = "SELECT * FROM grading WHERE id = " . $card["db_id"];
                             $db_row = $this->wpdb->get_results ( $sql );
 
-                            print_r($sql);
-                            die();
         
                             if( count($db_row) > 0 ){
                             $db_row_data = json_decode($db_row[0]->data, true);
@@ -510,7 +508,7 @@ if( $grading_order_id > 0 ){
 
 
             </tbody>
-        </table>
+        </table> -->
     </div>
     <div class='5star_btn_box_bottom w-100'>
         <div class="row">
