@@ -4,11 +4,10 @@ global $wpdb;
 
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
-FROM  ebay
-where status = 'Cancelled'
-ORDER BY id DESC
-" 
-);
+FROM ebay
+WHERE status = 'Cancelled'
+ORDER BY JSON_UNQUOTE(JSON_EXTRACT(data, '$.Item.ListingDetails.StartTime')) ASC
+" );
 
 $skus = get_user_meta( get_current_user_id(), "sku", true );		
 

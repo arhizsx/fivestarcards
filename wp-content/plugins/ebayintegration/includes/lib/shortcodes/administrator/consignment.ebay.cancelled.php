@@ -15,11 +15,10 @@ if( isset( $_GET['i'] ) ){
 
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
-FROM  ebay
-where status = 'Cancelled'
-ORDER BY `json_unquote(json_extract(``wordpress``.``ebay``.``data``,'$.Item.ListingDetails.StartTime'))` ASC
-"
-);
+FROM ebay
+WHERE status = 'Cancelled'
+ORDER BY JSON_UNQUOTE(JSON_EXTRACT(data, '$.Item.ListingDetails.StartTime')) ASC
+" );
 
 $ebay_count = $this->wpdb->get_results ( "
 SELECT COUNT(id) as total 
