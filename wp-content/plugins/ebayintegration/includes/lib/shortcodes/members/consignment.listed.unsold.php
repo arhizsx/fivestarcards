@@ -6,7 +6,7 @@ $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM ebay
 WHERE status IN ('UnsoldList')
-ORDER BY JSON_UNQUOTE(JSON_EXTRACT(data, '$.ListingDetails.StartTime')) ASC
+ORDER BY JSON_UNQUOTE(JSON_EXTRACT(data, '$.ListingDetails.StartTime')) DESC
 " );
 
 $skus = get_user_meta( get_current_user_id(), "sku", true );		
