@@ -6,8 +6,7 @@ $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
 where status = 'PaidOut'
-ORDER BY id DESC
-" 
+ORDER BY paid_out_date DESC" 
 );
 
 $skus = get_user_meta( get_current_user_id(), "sku", true );		
