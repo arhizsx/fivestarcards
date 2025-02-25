@@ -6,6 +6,7 @@ $ebay = $this->wpdb->get_results ( "
 SELECT * 
 FROM  ebay
 where status = 'UnsoldList'
+ORDER BY `json_unquote(json_extract(``wordpress``.``ebay``.``data``,'$.ListingDetails.StartTime'))` ASC
 " 
 );
 

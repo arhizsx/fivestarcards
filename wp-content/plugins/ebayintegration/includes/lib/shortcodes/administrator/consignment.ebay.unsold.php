@@ -7,6 +7,7 @@ SELECT *
 FROM  ebay
 where status IN ('UnsoldList' )
 ORDER BY id DESC
+ORDER BY `json_unquote(json_extract(``wordpress``.``ebay``.``data``,'$.ListingDetails.StartTime'))` ASC
 " 
 );
 $args = array(
