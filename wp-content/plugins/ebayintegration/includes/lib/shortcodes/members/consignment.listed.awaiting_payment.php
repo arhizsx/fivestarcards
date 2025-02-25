@@ -4,11 +4,10 @@ global $wpdb;
 
 $ebay = $this->wpdb->get_results ( "
 SELECT * 
-FROM  ebay
-where status = 'SoldListAwaiting'
-ORDER BY `json_unquote(json_extract(``wordpress``.``ebay``.``data``,'$.Item.ListingDetails.StartTime'))` ASC
-" 
-);
+FROM ebay
+WHERE status = 'SoldListAwaiting'
+ORDER BY JSON_UNQUOTE(JSON_EXTRACT(data, '$.Item.ListingDetails.StartTime')) ASC
+" );
 
 $skus = get_user_meta( get_current_user_id(), "sku", true );		
 
