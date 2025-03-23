@@ -30,8 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 // Handle Incoming Messages (POST Request)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
     // Read incoming payload
     $data = file_get_contents("php://input");
+
+    return  $data;
+
     log_message("Received Payload: " . $data);
 
     // Decode JSON
